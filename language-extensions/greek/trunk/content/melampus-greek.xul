@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM "chrome://melampus-greek/locale/melampus-greek.dtd">
+
+<overlay id="melampus-greek-overlay" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <menupopup id="melampus-lang-popup-cm">
+        <menuitem id="melampus-cm-lang-greek"
+                  label="&melampus.lang.greek;"
+                  value="greek"
+                  type="checkbox"
+                  hidden="false"/>
+    </menupopup>
+    <menupopup id="melampus-lang-popup-tm">
+        <menuitem id="melampus-tm-lang-greek"
+                  label="&melampus.lang.greek;"
+                  value="greek"
+                  type="checkbox"
+                  hidden="false"/>
+    </menupopup>  
+</overlay>

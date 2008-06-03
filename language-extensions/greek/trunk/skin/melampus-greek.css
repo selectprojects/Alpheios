@@ -1,0 +1,5 @@
+/* unhighlight the grammar links for now */
+.mp-case,.mp-mood,.mp-decl,.mp-conj,.mp-pofs {
+    color: black;
+    cursor: default;
+}

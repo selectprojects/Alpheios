@@ -1,0 +1,376 @@
+p {  
+    margin-top: .75em;
+    text-align: justify;
+    margin-bottom: .75em;
+}
+H1,H2,H3,H4,H5,H6 {
+    text-align: center; /* all headings centered */
+}
+hr {
+    text-align: center; width: 50%;
+}
+hr.full {
+    width: 100%;
+}
+hr.short {
+    text-align: center; width: 20%;
+}
+body {
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: white;
+}
+table {
+    margin-left:5%; 
+    border-collapse: collapse; 
+    border: none  
+}
+td {
+    padding-left: 1em; 
+    padding-right: 1em; 
+    border: none 
+}
+td.tbar { 
+    border-left : thin solid black; 
+    vertical-align: top; 
+}
+td.mbar { 
+    border-left : thin solid black; 
+    vertical-align: middle; 
+}
+table.allb { 
+    border : thin solid black; 
+    border-collapse: collapse  
+}
+td.allb { 
+    border : thin solid black; 
+    padding-left: 1em;
+    padding-right: 1em; 
+}
+.single p {
+    margin: 0;
+}
+    
+h2.contents, h4.contents {
+    text-align: left;
+    margin-bottom: .25em;
+    margin-top: 0;
+    margin-left: 0;
+    margin-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+h2.contents {
+    font-size: 100%;
+    font-weight: bold;
+}
+    
+h4.contents {
+    font-size: 100%;
+    font-weight: normal;
+    display: none; /*individual toc items are hidden by default until expanded*/ 
+}
+
+.contents {
+    margin-left: .25em; 
+    margin-right: .25em;
+    text-align: left;
+}
+
+h2.contents-closed:before {
+     content: "[+] ";
+     color: blue;
+}
+h2.contents-open:before {
+     content: "[-] ";
+     color: blue;
+}
+
+.contents .stanza {
+    margin-top: .5em;
+    margin-bottom: .5em;
+}
+    
+.contents p {
+    margin-top: 0; 
+    margin-bottom: 0;
+    margin-left: .25em;
+    margin-right: .25em;
+    padding-left: 1em;
+    text-indent: -1em;
+    text-align: left;
+}
+    
+.contents p.i2 {
+    margin-left: inherit;
+}
+.contents p.i4 {
+    margin-left: inherit;
+}
+.contents p.i6 {
+    margin-left: inherit;
+}
+.contents p.i8 {
+    margin-left: inherit;
+}
+
+div.contents {
+    display: none; /*individual toc items are hidden by default until expanded*/
+}
+ 
+.highlighted {
+    font-weight: bold;
+}       
+
+.preface {
+    margin-left:30%; 
+    margin-right:10%; 
+    margin-bottom: 1em; 
+    text-align: left;
+}
+.preface .stanza {
+    margin: 1em 0em 1em 0em;
+}
+.preface p {
+    margin: 0; 
+    padding-left: 3em; 
+    text-indent: -3em;
+}
+.poem {
+    margin-left:10%; 
+    margin-right:10%; 
+    margin-bottom: 1em; 
+    text-align: left;
+}
+
+.poem .stanza {
+    margin: 1em 0em 1em 0em;
+}
+.poem p {
+    margin: 0; 
+    padding-left: 3em; 
+    text-indent: -3em;
+}
+p.i2 {
+    margin-left: 1em;
+}
+p.i4 {
+    margin-left: 2em;
+}
+p.i6 {
+    margin-left: 3em;
+}
+p.i8 {
+    margin-left: 4em;
+}
+p.z8 {
+    margin-left: 4em; 
+    font-style: italic;
+}
+p.i10 {
+    margin-left: 5em;
+}
+p.z10 {
+    margin-left: 5em; 
+    font-style: italic;
+}
+p.i12 {
+    margin-left: 6em;
+}
+p.i16 {
+    margin-left: 8em;
+}
+p.i20 {
+    margin-left: 10em;
+}
+a:link {
+    color:blue; 
+    text-decoration:none
+}
+a:visited {
+    color:blue; 
+    text-decoration:none
+}
+a[href]:hover {
+    color:red
+}
+link {
+    color:blue; 
+    text-decoration:none
+}
+
+.noflo {
+    margin-bottom: 1em; 
+    text-align: left;
+}
+
+.noflo .stanza {
+    margin: 1em 0em 1em 0em;
+}
+.noflo p {
+    margin: 0; 
+    padding-left: 3em; 
+    text-indent: -3em;
+}
+.noflo p.i2 {
+    margin-left: 1em;
+}
+.noflo p.i4 {
+    margin-left: 2em;
+}
+.noflo p.i16 {
+    margin-left: 8em;
+}
+.author {
+    text-align: right; 
+    margin-top: -1em; 
+    margin-right: 5%;
+}
+.center {
+    text-align: center; 
+}
+.right {
+    text-align: right; 
+}
+.t {
+    vertical-align: top; 
+}
+.tr {
+    vertical-align: top;
+}
+.tc {
+    vertical-align: top;
+}
+.tr p {
+    text-align: right;
+}
+.tc p {
+    text-align: center;
+}
+.m {
+    vertical-align: middle; 
+}
+.mr {
+    vertical-align: middle;
+}
+.mc {
+    vertical-align: middle;
+}
+.mr p {
+    text-align: right;
+}
+.mc p {
+    text-align: center;
+}
+.b {
+    vertical-align: bottom; 
+}
+.vol {
+    /*font-weight: bold;*/ 
+    font-size: small;
+}
+/* .grk {
+    font-weight: bold; 
+    font-style: italic; 
+} */
+.grk {
+    font-style: normal; 
+}
+pre {
+    font-family: "Courier New", Courier, monospace; 
+    margin-left: 1em; 
+}
+.linenum  {
+    position: absolute; 
+    top: auto; 
+    left: 60%;
+} /* poetry number */
+
+blockquote.b1 {
+    margin-left: 3em; 
+    text-indent: -1em; 
+    margin-right: 2em; 
+    margin-top: 0.25em; 
+    margin-bottom: 0.25em;
+}
+blockquote.b2 {
+    margin-left: 6em; 
+    text-indent: -1em; 
+    margin-right: 2em; 
+    margin-top: 0.25em; 
+    margin-bottom: 0.25em;
+}
+blockquote.b3 {
+    margin-left: 9em; 
+    text-indent: -1em; 
+    margin-right: 2em; 
+    margin-top: 0.25em; 
+    margin-bottom: 0.25em;
+}
+blockquote.small {
+    font-size: small; 
+}
+.noind {
+    text-indent: 0em;
+}
+.b1 p {
+    margin: 0.25em;
+}
+.b2 p {
+    margin: 0.25em;
+}
+.b3 p {
+    margin: 0.25em;
+}
+.pagenum  {
+    position: absolute; 
+    left: 92%; 
+    font-size: smaller; 
+    text-align: right;
+} /* page numbers */
+
+.sidenote {
+    position: absolute; 
+    left: 92%; 
+    font-size: smaller; 
+    text-align: left;
+} /* sidenotes */
+
+.note {
+    margin-left: 2em; 
+    margin-right: 2em;
+    font-size: small; 
+} /* footnote */
+.sc {
+    font-size: smaller; 
+} /* small caps. */
+
+.figure, .figcenter, .figright, .figleft {
+    padding: 1em; 
+    margin: 0; 
+    text-align: center; 
+    font-size: 0.8em;
+}
+.figure img, .figcenter img, .figright img, .figleft img {
+    border: none;
+}
+.figure p, .figcenter p, .figright p, .figleft p {
+    margin: 0; 
+    text-indent: 1em;
+}
+.figure p.in, .figcenter p.in, .figright p.in, .figleft p.in {
+    margin: 0; 
+    text-indent: 8em;
+}
+.figcenter {
+    margin: auto;
+}
+.figright {
+    float: right;
+}
+.figleft {
+    float: left;
+}

@@ -1,0 +1,9 @@
+content melampus-greek jar:chrome/melampus-greek.jar!/content/
+content melampus-greek jar:chrome/melampus-greek.jar!/content/ contentaccessible=yes
+locale	melampus-greek	en-US		jar:chrome/melampus-greek.jar!/locale/en-US/
+skin	melampus-greek	classic/1.0	jar:chrome/melampus-greek.jar!/skin/
+
+overlay chrome://melampus/content/melampus-overlay.xul    chrome://melampus-greek/content/melampus-greek.xul
+overlay chrome://melampus/content/melampus-prefs.xul    chrome://melampus-greek/content/melampus-greek-prefs.xul
+style   chrome://global/content/customizeToolbar.xul    chrome://melampus-greek/skin/melampus-greek.css
+

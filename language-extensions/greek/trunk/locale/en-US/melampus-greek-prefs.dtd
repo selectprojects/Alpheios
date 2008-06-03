@@ -1,0 +1,8 @@
+<!ENTITY melampus.greek.prefs.title "Greek Settings">
+<!ENTITY melampus.greek.prefs.url "Greek Services">
+<!ENTITY melampus.greek.prefs.url.lexicon "Lexicon URL">
+<!ENTITY melampus.greek.prefs.url.lexicon.request "Lexicon Request Parameters">
+<!ENTITY melampus.greek.prefs.url.lexicon.timeout "Lexicon Request Timeout">
+<!ENTITY melampus.greek.prefs.popuptrigger "Greek:">
+<!ENTITY melampus.greek.prefs.popuptrigger.mousemove "mousemove">
+<!ENTITY melampus.greek.prefs.popuptrigger.dblclick "dblclick">
