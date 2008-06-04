@@ -1,4 +1,4 @@
-<%@page import="perseus.document.*, perseus.util.*, perseus.ie.*, perseus.morph.*, edu.unc.epidoc.transcoder.TransCoder, java.net.URLEncoder, java.util.*, static perseus.morph.MelampusMorphCode.*"
+<%@page import="perseus.document.*, perseus.util.*, perseus.ie.*, perseus.morph.*, edu.unc.epidoc.transcoder.TransCoder, java.net.URLEncoder, java.util.*, static perseus.morph.AlpheiosMorphCode.*"
         pageEncoding="UTF-8"
         contentType="text/xml;charset=UTF-8"%><%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %><fmt:requestEncoding value="UTF-8" /><?xml version="1.0" encoding="UTF-8" ?>
 <%
@@ -62,7 +62,7 @@
     }
 
     out.print("<word>");
-    MelampusMorphCodeGenerator  gen = new MelampusMorphCodeGenerator();
+    AlpheiosMorphCodeGenerator  gen = new AlpheiosMorphCodeGenerator();
 
     // for each possible lemma
     for (Lemma lemma : lemmaParses.keySet())
