@@ -3,12 +3,12 @@ package perseus.morph;
 import java.util.HashMap;
 import java.util.Map;
 
-import static perseus.morph.MelampusMorphCode.*;
+import static perseus.morph.AlpheiosMorphCode.*;
 
 /**
  * Converts morph codes found in the database into a Map
 */
-public class MelampusMorphCodeGenerator implements MorphCodeGenerator
+public class AlpheiosMorphCodeGenerator implements MorphCodeGenerator
 {
     /**
      * Return the morphological breakdown based upon the morph

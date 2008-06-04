@@ -1,9 +1,9 @@
-content melampus-greek jar:chrome/melampus-greek.jar!/content/
-content melampus-greek jar:chrome/melampus-greek.jar!/content/ contentaccessible=yes
-locale	melampus-greek	en-US		jar:chrome/melampus-greek.jar!/locale/en-US/
-skin	melampus-greek	classic/1.0	jar:chrome/melampus-greek.jar!/skin/
+content alpheios-greek jar:chrome/alpheios-greek.jar!/content/
+content alpheios-greek jar:chrome/alpheios-greek.jar!/content/ contentaccessible=yes
+locale	alpheios-greek	en-US		jar:chrome/alpheios-greek.jar!/locale/en-US/
+skin	alpheios-greek	classic/1.0	jar:chrome/alpheios-greek.jar!/skin/
 
-overlay chrome://melampus/content/melampus-overlay.xul    chrome://melampus-greek/content/melampus-greek.xul
-overlay chrome://melampus/content/melampus-prefs.xul    chrome://melampus-greek/content/melampus-greek-prefs.xul
-style   chrome://global/content/customizeToolbar.xul    chrome://melampus-greek/skin/melampus-greek.css
+overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-greek/content/alpheios-greek.xul
+overlay chrome://alpheios/content/alpheios-prefs.xul    chrome://alpheios-greek/content/alpheios-greek-prefs.xul
+style   chrome://global/content/customizeToolbar.xul    chrome://alpheios-greek/skin/alpheios-greek.css
 

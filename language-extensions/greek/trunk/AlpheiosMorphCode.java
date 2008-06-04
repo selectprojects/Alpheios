@@ -1,12 +1,12 @@
 package perseus.morph;
 
 /**
- * MelampusMorphCode provides a mapping between the morphological
+ * AlpheiosMorphCode provides a mapping between the morphological
  * codes in the database and the representation of those codes
- * within the Java classes using the Melampus enumerated
+ * within the Java classes using the Alpheios enumerated
  * values for the representations and category names.
  */
-public class MelampusMorphCode
+public class AlpheiosMorphCode
 {
     public static final String PART_OF_SPEECH = "pofs";
     public static final String NOUN = "noun";
