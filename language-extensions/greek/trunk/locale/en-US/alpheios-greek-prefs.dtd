@@ -1,0 +1,8 @@
+<!ENTITY alpheios.greek.prefs.title "Greek Settings">
+<!ENTITY alpheios.greek.prefs.url "Greek Services">
+<!ENTITY alpheios.greek.prefs.url.lexicon "Lexicon URL">
+<!ENTITY alpheios.greek.prefs.url.lexicon.request "Lexicon Request Parameters">
+<!ENTITY alpheios.greek.prefs.url.lexicon.timeout "Lexicon Request Timeout">
+<!ENTITY alpheios.greek.prefs.popuptrigger "Greek:">
+<!ENTITY alpheios.greek.prefs.popuptrigger.mousemove "mousemove">
+<!ENTITY alpheios.greek.prefs.popuptrigger.dblclick "dblclick">

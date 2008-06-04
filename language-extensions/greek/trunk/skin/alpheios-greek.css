@@ -1,0 +1,5 @@
+/* unhighlight the grammar links for now */
+.alph-case,.alph-mood,.alph-decl,.alph-conj,.alph-pofs {
+    color: black;
+    cursor: default;
+}

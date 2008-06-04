@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM "chrome://alpheios-greek/locale/alpheios-greek.dtd">
+
+<overlay id="alpheios-greek-overlay" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <menupopup id="alpheios-lang-popup-cm">
+        <menuitem id="alpheios-cm-lang-greek"
+                  label="&alpheios.lang.greek;"
+                  value="greek"
+                  type="checkbox"
+                  hidden="false"/>
+    </menupopup>
+    <menupopup id="alpheios-lang-popup-tm">
+        <menuitem id="alpheios-tm-lang-greek"
+                  label="&alpheios.lang.greek;"
+                  value="greek"
+                  type="checkbox"
+                  hidden="false"/>
+    </menupopup>  
+</overlay>
