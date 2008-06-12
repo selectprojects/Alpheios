@@ -68,6 +68,81 @@ void  logMessage(MessageType, const char*, const char* = NULL, int = 0, int = 0)
 
 //****************************************************************************
 //
+//  hex2char() - convert hexadecimal character to integer value
+//
+//  Parameters:
+//      a_hex           hex char to convert
+//
+//  Return value:
+//      If valid hex character [0-9A-Fa-f], equivalent value (0-15)
+//      If invalid, -1
+//
+//****************************************************************************
+inline  char hex2char(char a_hex)
+{
+    if (('0' <= a_hex) && (a_hex <= '9'))
+        return (a_hex - '0');
+    if (('a' <= a_hex) && (a_hex <= 'f'))
+        return (a_hex - 'a') + 10;
+    if (('A' <= a_hex) && (a_hex <= 'F'))
+        return (a_hex - 'A') + 10;
+    return -1;
+}
+
+//****************************************************************************
+//
+//  decodeURI() - convert escaped URI characters back to original chars
+//
+//  Parameters:
+//      a_uriStart  start of string to convert
+//      a_uriEnd    end of string to convert
+//
+//  Return value:
+//      converted string
+//
+//****************************************************************************
+string decodeURI(const char* a_uriStart, const char* a_uriEnd)
+{
+    // if too short to have any escape sequences, return whole string
+    if ((a_uriEnd - a_uriStart) < 3)
+        return string(a_uriStart, a_uriEnd);
+
+    // for each character that could start an escape sequence
+    const char* lastStart = a_uriEnd - 2;
+    string      outStr;
+    outStr.reserve(a_uriEnd - a_uriStart);
+    while (a_uriStart < lastStart)
+    {
+        // if possible escape sequence
+        if (*a_uriStart == '%')
+        {
+            char hiNibble = hex2char(a_uriStart[1]);
+            char loNibble;
+
+            // if valid escape sequence (% plus two hex digits)
+            if ((hiNibble != -1) && ((loNibble = hex2char(a_uriStart[2])) != -1))
+            {
+                // add to string and skip escape sequence
+                outStr += char((hiNibble << 4) + loNibble);
+                a_uriStart += 3;
+                continue;
+            }
+            // otherwise, fall through and treat as non-escape
+        }
+
+        // not an escaped character
+        outStr += *a_uriStart++;
+    }
+
+    // copy last characters
+    while (a_uriStart < a_uriEnd)
+        outStr += *a_uriStart++;
+
+    return outStr;
+}
+
+//****************************************************************************
+//
 //  usage() - give usage message
 //
 //  Parameters:
@@ -728,8 +803,11 @@ int main(int a_argc, char** a_argv)
             ++argStart;
         const char* argEnd = buffer + len;
         const char* argDelim = find(argStart, argEnd, '?');
-        string      label(argStart, argDelim);
-        string      args(argDelim, argEnd);
+        string      label = decodeURI(argStart, argDelim);
+        string      args = decodeURI(argDelim, argEnd);
+        strcpy(buffer, label.c_str());
+        strcat(buffer, args.c_str());
+        logMessage(MT_INFO, "decoded", buffer);
 
         // check for special requests
         SpecialType special = handleSpecial(label, socketFd);
