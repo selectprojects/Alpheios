@@ -1,0 +1,65 @@
+body {
+    margin: 1em;
+    font-size: 1em;
+}
+
+
+table {
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+td {
+    border: 1px solid;
+}
+
+.foreign {
+    font-family: "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif;
+}
+
+
+/* toc styls */
+ul.toc {
+    margin:0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding: 0;
+}
+
+li.toc {
+    margin-left: .5em; 
+    margin-left: .5em; 
+    text-align: left;
+    text-indent: -.5em;
+}
+.toc-widget {
+    float: left;
+    cursor: pointer;
+}
+
+.toc-closed:before {
+     content: "[+] ";
+     color: blue;
+}
+.toc-open:before {
+     content: "[-] ";
+     color: blue;
+}
+
+.toc {
+    font-size: .95em;
+}
+
+.highlighted {
+    font-weight: bold;
+}       
+
+.perseus-funder {
+    font-size: small;
+    font-style: italic;
+    text-align: center;
+}
+
+.upLink, .nextLink, .navigation {
+    font-size: small;
+}
