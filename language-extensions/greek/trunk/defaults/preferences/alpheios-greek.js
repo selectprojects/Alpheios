@@ -7,4 +7,12 @@ pref("extensions.alpheios.greek.url.lexicon", 'http://perseus.harrysdell.com:802
 pref("extensions.alpheios.greek.url.lexicon.request", "/hopper/alpheios/xmlmorph-alph.jsp?word=<WORD>&input=Unicode");
 pref("extensions.alpheios.greek.url.lexicon.timeout",10000);
 pref("extensions.alpheios.greek.popuptrigger",'mousemove');
+pref("extensions.alpheios.greek.url.grammar",
+     "chrome://alpheios-greek/content/alph-greek-grammar.xul");
+pref("extensions.alpheios.greek.grammar.hotlinks",
+     "alph-decl,alph-pofs,alph-mood,alph-case,alph-voice,alph-pers,alph-tense");
+pref("extensions.alpheios.greek.features.alpheios-grammar",true);
+pref("extensions.alpheios.greek.context_handler","grammarContext");
+
+
             

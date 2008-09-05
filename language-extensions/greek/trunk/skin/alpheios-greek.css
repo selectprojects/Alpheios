@@ -1,5 +1,11 @@
-/* unhighlight the grammar links for now */
-.alph-case,.alph-mood,.alph-decl,.alph-conj,.alph-pofs {
+/* unhighlight the grammar conj links for now */
+.alph-conj {
     color: black;
     cursor: default;
+}
+
+/* add highlighting to some other grammar terms */
+.alph-tense,.alph-voice,.alph-pers {
+    color:blue;
+    cursor: pointer;
 }
