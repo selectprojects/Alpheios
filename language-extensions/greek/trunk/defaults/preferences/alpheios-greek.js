@@ -13,6 +13,7 @@ pref("extensions.alpheios.greek.grammar.hotlinks",
      "alph-decl,alph-pofs,alph-mood,alph-case,alph-voice,alph-pers,alph-tense");
 pref("extensions.alpheios.greek.features.alpheios-grammar",true);
 pref("extensions.alpheios.greek.context_handler","grammarContext");
+pref("extensions.alpheios.greek.shift_handler","handleInflections");
 
 
             

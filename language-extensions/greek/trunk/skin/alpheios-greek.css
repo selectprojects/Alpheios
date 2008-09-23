@@ -9,3 +9,7 @@
     color:blue;
     cursor: pointer;
 }
+
+.alph-hdwd, .alph-phrase, .alph-term {
+    font-family: "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif;
+}

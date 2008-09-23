@@ -4,6 +4,7 @@
 
 <overlay id="alpheios-greek-overlay" 
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="chrome://alpheios-greek/content/alpheios-greek-langtool.js" />
     <menupopup id="alpheios-lang-popup-cm">
         <menuitem id="alpheios-cm-lang-greek"
                   label="&alpheios.lang.greek;"
