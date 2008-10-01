@@ -17,6 +17,7 @@
      7-Dec-2007       mgursky        Original version (adapted from WordsXML.xsd)
      7-Dec-2007       mgursky        Add <unknown> and <error> elements
     13-Dec-2007       mgursky        Add case and part-of-speech order attributes
+     1-Oct-2008       mgursky        Add <form> element to <word>
 -->
     <xs:import namespace="http://www.w3.org/XML/1998/namespace"
                schemaLocation="xml-1998.xsd"/>
@@ -32,7 +33,7 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence maxOccurs="unbounded">
-                <xs:element name="phrase" type="xs:string" minOccurs="0">
+                <xs:element name="phrase" type="TextType" minOccurs="0">
                     <xs:annotation>
                         <xs:documentation>Input phrase</xs:documentation>
                     </xs:annotation>
@@ -64,6 +65,7 @@
         </xs:annotation>
         <xs:complexType>
             <xs:sequence>
+                <xs:element name="form" type="TextType" minOccurs="0"/>
                 <xs:element name="entry" type="EntryType" maxOccurs="unbounded"/>
             </xs:sequence>
         </xs:complexType>
@@ -87,7 +89,7 @@
             <xs:documentation>Dictionary details of entry</xs:documentation>
         </xs:annotation>
         <xs:sequence>
-            <xs:element name="hdwd" type="HeadwordType" minOccurs="0"/>
+            <xs:element name="hdwd" type="TextType" minOccurs="0"/>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                 <xs:element name="age" type="AgeType"/>
                 <xs:element name="area" type="xs:string"/>
@@ -148,10 +150,10 @@
         <xs:attribute name="order" type="xs:positiveInteger"/>
     </xs:complexType>
 
-    <xs:complexType name="HeadwordType" mixed="true">
+    <xs:complexType name="TextType" mixed="true">
         <xs:attribute ref="xml:lang"/>
     </xs:complexType>
-    
+
     <xs:complexType name="PartOfSpeechType">
         <xs:simpleContent>
             <xs:extension base="PartOfSpeechEnumeration">
@@ -278,7 +280,6 @@
             <xs:enumeration value="inanimate masculine"/>
         </xs:restriction>
     </xs:simpleType>
-
 
     <xs:simpleType name="MoodEnumeration">
         <xs:annotation>
