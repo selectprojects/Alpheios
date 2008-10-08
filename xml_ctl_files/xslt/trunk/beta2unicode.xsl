@@ -3,9 +3,11 @@
   xmlns:aldt="http://treebank.alpheios.net/namespaces/aldt">
 
   <xsl:variable name="beta-uni-table"
-    select="document('beta-uni-tables.xml')/*/aldt:beta-uni-table"/>
-  <xsl:variable name="uppers">ABCDEFGHIJKLMNOPQRSTUVWXYZ</xsl:variable>
-  <xsl:variable name="lowers">abcdefghijklmnopqrstuvwxyz</xsl:variable>
+                select="document('beta-uni-tables.xml')/*/aldt:beta-uni-table"/>
+  
+  <!-- Upper/lower tables.  Note: J is not a valid betacode base character. -->
+  <xsl:variable name="beta-uppers">ABCDEFGHIKLMNOPQRSTUVWXYZ</xsl:variable>
+  <xsl:variable name="beta-lowers">abcdefghiklmnopqrstuvwxyz</xsl:variable>
 
   <!--
       Convert Greek betacode to Unicode
@@ -145,9 +147,9 @@
       <xsl:otherwise>
         <!-- translate to lower and back -->
         <xsl:variable name="lowerchar"
-          select="translate($char, $uppers, $lowers)"/>
+          select="translate($char, $beta-uppers, $beta-lowers)"/>
         <xsl:variable name="upperchar"
-          select="translate($char, $lowers, $uppers)"/>
+          select="translate($char, $beta-lowers, $beta-uppers)"/>
         <xsl:choose>
           <!-- if upper != lower, we have a letter -->
           <xsl:when test="$lowerchar != $upperchar">
@@ -211,8 +213,8 @@
           <xsl:value-of select="$value"/>
         </xsl:when>
 
-        <!-- if key not found -->
-        <xsl:otherwise>
+        <!-- if key not found and contains multiple chars -->
+        <xsl:when test="$keylen > 1">
           <!-- lookup key with last char removed -->
           <xsl:apply-templates select="$beta-uni-table">
             <xsl:with-param name="key" select="substring($key, 1, $keylen - 1)"/>
@@ -224,8 +226,10 @@
             <xsl:with-param name="key" select="substring($key, $keylen)"/>
             <xsl:with-param name="precomposed" select="false()"/>
           </xsl:apply-templates>
-        </xsl:otherwise>
+        </xsl:when>
       </xsl:choose>
+
+      <!-- otherwise, ignore it (probably an errant *) -->
     </xsl:if>
 
   </xsl:template>
