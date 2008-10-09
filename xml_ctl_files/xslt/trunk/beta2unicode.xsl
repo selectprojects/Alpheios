@@ -2,6 +2,8 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
   xmlns:aldt="http://treebank.alpheios.net/namespaces/aldt">
 
+  <xsl:import href="beta-uni-util.xsl"/>
+
   <xsl:variable name="beta2uni-table"
     select="document('beta-uni-tables.xml')/*/aldt:beta-uni-table"/>
 
@@ -32,13 +34,12 @@
     <xsl:param name="precomposed" select="true()"/>
 
     <xsl:variable name="head" select="substring($input, 1, 1)"/>
-    <xsl:variable name="beta-diacritics">()+/\\=|_^</xsl:variable>
 
     <xsl:choose>
       <!-- if no more input -->
       <xsl:when test="string-length($input) = 0">
         <!-- output last pending char -->
-        <xsl:call-template name="output-char">
+        <xsl:call-template name="output-uni-char">
           <xsl:with-param name="char" select="$pending"/>
           <xsl:with-param name="state" select="$state"/>
           <xsl:with-param name="precomposed" select="$precomposed"/>
@@ -48,7 +49,7 @@
       <!-- if input starts with "*" -->
       <xsl:when test="$head = '*'">
         <!-- output pending char -->
-        <xsl:call-template name="output-char">
+        <xsl:call-template name="output-uni-char">
           <xsl:with-param name="char" select="$pending"/>
           <xsl:with-param name="state" select="$state"/>
           <xsl:with-param name="precomposed" select="$precomposed"/>
@@ -67,7 +68,7 @@
       <xsl:when test="contains($beta-diacritics, $head)">
         <!-- update state with new character -->
         <xsl:variable name="newstate">
-          <xsl:call-template name="insert-char">
+          <xsl:call-template name="insert-diacritic">
             <xsl:with-param name="string" select="$state"/>
             <xsl:with-param name="char" select="$head"/>
           </xsl:call-template>
@@ -85,7 +86,7 @@
       <!-- if not special char -->
       <xsl:otherwise>
         <!-- output pending char -->
-        <xsl:call-template name="output-char">
+        <xsl:call-template name="output-uni-char">
           <xsl:with-param name="char" select="$pending"/>
           <xsl:with-param name="state" select="$state"/>
           <xsl:with-param name="precomposed" select="$precomposed"/>
@@ -119,7 +120,7 @@
         $state        diacritics associated with character
         $precomposed  whether to put out precomposed or decomposed Unicode
   -->
-  <xsl:template name="output-char">
+  <xsl:template name="output-uni-char">
     <xsl:param name="char"/>
     <xsl:param name="state"/>
     <xsl:param name="precomposed"/>
@@ -133,7 +134,7 @@
                       (substring($state, 1, 1) != '*')">
           <!-- output just the state -->
           <!-- here precomposed=true means don't make it combining -->
-          <xsl:apply-templates select="$beta2uni-table">
+          <xsl:apply-templates select="$beta2uni-table" mode="b2u">
             <xsl:with-param name="key" select="$state"/>
             <xsl:with-param name="precomposed" select="true()"/>
           </xsl:apply-templates>
@@ -142,10 +143,6 @@
 
       <!-- if character is pending -->
       <xsl:otherwise>
-        <!-- Upper/lower tables.  Note: J is not a valid betacode base character. -->
-        <xsl:variable name="beta-uppers">ABCDEFGHIKLMNOPQRSTUVWXYZ</xsl:variable>
-        <xsl:variable name="beta-lowers">abcdefghiklmnopqrstuvwxyz</xsl:variable>
-
         <!-- translate to lower and back -->
         <xsl:variable name="lowerchar"
           select="translate($char, $beta-uppers, $beta-lowers)"/>
@@ -155,7 +152,7 @@
           <!-- if upper != lower, we have a letter -->
           <xsl:when test="$lowerchar != $upperchar">
             <!-- use letter+state as key into table -->
-            <xsl:apply-templates select="$beta2uni-table">
+            <xsl:apply-templates select="$beta2uni-table" mode="b2u">
               <xsl:with-param name="key" select="concat($lowerchar, $state)"/>
               <xsl:with-param name="precomposed" select="$precomposed"/>
             </xsl:apply-templates>
@@ -167,7 +164,7 @@
             <!-- this handles the case of isolated diacritics -->
             <xsl:value-of select="$char"/>
             <xsl:if test="string-length($state) > 0">
-              <xsl:apply-templates select="$beta2uni-table">
+              <xsl:apply-templates select="$beta2uni-table" mode="b2u">
                 <xsl:with-param name="key" select="$state"/>
                 <xsl:with-param name="precomposed" select="$precomposed"/>
               </xsl:apply-templates>
@@ -186,7 +183,7 @@
   -->
   <xsl:key name="beta-uni-lookup" match="aldt:beta-uni-table/aldt:entry"
     use="aldt:beta"/>
-  <xsl:template match="aldt:beta-uni-table">
+  <xsl:template match="aldt:beta-uni-table" mode="b2u">
     <xsl:param name="key"/>
     <xsl:param name="precomposed"/>
 
@@ -217,13 +214,13 @@
         <!-- if key not found and contains multiple chars -->
         <xsl:when test="$keylen > 1">
           <!-- lookup key with last char removed -->
-          <xsl:apply-templates select="$beta2uni-table">
+          <xsl:apply-templates select="$beta2uni-table" mode="b2u">
             <xsl:with-param name="key" select="substring($key, 1, $keylen - 1)"/>
             <xsl:with-param name="precomposed" select="$precomposed"/>
           </xsl:apply-templates>
           <!-- convert last char -->
           <!-- precomposed=false means make sure it's a combining form -->
-          <xsl:apply-templates select="$beta2uni-table">
+          <xsl:apply-templates select="$beta2uni-table" mode="b2u">
             <xsl:with-param name="key" select="substring($key, $keylen)"/>
             <xsl:with-param name="precomposed" select="false()"/>
           </xsl:apply-templates>
@@ -232,100 +229,6 @@
 
       <!-- otherwise, ignore it (probably an errant *) -->
     </xsl:if>
-
-  </xsl:template>
-
-  <!--
-      Insert character in sorted order in string
-      Parameters:
-        $string       existing string
-        $char         character to be inserted
-        
-      Output:
-        updated string with character inserted in canonical order
-  -->
-  <xsl:template name="insert-char">
-    <xsl:param name="string"/>
-    <xsl:param name="char"/>
-
-    <xsl:choose>
-      <!-- if empty string, use char -->
-      <xsl:when test="string-length($string) = 0">
-        <xsl:value-of select="$char"/>
-      </xsl:when>
-
-      <xsl:otherwise>
-        <!-- find order of char and head of string -->
-        <xsl:variable name="head" select="substring($string, 1, 1)"/>
-        <xsl:variable name="charOrder">
-          <xsl:call-template name="beta-order">
-            <xsl:with-param name="beta" select="$char"/>
-          </xsl:call-template>
-        </xsl:variable>
-        <xsl:variable name="headOrder">
-          <xsl:call-template name="beta-order">
-            <xsl:with-param name="beta" select="$head"/>
-          </xsl:call-template>
-        </xsl:variable>
-
-        <xsl:choose>
-          <!-- if new char is greater than head, insert it in remainder -->
-          <xsl:when test="number($charOrder) > number($headOrder)">
-            <xsl:variable name="tail">
-              <xsl:call-template name="insert-char">
-                <xsl:with-param name="string" select="substring($string, 2)"/>
-                <xsl:with-param name="char" select="$char"/>
-              </xsl:call-template>
-            </xsl:variable>
-            <xsl:value-of select="concat($head, $tail)"/>
-          </xsl:when>
-
-          <!-- if same as head, discard it (don't want duplicates) -->
-          <xsl:when test="number($charOrder) = number($headOrder)">
-            <xsl:value-of select="$string"/>
-          </xsl:when>
-
-          <!-- if new char comes before head -->
-          <xsl:otherwise>
-            <xsl:value-of select="concat($char, $string)"/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:otherwise>
-    </xsl:choose>
-  </xsl:template>
-
-  <!--
-      Define canonical order of diacritics
-      Parameter:
-        $beta        betacode diacritic character
-        
-      Output:
-        numerical order of character in canonical ordering
-  -->
-  <xsl:template name="beta-order">
-    <xsl:param name="beta"/>
-    <xsl:choose>
-      <!-- capitalization -->
-      <xsl:when test="$beta = '*'">0</xsl:when>
-      <!-- dasia -->
-      <xsl:when test="$beta = '('">1</xsl:when>
-      <!-- psili -->
-      <xsl:when test="$beta = ')'">2</xsl:when>
-      <!-- diaeresis -->
-      <xsl:when test="$beta = '+'">3</xsl:when>
-      <!-- acute -->
-      <xsl:when test="$beta = '/'">4</xsl:when>
-      <!-- grave -->
-      <xsl:when test="$beta = '\'">5</xsl:when>
-      <!-- perispomeni -->
-      <xsl:when test="$beta = '='">6</xsl:when>
-      <!-- ypogegrammeni -->
-      <xsl:when test="$beta = '|'">7</xsl:when>
-      <!-- macron -->
-      <xsl:when test="$beta = '_'">8</xsl:when>
-      <!-- breve -->
-      <xsl:when test="$beta = '^'">9</xsl:when>
-    </xsl:choose>
   </xsl:template>
 
 </xsl:stylesheet>
