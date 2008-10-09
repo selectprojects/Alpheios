@@ -2,12 +2,8 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
   xmlns:aldt="http://treebank.alpheios.net/namespaces/aldt">
 
-  <xsl:variable name="beta-uni-table"
-                select="document('beta-uni-tables.xml')/*/aldt:beta-uni-table"/>
-  
-  <!-- Upper/lower tables.  Note: J is not a valid betacode base character. -->
-  <xsl:variable name="beta-uppers">ABCDEFGHIKLMNOPQRSTUVWXYZ</xsl:variable>
-  <xsl:variable name="beta-lowers">abcdefghiklmnopqrstuvwxyz</xsl:variable>
+  <xsl:variable name="beta2uni-table"
+    select="document('beta-uni-tables.xml')/*/aldt:beta-uni-table"/>
 
   <!--
       Convert Greek betacode to Unicode
@@ -36,6 +32,7 @@
     <xsl:param name="precomposed" select="true()"/>
 
     <xsl:variable name="head" select="substring($input, 1, 1)"/>
+    <xsl:variable name="beta-diacritics">()+/\\=|_^</xsl:variable>
 
     <xsl:choose>
       <!-- if no more input -->
@@ -67,7 +64,7 @@
       </xsl:when>
 
       <!-- if input starts with diacritic -->
-      <xsl:when test="contains('()+/\\=|_^', $head)">
+      <xsl:when test="contains($beta-diacritics, $head)">
         <!-- update state with new character -->
         <xsl:variable name="newstate">
           <xsl:call-template name="insert-char">
@@ -136,7 +133,7 @@
                       (substring($state, 1, 1) != '*')">
           <!-- output just the state -->
           <!-- here precomposed=true means don't make it combining -->
-          <xsl:apply-templates select="$beta-uni-table">
+          <xsl:apply-templates select="$beta2uni-table">
             <xsl:with-param name="key" select="$state"/>
             <xsl:with-param name="precomposed" select="true()"/>
           </xsl:apply-templates>
@@ -145,6 +142,10 @@
 
       <!-- if character is pending -->
       <xsl:otherwise>
+        <!-- Upper/lower tables.  Note: J is not a valid betacode base character. -->
+        <xsl:variable name="beta-uppers">ABCDEFGHIKLMNOPQRSTUVWXYZ</xsl:variable>
+        <xsl:variable name="beta-lowers">abcdefghiklmnopqrstuvwxyz</xsl:variable>
+
         <!-- translate to lower and back -->
         <xsl:variable name="lowerchar"
           select="translate($char, $beta-uppers, $beta-lowers)"/>
@@ -154,7 +155,7 @@
           <!-- if upper != lower, we have a letter -->
           <xsl:when test="$lowerchar != $upperchar">
             <!-- use letter+state as key into table -->
-            <xsl:apply-templates select="$beta-uni-table">
+            <xsl:apply-templates select="$beta2uni-table">
               <xsl:with-param name="key" select="concat($lowerchar, $state)"/>
               <xsl:with-param name="precomposed" select="$precomposed"/>
             </xsl:apply-templates>
@@ -166,7 +167,7 @@
             <!-- this handles the case of isolated diacritics -->
             <xsl:value-of select="$char"/>
             <xsl:if test="string-length($state) > 0">
-              <xsl:apply-templates select="$beta-uni-table">
+              <xsl:apply-templates select="$beta2uni-table">
                 <xsl:with-param name="key" select="$state"/>
                 <xsl:with-param name="precomposed" select="$precomposed"/>
               </xsl:apply-templates>
@@ -216,13 +217,13 @@
         <!-- if key not found and contains multiple chars -->
         <xsl:when test="$keylen > 1">
           <!-- lookup key with last char removed -->
-          <xsl:apply-templates select="$beta-uni-table">
+          <xsl:apply-templates select="$beta2uni-table">
             <xsl:with-param name="key" select="substring($key, 1, $keylen - 1)"/>
             <xsl:with-param name="precomposed" select="$precomposed"/>
           </xsl:apply-templates>
           <!-- convert last char -->
           <!-- precomposed=false means make sure it's a combining form -->
-          <xsl:apply-templates select="$beta-uni-table">
+          <xsl:apply-templates select="$beta2uni-table">
             <xsl:with-param name="key" select="substring($key, $keylen)"/>
             <xsl:with-param name="precomposed" select="false()"/>
           </xsl:apply-templates>
