@@ -6,7 +6,16 @@
   <stem-table>
     <stem decl="1st">α</stem>
     <stem decl="2nd">ο</stem>
-    <stem decl="3rd">consonants, dipthongs, ι, ω</stem>
+    <stem decl="3rd">Consonants, Dipthongs, ι, ω
+        <stem-class id="stem-6">STEMS IN ι and υ</stem-class>
+        <stem-class id="stem-3">π-MUTE/κ-MUTE or LABIAL/PALATAL (no neuter)</stem-class>
+        <stem-class id="stem-7">STEMS IN DIPTHONG (ευ,αυ,ου) (no neuter)</stem-class>
+        <stem-class id="stem-2">ω-STEM (no feminine or neuter)</stem-class>
+        <stem-class id="stem-8">(οι) (no masculine or neuter)</stem-class>
+        <stem-class id="stem-1">τ-MUTE or DENTAL (τ,δ,θ,ατ)</stem-class>
+        <stem-class id="stem-4">LIQUID, NASAL (incl. SYNCOPATED LIQUID)(λ,ρ) (ν) (ερ >> ρ) (no neuter)</stem-class>
+        <stem-class id="stem-5">STEMS IN σ (εσ,ας,ος) (no masculine)</stem-class>
+    </stem>
   </stem-table>
   <order-table>
     <order-item attname="decl" order="1">1st</order-item>
@@ -17,12 +26,13 @@
     <order-item attname="case" order="3">dative</order-item>
     <order-item attname="case" order="4">accusative</order-item>
     <order-item attname="case" order="5">vocative</order-item>
-    <order-item attname="gend" order="1">masculine</order-item>
+    <order-item attname="gend" order="1">masculine feminine</order-item>
     <order-item attname="gend" order="2">feminine</order-item>
-    <order-item attname="gend" order="3">common</order-item>
-    <order-item attname="gend" order="4">neuter</order-item>
-    <order-item attname="type" order="1">regular</order-item>
-    <order-item attname="type" order="2">irregular</order-item>
+    <order-item attname="gend" order="3">masculine</order-item>
+    <order-item attname="gend" order="4">common</order-item>
+    <order-item attname="gend" order="5">neuter</order-item>
+    <order-item attname="type" order="2">regular</order-item>
+    <order-item attname="type" order="3">irregular</order-item>
     <order-item attname="num" order="1">singular</order-item>
     <order-item attname="num" order="2">dual</order-item>
     <order-item attname="num" order="3">plural</order-item>
@@ -46,68 +56,68 @@
     <infl-ending-set
       num="dual" decl="1st" case="accusative" gend="feminine">
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="dative" gend="feminine">
         <infl-ending
-              type="regular">αιν</infl-ending>
+               type="regular">αιν</infl-ending>
         <infl-ending
-              type="regular">αῖν</infl-ending>
+               type="regular">αῖν</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">αιιν</infl-ending>
+              dialects="Homer" type="irregular">αιιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="genitive" gend="feminine">
         <infl-ending
-              type="regular">αιν</infl-ending>
+               type="regular">αιν</infl-ending>
         <infl-ending
-              type="regular">αῖν</infl-ending>
+               type="regular">αῖν</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">αιιν</infl-ending>
+              dialects="Homer" type="irregular">αιιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="nominative" gend="feminine">
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="vocative" gend="feminine">
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="accusative" gend="masculine">
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="dative" gend="masculine">
         <infl-ending
-              type="regular">αιν</infl-ending>
+               type="regular">αιν</infl-ending>
         <infl-ending
-              type="regular">αῖν</infl-ending>
+               type="regular">αῖν</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">αιιν</infl-ending>
+              dialects="Homer" type="irregular">αιιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="genitive" gend="masculine">
         <infl-ending
-              type="regular">αιν</infl-ending>
+               type="regular">αιν</infl-ending>
         <infl-ending
-              type="regular">αῖν</infl-ending>
+               type="regular">αῖν</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">αιιν</infl-ending>
+              dialects="Homer" type="irregular">αιιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="nominative" gend="masculine">
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="vocative" gend="masculine">
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="accusative" gend="neuter">
@@ -142,126 +152,126 @@
     <infl-ending-set
       num="plural" decl="1st" case="accusative" gend="feminine">
         <infl-ending
-              type="regular">ας</infl-ending>
+               type="regular primary">ας</infl-ending>
         <infl-ending
-              type="regular">άς</infl-ending>
+               type="regular">άς</infl-ending>
         <infl-ending
-            footnote="foot-2"  type="regular">ᾶς</infl-ending>
+            footnote="foot-2"   type="regular">ᾶς</infl-ending>
         <infl-ending
-             dialects="Doric" type="irregular">ανς</infl-ending>
+              dialects="Doric" type="irregular">ανς</infl-ending>
         <infl-ending
-             dialects="Aeolic" type="irregular">αις</infl-ending>
+              dialects="Aeolic" type="irregular">αις</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="1st" case="dative" gend="feminine">
         <infl-ending
-              type="regular">αις</infl-ending>
+               type="regular primary">αις</infl-ending>
         <infl-ending
-              type="regular">αῖς</infl-ending>
+               type="regular">αῖς</infl-ending>
         <infl-ending
-              type="regular">ῃσι</infl-ending>
+               type="regular">ῃσι</infl-ending>
         <infl-ending
-              type="regular">ῃς</infl-ending>
+               type="regular">ῃς</infl-ending>
         <infl-ending
-             dialects="Aeolic" type="irregular">αισι</infl-ending>
+              dialects="Aeolic" type="irregular">αισι</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ηφι</infl-ending>
+              dialects="Homer" type="irregular">ηφι</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="1st" case="genitive" gend="feminine">
         <infl-ending
-              type="regular">ῶν</infl-ending>
+               type="regular primary">ῶν</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">αων</infl-ending>
+              dialects="Homer" type="irregular">αων</infl-ending>
         <infl-ending
-             dialects="Ionic" type="irregular">έων</infl-ending>
+              dialects="Ionic" type="irregular">έων</infl-ending>
         <infl-ending
-             dialects="Ionic" type="irregular">ήων</infl-ending>
+              dialects="Ionic" type="irregular">ήων</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ηφι</infl-ending>
+              dialects="Homer" type="irregular">ηφι</infl-ending>
         <infl-ending
-             dialects="Doric" type="irregular">ᾶν</infl-ending>
+              dialects="Doric" type="irregular">ᾶν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="1st" case="nominative" gend="feminine">
         <infl-ending
-              type="regular">αι</infl-ending>
+               type="regular primary">αι </infl-ending>
         <infl-ending
-              type="regular">αί</infl-ending>
+               type="regular">αί</infl-ending>
         <infl-ending
-            footnote="foot-2"  type="regular">αῖ</infl-ending>
+            footnote="foot-2"   type="regular">αῖ </infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="1st" case="vocative" gend="feminine">
         <infl-ending
-              type="regular">αι</infl-ending>
+               type="regular primary">αι </infl-ending>
         <infl-ending
-              type="regular">αί</infl-ending>
+               type="regular">αί</infl-ending>
         <infl-ending
-            footnote="foot-2"  type="regular">αῖ</infl-ending>
+            footnote="foot-2"   type="regular">αῖ </infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="1st" case="accusative" gend="masculine">
         <infl-ending
-              type="regular">ας</infl-ending>
+               type="regular primary">ας</infl-ending>
         <infl-ending
-            footnote="foot-3"  type="regular">ᾶς</infl-ending>
+            footnote="foot-3"   type="regular">ᾶς</infl-ending>
         <infl-ending
-             dialects="Doric" type="irregular">ανς</infl-ending>
+              dialects="Doric" type="irregular">ανς</infl-ending>
         <infl-ending
-             dialects="Aeolic" type="irregular">αις</infl-ending>
+              dialects="Aeolic" type="irregular">αις</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="1st" case="dative" gend="masculine">
         <infl-ending
-              type="regular">αις</infl-ending>
+               type="regular primary">αις</infl-ending>
         <infl-ending
-              type="regular">αῖς</infl-ending>
+               type="regular">αῖς</infl-ending>
         <infl-ending
-              type="regular">ῃσι</infl-ending>
+               type="regular">ῃσι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">ῃσιν</infl-ending>
+            footnote="foot-4"   type="regular">ῃσιν</infl-ending>
         <infl-ending
-              type="regular">ῃς</infl-ending>
+               type="regular">ῃς</infl-ending>
         <infl-ending
-             dialects="Aeolic,Attic" type="irregular">αισι</infl-ending>
+              dialects="Aeolic Attic" type="irregular">αισι</infl-ending>
         <infl-ending
-            footnote="foot-4" dialects="Aeolic,Attic" type="irregular">αισιν</infl-ending>
+            footnote="foot-4"  dialects="Aeolic Attic" type="irregular">αισιν</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ηφι</infl-ending>
+              dialects="Homer" type="irregular">ηφι</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="1st" case="genitive" gend="masculine">
         <infl-ending
-              type="regular">ῶν</infl-ending>
+               type="regular primary">ῶν</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">αων</infl-ending>
+              dialects="Homer" type="irregular">αων</infl-ending>
         <infl-ending
-             dialects="Ionic" type="irregular">έων</infl-ending>
+              dialects="Ionic" type="irregular">έων</infl-ending>
         <infl-ending
-             dialects="Ionic" type="irregular">ήων</infl-ending>
+              dialects="Ionic" type="irregular">ήων</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ηφι</infl-ending>
+              dialects="Homer" type="irregular">ηφι</infl-ending>
         <infl-ending
-             dialects="Doric" type="irregular">ᾶν</infl-ending>
+              dialects="Doric" type="irregular">ᾶν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="1st" case="nominative" gend="masculine">
         <infl-ending
-              type="regular">αι</infl-ending>
+               type="regular primary">αι </infl-ending>
         <infl-ending
-              type="regular">αί</infl-ending>
+               type="regular">αί</infl-ending>
         <infl-ending
-            footnote="foot-3"  type="regular">αῖ</infl-ending>
+            footnote="foot-3"   type="regular">αῖ </infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="1st" case="vocative" gend="masculine">
         <infl-ending
-              type="regular">αι</infl-ending>
+               type="regular primary">αι </infl-ending>
         <infl-ending
-              type="regular">αί</infl-ending>
+               type="regular">αί</infl-ending>
         <infl-ending
-            footnote="foot-3"  type="regular">αῖ</infl-ending>
+            footnote="foot-3"   type="regular">αῖ </infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="1st" case="accusative" gend="neuter">
@@ -296,140 +306,140 @@
     <infl-ending-set
       num="singular" decl="1st" case="accusative" gend="feminine">
         <infl-ending
-              type="regular">ην</infl-ending>
+               type="regular primary">ην</infl-ending>
         <infl-ending
-              type="regular">ήν</infl-ending>
+               type="regular ">ήν</infl-ending>
         <infl-ending
-              type="regular">αν</infl-ending>
+               type="regular primary">αν</infl-ending>
         <infl-ending
-            footnote="foot-2"  type="regular">ᾶν</infl-ending>
+            footnote="foot-2"   type="regular ">ᾶν</infl-ending>
         <infl-ending
-            footnote="foot-2"  type="regular">ῆν</infl-ending>
+            footnote="foot-2"   type="regular ">ῆν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="1st" case="dative" gend="feminine">
         <infl-ending
-              type="regular">ᾳ</infl-ending>
+               type="regular primary">ᾳ</infl-ending>
         <infl-ending
-              type="regular">ῃ</infl-ending>
+               type="regular primary">ῃ</infl-ending>
         <infl-ending
-            footnote="foot-2"  type="regular">ῇ</infl-ending>
+            footnote="foot-2"   type="regular ">ῇ</infl-ending>
         <infl-ending
-            footnote="foot-2"  type="regular">ᾷ</infl-ending>
+            footnote="foot-2"   type="regular ">ᾷ</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ηφι</infl-ending>
+              dialects="Homer" type="irregular">ηφι</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="1st" case="genitive" gend="feminine">
         <infl-ending
-              type="regular">ης</infl-ending>
+               type="regular primary">ης</infl-ending>
         <infl-ending
-              type="regular">ῆs</infl-ending>
+               type="regular ">ῆs</infl-ending>
         <infl-ending
-              type="regular">ας</infl-ending>
+               type="regular primary">ας</infl-ending>
         <infl-ending
-            footnote="foot-2"  type="regular">ᾶs</infl-ending>
+            footnote="foot-2"   type="regular ">ᾶs</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ηφι</infl-ending>
+              dialects="Homer" type="irregular">ηφι</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="1st" case="nominative" gend="feminine">
         <infl-ending
-            footnote="foot-1"  type="regular">η</infl-ending>
+            footnote="foot-1"   type="regular primary">η</infl-ending>
         <infl-ending
-              type="regular">ή</infl-ending>
+               type="regular ">ή</infl-ending>
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular primary">α</infl-ending>
         <infl-ending
-            footnote="foot-2"  type="regular">ᾶ</infl-ending>
+            footnote="foot-2"   type="regular ">ᾶ</infl-ending>
         <infl-ending
-            footnote="foot-2"  type="regular">ῆ</infl-ending>
+            footnote="foot-2"   type="regular ">ῆ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="1st" case="vocative" gend="feminine">
         <infl-ending
-              type="regular">η</infl-ending>
+               type="regular primary">η</infl-ending>
         <infl-ending
-              type="regular">ή</infl-ending>
+               type="regular ">ή</infl-ending>
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular primary">α</infl-ending>
         <infl-ending
-            footnote="foot-2"  type="regular">ᾶ</infl-ending>
+            footnote="foot-2"   type="regular">ᾶ</infl-ending>
         <infl-ending
-            footnote="foot-2"  type="regular">ῆ</infl-ending>
+            footnote="foot-2"   type="regular">ῆ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="1st" case="accusative" gend="masculine">
         <infl-ending
-              type="regular">αν</infl-ending>
+               type="regular primary">αν</infl-ending>
         <infl-ending
-              type="regular">ην</infl-ending>
+               type="regular primary">ην</infl-ending>
         <infl-ending
-              type="regular">ήν</infl-ending>
+               type="regular">ήν</infl-ending>
         <infl-ending
-            footnote="foot-3"  type="regular">ᾶν</infl-ending>
+            footnote="foot-3"   type="regular">ᾶν</infl-ending>
         <infl-ending
-            footnote="foot-3"  type="regular">ῆν</infl-ending>
+            footnote="foot-3"   type="regular">ῆν</infl-ending>
         <infl-ending
-             dialects="Herodotus" type="irregular">εα</infl-ending>
+              dialects="Herodotus" type="irregular">εα</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="1st" case="dative" gend="masculine">
         <infl-ending
-              type="regular">ᾳ</infl-ending>
+               type="regular primary">ᾳ</infl-ending>
         <infl-ending
-              type="regular">ῃ</infl-ending>
+               type="regular primary">ῃ</infl-ending>
         <infl-ending
-              type="regular">ῇ</infl-ending>
+               type="regular">ῇ</infl-ending>
         <infl-ending
-            footnote="foot-3"  type="regular">ᾷ</infl-ending>
+            footnote="foot-3"   type="regular">ᾷ</infl-ending>
         <infl-ending
-            footnote="foot-3"  type="regular">ῆ</infl-ending>
+            footnote="foot-3"   type="regular">ῆ</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ηφι</infl-ending>
+              dialects="Homer" type="irregular">ηφι</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="1st" case="genitive" gend="masculine">
         <infl-ending
-              type="regular">ου</infl-ending>
+               type="regular primary">ου</infl-ending>
         <infl-ending
-              type="regular">οῦ</infl-ending>
+               type="regular">οῦ</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ᾱο</infl-ending>
+              dialects="Homer" type="irregular">ᾱο</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">εω</infl-ending>
+              dialects="Homer" type="irregular">εω</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ηφι</infl-ending>
+              dialects="Homer" type="irregular">ηφι</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ω</infl-ending>
+              dialects="Homer" type="irregular">ω </infl-ending>
         <infl-ending
-             dialects="Doric,Aeolic" type="irregular">α</infl-ending>
+              dialects="Doric Aeolic" type="irregular">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="1st" case="nominative" gend="masculine">
         <infl-ending
-              type="regular">ας</infl-ending>
+               type="regular primary">ας</infl-ending>
         <infl-ending
-              type="regular">ης</infl-ending>
+               type="regular primary">ης</infl-ending>
         <infl-ending
-              type="regular">ής</infl-ending>
+               type="regular">ής</infl-ending>
         <infl-ending
-            footnote="foot-3"  type="regular">ᾶs</infl-ending>
+            footnote="foot-3"   type="regular">ᾶs</infl-ending>
         <infl-ending
-            footnote="foot-3"  type="regular">ῆs</infl-ending>
+            footnote="foot-3"   type="regular">ῆs</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="1st" case="vocative" gend="masculine">
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular primary">α</infl-ending>
         <infl-ending
-              type="regular">η</infl-ending>
+               type="regular primary">η</infl-ending>
         <infl-ending
-              type="regular">ά</infl-ending>
+               type="regular">ά</infl-ending>
         <infl-ending
-            footnote="foot-3"  type="regular">ᾶ</infl-ending>
+            footnote="foot-3"   type="regular">ᾶ</infl-ending>
         <infl-ending
-            footnote="foot-3"  type="regular">ῆ</infl-ending>
+            footnote="foot-3"   type="regular">ῆ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="1st" case="accusative" gend="neuter">
@@ -462,119 +472,90 @@
       num="dual" decl="2nd" case="vocative" gend="common">
     </infl-ending-set>
     <infl-ending-set
-      num="dual" decl="2nd" case="accusative" gend="feminine">
+      num="dual" decl="2nd" case="accusative" gend="masculine feminine">
         <infl-ending
-              type="regular">ώ</infl-ending>
+               type="regular">ω</infl-ending>
+        <infl-ending
+            footnote="foot-5"   type="regular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="dual" decl="2nd" case="dative" gend="feminine">
+      num="dual" decl="2nd" case="dative" gend="masculine feminine">
         <infl-ending
-              type="regular">οῖν</infl-ending>
+               type="regular">οιν</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῴν</infl-ending>
+            footnote="foot-5"   type="regular">οῖν</infl-ending>
+        <infl-ending
+               type="irregular">οιιν</infl-ending>
+        <infl-ending
+            footnote="foot-7"  dialects="Attic" type="irregular">ῴν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="dual" decl="2nd" case="genitive" gend="feminine">
+      num="dual" decl="2nd" case="genitive" gend="masculine feminine">
         <infl-ending
-              type="regular">οῖν</infl-ending>
+               type="regular">ω</infl-ending>
         <infl-ending
-              type="irregular">οιιν</infl-ending>
+            footnote="foot-5"   type="regular">ώ</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῴν</infl-ending>
+               type="regular">οιν</infl-ending>
+        <infl-ending
+            footnote="foot-5"   type="regular">οῖν</infl-ending>
+        <infl-ending
+               type="irregular">οιιν</infl-ending>
+        <infl-ending
+            footnote="foot-7"  dialects="Attic" type="irregular">ῴν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="dual" decl="2nd" case="nominative" gend="feminine">
+      num="dual" decl="2nd" case="nominative" gend="masculine feminine">
         <infl-ending
-              type="regular">ώ</infl-ending>
+            footnote="foot-41"   type="regular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="dual" decl="2nd" case="vocative" gend="feminine">
+      num="dual" decl="2nd" case="vocative" gend="masculine feminine">
         <infl-ending
-              type="regular">ώ</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="dual" decl="2nd" case="accusative" gend="masculine">
+               type="regular">ω</infl-ending>
         <infl-ending
-              type="regular">ω</infl-ending>
-        <infl-ending
-            footnote="foot-5"  type="regular">ώ</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="dual" decl="2nd" case="dative" gend="masculine">
-        <infl-ending
-              type="regular">οιν</infl-ending>
-        <infl-ending
-            footnote="foot-5"  type="regular">οῖν</infl-ending>
-        <infl-ending
-              type="irregular">οιιν</infl-ending>
-        <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῴν</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="dual" decl="2nd" case="genitive" gend="masculine">
-        <infl-ending
-              type="regular">ω</infl-ending>
-        <infl-ending
-            footnote="foot-5"  type="regular">ώ</infl-ending>
-        <infl-ending
-              type="regular">οιν</infl-ending>
-        <infl-ending
-            footnote="foot-5"  type="regular">οῖν</infl-ending>
-        <infl-ending
-              type="irregular">οιιν</infl-ending>
-        <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῴν</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="dual" decl="2nd" case="nominative" gend="masculine">
-    </infl-ending-set>
-    <infl-ending-set
-      num="dual" decl="2nd" case="vocative" gend="masculine">
-        <infl-ending
-              type="regular">ω</infl-ending>
-        <infl-ending
-            footnote="foot-5"  type="regular">ώ</infl-ending>
+            footnote="foot-5"   type="regular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="2nd" case="accusative" gend="neuter">
         <infl-ending
-              type="regular">ω</infl-ending>
+               type="regular">ω</infl-ending>
         <infl-ending
-            footnote="foot-5"  type="regular">ώ</infl-ending>
+            footnote="foot-5"   type="regular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="2nd" case="dative" gend="neuter">
         <infl-ending
-              type="regular">οιν</infl-ending>
+               type="regular">οιν</infl-ending>
         <infl-ending
-            footnote="foot-5"  type="regular">οῖν</infl-ending>
+            footnote="foot-5"   type="regular">οῖν</infl-ending>
         <infl-ending
-              type="irregular">οιιν</infl-ending>
+               type="irregular">οιιν</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῴν</infl-ending>
+            footnote="foot-7"  dialects="Attic" type="irregular">ῴν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="2nd" case="genitive" gend="neuter">
         <infl-ending
-              type="regular">οιν</infl-ending>
+               type="regular">οιν</infl-ending>
         <infl-ending
-            footnote="foot-5"  type="regular">οῖν</infl-ending>
+            footnote="foot-5"   type="regular">οῖν</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῴν</infl-ending>
+            footnote="foot-7"  dialects="Attic" type="irregular">ῴν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="2nd" case="nominative" gend="neuter">
         <infl-ending
-              type="regular">ω</infl-ending>
+               type="regular">ω</infl-ending>
         <infl-ending
-            footnote="foot-5"  type="regular">ώ</infl-ending>
+            footnote="foot-5"   type="regular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="2nd" case="vocative" gend="neuter">
         <infl-ending
-              type="regular">ω</infl-ending>
+               type="regular">ω</infl-ending>
         <infl-ending
-            footnote="foot-5"  type="regular">ώ</infl-ending>
+            footnote="foot-5"   type="regular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="2nd" case="accusative" gend="common">
@@ -592,147 +573,108 @@
       num="plural" decl="2nd" case="vocative" gend="common">
     </infl-ending-set>
     <infl-ending-set
-      num="plural" decl="2nd" case="accusative" gend="feminine">
+      num="plural" decl="2nd" case="accusative" gend="masculine feminine">
         <infl-ending
-              type="regular">ούς</infl-ending>
+            footnote="foot-41"   type="regular">ούς</infl-ending>
         <infl-ending
-             dialects="Cretan" type="irregular">ονς</infl-ending>
+               type="regular primary">ους</infl-ending>
         <infl-ending
-             dialects="Cretan,Doric" type="irregular">ος</infl-ending>
+            footnote="foot-5"   type="regular">οῦς</infl-ending>
         <infl-ending
-             dialects="Doric" type="irregular">ως</infl-ending>
+              dialects="Cretan" type="irregular">ονς</infl-ending>
         <infl-ending
-             dialects="Aeolic" type="irregular">οις</infl-ending>
+              dialects="Cretan Doric" type="irregular">ος</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ώς</infl-ending>
+              dialects="Doric" type="irregular">ως</infl-ending>
+        <infl-ending
+              dialects="Aeolic" type="irregular">οις</infl-ending>
+        <infl-ending
+            footnote="foot-7"  dialects="Attic" type="irregular">ώς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="plural" decl="2nd" case="dative" gend="feminine">
+      num="plural" decl="2nd" case="dative" gend="masculine feminine">
         <infl-ending
-              type="regular">οῖς</infl-ending>
+               type="regular primary">οις</infl-ending>
         <infl-ending
-             dialects="Homer,Plato,Aelic,Ionic,Poetry" type="irregular">οισι</infl-ending>
+            footnote="foot-5"   type="regular">οῖς</infl-ending>
         <infl-ending
-             dialects="Homer,Plato,Aelic,Ionic,Poetry" type="irregular">οισιν</infl-ending>
+              dialects="Homer Plato Aelic Ionic Poetry" type="irregular">οισι</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῴς</infl-ending>
+              dialects="Homer Plato Aelic Ionic Poetry" type="irregular">οισιν</infl-ending>
+        <infl-ending
+               type="irregular">ῴς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="plural" decl="2nd" case="genitive" gend="feminine">
+      num="plural" decl="2nd" case="genitive" gend="masculine feminine">
         <infl-ending
-              type="regular">ῶν</infl-ending>
+               type="regular primary">ων</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ών</infl-ending>
+            footnote="foot-5"   type="regular">ῶν</infl-ending>
+        <infl-ending
+            footnote="foot-7"  dialects="Attic" type="irregular">ών</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="plural" decl="2nd" case="nominative" gend="feminine">
+      num="plural" decl="2nd" case="nominative" gend="masculine feminine">
         <infl-ending
-              type="regular">οί</infl-ending>
+            footnote="foot-41"   type="regular">οί</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῴ</infl-ending>
+               type="regular primary">οι</infl-ending>
+        <infl-ending
+            footnote="foot-5"   type="regular">οῖ</infl-ending>
+        <infl-ending
+            footnote="foot-7"  dialects="Attic" type="irregular">ῴ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="plural" decl="2nd" case="vocative" gend="feminine">
+      num="plural" decl="2nd" case="vocative" gend="masculine feminine">
         <infl-ending
-              type="regular">οί</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="plural" decl="2nd" case="accusative" gend="masculine">
+            footnote="foot-41"   type="regular">οί</infl-ending>
         <infl-ending
-              type="regular">ους</infl-ending>
+            footnote="foot-42"   type="regular primary">οι</infl-ending>
         <infl-ending
-            footnote="foot-5"  type="regular">οῦς</infl-ending>
-        <infl-ending
-             dialects="Cretan" type="irregular">ονς</infl-ending>
-        <infl-ending
-             dialects="Cretan,Doric" type="irregular">ος</infl-ending>
-        <infl-ending
-             dialects="Doric" type="irregular">ως</infl-ending>
-        <infl-ending
-             dialects="Aeolic" type="irregular">οις</infl-ending>
-        <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ώς</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="plural" decl="2nd" case="dative" gend="masculine">
-        <infl-ending
-              type="regular">οις</infl-ending>
-        <infl-ending
-            footnote="foot-5"  type="regular">οῖς</infl-ending>
-        <infl-ending
-             dialects="Homer,Plato,Aelic,Ionic,Poetry" type="irregular">οισι</infl-ending>
-        <infl-ending
-             dialects="Homer,Plato,Aelic,Ionic,Poetry" type="irregular">οισιν</infl-ending>
-        <infl-ending
-              type="irregular">ῴς</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="plural" decl="2nd" case="genitive" gend="masculine">
-        <infl-ending
-              type="regular">ων</infl-ending>
-        <infl-ending
-            footnote="foot-5"  type="regular">ῶν</infl-ending>
-        <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ών</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="plural" decl="2nd" case="nominative" gend="masculine">
-        <infl-ending
-              type="regular">οι</infl-ending>
-        <infl-ending
-            footnote="foot-5"  type="regular">οῖ</infl-ending>
-        <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῴ</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="plural" decl="2nd" case="vocative" gend="masculine">
-        <infl-ending
-              type="regular">οι</infl-ending>
-        <infl-ending
-            footnote="foot-5"  type="regular">οῖ</infl-ending>
+            footnote="foot-5"   type="regular">οῖ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="2nd" case="accusative" gend="neuter">
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular primary">α</infl-ending>
         <infl-ending
-            footnote="foot-6"  type="regular">ᾶ</infl-ending>
+            footnote="foot-6"   type="regular">ᾶ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="2nd" case="dative" gend="neuter">
         <infl-ending
-              type="regular">οις</infl-ending>
+               type="regular primary">οις</infl-ending>
         <infl-ending
-            footnote="foot-6"  type="regular">οῖς</infl-ending>
+            footnote="foot-6"   type="regular">οῖς</infl-ending>
         <infl-ending
-             dialects="Homer,Plato,Aelic,Ionic,Poetry" type="irregular">οισι</infl-ending>
+              dialects="Homer Plato Aelic Ionic Poetry" type="irregular">οισι</infl-ending>
         <infl-ending
-             dialects="Homer,Plato,Aelic,Ionic,Poetry" type="irregular">οισιν</infl-ending>
+              dialects="Homer Plato Aelic Ionic Poetry" type="irregular">οισιν</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῴς</infl-ending>
+            footnote="foot-7"  dialects="Attic" type="irregular">ῴς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="2nd" case="genitive" gend="neuter">
         <infl-ending
-              type="regular">ων</infl-ending>
+               type="regular primary">ων</infl-ending>
         <infl-ending
-            footnote="foot-6"  type="regular">ῶν</infl-ending>
+            footnote="foot-6"   type="regular">ῶν</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ών</infl-ending>
+            footnote="foot-7"  dialects="Attic" type="irregular">ών</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="2nd" case="nominative" gend="neuter">
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular primary">α</infl-ending>
         <infl-ending
-            footnote="foot-6"  type="regular">ᾶ</infl-ending>
+            footnote="foot-6"   type="regular">ᾶ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="2nd" case="vocative" gend="neuter">
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular primary">α</infl-ending>
         <infl-ending
-            footnote="foot-6"  type="regular">ᾶ</infl-ending>
+            footnote="foot-6"   type="regular">ᾶ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="2nd" case="accusative" gend="common">
@@ -750,1109 +692,872 @@
       num="singular" decl="2nd" case="vocative" gend="common">
     </infl-ending-set>
     <infl-ending-set
-      num="singular" decl="2nd" case="accusative" gend="feminine">
+      num="singular" decl="2nd" case="accusative" gend="masculine feminine">
         <infl-ending
-              type="regular">όν</infl-ending>
+            footnote="foot-41"   type="regular">όν</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ών</infl-ending>
+               type="regular primary">ον</infl-ending>
+        <infl-ending
+               type="regular">οῦν</infl-ending>
+        <infl-ending
+            footnote="foot-7"  dialects="Attic" type="irregular">ών</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="singular" decl="2nd" case="dative" gend="feminine">
+      num="singular" decl="2nd" case="dative" gend="masculine feminine">
         <infl-ending
-              type="regular">ῷ</infl-ending>
+               type="regular primary">ῳ</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῴ</infl-ending>
+            footnote="foot-5"   type="regular">ῷ</infl-ending>
+        <infl-ending
+            footnote="foot-7"  dialects="Attic" type="irregular">ῴ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="singular" decl="2nd" case="genitive" gend="feminine">
+      num="singular" decl="2nd" case="genitive" gend="masculine feminine">
         <infl-ending
-              type="regular">οῦ</infl-ending>
+               type="regular primary">ου</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">οιο</infl-ending>
+               type="irregular">οῦ</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">οο</infl-ending>
+              dialects="Homer" type="irregular">οιο</infl-ending>
         <infl-ending
-             dialects="Aeolic,Doric" type="irregular">ω</infl-ending>
+              dialects="Homer" type="irregular">οο</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ώ</infl-ending>
+              dialects="Aeolic Doric" type="irregular">ω </infl-ending>
+        <infl-ending
+            footnote="foot-7"  dialects="Attic" type="irregular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="singular" decl="2nd" case="nominative" gend="feminine">
+      num="singular" decl="2nd" case="nominative" gend="masculine feminine">
         <infl-ending
-              type="regular">ός</infl-ending>
+               type="regular primary">ος</infl-ending>
         <infl-ending
-              type="irregular">ος</infl-ending>
+            footnote="foot-5"   type="regular">ους</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ώς</infl-ending>
+            footnote="foot-5"   type="regular">oῦς</infl-ending>
+        <infl-ending
+               type="irregular">ός</infl-ending>
+        <infl-ending
+            footnote="foot-7"  dialects="Attic" type="irregular">ώς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="singular" decl="2nd" case="vocative" gend="feminine">
+      num="singular" decl="2nd" case="vocative" gend="masculine feminine">
         <infl-ending
-              type="regular">έ</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="singular" decl="2nd" case="accusative" gend="masculine">
+            footnote="foot-41"   type="regular">έ</infl-ending>
         <infl-ending
-              type="regular">ον</infl-ending>
+               type="regular primary">ε</infl-ending>
         <infl-ending
-              type="regular">οῦν</infl-ending>
-        <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ών</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="singular" decl="2nd" case="dative" gend="masculine">
-        <infl-ending
-              type="regular">ῳ</infl-ending>
-        <infl-ending
-            footnote="foot-5"  type="regular">ῷ</infl-ending>
-        <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῴ</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="singular" decl="2nd" case="genitive" gend="masculine">
-        <infl-ending
-              type="regular">ου</infl-ending>
-        <infl-ending
-              type="irregular">οῦ</infl-ending>
-        <infl-ending
-             dialects="Homer" type="irregular">οιο</infl-ending>
-        <infl-ending
-             dialects="Homer" type="irregular">οο</infl-ending>
-        <infl-ending
-             dialects="Aeolic,Doric" type="irregular">ω</infl-ending>
-        <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ώ</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="singular" decl="2nd" case="nominative" gend="masculine">
-        <infl-ending
-              type="regular">ος</infl-ending>
-        <infl-ending
-            footnote="foot-5"  type="regular">ους</infl-ending>
-        <infl-ending
-            footnote="foot-5"  type="regular">oῦς</infl-ending>
-        <infl-ending
-              type="irregular">ός</infl-ending>
-        <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ώς</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="singular" decl="2nd" case="vocative" gend="masculine">
-        <infl-ending
-              type="regular">ε</infl-ending>
-        <infl-ending
-              type="regular">οῦ</infl-ending>
+            footnote="foot-42"   type="regular">οῦ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="2nd" case="accusative" gend="neuter">
         <infl-ending
-              type="regular">ον</infl-ending>
+               type="regular primary">ον</infl-ending>
         <infl-ending
-              type="regular">οῦν</infl-ending>
+               type="regular">οῦν</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ών</infl-ending>
+            footnote="foot-7"  dialects="Attic" type="irregular">ών</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="2nd" case="dative" gend="neuter">
         <infl-ending
-            footnote="foot-6"  type="regular">ῳ</infl-ending>
+            footnote="foot-6"   type="regular primary">ῳ</infl-ending>
         <infl-ending
-              type="irregular">ῴ</infl-ending>
+               type="irregular">ῴ</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ῷ</infl-ending>
+            footnote="foot-7"  dialects="Attic" type="irregular">ῷ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="2nd" case="genitive" gend="neuter">
         <infl-ending
-              type="regular">ου</infl-ending>
+               type="regular primary">ου</infl-ending>
         <infl-ending
-            footnote="foot-6"  type="regular">οῦ</infl-ending>
+            footnote="foot-6"   type="regular">οῦ</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">οιο</infl-ending>
+              dialects="Homer" type="irregular">οιο</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">οο</infl-ending>
+              dialects="Homer" type="irregular">οο</infl-ending>
         <infl-ending
-             dialects="Aeolic,Doric" type="irregular">ω</infl-ending>
+              dialects="Aeolic Doric" type="irregular">ω </infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ώ</infl-ending>
+            footnote="foot-7"  dialects="Attic" type="irregular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="2nd" case="nominative" gend="neuter">
         <infl-ending
-              type="regular">ον</infl-ending>
+               type="regular primary">ον</infl-ending>
         <infl-ending
-            footnote="foot-6"  type="regular">οῦν</infl-ending>
+            footnote="foot-6"   type="regular">οῦν</infl-ending>
         <infl-ending
-            footnote="foot-7" dialects="Attic" type="irregular">ών</infl-ending>
+            footnote="foot-7"  dialects="Attic" type="irregular">ών</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="2nd" case="vocative" gend="neuter">
         <infl-ending
-              type="regular">ον</infl-ending>
+               type="regular primary">ον</infl-ending>
         <infl-ending
-              type="regular">οῦν</infl-ending>
+               type="regular">οῦν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="3rd" case="accusative" gend="common">
         <infl-ending
-              type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
         <infl-ending
-              type="regular">ει</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="3rd" case="dative" gend="common">
         <infl-ending
-              type="regular">οιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">οιν</infl-ending>
         <infl-ending
-              type="regular">οῖν</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">οῖν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="3rd" case="genitive" gend="common">
         <infl-ending
-              type="regular">οιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">οιν</infl-ending>
         <infl-ending
-              type="regular">οῖν</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">οῖν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="3rd" case="nominative" gend="common">
         <infl-ending
-              type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
         <infl-ending
-              type="regular">ει</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="3rd" case="vocative" gend="common">
         <infl-ending
-              type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
         <infl-ending
-              type="regular">ει</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="dual" decl="3rd" case="accusative" gend="feminine">
+      num="dual" decl="3rd" case="accusative" gend="masculine feminine">
         <infl-ending
-              type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
         <infl-ending
-              type="regular">ει</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
         <infl-ending
-            footnote="foot-32"  type="irregular">ω</infl-ending>
+               type="regular">η</infl-ending>
+        <infl-ending
+            footnote="foot-32" stem-class="stem-7"  type="irregular">ω</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">ῖ </infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="dual" decl="3rd" case="dative" gend="feminine">
+      num="dual" decl="3rd" case="dative" gend="masculine feminine">
         <infl-ending
-              type="regular">οιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">οιν</infl-ending>
         <infl-ending
-              type="regular">οῖν</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">οῖν</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">οιιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7" dialects="Homer" type="irregular">οιιν</infl-ending>
+        <infl-ending
+            footnote="foot-33 foot-37" stem-class="stem-1" dialects="Attic" type="irregular">σι</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1" dialects="Homer" type="irregular">εσσι</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1" dialects="Homer" type="irregular">εσι</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="dual" decl="3rd" case="genitive" gend="feminine">
+      num="dual" decl="3rd" case="genitive" gend="masculine feminine">
         <infl-ending
-              type="regular">οιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">οιν</infl-ending>
         <infl-ending
-              type="regular">οῖν</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">οῖν</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">οιιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7" dialects="Homer" type="irregular">οιιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="dual" decl="3rd" case="nominative" gend="feminine">
+      num="dual" decl="3rd" case="nominative" gend="masculine feminine">
         <infl-ending
-              type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
         <infl-ending
-              type="regular">ει</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
         <infl-ending
-            footnote="foot-32"  type="irregular">ω</infl-ending>
+            footnote="foot-32" stem-class="stem-7"  type="irregular">ω</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">ῖ </infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="dual" decl="3rd" case="vocative" gend="feminine">
+      num="dual" decl="3rd" case="vocative" gend="masculine feminine">
         <infl-ending
-              type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
         <infl-ending
-              type="regular">ει</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
         <infl-ending
-            footnote="foot-32"  type="irregular">ω</infl-ending>
+               type="regular">η</infl-ending>
+        <infl-ending
+            footnote="foot-32" stem-class="stem-7"  type="irregular">ω</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">ῆ</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">ῖ </infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="dual" decl="3rd" case="accusative" gend="masculine">
+      num="dual" decl="3rd" case="nominative" gend="masculine feminine">
         <infl-ending
-              type="regular">ε</infl-ending>
-        <infl-ending
-              type="regular">ει</infl-ending>
-        <infl-ending
-              type="regular">η</infl-ending>
-        <infl-ending
-            footnote="foot-32"  type="irregular">ω</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">ῖ</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="dual" decl="3rd" case="dative" gend="masculine">
-        <infl-ending
-              type="regular">οιν</infl-ending>
-        <infl-ending
-              type="regular">οῖν</infl-ending>
-        <infl-ending
-             dialects="Homer" type="irregular">οιιν</infl-ending>
-        <infl-ending
-            footnote="foot-33,foot-37" dialects="Attic" type="irregular">σι</infl-ending>
-        <infl-ending
-            footnote="foot-33" dialects="Homer" type="irregular">εσσι</infl-ending>
-        <infl-ending
-            footnote="foot-33" dialects="Homer" type="irregular">εσι</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="dual" decl="3rd" case="genitive" gend="masculine">
-        <infl-ending
-              type="regular">οιν</infl-ending>
-        <infl-ending
-              type="regular">οῖν</infl-ending>
-        <infl-ending
-             dialects="Homer" type="irregular">οιιν</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="dual" decl="3rd" case="nominative" gend="masculine">
-        <infl-ending
-              type="regular">ε</infl-ending>
-        <infl-ending
-              type="regular">ει</infl-ending>
-        <infl-ending
-              type="regular">η</infl-ending>
-        <infl-ending
-            footnote="foot-32"  type="irregular">ω</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">ῖ</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="dual" decl="3rd" case="vocative" gend="masculine">
-        <infl-ending
-              type="regular">ε</infl-ending>
-        <infl-ending
-              type="regular">ει</infl-ending>
-        <infl-ending
-              type="regular">η</infl-ending>
-        <infl-ending
-            footnote="foot-32"  type="irregular">ω</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">ῆ</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">ῖ</infl-ending>
+               type="regular">η</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="3rd" case="accusative" gend="neuter">
         <infl-ending
-              type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
         <infl-ending
-              type="regular">ει</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular">α</infl-ending>
         <infl-ending
-              type="irregular">εε</infl-ending>
+               type="irregular">εε</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="3rd" case="dative" gend="neuter">
         <infl-ending
-              type="regular">οιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">οιν</infl-ending>
         <infl-ending
-              type="regular">ῷν</infl-ending>
+               type="regular">ῷν</infl-ending>
         <infl-ending
-            footnote="foot-33,foot-38"  type="irregular">οις</infl-ending>
+            footnote="foot-33 foot-38" stem-class="stem-1"  type="irregular">οις</infl-ending>
         <infl-ending
-            footnote="foot-33,foot-38"  type="irregular">οισι</infl-ending>
+            footnote="foot-33 foot-38" stem-class="stem-1"  type="irregular">οισι</infl-ending>
         <infl-ending
-            footnote="foot-4,foot-33,foot-38"  type="irregular">οισι(ν)</infl-ending>
+            footnote="foot-4 foot-33 foot-38" stem-class="stem-1"  type="irregular">οισι(ν)</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">οιιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7" dialects="Homer" type="irregular">οιιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="3rd" case="genitive" gend="neuter">
         <infl-ending
-              type="regular">οιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">οιν</infl-ending>
         <infl-ending
-              type="regular">ῷν</infl-ending>
+               type="regular">ῷν</infl-ending>
         <infl-ending
-            footnote="foot-33,foot-38"  type="irregular">ων</infl-ending>
+            footnote="foot-33 foot-38" stem-class="stem-1"  type="irregular">ων</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">οιιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7" dialects="Homer" type="irregular">οιιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="3rd" case="nominative" gend="neuter">
         <infl-ending
-              type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
         <infl-ending
-              type="regular">ει</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular">α</infl-ending>
         <infl-ending
-              type="irregular">εε</infl-ending>
+               type="irregular">εε</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="3rd" case="vocative" gend="neuter">
         <infl-ending
-              type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
         <infl-ending
-              type="regular">ει</infl-ending>
+             stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
         <infl-ending
-              type="regular">α</infl-ending>
+               type="regular">α</infl-ending>
         <infl-ending
-              type="irregular">εε</infl-ending>
+               type="irregular">εε</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="3rd" case="accusative" gend="common">
         <infl-ending
-              type="regular">ας</infl-ending>
+             stem-class="stem-4"  type="regular">ας</infl-ending>
         <infl-ending
-            footnote="foot-17"  type="regular">ῦς</infl-ending>
+             stem-class="stem-7"  type="regular">ς</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ις</infl-ending>
+            footnote="foot-17" stem-class="stem-6"  type="regular">ῦς</infl-ending>
         <infl-ending
-             dialects="Cretan" type="irregular">ινς</infl-ending>
+              dialects="Homer" type="irregular">ις</infl-ending>
+        <infl-ending
+              dialects="Cretan" type="irregular">ινς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="3rd" case="dative" gend="common">
         <infl-ending
-              type="regular">σι</infl-ending>
+             stem-class="stem-7"  type="regular">σι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">σιν</infl-ending>
+            footnote="foot-4" stem-class="stem-7"  type="regular">σιν</infl-ending>
         <infl-ending
-              type="regular">σί</infl-ending>
+             stem-class="stem-7"  type="regular">σί</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">σίν</infl-ending>
+            footnote="foot-4" stem-class="stem-7"  type="regular">σίν</infl-ending>
         <infl-ending
-              type="regular">φι</infl-ending>
+             stem-class="stem-1 stem-4 stem-7" dialects="Homer" type="regular">φι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">φιν</infl-ending>
+            footnote="foot-4" stem-class="stem-1 stem-4 stem-7" dialects="Homer" type="regular">φιν</infl-ending>
         <infl-ending
-              type="regular">ξι</infl-ending>
+             stem-class="stem-4"  type="regular">ξι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">ξιν</infl-ending>
+            footnote="foot-4" stem-class="stem-4"  type="regular">ξιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="3rd" case="genitive" gend="common">
         <infl-ending
-              type="regular">ῶν</infl-ending>
+             stem-class="stem-4 stem-7"  type="regular">ῶν</infl-ending>
         <infl-ending
-              type="regular">ων</infl-ending>
+             stem-class="stem-4 stem-7"  type="regular">ων</infl-ending>
         <infl-ending
-              type="regular">φι</infl-ending>
+             stem-class="stem-1 stem-4 stem-7" dialects="Homer" type="regular">φι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">φιν</infl-ending>
+            footnote="foot-4" stem-class="stem-1 stem-4 stem-7" dialects="Homer" type="regular">φιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="3rd" case="nominative" gend="common">
         <infl-ending
-              type="regular">ες</infl-ending>
+             stem-class="stem-4 stem-7"  type="regular">ες</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ῆς</infl-ending>
+             stem-class="stem-4 stem-7" dialects="Homer" type="irregular">ῆς</infl-ending>
         <infl-ending
-            footnote="foot-33"  type="irregular">εις</infl-ending>
+            footnote="foot-33" stem-class="stem-1"  type="irregular">εις</infl-ending>
         <infl-ending
-            footnote="foot-33" dialects="Homer" type="irregular">οι</infl-ending>
+            footnote="foot-33" stem-class="stem-1" dialects="Homer" type="irregular">οι</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="3rd" case="vocative" gend="common">
         <infl-ending
-              type="regular">ες</infl-ending>
+             stem-class="stem-4 stem-7"  type="regular">ες</infl-ending>
         <infl-ending
-            footnote="foot-33"  type="irregular">εις</infl-ending>
+            footnote="foot-33" stem-class="stem-1"  type="irregular">εις</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="plural" decl="3rd" case="accusative" gend="feminine">
+      num="plural" decl="3rd" case="accusative" gend="masculine feminine">
         <infl-ending
-              type="regular">ας</infl-ending>
+            footnote="foot-17 foot-41" stem-class="stem-6"  type="regular">εις</infl-ending>
         <infl-ending
-            footnote="foot-17"  type="regular">ῦς</infl-ending>
+            footnote="foot-31 foot-41"   type="irregular">εῖς</infl-ending>
         <infl-ending
-            footnote="foot-17"  type="regular">εις</infl-ending>
+            footnote="foot-31 foot-41"  dialects="Old-Attic" type="irregular">ῄς</infl-ending>
         <infl-ending
-            footnote="foot-31"  type="irregular">εῖς</infl-ending>
+            footnote="foot-32 foot-41"   type="irregular">ους</infl-ending>
         <infl-ending
-            footnote="foot-31" dialects="Old Attic" type="irregular">ῄς</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular primary">ας</infl-ending>
         <infl-ending
-            footnote="foot-32"  type="irregular">ους</infl-ending>
+            footnote="foot-17" stem-class="stem-6"  type="regular">ῦς</infl-ending>
+        <infl-ending
+            footnote="foot-30" stem-class="stem-2"  type="regular">ως</infl-ending>
+        <infl-ending
+            footnote="foot-32" stem-class="stem-7"  type="irregular">ούς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="plural" decl="3rd" case="dative" gend="feminine">
+      num="plural" decl="3rd" case="dative" gend="masculine feminine">
         <infl-ending
-              type="regular">σι</infl-ending>
+            footnote="foot-41"   type="regular">εσι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">σιν</infl-ending>
+            footnote="foot-4 foot-41"   type="regular">εσιν</infl-ending>
         <infl-ending
-              type="regular">φι</infl-ending>
+            footnote="foot-41"   type="regular">σί</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">φιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-4 stem-5 stem-6 stem-7"  type="regular primary">σι</infl-ending>
         <infl-ending
-              type="regular">εσι</infl-ending>
+            footnote="foot-4" stem-class="stem-1 stem-2 stem-4 stem-5 stem-6 stem-7"  type="regular primary">σιν</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">εσιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-5 stem-6 stem-7" dialects="Homer" type="regular">φι</infl-ending>
         <infl-ending
-              type="regular">εσσι</infl-ending>
+            footnote="foot-4" stem-class="stem-1 stem-2 stem-3 stem-4 stem-5 stem-6 stem-7" dialects="Homer" type="regular">φιν</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">εσσιν</infl-ending>
+             stem-class="stem-1 stem-4 stem-7"  type="regular">σί</infl-ending>
         <infl-ending
-              type="regular">σί</infl-ending>
+            footnote="foot-4" stem-class="stem-1 stem-4 stem-7"  type="regular">σίν</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">σίν</infl-ending>
+             stem-class="stem-3"  type="regular">ψι</infl-ending>
         <infl-ending
-              type="regular">ψι</infl-ending>
+            footnote="foot-4" stem-class="stem-3"  type="regular">ψιν</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">ψιν</infl-ending>
+             stem-class="stem-3"  type="regular">ξι</infl-ending>
         <infl-ending
-              type="regular">ξι</infl-ending>
+            footnote="foot-4" stem-class="stem-3"  type="regular">ξιν</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">ξιν</infl-ending>
+            footnote="foot-33" stem-class="stem-1"  type="irregular">αις</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="plural" decl="3rd" case="genitive" gend="feminine">
+      num="plural" decl="3rd" case="genitive" gend="masculine feminine">
         <infl-ending
-              type="regular">ῶν</infl-ending>
+            footnote="foot-41"  dialects="Comic-Poets" type="irregular">-</infl-ending>
         <infl-ending
-              type="regular">ων</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-5 stem-6 stem-7"  type="regular">ῶν</infl-ending>
         <infl-ending
-              type="regular">φι</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-5 stem-6"  type="regular primary">ων</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">φιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-5 stem-6 stem-7" dialects="Homer" type="regular">φι</infl-ending>
         <infl-ending
-             dialects="Comic Poets" type="irregular">-</infl-ending>
+            footnote="foot-4" stem-class="stem-1 stem-2 stem-3 stem-4 stem-5 stem-6 stem-7" dialects="Homer" type="regular">φιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="plural" decl="3rd" case="nominative" gend="feminine">
+      num="plural" decl="3rd" case="nominative" gend="masculine feminine">
         <infl-ending
-              type="regular">ες</infl-ending>
+            footnote="foot-31 foot-41"  dialects="Old-Attic" type="regular">ῄς</infl-ending>
         <infl-ending
-            footnote="foot-17"  type="regular">εις</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-6 stem-7"  type="regular primary">ες</infl-ending>
         <infl-ending
-            footnote="foot-31"  type="regular">εῖς</infl-ending>
+            footnote="foot-17" stem-class="stem-6"  type="regular">εις</infl-ending>
         <infl-ending
-            footnote="foot-31" dialects="Old Attic" type="regular">ῄς</infl-ending>
+            footnote="foot-18" stem-class="stem-7"  type="regular">εῖς</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ῆς</infl-ending>
+            footnote="foot-18" stem-class="stem-7" dialects="Homer" type="regular">ῆς</infl-ending>
         <infl-ending
-            footnote="foot-32"  type="irregular">οι</infl-ending>
+            footnote="foot-30" stem-class="stem-2"  type="regular">ως</infl-ending>
+        <infl-ending
+            footnote="foot-32" stem-class="stem-8"  type="irregular">οι</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">αί</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="plural" decl="3rd" case="vocative" gend="feminine">
+      num="plural" decl="3rd" case="vocative" gend="masculine feminine">
         <infl-ending
-              type="regular">ες</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-6 stem-7"  type="regular primary">ες</infl-ending>
         <infl-ending
-            footnote="foot-17"  type="regular">εις</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="plural" decl="3rd" case="accusative" gend="masculine">
+            footnote="foot-17" stem-class="stem-6"  type="regular">εις</infl-ending>
         <infl-ending
-              type="regular">ας</infl-ending>
+            footnote="foot-18" stem-class="stem-6"  type="regular">εῖς</infl-ending>
         <infl-ending
-            footnote="foot-17"  type="regular">ῦς</infl-ending>
+            footnote="foot-18" stem-class="stem-6"  type="regular">ῆς</infl-ending>
         <infl-ending
-            footnote="foot-30"  type="regular">ως</infl-ending>
-        <infl-ending
-            footnote="foot-32"  type="irregular">ούς</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="plural" decl="3rd" case="dative" gend="masculine">
-        <infl-ending
-              type="regular">σι</infl-ending>
-        <infl-ending
-            footnote="foot-4"  type="regular">σιν</infl-ending>
-        <infl-ending
-              type="regular">φι</infl-ending>
-        <infl-ending
-            footnote="foot-4"  type="regular">φιν</infl-ending>
-        <infl-ending
-              type="regular">σί</infl-ending>
-        <infl-ending
-            footnote="foot-4"  type="regular">σίν</infl-ending>
-        <infl-ending
-              type="regular">ψι</infl-ending>
-        <infl-ending
-            footnote="foot-4"  type="regular">ψιν</infl-ending>
-        <infl-ending
-              type="regular">ξι</infl-ending>
-        <infl-ending
-            footnote="foot-4"  type="regular">ξιν</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">αις</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="plural" decl="3rd" case="genitive" gend="masculine">
-        <infl-ending
-              type="regular">ῶν</infl-ending>
-        <infl-ending
-              type="regular">ων</infl-ending>
-        <infl-ending
-              type="regular">φι</infl-ending>
-        <infl-ending
-            footnote="foot-4"  type="regular">φιν</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="plural" decl="3rd" case="nominative" gend="masculine">
-        <infl-ending
-              type="regular">ες</infl-ending>
-        <infl-ending
-            footnote="foot-17"  type="regular">εις</infl-ending>
-        <infl-ending
-            footnote="foot-18"  type="regular">εῖς</infl-ending>
-        <infl-ending
-            footnote="foot-18" dialects="Homer" type="regular">ῆς</infl-ending>
-        <infl-ending
-            footnote="foot-30"  type="regular">ως</infl-ending>
-        <infl-ending
-            footnote="foot-32"  type="irregular">οι</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">αί</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="plural" decl="3rd" case="vocative" gend="masculine">
-        <infl-ending
-              type="regular">ες</infl-ending>
-        <infl-ending
-            footnote="foot-17"  type="regular">εις</infl-ending>
-        <infl-ending
-            footnote="foot-18"  type="regular">εῖς</infl-ending>
-        <infl-ending
-            footnote="foot-18"  type="regular">ῆς</infl-ending>
-        <infl-ending
-            footnote="foot-30"  type="regular">ως</infl-ending>
+            footnote="foot-30" stem-class="stem-2"  type="regular">ως</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="3rd" case="accusative" gend="neuter">
         <infl-ending
-              type="regular">α</infl-ending>
+             stem-class="stem-1"  type="regular primary">ας</infl-ending>
         <infl-ending
-              type="regular">η</infl-ending>
+             stem-class="stem-5"  type="regular">η</infl-ending>
         <infl-ending
-              type="irregular">ά</infl-ending>
+             stem-class="stem-6"  type="regular">ς</infl-ending>
+        <infl-ending
+               type="irregular">ά</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="3rd" case="dative" gend="neuter">
         <infl-ending
-              type="regular">σι</infl-ending>
+             stem-class="stem-1 stem-6"  type="regular primary">σι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">σιν</infl-ending>
+            footnote="foot-4" stem-class="stem-1 stem-6"  type="regular primary">σιν</infl-ending>
         <infl-ending
-              type="regular">φι</infl-ending>
+             stem-class="stem-1 stem-5 stem-6" dialects="Homer" type="regular">φι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">φιν</infl-ending>
+            footnote="foot-4" stem-class="stem-1 stem-5 stem-6" dialects="Homer" type="regular">φιν</infl-ending>
         <infl-ending
-              type="regular">εσι</infl-ending>
+               type="regular">εσι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">εσιν</infl-ending>
+            footnote="foot-4"   type="regular">εσιν</infl-ending>
         <infl-ending
-              type="regular">εσσι</infl-ending>
+               type="regular">εσσι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">εσσιν</infl-ending>
+            footnote="foot-4"   type="regular">εσσιν</infl-ending>
         <infl-ending
-              type="regular">ασι</infl-ending>
+               type="regular">ασι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">ασιν</infl-ending>
+            footnote="foot-4"   type="regular">ασιν</infl-ending>
         <infl-ending
-              type="regular">ασσι</infl-ending>
+               type="regular">ασσι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">ασσιν</infl-ending>
+            footnote="foot-4"   type="regular">ασσιν</infl-ending>
         <infl-ending
-            footnote="foot-33"  type="irregular">οῖς</infl-ending>
+            footnote="foot-33" stem-class="stem-1"  type="irregular">οῖς</infl-ending>
         <infl-ending
-            footnote="foot-33" dialects="Herodotus" type="irregular">η</infl-ending>
+            footnote="foot-33" stem-class="stem-1" dialects="Herodotus" type="irregular">η</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="3rd" case="genitive" gend="neuter">
         <infl-ending
-              type="regular">ῶν</infl-ending>
+             stem-class="stem-1 stem-5 stem-6"  type="regular">ῶν</infl-ending>
         <infl-ending
-              type="regular">ων</infl-ending>
+             stem-class="stem-1 stem-5 stem-6"  type="regular primary">ων</infl-ending>
         <infl-ending
-              type="regular">φι</infl-ending>
+             stem-class="stem-1 stem-5 stem-6" dialects="Homer" type="regular">φι</infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">φιν</infl-ending>
+            footnote="foot-4" stem-class="stem-1 stem-5 stem-6" dialects="Homer" type="regular">φιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="3rd" case="nominative" gend="neuter">
         <infl-ending
-              type="regular">α</infl-ending>
+             stem-class="stem-1"  type="regular primary">α</infl-ending>
         <infl-ending
-              type="regular">η</infl-ending>
+             stem-class="stem-5"  type="regular">η</infl-ending>
         <infl-ending
-              type="irregular">ά</infl-ending>
+             stem-class="stem-1"  type="irregular">ά</infl-ending>
+        <infl-ending
+             stem-class="stem-6"  type="regular">ες</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="plural" decl="3rd" case="vocative" gend="neuter">
         <infl-ending
-              type="regular">α</infl-ending>
+             stem-class="stem-1"  type="regular primary">α</infl-ending>
         <infl-ending
-              type="regular">η</infl-ending>
+             stem-class="stem-5"  type="regular">η</infl-ending>
+        <infl-ending
+             stem-class="stem-6"  type="regular">ες</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="3rd" case="accusative" gend="common">
         <infl-ending
-              type="regular">α</infl-ending>
+             stem-class="stem-3"  type="regular">α</infl-ending>
         <infl-ending
-              type="regular">ν</infl-ending>
+             stem-class="stem-7"  type="regular">ν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="3rd" case="dative" gend="common">
         <infl-ending
-              type="regular">ι</infl-ending>
+             stem-class="stem-1"  type="regular">ι </infl-ending>
         <infl-ending
-              type="regular">ί</infl-ending>
+             stem-class="stem-1 stem-3 stem-4"  type="regular">ί</infl-ending>
         <infl-ending
-            footnote="foot-18"  type="regular">ΐ</infl-ending>
+            footnote="foot-18" stem-class="stem-7"  type="regular">ΐ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="3rd" case="genitive" gend="common">
         <infl-ending
-              type="regular">ος</infl-ending>
+             stem-class="stem-1"  type="regular">ος</infl-ending>
         <infl-ending
-              type="regular">ός</infl-ending>
+             stem-class="stem-1"  type="regular">ός</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="3rd" case="nominative" gend="common">
         <infl-ending
-              type="regular">ών</infl-ending>
+               type="regular">ών</infl-ending>
         <infl-ending
-              type="regular">ήν</infl-ending>
+               type="regular">ήν</infl-ending>
         <infl-ending
-              type="regular">ς</infl-ending>
+             stem-class="stem-7"  type="regular">ς</infl-ending>
         <infl-ending
-              type="regular">ξ</infl-ending>
+             stem-class="stem-3"  type="regular">ξ</infl-ending>
         <infl-ending
-            footnote="foot-33" dialects="Homer" type="irregular">ος</infl-ending>
+            footnote="foot-33" stem-class="stem-1" dialects="Homer" type="irregular">ος</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="3rd" case="vocative" gend="common">
         <infl-ending
-              type="regular">ών</infl-ending>
+               type="regular">ών</infl-ending>
         <infl-ending
-              type="regular">ήν</infl-ending>
+               type="regular">ήν</infl-ending>
         <infl-ending
-              type="regular">-</infl-ending>
+             stem-class="stem-7"  type="regular">-</infl-ending>
         <infl-ending
-              type="regular">ξ</infl-ending>
+             stem-class="stem-3"  type="regular">ξ</infl-ending>
         <infl-ending
-            footnote="foot-33"  type="irregular">ον</infl-ending>
+            footnote="foot-33" stem-class="stem-1"  type="irregular">ον</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="singular" decl="3rd" case="accusative" gend="feminine">
+      num="singular" decl="3rd" case="accusative" gend="masculine feminine">
         <infl-ending
-              type="regular">α</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular primary">α</infl-ending>
         <infl-ending
-              type="regular">η</infl-ending>
+            footnote="foot-41" stem-class="stem-5"  type="regular">η</infl-ending>
         <infl-ending
-              type="regular">ιν</infl-ending>
+            footnote="foot-41" stem-class="stem-6"  type="regular">ιν</infl-ending>
         <infl-ending
-              type="regular">ῖν</infl-ending>
+            footnote="foot-41" stem-class="stem-6"  type="regular">ῖν</infl-ending>
         <infl-ending
-              type="regular">ῦν</infl-ending>
+            footnote="foot-41" stem-class="stem-6"  type="regular">ῦν</infl-ending>
         <infl-ending
-            footnote="foot-33"  type="irregular">ν</infl-ending>
+            footnote="foot-33 foot-42" stem-class="stem-6"  type="irregular">ν</infl-ending>
         <infl-ending
-            footnote="foot-23" dialects="Homer" type="irregular">ῶ</infl-ending>
+            footnote="foot-41"  dialects="Homer" type="irregular">ων</infl-ending>
         <infl-ending
-            footnote="foot-23" dialects="Homer" type="irregular">ω</infl-ending>
+             stem-class="stem-2"  type="regular">ᾶ</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ων</infl-ending>
+            footnote="foot-16" stem-class="stem-5"  type="regular">η</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ον</infl-ending>
+            footnote="foot-33" stem-class="stem-7"  type="regular">υν</infl-ending>
+        <infl-ending
+            footnote="foot-17" stem-class="stem-6"  type="regular">ῦν</infl-ending>
+        <infl-ending
+               type="regular">ύν</infl-ending>
+        <infl-ending
+            footnote="foot-20" stem-class="stem-5"  type="regular">έα</infl-ending>
+        <infl-ending
+            footnote="foot-24"   type="regular">ην</infl-ending>
+        <infl-ending
+            footnote="foot-23"  dialects="Homer" type="irregular">ω</infl-ending>
+        <infl-ending
+            footnote="foot-23"  dialects="Homer" type="irregular">ῶ</infl-ending>
+        <infl-ending
+              dialects="Attic Homer" type="irregular">ν</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">αν</infl-ending>
+        <infl-ending
+            footnote="foot-33 foot-39" stem-class="stem-1" dialects="Homer" type="irregular">ον</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">ῖς </infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="singular" decl="3rd" case="dative" gend="feminine">
+      num="singular" decl="3rd" case="dative" gend="masculine feminine">
         <infl-ending
-              type="regular">ί</infl-ending>
+            footnote="foot-28 foot-41" stem-class="stem-8"  type="irregular">oῖ</infl-ending>
         <infl-ending
-              type="regular">ι</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-5 stem-6"  type="regular primary">ι </infl-ending>
         <infl-ending
-            footnote="foot-4"  type="regular">ιν</infl-ending>
+            footnote="foot-4"   type="regular">ιν</infl-ending>
         <infl-ending
-              type="regular">ει</infl-ending>
+             stem-class="stem-1 stem-3 stem-4"  type="regular">ί</infl-ending>
         <infl-ending
-            footnote="foot-17"  type="regular">ΐ</infl-ending>
+            footnote="foot-17" stem-class="stem-6"  type="regular">ει</infl-ending>
         <infl-ending
-            footnote="foot-17" dialects="Homer" type="irregular">ϊ</infl-ending>
+            footnote="foot-18" stem-class="stem-7"  type="regular">εῖ</infl-ending>
         <infl-ending
-            footnote="foot-34" dialects="Homer" type="irregular">ῷ</infl-ending>
+            footnote="foot-17" stem-class="stem-6"  type="regular">ϊ</infl-ending>
         <infl-ending
-            footnote="foot-34" dialects="Homer" type="irregular">ῳ</infl-ending>
+            footnote="foot-18"  dialects="Homer" type="irregular">εϊ</infl-ending>
         <infl-ending
-            footnote="foot-25"  type="irregular">ᾳ</infl-ending>
+            footnote="foot-33" stem-class="stem-7"  type="irregular">ῖ </infl-ending>
         <infl-ending
-            footnote="foot-28"  type="irregular">oῖ</infl-ending>
+            footnote="foot-25" stem-class="stem-5"  type="irregular">ᾳ</infl-ending>
+        <infl-ending
+            footnote="foot-33 foot-34" stem-class="stem-1" dialects="Homer" type="irregular">ῳ</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">ῷ</infl-ending>
+        <infl-ending
+            footnote="foot-40" stem-class="stem-7"  type="irregular">ΐ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="singular" decl="3rd" case="genitive" gend="feminine">
+      num="singular" decl="3rd" case="genitive" gend="masculine feminine">
         <infl-ending
-              type="regular">ός</infl-ending>
+            footnote="foot-17 foot-41" stem-class="stem-6"  type="regular">ώς</infl-ending>
         <infl-ending
-              type="regular">ος</infl-ending>
+            footnote="foot-41"  dialects="Homer" type="irregular">ΰς</infl-ending>
         <infl-ending
-            footnote="foot-16"  type="regular">ους</infl-ending>
+            footnote="foot-42" stem-class="stem-2"  type="regular primary">ος</infl-ending>
         <infl-ending
-            footnote="foot-17"  type="regular">ως</infl-ending>
+            footnote="foot-42" stem-class="stem-2"  type="regular">ός</infl-ending>
         <infl-ending
-            footnote="foot-17"  type="regular">ώς</infl-ending>
+            footnote="foot-16" stem-class="stem-5"  type="regular">ους</infl-ending>
         <infl-ending
-            footnote="foot-27"  type="irregular">οῦς</infl-ending>
+            footnote="foot-17 foot-18" stem-class="stem-6 stem-7"  type="regular">ως</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ΰς</infl-ending>
+               type="regular">ῶς</infl-ending>
+        <infl-ending
+            footnote="foot-20" stem-class="stem-5"  type="regular">έους</infl-ending>
+        <infl-ending
+            footnote="foot-22" stem-class="stem-4" dialects="Aeolic" type="irregular">νος</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">υ</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">οῦ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="singular" decl="3rd" case="nominative" gend="feminine">
+      num="singular" decl="3rd" case="nominative" gend="masculine feminine">
         <infl-ending
-            footnote="foot-8,foot-9,foot-10"  type="regular">ς</infl-ending>
+            footnote="foot-41" stem-class="stem-4"  type="regular">ηρ</infl-ending>
         <infl-ending
-            footnote="foot-8"  type="regular">ψ</infl-ending>
+            footnote="foot-41" stem-class="stem-1 stem-6 stem-7"  type="regular">ις</infl-ending>
         <infl-ending
-            footnote="foot-8"  type="regular">ξ</infl-ending>
+            footnote="foot-41" stem-class="stem-8"  type="regular">ώ</infl-ending>
         <infl-ending
-            footnote="foot-9,foot-10"  type="regular">ών</infl-ending>
+            footnote="foot-29 foot-41" stem-class="stem-8"  type="irregular">ῴ</infl-ending>
         <infl-ending
-            footnote="foot-10,foot-14"  type="regular">ηρ</infl-ending>
+            footnote="foot-27 foot-41" stem-class="stem-5"  type="irregular">ώς</infl-ending>
         <infl-ending
-            footnote="foot-10"  type="regular">ήν</infl-ending>
+            footnote="foot-41"  dialects="Homer" type="irregular">ϋς</infl-ending>
         <infl-ending
-            footnote="foot-9,foot-11"  type="regular">ης</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4"  type="regular primary">ς</infl-ending>
         <infl-ending
-            footnote="foot-9,foot-11"  type="regular">ῆς</infl-ending>
+             stem-class="stem-3"  type="regular">ψ</infl-ending>
         <infl-ending
-            footnote="foot-9,foot-12,foot-13"  type="regular">ῦς</infl-ending>
+             stem-class="stem-3"  type="regular">ξ</infl-ending>
         <infl-ending
-              type="regular">υς</infl-ending>
+             stem-class="stem-1 stem-4"  type="regular">ών</infl-ending>
         <infl-ending
-            footnote="foot-9,foot-12,foot-13"  type="regular">ις</infl-ending>
+             stem-class="stem-4"  type="regular">ων</infl-ending>
         <infl-ending
-              type="regular">ίς</infl-ending>
+             stem-class="stem-4"  type="regular">ωρ</infl-ending>
         <infl-ending
-              type="regular">ῖς</infl-ending>
+             stem-class="stem-4"  type="regular">ρ</infl-ending>
         <infl-ending
-            footnote="foot-19"  type="regular">ώ</infl-ending>
+             stem-class="stem-4"  type="regular">ήρ</infl-ending>
         <infl-ending
-            footnote="foot-29"  type="irregular">ῴ</infl-ending>
+             stem-class="stem-4"  type="regular">ήν</infl-ending>
         <infl-ending
-              type="irregular">ον</infl-ending>
+             stem-class="stem-1 stem-5"  type="regular">ης</infl-ending>
         <infl-ending
-              type="irregular">ν</infl-ending>
+             stem-class="stem-1 stem-5"  type="regular">ῆς</infl-ending>
         <infl-ending
-              type="irregular">εν</infl-ending>
+             stem-class="stem-1 stem-6 stem-7"  type="regular">ας</infl-ending>
         <infl-ending
-            footnote="foot-27"  type="irregular">ώς</infl-ending>
+             stem-class="stem-6"  type="regular">υς</infl-ending>
         <infl-ending
-             dialects="Homer" type="irregular">ϋς</infl-ending>
+             stem-class="stem-1 stem-6 stem-7"  type="regular">ῦς</infl-ending>
+        <infl-ending
+             stem-class="stem-1 stem-6 stem-7"  type="regular">ύς</infl-ending>
+        <infl-ending
+              dialects="Homer" type="irregular">ω</infl-ending>
+        <infl-ending
+              dialects="Homer" type="irregular">ῶ</infl-ending>
+        <infl-ending
+              dialects="Homer" type="irregular">ον</infl-ending>
+        <infl-ending
+               type="irregular">εν</infl-ending>
+        <infl-ending
+               type="irregular">ν</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">ῖς </infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">ής</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="singular" decl="3rd" case="vocative" gend="feminine">
+      num="singular" decl="3rd" case="vocative" gend="masculine feminine">
         <infl-ending
-            footnote="foot-13"  type="regular">ς</infl-ending>
+            footnote="foot-41" stem-class="stem-1 stem-4 stem-6"  type="regular">ι </infl-ending>
         <infl-ending
-            footnote="foot-8"  type="regular">-</infl-ending>
+            footnote="foot-41" stem-class="stem-1 stem-4 stem-6"  type="regular">ῦ</infl-ending>
         <infl-ending
-            footnote="foot-8"  type="regular">ψ</infl-ending>
+            footnote="foot-19 foot-41" stem-class="stem-8"  type="regular">οῖ</infl-ending>
         <infl-ending
-            footnote="foot-8"  type="regular">ξ</infl-ending>
+            footnote="foot-41"   type="regular">ῖς</infl-ending>
         <infl-ending
-            footnote="foot-9,foot-10"  type="regular">ών</infl-ending>
+            footnote="foot-27 foot-41" stem-class="stem-5"  type="irregular">ώς</infl-ending>
         <infl-ending
-            footnote="foot-10,foot-14"  type="regular">ερ</infl-ending>
+            footnote="foot-17" stem-class="stem-6"  type="regular">ς</infl-ending>
         <infl-ending
-            footnote="foot-10"  type="regular">ήν</infl-ending>
+             stem-class="stem-3"  type="regular">ψ</infl-ending>
         <infl-ending
-            footnote="foot-9,foot-11"  type="regular">ες</infl-ending>
+             stem-class="stem-3"  type="regular">ξ</infl-ending>
         <infl-ending
-            footnote="foot-9,foot-12,foot-13"  type="regular">ι</infl-ending>
+               type="regular">ν</infl-ending>
         <infl-ending
-            footnote="foot-9,foot-12,foot-13"  type="regular">ῦ</infl-ending>
+               type="regular">ρ</infl-ending>
         <infl-ending
-            footnote="foot-19"  type="regular">οῖ</infl-ending>
+               type="regular">ων</infl-ending>
         <infl-ending
-              type="regular">ῖς</infl-ending>
+             stem-class="stem-1 stem-4"  type="regular">ών</infl-ending>
         <infl-ending
-              type="regular">υς</infl-ending>
+             stem-class="stem-4"  type="regular">ήν</infl-ending>
         <infl-ending
-              type="irregular">ον</infl-ending>
+               type="regular">ε</infl-ending>
         <infl-ending
-              type="irregular">εν</infl-ending>
+             stem-class="stem-4"  type="regular">ερ</infl-ending>
         <infl-ending
-              type="irregular">ν</infl-ending>
+             stem-class="stem-1 stem-5"  type="regular">ες</infl-ending>
         <infl-ending
-            footnote="foot-27"  type="irregular">ώς</infl-ending>
+            footnote="foot-33" stem-class="stem-1"  type="regular">υ </infl-ending>
+        <infl-ending
+            footnote="foot-18" stem-class="stem-7"  type="regular">ῦ</infl-ending>
+        <infl-ending
+               type="regular">ύν</infl-ending>
+        <infl-ending
+            footnote="foot-20" stem-class="stem-5"  type="regular">εις</infl-ending>
+        <infl-ending
+               type="irregular">ον</infl-ending>
+        <infl-ending
+               type="irregular">εν</infl-ending>
+        <infl-ending
+            footnote="foot-33" stem-class="stem-1"  type="irregular">ν</infl-ending>
+        <infl-ending
+               type="irregular">υς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      num="singular" decl="3rd" case="accusative" gend="masculine">
+      num="singular" decl="3rd" case="vocative" gend="masculine feminine">
         <infl-ending
-              type="regular">α</infl-ending>
-        <infl-ending
-              type="regular">ᾶ</infl-ending>
-        <infl-ending
-            footnote="foot-16"  type="regular">η</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="regular">υν</infl-ending>
-        <infl-ending
-            footnote="foot-17"  type="regular">ῦν</infl-ending>
-        <infl-ending
-              type="regular">ύν</infl-ending>
-        <infl-ending
-            footnote="foot-20"  type="regular">έα</infl-ending>
-        <infl-ending
-            footnote="foot-24"  type="regular">ην</infl-ending>
-        <infl-ending
-            footnote="foot-23" dialects="Homer" type="irregular">ω</infl-ending>
-        <infl-ending
-            footnote="foot-23" dialects="Homer" type="irregular">ῶ</infl-ending>
-        <infl-ending
-             dialects="Attic,Homer" type="irregular">ν</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">αν</infl-ending>
-        <infl-ending
-            footnote="foot-33,foot-39"  type="irregular">ον</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">ῖς</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="singular" decl="3rd" case="dative" gend="masculine">
-        <infl-ending
-              type="regular">ι</infl-ending>
-        <infl-ending
-            footnote="foot-4"  type="regular">ιν</infl-ending>
-        <infl-ending
-              type="regular">ί</infl-ending>
-        <infl-ending
-            footnote="foot-17"  type="regular">ει</infl-ending>
-        <infl-ending
-            footnote="foot-18"  type="regular">εῖ</infl-ending>
-        <infl-ending
-            footnote="foot-17"  type="regular">ϊ</infl-ending>
-        <infl-ending
-            footnote="foot-18" dialects="Homer" type="irregular">εϊ</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">ῖ</infl-ending>
-        <infl-ending
-            footnote="foot-25"  type="irregular">ᾳ</infl-ending>
-        <infl-ending
-            footnote="foot-33" dialects="Homer" type="irregular">ῳ</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">ῷ</infl-ending>
-        <infl-ending
-            footnote="foot-40"  type="irregular">ΐ</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="singular" decl="3rd" case="genitive" gend="masculine">
-        <infl-ending
-              type="regular">ος</infl-ending>
-        <infl-ending
-              type="regular">ός</infl-ending>
-        <infl-ending
-            footnote="foot-16"  type="regular">ους</infl-ending>
-        <infl-ending
-            footnote="foot-17,foot-18"  type="regular">ως</infl-ending>
-        <infl-ending
-              type="regular">ῶς</infl-ending>
-        <infl-ending
-            footnote="foot-20"  type="regular">έους</infl-ending>
-        <infl-ending
-            footnote="foot-22" dialects="Aeolic" type="irregular">νος</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">υ</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">οῦ</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="singular" decl="3rd" case="nominative" gend="masculine">
-        <infl-ending
-            footnote="foot-8,foot-9,foot-10"  type="regular">ς</infl-ending>
-        <infl-ending
-            footnote="foot-8"  type="regular">ψ</infl-ending>
-        <infl-ending
-            footnote="foot-8"  type="regular">ξ</infl-ending>
-        <infl-ending
-            footnote="foot-9,foot-10"  type="regular">ών</infl-ending>
-        <infl-ending
-            footnote="foot-10"  type="regular">ων</infl-ending>
-        <infl-ending
-            footnote="foot-10"  type="regular">ωρ</infl-ending>
-        <infl-ending
-            footnote="foot-10"  type="regular">ρ</infl-ending>
-        <infl-ending
-            footnote="foot-10,foot-14"  type="regular">ήρ</infl-ending>
-        <infl-ending
-            footnote="foot-10"  type="regular">ήν</infl-ending>
-        <infl-ending
-            footnote="foot-9,foot-11"  type="regular">ης</infl-ending>
-        <infl-ending
-            footnote="foot-9,foot-11"  type="regular">ῆς</infl-ending>
-        <infl-ending
-            footnote="foot-9,foot-12,foot-13"  type="regular">ας</infl-ending>
-        <infl-ending
-            footnote="foot-13"  type="regular">υς</infl-ending>
-        <infl-ending
-            footnote="foot-9,foot-12,foot-13"  type="regular">ῦς</infl-ending>
-        <infl-ending
-            footnote="foot-9,foot-12,foot-13"  type="regular">ύς</infl-ending>
-        <infl-ending
-             dialects="Homer" type="irregular">ω</infl-ending>
-        <infl-ending
-             dialects="Homer" type="irregular">ῶ</infl-ending>
-        <infl-ending
-             dialects="Homer" type="irregular">ον</infl-ending>
-        <infl-ending
-              type="irregular">εν</infl-ending>
-        <infl-ending
-              type="irregular">ν</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">ῖς</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">ής</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-      num="singular" decl="3rd" case="vocative" gend="masculine">
-        <infl-ending
-            footnote="foot-17"  type="regular">ς</infl-ending>
-        <infl-ending
-              type="regular">ψ</infl-ending>
-        <infl-ending
-              type="regular">ξ</infl-ending>
-        <infl-ending
-              type="regular">ν</infl-ending>
-        <infl-ending
-              type="regular">ρ</infl-ending>
-        <infl-ending
-              type="regular">ων</infl-ending>
-        <infl-ending
-            footnote="foot-10"  type="regular">ών</infl-ending>
-        <infl-ending
-              type="regular">ήν</infl-ending>
-        <infl-ending
-              type="regular">ε</infl-ending>
-        <infl-ending
-              type="regular">ερ</infl-ending>
-        <infl-ending
-              type="regular">ες</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="regular">υ</infl-ending>
-        <infl-ending
-            footnote="foot-18"  type="regular">ῦ</infl-ending>
-        <infl-ending
-              type="regular">ύν</infl-ending>
-        <infl-ending
-              type="regular">-</infl-ending>
-        <infl-ending
-            footnote="foot-20"  type="regular">εις</infl-ending>
-        <infl-ending
-              type="irregular">ον</infl-ending>
-        <infl-ending
-              type="irregular">εν</infl-ending>
-        <infl-ending
-            footnote="foot-33"  type="irregular">ν</infl-ending>
-        <infl-ending
-              type="irregular">υς</infl-ending>
+             stem-class="stem-1 stem-4 stem-6 stem-7"  type="regular primary">-</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="3rd" case="accusative" gend="neuter">
         <infl-ending
-            footnote="foot-15"  type="regular">α</infl-ending>
+            footnote="foot-15"   type="regular primary">α</infl-ending>
         <infl-ending
-              type="regular">ος</infl-ending>
+             stem-class="stem-5"  type="regular">ος</infl-ending>
         <infl-ending
-              type="regular">ας</infl-ending>
+             stem-class="stem-5"  type="regular">ας</infl-ending>
         <infl-ending
-              type="regular">υ</infl-ending>
+             stem-class="stem-6"  type="regular">υ </infl-ending>
         <infl-ending
-            footnote="foot-33"  type="irregular">-</infl-ending>
+            footnote="foot-33" stem-class="stem-1"  type="irregular">-</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="3rd" case="dative" gend="neuter">
         <infl-ending
-              type="regular">ι</infl-ending>
+             stem-class="stem-1 stem-5 stem-6"  type="regular primary">ι </infl-ending>
         <infl-ending
-            footnote="foot-16"  type="regular">ει</infl-ending>
+            footnote="foot-16" stem-class="stem-5"  type="regular">ει</infl-ending>
         <infl-ending
-            footnote="foot-16,foot-21"  type="regular">αι</infl-ending>
+            footnote="foot-16 foot-21" stem-class="stem-5 stem-1"  type="regular">αι </infl-ending>
         <infl-ending
-            footnote="foot-17" dialects="Homer" type="regular">ϊ</infl-ending>
+            footnote="foot-17" stem-class="stem-6" dialects="Homer" type="regular">ϊ</infl-ending>
         <infl-ending
-            footnote="foot-25,foot-33"  type="irregular">ᾳ</infl-ending>
+            footnote="foot-25 foot-33" stem-class="stem-1 stem-5"  type="irregular">ᾳ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="3rd" case="genitive" gend="neuter">
         <infl-ending
-              type="regular">ος</infl-ending>
+             stem-class="stem-1"  type="regular primary">ος</infl-ending>
         <infl-ending
-            footnote="foot-16"  type="regular">ους</infl-ending>
+            footnote="foot-16" stem-class="stem-5"  type="regular">ους</infl-ending>
         <infl-ending
-            footnote="foot-16"  type="regular">ως</infl-ending>
+            footnote="foot-16" stem-class="stem-5"  type="regular">ως</infl-ending>
         <infl-ending
-            footnote="foot-17"  type="regular">εως</infl-ending>
+            footnote="foot-17" stem-class="stem-6"  type="regular">εως</infl-ending>
         <infl-ending
-            footnote="foot-26"  type="irregular">υς</infl-ending>
+            footnote="foot-26"   type="irregular">υς</infl-ending>
         <infl-ending
-            footnote="foot-33"  type="irregular">ου</infl-ending>
+            footnote="foot-33" stem-class="stem-1"  type="irregular">ου</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="3rd" case="nominative" gend="neuter">
         <infl-ending
-            footnote="foot-15"  type="regular">α</infl-ending>
+            footnote="foot-15"   type="regular primary">α</infl-ending>
         <infl-ending
-              type="regular">ος</infl-ending>
+             stem-class="stem-5"  type="regular">ος</infl-ending>
         <infl-ending
-            footnote="foot-16,foot-21"  type="regular">ας</infl-ending>
+            footnote="foot-16 foot-21" stem-class="stem-5 stem-1"  type="regular">ας</infl-ending>
         <infl-ending
-              type="regular">υ</infl-ending>
+             stem-class="stem-6"  type="regular">υ </infl-ending>
         <infl-ending
-              type="regular">ι</infl-ending>
+               type="regular">ι </infl-ending>
         <infl-ending
-             dialects="Doric" type="irregular">ρς</infl-ending>
+              dialects="Doric" type="irregular">ρς</infl-ending>
         <infl-ending
-            footnote="foot-33"  type="irregular">ον</infl-ending>
+            footnote="foot-33" stem-class="stem-1"  type="irregular">ον</infl-ending>
         <infl-ending
-            footnote="foot-33"  type="irregular">-</infl-ending>
+            footnote="foot-33" stem-class="stem-1"  type="irregular">-</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="singular" decl="3rd" case="vocative" gend="neuter">
         <infl-ending
-            footnote="foot-15"  type="regular">α</infl-ending>
+            footnote="foot-15"   type="regular">α</infl-ending>
         <infl-ending
-              type="regular">ος</infl-ending>
+             stem-class="stem-5"  type="regular">ος</infl-ending>
         <infl-ending
-              type="regular">ας</infl-ending>
+             stem-class="stem-5"  type="regular">ας</infl-ending>
         <infl-ending
-              type="regular">υ</infl-ending>
+             stem-class="stem-6"  type="regular">υ </infl-ending>
+        <infl-ending
+             stem-class="stem-1"  type="regular primary">-</infl-ending>
     </infl-ending-set>
   </infl-endings>
   <footnotes>
-    <footnote id="foot-1">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s217">#217</reflink> for Rules of variance within regular endings.</footnote>
-    <footnote id="foot-2">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s227">#227</reflink> for Table of α- and ε- stem feminine 1st declension contracts</footnote>
-    <footnote id="foot-3">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s227">#227</reflink> for Table of α- and ε- stem masculine 1st declension contracts</footnote>
-    <footnote id="foot-4">Above w/ (ν)</footnote>
-    <footnote id="foot-5">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s235">#235</reflink> for Table of o- and ε- stem masculine  2ndt declension contracts</footnote>
-    <footnote id="foot-6">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s235">#235</reflink> for Table of o- and ε- stem neuter 2ndt declension contracts</footnote>
-    <footnote id="foot-7">(Attic) contracts of o-stems preceded by a long vowel</footnote>
-    <footnote id="foot-8">Stems in Labial or Palatal (κ, γ,χ)</footnote>
-    <footnote id="foot-9">Stems in Dental  (τ,δ,θ)</footnote>
-    <footnote id="foot-10">Stems in Liquid (λ, ρ, or a nasal ν)</footnote>
-    <footnote id="foot-11">Stems in Sigma (ες, ας, ος)</footnote>
-    <footnote id="foot-12">Stems in ευ, αυ, ου</footnote>
-    <footnote id="foot-13">Stems in ι and υ</footnote>
-    <footnote id="foot-14">Stems in ερ varying with ρ</footnote>
+    <footnote id="foot-1"> See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s217">#217</reflink> for Rules of variance within regular endings.</footnote>
+    <footnote id="foot-2"> See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s227">#227</reflink> for Table of α- and ε- stem feminine 1st declension contracts</footnote>
+    <footnote id="foot-3"> See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s227">#227</reflink> for Table of α- and ε- stem masculine 1st declension contracts</footnote>
+    <footnote id="foot-4">Previous, with (ν)</footnote>
+    <footnote id="foot-5"> See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s235">#235</reflink> for Table of o- and ε- stem masculine  2ndt declension contracts</footnote>
+    <footnote id="foot-6"> See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s235">#235</reflink> for Table of o- and ε- stem neuter 2ndt declension contracts</footnote>
+    <footnote id="foot-7">(Attic) contracts of o-stems preceded by a long vowel </footnote>
     <footnote id="foot-15">This is not actually an “ending,” but the last letter of the “pure stem” (See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s248">#248</reflink>)</footnote>
     <footnote id="foot-16">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s264">#264</reflink> &amp; <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s265">#265</reflink> for Table of Sigma (εσ, ας, ος) stem contracts</footnote>
-    <footnote id="foot-17">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s268">#268</reflink> for Table of  ι and υ - stem contracts.</footnote>
+    <footnote id="foot-17"> See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s268">#268</reflink> for Table of  ι and υ - stem contracts.</footnote>
     <footnote id="foot-18">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s275">#275</reflink> for Table of  ευ, αυ, and ου - stem contracts.</footnote>
     <footnote id="foot-19">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s279">#279</reflink> for Table of stems in οι feminine 3rd declension contracts</footnote>
     <footnote id="foot-20">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s265">#265</reflink> for Table of stems in ε + εσ neuter 3rd declension contracts</footnote>
     <footnote id="foot-21">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s258">#258</reflink> for Table of stems in τ and ατ neuter 3rd declension contracts</footnote>
     <footnote id="foot-22">On stem ending in ν, ν doubled in gen. Sing Aeolic (e.g. μῆνς, μῆννος...)</footnote>
     <footnote id="foot-23">Also in inscriptions and expressions of swearing</footnote>
-    <footnote id="foot-24">(Borrowed from 1st decl) Sometimes in proper names whose nominative ends in -ης</footnote>
+    <footnote id="foot-24">(Borrowed from 1st decl) Sometimes in proper names whose nominative ends in -ης </footnote>
     <footnote id="foot-25">From -ας-stems (properly αι)</footnote>
     <footnote id="foot-26">(ε)υς instead of (ε)ος or ους (gen) for (3rd decl) words whose nominative ends in -ος</footnote>
     <footnote id="foot-27">In 3rd decl. Only in the words αἰδώς (Attic) and ἠώς (Homer and Ionic)</footnote>
     <footnote id="foot-28">Contraction of a stem in οι  and an ι-ending</footnote>
     <footnote id="foot-29">Stronger form of Ionic contractions of οι-stems (in the nominative)</footnote>
-    <footnote id="foot-30">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s267">#267</reflink> for Table of ω - stem contracts.</footnote>
+    <footnote id="foot-30"> See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s267">#267</reflink> for Table of ω - stem contracts.</footnote>
     <footnote id="foot-31">Nominative plural contraction of  -ειδ+ες  after dropping the δ (Used for accusative too)</footnote>
-    <footnote id="foot-32">Plurals &amp; duals occur rarely (and w/ 2nd decl endings) for 3rd decl  οι-stem nouns</footnote>
-    <footnote id="foot-33">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s258">#258</reflink> for description and examples of Irreg. Decl involving 3rd decl endings</footnote>
+    <footnote id="foot-32"> Plurals &amp; duals occur rarely (and w/ 2nd decl endings) for 3rd decl  οι-stem nouns</footnote>
+    <footnote id="foot-33">See Smyth <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s258">#258</reflink> for description and examples of Irreg. Decl involving 3rd decl endings </footnote>
     <footnote id="foot-34">(Homer)  for Attic  (ῳτ)ι</footnote>
-    <footnote id="foot-35">(Homer) for Cretan ινς</footnote>
+    <footnote id="foot-35">(Homer) for Cretan ινς </footnote>
     <footnote id="foot-36">Also an irregular ending for other stem(s)</footnote>
     <footnote id="foot-37">In inscriptions</footnote>
     <footnote id="foot-38">Plural endings for otherwise dual noun, οσσε (eyes)</footnote>
     <footnote id="foot-39">“Poetical” (acc for ἔρως), Smyth, <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s285">#285</reflink>,11</footnote>
     <footnote id="foot-40">Poetic for χρωτι, dat. of ὁ χρως</footnote>
+    <footnote id="foot-41">Feminine Only</footnote>
+    <footnote id="foot-42">Masculine Only</footnote>
   </footnotes>
 </infl-data>

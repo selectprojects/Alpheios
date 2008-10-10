@@ -81,6 +81,8 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
     params.entries = {};
     params.words = {};
     
+    var form = Alph.$(".alph-word",a_node).attr("context");
+    
     for (var infl_type in Alph.LanguageToolSet.greek.INFLECTION_MAP )
     {
         var key = Alph.LanguageToolSet.greek.INFLECTION_MAP[infl_type].keys[0];
@@ -218,9 +220,10 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
     // identify the correct xslt parameters for the requested inflection type
     if (params.showpofs)
     {
-        Alph.LanguageToolSet.greek.setInflectionXSL(params,params.showpofs);
+        Alph.LanguageToolSet.greek.setInflectionXSL(params,params.showpofs,form);
         // TODO -remove this HACK which suppresses the Javascript matching algorithm
-        params.suppress_match = true;
+        //params.suppress_match = true;
+        params.always_expand = true;
     }
     return params;
 }
@@ -230,11 +233,12 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
  * @param {String} a_params the other params for the window
  * @param {String} a_infl_type the inflection type
  */
-Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type)
+Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
 {        
     a_params.xslt_params = {};
     a_params.xslt_params.fragment = 1;
     a_params.xslt_params.selected_endings = a_params.entries[a_infl_type];
+    a_params.xslt_params.form = a_form;
     
     // get rid of the selected endings parameter if we couldn't find any
     if (a_params.xslt_params.selected_endings.length == 0)
@@ -293,6 +297,105 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type)
                 a_params.xslt_params.group6 = order[2];
             }
         }
-        
+                
     }
+    
+}
+
+/**
+ * Greek specific inflection table display code
+ * @param 
+ * @param 
+ */
+Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl)
+{
+    // collapse all non-primary endings
+    // TODO - this may only be temporary - experimenting with different approaches
+    //window.opener.Alph.util.log("Handling inflection display");
+    var ret_cells = [];
+    var show_stem_classes = [];
+    Alph.$("td.ending-group",a_tbl).each(
+        function(c_i)
+        {
+            var endings = Alph.$("span.ending", this);
+            var children = Alph.$(this).children();
+            // collapse lists of endings unless the cell has a highlighted ending,
+            // in which case just display them all
+            if (Alph.$(endings).length >0 )
+            {
+                var last_col_index = null;
+                children.each(
+                
+                    function(a_i)
+                    {
+                        if (Alph.$(this).hasClass('ending')) 
+                        {
+                            // reset the ending index
+                            last_col_index=null;
+                            // never hide the primary endings
+                            if (! Alph.$(this).hasClass("primary"))
+                            {
+                                // never hide selected endings
+                                // and make sure to unhide any endings
+                                // of the same stem class
+                                if (Alph.$(this).hasClass("highlight-ending") ) 
+                                {
+                                    var stem_class = Alph.$(this).attr("stem-class");
+                                    if (stem_class != null && stem_class != '')
+                                    {
+                                        show_stem_classes.push(stem_class.split(/\s/));
+                                    }
+                                    
+                                }
+                                else 
+                                {
+                                    Alph.$(this).addClass("ending-collapsed");
+                                    Alph.$(this).attr("ending-index",a_i);
+                                    last_col_index=a_i;
+                                    
+                                }
+                            }
+                        }
+                        else if (last_col_index != null &&
+                                 (Alph.$(this).hasClass("footnote") || Alph.$(this).hasClass("footnote-delimiter")))
+                        {
+                                Alph.$(this).addClass("ending-collapsed");
+                                Alph.$(this).attr("ending-index",last_col_index);
+      
+                        }
+                        else
+                        {
+                            // do nothing
+                        }
+                    }
+                );
+                
+                var realIndex = Alph.$(this).get(0).realIndex;
+                ret_cells.push(this);
+                
+            }
+        }
+    );
+    
+    show_stem_classes = Alph.$.unique(show_stem_classes);
+    show_stem_classes.forEach(
+        function(a_stemclass,a_i)
+        {
+            Alph.$("#" + a_stemclass,a_tbl).addClass("highlight-ending");
+            var like_stems = Alph.$("span.ending[stem-class='" + a_stemclass + "']",a_tbl);
+            Alph.$(like_stems).each(
+                function() {
+                    if (Alph.$(this).hasClass("ending-collapsed"))
+                    {
+                        Alph.$(this).removeClass("ending-collapsed");
+                        var ending_index = Alph.$(this).attr("ending-index");
+                        Alph.$(this).nextAll("[ending-index='" + ending_index + "']").removeClass("ending-collapsed");
+                    }
+                }
+                
+            )
+            
+        }
+    );
+    return ret_cells;
 }

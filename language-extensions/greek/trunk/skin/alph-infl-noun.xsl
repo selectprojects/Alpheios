@@ -36,29 +36,51 @@
     <xsl:param name="group5" select="'gend'"/>
     <xsl:param name="group6" select="'type'"/>
 
-    <!-- the following is optional, used to select specific inflection ending(s) -->
+    <!-- the following are optional, used to select specific inflection ending(s) -->
     <xsl:param name="selected_endings" select="/.." />
+    <xsl:param name="form" />
+        
+    <!--xsl:param name="form" select="'μοῦσα'"/-->
     
     <!-- debug -->
-    <!--xsl:param name="test_endings">
+    <xsl:param name="test_endings">
+        <!--
         <div class="alph-entry">
             <div class="alph-dict">
-                <span class="alph-hdwd">sono, sonere, sonui, sonitus: </span>
-                <span context="verb" class="alph-pofs">verb</span>
-                <span context="3rd" class="alph-conj">3rd conjugation</span>
-                <span class="alph-attrlist">(early, very frequent)</span>
-                <span class="alph-src">[Ox.Lat.Dict.]</span>
+                <span class="alph-hdwd">Μοῦσα: </span>
+                <span context="noun" class="alph-pofs">
+                    <span class="alph-attr">feminine</span>noun
+                </span>
             </div>
-            <div class="alph-mean">make a noise/sound; speak/utter, emit sound; be spoken of (as); express/denote;</div>
-            <div class="alph-mean">echo/resound; be heard, sound; be spoken of (as); celebrate in speech;</div>
-            <div class="alph-infl-set">
-                <span class="alph-term">sonit•<span class="alph-suff">u</span></span>
-                <span context="supine" class="alph-pofs">(supine)</span>
-                <div class="alph-infl">Singular: <span context="ablative-singular-neuter-supine" class="alph-case">ablative (n)</span></div>
+            <div class="alph-mean">the Muse</div>
+            <div context="μοῦσα" class="alph-infl-set">
+                <span class="alph-term">μοῦσα<span class="alph-suff"></span>
+                </span>
+                <div class="alph-infl">Singular: 
+                    <span context="nominative-singular-feminine-noun" class="alph-case">nominative</span>
+                    <span context="vocative-singular-feminine-noun" class="alph-case">vocative</span>
+                </div>
             </div>
-        </div>
+          </div>
+            -->
+            <div class="alph-entry">
+                <div class="alph-dict">
+                    <span class="alph-hdwd">νόστος: </span>
+                    <span context="noun" class="alph-pofs">
+                        <span class="alph-attr">masculine</span>noun</span>
+                </div>
+                <div class="alph-mean">a return home</div>
+                <div context="νόστον" class="alph-infl-set">
+                    <span class="alph-term">νόστον
+                        <span class="alph-suff"></span>
+                    </span>
+                    <div class="alph-infl">Singular: 
+                        <span context="accusative-singular-masculine-noun" class="alph-case">accusative</span>
+                    </div>
+                </div>
+            </div>
     </xsl:param>
-    <xsl:param name='selected_endings' select="exsl:node-set($test_endings)"/-->
+    <!--xsl:param name='selected_endings' select="exsl:node-set($test_endings)"/-->
     
     <!-- skip the enclosing html and body tags -->
     <xsl:param name="fragment" />
@@ -90,12 +112,13 @@
         <xsl:param name="endings" />
         <table id="alph-infl-table"> <!-- start table -->
             <caption>
-                <xsl:for-each select="$selected_endings">
+                <xsl:value-of select="$form"/>  
+                <!--xsl:for-each select="$selected_endings">
                     <xsl:if test="position() &gt; 1">
                         , 
                     </xsl:if>
                     <xsl:value-of select="."/>
-                </xsl:for-each>
+                </xsl:for-each-->
             </caption>
             <!-- write the colgroup elements -->
             <xsl:call-template name="colgroups">
@@ -197,7 +220,7 @@
                                     <xsl:call-template name="rowgroup">
                                         <xsl:with-param name="data" select="$data"/>
                                         <xsl:with-param name="groupheader" select="$lastgroup2"/>
-                                        <xsl:with-param name="colgroup" select="$lastgroup1"/>
+                                        <xsl:with-param name="colgroup" select="$lastgroup1"/> 
                                     </xsl:call-template>
                                 </tr> 
                             </xsl:if>
@@ -212,17 +235,18 @@
         <xsl:param name="data"/>
         <xsl:param name="groupheader"/>
         <xsl:param name="colgroup"/>
-        <xsl:for-each select="$data">
+        <xsl:variable name="group4_vals" select="//order-item[@attname=$group4]"/>
+        <xsl:variable name="group5_vals" select="//order-item[@attname=$group5]"/>
+        <!--td class="ending-group"--> <!-- start new cell -->
+        <!---
+            for each group4 (decl)
+            for each group5 (gend)
+            if the set doesn't have a match on group4 and group5 then print an empty cell
+        -->
+        <xsl:for-each select="$group4_vals">
             <xsl:sort 
-                select="/infl-data/order-table/order-item[@attname=$group4 
-                    and text()=current()/@*[local-name(.)=$group4]]/@order" 
-                data-type="number"/>
-            <xsl:sort 
-                select="/infl-data/order-table/order-item[@attname=$group5 
-                    and text()=current()/@*[local-name(.)=$group5]]/@order" 
-                    data-type="number"/>
-            <xsl:variable name="group4c" select="current()/@*[local-name(.)=$group4]"/>
-            <xsl:variable name="group5c" select="current()/@*[local-name(.)=$group5]"/>
+                select="@order"/>
+            <xsl:variable name="lastgroup4" select="."/>
             <xsl:if test="position()=1">
                 <!-- add the row header cell if it's the first cell in 
                     the row -->
@@ -232,61 +256,81 @@
                         <xsl:with-param name="item" select="/infl-data/order-table/order-item[@attname=$groupheader]"/>
                     </xsl:call-template>
                 </th>
-            </xsl:if>
-            <xsl:call-template name="ending-cell">
-                <xsl:with-param name="infl-endings" select="infl-ending"/>
-            </xsl:call-template>
-        </xsl:for-each>        
+            </xsl:if>            
+            <xsl:for-each select="$group5_vals">
+                <xsl:sort select="@order"/> 
+                <xsl:variable name="lastgroup5" select="."/>
+                <xsl:variable name="celldata"
+                    select="$data/@*[local-name(.)=$group4 
+                    and .=$lastgroup4]/../@*[local-name(.)=$group5 
+                    and . = $lastgroup5]/.."/>
+                <!--xsl:choose>
+                    <xsl:when test="count($celldata) = 0">
+                        <td class="emptycell {$lastgroup4} {$lastgroup5}">&#160;</td>
+                    </xsl:when>
+                    <xsl:otherwise-->
+                        <xsl:variable name="selected">
+                            <xsl:call-template name="check_infl_sets">
+                                <xsl:with-param name="current_data" select="$celldata" />
+                            </xsl:call-template>
+                        </xsl:variable>                                            
+                        <xsl:call-template name="ending-cell">
+                            <xsl:with-param name="infl-endings" select="$celldata"/>
+                            <xsl:with-param name="selected" select="$selected"/>
+                        </xsl:call-template>
+                    <!--/xsl:otherwise>
+                </xsl:choose-->
+            </xsl:for-each>
+        </xsl:for-each>
     </xsl:template>
     
     <xsl:template name="ending-cell">
         <xsl:param name="infl-endings"/>
-        <!--div class="debug_sel"><xsl:value-of select="$selected"/></div-->
-        <xsl:variable name="ending-types" select="//order-item[@attname=$group6]"/>
-        <xsl:for-each select="$ending-types">
-            <xsl:sort 
-                select="/infl-data/order-table/order-item[@attname=$group6 
-                and text()=current()]/@order"/>
-            <!-- start a new cell to hold the data if this is the first instance of 
-                this attribute value -->
-            <xsl:if test="generate-id(.) = generate-id($ending-types[.=current()])">
-                <xsl:variable name="lasttype" select="."/>
-                <td class="{$lasttype}"> <!-- start new cell -->
-                    <xsl:variable name="cellgroup" 
-                        select="$infl-endings/@*[local-name(.)=$group6 
-                        and .=$lasttype]/.."/>
-                    <!-- print an empty cell if there are no endings of this type -->
-                    <xsl:if test="count($cellgroup) = 0">
-                        &#160;
+        <xsl:param name="selected"/>
+        <xsl:variable name="ending_types" select="//order-item[@attname=$group6]"/>
+                <!-- group by type -->
+                <xsl:for-each select="$ending_types">
+                    <xsl:sort 
+                        select="/infl-data/order-table/order-item[@attname=$group6 
+                        and text()=current()]/@order"/>                            
+                    <xsl:if test="generate-id(.) = generate-id($ending_types[.=current()])">
+                        <xsl:variable name="lasttype" select="."/>
+                        <td class="ending-group {$lasttype}"> <!-- start new cell -->
+                            <xsl:variable name="cellgroup" 
+                                select="$infl-endings/infl-ending/@*[local-name(.)=$group6 
+                                        and contains(.,$lasttype)]/.."/>
+                            <!-- print an empty cell if there are no endings of this type -->
+                            <xsl:if test="count($cellgroup) = 0"><span class="emptycell">&#160;</span></xsl:if>
+                            <xsl:for-each select="$cellgroup">
+                                <xsl:variable name="selected_class">
+                                    <!-- if this ending matches the one supplied in the template params
+                                        then add a 'selected' class to the data element -->
+                                    <xsl:if test="$selected &gt; 0">
+                                        <xsl:variable name="ending_match">
+                                            <xsl:call-template name="check_ending">
+                                                <xsl:with-param name="item" select="."/>
+                                            </xsl:call-template>
+                                        </xsl:variable>
+                                        <xsl:if test="$ending_match &gt; 0">selected</xsl:if>
+                                    </xsl:if>    
+                                </xsl:variable>
+                                <xsl:variable name="notfirst">
+                                    <xsl:if test="position() &gt; 1">notfirst</xsl:if>
+                                </xsl:variable>
+                                <span class="ending {@type} {$selected_class} {$notfirst}" stem-class="{@stem-class}">
+                                    <xsl:value-of select="."/>
+                                </span>
+                                <xsl:call-template name="add-dialect">
+                                    <xsl:with-param name="item" select="."/>
+                                </xsl:call-template>                        
+                                <xsl:call-template name="add-footnote">
+                                    <xsl:with-param name="item" select="."/>
+                                </xsl:call-template>
+                            </xsl:for-each>
+                        </td>                                   
                     </xsl:if>
-                    <xsl:for-each select="$cellgroup">
-                        <xsl:variable name="selected">
-                            <xsl:call-template name="check_infl_sets">
-                                <xsl:with-param name="current_data" select="current()" />
-                            </xsl:call-template>
-                        </xsl:variable>                                    
-                        <xsl:variable name="selected_class">
-                            <!-- if this ending matches the one supplied in the template params
-                                then add a 'selected' class to the data element -->
-                            <xsl:if test="$selected &gt; 0">selected</xsl:if>    
-                        </xsl:variable>
-                        <xsl:variable name="notfirst">
-                            <xsl:if test="position() &gt; 1">notfirst</xsl:if>
-                        </xsl:variable>
-                        <span class="ending {$selected_class} {$notfirst}">
-                            <xsl:value-of select="."/>
-                        </span>
-                        <xsl:call-template name="add-dialect">
-                            <xsl:with-param name="item" select="."/>
-                        </xsl:call-template>                        
-                        <xsl:call-template name="add-footnote">
-                            <xsl:with-param name="item" select="."/>
-                        </xsl:call-template>
-                    </xsl:for-each>
-                </td>
-            </xsl:if>
-        </xsl:for-each>    
-        
+                </xsl:for-each>
+        <!--/td-->
     </xsl:template>
     
     <!-- template to produce header rows for the table columns -->    
@@ -306,8 +350,8 @@
             <xsl:for-each select="$headerrow1">
                 <xsl:sort select="@order" data-type="number"/>
                 <xsl:variable name="colspan" 
-                    select="$row2count * $row3count"/>
-                    <th colspan="{$colspan}">
+                    select="$row2count*$row3count"/>
+                    <th class="always-visible" colspan="{$colspan}">
                         <span class="header-text"><xsl:value-of select="."/></span>
                         <xsl:apply-templates select="."/>                       
                     </th>
@@ -324,7 +368,7 @@
                 <xsl:sort select="@order" data-type="number"/>               
                 <xsl:for-each select="$headerrow2">
                     <xsl:sort select="@order" data-type="number"/>
-                     <th colspan="{$row3count}">
+                    <th class="always-visible" colspan="{$row3count}">
                          <span class="header-text" ><xsl:value-of select="."/></span>
                          <xsl:apply-templates select="."/>                        
                      </th>        
@@ -369,10 +413,23 @@
     <xsl:template name="stem-data" match="order-item[@attname='decl']">        
         <br/>
         <xsl:variable name="thisdecl" select="text()"/>
-        <xsl:value-of select="/infl-data/stem-table/stem[@decl=$thisdecl]"/>
+        <xsl:apply-templates select="/infl-data/stem-table/stem[@decl=$thisdecl]"/>
         <xsl:call-template name="add-footnote">
             <xsl:with-param name="item" select="."/>
         </xsl:call-template>                
+    </xsl:template>
+    
+    <xsl:template match="stem">
+        <span class="stem"><xsl:value-of select="text()"/></span>
+        <xsl:if test="stem-class">
+            <div class="stem-classes">
+                <xsl:apply-templates select="stem-class"/>                
+            </div>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template match="stem-class">
+        <div id="{@id}" class="stem-class"><xsl:value-of select="."/></div>        
     </xsl:template>
     
     <xsl:template name="no-sub" match="order-item">
@@ -401,7 +458,7 @@
                         <xsl:variable name="row3pos" select="position()-1"/>
                         <xsl:variable name="index" 
                             select="($row1pos * $row3count * $row2count) + 
-                                    ($row2pos * $row3count) + position() + 1"/>
+                            ($row2pos * $row3count) + position() + 1"/>
                             <col class="header3col" realIndex="{$index}" 
                                 row1pos="{$row1pos}"
                                 row2pos="{$row2pos}"
@@ -431,7 +488,7 @@
         <xsl:if test="$item/@footnote">
             <xsl:call-template name="footnote-tokens">
                 <xsl:with-param name="list" select="$item/@footnote"/>
-                <xsl:with-param name="delimiter" select="','"/>
+                <xsl:with-param name="delimiter" select="' '"/>
             </xsl:call-template>   
         </xsl:if>
     </xsl:template>    
@@ -452,7 +509,7 @@
         <xsl:param name="current_data"/>
         <xsl:variable name="matches">
             <xsl:for-each select="$selected_endings//div[@class='alph-infl-set' and 
-                ../div[@class='alph-dict']/span[(@class='alph-conj') and (@context = $current_data/@conj)]]
+                ../div[@class='alph-dict']/span[(@class='alph-pofs') and (@context = 'noun')]]
                 ">
                 <xsl:for-each select="div[@class='alph-infl']">
                     <xsl:call-template name="find_infl_match">
@@ -462,55 +519,24 @@
                 </xsl:for-each>
             </xsl:for-each>    
         </xsl:variable>
-        <xsl:choose>
-            <xsl:when test="contains($matches,'1')">
-                1
-            </xsl:when>
-            <xsl:otherwise>
-                0
-            </xsl:otherwise>
-        </xsl:choose>
+        <xsl:value-of select="$matches"/>
     </xsl:template>
     
     <xsl:template name="find_infl_match">
         <xsl:param name="current_data"/>
         <xsl:param name="filtered_data"/>
         <xsl:param name="att_pos" select="0"/>
-        <xsl:variable name="num_atts" select="count($current_data/@*)"/>
-        <xsl:choose> 
-            <xsl:when test="$att_pos = $num_atts">
-                <!-- if we have tested all the possible attributes return the match count-->
-                <xsl:value-of select="count($filtered_data)"/>
-            </xsl:when>
-            <xsl:when test="($att_pos &lt; $num_atts) and $filtered_data">
-                <!-- variables are: voice, mood, tense, num, person, and case -->
-                <!-- only try match if current conjugation data element has the attribute -->
-                <xsl:for-each select="$current_data/@*">
-                    <xsl:if test="position() = $att_pos + 1">
-                        <xsl:variable name="att_name" select="name()"/>
-                                <xsl:variable name="class_name">
-                                    <xsl:value-of select="concat('alph-',$att_name)"/>        
-                                </xsl:variable>
-                                <xsl:variable name="latest_data"
-                                    select="$filtered_data[
-                                    ((span[@class=$class_name]/text() = $current_data/@*[local-name(.)=$att_name])
-                                    or
-                                    (span[@class=$class_name]/@context = $current_data/@*[local-name(.)=$att_name])
-                                    or
-                                    
-                                    ($att_name='case' and substring-before(span[@class=$class_name]/@context,'-') = $current_data/@*[local-name(.)=$att_name])
-                                 )]"/>
-                                <xsl:call-template name="find_infl_match">
-                                    <xsl:with-param name="current_data" select="$current_data"/>
-                                    <xsl:with-param name="filtered_data" 
-                                        select="$latest_data"/>
-                                    <xsl:with-param name="att_pos" select="$att_pos+1"/>                           
-                                </xsl:call-template>                                                                        
-                    </xsl:if>
-                </xsl:for-each>                
-            </xsl:when>
-            <xsl:otherwise>0</xsl:otherwise>
-        </xsl:choose>
+        
+        <xsl:variable name="match_case_num"><xsl:value-of select="$current_data/@case"/>-<xsl:value-of select="$current_data/@num"/>-</xsl:variable>
+        <xsl:variable name="match_gend"><xsl:value-of select="$current_data/@gend"/></xsl:variable>
+        <xsl:variable name="match_pofs">-noun</xsl:variable>
+        
+
+        <xsl:value-of select="count($filtered_data//span[@class='alph-case'
+            and starts-with(@context,$match_case_num)
+            and contains(@context,$match_pofs)
+            and contains($match_gend,(substring-before($match_pofs,(substring-after(@context,$match_case_num)))))
+            ])"/>
     </xsl:template>    
     
     <xsl:template name="footnote-tokens">
@@ -538,6 +564,18 @@
     
     <xsl:template match="reflink">
         <a href="{@xlink:href}" class="alph-reflink"><xsl:value-of select="."/></a>
+    </xsl:template>
+    
+    <xsl:template name="check_ending">
+        <xsl:param name="item"/>
+        <xsl:variable name="ending_length" select="string-length($item)"/>
+        <xsl:variable name="form_length" select="string-length($form)"/>
+        <xsl:variable name="form_index" select="$form_length - $ending_length+1"/>
+        <xsl:variable name="form_ending" select="substring($form,$form_index)"/>
+        <xsl:choose>
+            <xsl:when test="$form_ending = $item">1</xsl:when>
+            <xsl:otherwise>0</xsl:otherwise>
+        </xsl:choose> 
     </xsl:template>
     
 </xsl:stylesheet>

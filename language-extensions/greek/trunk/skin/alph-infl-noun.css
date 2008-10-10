@@ -1,3 +1,13 @@
 .ending {
     font-family: "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif; 
 }
+
+.notfirst:before {
+    content: "";
+
+}
+
+.notfirst {
+    padding-left: .5em;
+}
+
