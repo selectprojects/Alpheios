@@ -298,7 +298,7 @@
                         <td class="ending-group {$lasttype}"> <!-- start new cell -->
                             <xsl:variable name="cellgroup" 
                                 select="$infl-endings/infl-ending/@*[local-name(.)=$group6 
-                                        and contains(.,$lasttype)]/.."/>
+                                        and contains(concat(' ',(.),' '), concat(' ',$lasttype,' '))]/.."/>
                             <!-- print an empty cell if there are no endings of this type -->
                             <xsl:if test="count($cellgroup) = 0"><span class="emptycell">&#160;</span></xsl:if>
                             <xsl:for-each select="$cellgroup">
