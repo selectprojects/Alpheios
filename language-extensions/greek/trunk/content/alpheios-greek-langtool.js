@@ -332,28 +332,31 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl)
                         {
                             // reset the ending index
                             last_col_index=null;
-                            // never hide the primary endings
-                            if (! Alph.$(this).hasClass("primary"))
+                            // never hide selected endings
+                            // and make sure to unhide any endings
+                            // of the same stem class
+                            if (Alph.$(this).hasClass("highlight-ending") ) 
                             {
-                                // never hide selected endings
-                                // and make sure to unhide any endings
-                                // of the same stem class
-                                if (Alph.$(this).hasClass("highlight-ending") ) 
+                                var stem_class = Alph.$(this).attr("stem-class");
+                                if (stem_class != null && stem_class != '')
                                 {
-                                    var stem_class = Alph.$(this).attr("stem-class");
-                                    if (stem_class != null && stem_class != '')
-                                    {
-                                        show_stem_classes.push(stem_class.split(/\s/));
-                                    }
+                                    stem_class.split(/\s/).forEach(
+                                        function(a_stem,a_si)
+                                        {
+                                            show_stem_classes.push(a_stem);        
+                                        }
+                                    );
                                     
                                 }
-                                else 
-                                {
-                                    Alph.$(this).addClass("ending-collapsed");
-                                    Alph.$(this).attr("ending-index",a_i);
-                                    last_col_index=a_i;
-                                    
-                                }
+                                
+                            }
+                            // never hide the primary endings
+                            else if (! Alph.$(this).hasClass("primary")) 
+                            {
+                                Alph.$(this).addClass("ending-collapsed");
+                                Alph.$(this).attr("ending-index",a_i);
+                                last_col_index=a_i;
+                                
                             }
                         }
                         else if (last_col_index != null &&
