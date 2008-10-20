@@ -56,12 +56,12 @@
     <infl-ending-set
       num="dual" decl="1st" case="accusative" gend="feminine">
         <infl-ending
-               type="regular">α</infl-ending>
+               type="regular primary">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="dative" gend="feminine">
         <infl-ending
-               type="regular">αιν</infl-ending>
+               type="regular primary">αιν</infl-ending>
         <infl-ending
                type="regular">αῖν</infl-ending>
         <infl-ending
@@ -70,7 +70,7 @@
     <infl-ending-set
       num="dual" decl="1st" case="genitive" gend="feminine">
         <infl-ending
-               type="regular">αιν</infl-ending>
+               type="regular primary">αιν</infl-ending>
         <infl-ending
                type="regular">αῖν</infl-ending>
         <infl-ending
@@ -79,22 +79,22 @@
     <infl-ending-set
       num="dual" decl="1st" case="nominative" gend="feminine">
         <infl-ending
-               type="regular">α</infl-ending>
+               type="regular primary">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="vocative" gend="feminine">
         <infl-ending
-               type="regular">α</infl-ending>
+               type="regular primary">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="accusative" gend="masculine">
         <infl-ending
-               type="regular">α</infl-ending>
+               type="regular primary">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="dative" gend="masculine">
         <infl-ending
-               type="regular">αιν</infl-ending>
+               type="regular primary">αιν</infl-ending>
         <infl-ending
                type="regular">αῖν</infl-ending>
         <infl-ending
@@ -103,7 +103,7 @@
     <infl-ending-set
       num="dual" decl="1st" case="genitive" gend="masculine">
         <infl-ending
-               type="regular">αιν</infl-ending>
+               type="regular primary">αιν</infl-ending>
         <infl-ending
                type="regular">αῖν</infl-ending>
         <infl-ending
@@ -112,12 +112,12 @@
     <infl-ending-set
       num="dual" decl="1st" case="nominative" gend="masculine">
         <infl-ending
-               type="regular">α</infl-ending>
+               type="regular primary">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="vocative" gend="masculine">
         <infl-ending
-               type="regular">α</infl-ending>
+               type="regular primary">α</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="1st" case="accusative" gend="neuter">
@@ -481,7 +481,7 @@
     <infl-ending-set
       num="dual" decl="2nd" case="dative" gend="masculine feminine">
         <infl-ending
-               type="regular">οιν</infl-ending>
+               type="regular primary">οιν</infl-ending>
         <infl-ending
             footnote="foot-5"   type="regular">οῖν</infl-ending>
         <infl-ending
@@ -496,7 +496,7 @@
         <infl-ending
             footnote="foot-5"   type="regular">ώ</infl-ending>
         <infl-ending
-               type="regular">οιν</infl-ending>
+               type="regular primary">οιν</infl-ending>
         <infl-ending
             footnote="foot-5"   type="regular">οῖν</infl-ending>
         <infl-ending
@@ -507,26 +507,28 @@
     <infl-ending-set
       num="dual" decl="2nd" case="nominative" gend="masculine feminine">
         <infl-ending
+            type="regular primary">ω</infl-ending>        
+        <infl-ending
             footnote="foot-41"   type="regular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="2nd" case="vocative" gend="masculine feminine">
         <infl-ending
-               type="regular">ω</infl-ending>
+               type="regular primary">ω</infl-ending>
         <infl-ending
             footnote="foot-5"   type="regular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="2nd" case="accusative" gend="neuter">
         <infl-ending
-               type="regular">ω</infl-ending>
+               type="regular primary">ω</infl-ending>
         <infl-ending
             footnote="foot-5"   type="regular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="2nd" case="dative" gend="neuter">
         <infl-ending
-               type="regular">οιν</infl-ending>
+               type="regular primary">οιν</infl-ending>
         <infl-ending
             footnote="foot-5"   type="regular">οῖν</infl-ending>
         <infl-ending
@@ -537,7 +539,7 @@
     <infl-ending-set
       num="dual" decl="2nd" case="genitive" gend="neuter">
         <infl-ending
-               type="regular">οιν</infl-ending>
+               type="regular primary">οιν</infl-ending>
         <infl-ending
             footnote="foot-5"   type="regular">οῖν</infl-ending>
         <infl-ending
@@ -546,14 +548,14 @@
     <infl-ending-set
       num="dual" decl="2nd" case="nominative" gend="neuter">
         <infl-ending
-               type="regular">ω</infl-ending>
+               type="regular primary">ω</infl-ending>
         <infl-ending
             footnote="foot-5"   type="regular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="2nd" case="vocative" gend="neuter">
         <infl-ending
-               type="regular">ω</infl-ending>
+               type="regular primary">ω</infl-ending>
         <infl-ending
             footnote="foot-5"   type="regular">ώ</infl-ending>
     </infl-ending-set>
@@ -835,7 +837,7 @@
     <infl-ending-set
       num="dual" decl="3rd" case="accusative" gend="masculine feminine">
         <infl-ending
-             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular primary">ε</infl-ending>
         <infl-ending
              stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
         <infl-ending
@@ -848,7 +850,7 @@
     <infl-ending-set
       num="dual" decl="3rd" case="dative" gend="masculine feminine">
         <infl-ending
-             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">οιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular primary">οιν</infl-ending>
         <infl-ending
              stem-class="stem-5 stem-6"  type="regular">οῖν</infl-ending>
         <infl-ending
@@ -863,7 +865,7 @@
     <infl-ending-set
       num="dual" decl="3rd" case="genitive" gend="masculine feminine">
         <infl-ending
-             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">οιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular primary">οιν</infl-ending>
         <infl-ending
              stem-class="stem-5 stem-6"  type="regular">οῖν</infl-ending>
         <infl-ending
@@ -872,7 +874,7 @@
     <infl-ending-set
       num="dual" decl="3rd" case="nominative" gend="masculine feminine">
         <infl-ending
-             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular primary">ε</infl-ending>
         <infl-ending
              stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
         <infl-ending
@@ -883,7 +885,7 @@
     <infl-ending-set
       num="dual" decl="3rd" case="vocative" gend="masculine feminine">
         <infl-ending
-             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular primary">ε</infl-ending>
         <infl-ending
              stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
         <infl-ending
@@ -903,7 +905,7 @@
     <infl-ending-set
       num="dual" decl="3rd" case="accusative" gend="neuter">
         <infl-ending
-             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular primary">ε</infl-ending>
         <infl-ending
              stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
         <infl-ending
@@ -914,7 +916,7 @@
     <infl-ending-set
       num="dual" decl="3rd" case="dative" gend="neuter">
         <infl-ending
-             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">οιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular primary">οιν</infl-ending>
         <infl-ending
                type="regular">ῷν</infl-ending>
         <infl-ending
@@ -929,7 +931,7 @@
     <infl-ending-set
       num="dual" decl="3rd" case="genitive" gend="neuter">
         <infl-ending
-             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">οιν</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular primary">οιν</infl-ending>
         <infl-ending
                type="regular">ῷν</infl-ending>
         <infl-ending
@@ -940,7 +942,7 @@
     <infl-ending-set
       num="dual" decl="3rd" case="nominative" gend="neuter">
         <infl-ending
-             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular primary">ε</infl-ending>
         <infl-ending
              stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
         <infl-ending
@@ -951,7 +953,7 @@
     <infl-ending-set
       num="dual" decl="3rd" case="vocative" gend="neuter">
         <infl-ending
-             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular">ε</infl-ending>
+             stem-class="stem-1 stem-2 stem-3 stem-4 stem-7"  type="regular primary">ε</infl-ending>
         <infl-ending
              stem-class="stem-5 stem-6"  type="regular">ει</infl-ending>
         <infl-ending
