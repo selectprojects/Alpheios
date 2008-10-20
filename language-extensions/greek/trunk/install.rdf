@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!-- $Revision: 356 $-->
-<!-- $BuildId: 45+$-->
+<!-- $BuildId: 46$-->
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 		xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
 	<Description about="urn:mozilla:install-manifest">
 		<em:name>Alpheios Greek Tools</em:name>
-		<em:version>0.2.952.20081013</em:version>
+		<em:version>0.2.954.20081016</em:version>
 		<em:description></em:description>
 		<em:creator>Cantus Foundation</em:creator>
 		<em:id>{0f1d7e06-6ce8-40b0-83f0-9783ee65ab9b}</em:id>
@@ -23,7 +23,7 @@
 		<em:iconURL></em:iconURL>
 		<em:homepageURL></em:homepageURL>
 		<em:optionsURL>chrome://alpheios/content/alpheios-prefs.xul</em:optionsURL>
-		<em:updateURL>http://repository.harrysdell.com:8085/xpi-updates/update.rdf</em:updateURL>
+		<em:updateURL>http://dev.alpheios.net:8085/xpi-updates/update.rdf</em:updateURL>
 		<em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDOd5Mjthp4ZkEF0g6sF6fHbUb92PJTSSPxjjdsuDOXG9dUTVwIDjW183lTZawP7+4E8PmUeqVl5GCjKRCAhAXmSV+X/IYgSuiTOTjuXUJ/ylA9EGSo2dHVeGJ834XIKe5NK7NL08EFxst58vCASTViuMv5GpeIYtPvbj7PyXJ82QIDAQAB</em:updateKey>
         <em:requires>
             <Description>

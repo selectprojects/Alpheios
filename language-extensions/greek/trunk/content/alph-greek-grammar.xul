@@ -10,7 +10,7 @@
         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
         windowtype="alph-window"
         onload="Alph.tei_grammar.onLoad('alph-index-smyth');">;
-    <script type="application/x-javascript" src="chrome://alpheios/content/jquery-1.2.1.min.js" />
+    <script type="application/x-javascript" src="chrome://alpheios/content/jquery-1.2.6.min.js" />
     <script type="application/x-javascript" src="chrome://alpheios/content/alpheios-tei-grammar.js" />
 
     <hbox flex="100">
