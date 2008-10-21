@@ -1,11 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
-  xmlns:aldt="http://treebank.alpheios.net/namespaces/aldt">
-
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:import href="beta-uni-util.xsl"/>
 
-  <xsl:variable name="beta2uni-table"
-    select="document('beta-uni-tables.xml')/*/aldt:beta-uni-table"/>
+  <!--
+      Test whether text is in betacode
+      Parameters:
+        $input        string/node to be tested
+      Output:
+        1 if encoded in betacode, else 0
+      (Note: Boolean return value does not seem to work
+      reliably, perhaps because of recursion.)
+  -->
+  <xsl:template name="is-beta" >
+    <xsl:param name="input"/>
+
+    <xsl:choose>
+      <!-- if xml:lang says betacode, so be it -->
+      <xsl:when test="lang('grc-x-beta')">
+        <xsl:value-of select="1"/>
+      </xsl:when>
+
+      <!-- if no input, can't be betacode -->
+      <xsl:when test="string-length($input) = 0">
+        <xsl:value-of select="0"/>
+      </xsl:when>
+
+      <!-- otherwise, check the characters in input -->
+      <xsl:otherwise>
+        <xsl:variable name="head" select="substring($input, 1, 1)"/>
+
+        <xsl:choose>
+          <!-- if betacode base letter, assume it's betacode -->
+          <xsl:when
+            test="contains($beta-uppers, $head) or
+                  contains($beta-lowers, $head)">
+            <xsl:value-of select="1"/>
+          </xsl:when>
+
+          <xsl:otherwise>
+            <!-- look up unicode in table -->
+            <xsl:variable name="beta">
+              <xsl:apply-templates select="$beta-uni-table" mode="u2b">
+                <xsl:with-param name="key" select="$head"/>
+              </xsl:apply-templates>
+            </xsl:variable>
+
+            <xsl:choose>
+              <!-- if found in unicode table, it's not betacode -->
+              <xsl:when test="string-length($beta) > 0">
+                <xsl:value-of select="0"/>
+              </xsl:when>
+            
+              <!-- otherwise, skip letter and check remainder of string -->
+              <xsl:otherwise>
+                <xsl:call-template name="is-beta">
+                  <xsl:with-param name="input" select="substring($input, 2)"/>
+                </xsl:call-template>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:otherwise>
+        </xsl:choose>
+
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
 
   <!--
       Convert Greek betacode to Unicode
@@ -134,7 +192,7 @@
                       (substring($state, 1, 1) != '*')">
           <!-- output just the state -->
           <!-- here precomposed=true means don't make it combining -->
-          <xsl:apply-templates select="$beta2uni-table" mode="b2u">
+          <xsl:apply-templates select="$beta-uni-table" mode="b2u">
             <xsl:with-param name="key" select="$state"/>
             <xsl:with-param name="precomposed" select="true()"/>
           </xsl:apply-templates>
@@ -152,7 +210,7 @@
           <!-- if upper != lower, we have a letter -->
           <xsl:when test="$lowerchar != $upperchar">
             <!-- use letter+state as key into table -->
-            <xsl:apply-templates select="$beta2uni-table" mode="b2u">
+            <xsl:apply-templates select="$beta-uni-table" mode="b2u">
               <xsl:with-param name="key" select="concat($lowerchar, $state)"/>
               <xsl:with-param name="precomposed" select="$precomposed"/>
             </xsl:apply-templates>
@@ -164,7 +222,7 @@
             <!-- this handles the case of isolated diacritics -->
             <xsl:value-of select="$char"/>
             <xsl:if test="string-length($state) > 0">
-              <xsl:apply-templates select="$beta2uni-table" mode="b2u">
+              <xsl:apply-templates select="$beta-uni-table" mode="b2u">
                 <xsl:with-param name="key" select="$state"/>
                 <xsl:with-param name="precomposed" select="$precomposed"/>
               </xsl:apply-templates>
@@ -173,62 +231,6 @@
         </xsl:choose>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
-
-  <!--
-      Convert betacode to unicode
-      Parameters:
-        $key          combined character plus diacritics
-        $precomposed  whether to put out precomposed or decomposed Unicode
-  -->
-  <xsl:key name="beta-uni-lookup" match="aldt:beta-uni-table/aldt:entry"
-    use="aldt:beta"/>
-  <xsl:template match="aldt:beta-uni-table" mode="b2u">
-    <xsl:param name="key"/>
-    <xsl:param name="precomposed"/>
-
-    <xsl:variable name="keylen" select="string-length($key)"/>
-
-    <!-- if key exists -->
-    <xsl:if test="$keylen > 0">
-      <!-- try to find key in table -->
-      <xsl:variable name="value">
-        <xsl:choose>
-          <xsl:when test="$precomposed">
-            <xsl:value-of
-              select="key('beta-uni-lookup', $key)/aldt:unic/text()"/>
-          </xsl:when>
-          <xsl:otherwise>
-            <xsl:value-of
-              select="key('beta-uni-lookup', $key)/aldt:unid/text()"/>
-          </xsl:otherwise>
-        </xsl:choose>
-      </xsl:variable>
-
-      <xsl:choose>
-        <!-- if key found, use value -->
-        <xsl:when test="string-length($value) > 0">
-          <xsl:value-of select="$value"/>
-        </xsl:when>
-
-        <!-- if key not found and contains multiple chars -->
-        <xsl:when test="$keylen > 1">
-          <!-- lookup key with last char removed -->
-          <xsl:apply-templates select="$beta2uni-table" mode="b2u">
-            <xsl:with-param name="key" select="substring($key, 1, $keylen - 1)"/>
-            <xsl:with-param name="precomposed" select="$precomposed"/>
-          </xsl:apply-templates>
-          <!-- convert last char -->
-          <!-- precomposed=false means make sure it's a combining form -->
-          <xsl:apply-templates select="$beta2uni-table" mode="b2u">
-            <xsl:with-param name="key" select="substring($key, $keylen)"/>
-            <xsl:with-param name="precomposed" select="false()"/>
-          </xsl:apply-templates>
-        </xsl:when>
-      </xsl:choose>
-
-      <!-- otherwise, ignore it (probably an errant *) -->
-    </xsl:if>
   </xsl:template>
 
 </xsl:stylesheet>

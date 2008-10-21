@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
-  xmlns:aldt="http://treebank.alpheios.net/namespaces/aldt">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
   <xsl:import href="beta-uni-util.xsl"/>
-
-  <xsl:variable name="uni2beta-table"
-    select="document('beta-uni-tables.xml')/*/aldt:beta-uni-table"/>
 
   <!--
       Convert Unicode to Greek betacode
@@ -67,7 +63,7 @@
 
         <!-- look up unicode in table -->
         <xsl:variable name="beta">
-          <xsl:apply-templates select="$uni2beta-table" mode="u2b">
+          <xsl:apply-templates select="$beta-uni-table" mode="u2b">
             <xsl:with-param name="key" select="$head"/>
           </xsl:apply-templates>
         </xsl:variable>
@@ -137,18 +133,6 @@
         <xsl:value-of select="$state"/>
       </xsl:otherwise>
     </xsl:choose>
-  </xsl:template>
-
-  <!--
-    Convert unicode to betacode
-    Parameters:
-      $key          Unicode character to look up
-  -->
-  <xsl:key name="unic-beta-lookup" match="aldt:beta-uni-table/aldt:entry"
-    use="aldt:unic"/>
-  <xsl:template match="aldt:beta-uni-table" mode="u2b">
-    <xsl:param name="key"/>
-    <xsl:value-of select="key('unic-beta-lookup', $key)/aldt:beta/text()"/>
   </xsl:template>
 
 </xsl:stylesheet>
