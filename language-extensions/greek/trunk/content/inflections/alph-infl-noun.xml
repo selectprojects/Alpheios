@@ -10,7 +10,7 @@
         <stem-class id="stem-6">STEMS IN ι and υ</stem-class>
         <stem-class id="stem-3">π-MUTE/κ-MUTE or LABIAL/PALATAL (no neuter)</stem-class>
         <stem-class id="stem-7">STEMS IN DIPTHONG (ευ,αυ,ου) (no neuter)</stem-class>
-        <stem-class id="stem-2">ω-STEM (no feminine or neuter)</stem-class>
+        <stem-class id="stem-2" type="primary">ω-STEM (no feminine or neuter)</stem-class>
         <stem-class id="stem-8">(οι) (no masculine or neuter)</stem-class>
         <stem-class id="stem-1">τ-MUTE or DENTAL (τ,δ,θ,ατ)</stem-class>
         <stem-class id="stem-4">LIQUID, NASAL (incl. SYNCOPATED LIQUID)(λ,ρ) (ν) (ερ >> ρ) (no neuter)</stem-class>

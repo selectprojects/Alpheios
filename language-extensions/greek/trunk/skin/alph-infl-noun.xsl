@@ -40,7 +40,7 @@
     <xsl:param name="selected_endings" select="/.." />
     <xsl:param name="form" />
         
-    <!--xsl:param name="form" select="'μοῦσα'"/-->
+    <!--xsl:param name="form" select="'νόστος'"/-->
     
     <!-- debug -->
     <xsl:param name="test_endings">
@@ -112,7 +112,7 @@
         <xsl:param name="endings" />
         <table id="alph-infl-table"> <!-- start table -->
             <caption>
-                <xsl:value-of select="$form"/>  
+                <xsl:value-of select="$form"/>
                 <!--xsl:for-each select="$selected_endings">
                     <xsl:if test="position() &gt; 1">
                         , 
@@ -422,14 +422,17 @@
     <xsl:template match="stem">
         <span class="stem"><xsl:value-of select="text()"/></span>
         <xsl:if test="stem-class">
-            <div class="stem-classes">
-                <xsl:apply-templates select="stem-class"/>                
-            </div>
+            <ul class="stem-class-block">
+                <li class="stem-class-toggle header-text">stem-classes</li>
+                <ul class="stem-classes">
+                        <xsl:apply-templates select="stem-class"/>                
+                </ul>
+            </ul>
         </xsl:if>
     </xsl:template>
     
     <xsl:template match="stem-class">
-        <div id="{@id}" class="stem-class"><xsl:value-of select="."/></div>        
+        <li id="{@id}" class="{@type}"><span class="stem-class-desc"><xsl:value-of select="."/></span></li>        
     </xsl:template>
     
     <xsl:template name="no-sub" match="order-item">
