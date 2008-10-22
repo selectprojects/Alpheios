@@ -47,1512 +47,1607 @@
     <beta-uni-table>
       <entry>
         <beta>a*(/|</beta>
-        <unic>ᾍ</unic>
-        <unid>ᾍ</unid>
+        <unic>&#x1F8D;</unic>
+        <unid>&#x0391;&#x0314;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a*(/</beta>
-        <unic>Ἅ</unic>
-        <unid>Ἅ</unid>
+        <unic>&#x1F0D;</unic>
+        <unid>&#x0391;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>a*(\|</beta>
-        <unic>ᾋ</unic>
-        <unid>ᾋ</unid>
+        <unic>&#x1F8B;</unic>
+        <unid>&#x0391;&#x0314;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a*(\</beta>
-        <unic>Ἃ</unic>
-        <unid>Ἃ</unid>
+        <unic>&#x1F0B;</unic>
+        <unid>&#x0391;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>a*(=|</beta>
-        <unic>ᾏ</unic>
-        <unid>ᾏ</unid>
+        <unic>&#x1F8F;</unic>
+        <unid>&#x0391;&#x0314;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a*(=</beta>
-        <unic>Ἇ</unic>
-        <unid>Ἇ</unid>
+        <unic>&#x1F0F;</unic>
+        <unid>&#x0391;&#x0314;&#x0342;</unid>
       </entry>
       <entry>
         <beta>a*(|</beta>
-        <unic>ᾉ</unic>
-        <unid>ᾉ</unid>
+        <unic>&#x1F89;</unic>
+        <unid>&#x0391;&#x0314;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a*(</beta>
-        <unic>Ἁ</unic>
-        <unid>Ἁ</unid>
+        <unic>&#x1F09;</unic>
+        <unid>&#x0391;&#x0314;</unid>
       </entry>
       <entry>
         <beta>a*)/|</beta>
-        <unic>ᾌ</unic>
-        <unid>ᾌ</unid>
+        <unic>&#x1F8C;</unic>
+        <unid>&#x0391;&#x0313;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a*)/</beta>
-        <unic>Ἄ</unic>
-        <unid>Ἄ</unid>
+        <unic>&#x1F0C;</unic>
+        <unid>&#x0391;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>a*)\|</beta>
-        <unic>ᾊ</unic>
-        <unid>ᾊ</unid>
+        <unic>&#x1F8A;</unic>
+        <unid>&#x0391;&#x0313;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a*)\</beta>
-        <unic>Ἂ</unic>
-        <unid>Ἂ</unid>
+        <unic>&#x1F0A;</unic>
+        <unid>&#x0391;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>a*)=|</beta>
-        <unic>ᾎ</unic>
-        <unid>ᾎ</unid>
+        <unic>&#x1F8E;</unic>
+        <unid>&#x0391;&#x0313;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a*)=</beta>
-        <unic>Ἆ</unic>
-        <unid>Ἆ</unid>
+        <unic>&#x1F0E;</unic>
+        <unid>&#x0391;&#x0313;&#x0342;</unid>
       </entry>
       <entry>
         <beta>a*)|</beta>
-        <unic>ᾈ</unic>
-        <unid>ᾈ</unid>
+        <unic>&#x1F88;</unic>
+        <unid>&#x0391;&#x0313;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a*)</beta>
-        <unic>Ἀ</unic>
-        <unid>Ἀ</unid>
+        <unic>&#x1F08;</unic>
+        <unid>&#x0391;&#x0313;</unid>
       </entry>
       <entry>
         <beta>a*/</beta>
-        <unic>Ά</unic>
-        <unid>Ά</unid>
+        <unic>&#x0386;</unic>
+        <unid>&#x0391;&#x0301;</unid>
       </entry>
       <entry>
         <beta>a*\</beta>
-        <unic>Ὰ</unic>
-        <unid>Ὰ</unid>
+        <unic>&#x1FBA;</unic>
+        <unid>&#x0391;&#x0300;</unid>
       </entry>
       <entry>
         <beta>a*|</beta>
-        <unic>ᾼ</unic>
-        <unid>ᾼ</unid>
+        <unic>&#x1FBC;</unic>
+        <unid>&#x0391;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a*_</beta>
-        <unic>Ᾱ</unic>
-        <unid>Ᾱ</unid>
+        <unic>&#x1FB9;</unic>
+        <unid>&#x0391;&#x0304;</unid>
       </entry>
       <entry>
         <beta>a*^</beta>
-        <unic>Ᾰ</unic>
-        <unid>Ᾰ</unid>
+        <unic>&#x1FB8;</unic>
+        <unid>&#x0391;&#x0306;</unid>
       </entry>
       <entry>
         <beta>a*</beta>
-        <unic>Α</unic>
-        <unid>Α</unid>
+        <unic>&#x0391;</unic>
+        <unid>&#x0391;</unid>
       </entry>
       <entry>
         <beta>a(/|</beta>
-        <unic>ᾅ</unic>
-        <unid>ᾅ</unid>
+        <unic>&#x1F85;</unic>
+        <unid>&#x03B1;&#x0314;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a(/</beta>
-        <unic>ἅ</unic>
-        <unid>ἅ</unid>
+        <unic>&#x1F05;</unic>
+        <unid>&#x03B1;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>a(\|</beta>
-        <unic>ᾃ</unic>
-        <unid>ᾃ</unid>
+        <unic>&#x1F83;</unic>
+        <unid>&#x03B1;&#x0314;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a(\</beta>
-        <unic>ἃ</unic>
-        <unid>ἃ</unid>
+        <unic>&#x1F03;</unic>
+        <unid>&#x03B1;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>a(=|</beta>
-        <unic>ᾇ</unic>
-        <unid>ᾇ</unid>
+        <unic>&#x1F87;</unic>
+        <unid>&#x03B1;&#x0314;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a(=</beta>
-        <unic>ἇ</unic>
-        <unid>ἇ</unid>
+        <unic>&#x1F07;</unic>
+        <unid>&#x03B1;&#x0314;&#x0342;</unid>
       </entry>
       <entry>
         <beta>a(|</beta>
-        <unic>ᾁ</unic>
-        <unid>ᾁ</unid>
+        <unic>&#x1F81;</unic>
+        <unid>&#x03B1;&#x0314;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a(</beta>
-        <unic>ἁ</unic>
-        <unid>ἁ</unid>
+        <unic>&#x1F01;</unic>
+        <unid>&#x03B1;&#x0314;</unid>
       </entry>
       <entry>
         <beta>a)/|</beta>
-        <unic>ᾄ</unic>
-        <unid>ᾄ</unid>
+        <unic>&#x1F84;</unic>
+        <unid>&#x03B1;&#x0313;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a)/</beta>
-        <unic>ἄ</unic>
-        <unid>ἄ</unid>
+        <unic>&#x1F04;</unic>
+        <unid>&#x03B1;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>a)\|</beta>
-        <unic>ᾂ</unic>
-        <unid>ᾂ</unid>
+        <unic>&#x1F82;</unic>
+        <unid>&#x03B1;&#x0313;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a)\</beta>
-        <unic>ἂ</unic>
-        <unid>ἂ</unid>
+        <unic>&#x1F02;</unic>
+        <unid>&#x03B1;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>a)=|</beta>
-        <unic>ᾆ</unic>
-        <unid>ᾆ</unid>
+        <unic>&#x1F86;</unic>
+        <unid>&#x03B1;&#x0313;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a)=</beta>
-        <unic>ἆ</unic>
-        <unid>ἆ</unid>
+        <unic>&#x1F06;</unic>
+        <unid>&#x03B1;&#x0313;&#x0342;</unid>
       </entry>
       <entry>
         <beta>a)|</beta>
-        <unic>ᾀ</unic>
-        <unid>ᾀ</unid>
+        <unic>&#x1F80;</unic>
+        <unid>&#x03B1;&#x0313;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a)</beta>
-        <unic>ἀ</unic>
-        <unid>ἀ</unid>
+        <unic>&#x1F00;</unic>
+        <unid>&#x03B1;&#x0313;</unid>
       </entry>
       <entry>
         <beta>a/|</beta>
-        <unic>ᾴ</unic>
-        <unid>ᾴ</unid>
+        <unic>&#x1FB4;</unic>
+        <unid>&#x03B1;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a/</beta>
-        <unic>ά</unic>
-        <unid>ά</unid>
+        <unic>&#x03AC;</unic>
+        <unid>&#x03B1;&#x0301;</unid>
       </entry>
       <entry>
         <beta>a\|</beta>
-        <unic>ᾲ</unic>
-        <unid>ᾲ</unid>
+        <unic>&#x1FB2;</unic>
+        <unid>&#x03B1;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a\</beta>
-        <unic>ὰ</unic>
-        <unid>ὰ</unid>
+        <unic>&#x1F70;</unic>
+        <unid>&#x03B1;&#x0300;</unid>
       </entry>
       <entry>
         <beta>a=|</beta>
-        <unic>ᾷ</unic>
-        <unid>ᾷ</unid>
+        <unic>&#x1FB7;</unic>
+        <unid>&#x03B1;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a=</beta>
-        <unic>ᾶ</unic>
-        <unid>ᾶ</unid>
+        <unic>&#x1FB6;</unic>
+        <unid>&#x03B1;&#x0342;</unid>
       </entry>
       <entry>
         <beta>a|</beta>
-        <unic>ᾳ</unic>
-        <unid>ᾳ</unid>
+        <unic>&#x1FB3;</unic>
+        <unid>&#x03B1;&#x0345;</unid>
       </entry>
       <entry>
         <beta>a_</beta>
-        <unic>ᾱ</unic>
-        <unid>ᾱ</unid>
+        <unic>&#x1FB1;</unic>
+        <unid>&#x03B1;&#x0304;</unid>
       </entry>
       <entry>
         <beta>a^</beta>
-        <unic>ᾰ</unic>
-        <unid>ᾰ</unid>
+        <unic>&#x1FB0;</unic>
+        <unid>&#x03B1;&#x0306;</unid>
       </entry>
       <entry>
         <beta>a</beta>
-        <unic>α</unic>
-        <unid>α</unid>
+        <unic>&#x03B1;</unic>
+        <unid>&#x03B1;</unid>
       </entry>
       <entry>
         <beta>b*</beta>
-        <unic>Β</unic>
-        <unid>Β</unid>
+        <unic>&#x0392;</unic>
+        <unid>&#x0392;</unid>
       </entry>
       <entry>
         <beta>b</beta>
-        <unic>β</unic>
-        <unid>β</unid>
+        <unic>&#x03B2;</unic>
+        <unid>&#x03B2;</unid>
       </entry>
       <entry>
         <beta>c*</beta>
-        <unic>Ξ</unic>
-        <unid>Ξ</unid>
+        <unic>&#x039E;</unic>
+        <unid>&#x039E;</unid>
       </entry>
       <entry>
         <beta>c</beta>
-        <unic>ξ</unic>
-        <unid>ξ</unid>
+        <unic>&#x03BE;</unic>
+        <unid>&#x03BE;</unid>
       </entry>
       <entry>
         <beta>d*</beta>
-        <unic>Δ</unic>
-        <unid>Δ</unid>
+        <unic>&#x0394;</unic>
+        <unid>&#x0394;</unid>
       </entry>
       <entry>
         <beta>d</beta>
-        <unic>δ</unic>
-        <unid>δ</unid>
+        <unic>&#x03B4;</unic>
+        <unid>&#x03B4;</unid>
       </entry>
       <entry>
         <beta>e*(/</beta>
-        <unic>Ἕ</unic>
-        <unid>Ἕ</unid>
+        <unic>&#x1F1D;</unic>
+        <unid>&#x0395;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>e*(\</beta>
-        <unic>Ἓ</unic>
-        <unid>Ἓ</unid>
+        <unic>&#x1F1B;</unic>
+        <unid>&#x0395;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>e*(</beta>
-        <unic>Ἑ</unic>
-        <unid>Ἑ</unid>
+        <unic>&#x1F19;</unic>
+        <unid>&#x0395;&#x0314;</unid>
       </entry>
       <entry>
         <beta>e*)/</beta>
-        <unic>Ἔ</unic>
-        <unid>Ἔ</unid>
+        <unic>&#x1F1C;</unic>
+        <unid>&#x0395;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>e*)\</beta>
-        <unic>Ἒ</unic>
-        <unid>Ἒ</unid>
+        <unic>&#x1F1A;</unic>
+        <unid>&#x0395;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>e*)</beta>
-        <unic>Ἐ</unic>
-        <unid>Ἐ</unid>
+        <unic>&#x1F18;</unic>
+        <unid>&#x0395;&#x0313;</unid>
       </entry>
       <entry>
         <beta>e*/</beta>
-        <unic>Έ</unic>
-        <unid>Έ</unid>
+        <unic>&#x0388;</unic>
+        <unid>&#x0395;&#x0301;</unid>
       </entry>
       <entry>
         <beta>e*\</beta>
-        <unic>Ὲ</unic>
-        <unid>Ὲ</unid>
+        <unic>&#x1FC8;</unic>
+        <unid>&#x0395;&#x0300;</unid>
       </entry>
       <entry>
         <beta>e*</beta>
-        <unic>Ε</unic>
-        <unid>Ε</unid>
+        <unic>&#x0395;</unic>
+        <unid>&#x0395;</unid>
       </entry>
       <entry>
         <beta>e(/</beta>
-        <unic>ἕ</unic>
-        <unid>ἕ</unid>
+        <unic>&#x1F15;</unic>
+        <unid>&#x03B5;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>e(\</beta>
-        <unic>ἓ</unic>
-        <unid>ἓ</unid>
+        <unic>&#x1F13;</unic>
+        <unid>&#x03B5;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>e(</beta>
-        <unic>ἑ</unic>
-        <unid>ἑ</unid>
+        <unic>&#x1F11;</unic>
+        <unid>&#x03B5;&#x0314;</unid>
       </entry>
       <entry>
         <beta>e)/</beta>
-        <unic>ἔ</unic>
-        <unid>ἔ</unid>
+        <unic>&#x1F14;</unic>
+        <unid>&#x03B5;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>e)\</beta>
-        <unic>ἒ</unic>
-        <unid>ἒ</unid>
+        <unic>&#x1F12;</unic>
+        <unid>&#x03B5;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>e)</beta>
-        <unic>ἐ</unic>
-        <unid>ἐ</unid>
+        <unic>&#x1F10;</unic>
+        <unid>&#x03B5;&#x0313;</unid>
       </entry>
       <entry>
         <beta>e/</beta>
-        <unic>έ</unic>
-        <unid>έ</unid>
+        <unic>&#x03AD;</unic>
+        <unid>&#x03B5;&#x0301;</unid>
       </entry>
       <entry>
         <beta>e\</beta>
-        <unic>ὲ</unic>
-        <unid>ὲ</unid>
+        <unic>&#x1F72;</unic>
+        <unid>&#x03B5;&#x0300;</unid>
       </entry>
       <entry>
         <beta>e</beta>
-        <unic>ε</unic>
-        <unid>ε</unid>
+        <unic>&#x03B5;</unic>
+        <unid>&#x03B5;</unid>
       </entry>
       <entry>
         <beta>f*</beta>
-        <unic>Φ</unic>
-        <unid>Φ</unid>
+        <unic>&#x03A6;</unic>
+        <unid>&#x03A6;</unid>
       </entry>
       <entry>
         <beta>f</beta>
-        <unic>φ</unic>
-        <unid>φ</unid>
+        <unic>&#x03C6;</unic>
+        <unid>&#x03C6;</unid>
       </entry>
       <entry>
         <beta>g*</beta>
-        <unic>Γ</unic>
-        <unid>Γ</unid>
+        <unic>&#x0393;</unic>
+        <unid>&#x0393;</unid>
       </entry>
       <entry>
         <beta>g</beta>
-        <unic>γ</unic>
-        <unid>γ</unid>
+        <unic>&#x03B3;</unic>
+        <unid>&#x03B3;</unid>
       </entry>
       <entry>
         <beta>h*(/|</beta>
-        <unic>ᾝ</unic>
-        <unid>ᾝ</unid>
+        <unic>&#x1F9D;</unic>
+        <unid>&#x0397;&#x0314;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h*(/</beta>
-        <unic>Ἥ</unic>
-        <unid>Ἥ</unid>
+        <unic>&#x1F2D;</unic>
+        <unid>&#x0397;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>h*(\|</beta>
-        <unic>ᾛ</unic>
-        <unid>ᾛ</unid>
+        <unic>&#x1F9B;</unic>
+        <unid>&#x0397;&#x0314;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h*(\</beta>
-        <unic>Ἣ</unic>
-        <unid>Ἣ</unid>
+        <unic>&#x1F2B;</unic>
+        <unid>&#x0397;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>h*(=|</beta>
-        <unic>ᾟ</unic>
-        <unid>ᾟ</unid>
+        <unic>&#x1F9F;</unic>
+        <unid>&#x0397;&#x0314;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h*(=</beta>
-        <unic>Ἧ</unic>
-        <unid>Ἧ</unid>
+        <unic>&#x1F2F;</unic>
+        <unid>&#x0397;&#x0314;&#x0342;</unid>
       </entry>
       <entry>
         <beta>h*(|</beta>
-        <unic>ᾙ</unic>
-        <unid>ᾙ</unid>
+        <unic>&#x1F99;</unic>
+        <unid>&#x0397;&#x0314;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h*(</beta>
-        <unic>Ἡ</unic>
-        <unid>Ἡ</unid>
+        <unic>&#x1F29;</unic>
+        <unid>&#x0397;&#x0314;</unid>
       </entry>
       <entry>
         <beta>h*)/|</beta>
-        <unic>ᾜ</unic>
-        <unid>ᾜ</unid>
+        <unic>&#x1F9C;</unic>
+        <unid>&#x0397;&#x0313;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h*)/</beta>
-        <unic>Ἤ</unic>
-        <unid>Ἤ</unid>
+        <unic>&#x1F2C;</unic>
+        <unid>&#x0397;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>h*)\|</beta>
-        <unic>ᾚ</unic>
-        <unid>ᾚ</unid>
+        <unic>&#x1F9A;</unic>
+        <unid>&#x0397;&#x0313;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h*)\</beta>
-        <unic>Ἢ</unic>
-        <unid>Ἢ</unid>
+        <unic>&#x1F2A;</unic>
+        <unid>&#x0397;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>h*)=|</beta>
-        <unic>ᾞ</unic>
-        <unid>ᾞ</unid>
+        <unic>&#x1F9E;</unic>
+        <unid>&#x0397;&#x0313;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h*)=</beta>
-        <unic>Ἦ</unic>
-        <unid>Ἦ</unid>
+        <unic>&#x1F2E;</unic>
+        <unid>&#x0397;&#x0313;&#x0342;</unid>
       </entry>
       <entry>
         <beta>h*)|</beta>
-        <unic>ᾘ</unic>
-        <unid>ᾘ</unid>
+        <unic>&#x1F98;</unic>
+        <unid>&#x0397;&#x0313;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h*)</beta>
-        <unic>Ἠ</unic>
-        <unid>Ἠ</unid>
+        <unic>&#x1F28;</unic>
+        <unid>&#x0397;&#x0313;</unid>
       </entry>
       <entry>
         <beta>h*/</beta>
-        <unic>Ή</unic>
-        <unid>Ή</unid>
+        <unic>&#x0389;</unic>
+        <unid>&#x0397;&#x0301;</unid>
       </entry>
       <entry>
         <beta>h*\</beta>
-        <unic>Ὴ</unic>
-        <unid>Ὴ</unid>
+        <unic>&#x1FCA;</unic>
+        <unid>&#x0397;&#x0300;</unid>
       </entry>
       <entry>
         <beta>h*|</beta>
-        <unic>ῌ</unic>
-        <unid>ῌ</unid>
+        <unic>&#x1FCC;</unic>
+        <unid>&#x0397;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h*</beta>
-        <unic>Η</unic>
-        <unid>Η</unid>
+        <unic>&#x0397;</unic>
+        <unid>&#x0397;</unid>
       </entry>
       <entry>
         <beta>h(/|</beta>
-        <unic>ᾕ</unic>
-        <unid>ᾕ</unid>
+        <unic>&#x1F95;</unic>
+        <unid>&#x03B7;&#x0314;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h(/</beta>
-        <unic>ἥ</unic>
-        <unid>ἥ</unid>
+        <unic>&#x1F25;</unic>
+        <unid>&#x03B7;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>h(\|</beta>
-        <unic>ᾓ</unic>
-        <unid>ᾓ</unid>
+        <unic>&#x1F93;</unic>
+        <unid>&#x03B7;&#x0314;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h(\</beta>
-        <unic>ἣ</unic>
-        <unid>ἣ</unid>
+        <unic>&#x1F23;</unic>
+        <unid>&#x03B7;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>h(=|</beta>
-        <unic>ᾗ</unic>
-        <unid>ᾗ</unid>
+        <unic>&#x1F97;</unic>
+        <unid>&#x03B7;&#x0314;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h(=</beta>
-        <unic>ἧ</unic>
-        <unid>ἧ</unid>
+        <unic>&#x1F27;</unic>
+        <unid>&#x03B7;&#x0314;&#x0342;</unid>
       </entry>
       <entry>
         <beta>h(|</beta>
-        <unic>ᾑ</unic>
-        <unid>ᾑ</unid>
+        <unic>&#x1F91;</unic>
+        <unid>&#x03B7;&#x0314;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h(</beta>
-        <unic>ἡ</unic>
-        <unid>ἡ</unid>
+        <unic>&#x1F21;</unic>
+        <unid>&#x03B7;&#x0314;</unid>
       </entry>
       <entry>
         <beta>h)/|</beta>
-        <unic>ᾔ</unic>
-        <unid>ᾔ</unid>
+        <unic>&#x1F94;</unic>
+        <unid>&#x03B7;&#x0313;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h)/</beta>
-        <unic>ἤ</unic>
-        <unid>ἤ</unid>
+        <unic>&#x1F24;</unic>
+        <unid>&#x03B7;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>h)\|</beta>
-        <unic>ᾒ</unic>
-        <unid>ᾒ</unid>
+        <unic>&#x1F92;</unic>
+        <unid>&#x03B7;&#x0313;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h)\</beta>
-        <unic>ἢ</unic>
-        <unid>ἢ</unid>
+        <unic>&#x1F22;</unic>
+        <unid>&#x03B7;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>h)=|</beta>
-        <unic>ᾖ</unic>
-        <unid>ᾖ</unid>
+        <unic>&#x1F96;</unic>
+        <unid>&#x03B7;&#x0313;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h)=</beta>
-        <unic>ἦ</unic>
-        <unid>ἦ</unid>
+        <unic>&#x1F26;</unic>
+        <unid>&#x03B7;&#x0313;&#x0342;</unid>
       </entry>
       <entry>
         <beta>h)|</beta>
-        <unic>ᾐ</unic>
-        <unid>ᾐ</unid>
+        <unic>&#x1F90;</unic>
+        <unid>&#x03B7;&#x0313;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h)</beta>
-        <unic>ἠ</unic>
-        <unid>ἠ</unid>
+        <unic>&#x1F20;</unic>
+        <unid>&#x03B7;&#x0313;</unid>
       </entry>
       <entry>
         <beta>h/|</beta>
-        <unic>ῄ</unic>
-        <unid>ῄ</unid>
+        <unic>&#x1FC4;</unic>
+        <unid>&#x03B7;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h/</beta>
-        <unic>ή</unic>
-        <unid>ή</unid>
+        <unic>&#x03AE;</unic>
+        <unid>&#x03B7;&#x0301;</unid>
       </entry>
       <entry>
         <beta>h\|</beta>
-        <unic>ῂ</unic>
-        <unid>ῂ</unid>
+        <unic>&#x1FC2;</unic>
+        <unid>&#x03B7;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h\</beta>
-        <unic>ὴ</unic>
-        <unid>ὴ</unid>
+        <unic>&#x1F74;</unic>
+        <unid>&#x03B7;&#x0300;</unid>
       </entry>
       <entry>
         <beta>h=|</beta>
-        <unic>ῇ</unic>
-        <unid>ῇ</unid>
+        <unic>&#x1FC7;</unic>
+        <unid>&#x03B7;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h=</beta>
-        <unic>ῆ</unic>
-        <unid>ῆ</unid>
+        <unic>&#x1FC6;</unic>
+        <unid>&#x03B7;&#x0342;</unid>
       </entry>
       <entry>
         <beta>h|</beta>
-        <unic>ῃ</unic>
-        <unid>ῃ</unid>
+        <unic>&#x1FC3;</unic>
+        <unid>&#x03B7;&#x0345;</unid>
       </entry>
       <entry>
         <beta>h</beta>
-        <unic>η</unic>
-        <unid>η</unid>
+        <unic>&#x03B7;</unic>
+        <unid>&#x03B7;</unid>
       </entry>
       <entry>
         <beta>i*(/</beta>
-        <unic>Ἵ</unic>
-        <unid>Ἵ</unid>
+        <unic>&#x1F3D;</unic>
+        <unid>&#x0399;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>i*(\</beta>
-        <unic>Ἳ</unic>
-        <unid>Ἳ</unid>
+        <unic>&#x1F3B;</unic>
+        <unid>&#x0399;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>i*(=</beta>
-        <unic>Ἷ</unic>
-        <unid>Ἷ</unid>
+        <unic>&#x1F3F;</unic>
+        <unid>&#x0399;&#x0314;&#x0342;</unid>
       </entry>
       <entry>
         <beta>i*(</beta>
-        <unic>Ἱ</unic>
-        <unid>Ἱ</unid>
+        <unic>&#x1F39;</unic>
+        <unid>&#x0399;&#x0314;</unid>
       </entry>
       <entry>
         <beta>i*)/</beta>
-        <unic>Ἴ</unic>
-        <unid>Ἴ</unid>
+        <unic>&#x1F3C;</unic>
+        <unid>&#x0399;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>i*)\</beta>
-        <unic>Ἲ</unic>
-        <unid>Ἲ</unid>
+        <unic>&#x1F3A;</unic>
+        <unid>&#x0399;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>i*)=</beta>
-        <unic>Ἶ</unic>
-        <unid>Ἶ</unid>
+        <unic>&#x1F3E;</unic>
+        <unid>&#x0399;&#x0313;&#x0342;</unid>
       </entry>
       <entry>
         <beta>i*)</beta>
-        <unic>Ἰ</unic>
-        <unid>Ἰ</unid>
+        <unic>&#x1F38;</unic>
+        <unid>&#x0399;&#x0313;</unid>
       </entry>
       <entry>
         <beta>i*+</beta>
-        <unic>Ϊ</unic>
-        <unid>Ϊ</unid>
+        <unic>&#x03AA;</unic>
+        <unid>&#x0399;&#x0308;</unid>
       </entry>
       <entry>
         <beta>i*/</beta>
-        <unic>Ί</unic>
-        <unid>Ί</unid>
+        <unic>&#x038A;</unic>
+        <unid>&#x0399;&#x0301;</unid>
       </entry>
       <entry>
         <beta>i*\</beta>
-        <unic>Ὶ</unic>
-        <unid>Ὶ</unid>
+        <unic>&#x1FDA;</unic>
+        <unid>&#x0399;&#x0300;</unid>
       </entry>
       <entry>
         <beta>i*_</beta>
-        <unic>Ῑ</unic>
-        <unid>Ῑ</unid>
+        <unic>&#x1FD9;</unic>
+        <unid>&#x0399;&#x0304;</unid>
       </entry>
       <entry>
         <beta>i*^</beta>
-        <unic>Ῐ</unic>
-        <unid>Ῐ</unid>
+        <unic>&#x1FD8;</unic>
+        <unid>&#x0399;&#x0306;</unid>
       </entry>
       <entry>
         <beta>i*</beta>
-        <unic>Ι</unic>
-        <unid>Ι</unid>
+        <unic>&#x0399;</unic>
+        <unid>&#x0399;</unid>
       </entry>
       <entry>
         <beta>i(/</beta>
-        <unic>ἵ</unic>
-        <unid>ἵ</unid>
+        <unic>&#x1F35;</unic>
+        <unid>&#x03B9;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>i(\</beta>
-        <unic>ἳ</unic>
-        <unid>ἳ</unid>
+        <unic>&#x1F33;</unic>
+        <unid>&#x03B9;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>i(=</beta>
-        <unic>ἷ</unic>
-        <unid>ἷ</unid>
+        <unic>&#x1F37;</unic>
+        <unid>&#x03B9;&#x0314;&#x0342;</unid>
       </entry>
       <entry>
         <beta>i(</beta>
-        <unic>ἱ</unic>
-        <unid>ἱ</unid>
+        <unic>&#x1F31;</unic>
+        <unid>&#x03B9;&#x0314;</unid>
       </entry>
       <entry>
         <beta>i)/</beta>
-        <unic>ἴ</unic>
-        <unid>ἴ</unid>
+        <unic>&#x1F34;</unic>
+        <unid>&#x03B9;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>i)\</beta>
-        <unic>ἲ</unic>
-        <unid>ἲ</unid>
+        <unic>&#x1F32;</unic>
+        <unid>&#x03B9;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>i)=</beta>
-        <unic>ἶ</unic>
-        <unid>ἶ</unid>
+        <unic>&#x1F36;</unic>
+        <unid>&#x03B9;&#x0313;&#x0342;</unid>
       </entry>
       <entry>
         <beta>i)</beta>
-        <unic>ἰ</unic>
-        <unid>ἰ</unid>
+        <unic>&#x1F30;</unic>
+        <unid>&#x03B9;&#x0313;</unid>
       </entry>
       <entry>
         <beta>i+/</beta>
-        <unic>ΐ</unic>
-        <unid>ΐ</unid>
+        <unic>&#x0390;</unic>
+        <unid>&#x03B9;&#x0308;&#x0301;</unid>
       </entry>
       <entry>
         <beta>i+\</beta>
-        <unic>ῒ</unic>
-        <unid>ῒ</unid>
+        <unic>&#x1FD2;</unic>
+        <unid>&#x03B9;&#x0308;&#x0300;</unid>
       </entry>
       <entry>
         <beta>i+=</beta>
-        <unic>ῗ</unic>
-        <unid>ῗ</unid>
+        <unic>&#x1FD7;</unic>
+        <unid>&#x03B9;&#x0308;&#x0342;</unid>
       </entry>
       <entry>
         <beta>i+</beta>
-        <unic>ϊ</unic>
-        <unid>ϊ</unid>
+        <unic>&#x03CA;</unic>
+        <unid>&#x03B9;&#x0308;</unid>
       </entry>
       <entry>
         <beta>i/</beta>
-        <unic>ί</unic>
-        <unid>ί</unid>
+        <unic>&#x03AF;</unic>
+        <unid>&#x03B9;&#x0301;</unid>
       </entry>
       <entry>
         <beta>i\</beta>
-        <unic>ὶ</unic>
-        <unid>ὶ</unid>
+        <unic>&#x1F76;</unic>
+        <unid>&#x03B9;&#x0300;</unid>
       </entry>
       <entry>
         <beta>i=</beta>
-        <unic>ῖ</unic>
-        <unid>ῖ</unid>
+        <unic>&#x1FD6;</unic>
+        <unid>&#x03B9;&#x0342;</unid>
       </entry>
       <entry>
         <beta>i_</beta>
-        <unic>ῑ</unic>
-        <unid>ῑ</unid>
+        <unic>&#x1FD1;</unic>
+        <unid>&#x03B9;&#x0304;</unid>
       </entry>
       <entry>
         <beta>i^</beta>
-        <unic>ῐ</unic>
-        <unid>ῐ</unid>
+        <unic>&#x1FD0;</unic>
+        <unid>&#x03B9;&#x0306;</unid>
       </entry>
       <entry>
         <beta>i</beta>
-        <unic>ι</unic>
-        <unid>ι</unid>
+        <unic>&#x03B9;</unic>
+        <unid>&#x03B9;</unid>
       </entry>
       <entry>
         <beta>k*</beta>
-        <unic>Κ</unic>
-        <unid>Κ</unid>
+        <unic>&#x039A;</unic>
+        <unid>&#x039A;</unid>
       </entry>
       <entry>
         <beta>k</beta>
-        <unic>κ</unic>
-        <unid>κ</unid>
+        <unic>&#x03BA;</unic>
+        <unid>&#x03BA;</unid>
       </entry>
       <entry>
         <beta>l*</beta>
-        <unic>Λ</unic>
-        <unid>Λ</unid>
+        <unic>&#x039B;</unic>
+        <unid>&#x039B;</unid>
       </entry>
       <entry>
         <beta>l</beta>
-        <unic>λ</unic>
-        <unid>λ</unid>
+        <unic>&#x03BB;</unic>
+        <unid>&#x03BB;</unid>
       </entry>
       <entry>
         <beta>m*</beta>
-        <unic>Μ</unic>
-        <unid>Μ</unid>
+        <unic>&#x039C;</unic>
+        <unid>&#x039C;</unid>
       </entry>
       <entry>
         <beta>m</beta>
-        <unic>μ</unic>
-        <unid>μ</unid>
+        <unic>&#x03BC;</unic>
+        <unid>&#x03BC;</unid>
       </entry>
       <entry>
         <beta>n*</beta>
-        <unic>Ν</unic>
-        <unid>Ν</unid>
+        <unic>&#x039D;</unic>
+        <unid>&#x039D;</unid>
       </entry>
       <entry>
         <beta>n</beta>
-        <unic>ν</unic>
-        <unid>ν</unid>
+        <unic>&#x03BD;</unic>
+        <unid>&#x03BD;</unid>
       </entry>
       <entry>
         <beta>o*(/</beta>
-        <unic>Ὅ</unic>
-        <unid>Ὅ</unid>
+        <unic>&#x1F4D;</unic>
+        <unid>&#x039F;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>o*(\</beta>
-        <unic>Ὃ</unic>
-        <unid>Ὃ</unid>
+        <unic>&#x1F4B;</unic>
+        <unid>&#x039F;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>o*(</beta>
-        <unic>Ὁ</unic>
-        <unid>Ὁ</unid>
+        <unic>&#x1F49;</unic>
+        <unid>&#x039F;&#x0314;</unid>
       </entry>
       <entry>
         <beta>o*)/</beta>
-        <unic>Ὄ</unic>
-        <unid>Ὄ</unid>
+        <unic>&#x1F4C;</unic>
+        <unid>&#x039F;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>o*)\</beta>
-        <unic>Ὂ</unic>
-        <unid>Ὂ</unid>
+        <unic>&#x1F4A;</unic>
+        <unid>&#x039F;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>o*)</beta>
-        <unic>Ὀ</unic>
-        <unid>Ὀ</unid>
+        <unic>&#x1F48;</unic>
+        <unid>&#x039F;&#x0313;</unid>
       </entry>
       <entry>
         <beta>o*/</beta>
-        <unic>Ό</unic>
-        <unid>Ό</unid>
+        <unic>&#x038C;</unic>
+        <unid>&#x039F;&#x0301;</unid>
       </entry>
       <entry>
         <beta>o*\</beta>
-        <unic>Ὸ</unic>
-        <unid>Ὸ</unid>
+        <unic>&#x1FF8;</unic>
+        <unid>&#x039F;&#x0300;</unid>
       </entry>
       <entry>
         <beta>o*</beta>
-        <unic>Ο</unic>
-        <unid>Ο</unid>
+        <unic>&#x039F;</unic>
+        <unid>&#x039F;</unid>
       </entry>
       <entry>
         <beta>o(/</beta>
-        <unic>ὅ</unic>
-        <unid>ὅ</unid>
+        <unic>&#x1F45;</unic>
+        <unid>&#x03BF;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>o(\</beta>
-        <unic>ὃ</unic>
-        <unid>ὃ</unid>
+        <unic>&#x1F43;</unic>
+        <unid>&#x03BF;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>o(</beta>
-        <unic>ὁ</unic>
-        <unid>ὁ</unid>
+        <unic>&#x1F41;</unic>
+        <unid>&#x03BF;&#x0314;</unid>
       </entry>
       <entry>
         <beta>o)/</beta>
-        <unic>ὄ</unic>
-        <unid>ὄ</unid>
+        <unic>&#x1F44;</unic>
+        <unid>&#x03BF;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>o)\</beta>
-        <unic>ὂ</unic>
-        <unid>ὂ</unid>
+        <unic>&#x1F42;</unic>
+        <unid>&#x03BF;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>o)</beta>
-        <unic>ὀ</unic>
-        <unid>ὀ</unid>
+        <unic>&#x1F40;</unic>
+        <unid>&#x03BF;&#x0313;</unid>
       </entry>
       <entry>
         <beta>o/</beta>
-        <unic>ό</unic>
-        <unid>ό</unid>
+        <unic>&#x03CC;</unic>
+        <unid>&#x03BF;&#x0301;</unid>
       </entry>
       <entry>
         <beta>o\</beta>
-        <unic>ὸ</unic>
-        <unid>ὸ</unid>
+        <unic>&#x1F78;</unic>
+        <unid>&#x03BF;&#x0300;</unid>
       </entry>
       <entry>
         <beta>o</beta>
-        <unic>ο</unic>
-        <unid>ο</unid>
+        <unic>&#x03BF;</unic>
+        <unid>&#x03BF;</unid>
       </entry>
       <entry>
         <beta>p*</beta>
-        <unic>Π</unic>
-        <unid>Π</unid>
+        <unic>&#x03A0;</unic>
+        <unid>&#x03A0;</unid>
       </entry>
       <entry>
         <beta>p</beta>
-        <unic>π</unic>
-        <unid>π</unid>
+        <unic>&#x03C0;</unic>
+        <unid>&#x03C0;</unid>
       </entry>
       <entry>
         <beta>q*</beta>
-        <unic>Θ</unic>
-        <unid>Θ</unid>
+        <unic>&#x0398;</unic>
+        <unid>&#x0398;</unid>
       </entry>
       <entry>
         <beta>q</beta>
-        <unic>θ</unic>
-        <unid>θ</unid>
+        <unic>&#x03B8;</unic>
+        <unid>&#x03B8;</unid>
       </entry>
       <entry>
         <beta>r*(</beta>
-        <unic>Ῥ</unic>
-        <unid>Ῥ</unid>
+        <unic>&#x1FEC;</unic>
+        <unid>&#x03A1;&#x0314;</unid>
       </entry>
       <entry>
         <beta>r*</beta>
-        <unic>Ρ</unic>
-        <unid>Ρ</unid>
+        <unic>&#x03A1;</unic>
+        <unid>&#x03A1;</unid>
       </entry>
       <entry>
         <beta>r(</beta>
-        <unic>ῥ</unic>
-        <unid>ῥ</unid>
+        <unic>&#x1FE5;</unic>
+        <unid>&#x03C1;&#x0314;</unid>
       </entry>
       <entry>
         <beta>r)</beta>
-        <unic>ῤ</unic>
-        <unid>ῤ</unid>
+        <unic>&#x1FE4;</unic>
+        <unid>&#x03C1;&#x0313;</unid>
       </entry>
       <entry>
         <beta>r</beta>
-        <unic>ρ</unic>
-        <unid>ρ</unid>
+        <unic>&#x03C1;</unic>
+        <unid>&#x03C1;</unid>
       </entry>
       <entry>
         <beta>s*</beta>
-        <unic>Σ</unic>
-        <unid>Σ</unid>
+        <unic>&#x03A3;</unic>
+        <unid>&#x03A3;</unid>
       </entry>
       <entry>
         <beta>s</beta>
-        <unic>σ</unic>
-        <unid>σ</unid>
+        <unic>&#x03C3;</unic>
+        <unid>&#x03C3;</unid>
       </entry>
       <entry>
         <beta>t*</beta>
-        <unic>Τ</unic>
-        <unid>Τ</unid>
+        <unic>&#x03A4;</unic>
+        <unid>&#x03A4;</unid>
       </entry>
       <entry>
         <beta>t</beta>
-        <unic>τ</unic>
-        <unid>τ</unid>
+        <unic>&#x03C4;</unic>
+        <unid>&#x03C4;</unid>
       </entry>
       <entry>
         <beta>u*(/</beta>
-        <unic>Ὕ</unic>
-        <unid>Ὕ</unid>
+        <unic>&#x1F5D;</unic>
+        <unid>&#x03A5;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>u*(\</beta>
-        <unic>Ὓ</unic>
-        <unid>Ὓ</unid>
+        <unic>&#x1F5B;</unic>
+        <unid>&#x03A5;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>u*(=</beta>
-        <unic>Ὗ</unic>
-        <unid>Ὗ</unid>
+        <unic>&#x1F5F;</unic>
+        <unid>&#x03A5;&#x0314;&#x0342;</unid>
       </entry>
       <entry>
         <beta>u*(</beta>
-        <unic>Ὑ</unic>
-        <unid>Ὑ</unid>
+        <unic>&#x1F59;</unic>
+        <unid>&#x03A5;&#x0314;</unid>
       </entry>
       <entry>
         <beta>u*+</beta>
-        <unic>Ϋ</unic>
-        <unid>Ϋ</unid>
+        <unic>&#x03AB;</unic>
+        <unid>&#x03A5;&#x0308;</unid>
       </entry>
       <entry>
         <beta>u*/</beta>
-        <unic>Ύ</unic>
-        <unid>Ύ</unid>
+        <unic>&#x038E;</unic>
+        <unid>&#x03A5;&#x0301;</unid>
       </entry>
       <entry>
         <beta>u*\</beta>
-        <unic>Ὺ</unic>
-        <unid>Ὺ</unid>
+        <unic>&#x1FEA;</unic>
+        <unid>&#x03A5;&#x0300;</unid>
       </entry>
       <entry>
         <beta>u*_</beta>
-        <unic>Ῡ</unic>
-        <unid>Ῡ</unid>
+        <unic>&#x1FE9;</unic>
+        <unid>&#x03A5;&#x0304;</unid>
       </entry>
       <entry>
         <beta>u*^</beta>
-        <unic>Ῠ</unic>
-        <unid>Ῠ</unid>
+        <unic>&#x1FE8;</unic>
+        <unid>&#x03A5;&#x0306;</unid>
       </entry>
       <entry>
         <beta>u*</beta>
-        <unic>Υ</unic>
-        <unid>Υ</unid>
+        <unic>&#x03A5;</unic>
+        <unid>&#x03A5;</unid>
       </entry>
       <entry>
         <beta>u(/</beta>
-        <unic>ὕ</unic>
-        <unid>ὕ</unid>
+        <unic>&#x1F55;</unic>
+        <unid>&#x03C5;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>u(\</beta>
-        <unic>ὓ</unic>
-        <unid>ὓ</unid>
+        <unic>&#x1F53;</unic>
+        <unid>&#x03C5;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>u(=</beta>
-        <unic>ὗ</unic>
-        <unid>ὗ</unid>
+        <unic>&#x1F57;</unic>
+        <unid>&#x03C5;&#x0314;&#x0342;</unid>
       </entry>
       <entry>
         <beta>u(</beta>
-        <unic>ὑ</unic>
-        <unid>ὑ</unid>
+        <unic>&#x1F51;</unic>
+        <unid>&#x03C5;&#x0314;</unid>
       </entry>
       <entry>
         <beta>u)/</beta>
-        <unic>ὔ</unic>
-        <unid>ὔ</unid>
+        <unic>&#x1F54;</unic>
+        <unid>&#x03C5;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>u)\</beta>
-        <unic>ὒ</unic>
-        <unid>ὒ</unid>
+        <unic>&#x1F52;</unic>
+        <unid>&#x03C5;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>u)=</beta>
-        <unic>ὖ</unic>
-        <unid>ὖ</unid>
+        <unic>&#x1F56;</unic>
+        <unid>&#x03C5;&#x0313;&#x0342;</unid>
       </entry>
       <entry>
         <beta>u)</beta>
-        <unic>ὐ</unic>
-        <unid>ὐ</unid>
+        <unic>&#x1F50;</unic>
+        <unid>&#x03C5;&#x0313;</unid>
       </entry>
       <entry>
         <beta>u+/</beta>
-        <unic>ΰ</unic>
-        <unid>ΰ</unid>
+        <unic>&#x03B0;</unic>
+        <unid>&#x03C5;&#x0308;&#x0301;</unid>
       </entry>
       <entry>
         <beta>u+\</beta>
-        <unic>ῢ</unic>
-        <unid>ῢ</unid>
+        <unic>&#x1FE2;</unic>
+        <unid>&#x03C5;&#x0308;&#x0300;</unid>
       </entry>
       <entry>
         <beta>u+=</beta>
-        <unic>ῧ</unic>
-        <unid>ῧ</unid>
+        <unic>&#x1FE7;</unic>
+        <unid>&#x03C5;&#x0308;&#x0342;</unid>
       </entry>
       <entry>
         <beta>u+</beta>
-        <unic>ϋ</unic>
-        <unid>ϋ</unid>
+        <unic>&#x03CB;</unic>
+        <unid>&#x03C5;&#x0308;</unid>
       </entry>
       <entry>
         <beta>u/</beta>
-        <unic>ύ</unic>
-        <unid>ύ</unid>
+        <unic>&#x03CD;</unic>
+        <unid>&#x03C5;&#x0301;</unid>
       </entry>
       <entry>
         <beta>u\</beta>
-        <unic>ὺ</unic>
-        <unid>ὺ</unid>
+        <unic>&#x1F7A;</unic>
+        <unid>&#x03C5;&#x0300;</unid>
       </entry>
       <entry>
         <beta>u=</beta>
-        <unic>ῦ</unic>
-        <unid>ῦ</unid>
+        <unic>&#x1FE6;</unic>
+        <unid>&#x03C5;&#x0342;</unid>
       </entry>
       <entry>
         <beta>u_</beta>
-        <unic>ῡ</unic>
-        <unid>ῡ</unid>
+        <unic>&#x1FE1;</unic>
+        <unid>&#x03C5;&#x0304;</unid>
       </entry>
       <entry>
         <beta>u^</beta>
-        <unic>ῠ</unic>
-        <unid>ῠ</unid>
+        <unic>&#x1FE0;</unic>
+        <unid>&#x03C5;&#x0306;</unid>
       </entry>
       <entry>
         <beta>u</beta>
-        <unic>υ</unic>
-        <unid>υ</unid>
+        <unic>&#x03C5;</unic>
+        <unid>&#x03C5;</unid>
       </entry>
       <entry>
         <beta>v*</beta>
-        <unic>Ϝ</unic>
-        <unid>Ϝ</unid>
+        <unic>&#x03DC;</unic>
+        <unid>&#x03DC;</unid>
       </entry>
       <entry>
         <beta>v</beta>
-        <unic>ϝ</unic>
-        <unid>ϝ</unid>
+        <unic>&#x03DD;</unic>
+        <unid>&#x03DD;</unid>
       </entry>
       <entry>
         <beta>w*(/|</beta>
-        <unic>ᾭ</unic>
-        <unid>ᾭ</unid>
+        <unic>&#x1FAD;</unic>
+        <unid>&#x03A9;&#x0314;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w*(/</beta>
-        <unic>Ὥ</unic>
-        <unid>Ὥ</unid>
+        <unic>&#x1F6D;</unic>
+        <unid>&#x03A9;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>w*(\|</beta>
-        <unic>ᾫ</unic>
-        <unid>ᾫ</unid>
+        <unic>&#x1FAB;</unic>
+        <unid>&#x03A9;&#x0314;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w*(\</beta>
-        <unic>Ὣ</unic>
-        <unid>Ὣ</unid>
+        <unic>&#x1F6B;</unic>
+        <unid>&#x03A9;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>w*(=|</beta>
-        <unic>ᾯ</unic>
-        <unid>ᾯ</unid>
+        <unic>&#x1FAF;</unic>
+        <unid>&#x03A9;&#x0314;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w*(=</beta>
-        <unic>Ὧ</unic>
-        <unid>Ὧ</unid>
+        <unic>&#x1F6F;</unic>
+        <unid>&#x03A9;&#x0314;&#x0342;</unid>
       </entry>
       <entry>
         <beta>w*(|</beta>
-        <unic>ᾩ</unic>
-        <unid>ᾩ</unid>
+        <unic>&#x1FA9;</unic>
+        <unid>&#x03A9;&#x0314;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w*(</beta>
-        <unic>Ὡ</unic>
-        <unid>Ὡ</unid>
+        <unic>&#x1F69;</unic>
+        <unid>&#x03A9;&#x0314;</unid>
       </entry>
       <entry>
         <beta>w*)/|</beta>
-        <unic>ᾬ</unic>
-        <unid>ᾬ</unid>
+        <unic>&#x1FAC;</unic>
+        <unid>&#x03A9;&#x0313;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w*)/</beta>
-        <unic>Ὤ</unic>
-        <unid>Ὤ</unid>
+        <unic>&#x1F6C;</unic>
+        <unid>&#x03A9;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>w*)\|</beta>
-        <unic>ᾪ</unic>
-        <unid>ᾪ</unid>
+        <unic>&#x1FAA;</unic>
+        <unid>&#x03A9;&#x0313;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w*)\</beta>
-        <unic>Ὢ</unic>
-        <unid>Ὢ</unid>
+        <unic>&#x1F6A;</unic>
+        <unid>&#x03A9;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>w*)=|</beta>
-        <unic>ᾮ</unic>
-        <unid>ᾮ</unid>
+        <unic>&#x1FAE;</unic>
+        <unid>&#x03A9;&#x0313;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w*)=</beta>
-        <unic>Ὦ</unic>
-        <unid>Ὦ</unid>
+        <unic>&#x1F6E;</unic>
+        <unid>&#x03A9;&#x0313;&#x0342;</unid>
       </entry>
       <entry>
         <beta>w*)|</beta>
-        <unic>ᾨ</unic>
-        <unid>ᾨ</unid>
+        <unic>&#x1FA8;</unic>
+        <unid>&#x03A9;&#x0313;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w*)</beta>
-        <unic>Ὠ</unic>
-        <unid>Ὠ</unid>
+        <unic>&#x1F68;</unic>
+        <unid>&#x03A9;&#x0313;</unid>
       </entry>
       <entry>
         <beta>w*/</beta>
-        <unic>Ώ</unic>
-        <unid>Ώ</unid>
+        <unic>&#x038F;</unic>
+        <unid>&#x03A9;&#x0301;</unid>
       </entry>
       <entry>
         <beta>w*\</beta>
-        <unic>Ὼ</unic>
-        <unid>Ὼ</unid>
+        <unic>&#x1FFA;</unic>
+        <unid>&#x03A9;&#x0300;</unid>
       </entry>
       <entry>
         <beta>w*|</beta>
-        <unic>ῼ</unic>
-        <unid>ῼ</unid>
+        <unic>&#x1FFC;</unic>
+        <unid>&#x03A9;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w*</beta>
-        <unic>Ω</unic>
-        <unid>Ω</unid>
+        <unic>&#x03A9;</unic>
+        <unid>&#x03A9;</unid>
       </entry>
       <entry>
         <beta>w(/|</beta>
-        <unic>ᾥ</unic>
-        <unid>ᾥ</unid>
+        <unic>&#x1FA5;</unic>
+        <unid>&#x03C9;&#x0314;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w(/</beta>
-        <unic>ὥ</unic>
-        <unid>ὥ</unid>
+        <unic>&#x1F65;</unic>
+        <unid>&#x03C9;&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>w(\|</beta>
-        <unic>ᾣ</unic>
-        <unid>ᾣ</unid>
+        <unic>&#x1FA3;</unic>
+        <unid>&#x03C9;&#x0314;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w(\</beta>
-        <unic>ὣ</unic>
-        <unid>ὣ</unid>
+        <unic>&#x1F63;</unic>
+        <unid>&#x03C9;&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>w(=|</beta>
-        <unic>ᾧ</unic>
-        <unid>ᾧ</unid>
+        <unic>&#x1FA7;</unic>
+        <unid>&#x03C9;&#x0314;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w(=</beta>
-        <unic>ὧ</unic>
-        <unid>ὧ</unid>
+        <unic>&#x1F67;</unic>
+        <unid>&#x03C9;&#x0314;&#x0342;</unid>
       </entry>
       <entry>
         <beta>w(|</beta>
-        <unic>ᾡ</unic>
-        <unid>ᾡ</unid>
+        <unic>&#x1FA1;</unic>
+        <unid>&#x03C9;&#x0314;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w(</beta>
-        <unic>ὡ</unic>
-        <unid>ὡ</unid>
+        <unic>&#x1F61;</unic>
+        <unid>&#x03C9;&#x0314;</unid>
       </entry>
       <entry>
         <beta>w)/|</beta>
-        <unic>ᾤ</unic>
-        <unid>ᾤ</unid>
+        <unic>&#x1FA4;</unic>
+        <unid>&#x03C9;&#x0313;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w)/</beta>
-        <unic>ὤ</unic>
-        <unid>ὤ</unid>
+        <unic>&#x1F64;</unic>
+        <unid>&#x03C9;&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>w)\|</beta>
-        <unic>ᾢ</unic>
-        <unid>ᾢ</unid>
+        <unic>&#x1FA2;</unic>
+        <unid>&#x03C9;&#x0313;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w)\</beta>
-        <unic>ὢ</unic>
-        <unid>ὢ</unid>
+        <unic>&#x1F62;</unic>
+        <unid>&#x03C9;&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>w)=|</beta>
-        <unic>ᾦ</unic>
-        <unid>ᾦ</unid>
+        <unic>&#x1FA6;</unic>
+        <unid>&#x03C9;&#x0313;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w)=</beta>
-        <unic>ὦ</unic>
-        <unid>ὦ</unid>
+        <unic>&#x1F66;</unic>
+        <unid>&#x03C9;&#x0313;&#x0342;</unid>
       </entry>
       <entry>
         <beta>w)|</beta>
-        <unic>ᾠ</unic>
-        <unid>ᾠ</unid>
+        <unic>&#x1FA0;</unic>
+        <unid>&#x03C9;&#x0313;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w)</beta>
-        <unic>ὠ</unic>
-        <unid>ὠ</unid>
+        <unic>&#x1F60;</unic>
+        <unid>&#x03C9;&#x0313;</unid>
       </entry>
       <entry>
         <beta>w/|</beta>
-        <unic>ῴ</unic>
-        <unid>ῴ</unid>
+        <unic>&#x1FF4;</unic>
+        <unid>&#x03C9;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w/</beta>
-        <unic>ώ</unic>
-        <unid>ώ</unid>
+        <unic>&#x03CE;</unic>
+        <unid>&#x03C9;&#x0301;</unid>
       </entry>
       <entry>
         <beta>w\|</beta>
-        <unic>ῲ</unic>
-        <unid>ῲ</unid>
+        <unic>&#x1FF2;</unic>
+        <unid>&#x03C9;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w\</beta>
-        <unic>ὼ</unic>
-        <unid>ὼ</unid>
+        <unic>&#x1F7C;</unic>
+        <unid>&#x03C9;&#x0300;</unid>
       </entry>
       <entry>
         <beta>w=|</beta>
-        <unic>ῷ</unic>
-        <unid>ῷ</unid>
+        <unic>&#x1FF7;</unic>
+        <unid>&#x03C9;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w=</beta>
-        <unic>ῶ</unic>
-        <unid>ῶ</unid>
+        <unic>&#x1FF6;</unic>
+        <unid>&#x03C9;&#x0342;</unid>
       </entry>
       <entry>
         <beta>w|</beta>
-        <unic>ῳ</unic>
-        <unid>ῳ</unid>
+        <unic>&#x1FF3;</unic>
+        <unid>&#x03C9;&#x0345;</unid>
       </entry>
       <entry>
         <beta>w</beta>
-        <unic>ω</unic>
-        <unid>ω</unid>
+        <unic>&#x03C9;</unic>
+        <unid>&#x03C9;</unid>
       </entry>
       <entry>
         <beta>x*</beta>
-        <unic>Χ</unic>
-        <unid>Χ</unid>
+        <unic>&#x03A7;</unic>
+        <unid>&#x03A7;</unid>
       </entry>
       <entry>
         <beta>x</beta>
-        <unic>χ</unic>
-        <unid>χ</unid>
+        <unic>&#x03C7;</unic>
+        <unid>&#x03C7;</unid>
       </entry>
       <entry>
         <beta>y*</beta>
-        <unic>Ψ</unic>
-        <unid>Ψ</unid>
+        <unic>&#x03A8;</unic>
+        <unid>&#x03A8;</unid>
       </entry>
       <entry>
         <beta>y</beta>
-        <unic>ψ</unic>
-        <unid>ψ</unid>
+        <unic>&#x03C8;</unic>
+        <unid>&#x03C8;</unid>
       </entry>
       <entry>
         <beta>z*</beta>
-        <unic>Ζ</unic>
-        <unid>Ζ</unid>
+        <unic>&#x0396;</unic>
+        <unid>&#x0396;</unid>
       </entry>
       <entry>
         <beta>z</beta>
-        <unic>ζ</unic>
-        <unid>ζ</unid>
+        <unic>&#x03B6;</unic>
+        <unid>&#x03B6;</unid>
       </entry>
-      <!-- entries for diacritics only -->
       <!--
- here <unic> holds non-combining form, <unid> holds combining form 
--->
+          entries for diacritics only
+          here <unic> holds non-combining form,
+          <unid> holds combining form 
+      -->
       <entry>
         <beta>(/|</beta>
-        <unic>῞ͅ</unic>
-        <unid>̔́ͅ</unid>
+        <unic>&#x1FDE;&#x0345;</unic>
+        <unid>&#x0314;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>(/</beta>
-        <unic>῞</unic>
-        <unid>̔́</unid>
+        <unic>&#x1FDE;</unic>
+        <unid>&#x0314;&#x0301;</unid>
       </entry>
       <entry>
         <beta>(\|</beta>
-        <unic>῝ͅ</unic>
-        <unid>̔̀ͅ</unid>
+        <unic>&#x1FDD;&#x0345;</unic>
+        <unid>&#x0314;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>(\</beta>
-        <unic>῝</unic>
-        <unid>̔̀</unid>
+        <unic>&#x1FDD;</unic>
+        <unid>&#x0314;&#x0300;</unid>
       </entry>
       <entry>
         <beta>(=|</beta>
-        <unic>῟ͅ</unic>
-        <unid>̔͂ͅ</unid>
+        <unic>&#x1FDF;&#x0345;</unic>
+        <unid>&#x0314;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>(=</beta>
-        <unic>῟</unic>
-        <unid>̔͂</unid>
+        <unic>&#x1FDF;</unic>
+        <unid>&#x0314;&#x0342;</unid>
       </entry>
       <entry>
         <beta>(|</beta>
-        <unic>ʽͅ</unic>
-        <unid>̔ͅ</unid>
+        <unic>&#x02BD;&#x0345;</unic>
+        <unid>&#x0314;&#x0345;</unid>
       </entry>
       <entry>
         <beta>(</beta>
-        <unic>ʽ</unic>
-        <unid>̔</unid>
+        <unic>&#x02BD;</unic>
+        <unid>&#x0314;</unid>
       </entry>
       <entry>
         <beta>)/|</beta>
-        <unic>῎ͅ</unic>
-        <unid>̓́ͅ</unid>
+        <unic>&#x1FCE;&#x0345;</unic>
+        <unid>&#x0313;&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>)/</beta>
-        <unic>῎</unic>
-        <unid>̓́</unid>
+        <unic>&#x1FCE;</unic>
+        <unid>&#x0313;&#x0301;</unid>
       </entry>
       <entry>
         <beta>)\|</beta>
-        <unic>῍ͅ</unic>
-        <unid>̓̀ͅ</unid>
+        <unic>&#x1FCD;&#x0345;</unic>
+        <unid>&#x0313;&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>)\</beta>
-        <unic>῍</unic>
-        <unid>̓̀</unid>
+        <unic>&#x1FCD;</unic>
+        <unid>&#x0313;&#x0300;</unid>
       </entry>
       <entry>
         <beta>)=|</beta>
-        <unic>῏ͅ</unic>
-        <unid>̓͂ͅ</unid>
+        <unic>&#x1FCF;&#x0345;</unic>
+        <unid>&#x0313;&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>)=</beta>
-        <unic>῏</unic>
-        <unid>̓͂</unid>
+        <unic>&#x1FCF;</unic>
+        <unid>&#x0313;&#x0342;</unid>
       </entry>
       <entry>
         <beta>)|</beta>
-        <unic>ʼͅ</unic>
-        <unid>̓ͅ</unid>
+        <unic>&#x02BC;&#x0345;</unic>
+        <unid>&#x0313;&#x0345;</unid>
       </entry>
       <entry>
         <beta>)</beta>
-        <unic>ʼ</unic>
-        <unid>̓</unid>
+        <unic>&#x02BC;</unic>
+        <unid>&#x0313;</unid>
       </entry>
       <entry>
         <beta>+/</beta>
-        <unic>΅</unic>
-        <unid>̈́</unid>
+        <unic>&#x1FEE;</unic>
+        <unid>&#x0308;&#x0301;</unid>
       </entry>
       <entry>
         <beta>+\</beta>
-        <unic>῭</unic>
-        <unid>̈̀</unid>
+        <unic>&#x1FED;</unic>
+        <unid>&#x0308;&#x0300;</unid>
       </entry>
       <entry>
         <beta>+=</beta>
-        <unic>῁</unic>
-        <unid>̈͂</unid>
+        <unic>&#x1FC1;</unic>
+        <unid>&#x0308;&#x0342;</unid>
       </entry>
       <entry>
         <beta>+</beta>
-        <unic>¨</unic>
-        <unid>̈</unid>
+        <unic>&#x00A8;</unic>
+        <unid>&#x0308;</unid>
       </entry>
       <entry>
         <beta>/|</beta>
-        <unic>´ͅ</unic>
-        <unid>́ͅ</unid>
+        <unic>&#x00B4;&#x0345;</unic>
+        <unid>&#x0301;&#x0345;</unid>
       </entry>
       <entry>
         <beta>/</beta>
-        <unic>´</unic>
-        <unid>́</unid>
+        <unic>&#x00B4;</unic>
+        <unid>&#x0301;</unid>
       </entry>
       <entry>
         <beta>\|</beta>
-        <unic>`ͅ</unic>
-        <unid>̀ͅ</unid>
+        <unic>&#x0060;&#x0345;</unic>
+        <unid>&#x0300;&#x0345;</unid>
       </entry>
       <entry>
         <beta>\</beta>
-        <unic>`</unic>
-        <unid>̀</unid>
+        <unic>&#x0060;</unic>
+        <unid>&#x0300;</unid>
       </entry>
       <entry>
         <beta>=|</beta>
-        <unic>῀ͅ</unic>
-        <unid>͂ͅ</unid>
+        <unic>&#x1FC0;&#x0345;</unic>
+        <unid>&#x0342;&#x0345;</unid>
       </entry>
       <entry>
         <beta>=</beta>
-        <unic>῀</unic>
-        <unid>͂</unid>
+        <unic>&#x1FC0;</unic>
+        <unid>&#x0342;</unid>
       </entry>
       <entry>
         <beta>|</beta>
-        <unic>ι</unic>
-        <unid>ͅ</unid>
+        <unic>&#x1FBE;</unic>
+        <unid>&#x0345;</unid>
       </entry>
       <entry>
         <beta>_</beta>
-        <unic>¯</unic>
-        <unid>̄</unid>
+        <unic>&#x00AF;</unic>
+        <unid>&#x0304;</unid>
       </entry>
       <entry>
         <beta>^</beta>
-        <unic>˘</unic>
-        <unid>̆</unid>
+        <unic>&#x02D8;</unic>
+        <unid>&#x0306;</unid>
+      </entry>
+      <!--
+        entries for character forms in the extended Greek page
+        that also appear in the regular Greek page
+        These ensure that alternate encodings are properly
+        translated to betacode, since only the preferred
+        encoding from the regular page is listed above.
+        These should appear last since the beta-to-unicode
+        encoding uses the first entry found.
+      -->
+      <entry>
+        <beta>a*/</beta>
+        <unic>&#x1FBB;</unic>
+        <unid>&#x1FBB;</unid>
+      </entry>
+      <entry>
+        <beta>a/</beta>
+        <unic>&#x1F71;</unic>
+        <unid>&#x1F71;</unid>
+      </entry>
+      <entry>
+        <beta>e*/</beta>
+        <unic>&#x1FC9;</unic>
+        <unid>&#x1FC9;</unid>
+      </entry>
+      <entry>
+        <beta>e/</beta>
+        <unic>&#x1F73;</unic>
+        <unid>&#x1F73;</unid>
+      </entry>
+      <entry>
+        <beta>h*/</beta>
+        <unic>&#x1FCB;</unic>
+        <unid>&#x1FCB;</unid>
+      </entry>
+      <entry>
+        <beta>h/</beta>
+        <unic>&#x1F75;</unic>
+        <unid>&#x1F75;</unid>
+      </entry>
+      <entry>
+        <beta>i*/</beta>
+        <unic>&#x1FDB;</unic>
+        <unid>&#x1FDB;</unid>
+      </entry>
+      <entry>
+        <beta>i/</beta>
+        <unic>&#x1F77;</unic>
+        <unid>&#x1F77;</unid>
+      </entry>
+      <entry>
+        <beta>i+/</beta>
+        <unic>&#x1FD3;</unic>
+        <unid>&#x1FD3;</unid>
+      </entry>
+      <entry>
+        <beta>o*/</beta>
+        <unic>&#x1FF9;</unic>
+        <unid>&#x1FF9;</unid>
+      </entry>
+      <entry>
+        <beta>o/</beta>
+        <unic>&#x1F79;</unic>
+        <unid>&#x1F79;</unid>
+      </entry>
+      <entry>
+        <beta>s</beta>
+        <unic>&#x03C2;</unic>
+        <unid>&#x03C2;</unid>
+      </entry>
+      <entry>
+        <beta>u*/</beta>
+        <unic>&#x1FEB;</unic>
+        <unid>&#x1FEB;</unid>
+      </entry>
+      <entry>
+        <beta>u/</beta>
+        <unic>&#x1F7B;</unic>
+        <unid>&#x1F7B;</unid>
+      </entry>
+      <entry>
+        <beta>u+/</beta>
+        <unic>&#x1FE3;</unic>
+        <unid>&#x1FE3;</unid>
+      </entry>
+      <entry>
+        <beta>w*/</beta>
+        <unic>&#x1FFB;</unic>
+        <unid>&#x1FFB;</unid>
+      </entry>
+      <entry>
+        <beta>w/</beta>
+        <unic>&#x1F7D;</unic>
+        <unid>&#x1F7D;</unid>
       </entry>
     </beta-uni-table>
   </xsl:variable>
   <xsl:variable name="beta-uni-table"
-                select="exsl:node-set($raw-table)/beta-uni-table"/>
+    select="exsl:node-set($raw-table)/beta-uni-table"/>
 
   <!--
     Insert betacode diacritic character in sorted order in string
@@ -1665,10 +1760,12 @@
       <xsl:variable name="value">
         <xsl:choose>
           <xsl:when test="$precomposed">
-            <xsl:value-of select="key('beta-uni-lookup', $key)/unic/text()"/>
+            <xsl:value-of select="(key('beta-uni-lookup', $key)/unic)[1]/text()"
+            />
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select="key('beta-uni-lookup', $key)/unid/text()"/>
+            <xsl:value-of select="(key('beta-uni-lookup', $key)/unid)[1]/text()"
+            />
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
@@ -1706,7 +1803,7 @@
   -->
   <xsl:template match="beta-uni-table" mode="u2b">
     <xsl:param name="key"/>
-    <xsl:value-of select="key('unic-beta-lookup', $key)/beta/text()"/>
+    <xsl:value-of select="(key('unic-beta-lookup', $key)/beta)[1]/text()"/>
   </xsl:template>
 
 </xsl:stylesheet>
