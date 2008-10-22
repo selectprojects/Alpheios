@@ -7,14 +7,14 @@
     <stem decl="1st">α</stem>
     <stem decl="2nd">ο</stem>
     <stem decl="3rd">Consonants, Dipthongs, ι, ω
-        <stem-class id="stem-6">STEMS IN ι and υ</stem-class>
-        <stem-class id="stem-3">π-MUTE/κ-MUTE or LABIAL/PALATAL (no neuter)</stem-class>
-        <stem-class id="stem-7">STEMS IN DIPTHONG (ευ,αυ,ου) (no neuter)</stem-class>
-        <stem-class id="stem-2" type="primary">ω-STEM (no feminine or neuter)</stem-class>
-        <stem-class id="stem-8">(οι) (no masculine or neuter)</stem-class>
-        <stem-class id="stem-1">τ-MUTE or DENTAL (τ,δ,θ,ατ)</stem-class>
-        <stem-class id="stem-4">LIQUID, NASAL (incl. SYNCOPATED LIQUID)(λ,ρ) (ν) (ερ >> ρ) (no neuter)</stem-class>
-        <stem-class id="stem-5">STEMS IN σ (εσ,ας,ος) (no masculine)</stem-class>
+        <stem-class id="stem-2" type="primary"><reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s267">ω-STEM (no feminine or neuter)</reflink></stem-class>
+        <stem-class id="stem-1"><reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s258">τ-MUTE or DENTAL (τ,δ,θ,ατ)</reflink></stem-class>
+        <stem-class id="stem-4"><reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s259">LIQUID, NASAL (incl. SYNCOPATED LIQUID)(λ,ρ) (ν) (ερ >> ρ) (no neuter)</reflink></stem-class>
+        <stem-class id="stem-5"><reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s263">STEMS IN σ (εσ,ας,ος) (no masculine)</reflink></stem-class>        
+        <stem-class id="stem-3"><reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s256">π-MUTE/κ-MUTE or LABIAL/PALATAL (no neuter)</reflink></stem-class>
+        <stem-class id="stem-6"><reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s268">STEMS IN ι and υ</reflink></stem-class>
+        <stem-class id="stem-7"><reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s275">STEMS IN DIPTHONG (ευ,αυ,ου) (no neuter)</reflink></stem-class>
+        <stem-class id="stem-8"><reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s279">(οι) (no masculine or neuter)</reflink></stem-class>
     </stem>
   </stem-table>
   <order-table>

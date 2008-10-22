@@ -432,7 +432,7 @@
     </xsl:template>
     
     <xsl:template match="stem-class">
-        <li id="{@id}" class="{@type}"><span class="stem-class-desc"><xsl:value-of select="."/></span></li>        
+        <li id="{@id}" class="{@type}"><span class="stem-class-desc"><xsl:apply-templates select="reflink"/></span></li>        
     </xsl:template>
     
     <xsl:template name="no-sub" match="order-item">
