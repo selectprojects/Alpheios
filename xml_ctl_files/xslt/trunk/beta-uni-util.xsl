@@ -7,9 +7,16 @@
   <xsl:variable name="beta-lowers">abcdefghiklmnopqrstuvwxyz</xsl:variable>
 
   <!-- diacritics in betacode and combining unicode -->
-  <xsl:variable name="beta-diacritics">()+/\=|_^</xsl:variable>
+  <xsl:variable name="beta-diacritics">()+/\=|_^&apos;</xsl:variable>
   <xsl:variable name="uni-diacritics"
-    >&#x0314;&#x0313;&#x0308;&#x0301;&#x0300;&#x0342;&#x0345;&#x0304;&#x0306;</xsl:variable>
+    >&#x0314;&#x0313;&#x0308;&#x0301;&#x0300;&#x0342;&#x0345;&#x0304;&#x0306;&#x1FBD;</xsl:variable>
+
+  <!-- characters denoting a word separation: punctuation plus whitespace -->
+  <xsl:variable name="beta-separators">
+    .,:;_&#x0009;&#x000A;&#x000D;&#x0020;&#x0085;&#x00A0;&#x1680;&#x180E;
+    &#x2000;&#x2001;&#x2002;&#x2003;&#x2004;&#x2005;&#x2006;&#x2007;&#x2008;&#x2009;&#x200A;
+    &#x2028;&#x2029;&#x202F;&#x205F;&#x3000;
+  </xsl:variable>
 
   <!-- keys for lookup table -->
   <xsl:key name="beta-uni-lookup" match="beta-uni-table/entry" use="beta"/>
@@ -33,6 +40,7 @@
         | = ypogegrammeni
         _ = macron [non-standard, Perseus]
         ^ = breve [non-standard, Perseus]
+        ' = koronis [non-standard]
 
     Each entry in the table contains a betacode sequence
     plus the corresponding precomposed Unicode sequence (<unic> element)
@@ -1550,6 +1558,11 @@
         <unic>&#x02D8;</unic>
         <unid>&#x0306;</unid>
       </entry>
+      <entry>
+        <beta>&apos;</beta>
+        <unic>&#x1FBD;</unic>
+        <unid>&#x1FBD;</unid>
+      </entry>
       <!--
         entries for character forms in the extended Greek page
         that also appear in the regular Greek page
@@ -1643,6 +1656,21 @@
         <beta>w/</beta>
         <unic>&#x1F7D;</unic>
         <unid>&#x1F7D;</unid>
+      </entry>
+      <!--
+        entries for special betacodes
+      -->
+      <!-- medial sigma -->
+      <entry>
+        <beta>s1</beta>
+        <unic>&#x03C3;</unic>
+        <unid>&#x03C3;</unid>
+      </entry>
+      <!-- final sigma -->
+      <entry>
+        <beta>s2</beta>
+        <unic>&#x03C2;</unic>
+        <unid>&#x03C2;</unid>
       </entry>
     </beta-uni-table>
   </xsl:variable>
@@ -1739,6 +1767,8 @@
       <xsl:when test="$beta = '_'">8</xsl:when>
       <!-- breve -->
       <xsl:when test="$beta = '^'">9</xsl:when>
+      <!-- koronis -->
+      <xsl:when test="$beta = &quot;&apos;&quot;">10</xsl:when>
     </xsl:choose>
   </xsl:template>
 

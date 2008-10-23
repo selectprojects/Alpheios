@@ -11,7 +11,7 @@
       (Note: Boolean return value does not seem to work
       reliably, perhaps because of recursion.)
   -->
-  <xsl:template name="is-beta" >
+  <xsl:template name="is-beta">
     <xsl:param name="input"/>
 
     <xsl:choose>
@@ -50,7 +50,7 @@
               <xsl:when test="string-length($beta) > 0">
                 <xsl:value-of select="0"/>
               </xsl:when>
-            
+
               <!-- otherwise, skip letter and check remainder of string -->
               <xsl:otherwise>
                 <xsl:call-template name="is-beta">
@@ -144,11 +144,27 @@
       <!-- if not special char -->
       <xsl:otherwise>
         <!-- output pending char -->
-        <xsl:call-template name="output-uni-char">
-          <xsl:with-param name="char" select="$pending"/>
-          <xsl:with-param name="state" select="$state"/>
-          <xsl:with-param name="precomposed" select="$precomposed"/>
-        </xsl:call-template>
+        <xsl:choose>
+          <!-- final sigma: S with no state followed by word break -->
+          <xsl:when
+            test="(($pending = 's') or ($pending = 'S')) and
+                  (string-length($state) = 0) and
+                  contains($beta-separators, $head)">
+            <xsl:call-template name="output-uni-char">
+              <xsl:with-param name="char" select="$pending"/>
+              <xsl:with-param name="state" select="'2'"/>
+              <xsl:with-param name="precomposed" select="$precomposed"/>
+            </xsl:call-template>
+          </xsl:when>
+
+          <xsl:otherwise>
+            <xsl:call-template name="output-uni-char">
+              <xsl:with-param name="char" select="$pending"/>
+              <xsl:with-param name="state" select="$state"/>
+              <xsl:with-param name="precomposed" select="$precomposed"/>
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
 
         <!-- reset state if there was a pending character -->
         <xsl:variable name="newstate">
