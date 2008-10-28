@@ -385,18 +385,20 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl)
         function(a_stemclass,a_i)
         {
             Alph.$("#" + a_stemclass,a_tbl).addClass("highlight-ending");
-            var like_stems = Alph.$("span.ending[stem-class='" + a_stemclass + "']",a_tbl);
-            Alph.$(like_stems).each(
-                function() {
-                    if (Alph.$(this).hasClass("ending-collapsed"))
-                    {
-                        Alph.$(this).removeClass("ending-collapsed");
-                        var ending_index = Alph.$(this).attr("ending-index");
-                        Alph.$(this).nextAll("[ending-index='" + ending_index + "']").removeClass("ending-collapsed");
-                    }
-                }
+            
+            // don't unhide the related endings for now -- too cluttered
+            //var like_stems = Alph.$("span.ending[stem-class='" + a_stemclass + "']",a_tbl);
+            //Alph.$(like_stems).each(
+                //function() {
+                    //if (Alph.$(this).hasClass("ending-collapsed"))
+                    //{
+                        //Alph.$(this).removeClass("ending-collapsed");
+                        //var ending_index = Alph.$(this).attr("ending-index");
+                        //Alph.$(this).nextAll("[ending-index='" + ending_index + "']").removeClass("ending-collapsed");
+                    //}
+                //}
                 
-            )
+            //)
             
         }
     );
