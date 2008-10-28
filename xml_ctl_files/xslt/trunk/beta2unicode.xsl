@@ -97,11 +97,26 @@
       <!-- if no more input -->
       <xsl:when test="string-length($input) = 0">
         <!-- output last pending char -->
-        <xsl:call-template name="output-uni-char">
-          <xsl:with-param name="char" select="$pending"/>
-          <xsl:with-param name="state" select="$state"/>
-          <xsl:with-param name="precomposed" select="$precomposed"/>
-        </xsl:call-template>
+        <xsl:choose>
+          <!-- final sigma: S with no state -->
+          <xsl:when
+            test="(($pending = 's') or ($pending = 'S')) and
+                  (string-length($state) = 0)">
+            <xsl:call-template name="output-uni-char">
+              <xsl:with-param name="char" select="$pending"/>
+              <xsl:with-param name="state" select="'2'"/>
+              <xsl:with-param name="precomposed" select="$precomposed"/>
+            </xsl:call-template>
+          </xsl:when>
+          
+          <xsl:otherwise>
+            <xsl:call-template name="output-uni-char">
+              <xsl:with-param name="char" select="$pending"/>
+              <xsl:with-param name="state" select="$state"/>
+              <xsl:with-param name="precomposed" select="$precomposed"/>
+            </xsl:call-template>
+          </xsl:otherwise>
+        </xsl:choose>
       </xsl:when>
 
       <!-- if input starts with "*" -->
