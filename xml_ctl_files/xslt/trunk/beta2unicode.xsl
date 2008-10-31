@@ -72,6 +72,8 @@
         $pending      character waiting to be output
         $state        diacritics associated with pending character
         $precomposed  whether to put out precomposed or decomposed Unicode
+        $partial      whether this is a partial word
+                      (If true, do not use final sigmal for last letter)
 
       Output:
         $input transformed to equivalent Unicode
@@ -90,6 +92,7 @@
     <xsl:param name="pending" select="''"/>
     <xsl:param name="state" select="''"/>
     <xsl:param name="precomposed" select="true()"/>
+    <xsl:param name="partial" select="false()"/>
 
     <xsl:variable name="head" select="substring($input, 1, 1)"/>
 
@@ -101,14 +104,14 @@
           <!-- final sigma: S with no state -->
           <xsl:when
             test="(($pending = 's') or ($pending = 'S')) and
-                  (string-length($state) = 0)">
+                  not($partial) and (string-length($state) = 0)">
             <xsl:call-template name="output-uni-char">
               <xsl:with-param name="char" select="$pending"/>
               <xsl:with-param name="state" select="'2'"/>
               <xsl:with-param name="precomposed" select="$precomposed"/>
             </xsl:call-template>
           </xsl:when>
-          
+
           <xsl:otherwise>
             <xsl:call-template name="output-uni-char">
               <xsl:with-param name="char" select="$pending"/>
@@ -134,6 +137,7 @@
           <xsl:with-param name="state" select="'*'"/>
           <xsl:with-param name="pending" select="''"/>
           <xsl:with-param name="precomposed" select="$precomposed"/>
+          <xsl:with-param name="partial" select="$partial"/>
         </xsl:call-template>
       </xsl:when>
 
@@ -153,6 +157,7 @@
           <xsl:with-param name="state" select="$newstate"/>
           <xsl:with-param name="pending" select="$pending"/>
           <xsl:with-param name="precomposed" select="$precomposed"/>
+          <xsl:with-param name="partial" select="$partial"/>
         </xsl:call-template>
       </xsl:when>
 
@@ -197,6 +202,7 @@
           <xsl:with-param name="state" select="$newstate"/>
           <xsl:with-param name="pending" select="$head"/>
           <xsl:with-param name="precomposed" select="$precomposed"/>
+          <xsl:with-param name="partial" select="$partial"/>
         </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
