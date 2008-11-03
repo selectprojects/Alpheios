@@ -18,6 +18,9 @@
     &#x2028;&#x2029;&#x202F;&#x205F;&#x3000;
   </xsl:variable>
 
+  <!-- more characters the denoting end of a word -->
+  <xsl:variable name="beta-separators2">0123456789[]{}</xsl:variable>
+
   <!-- keys for lookup table -->
   <xsl:key name="beta-uni-lookup" match="beta-uni-table/entry" use="beta"/>
   <xsl:key name="unic-beta-lookup" match="beta-uni-table/entry" use="unic"/>

@@ -73,7 +73,7 @@
         $state        diacritics associated with pending character
         $precomposed  whether to put out precomposed or decomposed Unicode
         $partial      whether this is a partial word
-                      (If true, do not use final sigmal for last letter)
+                      (If true, do not use final sigma for last letter)
 
       Output:
         $input transformed to equivalent Unicode
@@ -169,7 +169,8 @@
           <xsl:when
             test="(($pending = 's') or ($pending = 'S')) and
                   (string-length($state) = 0) and
-                  contains($beta-separators, $head)">
+                  (contains($beta-separators, $head) or
+                   contains($beta-separators2, $head))">
             <xsl:call-template name="output-uni-char">
               <xsl:with-param name="char" select="$pending"/>
               <xsl:with-param name="state" select="'2'"/>
