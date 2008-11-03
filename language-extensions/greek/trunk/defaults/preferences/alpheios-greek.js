@@ -1,11 +1,13 @@
-pref("extensions.alpheios.greek.usemhttpd", false);
+pref("extensions.alpheios.greek.usemhttpd", true);
 pref("extensions.alpheios.greek.chromepkg","alpheios-greek");
 pref("extensions.alpheios.greek.languagecode","grc");
 pref("extensions.alpheios.greek.base_unit","word");
+pref("extensions.alpheios.greek.methods.startup",'loadDictionary');
+pref("extensions.alpheios.greek.methods.convert",'greek_to_ascii');
 pref("extensions.alpheios.greek.methods.lexicon",'webservice');
-pref("extensions.alpheios.greek.url.lexicon", 'http://dev.alpheios.net:8020');
-pref("extensions.alpheios.greek.url.lexicon.request", "/hopper/alpheios/xmlmorph-alph.jsp?word=<WORD>&input=Unicode");
-pref("extensions.alpheios.greek.url.lexicon.timeout",10000);
+pref("extensions.alpheios.greek.url.lexicon", 'http://localhost:8200');
+pref("extensions.alpheios.greek.url.lexicon.request", "/greek?word=<WORD>");
+pref("extensions.alpheios.greek.url.lexicon.timeout",5000);
 pref("extensions.alpheios.greek.popuptrigger",'mousemove');
 pref("extensions.alpheios.greek.url.grammar",
      "chrome://alpheios-greek/content/alph-greek-grammar.xul");
@@ -16,5 +18,3 @@ pref("extensions.alpheios.greek.features.alpheios-inflect",true);
 pref("extensions.alpheios.greek.context_handler","grammarContext");
 pref("extensions.alpheios.greek.shift_handler","handleInflections");
 
-
-            
