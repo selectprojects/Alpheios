@@ -356,10 +356,13 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl)
                         {
                             // reset the ending index
                             last_col_index=null;
-                            // never hide selected endings
+                            // never hide selected or matched endings
                             // and make sure to unhide any endings
                             // of the same stem class
-                            if (Alph.$(this).hasClass("highlight-ending") )
+                            if (Alph.$(this).hasClass("highlight-ending")
+                                // TODO - need to disambiguate stems for matched 
+                                //(vs. selected) endings
+                                && ! Alph.$(this).hasClass("matched")) 
                             {
                                 var stem_class = Alph.$(this).attr("stem-class");
                                 if (stem_class != null && stem_class != '')

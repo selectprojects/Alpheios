@@ -40,11 +40,10 @@
     <xsl:param name="selected_endings" select="/.." />
     <xsl:param name="form" />
         
-    <!--xsl:param name="form" select="'νόστος'"/-->
+    <!--xsl:param name="form" select="'Μοῦσα'"/-->
     
     <!-- debug -->
     <xsl:param name="test_endings">
-        <!--
         <div class="alph-entry">
             <div class="alph-dict">
                 <span class="alph-hdwd">Μοῦσα: </span>
@@ -54,15 +53,14 @@
             </div>
             <div class="alph-mean">the Muse</div>
             <div context="μοῦσα" class="alph-infl-set">
-                <span class="alph-term">μοῦσα<span class="alph-suff"></span>
-                </span>
+                <span class="alph-term">μοῡσ•<span class="alph-suff">α</span></span>
                 <div class="alph-infl">Singular: 
                     <span context="nominative-singular-feminine-noun" class="alph-case">nominative</span>
                     <span context="vocative-singular-feminine-noun" class="alph-case">vocative</span>
                 </div>
             </div>
           </div>
-            -->
+          <!--
             <div class="alph-entry">
                 <div class="alph-dict">
                     <span class="alph-hdwd">νόστος: </span>
@@ -78,7 +76,7 @@
                         <span context="accusative-singular-masculine-noun" class="alph-case">accusative</span>
                     </div>
                 </div>
-            </div>
+            </div-->
     </xsl:param>
     <!--xsl:param name='selected_endings' select="exsl:node-set($test_endings)"/-->
     
@@ -112,13 +110,12 @@
         <xsl:param name="endings" />
         <table id="alph-infl-table"> <!-- start table -->
             <caption>
-                <xsl:value-of select="$form"/>
-                <!--xsl:for-each select="$selected_endings">
+                <xsl:for-each select="$selected_endings//span[@class='alph-term']">
                     <xsl:if test="position() &gt; 1">
                         , 
                     </xsl:if>
-                    <xsl:value-of select="."/>
-                </xsl:for-each-->
+                    <div class="alph-infl-term"><xsl:copy-of select="current()"/></div>    
+                </xsl:for-each>                
             </caption>
             <!-- write the colgroup elements -->
             <xsl:call-template name="colgroups">
@@ -304,15 +301,11 @@
                             <xsl:for-each select="$cellgroup">
                                 <xsl:variable name="selected_class">
                                     <!-- if this ending matches the one supplied in the template params
-                                        then add a 'selected' class to the data element -->
-                                    <xsl:if test="$selected &gt; 0">
-                                        <xsl:variable name="ending_match">
-                                            <xsl:call-template name="check_ending">
-                                                <xsl:with-param name="item" select="."/>
-                                            </xsl:call-template>
-                                        </xsl:variable>
-                                        <xsl:if test="$ending_match &gt; 0">selected</xsl:if>
-                                    </xsl:if>    
+                                    then add a 'selected' class to the data element -->
+                                    <xsl:choose>
+                                        <xsl:when test="contains($selected,concat(',',.,','))">selected</xsl:when>
+                                        <xsl:when test="count($selected_endings//span[@class='alph-suff' and current()=.]) &gt; 0">matched</xsl:when>
+                                    </xsl:choose>
                                 </xsl:variable>
                                 <xsl:variable name="notfirst">
                                     <xsl:if test="position() &gt; 1">notfirst</xsl:if>
@@ -514,12 +507,16 @@
             <xsl:for-each select="$selected_endings//div[@class='alph-infl-set' and 
                 ../div[@class='alph-dict']/span[(@class='alph-pofs') and (@context = 'noun')]]
                 ">
-                <xsl:for-each select="div[@class='alph-infl']">
-                    <xsl:call-template name="find_infl_match">
-                        <xsl:with-param name="current_data" select="$current_data"/>
-                        <xsl:with-param name="filtered_data" select="(.)"/>
-                    </xsl:call-template>
-                </xsl:for-each>
+                <xsl:variable name="ending_match" select="span[@class='alph-term']/span[@class='alph-suff']"/>
+                <xsl:variable name="possible">
+                    <xsl:for-each select="div[@class='alph-infl']">
+                        <xsl:call-template name="find_infl_match">
+                            <xsl:with-param name="current_data" select="$current_data"/>
+                            <xsl:with-param name="filtered_data" select="(.)"/>
+                        </xsl:call-template>
+                    </xsl:for-each>
+                </xsl:variable>
+                <xsl:if test="$possible &gt; 0">,<xsl:value-of select="$ending_match"/>,</xsl:if>
             </xsl:for-each>    
         </xsl:variable>
         <xsl:value-of select="$matches"/>
@@ -534,7 +531,6 @@
         <xsl:variable name="match_gend"><xsl:value-of select="$current_data/@gend"/></xsl:variable>
         <xsl:variable name="match_pofs">-noun</xsl:variable>
         
-
         <xsl:value-of select="count($filtered_data//span[@class='alph-case'
             and starts-with(@context,$match_case_num)
             and contains(@context,$match_pofs)
@@ -568,17 +564,5 @@
     <xsl:template match="reflink">
         <a href="{@xlink:href}" class="alph-reflink"><xsl:value-of select="."/></a>
     </xsl:template>
-    
-    <xsl:template name="check_ending">
-        <xsl:param name="item"/>
-        <xsl:variable name="ending_length" select="string-length($item)"/>
-        <xsl:variable name="form_length" select="string-length($form)"/>
-        <xsl:variable name="form_index" select="$form_length - $ending_length+1"/>
-        <xsl:variable name="form_ending" select="substring($form,$form_index)"/>
-        <xsl:choose>
-            <xsl:when test="$form_ending = $item">1</xsl:when>
-            <xsl:otherwise>0</xsl:otherwise>
-        </xsl:choose> 
-    </xsl:template>
-    
+        
 </xsl:stylesheet>
