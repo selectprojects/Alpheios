@@ -11,6 +11,14 @@
   <xsl:variable name="uni-diacritics"
     >&#x0314;&#x0313;&#x0308;&#x0301;&#x0300;&#x0342;&#x0345;&#x0304;&#x0306;&#x1FBD;</xsl:variable>
 
+  <!-- characters with and without length diacritics -->
+  <xsl:variable name="beta-with-length">_^</xsl:variable>
+  <xsl:variable name="beta-without-length"></xsl:variable>
+  <xsl:variable name="uni-with-length"
+    >&#x1FB0;&#x1FB1;&#x1FB8;&#x1FB9;&#x1FD0;&#x1FD1;&#x1FD8;&#x1FD9;&#x1FE0;&#x1FE1;&#x1FE8;&#x1FE9;&#x00AF;&#x0304;&#x0306;</xsl:variable>
+  <xsl:variable name="uni-without-length"
+    >&#x03B1;&#x03B1;&#x0391;&#x0391;&#x03B9;&#x03B9;&#x0399;&#x0399;&#x03C5;&#x03C5;&#x03A5;&#x03A5;</xsl:variable>
+
   <!-- characters denoting a word separation: punctuation plus whitespace -->
   <xsl:variable name="beta-separators">
     .,:;_&#x0009;&#x000A;&#x000D;&#x0020;&#x0085;&#x00A0;&#x1680;&#x180E;
@@ -1773,6 +1781,30 @@
       <!-- koronis -->
       <xsl:when test="$beta = &quot;&apos;&quot;">10</xsl:when>
     </xsl:choose>
+  </xsl:template>
+
+  <!--
+    Strip vowel length diacritics from betacode
+    Parameters:
+    $input        string to strip
+  -->
+  <xsl:template name="beta-strip-length">
+    <xsl:param name="input"/>
+    <xsl:value-of select="translate($input,
+                                    $beta-with-length,
+                                    $beta-without-length)"/>
+  </xsl:template>
+
+  <!--
+    Strip vowel length diacritics from unicode
+    Parameters:
+    $input        string to strip
+  -->
+  <xsl:template name="uni-strip-length">
+    <xsl:param name="input"/>
+    <xsl:value-of select="translate($input,
+                                    $uni-with-length,
+                                    $uni-without-length)"/>
   </xsl:template>
 
   <!--

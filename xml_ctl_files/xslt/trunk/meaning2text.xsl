@@ -6,6 +6,7 @@
     by language extensions
 
     Lemmas are translated from betacode to unicode.
+    Vowel length diacritics are removed.
     Lemma and meanings are concatenated with a period between.
     Lemmas ending with "1" are repeated without the "1" to be used
     when the lookup term has no trailing digit.
@@ -31,10 +32,15 @@
     <xsl:param name="lemma"/>
     <xsl:param name="meaning"/>
 
-    <!-- convert lemma to unicode -->
+    <!-- convert lemma to unicode, stripping vowel length -->
+    <xsl:variable name="stripped-lemma">
+      <xsl:call-template name="beta-strip-length">
+        <xsl:with-param name="input" select="data($lemma)"/>
+      </xsl:call-template>
+    </xsl:variable>
     <xsl:variable name="uni-lemma">
       <xsl:call-template name="beta-to-uni">
-        <xsl:with-param name="input" select="data($lemma)"/>
+        <xsl:with-param name="input" select="$stripped-lemma"/>
       </xsl:call-template>
     </xsl:variable>
     <xsl:variable name="templen" select="string-length($uni-lemma)"/>
