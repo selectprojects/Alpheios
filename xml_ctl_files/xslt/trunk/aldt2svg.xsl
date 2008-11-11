@@ -20,9 +20,7 @@
   <xsl:template match="sentence">
     <xsl:variable name="is-beta" select="./@xml:lang = 'grc-x-beta'"/>
 
-    <svg xmlns:xlink="http://www.w3.org/1999/xlink"
-         xmlns="http://www.w3.org/2000/svg"
-         id="dependency-tree">
+    <svg xmlns="http://www.w3.org/2000/svg">
       <defs>
         <style type="text/css">
           <![CDATA[
