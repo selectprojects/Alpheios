@@ -10,6 +10,7 @@
   xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs">
 
   <xsl:include href="beta2unicode.xsl"/>
+  <xsl:include href="aldt-util.xsl"/>
 
   <xsl:strip-space elements="*"/>
 
@@ -21,23 +22,6 @@
     <xsl:variable name="is-beta" select="./@xml:lang = 'grc-x-beta'"/>
 
     <svg xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <style type="text/css">
-          <![CDATA[
-            svg {
-              overflow:scroll;
-            }
-            g text {
-              text-anchor:middle;
-              font-family:Times, Arial, Helvetica, Serif;
-              font-size:20px;
-            }
-            g line {
-              stroke:black;
-            }
-        ]]>
-        </style>
-      </defs>
       <xsl:element name="g" namespace="http://www.w3.org/2000/svg">
         <xsl:element name="text" namespace="http://www.w3.org/2000/svg">
           <xsl:choose>
@@ -77,11 +61,19 @@
     <xsl:param name="is-beta"/>
 
     <xsl:for-each select="$words">
-      <!--
-            Create text from word form and relation
-      -->
+      <!-- group element -->
       <xsl:element name="g" namespace="http://www.w3.org/2000/svg">
+
+        <!-- text element -->
         <xsl:element name="text" namespace="http://www.w3.org/2000/svg">
+          <!-- class attribute is part of speech -->
+          <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
+            <xsl:with-param name="category">pos</xsl:with-param>
+            <xsl:with-param name="key" select="substring(@postag,1,1)"/>
+            <xsl:with-param name="name" select="'class'"/>
+          </xsl:apply-templates>
+
+          <!-- Create text from word form and relation -->
           <xsl:variable name="form">
             <xsl:choose>
               <!-- if this is betacode -->
@@ -101,6 +93,8 @@
           </xsl:variable>
           <xsl:value-of select="concat($form, ' (', @relation, ')')"/>
         </xsl:element>
+
+        <!-- line element -->
         <xsl:element name="line" namespace="http://www.w3.org/2000/svg"/>
 
         <!-- Recursively build children from this word's dependents -->
@@ -109,6 +103,7 @@
           <xsl:with-param name="words" select="../word[@head=$id]"/>
           <xsl:with-param name="is-beta" select="$is-beta"/>
         </xsl:call-template>
+
       </xsl:element>
     </xsl:for-each>
   </xsl:template>

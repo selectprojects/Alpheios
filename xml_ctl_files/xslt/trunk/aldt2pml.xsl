@@ -14,6 +14,7 @@
   exclude-result-prefixes="xs">
 
   <xsl:include href="beta2unicode.xsl"/>
+  <xsl:include href="aldt-util.xsl"/>
 
   <xsl:strip-space elements="*"/>
   <xsl:variable name="pml-namespace" select="'http://ufal.mff.cuni.cz/pdt/pml/'"/>
@@ -157,41 +158,39 @@
         </xsl:choose>
 
         <!-- Break postag into separate morphological attributes -->
-        <xsl:variable name="table"
-          select="document('aldt-tables.xml')/*/aldt:morphology-table"/>
-        <xsl:apply-templates select="$table">
+        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
           <xsl:with-param name="category">pos</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,1,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$table">
+        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
           <xsl:with-param name="category">person</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,2,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$table">
+        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
           <xsl:with-param name="category">number</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,3,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$table">
+        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
           <xsl:with-param name="category">tense</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,4,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$table">
+        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
           <xsl:with-param name="category">mood</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,5,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$table">
+        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
           <xsl:with-param name="category">voice</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,6,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$table">
+        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
           <xsl:with-param name="category">gender</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,7,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$table">
+        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
           <xsl:with-param name="category">case</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,8,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$table">
+        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
           <xsl:with-param name="category">degree</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,9,1)"/>
         </xsl:apply-templates>
@@ -204,22 +203,6 @@
         </xsl:call-template>
       </xsl:element>
     </xsl:for-each>
-  </xsl:template>
-
-  <!-- Template to calculate a morphology attribute -->
-  <xsl:key name="morphology-lookup" match="aldt:morphology-table/aldt:entry"
-    use="aldt:short"/>
-  <xsl:template match="aldt:morphology-table">
-    <xsl:param name="category"/>
-    <xsl:param name="key"/>
-    <!-- use long value from entry with matching category -->
-    <xsl:variable name="value"
-      select="key('morphology-lookup', $key)[aldt:category=$category]/aldt:long"/>
-    <xsl:if test="string-length($value) > 0">
-      <xsl:attribute name="{$category}">
-        <xsl:value-of select="$value"/>
-      </xsl:attribute>
-    </xsl:if>
   </xsl:template>
 
   <!-- Generic template to copy content to new namespace -->
