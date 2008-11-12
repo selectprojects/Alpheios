@@ -7,7 +7,7 @@
     xmlns:xs="http://www.w3.org/2001/XMLSchema" exclude-result-prefixes="xs"
     xmlns:exsl="http://exslt.org/common"
     xmlns:xlink="http://www.w3.org/1999/xlink">
-    
+    <xsl:import href="beta-uni-util.xsl"/>    
     <!--
         This stylesheet groups the data on 3 attributes for the rows, 
         and groups on 3 attributes for the columns.
@@ -299,12 +299,24 @@
                             <!-- print an empty cell if there are no endings of this type -->
                             <xsl:if test="count($cellgroup) = 0"><span class="emptycell">&#160;</span></xsl:if>
                             <xsl:for-each select="$cellgroup">
+                                <xsl:variable name="stripped-ending">
+                                    <xsl:call-template name="uni-strip-length">
+                                        <xsl:with-param name="input" select="."/>
+                                    </xsl:call-template>
+                                </xsl:variable>
                                 <xsl:variable name="selected_class">
                                     <!-- if this ending matches the one supplied in the template params
                                     then add a 'selected' class to the data element -->
                                     <xsl:choose>
-                                        <xsl:when test="contains($selected,concat(',',.,','))">selected</xsl:when>
-                                        <xsl:when test="count($selected_endings//span[@class='alph-suff' and current()=.]) &gt; 0">matched</xsl:when>
+                                        <xsl:when test="contains($selected,concat(',',$stripped-ending,','))">selected</xsl:when>
+                                        <xsl:when test="count
+                                            ($selected_endings//span
+                                                    [@class='alph-suff' and 
+                                                     translate(text(),
+                                                               $uni-with-length,
+                                                               $uni-without-length) 
+                                                     = $stripped-ending]
+                                            ) &gt; 0">matched</xsl:when>
                                     </xsl:choose>
                                 </xsl:variable>
                                 <xsl:variable name="notfirst">
@@ -506,8 +518,12 @@
         <xsl:variable name="matches">
             <xsl:for-each select="$selected_endings//div[@class='alph-infl-set' and 
                 ../div[@class='alph-dict']/span[(@class='alph-pofs') and (@context = 'noun')]]
-                ">
-                <xsl:variable name="ending_match" select="span[@class='alph-term']/span[@class='alph-suff']"/>
+                ">                    
+              <xsl:variable name="ending_match">
+                    <xsl:call-template name="uni-strip-length">
+                        <xsl:with-param name="input" select="span[@class='alph-term']/span[@class='alph-suff']"/>
+                    </xsl:call-template>    
+                </xsl:variable>
                 <xsl:variable name="possible">
                     <xsl:for-each select="div[@class='alph-infl']">
                         <xsl:call-template name="find_infl_match">

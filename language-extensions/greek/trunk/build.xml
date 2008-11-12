@@ -12,7 +12,7 @@
 	<property name="release.id" value="0.3" />
 	<property name="svnant.lib.dir" value="/svnant-1.0.0"/>
 	<property name="package" value="${app.name}-${release.id}.xpi"/>
-	<property name="extras" value="grammar,grammar_index,morpheus_bin,morpheus_stemlib"/>
+	<property name="extras" value="grammar,grammar_index,morpheus_bin,morpheus_stemlib,xsl"/>
 	
 	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
 	
@@ -133,7 +133,8 @@
 		  		<export 
 		         srcUrl="${@{type}.repository}"
 		  	     revision="${@type}.revision}"
-		  	     destPath="${@{type}.target_dir}"/>
+		  	     destPath="${@{type}.target_dir}"
+		  		 force="true"/>
 		    </svn>
 		  </sequential>
 		</for>
@@ -219,7 +220,15 @@
 		<property file="extras.properties"/>
         <for list="${extras}" param="type">
           <sequential>
-            <delete dir="${@{type}.target_dir}" failonerror="true" />
+            <condition property="@{type}.delete.ok">
+             <not>
+                <istrue value="${@{type}.target_dir_shared}"/>
+             </not>
+            </condition>
+            <antcall target="clean.extra.dir">
+                <param name="type" value="@{type}"/>
+                <param name="dir" value="${@{type}.target_dir}"/>
+            </antcall>
           </sequential>
         </for>
 	</target>
@@ -230,5 +239,10 @@
 	<target name="clean.ff"  if="ff.present">
 	    <delete dir="${ext.test.dir}" failonerror="false" />
 	</target>
+
+    <target name="clean.extra.dir" if="${type}.delete.ok">
+        <echo message="cleaning ${dir}"/>
+        <delete dir="${dir}" failonerror="true"/>
+	</target>  
 
 </project>
