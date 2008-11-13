@@ -4,7 +4,7 @@
  *
  * Copyright 2008 Cantus Foundation
  * http://alpheios.net
- *
+ * 
  * This file is part of Alpheios.
  *
  * Alpheios is free software: you can redistribute it and/or modify
@@ -19,6 +19,13 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ * 
+ * Morpheus is from Perseus Digital Library
+ * Licensed under Mozilla Public License 1.1
+ * http://www.perseus.tufts.edu
+ * 
+ * Smyth Grammar and LSJ Meanings also come from the Perseus Digital Library
+ * Licensed under Creative Commons http://creativecommmons.org
  */
 
 /**
