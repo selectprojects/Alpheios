@@ -42,11 +42,11 @@ There are 69,604 meanings that occur only once each.)
    4873       2
   69604       1
 
-Table of lemmas
----------------
+Table of meanings
+-----------------
 First column: number of occurrences
 Second column: <meaning> element from ulsj-meanings.xml
-Lemmas with one occurrence are omitted.
+Meanings with one occurrence are omitted.
      61       <meaning>office of</meaning>
      58       <meaning>to be</meaning>
      56       <meaning>fish</meaning>
