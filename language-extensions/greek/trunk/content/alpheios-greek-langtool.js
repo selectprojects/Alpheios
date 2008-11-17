@@ -110,7 +110,6 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
     // TODO should flip this to be a single object keys on infl_type
     params.suffixes = {};
     params.entries = {};
-    params.words = {};
 
     var form = Alph.$(".alph-word",a_node).attr("context");
 
@@ -119,7 +118,6 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
         var key = Alph.LanguageToolSet.greek.INFLECTION_MAP[infl_type].keys[0];
         params.suffixes[key] = [];
         params.entries[key] = [];
-        params.words[key] = [];
     }
 
     // The word will have one more more alph-infl-set elements
@@ -221,8 +219,6 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
 
                     params.entries[infl_type].push(
                         Alph.$(this).parent(".alph-entry").get(0));
-
-                    params.words[infl_type][word]=1;
 
                     // duplicate suffixes if necessary
                     var num_pofs = Alph.LanguageToolSet.greek.INFLECTION_MAP[pofs].keys.length;
