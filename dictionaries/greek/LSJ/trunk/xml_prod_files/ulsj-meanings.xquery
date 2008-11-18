@@ -652,13 +652,15 @@ let $meaning :=
         $meaning
 
 (: only put out entry if meaning was found :)
-where $meaning
 return
   element entry
   {
     $entry/@id,
     element lemma { $lemma },
-    element meaning { $meaning }
+    if ($meaning)
+    then
+      element meaning { $meaning }
+    else ()
   },
 
 (: additions :)

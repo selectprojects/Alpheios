@@ -18,12 +18,14 @@
 
   <!-- template to transform entire file -->
   <xsl:template match="/">
-    <!-- for each entry -->
+    <!-- for each entry with a meaning -->
     <xsl:for-each select="entrylist/entry">
-      <xsl:call-template name="entry">
-        <xsl:with-param name="lemma" select="./lemma"/>
-        <xsl:with-param name="meaning" select="./meaning"/>
-      </xsl:call-template>
+      <xsl:if test="exists(./meaning)">
+        <xsl:call-template name="entry">
+          <xsl:with-param name="lemma" select="./lemma"/>
+          <xsl:with-param name="meaning" select="./meaning"/>
+        </xsl:call-template>
+      </xsl:if>
     </xsl:for-each>
   </xsl:template>
 
