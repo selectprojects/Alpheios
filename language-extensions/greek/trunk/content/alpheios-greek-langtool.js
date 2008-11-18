@@ -265,10 +265,11 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
     a_params.xslt_params = {};
     a_params.xslt_params.fragment = 1;
     a_params.xslt_params.selected_endings = a_params.entries[a_infl_type];
-    a_params.xslt_params.form = a_form;
+    a_params.xslt_params.form = a_form || "";
 
     // get rid of the selected endings parameter if we couldn't find any
-    if (a_params.xslt_params.selected_endings.length == 0)
+    if (typeof a_params.xslt_params.selected_endings == "undefined" ||
+         a_params.xslt_params.selected_endings.length == 0)
     {
         delete a_params.xslt_params.selected_endings;
     }

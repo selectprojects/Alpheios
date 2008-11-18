@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:math="http://www.w3.org/1998/Math/MathML"
+  xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Alpheios Greek Inflection Tables</title>
+      </titleStmt>
+      <publicationStmt><p/></publicationStmt>
+      <sourceDesc><p/></sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+      <front>
+          <div type="contents">
+              <head>Alpheios Greek Inflection Tables</head>
+              <list>
+                  <item>Nouns
+                          <ptr target="#noun"/>
+                  </item>
+              </list>
+          </div>
+      </front>
+      <body>
+          <div/>
+      </body>
+  </text>
+</TEI>
