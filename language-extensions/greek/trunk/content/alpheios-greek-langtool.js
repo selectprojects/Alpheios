@@ -1,6 +1,6 @@
 /*
  * @fileoverview Greek extension of Alph.LanguageTool class
- * @version $Id: alpheios-greek-langtool.js 439 2008-03-27 00:26:41Z BridgetAlmas $
+ * @version $Id$
  *
  * Copyright 2008 Cantus Foundation
  * http://alpheios.net
@@ -20,12 +20,14 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * 
- * Morpheus is from Perseus Digital Library
- * Licensed under Mozilla Public License 1.1
- * http://www.perseus.tufts.edu
+ * Morpheus is from Perseus Digital Library http://www.perseus.tufts.edu
+ * and is licensed under the Mozilla Public License 1.1. 
+ * You should have received a copy of the MPL 1.1
+ * along with this program. If not, see http://www.mozilla.org/MPL/MPL-1.1.html.
  * 
- * Smyth Grammar and LSJ Meanings also come from the Perseus Digital Library
- * Licensed under Creative Commons http://creativecommmons.org
+ * The Smyth Grammar and LSJ Meanings come from the Perseus Digital Library
+ * They are licensed under Creative Commons NonCommercial ShareAlike 3.0
+ * License http://creativecommons.org/licenses/by-nc-sa/3.0/us
  */
 
 /**
