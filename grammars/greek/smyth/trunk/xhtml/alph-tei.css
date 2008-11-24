@@ -54,10 +54,18 @@ li.toc {
     font-weight: bold;
 }       
 
-.perseus-funder {
+.perseus-funder, .perseus-publication {
     font-size: small;
     font-style: italic;
     text-align: center;
+}
+
+.perseus-publication .publisher:after {
+    content: ", ";
+}
+
+.perseus-publication .pubPlace:after {
+    content: ", ";
 }
 
 .upLink, .nextLink, .navigation {
