@@ -7,3 +7,4 @@
 <!ENTITY alpheios.greek.prefs.popuptrigger.mousemove "mousemove">
 <!ENTITY alpheios.greek.prefs.popuptrigger.dblclick "dblclick">
 <!ENTITY alpheios.greek.prefs.panels.tablabel "Greek">
+<!ENTITY alpheios.greek.prefs.panels.restore.defaults "Restore Greek Defaults">

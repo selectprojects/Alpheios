@@ -88,6 +88,8 @@
                         <checkbox id="panel-override-greek" 
                                   preference="pref-panel-override-greek"/>
                         <label control="panel-override-greek" value="&alpheios.prefs.panels.use.defaults;"/>
+                        <button oncommand="Alph.prefs.restore_panel_defaults('greek');"
+                                label="&alpheios.greek.prefs.panels.restore.defaults;"/>
                     </hbox>
                     <groupbox id="panel-prefs-box-greek"/>
                 </vbox>
