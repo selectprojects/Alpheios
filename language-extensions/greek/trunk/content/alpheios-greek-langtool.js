@@ -314,7 +314,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
     {
         a_params.xml_url =
             'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
-        a_params.xslt_url = 'chrome://alpheios-greek/skin/alph-infl-' + a_infl_type + '.xsl';
+        a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
 
         if (a_params.order )
         {
