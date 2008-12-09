@@ -27,6 +27,8 @@ ulsj-alpha.xml ... ulsj-omega.xml
   They would need modification to be loaded with the main file.
 ulsj-meanings.xml
   List of lemmas, ids, and short definitions extracted from the full LSJ.
+ulsj-index.xml
+  Index file used by ulsj-lookup.xquery to map lemmas to LSJ ids.
 
 xml_prod_files:
 lsjbeta2uni.xsl:
@@ -41,6 +43,13 @@ meaning2text.xsl
 umeaning2text.xsl
   Transform to produce lookup text file from ulsj-meanings.xml.
   Same as meaning2text.xsl without betacode conversion.
+umeaning2index.xsl
+  Transform to produce index file (ulsj-index.xml) from ulsj-meanings.xml.
+ulsj-lookup.xquery
+  Query running under eXist REST interface that takes Greek lemma and
+  returns the corresponding LSJ entry formatted in HTML
+tei.xsl, langfilter.xsl
+  Transforms to convert TEI XML to HTML
 
 Production processes:
 Conversion from betacode to Unicode
