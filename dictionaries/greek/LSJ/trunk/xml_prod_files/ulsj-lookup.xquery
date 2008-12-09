@@ -1,3 +1,7 @@
+import module namespace request="http://exist-db.org/xquery/request";  
+import module namespace transform="http://exist-db.org/xquery/transform";  
+declare option exist:serialize "method=xhtml media-type=text/html";
+
 (: get lemma from request :)
 let $lemma := request:get-parameter("l", ())
 
@@ -32,4 +36,8 @@ return
   then
     element error { "Lemma ", $lemma, " not found" }
   else
-    $dict-entry
+    (: transform TEI entry to HTML :)
+    transform:transform(
+      <TEI.2><text><body>{ $dict-entry }</body></text></TEI.2>,
+      doc("/db/xslt/tei.xsl"),
+      ())
