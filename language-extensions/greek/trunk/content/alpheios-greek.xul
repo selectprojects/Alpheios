@@ -18,5 +18,15 @@
                   value="greek"
                   type="checkbox"
                   hidden="false"/>
-    </menupopup>  
+    </menupopup>
+    <menupopup
+        id = "alph-dict-menu-popup">      
+        <menuitem id="alpheios-dict-lsj" 
+            label="&alpheios.panel.dict.lsj;"
+            name="alpheios-dict-current"
+            command="alpheios-dict-switch-cmd"
+            type="radio"
+            class="menuitem-iconic"/>
+    </menupopup>
+  
 </overlay>

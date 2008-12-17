@@ -92,6 +92,7 @@ Alph.LanguageToolSet.greek.prototype.loadDictionary = function()
  */
 Alph.LanguageToolSet.greek.INFLECTION_MAP =
 {     noun: { keys: ['noun'], links: [] },
+      adjective: {keys: ['adjective'], links:[] }
 };
 
 Alph.LanguageToolSet.greek.IRREG_VERBS =
@@ -315,6 +316,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         a_params.xml_url =
             'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
         a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
+        a_params.xslt_params.match_pofs = a_infl_type;
 
         if (a_params.order )
         {

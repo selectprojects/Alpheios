@@ -13,8 +13,14 @@ pref("extensions.alpheios.greek.url.grammar",
      "chrome://alpheios-greek/content/alph-greek-grammar.xul");
 pref("extensions.alpheios.greek.grammar.hotlinks",
      "alph-decl,alph-pofs,alph-mood,alph-case,alph-voice,alph-pers,alph-tense");
+pref("extensions.alpheios.greek.url.dictionary.lsj",
+     "http://dev.alpheios.net:8800/exist/rest/db/xquery/lsj-lookup-single.xquery");
+pref("extensions.alpheios.greek.url.dictionary.lsj.lemma_param",
+     "l");
 pref("extensions.alpheios.greek.features.alpheios-grammar",true);
 pref("extensions.alpheios.greek.features.alpheios-inflect",true);
 pref("extensions.alpheios.greek.context_handler","grammarContext");
 pref("extensions.alpheios.greek.shift_handler","handleInflections");
 pref("extensions.alpheios.greek.panels.use.defaults",true);
+pref("extensions.alpheios.greek.dictionaries","lsj");
+pref("extensions.alpheios.greek.dictionaries.default","lsj");

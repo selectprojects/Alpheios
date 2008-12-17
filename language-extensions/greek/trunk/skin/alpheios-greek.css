@@ -10,6 +10,6 @@
     cursor: pointer;
 }
 
-.alph-hdwd, .alph-phrase, .alph-term {
+.alph-hdwd, .alph-phrase, .alph-term, *:lang(gre), *:lang(grc), *.greek {
     font-family: "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif;
 }
