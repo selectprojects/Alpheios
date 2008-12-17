@@ -1,3 +1,4 @@
 <!ENTITY alpheios.lang.greek "Greek">
 <!ENTITY alpheios.greek.grammar.title "Smyth's Greek Grammar For Colleges">
-<!ENTITY alpheios.panel.dict.lsj "LSJ">
+<!ENTITY alpheios.panel.dict.lsj-alpheios "LSJ (Alpheios)">
+<!ENTITY alpheios.panel.dict.lsj-harvard "LSJ (Harvard)">

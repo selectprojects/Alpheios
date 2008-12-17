@@ -499,3 +499,17 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
         }
     );
 }
+
+/**
+ * Removes the previous/next block from the Harvard LSJ output
+ */
+Alph.LanguageToolSet.greek.prototype.fixHarvardLSJ = function(a_html)
+{
+    // look for the first <hr/> and remove everything before it
+    var match_hr = a_html.match(/(<hr\s*\/>)/m);
+    if (match_hr)
+    {
+        a_html = a_html.substring(match_hr.index+match_hr[1].length);
+    }
+    return a_html;
+}

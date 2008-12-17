@@ -30,13 +30,21 @@
     </menupopup>
     <menupopup
         id = "alph-dict-menu-popup">      
-        <menuitem id="alpheios-dict-lsj" 
-            label="&alpheios.panel.dict.lsj;"
+        <menuitem id="alpheios-dict-lsj-alpheios" 
+            label="&alpheios.panel.dict.lsj-alpheios;"
             name="alpheios-dict-current"
             command="alpheios-dict-switch-cmd"
             type="radio"
             class="menuitem-iconic"
             observes="alph-lang-greek-hide"/>
+        <menuitem id="alpheios-dict-lsj-harvard" 
+            label="&alpheios.panel.dict.lsj-harvard;"
+            name="alpheios-dict-current"
+            command="alpheios-dict-switch-cmd"
+            type="radio"
+            class="menuitem-iconic"
+            observes="alph-lang-greek-hide"/>
+
     </menupopup>
   
 </overlay>
