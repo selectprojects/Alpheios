@@ -2,14 +2,34 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
   <xsl:import href="beta-uni-util.xsl"/>
 
+<!--
+  Copyright 2008 Cantus Foundation
+  http://alpheios.net
+
+  This file is part of Alpheios.
+ 
+  Alpheios is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+ 
+  Alpheios is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+ 
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ -->
+
   <!--
-      Test whether text is in betacode
-      Parameters:
-        $input        string/node to be tested
-      Output:
-        1 if encoded in betacode, else 0
-      (Note: Boolean return value does not seem to work
-      reliably, perhaps because of recursion.)
+    Test whether text is in betacode
+    Parameters:
+      $input        string/node to be tested
+    Output:
+      1 if encoded in betacode, else 0
+    (Note: Boolean return value does not seem to work
+    reliably, perhaps because of recursion.)
   -->
   <xsl:template name="is-beta">
     <xsl:param name="input"/>
@@ -66,26 +86,26 @@
   </xsl:template>
 
   <!--
-      Convert Greek betacode to Unicode
-      Parameters:
-        $input        betacode input string to be converted
-        $pending      character waiting to be output
-        $state        diacritics associated with pending character
-        $precomposed  whether to put out precomposed or decomposed Unicode
-        $partial      whether this is a partial word
-                      (If true, do not use final sigma for last letter)
+    Convert Greek betacode to Unicode
+    Parameters:
+      $input        betacode input string to be converted
+      $pending      character waiting to be output
+      $state        diacritics associated with pending character
+      $precomposed  whether to put out precomposed or decomposed Unicode
+      $partial      whether this is a partial word
+                    (If true, do not use final sigma for last letter)
 
-      Output:
-        $input transformed to equivalent Unicode
+    Output:
+      $input transformed to equivalent Unicode
 
-      The characters in the state string are maintained in a canonical order,
-      which allows the lookup table to contain a single entry for each
-      combination of base character and diacritics.  The diacritics may appear
-      in any order in the input.
+    The characters in the state string are maintained in a canonical order,
+    which allows the lookup table to contain a single entry for each
+    combination of base character and diacritics.  The diacritics may appear
+    in any order in the input.
 
-      Diacritics associated with (either preceding or following) a base
-      character are accumulated until either a non-diacritic character or end
-      of input are encountered, at which point the pending character is output.
+    Diacritics associated with (either preceding or following) a base
+    character are accumulated until either a non-diacritic character or end
+    of input are encountered, at which point the pending character is output.
   -->
   <xsl:template name="beta-to-uni">
     <xsl:param name="input"/>
@@ -210,11 +230,11 @@
   </xsl:template>
 
   <!--
-      Output a single character with diacritics
-      Parameters:
-        $char         character to be output
-        $state        diacritics associated with character
-        $precomposed  whether to put out precomposed or decomposed Unicode
+    Output a single character with diacritics
+    Parameters:
+      $char         character to be output
+      $state        diacritics associated with character
+      $precomposed  whether to put out precomposed or decomposed Unicode
   -->
   <xsl:template name="output-uni-char">
     <xsl:param name="char"/>
