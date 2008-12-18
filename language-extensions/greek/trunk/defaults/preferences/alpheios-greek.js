@@ -13,19 +13,6 @@ pref("extensions.alpheios.greek.url.grammar",
      "chrome://alpheios-greek/content/alph-greek-grammar.xul");
 pref("extensions.alpheios.greek.grammar.hotlinks",
      "alph-decl,alph-pofs,alph-mood,alph-case,alph-voice,alph-pers,alph-tense");
-pref("extensions.alpheios.greek.url.dictionary.lsj-alpheios",
-     "http://dev.alpheios.net:8800/exist/rest/db/xquery/lsj-lookup-single.xquery?");
-pref("extensions.alpheios.greek.url.dictionary.lsj-alpheios.lemma_param",
-     "l");
-pref("extensions.alpheios.greek.url.dictionary.lsj-harvard",
-     "http://archimedes.fas.harvard.edu/cgi-bin/dict?name=lsj&filter=CUTF8");
-pref("extensions.alpheios.greek.url.dictionary.lsj-harvard.lemma_param",
-     "word");
-pref("extensions.alpheios.greek.url.dictionary.lsj-harvard.convert_method",
-     "greek_to_ascii");
-pref("extensions.alpheios.greek.url.dictionary.lsj-harvard.post_method",
-     "fixHarvardLSJ");
-
 pref("extensions.alpheios.greek.features.alpheios-grammar",true);
 pref("extensions.alpheios.greek.features.alpheios-inflect",true);
 pref("extensions.alpheios.greek.context_handler","grammarContext");
@@ -33,3 +20,21 @@ pref("extensions.alpheios.greek.shift_handler","handleInflections");
 pref("extensions.alpheios.greek.panels.use.defaults",true);
 pref("extensions.alpheios.greek.dictionaries","lsj-alpheios,lsj-harvard");
 pref("extensions.alpheios.greek.dictionaries.default","lsj-alpheios");
+pref("extensions.alpheios.greek.dictionary.lsj-alpheios.search.url",
+     "http://dev.alpheios.net:8800/exist/rest/db/xquery/lsj-lookup-single.xquery?");
+pref("extensions.alpheios.greek.dictionary.lsj-alpheios.search.lemma_param",
+     "l");
+pref("extensions.alpheios.greek.dictionary.lsj-alpheios.search.multiple_lemmas"
+    ,false);
+pref("extensions.alpheios.greek.dictionary.lsj-harvard.search.url",
+     "http://archimedes.fas.harvard.edu/cgi-bin/dict?name=lsj&filter=CUTF8");
+pref("extensions.alpheios.greek.dictionary.lsj-harvard.search.lemma_param",
+     "word");
+pref("extensions.alpheios.greek.dictionary.lsj-harvard.search.convert_method",
+     "greek_to_ascii");
+pref("extensions.alpheios.greek.dictionary.lsj-harvard.search.transform_method",
+     "fixHarvardLSJ");
+pref("extensions.alpheios.greek.dictionary.lsj-harvard.search.multiple_lemmas"
+    ,false);
+pref("extensions.alpheios.greek.dictionary.lsj-harvard.browse.url",
+     "http://archimedes.fas.harvard.edu/pollux/");
