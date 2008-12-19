@@ -451,8 +451,8 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
     Alph.$(".alph-entry", a_node).each(
         function()
         {
-            // get headword, remove trailing ": "
-            var hdwd = Alph.$(".alph-dict", this).attr("key");
+            // get headword
+            var hdwd = Alph.$(".alph-dict", this).attr("lemma-key");
             var meanData = dict.findData(hdwd);
 
             // if not found
