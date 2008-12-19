@@ -20,13 +20,19 @@ pref("extensions.alpheios.greek.shift_handler","handleInflections");
 pref("extensions.alpheios.greek.panels.use.defaults",true);
 pref("extensions.alpheios.greek.dictionaries","lsj-alpheios,lsj-harvard");
 pref("extensions.alpheios.greek.dictionaries.default","lsj-alpheios");
-pref("extensions.alpheios.greek.dictionary.lsj-alpheios.search.url",
-     "http://dev.alpheios.net:8800/exist/rest/db/xquery/lsj-lookup-single.xquery?");
+pref("extensions.alpheios.greek.dictionary.lsj-alpheios.search.lemma_url",
+     "http://dev.alpheios.net:8800/exist/rest/db/xquery/lsj-lemma2html.xquery?");
 pref("extensions.alpheios.greek.dictionary.lsj-alpheios.search.lemma_param",
      "l");
 pref("extensions.alpheios.greek.dictionary.lsj-alpheios.search.multiple_lemmas"
     ,false);
-pref("extensions.alpheios.greek.dictionary.lsj-harvard.search.url",
+pref("extensions.alpheios.greek.dictionary.lsj-alpheios.search.id_url",
+     "http://dev.alpheios.net:8800/exist/rest/db/xquery/lsj-id2html.xquery?");
+pref("extensions.alpheios.greek.dictionary.lsj-alpheios.search.lemma_id_param",
+     "n");
+pref("extensions.alpheios.greek.dictionary.lsj-alpheios.search.multiple_lemma_ids"
+    ,false);
+pref("extensions.alpheios.greek.dictionary.lsj-harvard.search.lemma_url",
      "http://archimedes.fas.harvard.edu/cgi-bin/dict?name=lsj&filter=CUTF8");
 pref("extensions.alpheios.greek.dictionary.lsj-harvard.search.lemma_param",
      "word");
