@@ -21,6 +21,9 @@
                   <item>Nouns
                           <ptr target="#noun"/>
                   </item>
+                  <item>Adjectives
+                      <ptr target="#adjective"/>
+                  </item>
               </list>
           </div>
       </front>

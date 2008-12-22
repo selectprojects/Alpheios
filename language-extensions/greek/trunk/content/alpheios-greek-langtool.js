@@ -107,7 +107,9 @@ Alph.LanguageToolSet.greek.prototype.loadDictionary = function()
  */
 Alph.LanguageToolSet.greek.INFLECTION_MAP =
 {     noun: { keys: ['noun'], links: [] },
-      adjective: {keys: ['adjective'], links:[] }
+      adjective: {keys: ['adjective'], links:[] },
+      adjective_simplified: {keys: ['adjective_simplified'], links:[] },
+      noun_simplified: {keys: ['noun_simplified'], links:[] },
 };
 
 Alph.LanguageToolSet.greek.IRREG_VERBS =
@@ -126,7 +128,6 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
 
     // initialize the suffix arrays
     // TODO should flip this to be a single object keys on infl_type
-    params.suffixes = {};
     params.entries = {};
 
     var form = Alph.$(".alph-word",a_node).attr("context");
@@ -134,7 +135,6 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
     for (var infl_type in Alph.LanguageToolSet.greek.INFLECTION_MAP )
     {
         var key = Alph.LanguageToolSet.greek.INFLECTION_MAP[infl_type].keys[0];
-        params.suffixes[key] = [];
         params.entries[key] = [];
     }
 
@@ -203,11 +203,13 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                 var map_pofs = Alph.LanguageToolSet.greek.INFLECTION_MAP[pofs].keys[0];
 
 
+                var check_pofs = pofs.replace(/_simplified$/,'');
                 // if we couldn't find the part of speech or the part of speech
                 // isn't one we support then just move on to the next part of speech
                 if ( infl_pofs.length == 0 ||
                      (pofs == 'verb_irregular' && ! irregular) ||  // context pofs for irregular verbs is just 'verb'
-                     (pofs != 'verb_irregular' && Alph.$(infl_pofs[0]).attr("context") != pofs)
+                     (pofs != 'verb_irregular' 
+                        && Alph.$(infl_pofs[0]).attr("context") != check_pofs)
                    )
                 {
                     continue;
@@ -232,20 +234,9 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                     {
                         params.showpofs = infl_type;
                     }
-                    params.suffixes[infl_type].push(
-                        Alph.$(".alph-suff",this).get());
 
                     params.entries[infl_type].push(
                         Alph.$(this).parent(".alph-entry").get(0));
-
-                    // duplicate suffixes if necessary
-                    var num_pofs = Alph.LanguageToolSet.greek.INFLECTION_MAP[pofs].keys.length;
-                    for (var i=1; i<num_pofs; i++)
-                    {
-                        var extra_pofs = Alph.LanguageToolSet.greek.INFLECTION_MAP[pofs].keys[i];
-                        params.suffixes[extra_pofs].push(
-                        Alph.$(".alph-suff",this).get());
-                    }
 
                     // identify the correct file and links for the inflection type
                     // being displayed
@@ -328,6 +319,18 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
     }
     else
     {
+        var is_simple = a_infl_type.match(/^(.+)_simplified$/)
+        if (is_simple != null)
+        {
+            /*
+             * simplified noun/adj table is just the regular table
+             * for that part of speech, reorded by gend-decl-type,
+             * and deduping duplicate endings (by attributes case, number, gender)
+             */
+            a_infl_type = is_simple[1];
+            a_params.order = 'gend-decl-type';
+            a_params.xslt_params.dedupe_by='case-num-gend';
+        }
         a_params.xml_url =
             'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
         a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
@@ -351,10 +354,11 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
 
 /**
  * Greek specific inflection table display code
- * @param
- * @param
+ * @param {Element} a_tbl the inflection table element
+ * @param {Elemen} a_str the strings for the table display
+ * @param {Object} a_params the inflection window parameters
  */
-Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl)
+Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_str,a_params)
 {
     // collapse all non-primary endings
     // TODO - this may only be temporary - experimenting with different approaches
@@ -452,7 +456,18 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl)
 
         }
     );
+    
+    if (a_params.showpofs.indexOf('_simplified')!= -1)
+    {
+        // in the simplified view of the table, 
+        // hide the declension headerrow and flag the
+        // table as simplified to enable
+        // other modifications via the css
+        Alph.$('#headerrow2',a_tbl).css('display','none');
+        Alph.$(a_tbl).addClass("simplified");
+    }
     return ret_cells;
+    
 }
 
 /**

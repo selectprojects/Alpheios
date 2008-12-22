@@ -11,3 +11,16 @@
     padding-left: .5em;
 }
 
+     
+table.simplified td.ending-group {
+    border-left: none; 
+    border-right: none;
+}
+
+table.simplified td.newgroup.ending-group {
+    /**border-left: 1px solid gray; */
+}
+
+.duplicate {
+    display: none;
+}
