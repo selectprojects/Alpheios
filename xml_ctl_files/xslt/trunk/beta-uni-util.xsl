@@ -2,7 +2,7 @@
 <xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:exsl="http://exslt.org/common">
 
-<!--
+  <!--
   Copyright 2008 Cantus Foundation
   http://alpheios.net
  
@@ -33,18 +33,23 @@
 
   <!-- characters with and without length diacritics -->
   <xsl:variable name="beta-with-length">_^+</xsl:variable>
-  <xsl:variable name="beta-without-length"></xsl:variable>
+  <xsl:variable name="beta-without-length"/>
+  <xsl:variable name="beta-with-caps">*</xsl:variable>
+  <xsl:variable name="beta-without-caps"/>
   <xsl:variable name="uni-with-length"
     >&#x1FB0;&#x1FB1;&#x1FB8;&#x1FB9;&#x1FD0;&#x1FD1;&#x1FD8;&#x1FD9;&#x1FE0;&#x1FE1;&#x1FE8;&#x1FE9;&#x0390;&#x03AA;&#x03AB;&#x03B0;&#x03CA;&#x03CB;&#x1FD2;&#x1FD3;&#x1FD7;&#x1FE2;&#x1FE3;&#x1FE7;&#x1FC1;&#x1FED;&#x1FEE;&#x00A8;&#x00AF;&#x0304;&#x0306;&#x0308;</xsl:variable>
   <xsl:variable name="uni-without-length"
     >&#x03B1;&#x03B1;&#x0391;&#x0391;&#x03B9;&#x03B9;&#x0399;&#x0399;&#x03C5;&#x03C5;&#x03A5;&#x03A5;&#x03AF;&#x0399;&#x03A5;&#x03CD;&#x03B9;&#x03C5;&#x1F76;&#x1F77;&#x1FD6;&#x1F7A;&#x1F7B;&#x1FE6;&#x1FC0;&#x1FEF;&#x1FFD;</xsl:variable>
+  <xsl:variable name="uni-with-caps"
+    >&#x1F8D;&#x1F0D;&#x1F8B;&#x1F0B;&#x1F8F;&#x1F0F;&#x1F89;&#x1F09;&#x1F8C;&#x1F0C;&#x1F8A;&#x1F0A;&#x1F8E;&#x1F0E;&#x1F88;&#x1F08;&#x0386;&#x1FBA;&#x1FBC;&#x1FB9;&#x1FB8;&#x0391;&#x0392;&#x039E;&#x0394;&#x1F1D;&#x1F1B;&#x1F19;&#x1F1C;&#x1F1A;&#x1F18;&#x0388;&#x1FC8;&#x0395;&#x03A6;&#x0393;&#x1F9D;&#x1F2D;&#x1F9B;&#x1F2B;&#x1F9F;&#x1F2F;&#x1F99;&#x1F29;&#x1F9C;&#x1F2C;&#x1F9A;&#x1F2A;&#x1F9E;&#x1F2E;&#x1F98;&#x1F28;&#x0389;&#x1FCA;&#x1FCC;&#x0397;&#x1F3D;&#x1F3B;&#x1F3F;&#x1F39;&#x1F3C;&#x1F3A;&#x1F3E;&#x1F38;&#x03AA;&#x038A;&#x1FDA;&#x1FD9;&#x1FD8;&#x0399;&#x039A;&#x039B;&#x039C;&#x039D;&#x1F4D;&#x1F4B;&#x1F49;&#x1F4C;&#x1F4A;&#x1F48;&#x038C;&#x1FF8;&#x039F;&#x03A0;&#x0398;&#x1FEC;&#x03A1;&#x03A3;&#x03A4;&#x1F5D;&#x1F5B;&#x1F5F;&#x1F59;&#x03AB;&#x038E;&#x1FEA;&#x1FE9;&#x1FE8;&#x03A5;&#x03DC;&#x1FAD;&#x1F6D;&#x1FAB;&#x1F6B;&#x1FAF;&#x1F6F;&#x1FA9;&#x1F69;&#x1FAC;&#x1F6C;&#x1FAA;&#x1F6A;&#x1FAE;&#x1F6E;&#x1FA8;&#x1F68;&#x038F;&#x1FFA;&#x1FFC;&#x03A9;&#x03A7;&#x03A8;&#x0396;&#x1FBB;&#x1FC9;&#x1FCB;&#x1FDB;&#x1FF9;&#x1FEB;&#x1FFB;</xsl:variable>
+  <xsl:variable name="uni-without-caps"
+    >&#x1F85;&#x1F05;&#x1F83;&#x1F03;&#x1F87;&#x1F07;&#x1F81;&#x1F01;&#x1F84;&#x1F04;&#x1F82;&#x1F02;&#x1F86;&#x1F06;&#x1F80;&#x1F00;&#x03AC;&#x1F70;&#x1FB3;&#x1FB1;&#x1FB0;&#x03B1;&#x03B2;&#x03BE;&#x03B4;&#x1F15;&#x1F13;&#x1F11;&#x1F14;&#x1F12;&#x1F10;&#x03AD;&#x1F72;&#x03B5;&#x03C6;&#x03B3;&#x1F95;&#x1F25;&#x1F93;&#x1F23;&#x1F97;&#x1F27;&#x1F91;&#x1F21;&#x1F94;&#x1F24;&#x1F92;&#x1F22;&#x1F96;&#x1F26;&#x1F90;&#x1F20;&#x03AE;&#x1F74;&#x1FC3;&#x03B7;&#x1F35;&#x1F33;&#x1F37;&#x1F31;&#x1F34;&#x1F32;&#x1F36;&#x1F30;&#x03CA;&#x03AF;&#x1F76;&#x1FD1;&#x1FD0;&#x03B9;&#x03BA;&#x03BB;&#x03BC;&#x03BD;&#x1F45;&#x1F43;&#x1F41;&#x1F44;&#x1F42;&#x1F40;&#x03CC;&#x1F78;&#x03BF;&#x03C0;&#x03B8;&#x1FE5;&#x03C1;&#x03C3;&#x03C4;&#x1F55;&#x1F53;&#x1F57;&#x1F51;&#x03CB;&#x03CD;&#x1F7A;&#x1FE1;&#x1FE0;&#x03C5;&#x03DD;&#x1FA5;&#x1F65;&#x1FA3;&#x1F63;&#x1FA7;&#x1F67;&#x1FA1;&#x1F61;&#x1FA4;&#x1F64;&#x1FA2;&#x1F62;&#x1FA6;&#x1F66;&#x1FA0;&#x1F60;&#x03CE;&#x1F7C;&#x1FF3;&#x03C9;&#x03C7;&#x03C8;&#x03B6;&#x1F71;&#x1F73;&#x1F75;&#x1F77;&#x1F79;&#x1F7B;&#x1F7D;</xsl:variable>
 
   <!-- characters denoting a word separation: punctuation plus whitespace -->
   <xsl:variable name="beta-separators">
     .,:;_&#x0009;&#x000A;&#x000D;&#x0020;&#x0085;&#x00A0;&#x1680;&#x180E;
     &#x2000;&#x2001;&#x2002;&#x2003;&#x2004;&#x2005;&#x2006;&#x2007;&#x2008;&#x2009;&#x200A;
-    &#x2028;&#x2029;&#x202F;&#x205F;&#x3000;
-  </xsl:variable>
+    &#x2028;&#x2029;&#x202F;&#x205F;&#x3000; </xsl:variable>
 
   <!-- more characters denoting the end of a word -->
   <xsl:variable name="beta-separators2">0123456789[]{}</xsl:variable>
@@ -1804,34 +1809,96 @@
   </xsl:template>
 
   <!--
-    Strip vowel length diacritics from betacode
+    Strip vowel length diacritics and/or capitalization from betacode
     Parameters:
-    $input        string to strip
+      $input            string to strip
+      $strip-vowels     whether to strip vowel length diacritics
+      $strip-caps       whether to strip capitalization
   -->
-  <xsl:template name="beta-strip-length">
+  <xsl:template name="beta-strip">
     <xsl:param name="input"/>
-    <xsl:value-of select="translate($input,
-                                    $beta-with-length,
-                                    $beta-without-length)"/>
+    <xsl:param name="strip-vowels" select="true()"/>
+    <xsl:param name="strip-caps" select="true()"/>
+
+    <!-- strip vowels if requested -->
+    <xsl:variable name="temp">
+      <xsl:choose>
+        <xsl:when test="$strip-vowels">
+          <xsl:value-of
+            select="translate($input,
+                              $beta-with-length,
+                              $beta-without-length)"
+          />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$input"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <!-- strip capitalization if requested -->
+    <xsl:choose>
+      <xsl:when test="$strip-caps">
+        <xsl:value-of
+          select="translate($temp,
+                            $beta-with-caps,
+                            $beta-without-caps)"
+        />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$temp"/>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!--
-    Strip vowel length diacritics from unicode
+    Strip vowel length diacritics and/or capitalization from unicode
     Parameters:
-    $input        string to strip
+    $input            string to strip
+    $strip-vowels     whether to strip vowel length diacritics
+    $strip-caps       whether to strip capitalization
   -->
-  <xsl:template name="uni-strip-length">
+  <xsl:template name="uni-strip">
     <xsl:param name="input"/>
-    <xsl:value-of select="translate($input,
-                                    $uni-with-length,
-                                    $uni-without-length)"/>
+    <xsl:param name="strip-vowels" select="true()"/>
+    <xsl:param name="strip-caps" select="true()"/>
+
+    <!-- strip vowels if requested -->
+    <xsl:variable name="temp">
+      <xsl:choose>
+        <xsl:when test="$strip-vowels">
+          <xsl:value-of
+            select="translate($input,
+            $uni-with-length,
+            $uni-without-length)"
+          />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$input"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <!-- strip capitalization if requested -->
+    <xsl:choose>
+      <xsl:when test="$strip-caps">
+        <xsl:value-of
+          select="translate($temp,
+          $uni-with-caps,
+          $uni-without-caps)"
+        />
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$temp"/>
+      </xsl:otherwise>
+    </xsl:choose>
   </xsl:template>
 
   <!--
     Convert betacode to unicode
     Parameters:
-    $key          combined character plus diacritics
-    $precomposed  whether to put out precomposed or decomposed Unicode
+      $key          combined character plus diacritics
+      $precomposed  whether to put out precomposed or decomposed Unicode
   -->
   <xsl:template match="beta-uni-table" mode="b2u">
     <xsl:param name="key"/>
@@ -1884,7 +1951,7 @@
   <!--
     Convert unicode to betacode
     Parameters:
-    $key          Unicode character to look up
+      $key          Unicode character to look up
   -->
   <xsl:template match="beta-uni-table" mode="u2b">
     <xsl:param name="key"/>
