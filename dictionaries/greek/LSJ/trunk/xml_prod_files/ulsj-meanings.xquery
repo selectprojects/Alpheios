@@ -625,6 +625,18 @@ let $corrections :=
     <entry>
       <lemma>τρῦπα</lemma>
       <meaning>hole</meaning>
+    </entry>,
+    <entry>
+      <lemma>ἕ</lemma>
+      <meaning>him, her</meaning>
+    </entry>,
+    <entry>
+      <lemma>Ποσειδεών</lemma>
+      <meaning>Poseidon</meaning>
+    </entry>,
+    <entry>
+      <lemma>νόσφῐ</lemma>
+      <meaning>aloof, apart, afar, away</meaning>
     </entry>
   </corrections>
 let $correctedLemmas := $corrections/entry/lemma/text()
@@ -685,31 +697,15 @@ return
 
 (: additions :)
 <entry>
-  <lemma>ἕ</lemma>
-  <meaning>him, her</meaning>
-</entry>,
-<entry>
   <lemma>πέρ</lemma>
   <meaning>however</meaning>
-</entry>,
-<entry>
-  <lemma>Ἥλιος</lemma>
-  <meaning>sun</meaning>
 </entry>,
 <entry>
   <lemma>τίς</lemma>
   <meaning>who? which?</meaning>
 </entry>,
-<entry>
-  <lemma>θέᾱ</lemma>
+<entry id="n47951">
+  <lemma>θέα</lemma>
   <meaning>seeing, looking at</meaning>
-</entry>,
-<entry>
-  <lemma>νόσφι</lemma>
-  <meaning>aloof, apart, afar, away</meaning>
-</entry>,
-<entry>
-  <lemma>Ποσειδεών</lemma>
-  <meaning>Poseidon</meaning>
 </entry>
 }
