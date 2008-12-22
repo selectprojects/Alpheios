@@ -37,7 +37,7 @@ lsj-meanings.query:
   Query to extract short definitions from lsj-*.xml files.
 ulsj-meanings.query:
   Query to extract short definitions from ulsj-*.xml files.
-  Same as lsj-meainings.query with lemmas converted to Unicode.
+  Same as lsj-meanings.query with lemmas converted to Unicode.
 meaning2text.xsl
   Transform to produce lookup text file from lsj-meanings.xml.
 umeaning2text.xsl
@@ -63,7 +63,11 @@ Creation of short definitions file
 - Execute ulsj-meanings.xquery, saving the output to ulsj-meanings.xml.
 - Apply umeanings2txt to ulsj-meanings.xml, saving the output to
   lsj-meanings-raw.dat.
-- Sort lsj-meanings-raw.dat, saving the output to lsj-meanings.dat.
-- Edit lsj-meanings.dat and remove the first few (about 8) lines that
-  contain miscellaneous malformed entries (missing lemma and lemma starting
-  with "<" or "[").
+- Sort lsj-meanings-raw.dat and filter through uniq, saving the output to
+  lsj-meanings.dat.  Uniq removes duplicate special case placeholders
+  resulting from pairs of lemmas distinguishable only by capitalization.
+  Sorting is necessary for binary lookup in javascript to work.
+- Edit lsj-meanings.dat and remove the first line, containing an empty
+  lemma.  There will be a few other entries at the start of the file
+  beginning with "<" or "[" that will probably never be found but are
+  innocuous.
