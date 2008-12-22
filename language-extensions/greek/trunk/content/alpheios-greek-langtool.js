@@ -80,6 +80,21 @@ Alph.LanguageToolSet.greek.prototype.loadDictionary = function()
         alert("error loading dictionary: " + ex);
         return false;
     }
+
+    try
+    {
+        this.stripper = new XSLTProcessor();
+        var xsltDoc = document.implementation.createDocument("", "", null);
+        xsltDoc.async = false;
+        xsltDoc.load("chrome://alpheios/skin/alpheios-unistrip.xsl");
+        this.stripper.importStylesheet(xsltDoc);
+    }
+    catch (ex)
+    {
+        alert("error loading xslt: " + ex);
+        return false;
+    }
+
     return true;
 };
 
@@ -448,14 +463,24 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
 {
     var dict = this.dictionary;
     var sep = this.dictionary.getSeparator();
+    var specialFlag = '@';
+    var stripper = this.stripper;
     Alph.$(".alph-entry", a_node).each(
         function()
         {
-            // get headword
-            var hdwd = Alph.$(".alph-dict", this).attr("lemma-key");
-            var meanData = dict.findData(hdwd);
+            // get lemma
+            var lemma_key = Alph.$(".alph-dict", this).attr("lemma-key");
+
+            // strip vowel length diacritics and capitalization
+            stripper.setParameter(null, "input", lemma_key);
+            stripper.setParameter(null, "strip-vowels", true);
+            stripper.setParameter(null, "strip-caps", true);
+            var x = (new DOMParser()).parseFromString("<dummy/>", "text/xml");
+            var hdwd =
+                  stripper.transformToDocument(x).documentElement.textContent;
 
             // if not found
+            var meanData = dict.findData(hdwd);
             if (!meanData)
             {
                 // count trailing digits
@@ -480,17 +505,47 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
             if (meanData)
             {
                 // find start and end of definition
-                var startDef = meanData.indexOf(sep, 0) + 1;
-                var endDef = meanData.indexOf('\n', startDef);
+                var startText = meanData.indexOf(sep, 0) + 1;
+                var endText = meanData.indexOf('|', startText);
+
+                // if special case
+                if (((endText - startText) == 1) &&
+                    (meanData.charAt(startText) == specialFlag))
+                {
+                    // retry using flag plus lemma without caps removed
+                    stripper.setParameter(null, "input", lemma_key);
+                    stripper.setParameter(null, "strip-vowels", true);
+                    stripper.setParameter(null, "strip-caps", false);
+                    hdwd = specialFlag +
+                           stripper.transformToDocument(x).
+                                    documentElement.
+                                    textContent;
+                    meanData = dict.findData(hdwd);
+                    startText = meanData.indexOf(sep, 0) + 1;
+                    endText = meanData.indexOf('|', startText);
+                }
 
                 // build meaning element
                 var meanElt = '<div class="alph-mean">' +
-                              meanData.substr(startDef, endDef - startDef) +
+                              meanData.substr(startText, endText - startText) +
                               '</div>';
 
                 // insert meaning into document
                 Alph.util.log("adding " + meanElt);
                 Alph.$(".alph-dict", this).after(meanElt);
+
+                // find start and end of id
+                startText = endText + 1;
+                endText = meanData.indexOf('\n', startText);
+                if (meanData.charAt(endText - 1) == '\r')
+                    endText--;
+                var lemma_id = meanData.substr(startText, endText - startText);
+
+                // set lemma attributes
+                Alph.util.log('adding @lemma-key="' + hdwd + '"');
+                Alph.util.log('adding @lemma-id="' + lemma_id + '"');
+                Alph.$(".alph-dict", this).attr("lemma-key", hdwd);
+                Alph.$(".alph-dict", this).attr("lemma-id", lemma_id);
             }
             else
             {
