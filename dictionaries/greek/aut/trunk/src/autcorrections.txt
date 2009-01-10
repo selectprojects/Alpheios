@@ -1,0 +1,9 @@
+In <entryFree type="main" key="Ἄβας">
+    "dream - reader" -> "dream-reader"
+
+Missing breathing mark:
+    <entryFree type="main" key="ἀγκρεμάσασα"><orth extent="full"
+        lang="greek">ἀγ-κρεμάσᾶσα</orth>: see <quote lang="greek"
+        >ανακρεμάννῦμι</quote>.</entryFree>
+    ανακρεμάννῦμι should be ἀνακρεμάννυμι
+    (? but note further accent discrepancy on υ)
