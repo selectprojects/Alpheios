@@ -3,7 +3,7 @@
   xmlns:exsl="http://exslt.org/common">
 
   <!--
-  Copyright 2008 Cantus Foundation
+  Copyright 2008-2009 Cantus Foundation
   http://alpheios.net
  
   This file is part of Alpheios.
@@ -32,14 +32,20 @@
     >&#x0314;&#x0313;&#x0308;&#x0301;&#x0300;&#x0342;&#x0345;&#x0304;&#x0306;&#x1FBD;</xsl:variable>
 
   <!-- characters with and without length diacritics -->
-  <xsl:variable name="beta-with-length">_^+</xsl:variable>
+  <xsl:variable name="beta-with-length">_^</xsl:variable>
   <xsl:variable name="beta-without-length"/>
+  <xsl:variable name="beta-with-diaeresis">+</xsl:variable>
+  <xsl:variable name="beta-without-diaeresis"/>
   <xsl:variable name="beta-with-caps">*</xsl:variable>
   <xsl:variable name="beta-without-caps"/>
   <xsl:variable name="uni-with-length"
-    >&#x1FB0;&#x1FB1;&#x1FB8;&#x1FB9;&#x1FD0;&#x1FD1;&#x1FD8;&#x1FD9;&#x1FE0;&#x1FE1;&#x1FE8;&#x1FE9;&#x0390;&#x03AA;&#x03AB;&#x03B0;&#x03CA;&#x03CB;&#x1FD2;&#x1FD3;&#x1FD7;&#x1FE2;&#x1FE3;&#x1FE7;&#x1FC1;&#x1FED;&#x1FEE;&#x00A8;&#x00AF;&#x0304;&#x0306;&#x0308;</xsl:variable>
+    >&#x1FB0;&#x1FB1;&#x1FB8;&#x1FB9;&#x1FD0;&#x1FD1;&#x1FD8;&#x1FD9;&#x1FE0;&#x1FE1;&#x1FE8;&#x1FE9;&#x00AF;&#x0304;&#x0306;</xsl:variable>
   <xsl:variable name="uni-without-length"
-    >&#x03B1;&#x03B1;&#x0391;&#x0391;&#x03B9;&#x03B9;&#x0399;&#x0399;&#x03C5;&#x03C5;&#x03A5;&#x03A5;&#x03AF;&#x0399;&#x03A5;&#x03CD;&#x03B9;&#x03C5;&#x1F76;&#x1F77;&#x1FD6;&#x1F7A;&#x1F7B;&#x1FE6;&#x1FC0;&#x1FEF;&#x1FFD;</xsl:variable>
+    >&#x03B1;&#x03B1;&#x0391;&#x0391;&#x03B9;&#x03B9;&#x0399;&#x0399;&#x03C5;&#x03C5;&#x03A5;&#x03A5;</xsl:variable>
+  <xsl:variable name="uni-with-diaeresis"
+    >&#x0390;&#x03AA;&#x03AB;&#x03B0;&#x03CA;&#x03CB;&#x1FD2;&#x1FD3;&#x1FD7;&#x1FE2;&#x1FE3;&#x1FE7;&#x1FC1;&#x1FED;&#x1FEE;&#x00A8;&#x0308;</xsl:variable>
+  <xsl:variable name="uni-without-diaeresis"
+    >&#x03AF;&#x0399;&#x03A5;&#x03CD;&#x03B9;&#x03C5;&#x1F76;&#x1F77;&#x1FD6;&#x1F7A;&#x1F7B;&#x1FE6;&#x1FC0;&#x1FEF;&#x1FFD;</xsl:variable>
   <xsl:variable name="uni-with-caps"
     >&#x1F8D;&#x1F0D;&#x1F8B;&#x1F0B;&#x1F8F;&#x1F0F;&#x1F89;&#x1F09;&#x1F8C;&#x1F0C;&#x1F8A;&#x1F0A;&#x1F8E;&#x1F0E;&#x1F88;&#x1F08;&#x0386;&#x1FBA;&#x1FBC;&#x1FB9;&#x1FB8;&#x0391;&#x0392;&#x039E;&#x0394;&#x1F1D;&#x1F1B;&#x1F19;&#x1F1C;&#x1F1A;&#x1F18;&#x0388;&#x1FC8;&#x0395;&#x03A6;&#x0393;&#x1F9D;&#x1F2D;&#x1F9B;&#x1F2B;&#x1F9F;&#x1F2F;&#x1F99;&#x1F29;&#x1F9C;&#x1F2C;&#x1F9A;&#x1F2A;&#x1F9E;&#x1F2E;&#x1F98;&#x1F28;&#x0389;&#x1FCA;&#x1FCC;&#x0397;&#x1F3D;&#x1F3B;&#x1F3F;&#x1F39;&#x1F3C;&#x1F3A;&#x1F3E;&#x1F38;&#x03AA;&#x038A;&#x1FDA;&#x1FD9;&#x1FD8;&#x0399;&#x039A;&#x039B;&#x039C;&#x039D;&#x1F4D;&#x1F4B;&#x1F49;&#x1F4C;&#x1F4A;&#x1F48;&#x038C;&#x1FF8;&#x039F;&#x03A0;&#x0398;&#x1FEC;&#x03A1;&#x03A3;&#x03A4;&#x1F5D;&#x1F5B;&#x1F5F;&#x1F59;&#x03AB;&#x038E;&#x1FEA;&#x1FE9;&#x1FE8;&#x03A5;&#x03DC;&#x1FAD;&#x1F6D;&#x1FAB;&#x1F6B;&#x1FAF;&#x1F6F;&#x1FA9;&#x1F69;&#x1FAC;&#x1F6C;&#x1FAA;&#x1F6A;&#x1FAE;&#x1F6E;&#x1FA8;&#x1F68;&#x038F;&#x1FFA;&#x1FFC;&#x03A9;&#x03A7;&#x03A8;&#x0396;&#x1FBB;&#x1FC9;&#x1FCB;&#x1FDB;&#x1FF9;&#x1FEB;&#x1FFB;</xsl:variable>
   <xsl:variable name="uni-without-caps"
@@ -1813,15 +1819,17 @@
     Parameters:
       $input            string to strip
       $strip-vowels     whether to strip vowel length diacritics
+      $strip-diaereses  whether to strip diaeresis diacritics
       $strip-caps       whether to strip capitalization
   -->
   <xsl:template name="beta-strip">
     <xsl:param name="input"/>
     <xsl:param name="strip-vowels" select="true()"/>
+    <xsl:param name="strip-diaereses" select="true()"/>
     <xsl:param name="strip-caps" select="true()"/>
 
     <!-- strip vowels if requested -->
-    <xsl:variable name="temp">
+    <xsl:variable name="temp1">
       <xsl:choose>
         <xsl:when test="$strip-vowels">
           <xsl:value-of
@@ -1836,17 +1844,33 @@
       </xsl:choose>
     </xsl:variable>
 
+    <!-- strip diaereses if requested -->
+    <xsl:variable name="temp2">
+      <xsl:choose>
+        <xsl:when test="$strip-diaereses">
+          <xsl:value-of
+            select="translate($temp1,
+            $beta-with-diaeresis,
+            $beta-without-diaeresis)"
+          />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$temp1"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    
     <!-- strip capitalization if requested -->
     <xsl:choose>
       <xsl:when test="$strip-caps">
         <xsl:value-of
-          select="translate($temp,
+          select="translate($temp2,
                             $beta-with-caps,
                             $beta-without-caps)"
         />
       </xsl:when>
       <xsl:otherwise>
-        <xsl:value-of select="$temp"/>
+        <xsl:value-of select="$temp2"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -1856,15 +1880,17 @@
     Parameters:
     $input            string to strip
     $strip-vowels     whether to strip vowel length diacritics
+    $strip-diaereses  whether to strip diaeresis diacritics
     $strip-caps       whether to strip capitalization
   -->
   <xsl:template name="uni-strip">
     <xsl:param name="input"/>
     <xsl:param name="strip-vowels" select="true()"/>
+    <xsl:param name="strip-diaereses" select="true()"/>
     <xsl:param name="strip-caps" select="true()"/>
 
     <!-- strip vowels if requested -->
-    <xsl:variable name="temp">
+    <xsl:variable name="temp1">
       <xsl:choose>
         <xsl:when test="$strip-vowels">
           <xsl:value-of
@@ -1879,17 +1905,33 @@
       </xsl:choose>
     </xsl:variable>
 
+    <!-- strip diaereses if requested -->
+    <xsl:variable name="temp2">
+      <xsl:choose>
+        <xsl:when test="$strip-diaereses">
+          <xsl:value-of
+            select="translate($temp1,
+            $uni-with-diaeresis,
+            $uni-without-diaeresis)"
+          />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$temp1"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+    
     <!-- strip capitalization if requested -->
     <xsl:choose>
       <xsl:when test="$strip-caps">
         <xsl:value-of
-          select="translate($temp,
+          select="translate($temp2,
           $uni-with-caps,
           $uni-without-caps)"
         />
       </xsl:when>
       <xsl:otherwise>
-        <xsl:value-of select="$temp"/>
+        <xsl:value-of select="$temp2"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
