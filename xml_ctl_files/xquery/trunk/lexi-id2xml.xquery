@@ -87,8 +87,6 @@ return
   {
     for $entry in $entries
     return
-    for $entry in $entries
-    return
       element entry
       {
         attribute lemma-id { $entry/@id },
