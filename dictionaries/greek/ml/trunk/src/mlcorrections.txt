@@ -1,7 +1,0 @@
-ml.xml 13267: empty <tr> element
-    <entry key="a)/n2" type="main" id="n2096">
-    <form><orth extent="full" lang="greek">a)/n1</orth></form>
-    <sense level="1" n="Perseus" id="n2096.0"><trans><tr/></trans></sense>
-
-  Added "conditional particle" as Perseus sense.
-
