@@ -161,7 +161,7 @@ return
           (: transform TEI entry to HTML :)
           transform:transform(
             <TEI.2><text><body>{ $dict-entry }</body></text></TEI.2>,
-            doc("/db/xslt/tei.xsl"),
+            doc("/db/xslt/alpheios-lexi-tei.xsl"),
             ())
       }
   }
