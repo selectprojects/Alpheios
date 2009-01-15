@@ -54,23 +54,23 @@
       <case lemma="αἴθρη"/>
       <case lemma="αἴθων"/>
       <case lemma="αἵμων"/>
-      <case lemma="βῆσσα"/>
-      <case lemma="γραῖα"/>
+      <case lemma="βησσα"/>
+      <case lemma="γραια"/>
       <case lemma="δα"/>
       <case lemma="δαίς"/>
+      <case lemma="δηλος"/>
+      <case lemma="διος"/>
       <case lemma="δόλιος"/>
-      <case lemma="δῆλος"/>
-      <case lemma="δῖος"/>
+      <case lemma="εὐρος"/>
       <case lemma="εὔμηλος"/>
-      <case lemma="εὖρος"/>
       <case lemma="θάλεια"/>
       <case lemma="θρύον"/>
       <case lemma="κάρ"/>
       <case lemma="καλήτωρ"/>
       <case lemma="κελάδων"/>
+      <case lemma="κηρ"/>
       <case lemma="κοίρανος"/>
       <case lemma="κρείων"/>
-      <case lemma="κῆρ"/>
       <case lemma="μάκαρ"/>
       <case lemma="μέδων"/>
       <case lemma="μέλας"/>
@@ -81,7 +81,7 @@
       <case lemma="νημερτής"/>
       <case lemma="νοήμων"/>
       <case lemma="νύμφη"/>
-      <case lemma="οἶνοψ"/>
+      <case lemma="οἰνοψ"/>
       <case lemma="παιήων"/>
       <case lemma="παρθένιος"/>
       <case lemma="ποδάρκης"/>
@@ -92,15 +92,15 @@
       <case lemma="πρόμαχος"/>
       <case lemma="πυλάρτης"/>
       <case lemma="πύλος"/>
-      <case lemma="σκῶλος"/>
-      <case lemma="σχοῖνος"/>
-      <case lemma="σῶκος"/>
+      <case lemma="σκωλος"/>
+      <case lemma="σχοινος"/>
+      <case lemma="σωκος"/>
       <case lemma="τάφος"/>
       <case lemma="τέκτων"/>
       <case lemma="τελαμών"/>
       <case lemma="φαέθων"/>
       <case lemma="φαίδιμος"/>
-      <case lemma="φοῖνιξ"/>
+      <case lemma="φοινιξ"/>
       <case lemma="φύλακος"/>
       <case lemma="χάρις"/>
       <case lemma="χίμαιρα"/>
@@ -123,19 +123,20 @@
       <case lemma="ἅλιος"/>
       <case lemma="ἐπίστροφος"/>
       <case lemma="ἐχέφρων"/>
+      <case lemma="ἠνοψ"/>
       <case lemma="ἥβη"/>
-      <case lemma="ἦνοψ"/>
+      <case lemma="ἰσος"/>
       <case lemma="ἱππόδαμος"/>
       <case lemma="ἱππόμαχος"/>
-      <case lemma="ἶσος"/>
       <case lemma="ὄρμενος"/>
       <case lemma="ὄσσα"/>
       <case lemma="ὕλη"/>
       <case lemma="ὠκύαλος"/>
+      <case lemma="ὠψ"/>
       <case lemma="ῥέα"/>
       <case lemma="ῥηξήνωρ"/>
     </table>
-    
+
     <!-- LSJ -->
     <table id="grc-lsj">
       <case lemma="βύνη"/>
