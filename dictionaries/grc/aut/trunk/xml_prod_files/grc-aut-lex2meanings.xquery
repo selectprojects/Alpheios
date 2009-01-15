@@ -128,6 +128,24 @@ let $corrections :=
     <entry key="ἀ̄">
       interjection expressive of pity or horror, freq. w. voc. of “δειλός”
     </entry>
+    <entry key="Αἴγισθος">
+      son of Thyestes, and cousin of Agamemnon
+    </entry>
+    <entry key="Ἀμφιάραος">
+      a seer and warrior of Argos, son of Oecles, great grandson of the seer Melampus
+    </entry>
+    <entry key="ἔδαφος">
+      floor of a ship
+    </entry>
+    <entry key="Ζέλεια">
+      a town at the foot of Mt. Ida
+    </entry>
+    <entry key="ιμάς">
+      strap or thong; straps; reins; halter; chin-strap; cestus; leash or latchstring
+    </entry>
+    <entry key="Φυλεύς">
+      son of Augēas of Elis
+    </entry>
   </corrections>
 let $correctedLemmas := $corrections/entry/@key
 
