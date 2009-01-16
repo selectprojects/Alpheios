@@ -68,16 +68,43 @@ Alph.LanguageToolSet.greek.implementsAlphLanguageTool = true;
  */
 Alph.LanguageToolSet.greek.prototype.loadDictionary = function()
 {
+    this.short_lex_code = 
+        Alph.util.getPref("dictionaries.short.default",this.source_language)
+
+    // load the local short definitions dictionary data file
     try
     {
-        this.dictionary = 
-            new Alph.Datafile("chrome://alpheios-greek/content/lsj-meanings.dat",
-                              "UTF-8", ",");
-        Alph.util.log("Loaded Greek dictionary [" + this.dictionary.getData().length + " bytes]");
+        this.defsFile = 
+            new Alph.Datafile("chrome://alpheios-greek/content/dictionaries/" +
+                              this.short_lex_code +
+                              "/grc-" +
+                              this.short_lex_code +
+                              "-defs.dat",
+                              "UTF-8", "|");
     }
     catch (ex)
     {
-        alert("error loading dictionary: " + ex);
+        alert("error loading definitions: " + ex);
+        return false;
+    }
+    try
+    {
+        this.idsFile = 
+            new Alph.Datafile("chrome://alpheios-greek/content/dictionaries/" +
+                              this.short_lex_code + 
+                              "/grc-" +
+                              this.short_lex_code +
+                              "-ids.dat",
+                              "UTF-8", "|");
+        Alph.util.log("Loaded Greek defs+id [" +
+                      this.defsFile.getData().length +
+                      "+" +
+                      this.idsFile.getData().length +
+                      " bytes]");
+    }
+    catch (ex)
+    {
+        alert("error loading ids: " + ex);
         return false;
     }
 
@@ -476,8 +503,10 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_
  */
 Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
 {
-    var dict = this.dictionary;
-    var sep = this.dictionary.getSeparator();
+    var defs = this.defsFile;
+    var ids = this.idsFile;
+    var lex = this.short_lex_code;
+    var sep = this.defsFile.getSeparator();
     var specialFlag = '@';
     var stripper = this.stripper;
     Alph.$(".alph-entry", a_node).each(
@@ -494,38 +523,43 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
             var hdwd =
                   stripper.transformToDocument(x).documentElement.textContent;
 
-            // if not found
-            var meanData = dict.findData(hdwd);
-            if (!meanData)
+            // count trailing digits
+            var toRemove = 0;
+            for (; toRemove <= hdwd.length; ++toRemove)
             {
-                // count trailing digits
-                var toRemove = 0;
-                for (; toRemove <= hdwd.length; ++toRemove)
-                {
-                    // if not a digit, done
-                    var c = hdwd.substr(hdwd.length - (toRemove + 1), 1);
-                    if ((c < "0") || ("9" < c))
-                        break;
-                }
-
-                // if trailing digits exist, remove them and retry
-                if (toRemove > 0)
-                {
-                    hdwd = hdwd.substr(0, hdwd.length - toRemove);
-                    meanData = dict.findData(hdwd);
-                }
+                // if not a digit, done
+                var c = hdwd.substr(hdwd.length - (toRemove + 1), 1);
+                if ((c < "0") || ("9" < c))
+                    break;
             }
 
-            // if entry found
-            if (meanData)
+            // find definition and id
+            var defData = defs.findData(hdwd);
+            var idData = ids.findData(hdwd);
+
+            // if not found
+            if ((!defData || !idData) && (toRemove > 0))
+            {
+                // remove trailing digits and retry
+                hdwd = hdwd.substr(0, hdwd.length - toRemove);
+                if (!defData)
+                    defData = defs.findData(hdwd);
+                if (!idData)
+                    idData = ids.findData(hdwd);
+            }
+
+            // if definition found
+            if (defData)
             {
                 // find start and end of definition
-                var startText = meanData.indexOf(sep, 0) + 1;
-                var endText = meanData.indexOf('|', startText);
+                var startText = defData.indexOf(sep, 0) + 1;
+                var endText = defData.indexOf('\n', startText);
+                if (defData.charAt(endText - 1) == '\r')
+                    endText--;
 
                 // if special case
                 if (((endText - startText) == 1) &&
-                    (meanData.charAt(startText) == specialFlag))
+                    (defData.charAt(startText) == specialFlag))
                 {
                     // retry using flag plus lemma without caps removed
                     stripper.setParameter(null, "input", lemma_key);
@@ -535,36 +569,66 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
                            stripper.transformToDocument(x).
                                     documentElement.
                                     textContent;
-                    meanData = dict.findData(hdwd);
-                    startText = meanData.indexOf(sep, 0) + 1;
-                    endText = meanData.indexOf('|', startText);
+                    defData = defs.findData(hdwd);
+                    startText = defData.indexOf(sep, 0) + 1;
+                    endText = defData.indexOf('\n', startText);
                 }
 
                 // build meaning element
                 var meanElt = '<div class="alph-mean">' +
-                              meanData.substr(startText, endText - startText) +
+                              defData.substr(startText, endText - startText) +
                               '</div>';
 
                 // insert meaning into document
                 Alph.util.log("adding " + meanElt);
                 Alph.$(".alph-dict", this).after(meanElt);
+            }
+            else
+            {
+                Alph.util.log("meaning for " + hdwd + " not found [" + lex + "]");
+            }
 
+            if (idData)
+            {
                 // find start and end of id
-                startText = endText + 1;
-                endText = meanData.indexOf('\n', startText);
-                if (meanData.charAt(endText - 1) == '\r')
+                var startText = idData.indexOf(sep, 0) + 1;
+                var endText = idData.indexOf('\n', startText);
+                if (idData.charAt(endText - 1) == '\r')
                     endText--;
-                var lemma_id = meanData.substr(startText, endText - startText);
+
+                // if special case
+                if (((endText - startText) == 1) &&
+                    (idData.charAt(startText) == specialFlag))
+                {
+                    // retry using flag plus lemma without caps removed
+                    stripper.setParameter(null, "input", lemma_key);
+                    stripper.setParameter(null, "strip-vowels", true);
+                    stripper.setParameter(null, "strip-caps", false);
+                    hdwd = specialFlag +
+                           stripper.transformToDocument(x).
+                                    documentElement.
+                                    textContent;
+                    idData = ids.findData(hdwd);
+                    startText = idData.indexOf(sep, 0) + 1;
+                    endText = idData.indexOf('\n', startText);
+                }
+
+                // get id 
+                var lemma_id = idData.substr(startText, endText - startText);
 
                 // set lemma attributes
                 Alph.util.log('adding @lemma-key="' + hdwd + '"');
                 Alph.util.log('adding @lemma-id="' + lemma_id + '"');
+                Alph.util.log('adding @lemma-lang="grc"');
+                Alph.util.log('adding @lemma-lex="' + lex + '"');
                 Alph.$(".alph-dict", this).attr("lemma-key", hdwd);
                 Alph.$(".alph-dict", this).attr("lemma-id", lemma_id);
+                Alph.$(".alph-dict", this).attr("lemma-lang", "grc");
+                Alph.$(".alph-dict", this).attr("lemma-lex", lex);
             }
             else
             {
-                Alph.util.log("meaning for " + hdwd + " not found");
+                Alph.util.log("id for " + hdwd + " not found [" + lex + "]");
             }
         }
     );
@@ -582,4 +646,19 @@ Alph.LanguageToolSet.greek.prototype.fixHarvardLSJ = function(a_html)
         a_html = a_html.substring(match_hr.index+match_hr[1].length);
     }
     return a_html;
+}
+
+/**
+ * Greek-specific implementation of {@link Alph.LanguageTool#observe_pref_change}.
+ * 
+ * calls loadDictionary if the default short dictionary changed
+ * @param {String} a_name the name of the preference which changed
+ * @param {Object} a_value the new value of the preference 
+ */
+Alph.LanguageToolSet.greek.prototype.observe_pref_change = function(a_name,a_value)
+{
+    if (a_name.indexOf('dictionaries.short.default') != -1)
+    {
+        this.loadDictionary();
+    }
 }

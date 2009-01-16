@@ -18,8 +18,9 @@ pref("extensions.alpheios.greek.features.alpheios-inflect",true);
 pref("extensions.alpheios.greek.context_handler","grammarContext");
 pref("extensions.alpheios.greek.shift_handler","handleInflections");
 pref("extensions.alpheios.greek.panels.use.defaults",true);
-pref("extensions.alpheios.greek.dictionaries","lsj-alpheios,lsj-harvard");
-pref("extensions.alpheios.greek.dictionaries.default","lsj-alpheios");
+pref("extensions.alpheios.greek.dictionaries.full","lsj-alpheios,lsj-harvard");
+pref("extensions.alpheios.greek.dictionaries.short.default","aut");
+pref("extensions.alpheios.greek.dictionaries.full.default","lsj-alpheios");
 pref("extensions.alpheios.greek.dictionary.lsj-alpheios.search.lemma_url",
      "http://dev.alpheios.net:8800/exist/rest/db/xquery/lsj-lemma2html.xquery?");
 pref("extensions.alpheios.greek.dictionary.lsj-alpheios.search.lemma_param",
