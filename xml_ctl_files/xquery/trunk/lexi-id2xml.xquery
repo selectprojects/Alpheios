@@ -28,9 +28,7 @@
     lx is the code for the lexicon to use
     n is the if an entry to retrieve.  Multiple ids may be specified.
 
-  Output is transformed to HTML.  The result for each id is wrapped
-  in an <entry> element with a lemma-id attribute equal to the id.
-  The entire results are wrapped in an <output> element.
+  Output is returned as XML.
 
   Possible error messages, as plain text, are:
     "No id specified" if no n parameters were supplied
@@ -44,7 +42,7 @@
 
 import module namespace request="http://exist-db.org/xquery/request";
 import module namespace transform="http://exist-db.org/xquery/transform";  
-declare option exist:serialize "method=xhtml media-type=text/html";
+declare option exist:serialize "method=xml media-type=text/xml";
 
 declare variable $f_defaultLexicon :=
 (
@@ -77,19 +75,23 @@ let $entries :=
 return
   if (count($ids) = 0)
   then
-    element output { "No id specified" }
+    <alph:error xmlns:alph="http://alpheios.net/namespaces/tei">{
+      "No id specified"
+     }</alph:error>
   else if (count($entries) = 0)
   then
-    element output { "No entries found" }
+    <alph:error xmlns:alph="http://alpheios.net/namespaces/tei">{
+      "No entries found"
+    }</alph:error>
   else
 
-  element output
-  {
+  (: wrap output in <alph:output> element :)
+  <alph:output xmlns:alph="http://alpheios.net/namespaces/tei">{
     for $entry in $entries
     return
-      element entry
+      element alph:entry
       {
         attribute lemma-id { $entry/@id },
         $entry
       }
-  }
+  }</alph:output>

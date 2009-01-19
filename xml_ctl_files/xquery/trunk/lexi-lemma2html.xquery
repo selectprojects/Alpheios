@@ -28,9 +28,7 @@
     lx is the code for the lexicon to use
     l is the lemma to retrieve.  Multiple lemmas may be specified.
 
-  Output is transformed to HTML.  The result for each lemma is wrapped
-  in a <div> element with a lemma-key attribute equal to the lemma.
-  The entire results are also wrapped in a <div> element.
+  Output is transformed to HTML.
 
   Possible error messages, as plain text, are:
     "No lemma specified" if no l parameters were supplied
@@ -39,8 +37,8 @@
   Output will be returned in the same order as the lemmas in the request.
  :)
 
-import module namespace request="http://exist-db.org/xquery/request";  
-import module namespace transform="http://exist-db.org/xquery/transform";  
+import module namespace request="http://exist-db.org/xquery/request";
+import module namespace transform="http://exist-db.org/xquery/transform";
 declare option exist:serialize "method=xhtml media-type=text/html";
 
 declare variable $f_defaultLexicon :=
@@ -69,15 +67,16 @@ let $index := doc(concat("/db/indexes/",
 (: get lemmas from request :)
 let $lemmas := request:get-parameter("l", ())
 
-return
+let $xml-output :=
   if (count($lemmas) = 0)
   then
-    element div { "No lemma specified" }
+    <alph:error xmlns:alph="http://alpheios.net/namespaces/tei">{
+      "No lemma specified"
+     }</alph:error>
   else
 
-  (: wrap output in <div> element :)
-  element div
-  {
+  (: wrap output in <alph:output> element :)
+  <alph:output xmlns:alph="http://alpheios.net/namespaces/tei">{
 
   for $lemma in $lemmas
     (: see if we can find it directly :)
@@ -149,19 +148,20 @@ return
                 $lexicon//entry[@id eq string($index-entry/@id)]
 
     return
-      element div
-      {
-        attribute lemma-key { $lemma },
-        
-        (: if no entry, give error msg :)
-        if (not(exists($dict-entry)))
-        then
+      if (exists($dict-entry))
+      then
+        element alph:entry
+        {
+          attribute lemma-key { $lemma },
+          $dict-entry
+        }
+      else
+        element alph:error
+        {
           ("Lemma ", $lemma, " not found")
-        else
-          (: transform TEI entry to HTML :)
-          transform:transform(
-            <TEI.2><text><body>{ $dict-entry }</body></text></TEI.2>,
-            doc("/db/xslt/alpheios-lexi-tei.xsl"),
-            ())
-      }
-  }
+        }
+  }</alph:output>
+
+return
+  (: transform TEI to HTML :)
+  transform:transform($xml-output, doc("/db/xslt/alpheios-lexi-tei.xsl"), ())

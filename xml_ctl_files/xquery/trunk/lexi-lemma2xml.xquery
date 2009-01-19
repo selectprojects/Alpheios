@@ -28,9 +28,7 @@
     lx is the code for the lexicon to use
     l is the lemma to retrieve.  Multiple lemmas may be specified.
 
-  Output is transformed to HTML.  The result for each lemma is wrapped
-  in an <entry> element with a lemma-key attribute equal to the lemma.
-  The entire results are wrapped in an <output> element.
+  Output is returned as XML.
 
   Possible error messages, as plain text, are:
     "No lemma specified" if no l parameters were supplied
@@ -41,7 +39,7 @@
 
 import module namespace request="http://exist-db.org/xquery/request";  
 import module namespace transform="http://exist-db.org/xquery/transform";  
-declare option exist:serialize "method=xhtml media-type=text/html";
+declare option exist:serialize "method=xml media-type=text/xml";
 
 declare variable $f_defaultLexicon :=
 (
@@ -72,12 +70,13 @@ let $lemmas := request:get-parameter("l", ())
 return
   if (count($lemmas) = 0)
   then
-    element output { "No lemma specified" }
+    <alph:error xmlns:alph="http://alpheios.net/namespaces/tei">{
+      "No lemma specified"
+     }</alph:error>
   else
 
-  (: wrap output :)
-  element output
-  {
+  (: wrap output in <alph:output> element :)
+  <alph:output xmlns:alph="http://alpheios.net/namespaces/tei">{
 
   for $lemma in $lemmas
     (: see if we can find it directly :)
@@ -149,15 +148,16 @@ return
                 $lexicon//entry[@id eq string($index-entry/@id)]
 
     return
-      element entry
-      {
-        attribute lemma-key { $lemma },
-
-        (: if no entry, give error msg :)
-        if (not(exists($dict-entry)))
-        then
-          ("Lemma ", $lemma, " not found")
-        else
+      if (exists($dict-entry))
+      then
+        element alph:entry
+        {
+          attribute lemma-key { $lemma },
           $dict-entry
-      }
-  }
+        }
+      else
+        element alph:error
+        {
+          ("Lemma ", $lemma, " not found")
+        }
+  }</alph:output>

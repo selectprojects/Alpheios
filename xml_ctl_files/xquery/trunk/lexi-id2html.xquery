@@ -28,9 +28,7 @@
     lx is the code for the lexicon to use
     n is the if an entry to retrieve.  Multiple ids may be specified.
 
-  Output is transformed to HTML.  The result for each id is wrapped
-  in a <div> element with a lemma-id attribute equal to the id.
-  The entire results are also wrapped in a <div> element.
+  Output is transformed to HTML.
 
   Possible error messages, as plain text, are:
     "No id specified" if no n parameters were supplied
@@ -74,27 +72,30 @@ let $entries :=
   else
     $entries
 
-return
+let $xml-output :=
   if (count($ids) = 0)
   then
-    element div { "No id specified" }
+    <alph:error xmlns:alph="http://alpheios.net/namespaces/tei">{
+      "No id specified"
+     }</alph:error>
   else if (count($entries) = 0)
   then
-    element div { "No entries found" }
+    <alph:error xmlns:alph="http://alpheios.net/namespaces/tei">{
+      "No entries found"
+    }</alph:error>
   else
 
-  (: wrap output in <div> element :)
-  element div
-  {
+  (: wrap output in <alph:output> element :)
+  <alph:output xmlns:alph="http://alpheios.net/namespaces/tei">{
     for $entry in $entries
     return
-      element div {
+      element alph:entry
+      {
         attribute lemma-id { $entry/@id },
-
-        (: transform TEI entry to HTML :)
-        transform:transform(
-          <TEI.2><text><body>{ $entry }</body></text></TEI.2>,
-          doc("/db/xslt/alpheios-lexi-tei.xsl"),
-          ())
+        $entry
       }
-  }
+  }</alph:output>
+
+return
+  (: transform TEI to HTML :)
+  transform:transform($xml-output, doc("/db/xslt/alpheios-lexi-tei.xsl"), ())
