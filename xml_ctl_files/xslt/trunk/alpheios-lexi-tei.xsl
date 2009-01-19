@@ -1,5 +1,14 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:alph="http://alpheios.net/namespaces/tei" xmlns:dctype="http://purl.org/dc/dcmitype/" xmlns:tufts="http://www.tufts.edu/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:perseus="http://www.perseus.org/meta/perseus.rdfs#" xmlns:ptext="http://www.perseus.org/meta/ptext.rdfs#" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:persq="http://www.perseus.org/meta/persq.rdfs#" exclude-result-prefixes="ptext rdf dcterms dc rdf persq" version="1.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:dctype="http://purl.org/dc/dcmitype/"
+  xmlns:ptext="http://www.perseus.org/meta/ptext.rdfs#"
+  xmlns:perseus="http://www.perseus.org/meta/perseus.rdfs#"
+  xmlns:persq="http://www.perseus.org/meta/persq.rdfs#"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:tufts="http://www.tufts.edu/"
+  xmlns:alph="http://alpheios.net/namespaces/tei"
+  exclude-result-prefixes="ptext rdf dcterms dc rdf persq" version="1.0">
   <xsl:preserve-space elements="*"/>
   <xsl:output method="html" encoding="utf-8"/>
 
@@ -33,7 +42,8 @@
 
   <xsl:template match="/">
     <div class="text_container {$lang}">
-        <xsl:apply-templates select="/alph:error|/alph:output/alph:entry|/alph:output/alph:error|/TEI.2/text/front|/tei.2/text/front|/TEI.2/text/body|/tei.2/text/back|/TEI.2/text/back|/TEI.2/text/group/text"/>
+        <xsl:apply-templates
+          select="/alph:error|/alph:output/alph:entry|/alph:output/alph:error|/TEI.2/text/front|/tei.2/text/front|/TEI.2/text/body|/tei.2/text/back|/TEI.2/text/back|/TEI.2/text/group/text"/>
         <xsl:text> </xsl:text>
       <!-- The space is necessary here so that we don't run the risk of
            outputting an empty DIV tag, which some browsers may interpret
@@ -47,9 +57,10 @@
 
   <xsl:template match="rdf:Description"/>
 
-  <xsl:template match="text[parent::p and not(ancestor::quote[@rend='blockquote'])]">
+  <xsl:template
+    match="text[parent::p and not(ancestor::quote[@rend='blockquote'])]">
     <blockquote>
-            <xsl:apply-templates/>
+      <xsl:apply-templates/>
     </blockquote>
   </xsl:template>
 
@@ -65,15 +76,17 @@
 
   <xsl:template match="znote">
     <xsl:choose>
-            <xsl:when test="not(@place)"> AAA<xsl:apply-templates/>B </xsl:when>
+      <xsl:when test="not(@place)"> AAA<xsl:apply-templates/>B </xsl:when>
       <xsl:otherwise>
-                <xsl:apply-templates/>
+        <xsl:apply-templates/>
       </xsl:otherwise>
     </xsl:choose>
 
   </xsl:template>
 
-  <xsl:key name="fnotes" match="note[@place='foot']|note[@place='unspecified']|note[@place='text']|note[not(@place)]" use="'current'"/>
+  <xsl:key name="fnotes"
+    match="note[@place='foot']|note[@place='unspecified']|note[@place='text']|note[not(@place)]"
+    use="'current'"/>
 
   <xsl:template name="footnotes">
     <xsl:for-each select="key('fnotes', 'current')">
@@ -87,14 +100,14 @@
       </xsl:if>
       <p id="note{$noteID}">
         <xsl:choose>
-                    <xsl:when test="@rend='smyth'">
+          <xsl:when test="@rend='smyth'">
             <strong>
-                            <xsl:value-of select="@n"/>
+              <xsl:value-of select="@n"/>
               <xsl:text> D. </xsl:text>
             </strong>
           </xsl:when>
           <xsl:otherwise>
-                        <a href="#note-link{$noteID}">
+            <a href="#note-link{$noteID}">
               <xsl:value-of select="position()"/>
             </a>
             <xsl:text> </xsl:text>
@@ -113,13 +126,13 @@
 
   <xsl:template match="emph[@rend='ital']">
     <em>
-            <xsl:apply-templates/>
+      <xsl:apply-templates/>
     </em>
   </xsl:template>
 
   <xsl:template match="emph">
     <strong>
-            <xsl:apply-templates/>
+      <xsl:apply-templates/>
     </strong>
   </xsl:template>
 
@@ -157,8 +170,7 @@
     <div class="lex_sense lex_sense{@level}">
       <xsl:call-template name="correct-sense"/>
       <xsl:if test="not(@n='')">
-        <b>
-                    <xsl:value-of select="@n"/>.</b>
+        <b><xsl:value-of select="@n"/>.</b>
       </xsl:if>
       <xsl:apply-templates select="node()"/>
     </div>
@@ -175,8 +187,7 @@
     <div class="lex_sense">
       <xsl:call-template name="correct-sense"/>
       <xsl:if test="not(@n='')">
-        <b>
-                    <xsl:value-of select="@n"/>.</b>
+        <b><xsl:value-of select="@n"/>.</b>
       </xsl:if>
       <xsl:apply-templates/>
     </div>
@@ -184,7 +195,7 @@
 
   <xsl:template match="orth|form/orth">
     <b>
-            <xsl:call-template name="language-filter">
+      <xsl:call-template name="language-filter">
         <xsl:with-param name="lang" select="@lang"/>
       </xsl:call-template>
     </b>
@@ -193,7 +204,7 @@
 
   <xsl:template match="usg">
     <b>
-            <xsl:call-template name="language-filter">
+      <xsl:call-template name="language-filter">
         <xsl:with-param name="lang" select="@lang"/>
       </xsl:call-template>
     </b>
@@ -201,7 +212,7 @@
 
   <xsl:template match="head">
     <h4>
-            <xsl:call-template name="language-filter">
+      <xsl:call-template name="language-filter">
         <xsl:with-param name="lang" select="@lang"/>
       </xsl:call-template>
     </h4>
@@ -209,7 +220,7 @@
 
   <xsl:template match="label">
     <b>
-            <xsl:call-template name="language-filter">
+      <xsl:call-template name="language-filter">
         <xsl:with-param name="lang" select="@lang"/>
       </xsl:call-template>
     </b>
@@ -217,7 +228,7 @@
 
   <xsl:template match="docauthor|docAuthor">
     <h5>
-            <xsl:apply-templates/>
+      <xsl:apply-templates/>
     </h5>
   </xsl:template>
 
@@ -225,14 +236,14 @@
     <!-- careful of empty surname tags, since some have been sighted! -->
     <span class="surname">
       <xsl:choose>
-                <xsl:when test="text()">
+        <xsl:when test="text()">
           <xsl:apply-templates/>
         </xsl:when>
         <xsl:when test="@n">
           <xsl:value-of select="@n"/>
         </xsl:when>
         <xsl:otherwise>
-                    <xsl:text> </xsl:text>
+          <xsl:text> </xsl:text>
         </xsl:otherwise>
       </xsl:choose>
     </span>
@@ -241,14 +252,14 @@
   <xsl:template match="forename">
     <span class="forename">
       <xsl:choose>
-                <xsl:when test="text()">
+        <xsl:when test="text()">
           <xsl:apply-templates/>
         </xsl:when>
         <xsl:when test="@n">
           <xsl:value-of select="@n"/>
         </xsl:when>
         <xsl:otherwise>
-                    <xsl:text> </xsl:text>
+          <xsl:text> </xsl:text>
         </xsl:otherwise>
       </xsl:choose>
     </span>
@@ -261,11 +272,11 @@
       <xsl:number level="any" count="figure[@n!='']" from="body"/>
     </xsl:variable>
     <xsl:choose>
-            <xsl:when test="$figID mod 2 = 0">
+      <xsl:when test="$figID mod 2 = 0">
         <xsl:text>left</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-                <xsl:text>right</xsl:text>
+        <xsl:text>right</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -273,13 +284,14 @@
   <xsl:template match="name[@type='place']">
     <span style="background-color: aaaaee;">
       <xsl:choose>
-                <xsl:when test="@reg!=''">
-          <a target="gazetteer" href="http://maps.yahoo.com/maps_result?name=&amp;csz={substring-before(@reg, ', ')}%2C+{substring-after(@reg, ', ')}">
+        <xsl:when test="@reg!=''">
+          <a target="gazetteer"
+            href="http://maps.yahoo.com/maps_result?name=&amp;csz={substring-before(@reg, ', ')}%2C+{substring-after(@reg, ', ')}">
             <xsl:apply-templates/>
           </a>
         </xsl:when>
         <xsl:otherwise>
-                    <xsl:apply-templates/>
+          <xsl:apply-templates/>
         </xsl:otherwise>
       </xsl:choose>
     </span>
@@ -291,7 +303,7 @@
     -->
   <xsl:template match="head/title">
     <u>
-            <xsl:call-template name="language-filter">
+      <xsl:call-template name="language-filter">
         <xsl:with-param name="lang" select="@lang"/>
       </xsl:call-template>
     </u>
@@ -300,7 +312,7 @@
 
   <xsl:template match="title">
     <u>
-            <xsl:call-template name="language-filter">
+      <xsl:call-template name="language-filter">
         <xsl:with-param name="lang" select="@lang"/>
       </xsl:call-template>
     </u>
@@ -309,7 +321,8 @@
 
 
   <xsl:template match="name[@key!='']">
-    <a target="gazetteer" href="http://www.getty.edu/vow/TGNFullDisplay?find=&amp;place=&amp;nation=&amp;english=Y&amp;subjectid={substring-after(@key, 'tgn,')}">
+    <a target="gazetteer"
+      href="http://www.getty.edu/vow/TGNFullDisplay?find=&amp;place=&amp;nation=&amp;english=Y&amp;subjectid={substring-after(@key, 'tgn,')}">
       <xsl:apply-templates/>
     </a>
   </xsl:template>
@@ -317,9 +330,9 @@
   <xsl:template name="getFigureID">
     <xsl:param name="fID"/>
     <xsl:choose>
-            <xsl:when test="contains($fID,'.')">
+      <xsl:when test="contains($fID,'.')">
         <xsl:choose>
-                    <xsl:when test="string-length(substring-before($fID, '.')) = 4">
+          <xsl:when test="string-length(substring-before($fID, '.')) = 4">
             <xsl:text>0</xsl:text>
           </xsl:when>
           <xsl:when test="string-length(substring-before($fID, '.')) = 3">
@@ -337,8 +350,8 @@
         <xsl:value-of select="substring-after($fID, '.')"/>
       </xsl:when>
       <xsl:otherwise>
-                <xsl:choose>
-                    <xsl:when test="string-length($fID) = 4">
+        <xsl:choose>
+          <xsl:when test="string-length($fID) = 4">
             <xsl:text>0</xsl:text>
           </xsl:when>
           <xsl:when test="string-length($fID) = 3">
@@ -364,27 +377,27 @@
 
   <xsl:template match="ovar">
     <i>
-            <xsl:value-of select="."/>
+      <xsl:value-of select="."/>
     </i>
   </xsl:template>
 
   <xsl:template match="hi[@rend='center']">
     <center>
-            <xsl:value-of select="."/>
+      <xsl:value-of select="."/>
     </center>
   </xsl:template>
 
   <xsl:template match="hi[@rend='ital' or @rend='italics']">
     <xsl:if test="text() or child::*">
       <i>
-                <xsl:value-of select="."/>
+        <xsl:value-of select="."/>
       </i>
     </xsl:if>
   </xsl:template>
 
   <xsl:template match="tr|trans/tr">
     <i>
-            <xsl:value-of select="."/>
+      <xsl:value-of select="."/>
     </i>
   </xsl:template>
 
@@ -416,7 +429,7 @@
 
   <xsl:template match="gap">
     <xsl:choose>
-            <xsl:when test="@desc">
+      <xsl:when test="@desc">
         <br/>
         <xsl:value-of select="@desc"/>
       </xsl:when>
@@ -427,7 +440,7 @@
         </span>
       </xsl:when>
       <xsl:otherwise>
-                <xsl:text> ... </xsl:text>
+        <xsl:text> ... </xsl:text>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -442,7 +455,7 @@
 
   <xsl:template match="note[@place='sum']">
     <h4>
-            <xsl:apply-templates/>
+      <xsl:apply-templates/>
     </h4>
   </xsl:template>
 
@@ -451,11 +464,11 @@
       <xsl:number level="any" count="note[@place='marg']" from="body"/>
     </xsl:variable>
     <xsl:choose>
-            <xsl:when test="$margID mod 2 = 0">
+      <xsl:when test="$margID mod 2 = 0">
         <xsl:text>left</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-                <xsl:text>right</xsl:text>
+        <xsl:text>right</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -466,7 +479,7 @@
     </xsl:variable>
     <table width="100" align="{$align}">
       <tr>
-                <td bgcolor="#f0f0f0">
+        <td bgcolor="#f0f0f0">
           <span class="sidetext">
             <xsl:apply-templates/>
           </span>
@@ -487,25 +500,28 @@
 
   <xsl:template match="item">
     <li>
-            <xsl:apply-templates/>
+      <xsl:apply-templates/>
     </li>
   </xsl:template>
 
   <xsl:template match="note[@place='inline']">
     <xsl:choose>
-            <xsl:when test="@rend='ag' or @rend='smyth'">
+      <xsl:when test="@rend='ag' or @rend='smyth'">
         <p style="font-size: small; margin: 10px 5%;">
 
           <xsl:call-template name="permalink">
-            <xsl:with-param name="smythp" select="(preceding::milestone[@unit='smythp'])[last()]/@n"/>
+            <xsl:with-param name="smythp"
+              select="(preceding::milestone[@unit='smythp'])[last()]/@n"/>
 
             <!-- Pass a nonempty parameter for the subsection iff
                  we're currently in a subsection (i.e., we haven't seen
                  any new sections since we last saw a subsection). -->
 
             <xsl:with-param name="smythsub">
-              <xsl:if test="(preceding::milestone[@unit='smythp' or @unit='smythsub'])[last()]/@unit='smythsub'">
-                <xsl:value-of select="(preceding::milestone[@unit='smythsub'])[last()]/@n"/>
+              <xsl:if
+                test="(preceding::milestone[@unit='smythp' or @unit='smythsub'])[last()]/@unit='smythsub'">
+                <xsl:value-of
+                  select="(preceding::milestone[@unit='smythsub'])[last()]/@n"/>
               </xsl:if>
             </xsl:with-param>
 
@@ -516,7 +532,8 @@
 
           <span style="font-variant: small-caps;">
             <xsl:text>Note</xsl:text>
-            <xsl:if test="@n &gt; 1 or (following-sibling::note[@place='inline' and (@rend='ag' or @rend='smyth')][1]/@n) &gt; 1">
+            <xsl:if
+              test="@n &gt; 1 or (following-sibling::note[@place='inline' and (@rend='ag' or @rend='smyth')][1]/@n) &gt; 1">
 
               <xsl:text> </xsl:text>
               <xsl:value-of select="@n"/>
@@ -527,8 +544,8 @@
         </p>
       </xsl:when>
       <xsl:otherwise>
-                <i>
-                    <xsl:apply-templates/>
+        <i>
+          <xsl:apply-templates/>
         </i>
       </xsl:otherwise>
     </xsl:choose>
@@ -540,7 +557,9 @@
   -->
 
   <xsl:template match="pb[@img]">
-    <a target="figure" href="http://www.perseus.tufts.edu/cgi-bin/image?lookup={@img}">[<xsl:value-of select="substring-after(@id, 'p.')"/>]</a>
+    <a target="figure"
+      href="http://www.perseus.tufts.edu/cgi-bin/image?lookup={@img}"
+        >[<xsl:value-of select="substring-after(@id, 'p.')"/>]</a>
   </xsl:template>
 
   <xsl:template match="pb">
@@ -558,46 +577,60 @@
     </xsl:variable>
     <xsl:choose>
       <!-- Want to include page images for the American Collection-->
-      <xsl:when test="@id and starts-with($document_id, 'Perseus:text:2001.05.0007')">
-          [<a target="figure" href="http://repository01.lib.tufts.edu:8080/fedora/get/tufts:perseus.image.2001.05.0007.{$figID}/bdef:TuftsImage/getMediumRes/">
+      <xsl:when
+        test="@id and starts-with($document_id, 'Perseus:text:2001.05.0007')">
+          [<a target="figure"
+          href="http://repository01.lib.tufts.edu:8080/fedora/get/tufts:perseus.image.2001.05.0007.{$figID}/bdef:TuftsImage/getMediumRes/">
           <xsl:value-of select="./@n"/>
         </a>] </xsl:when>
-      <xsl:when test="@id and starts-with($document_id, 'Perseus:text:2001.05.0044')">
-          [<a target="figure" href="http://repository01.lib.tufts.edu:8080/fedora/get/tufts:perseus.image.2001.05.0044.{$figID}/bdef:TuftsImage/getMediumRes/">
+      <xsl:when
+        test="@id and starts-with($document_id, 'Perseus:text:2001.05.0044')">
+          [<a target="figure"
+          href="http://repository01.lib.tufts.edu:8080/fedora/get/tufts:perseus.image.2001.05.0044.{$figID}/bdef:TuftsImage/getMediumRes/">
           <xsl:value-of select="./@n"/>
         </a>] </xsl:when>
-      <xsl:when test="@id and starts-with($document_id, 'Perseus:text:2001.05')"> [<a target="figure" href="http://www.perseus.tufts.edu/cgi-bin/image?lookup={$imID}">
+      <xsl:when test="@id and starts-with($document_id, 'Perseus:text:2001.05')"
+        > [<a target="figure"
+          href="http://www.perseus.tufts.edu/cgi-bin/image?lookup={$imID}">
           <xsl:value-of select="./@n"/>
         </a>] </xsl:when>
-      <xsl:when test="@id"> [<xsl:value-of select="substring-after(@id, 'p.')"/>] </xsl:when>
+      <xsl:when test="@id"> [<xsl:value-of select="substring-after(@id, 'p.')"
+        />] </xsl:when>
     </xsl:choose>
   </xsl:template>
 
   <xsl:template name="footnoteID">
     <xsl:choose>
-            <xsl:when test="@id">
+      <xsl:when test="@id">
         <xsl:value-of select="@id"/>
       </xsl:when>
       <xsl:when test="@n">
         <xsl:value-of select="@n"/>
       </xsl:when>
       <xsl:when test="ancestor::back">
-        <xsl:number level="any" count="note[@place='foot']|note[@place='unspecified']|note[@place='text']|note[not(@place)]" from="back"/>
+        <xsl:number level="any"
+          count="note[@place='foot']|note[@place='unspecified']|note[@place='text']|note[not(@place)]"
+          from="back"/>
       </xsl:when>
       <xsl:otherwise>
-                <xsl:number level="any" count="note[@place='foot']|note[@place='unspecified']|note[@place='text']|note[not(@place)]" from="body"/>
+        <xsl:number level="any"
+          count="note[@place='foot']|note[@place='unspecified']|note[@place='text']|note[not(@place)]"
+          from="body"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
-  <xsl:template match="note[@place='foot']|note[@place='unspecified']|note[@place='text']|note[not(@place)]">
+  <xsl:template
+    match="note[@place='foot']|note[@place='unspecified']|note[@place='text']|note[not(@place)]">
     <xsl:variable name="identifier">
       <xsl:call-template name="footnoteID"/>
     </xsl:variable>
     <xsl:if test="not(@rend) or @rend != 'smyth'">
       <a id="note-link{$identifier}" href="#note{$identifier}">
         <sup>
-                    <xsl:value-of select="count(preceding::note[@place = 'foot' or @place = 'unspecified' or @place = 'text' or not(@place)]) + 1"/>
+          <xsl:value-of
+            select="count(preceding::note[@place = 'foot' or @place = 'unspecified' or @place = 'text' or not(@place)]) + 1"
+          />
         </sup>
       </a>
     </xsl:if>
@@ -605,20 +638,20 @@
 
   <xsl:template match="cit">
     <xsl:choose>
-            <xsl:when test="quote/l or quote/sp or quote/p or quote/lg">
+      <xsl:when test="quote/l or quote/sp or quote/p or quote/lg">
         <blockquote>
-                    <xsl:call-template name="block-quote"/>
+          <xsl:call-template name="block-quote"/>
         </blockquote>
       </xsl:when>
       <xsl:otherwise>
-                <xsl:apply-templates/>
+        <xsl:apply-templates/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
   <xsl:template name="block-quote">
     <p>
-            <xsl:apply-templates select="quote"/>
+      <xsl:apply-templates select="quote"/>
     </p>
     <div align="right">
       <xsl:apply-templates select="bibl"/>
@@ -627,17 +660,17 @@
 
   <xsl:template match="list">
     <xsl:choose>
-            <xsl:when test="parent::argument">
+      <xsl:when test="parent::argument">
         <xsl:apply-templates/>
       </xsl:when>
       <xsl:when test="@type='ordered'">
         <ol>
-                    <xsl:apply-templates/>
+          <xsl:apply-templates/>
         </ol>
       </xsl:when>
       <xsl:otherwise>
-                <ul>
-                    <xsl:apply-templates/>
+        <ul>
+          <xsl:apply-templates/>
         </ul>
       </xsl:otherwise>
     </xsl:choose>
@@ -645,7 +678,7 @@
 
   <xsl:template match="listbibl|listBibl">
     <ul>
-            <xsl:apply-templates/>
+      <xsl:apply-templates/>
     </ul>
   </xsl:template>
 
@@ -656,7 +689,7 @@
 
   <xsl:template match="bibl[parent::listbibl]">
     <li>
-            <xsl:call-template name="bibl-link"/>
+      <xsl:call-template name="bibl-link"/>
     </li>
   </xsl:template>
 
@@ -666,10 +699,10 @@
 
   <xsl:template name="bibl-link">
     <xsl:choose>
-            <xsl:when test="not(@n) and . = ''"/>
+      <xsl:when test="not(@n) and . = ''"/>
       <xsl:when test="not(@valid)">
         <i>
-                    <xsl:call-template name="language-filter">
+          <xsl:call-template name="language-filter">
             <xsl:with-param name="lang" select="@lang"/>
             <xsl:with-param name="default" select="'en'"/>
           </xsl:call-template>
@@ -685,9 +718,10 @@
           </a>
         </span>
       </xsl:when>
-      <xsl:when test="@n and $sourcework != 'none' and starts-with(@n, $sourcework)">
+      <xsl:when
+        test="@n and $sourcework != 'none' and starts-with(@n, $sourcework)">
         <b>
-                    <a href="text.jsp?doc={@n}&amp;lang=original" target="_new">
+          <a href="text.jsp?doc={@n}&amp;lang=original" target="_new">
             <xsl:call-template name="language-filter">
               <xsl:with-param name="lang" select="@lang"/>
               <xsl:with-param name="default" select="'en'"/>
@@ -704,7 +738,7 @@
         </a>
       </xsl:when>
       <xsl:otherwise>
-                <xsl:call-template name="language-filter">
+        <xsl:call-template name="language-filter">
           <xsl:with-param name="lang" select="@lang"/>
           <xsl:with-param name="default" select="'en'"/>
         </xsl:call-template>
@@ -742,25 +776,27 @@
 
 
     <xsl:choose>
-            <xsl:when test="@rend[contains(.,'blockquote')]">
+      <xsl:when test="@rend[contains(.,'blockquote')]">
         <blockquote>
-                    <xsl:call-template name="language-filter">
+          <xsl:call-template name="language-filter">
             <xsl:with-param name="lang" select="@lang"/>
           </xsl:call-template>
         </blockquote>
       </xsl:when>
       <xsl:otherwise>
-                <xsl:choose>
-                    <xsl:when test="parent::cit and ancestor::quote">
+
+        <xsl:choose>
+          <xsl:when test="parent::cit and ancestor::quote">
             <xsl:apply-templates/>
           </xsl:when>
           <xsl:otherwise>
-                        <xsl:choose>
-                            <xsl:when test="self::quote">
-                <xsl:text>“</xsl:text>
+
+            <xsl:choose>
+              <xsl:when test="self::quote">
+                <xsl:text>&#x201C;</xsl:text>
               </xsl:when>
               <xsl:otherwise>
-                                <xsl:text>‘</xsl:text>
+                <xsl:text>&#x2018;</xsl:text>
               </xsl:otherwise>
             </xsl:choose>
 
@@ -770,14 +806,14 @@
             </xsl:call-template>
 
             <xsl:choose>
-                            <xsl:when test="parent::cit and ancestor::quote"> </xsl:when>
+              <xsl:when test="parent::cit and ancestor::quote"> </xsl:when>
               <xsl:otherwise>
-                                <xsl:choose>
-                                    <xsl:when test="self::quote">
-                    <xsl:text>”</xsl:text>
+                <xsl:choose>
+                  <xsl:when test="self::quote">
+                    <xsl:text>&#x201D;</xsl:text>
                   </xsl:when>
                   <xsl:otherwise>
-                                        <xsl:text>’</xsl:text>
+                    <xsl:text>&#x2019;</xsl:text>
                   </xsl:otherwise>
                 </xsl:choose>
 
@@ -798,18 +834,18 @@
 
   <xsl:template match="castGroup">
     <p>
-            <xsl:apply-templates/>
+      <xsl:apply-templates/>
     </p>
   </xsl:template>
 
   <xsl:template match="castItem">
     <xsl:apply-templates/>
     <xsl:choose>
-            <xsl:when test="following::castItem">
+      <xsl:when test="following::castItem">
         <xsl:text>,</xsl:text>
       </xsl:when>
       <xsl:otherwise>
-                <xsl:text>.</xsl:text>
+        <xsl:text>.</xsl:text>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -820,7 +856,7 @@
     </xsl:if>
     <xsl:if test="@n!='' and speaker">
       <b>
-                <xsl:value-of select="@n"/>
+        <xsl:value-of select="@n"/>
       </b>
       <br/>
     </xsl:if>
@@ -832,21 +868,21 @@
       <p/>
     </xsl:if>
     <b>
-            <xsl:value-of select="."/>
+      <xsl:value-of select="."/>
     </b>
     <br/>
   </xsl:template>
 
   <xsl:template match="stage">
     <i>
-            <xsl:apply-templates/>
+      <xsl:apply-templates/>
     </i>
     <xsl:choose>
-            <xsl:when test="not(parent::p)">
+      <xsl:when test="not(parent::p)">
         <br/>
       </xsl:when>
       <xsl:otherwise>
-                <xsl:text> </xsl:text>
+        <xsl:text> </xsl:text>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -864,7 +900,9 @@
       </span>
     </xsl:if>
 
-    <xsl:if test="ancestor::lg[@type='pentameter' or @type='altindent'] and $linenumber mod 2 = 0"> &#160;&#160;&#160;&#160; </xsl:if>
+    <xsl:if
+      test="ancestor::lg[@type='pentameter' or @type='altindent'] and $linenumber mod 2 = 0"
+      > &#160;&#160;&#160;&#160; </xsl:if>
 
     <xsl:if test="@part='F'"> &#160;&#160;&#160;&#160;-- </xsl:if>
 
@@ -891,8 +929,7 @@
   <xsl:template match="caesura"> &#160;&#160;&#160;&#160; </xsl:template>
 
   <xsl:template match="milestone[@unit='chapter']">
-    <b>
-            <xsl:value-of select="@n"/>.</b>
+    <b><xsl:value-of select="@n"/>.</b>
     <xsl:text> </xsl:text>
   </xsl:template>
 
@@ -905,8 +942,7 @@
     </xsl:call-template>
 
     <xsl:text> </xsl:text>
-    <b>
-            <xsl:value-of select="@n"/>.</b>
+    <b><xsl:value-of select="@n"/>.</b>
     <xsl:text> </xsl:text>
   </xsl:template>
 
@@ -914,15 +950,15 @@
     <xsl:variable name="current_smythsub" select="@n"/>
 
     <xsl:call-template name="permalink">
-      <xsl:with-param name="smythp" select="(preceding::milestone[@unit='smythp'])[last()]/@n"/>
+      <xsl:with-param name="smythp"
+        select="(preceding::milestone[@unit='smythp'])[last()]/@n"/>
       <xsl:with-param name="smythsub" select="@n"/>
       <xsl:with-param name="current_note" select="''"/>
     </xsl:call-template>
 
     <xsl:text> </xsl:text>
     <b>
-            <i>
-                <xsl:value-of select="@n"/>.</i>
+      <i><xsl:value-of select="@n"/>.</i>
     </b>
     <xsl:text> </xsl:text>
   </xsl:template>
@@ -968,7 +1004,7 @@
 
   <xsl:template match="milestone[@unit='tale']">
     <h4>
-            <xsl:value-of select="@n"/>
+      <xsl:value-of select="@n"/>
     </h4>
   </xsl:template>
 
@@ -980,20 +1016,20 @@
 
   <xsl:template match="div1">
     <xsl:choose>
-            <xsl:when test="@lang">
+      <xsl:when test="@lang">
         <xsl:call-template name="language-filter">
           <xsl:with-param name="lang" select="@lang"/>
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
-                <xsl:apply-templates/>
+        <xsl:apply-templates/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
 
   <xsl:template match="div2[@type='commline']">
     <p>
-            <xsl:if test="@n!=1"> [<xsl:value-of select="@n"/>] </xsl:if>
+      <xsl:if test="@n!=1"> [<xsl:value-of select="@n"/>] </xsl:if>
       <xsl:apply-templates/>
     </p>
   </xsl:template>
@@ -1005,8 +1041,8 @@
 
   <xsl:template match="lemma">
     <b>
-            <u>
-                <xsl:call-template name="language-filter">
+      <u>
+        <xsl:call-template name="language-filter">
           <xsl:with-param name="lang" select="@lang"/>
         </xsl:call-template>
       </u>
@@ -1037,14 +1073,15 @@
 
   <xsl:template match="table">
     <p>
-            <table border="1">
+      <table border="1">
         <xsl:apply-templates/>
       </table>
     </p>
     <p/>
   </xsl:template>
 
-  <xsl:template match="name[@type='place']|placeName|placename|PlaceName|Placename">
+  <xsl:template
+    match="name[@type='place']|placeName|placename|PlaceName|Placename">
     <xsl:call-template name="render-entity">
       <xsl:with-param name="class" select="'place'"/>
     </xsl:call-template>
@@ -1081,7 +1118,8 @@
       <xsl:if test="@authname=$highlight_authname">
         <xsl:attribute name="id">
           <xsl:text>match</xsl:text>
-          <xsl:value-of select="count(preceding::*[@authname=$highlight_authname]) + 1"/>
+          <xsl:value-of
+            select="count(preceding::*[@authname=$highlight_authname]) + 1"/>
         </xsl:attribute>
       </xsl:if>
       <xsl:apply-templates/>
@@ -1104,13 +1142,13 @@
 
   <xsl:template match="row">
     <tr>
-            <xsl:apply-templates/>
+      <xsl:apply-templates/>
     </tr>
   </xsl:template>
 
   <xsl:template match="cell">
     <td>
-            <xsl:if test="@cols">
+      <xsl:if test="@cols">
         <xsl:attribute name="colspan">
           <xsl:value-of select="@cols"/>
         </xsl:attribute>
@@ -1134,7 +1172,7 @@
 
   <xsl:template match="pindhead">
     <h4>
-            <xsl:apply-templates/>
+      <xsl:apply-templates/>
     </h4>
   </xsl:template>
 
@@ -1170,7 +1208,7 @@
     <xsl:param name="default" select="''"/>
 
     <xsl:choose>
-            <xsl:when test="$lang='la'">
+      <xsl:when test="$lang='la'">
         <span class="la">
           <xsl:apply-templates/>
         </span>
@@ -1221,7 +1259,7 @@
         </span>
       </xsl:when>
       <xsl:otherwise>
-                <xsl:apply-templates/>
+        <xsl:apply-templates/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
