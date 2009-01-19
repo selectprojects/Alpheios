@@ -18,6 +18,23 @@ Missing entry at end for Ops.  Added:
       <bibl n="Hom. Od. 20.148">Od. 20.148</bibl>.</entryFree>
 
 Betacode error: = (circumflex) should be _ (long vowel)
+  Changed all instances of "/=" to "/_"
+  Changed all instances of "=/" to "_/"
+  Would like in all cases where <entryFree> key has no "=" and "=" does
+  appear in <orth> to change "=" in <orth> to "_".
+  Unfortunately, this is not safe - see 
+    <entryFree type="main" key="fh/|s">
+    <orth extent="full" lang="greek">fh/|s, fh=s, fh=|sqa, fh=sqa</orth>
+  All three "=" in <orth> are true circumflexes.
+
+    <entryFree id="n3351" type="main" key="e)pai+/ssw">
+    ...
+    inf. <quote lang="greek">-a=i=cai</quote>, mid. <quote lang="greek"
+  Entry has consecutive letters (!) with miscoded long and correct circumflex.
+  Should be 
+    inf. <quote lang="greek">-a_i=cai</quote>, mid. <quote lang="greek"
+
+
 
 misread character:
     <entryFree id="n9813" type="main" key="w(/sper">

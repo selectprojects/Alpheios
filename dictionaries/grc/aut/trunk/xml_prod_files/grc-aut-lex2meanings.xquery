@@ -125,7 +125,7 @@ declare function local:get-meaning($a_entry as element()) as xs:string*
 (: corrections :)
 let $corrections :=
   <corrections>
-    <entry key="ἀ̄">
+    <entry key="ἆ">
       interjection expressive of pity or horror, freq. w. voc. of “δειλός”
     </entry>
     <entry key="Αἴγισθος">
