@@ -79,7 +79,7 @@ declare function local:get-meaning($a_entry as element()) as xs:string*
       let $text :=
         normalize-space(
           $a_entry/text()[string-length(normalize-space(.)) > 0][1])
-      let $quote := normalize-space($a_entry/quote[1])
+      let $quote := normalize-space($a_entry/foreign[1])
       let $quote1 := 
         if (contains($quote, ","))
         then
