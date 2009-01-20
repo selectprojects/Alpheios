@@ -66,7 +66,7 @@ Alph.LanguageToolSet.greek.implementsAlphLanguageTool = true;
  * @returns true if successful, otherwise false
  * @type boolean
  */
-Alph.LanguageToolSet.greek.prototype.loadDictionary = function()
+Alph.LanguageToolSet.greek.prototype.loadShortDefs = function()
 {
     this.short_lex_code = 
         Alph.util.getPref("dictionaries.short.default",this.source_language)
@@ -81,24 +81,41 @@ Alph.LanguageToolSet.greek.prototype.loadDictionary = function()
                               this.short_lex_code +
                               "-defs.dat",
                               "UTF-8", "|");
+            Alph.util.log("Loaded Greek defs [" +
+                      this.defsFile.getData().length +
+                      " bytes]");
+
     }
     catch (ex)
     {
         alert("error loading definitions: " + ex);
         return false;
     }
+   return true;
+};
+
+/**
+ * Greek-specific startup method in the derived instance which
+ * loads the lemma id lookup file. Called by the derived instance
+ * keyed by the preference setting 'extensions.alpheios.greek.methods.startup'.
+ * @returns true if successful, otherwise false
+ * @type boolean
+ */
+Alph.LanguageToolSet.greek.prototype.loadLexIds = function()
+{
+    this.full_lex_code = 
+        Alph.util.getPref("dictionaries.full.default",this.source_language)
+
     try
     {
-        this.idsFile = 
+       this.idsFile = 
             new Alph.Datafile("chrome://alpheios-greek/content/dictionaries/" +
-                              this.short_lex_code + 
+                              this.full_lex_code + 
                               "/grc-" +
-                              this.short_lex_code +
+                              this.full_lex_code +
                               "-ids.dat",
                               "UTF-8", "|");
-        Alph.util.log("Loaded Greek defs+id [" +
-                      this.defsFile.getData().length +
-                      "+" +
+        Alph.util.log("Loaded Greek ids [" +
                       this.idsFile.getData().length +
                       " bytes]");
     }
@@ -107,7 +124,18 @@ Alph.LanguageToolSet.greek.prototype.loadDictionary = function()
         alert("error loading ids: " + ex);
         return false;
     }
+    return true;
+}
 
+/**
+ * Greek-specific startup method in the derived instance which
+ * xslt for stripping the unicode. Called by the derived instance
+ * keyed by the preference setting 'extensions.alpheios.greek.methods.startup'.
+ * @returns true if successful, otherwise false
+ * @type boolean
+ */
+Alph.LanguageToolSet.greek.prototype.loadStripper = function()
+{
     try
     {
         this.stripper = new XSLTProcessor();
@@ -123,8 +151,7 @@ Alph.LanguageToolSet.greek.prototype.loadDictionary = function()
     }
 
     return true;
-};
-
+}
 /**
  *  Mapping table which maps the part of speech or mood
  *  to the key name for producing the inflection table
@@ -651,7 +678,8 @@ Alph.LanguageToolSet.greek.prototype.fixHarvardLSJ = function(a_html)
 /**
  * Greek-specific implementation of {@link Alph.LanguageTool#observe_pref_change}.
  * 
- * calls loadDictionary if the default short dictionary changed
+ * calls loadShortDefs if the default short dictionary changed
+ * calls loadLexIds if the default full dictionary changed
  * @param {String} a_name the name of the preference which changed
  * @param {Object} a_value the new value of the preference 
  */
@@ -659,6 +687,78 @@ Alph.LanguageToolSet.greek.prototype.observe_pref_change = function(a_name,a_val
 {
     if (a_name.indexOf('dictionaries.short.default') != -1)
     {
-        this.loadDictionary();
+        this.loadShortDefs();
     }
+    if (a_name.indexOf('dictionaries.full.default') != -1)
+    {
+        this.loadLexIds();
+    }
+
+}
+
+/**
+ * Greek-specific implementation of {@link Alph.LanguageTool#get_lemma_id}.
+ * 
+ * @param {String} a_lemma_key the lemma key
+ * @return the lemma id or null if not found
+ * @type String 
+ */
+Alph.LanguageToolSet.greek.prototype.get_lemma_id = function(a_lemma_key)
+{
+    var lemma_id = null;
+    var idData = this.idsFile.findData(a_lemma_key);
+    
+    var toRemove = 0;
+    // count trailing digits
+    for (; toRemove <= a_lemma_key.length; ++toRemove)
+    {
+        // if not a digit, done
+        var c = a_lemma_key.substr(a_lemma_key.length - (toRemove + 1), 1);
+        if ((c < "0") || ("9" < c))
+        break;
+    }
+
+    // if not found
+    if ((!idData) && (toRemove > 0))
+    {
+        // remove trailing digits and retry
+        a_lemma_key = a_lemma_key.substr(0, a_lemma_key.length - toRemove);
+        idData = this.idsFile.findData(a_lemma_key);
+    }
+    if (idData)
+    {
+        var sep = this.idsFile.getSeparator();
+        var specialFlag = '@';
+        var stripper = this.stripper;
+        // find start and end of id
+        var startText = idData.indexOf(sep, 0) + 1;
+        var endText = idData.indexOf('\n', startText);
+        if (idData.charAt(endText - 1) == '\r')
+            endText--;
+
+        // if special case
+        if (((endText - startText) == 1) &&
+            (idData.charAt(startText) == specialFlag))
+        {
+            // retry using flag plus lemma without caps removed
+            stripper.setParameter(null, "input", lemma_key);
+            stripper.setParameter(null, "strip-vowels", true);
+            stripper.setParameter(null, "strip-caps", false);
+            a_lemma_key = specialFlag +
+                stripper.transformToDocument(x).
+                    documentElement.
+                    textContent;
+            idData = this.idsFile.findData(a_lemma_key);
+            startText = idData.indexOf(sep, 0) + 1;
+            endText = idData.indexOf('\n', startText);
+        }
+
+        // get id 
+        lemma_id = idData.substr(startText, endText - startText);    
+    }
+    if (!lemma_id)
+    {
+        Alph.util.log("id for " + a_lemma_key + " not found [" +  this.full_lex_code + ']');
+    }
+    return lemma_id;
 }
