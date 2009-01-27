@@ -106,23 +106,34 @@ Alph.LanguageToolSet.greek.prototype.loadLexIds = function()
     this.full_lex_code = 
         Alph.util.getPref("dictionaries.full.default",this.source_language)
 
-    try
+    if (this.full_lex_code == '' || this.full_lex_code == null)
     {
-       this.idsFile = 
-            new Alph.Datafile("chrome://alpheios-greek/content/dictionaries/" +
-                              this.full_lex_code + 
-                              "/grc-" +
-                              this.full_lex_code +
-                              "-ids.dat",
-                              "UTF-8", "|");
-        Alph.util.log("Loaded Greek ids [" +
-                      this.idsFile.getData().length +
-                      " bytes]");
+        this.idsFile == null;    
     }
-    catch (ex)
+    else 
     {
-        alert("error loading ids: " + ex);
-        return false;
+        try
+        {
+           this.idsFile = 
+                new Alph.Datafile("chrome://alpheios-greek/content/dictionaries/" +
+                                  this.full_lex_code + 
+                                  "/grc-" +
+                                  this.full_lex_code +
+                                  "-ids.dat",
+                                  "UTF-8", "|");
+            Alph.util.log("Loaded Greek ids [" +
+                          this.idsFile.getData().length +
+                          " bytes]");
+        }
+        catch (ex)
+        {
+            // the ids file might not exist, in particular for remote, non-alpheios
+            // provided dictionaries
+            // so just quietly log the error in this case
+            // later code must take a null ids file into account
+            Alph.util.log("error loading ids: " + ex);
+            return false;
+        }
     }
     return true;
 }
@@ -562,7 +573,11 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
 
             // find definition and id
             var defData = defs.findData(hdwd);
-            var idData = ids.findData(hdwd);
+            var idData;
+            if (ids != null)
+            { 
+                idData = ids.findData(hdwd);
+            }
 
             // if not found
             if ((!defData || !idData) && (toRemove > 0))
@@ -571,7 +586,7 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
                 hdwd = hdwd.substr(0, hdwd.length - toRemove);
                 if (!defData)
                     defData = defs.findData(hdwd);
-                if (!idData)
+                if (!idData && ids != null)
                     idData = ids.findData(hdwd);
             }
 
@@ -706,6 +721,11 @@ Alph.LanguageToolSet.greek.prototype.observe_pref_change = function(a_name,a_val
 Alph.LanguageToolSet.greek.prototype.get_lemma_id = function(a_lemma_key)
 {
     var lemma_id = null;
+    if (this.idsFile == null)
+    {
+        Alph.util.log("No lemma ids loaded");
+        return;
+    }
     var idData = this.idsFile.findData(a_lemma_key);
     
     var toRemove = 0;
