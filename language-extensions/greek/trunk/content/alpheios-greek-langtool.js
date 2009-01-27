@@ -175,6 +175,9 @@ Alph.LanguageToolSet.greek.INFLECTION_MAP =
       adjective: {keys: ['adjective'], links:[] },
       adjective_simplified: {keys: ['adjective_simplified'], links:[] },
       noun_simplified: {keys: ['noun_simplified'], links:[] },
+      pronoun: { keys: ['pronoun'],links:[] },
+      article: { keys: ['article'],links:[] },
+      cardinal: { keys: ['cardinal'],links:[] },
 };
 
 Alph.LanguageToolSet.greek.IRREG_VERBS =
@@ -382,7 +385,23 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xslt_params.group6 = order[2];
         }
     }
-    else
+    else if (a_infl_type.match(/^(cardinal|article)/))
+    {
+             a_params.xml_url =
+            'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
+        a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
+        a_params.xslt_params.match_pofs = a_infl_type;
+        a_params.xslt_params.group4 = 'gend';
+    }
+    else if (a_infl_type == 'pronoun')
+    {
+             a_params.xml_url =
+            'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
+        a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
+        a_params.xslt_params.match_pofs = a_infl_type;
+        a_params.xslt_params.group4 = 'pers';
+    }
+    else if (a_infl_type.match(/^(noun|adjective)/))
     {
         var is_simple = a_infl_type.match(/^(.+)_simplified$/)
         if (is_simple != null)

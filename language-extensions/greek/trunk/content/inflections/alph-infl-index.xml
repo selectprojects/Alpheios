@@ -24,6 +24,15 @@
                   <item>Adjectives
                       <ptr target="#adjective"/>
                   </item>
+                  <item>Pronouns
+                      <ptr target="#pronoun"/>
+                  </item>
+                  <item>Articles
+                      <ptr target="#article"/>
+                  </item>
+                  <item>Cardinals
+                      <ptr target="#cardinal"/>
+                  </item>
               </list>
           </div>
       </front>
