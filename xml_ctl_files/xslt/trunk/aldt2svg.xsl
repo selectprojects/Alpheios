@@ -73,28 +73,31 @@
             <xsl:with-param name="name" select="'class'"/>
           </xsl:apply-templates>
 
-          <!-- Create text from word form and relation -->
-          <xsl:variable name="form">
-            <xsl:choose>
-              <!-- if this is betacode -->
-              <xsl:when test="$is-beta">
-                <!-- convert form from betacode to unicode -->
-                <xsl:call-template name="beta-to-uni">
-                  <xsl:with-param name="input" select="@form"/>
-                </xsl:call-template>
-              </xsl:when>
+          <!-- Create node text from word form -->
+          <xsl:choose>
+            <!-- if this is betacode -->
+            <xsl:when test="$is-beta">
+              <!-- convert form from betacode to unicode -->
+              <xsl:call-template name="beta-to-uni">
+                <xsl:with-param name="input" select="@form"/>
+              </xsl:call-template>
+            </xsl:when>
 
-              <!-- if not betacode -->
-              <xsl:otherwise>
-                <!-- just use form -->
-                <xsl:value-of select="@form"/>
-              </xsl:otherwise>
-            </xsl:choose>
-          </xsl:variable>
-          <xsl:value-of select="concat($form, ' (', @relation, ')')"/>
+            <!-- if not betacode -->
+            <xsl:otherwise>
+              <!-- just use form -->
+              <xsl:value-of select="@form"/>
+            </xsl:otherwise>
+          </xsl:choose>
         </xsl:element>
 
-        <!-- line element -->
+        <!-- Create line label from relation -->
+        <xsl:element name="text" namespace="http://www.w3.org/2000/svg">
+          <xsl:attribute name="class">line-label</xsl:attribute>
+          <xsl:value-of select="@relation"/>
+        </xsl:element>
+
+        <!-- Create line element -->
         <xsl:element name="line" namespace="http://www.w3.org/2000/svg"/>
 
         <!-- Recursively build children from this word's dependents -->
