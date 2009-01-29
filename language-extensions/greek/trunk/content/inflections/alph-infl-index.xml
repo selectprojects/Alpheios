@@ -25,7 +25,17 @@
                       <ptr target="#adjective"/>
                   </item>
                   <item>Pronouns
-                      <ptr target="#pronoun"/>
+                      <list>
+                          <item>Personal
+                              <ptr target="#pronoun|type:pers"/>
+                          </item>
+                          <item>Demonstrative
+                            <ptr target="#pronoun|type:dem"/>
+                          </item>
+                          <item>Relative
+                              <ptr target="#pronoun|type:rel"/>
+                          </item>
+                      </list>
                   </item>
                   <item>Articles
                       <ptr target="#article"/>

@@ -184,6 +184,13 @@ Alph.LanguageToolSet.greek.IRREG_VERBS =
 [
 ];
 
+Alph.LanguageToolSet.greek.PRONOUNS =
+[
+    ['dem',['ὅδε','οὗτος','ἐκεῖνος']],
+    ['rel',['ὅς']],
+    ['pers',['ἐγώ','σύ','ἕ']]
+];
+
 /**
  * Greek-specific implementation of {@link Alph.LanguageTool#getInflectionTable}.
  * @param {Node} a_node the node containing the target word
@@ -245,6 +252,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                 }
             }
             Alph.util.log("irregular:" + irregular);
+            
             var infls = {};
 
             // gather the moods for the verbs
@@ -315,7 +323,33 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                     {
                         params.links = Alph.LanguageToolSet.greek.INFLECTION_MAP[pofs].links;
                         //Alph.LanguageToolSet.greek.setInflectionXSL(params,infl_type,pofs,a_node,Alph.$(this).get(0));
-                    }
+                        
+                        // if it's a pronoun, what type?
+                        if (infl_type == 'pronoun')
+                        {
+                            for (var i=0; i< Alph.LanguageToolSet.greek.PRONOUNS.length; i++)
+                            {
+                                // done if we have already identified the type of pronoun
+                                if (params.type != null)
+                                {
+                                    break;
+                                }
+                                var pronoun_list = Alph.LanguageToolSet.greek.PRONOUNS[i];
+                                var type = pronoun_list[0];
+                                for (var j=0; j < pronoun_list[1].length; j++)
+                                {
+                                    
+                                    if (dict_hdwd == pronoun_list[1][j])
+                                    {
+                                        // reset the type
+                                        params.type = type;
+                                        break;
+                                    }
+                                }
+                            }
+                            Alph.util.log("Pronoun type="+params.type);
+                        } // end pronoun identification
+                    } 
 
                 } // end infl-type
             }
@@ -395,11 +429,29 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
     }
     else if (a_infl_type == 'pronoun')
     {
-             a_params.xml_url =
-            'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
-        a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
+        a_params.xml_url =
+            'chrome://alpheios-greek/content/inflections/alph-infl-' + 
+            a_infl_type + '-' + a_params.type + '.xml';
+        if (a_params.type == 'dem')
+        {
+            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
+            a_params.xslt_params.group4 = 'hdwd';
+        }
+        else
+        {
+            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
+            if (a_params.type == 'pers')
+            {
+                a_params.xslt_params.group4 = 'pers';
+            }
+            else if (a_params.type == 'rel')
+            {
+                a_params.xslt_params.group4 = 'gend';
+            }
+        }
+        
         a_params.xslt_params.match_pofs = a_infl_type;
-        a_params.xslt_params.group4 = 'pers';
+        a_params.title = 'alph-infl-title-pronoun-' + a_params.type;
     }
     else if (a_infl_type.match(/^(noun|adjective)/))
     {
