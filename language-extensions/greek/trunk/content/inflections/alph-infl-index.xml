@@ -35,6 +35,14 @@
                           <item>Relative
                               <ptr target="#pronoun|type:rel"/>
                           </item>
+                          <item>Interrogative
+                              <ptr target="#pronoun|type:inter"/>
+                          </item>
+                          <item>Indefinite
+                              <ptr target="#pronoun|type:indef"/>
+                          </item>
+                          
+                          
                       </list>
                   </item>
                   <item>Articles

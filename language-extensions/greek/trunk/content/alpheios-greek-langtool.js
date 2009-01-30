@@ -186,9 +186,11 @@ Alph.LanguageToolSet.greek.IRREG_VERBS =
 
 Alph.LanguageToolSet.greek.PRONOUNS =
 [
-    ['dem',['ὅδε','οὗτος','ἐκεῖνος']],
-    ['rel',['ὅς']],
-    ['pers',['ἐγώ','σύ','ἕ']]
+    ['dem',['ὅδε','οὗτος','ἐκεῖνος','τοσόσδε','τοιόσδε','τηλικόσδε','τοσοῦτος','τοιοῦτος','τηλικοῦτος']],
+    ['rel',['ὅς','ὅστις']],
+    ['pers',['ἐγώ','σύ','ἕ']],
+    ['indef',['τις']],
+    ['inter',['τίς']]
 ];
 
 /**
@@ -330,7 +332,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                             for (var i=0; i< Alph.LanguageToolSet.greek.PRONOUNS.length; i++)
                             {
                                 // done if we have already identified the type of pronoun
-                                if (params.type != null)
+                                if (typeof params.type != 'undefined')
                                 {
                                     break;
                                 }
@@ -419,7 +421,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xslt_params.group6 = order[2];
         }
     }
-    else if (a_infl_type.match(/^(cardinal|article)/))
+    else if (a_infl_type == 'article')
     {
              a_params.xml_url =
             'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
@@ -444,7 +446,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             {
                 a_params.xslt_params.group4 = 'pers';
             }
-            else if (a_params.type == 'rel')
+            else 
             {
                 a_params.xslt_params.group4 = 'gend';
             }
@@ -453,7 +455,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         a_params.xslt_params.match_pofs = a_infl_type;
         a_params.title = 'alph-infl-title-pronoun-' + a_params.type;
     }
-    else if (a_infl_type.match(/^(noun|adjective)/))
+    else if (a_infl_type.match(/^(noun|adjective|cardinal)/))
     {
         var is_simple = a_infl_type.match(/^(.+)_simplified$/)
         if (is_simple != null)
@@ -482,6 +484,10 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
                 a_params.xslt_params.group5 = order[1];
                 a_params.xslt_params.group6 = order[2];
             }
+        }
+        else if (a_infl_type == 'cardinal')
+        {
+            a_params.xslt_params.group4 = 'hdwd';
         }
 
     }
