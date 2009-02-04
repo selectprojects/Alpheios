@@ -2,7 +2,8 @@
 <?xml-stylesheet type="text/css" href="file:/C:/work/schemas/inflections.css"?>
 <infl-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:noNamespaceSchemaLocation="file:/C:/work/schemas/infl-endings-ungrouped.xsd"
-    xml:lang="greek">
+    xml:lang="greek"
+    footnote="foot-1">
   <order-table>
     <order-item attname="hdwd" order="1">εἱς - μία - ἑν (1)</order-item>
     <order-item attname="hdwd" order="2">δύο (2)</order-item>

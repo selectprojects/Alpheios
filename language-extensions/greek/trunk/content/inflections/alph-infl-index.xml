@@ -29,11 +29,17 @@
                           <item>Personal
                               <ptr target="#pronoun|type:pers"/>
                           </item>
+                          <item>Reciprocal
+                              <ptr target="#pronoun|type:recip"/>
+                          </item>
                           <item>Demonstrative
                             <ptr target="#pronoun|type:dem"/>
                           </item>
                           <item>Relative
                               <ptr target="#pronoun|type:rel"/>
+                          </item>
+                          <item>General Relative
+                              <ptr target="#pronoun|type:genrel"/>
                           </item>
                           <item>Interrogative
                               <ptr target="#pronoun|type:inter"/>
@@ -41,8 +47,9 @@
                           <item>Indefinite
                               <ptr target="#pronoun|type:indef"/>
                           </item>
-                          
-                          
+                          <item>Intensive
+                              <ptr target="#pronoun|type:inten"/>
+                          </item>
                       </list>
                   </item>
                   <item>Articles

@@ -360,6 +360,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
     // identify the correct xslt parameters for the requested inflection type
     if (params.showpofs)
     {
+        params.html_url = "chrome://alpheios-greek/content/inflections/alph-infl-substantive.html";
         Alph.LanguageToolSet.greek.setInflectionXSL(params,params.showpofs,form);
         // TODO -remove this HACK which suppresses the Javascript matching algorithm
         //params.suppress_match = true;
@@ -379,6 +380,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
     a_params.xslt_params.fragment = 1;
     a_params.xslt_params.selected_endings = a_params.entries[a_infl_type];
     a_params.xslt_params.form = a_form || "";
+    
 
     // get rid of the selected endings parameter if we couldn't find any
     if (typeof a_params.xslt_params.selected_endings == "undefined" ||
@@ -490,8 +492,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xslt_params.group4 = 'hdwd';
         }
 
-    }
-
+    }    
 }
 
 /**
@@ -510,6 +511,9 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_
     Alph.$("td.ending-group",a_tbl).each(
         function(c_i)
         {
+            var tdIndex = Alph.$(this).get(0).realIndex;
+            var collapsed = false;
+
             var endings = Alph.$("span.ending", this);
             var children = Alph.$(this).children();
             // collapse lists of endings unless the cell has a highlighted ending,
@@ -552,7 +556,7 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_
                                 Alph.$(this).addClass("ending-collapsed");
                                 Alph.$(this).attr("ending-index",a_i);
                                 last_col_index=a_i;
-
+                                collapsed = true;
                             }
                         }
                         else if (last_col_index != null &&
@@ -560,6 +564,7 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_
                         {
                                 Alph.$(this).addClass("ending-collapsed");
                                 Alph.$(this).attr("ending-index",last_col_index);
+                                collapsed = true;
 
                         }
                         else
@@ -569,9 +574,15 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_
                     }
                 );
 
-                var realIndex = Alph.$(this).get(0).realIndex;
-                ret_cells.push(this);
+                
+                
 
+            }
+            // push the index of this table cell onto the return arry if 
+            // if it has been flagged as containg any collapsed endings
+            if (collapsed)
+            {
+                ret_cells.push(tdIndex);
             }
         }
     );
@@ -608,6 +619,7 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_
         Alph.$('#headerrow2',a_tbl).css('display','none');
         Alph.$(a_tbl).addClass("simplified");
     }
+    
     return ret_cells;
     
 }
