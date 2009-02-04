@@ -29,6 +29,9 @@
                           <item>Personal
                               <ptr target="#pronoun|type:pers"/>
                           </item>
+                          <item>Reflexive
+                              <ptr target="#pronoun|type:refl"/>
+                          </item>
                           <item>Reciprocal
                               <ptr target="#pronoun|type:recip"/>
                           </item>

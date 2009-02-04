@@ -187,10 +187,14 @@ Alph.LanguageToolSet.greek.IRREG_VERBS =
 Alph.LanguageToolSet.greek.PRONOUNS =
 [
     ['dem',['ὅδε','οὗτος','ἐκεῖνος','τοσόσδε','τοιόσδε','τηλικόσδε','τοσοῦτος','τοιοῦτος','τηλικοῦτος']],
-    ['rel',['ὅς','ὅστις']],
+    ['rel',['ὅς']],
+    ['genrel'['ὅστις']],
     ['pers',['ἐγώ','σύ','ἕ']],
     ['indef',['τις']],
-    ['inter',['τίς']]
+    ['inter',['τίς']],
+    ['inten',['αὐτός']],
+    ['recip',['ἀλλήλων']],
+    ['refl',['ἐμαυτοῦ','σαυτοῦ','ἑαυτοῦ']]
 ];
 
 /**
@@ -440,6 +444,11 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         {
             a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
             a_params.xslt_params.group4 = 'hdwd';
+        }
+        if (a_params.type == 'refl')
+        {
+            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
+            a_params.xslt_params.group4 = 'pers';
         }
         else
         {
