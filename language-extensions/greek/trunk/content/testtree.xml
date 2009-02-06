@@ -2,8 +2,8 @@
 <treebank version="1.4"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xmlns:treebank="http://nlp.perseus.tufts.edu/syntax/treebank/1.4"
-	xsi:schemaLocation="http://nlp.perseus.tufts.edu/syntax/treebank/1.4 treebank-1.4.xsd">
-	<sentence id="p70862" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="a)/ndra0:e)/persen0" xml:lang="grc-x-beta">
+	xsi:schemaLocation="http://nlp.perseus.tufts.edu/syntax/treebank/1.5 treebank-1.5.xsd">
+	<sentence id="Perseus_text_1999_01_0135_0_sen_a0" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="a)/ndra0::0" xml:lang="grc-x-beta">
 		<word id="1" form="a)/ndra" lemma="a)nh/r1" postag="n-s---ma-" head="3" relation="OBJ" />
 		<word id="2" form="moi" lemma="e)gw/1" postag="p-s---md-" head="3" relation="OBJ" />
 		<word id="3" form="e)/nnepe" lemma="e)ne/pw1" postag="v2spma---" head="0" relation="PRED" />
@@ -22,72 +22,26 @@
 		<word id="16" form="i(ero\n" lemma="i(ero/s1" postag="a-s---na-" head="17" relation="ATR" />
 		<word id="17" form="ptoli/eqron" lemma="ptoli/eqron1" postag="n-s---na-" head="18" relation="OBJ" />
 		<word id="18" form="e)/persen" lemma="pe/rqw1" postag="v3saia---" head="14" relation="ADV" />
+		<word id="19" form=":" lemma="punc1" postag="u--------" head="0" relation="AuxK" />
 	</sentence>
-	<sentence id="2" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="pollw=n0:e(tai/rwn0" xml:lang="grc-x-beta">
-		<word id="1" form="pollw=n" lemma="polu/s1" postag="a-p---mg-" head="3" relation="ATR" />
-		<word id="2" form="d&apos;" lemma="de/1" postag="g--------" head="11" relation="AuxY" />
-		<word id="3" form="a)nqrw/pwn" lemma="a)/nqrwpos1" postag="n-p---mg-" head="5" relation="ATR" />
-		<word id="4" form="i)/den" lemma="ei)=don1" postag="v3saia---" head="11" relation="PRED_CO" />
-		<word id="5" form="a)/stea" lemma="a)/stu1" postag="n-p---na-" head="4" relation="OBJ" />
-		<word id="6" form="kai\" lemma="kai/1" postag="c--------" head="11" relation="AuxY" />
-		<word id="7" form="no/on" lemma="no/os1" postag="n-s---ma-" head="8" relation="OBJ" />
-		<word id="8" form="e)/gnw" lemma="gignw/skw1" postag="v3saia---" head="11" relation="PRED_CO" />
-		<word id="9" form="," lemma="comma1" postag="u--------" head="11" relation="AuxX" />
-		<word id="10" form="polla\" lemma="polu/s1" postag="a-p---na-" head="17" relation="ATR" />
-		<word id="11" form="d&apos;" lemma="de/1" postag="g--------" head="0" relation="COORD" />
-		<word id="12" form="o(/" lemma="o(1" postag="l--------" head="16" relation="SBJ" />
-		<word id="13" form="g&apos;" lemma="ge1" postag="g--------" head="14" relation="AuxZ" />
-		<word id="14" form="e)n" lemma="e)n1" postag="r--------" head="16" relation="AuxP" />
-		<word id="15" form="po/ntw|" lemma="po/ntos1" postag="n-s---md-" head="14" relation="ADV" />
-		<word id="16" form="pa/qen" lemma="pa/sxw1" postag="v3saia---" head="11" relation="PRED_CO" />
-		<word id="17" form="a)/lgea" lemma="a)/lgos1" postag="n-p---na-" head="16" relation="OBJ" />
-		<word id="18" form="o(\n" lemma="o(/s1" postag="p-s---ma-" head="20" relation="ATR" />
-		<word id="19" form="kata\" lemma="kata/1" postag="r--------" head="16" relation="AuxP" />
-		<word id="20" form="qumo/n" lemma="qumo/s1" postag="n-s---ma-" head="19" relation="ADV" />
-		<word id="21" form="," lemma="comma1" postag="u--------" head="22" relation="AuxX" />
-		<word id="22" form="a)rnu/menos" lemma="a)/rnumai1" postag="t-sppemn-" head="11" relation="ADV" />
-		<word id="23" form="h(/n" lemma="o(/s1" postag="p-s---fa-" head="25" relation="ATR" />
-		<word id="24" form="te" lemma="te1" postag="g--------" head="26" relation="AuxY" />
-		<word id="25" form="yuxh\n" lemma="yuxh/1" postag="n-s---fa-" head="26" relation="OBJ_CO" />
-		<word id="26" form="kai\" lemma="kai/1" postag="c--------" head="22" relation="COORD" />
-		<word id="27" form="no/ston" lemma="no/stos1" postag="n-s---ma-" head="26" relation="OBJ_CO" />
-		<word id="28" form="e(tai/rwn" lemma="e(tai=ros1" postag="n-p---mg-" head="27" relation="ATR" />
-	</sentence>
-	<sentence id="3" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="a)ll'0:per0" xml:lang="grc-x-beta">
-		<word id="1" form="a)ll&apos;" lemma="a)lla/" postag="c--------" head="5" relation="AuxY" />
-		<word id="2" form="ou)d&apos;" lemma="ou)de/1" postag="g--------" head="5" relation="AuxZ" />
-		<word id="3" form="w(\s" lemma="w(s1" postag="d--------" head="5" relation="ADV" />
-		<word id="4" form="e(ta/rous" lemma="e(tai=ros1" postag="n-p---ma-" head="5" relation="OBJ" />
-		<word id="5" form="e)rru/sato" lemma="r(u/omai1" postag="v3sai----" head="0" relation="PRED" />
-		<word id="6" form="," lemma="comma1" postag="u--------" head="7" relation="AuxX" />
-		<word id="7" form="i(e/meno/s" lemma="i(/hmi1" postag="t-spp-mn-" head="5" relation="ADV" />
-		<word id="8" form="per" lemma="pe/r1" postag="g--------" head="7" relation="AuxZ" />
-	</sentence>
-	<sentence id="4" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="au)tw=n0:h)/sqion0" xml:lang="grc-x-beta">
-		<word id="1" form="au)tw=n" lemma="au)to/s1" postag="a-p---mg-" head="4" relation="ATR" />
-		<word id="2" form="ga\r" lemma="ga/r1" postag="g--------" head="5" relation="AuxY" />
-		<word id="3" form="sfete/rh|sin" lemma="sfe/teros1" postag="a-p---fd-" head="4" relation="ATR" />
-		<word id="4" form="a)tasqali/h|sin" lemma="a)tasqali/a1" postag="n-p---fd-" head="5" relation="OBJ" />
-		<word id="5" form="o)/lonto" lemma="o)/llumi1" postag="v3pai----" head="0" relation="PRED" />
-		<word id="6" form="," lemma="comma1" postag="u--------" head="7" relation="AuxX" />
-		<word id="7" form="nh/pioi" lemma="nh/pios1" postag="a-p---mn-" head="5" relation="SBJ" />
-		<word id="8" form="," lemma="comma1" postag="u--------" head="14" relation="AuxX" />
-		<word id="9" form="oi(\" lemma="o(/s1" postag="p-p---mn-" head="14" relation="SBJ" />
-		<word id="10" form="kata\" lemma="kata/1" postag="r--------" head="14" relation="AuxZ" />
-		<word id="11" form="bou=s" lemma="bou=s1" postag="n-p---fa-" head="14" relation="OBJ" />
-		<word id="12" form="*(uperi/onos" lemma="*(uperi/wn1" postag="n-s---mg-" head="13" relation="ATR" />
-		<word id="13" form="*)heli/oio" lemma="h)e/lios1" postag="n-s---mg-" head="11" relation="ATR" />
-		<word id="14" form="h)/sqion" lemma="e)sqi/w1" postag="v3piia---" head="7" relation="ATR" />
-	</sentence>
-	<sentence id="p70863" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="au)ta\r0:h)=mar0" xml:lang="grc-x-beta">
-		word id="1" form="au)ta\r" lemma="a)ta/r1" postag="g--------" head="4" relation="AuxY" />
+	<sentence id="Perseus_text_1999_01_0135_0_sen_0" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="au)ta\r0:.1" xml:lang="grc-x-beta">
+		<primary>tovahk</primary>
+		<primary>megluthin</primary>
+		<primary>megluthin</primary>
+		<secondary>treebank</secondary>
+		<word id="1" form="au)ta\r" lemma="a)ta/r1" postag="g--------" head="4" relation="AuxY" />
 		<word id="2" form="o(" lemma="o(1" postag="l--------" head="4" relation="SBJ" />
 		<word id="3" form="toi=sin" lemma="o(1" postag="l--------" head="4" relation="OBJ" />
 		<word id="4" form="a)fei/leto" lemma="a)faire/w1" postag="v3sai----" head="0" relation="PRED" />
 		<word id="5" form="no/stimon" lemma="no/stimos1" postag="a-s---na-" head="6" relation="ATR" />
 		<word id="6" form="h)=mar" lemma="h)=mar1" postag="n-s---na-" head="4" relation="OBJ" />
+		<word id="7" form="." lemma="punc1" postag="u--------" head="0" relation="AuxK" />
 	</sentence>
-	<sentence id="p70864" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="tw=n0:h(mi=n0" xml:lang="grc-x-beta">
+	<sentence id="Perseus_text_1999_01_0135_0_sen_1" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="tw=n0:.2">
+		<primary>tovahk</primary>
+		<primary>megluthin</primary>
+		<primary>megluthin</primary>
+		<secondary>treebank</secondary>
 		<word id="1" form="tw=n" lemma="o(1" postag="l--------" head="10" relation="OBJ" />
 		<word id="2" form="a(mo/qen" lemma="a(mo/qen1" postag="d--------" head="10" relation="ADV" />
 		<word id="3" form="ge" lemma="ge1" postag="g--------" head="2" relation="AuxZ" />
@@ -100,8 +54,13 @@
 		<word id="10" form="ei)pe\" lemma="ei)=pon1" postag="v2sama---" head="0" relation="PRED" />
 		<word id="11" form="kai\" lemma="kai/" postag="d--------" head="12" relation="AuxZ" />
 		<word id="12" form="h(mi=n" lemma="e)gw/1" postag="p-p---md-" head="10" relation="OBJ" />
+		<word id="13" form="." lemma="punc1" postag="u--------" head="0" relation="AuxK" />
 	</sentence>
-	<sentence id="p70865" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="e)/nq'0:qa/lassan0" xml:lang="grc-x-beta">
+	<sentence id="Perseus_text_1999_01_0135_0_sen_a2" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="e)/nq&apos;0::3" xml:lang="grc-x-beta">
+		<primary>tovahk</primary>
+		<primary>megluthin</primary>
+		<primary>megluthin</primary>
+		<secondary>treebank</secondary>
 		<word id="1" form="e)/nq&apos;" lemma="e)/nqa1" postag="d--------" head="12" relation="ADV" />
 		<word id="2" form="a)/lloi" lemma="a)/llos1" postag="a-p---mn-" head="12" relation="SBJ" />
 		<word id="3" form="me\n" lemma="me/n1" postag="g--------" head="12" relation="AuxY" />
@@ -120,248 +79,6 @@
 		<word id="16" form="pefeugo/tes" lemma="feu/gw1" postag="t-prpamn-" head="12" relation="ADV" />
 		<word id="17" form="h)de\" lemma="h)de/1" postag="c--------" head="16" relation="COORD" />
 		<word id="18" form="qa/lassan" lemma="qa/lassa1" postag="n-s---fa-" head="17" relation="OBJ_CO" />
-	</sentence>
-	<sentence id="8" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="to\n0:ei)=nai0" xml:lang="grc-x-beta">
-		<word id="1" form="to\n" lemma="o(1" postag="l--------" head="10" relation="OBJ" />
-		<word id="2" form="d&apos;" lemma="de/1" postag="g--------" head="0" relation="COORD" />
-		<word id="3" form="oi)=on" lemma="oi)=os1" postag="a-s---ma-" head="1" relation="ATR" />
-		<word id="4" form="no/stou" lemma="no/stos1" postag="n-s---mg-" head="6" relation="OBJ_CO" />
-		<word id="5" form="kexrhme/non" lemma="xra/w2" postag="t-srpema-" head="1" relation="ATR" />
-		<word id="6" form="h)de\" lemma="h)de/1" postag="c--------" head="5" relation="COORD" />
-		<word id="7" form="gunaiko\s" lemma="gunh/1" postag="n-s---fg-" head="6" relation="OBJ_CO" />
-		<word id="8" form="nu/mfh" lemma="nu/mfh1" postag="n-s---fn-" head="11" relation="ATR" />
-		<word id="9" form="po/tni&apos;" lemma="po/tnia1" postag="n-s---fn-" head="8" relation="ATR" />
-		<word id="10" form="e)/ruke" lemma="e)ru/kw1" postag="v3siia---" head="2" relation="PRED_CO" />
-		<word id="11" form="*kaluyw\" lemma="*kaluyw/1" postag="n-s---fn-" head="10" relation="SBJ" />
-		<word id="12" form="di=a" lemma="di=os1" postag="a-s---fn-" head="11" relation="ATR" />
-		<word id="13" form="qea/wn" lemma="qea/1" postag="n-p---fg-" head="12" relation="ATR" />
-		<word id="14" form="e)n" lemma="e)n1" postag="r--------" head="10" relation="AuxP" />
-		<word id="15" form="spe/ssi" lemma="spe/os1" postag="n-p---nd-" head="14" relation="ADV" />
-		<word id="16" form="glafuroi=si" lemma="glafuro/s1" postag="a-p---nd-" head="15" relation="ATR" />
-		<word id="17" form="," lemma="comma1" postag="u--------" head="18" relation="AuxX" />
-		<word id="18" form="lilaiome/nh" lemma="lilai/omai1" postag="t-spp-fn-" head="10" relation="ADV" />
-		<word id="19" form="po/sin" lemma="po/sis1" postag="n-s---ma-" head="20" relation="PNOM" />
-		<word id="20" form="ei)=nai" lemma="ei)mi/1" postag="v--pna---" head="18" relation="OBJ" />
-	</sentence>
-	<sentence id="p70866" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="a)ll'1:fi/loisi0" xml:lang="grc-x-beta">
-		<word id="1" form="a)ll&apos;" lemma="a)lla/" postag="c--------" head="20" relation="AuxY" />
-		<word id="2" form="o(/te" lemma="o(/te1" postag="c--------" head="20" relation="AuxC" />
-		<word id="3" form="dh\" lemma="dh/1" postag="g--------" head="5" relation="AuxY" />
-		<word id="4" form="e)/tos" lemma="e)/tos1" postag="n-s---nn-" head="5" relation="SBJ" />
-		<word id="5" form="h)=lqe" lemma="e)/rxomai1" postag="v3saia---" head="2" relation="ADV" />
-		<word id="6" form="periplome/nwn" lemma="peripe/lomai1" postag="t-ppp-mg-" head="5" relation="ADV" />
-		<word id="7" form="e)niautw=n" lemma="e)niauto/s1" postag="n-p---mg-" head="6" relation="SBJ" />
-		<word id="8" form="," lemma="comma1" postag="u--------" head="2" relation="AuxX" />
-		<word id="9" form="tw=|" lemma="o(1" postag="l--------" head="11" relation="ADV" />
-		<word id="10" form="oi(" lemma="o(1" postag="l--------" head="12" relation="ATR" />
-		<word id="11" form="e)peklw/santo" lemma="e)piklw/qw1" postag="v3pai----" head="4" relation="ATR" />
-		<word id="12" form="qeoi\" lemma="qeo/s1" postag="n-p---mn-" head="11" relation="SBJ" />
-		<word id="13" form="oi)=ko/nde" lemma="oi)=ko/nde1" postag="d--------" head="14" relation="OBJ" />
-		<word id="14" form="ne/esqai" lemma="ne/omai1" postag="v--pne---" head="11" relation="OBJ" />
-		<word id="15" form="ei)s" lemma="ei)s1" postag="r--------" head="14" relation="AuxP" />
-		<word id="16" form="*)iqa/khn" lemma="*)iqa/kh1" postag="n-s---fa-" head="15" relation="OBJ" />
-		<word id="17" form="," lemma="comma1" postag="u--------" head="11" relation="AuxX" />
-		<word id="18" form="ou)d&apos;" lemma="ou)de/1" postag="g--------" head="19" relation="AuxZ" />
-		<word id="19" form="e)/nqa" lemma="e)/nqa1" postag="d--------" head="20" relation="ADV" />
-		<word id="20" form="pefugme/nos" lemma="feu/gw1" postag="t-srpemn-" head="0" relation="PRED" />
-		<word id="21" form="h)=en" lemma="ei)mi/1" postag="v3siia---" head="20" relation="AuxV" />
-		<word id="22" form="a)e/qlwn" lemma="a)=qlos1" postag="n-p---mg-" head="20" relation="OBJ" />
-		<word id="23" form="kai\" lemma="kai/" postag="d--------" head="24" relation="AuxZ" />
-		<word id="24" form="meta\" lemma="meta/1" postag="r--------" head="20" relation="AuxP" />
-		<word id="25" form="oi(=si" lemma="o(/s1" postag="p-p---md-" head="26" relation="ATR" />
-		<word id="26" form="fi/loisi" lemma="fi/los1" postag="a-p---md-" head="24" relation="ADV" />
-	</sentence>
-	<sentence id="p70867" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="qeoi\1:*poseida/wnos0" xml:lang="grc-x-beta">
-		<word id="1" form="qeoi\" lemma="qeo/s1" postag="n-p---mn-" head="3" relation="SBJ" />
-		<word id="2" form="d&apos;" lemma="de/1" postag="g--------" head="0" relation="COORD" />
-		<word id="3" form="e)le/airon" lemma="e)leai/rw1" postag="v3piia---" head="2" relation="PRED_CO" />
-		<word id="4" form="a(/pantes" lemma="a(/pas1" postag="a-p---mn-" head="1" relation="ATR" />
-		<word id="5" form="no/sfi" lemma="no/sfi1" postag="r--------" head="4" relation="AuxP" />
-		<word id="6" form="*poseida/wnos" lemma="*poseidew/n1" postag="n-s---mg-" head="5" relation="ADV" />
-	</sentence>
-	<sentence id="p70868" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="o(1:i(ke/sqai0" xml:lang="grc-x-beta">
-		<word id="1" form="o(" lemma="o(1" postag="l--------" head="4" relation="SBJ" />
-		<word id="2" form="d&apos;" lemma="de/1" postag="g--------" head="0" relation="COORD" />
-		<word id="3" form="a)sperxe\s" lemma="a)sperxe/s1" postag="d--------" head="4" relation="ADV" />
-		<word id="4" form="mene/ainen" lemma="meneai/nw1" postag="v3siia---" head="2" relation="PRED_CO" />
-		<word id="5" form="a)ntiqe/w|" lemma="a)nti/qeos1" postag="a-s---md-" head="6" relation="ATR" />
-		<word id="6" form="*)odush=i" lemma="*)odusseu/s1" postag="n-s---md-" head="4" relation="OBJ" />
-		<word id="7" form="pa/ros" lemma="pa/ros1" postag="c--------" head="4" relation="AuxC" />
-		<word id="8" form="h(\n" lemma="o(/s1" postag="p-s---fa-" head="9" relation="ATR" />
-		<word id="9" form="gai=an" lemma="gai=a1" postag="n-s---fa-" head="10" relation="OBJ" />
-		<word id="10" form="i(ke/sqai" lemma="i(kne/omai1" postag="v--an----" head="7" relation="ADV" />
-	</sentence>
-	<sentence id="p70869" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="a)ll'2:e(kato/mbhs0" xml:lang="grc-x-beta">
-		<word id="1" form="a)ll&apos;" lemma="a)lla/" postag="c--------" head="5" relation="AuxY" />
-		<word id="2" form="o(" lemma="o(1" postag="l--------" head="5" relation="SBJ" />
-		<word id="3" form="me\n" lemma="me/n1" postag="g--------" head="5" relation="AuxY" />
-		<word id="4" form="*ai)qi/opas" lemma="*ai)qi/oy1" postag="n-p---ma-" head="8" relation="OBJ_AP" />
-		<word id="5" form="meteki/aqe" lemma="metakia/qw1" postag="v3siia---" head="0" relation="PRED" />
-		<word id="6" form="thlo/q&apos;" lemma="thlo/qi1" postag="d--------" head="7" relation="ADV" />
-		<word id="7" form="e)o/ntas" lemma="ei)mi/1" postag="t-pppama-" head="4" relation="ATR" />
-		<word id="8" form="," lemma="comma1" postag="u--------" head="5" relation="APOS" />
-		<word id="9" form="*ai)qi/opas" lemma="*ai)qi/oy1" postag="n-p---ma-" head="8" relation="OBJ_AP" />
-		<word id="10" form="toi\" lemma="o(1" postag="l--------" head="12" relation="SBJ" />
-		<word id="11" form="dixqa\" lemma="dixqa/1" postag="d--------" head="12" relation="OBJ" />
-		<word id="12" form="dedai/atai" lemma="dai/w2" postag="v3prie---" head="16" relation="ATR_CO" />
-		<word id="13" form="," lemma="comma1" postag="u--------" head="16" relation="AuxX" />
-		<word id="14" form="e)/sxatoi" lemma="e)/sxatos1" postag="a-p---mn-" head="16" relation="ATR_CO" />
-		<word id="15" form="a)ndrw=n" lemma="a)nh/r1" postag="n-p---mg-" head="14" relation="ATR" />
-		<word id="16" form="," lemma="comma1" postag="u--------" head="9" relation="AuxX" />
-		<word id="17" form="oi(" lemma="o(1" postag="l--------" head="22" relation="SBJ_ExD0_ATR_CO" />
-		<word id="18" form="me\n" lemma="me/n1" postag="g--------" head="22" relation="AuxY" />
-		<word id="19" form="dusome/nou" lemma="du/w2" postag="t-sfp-mg-" head="22" relation="OBJ_ExD0_ATR_CO" />
-		<word id="20" form="*(uperi/onos" lemma="*(uperi/wn1" postag="n-s---mg-" head="19" relation="ATR" />
-		<word id="21" form="oi(" lemma="o(1" postag="l--------" head="22" relation="SBJ_ExD1_ATR_CO" />
-		<word id="22" form="d&apos;" lemma="de/1" postag="g--------" head="16" relation="COORD" />
-		<word id="23" form="a)nio/ntos" lemma="a)/neimi1" postag="t-sppamg-" head="22" relation="OBJ_ExD1_ATR_CO" />
-		<word id="24" form="," lemma="comma1" postag="u--------" head="25" relation="AuxX" />
-		<word id="25" form="a)ntio/wn" lemma="a)ntia/w1" postag="t-sppamn-" head="5" relation="ADV" />
-		<word id="26" form="tau/rwn" lemma="tau=ros1" postag="n-p---mg-" head="28" relation="ATR_CO" />
-		<word id="27" form="te" lemma="te1" postag="g--------" head="28" relation="AuxY" />
-		<word id="28" form="kai\" lemma="kai/1" postag="c--------" head="30" relation="COORD" />
-		<word id="29" form="a)rneiw=n" lemma="a)rneio/s1" postag="n-p---mg-" head="28" relation="ATR_CO" />
-		<word id="30" form="e(kato/mbhs" lemma="e(kato/mbh1" postag="n-s---fg-" head="25" relation="OBJ" />
-	</sentence>
-	<sentence id="p70870" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="e)/nq'1:parh/menos0" xml:lang="grc-x-beta">
-		<word id="1" form="e)/nq&apos;" lemma="e)/nqa1" postag="d--------" head="4" relation="ADV" />
-		<word id="2" form="o(/" lemma="o(1" postag="l--------" head="4" relation="SBJ" />
-		<word id="3" form="g&apos;" lemma="ge1" postag="g--------" head="2" relation="AuxZ" />
-		<word id="4" form="e)te/rpeto" lemma="te/rpw1" postag="v3siie---" head="0" relation="PRED" />
-		<word id="5" form="daiti\" lemma="dai/th" postag="n-s---fd-" head="6" relation="ADV" />
-		<word id="6" form="parh/menos" lemma="other" postag="---------" head="4" relation="ADV" />
-	</sentence>
-	<sentence id="14" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="oi(3:h)=san0" xml:lang="grc-x-beta">
-		<word id="1" form="oi(" lemma="o(1" postag="l--------" head="4" relation="ATR" />
-		<word id="2" form="de\" lemma="de/1" postag="g--------" head="0" relation="COORD" />
-		<word id="3" form="dh\" lemma="dh/1" postag="g--------" head="10" relation="AuxY" />
-		<word id="4" form="a)/lloi" lemma="a)/llos1" postag="a-p---mn-" head="10" relation="SBJ" />
-		<word id="5" form="*zhno\s" lemma="*zeu/s1" postag="n-s---mg-" head="7" relation="ATR" />
-		<word id="6" form="e)ni\" lemma="e)n1" postag="r--------" head="10" relation="AuxP" />
-		<word id="7" form="mega/roisin" lemma="me/garon1" postag="n-p---nd-" head="6" relation="ADV" />
-		<word id="8" form="*)olumpi/ou" lemma="*)olu/mpios1" postag="a-s---mg-" head="5" relation="ATR" />
-		<word id="9" form="a(qro/oi" lemma="a)qro/os1" postag="a-p---mn-" head="10" relation="PNOM" />
-		<word id="10" form="h)=san" lemma="ei)mi/1" postag="v3piia---" head="2" relation="PRED_CO" />
-	</sentence>
-	<sentence id="15" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="toi=si0:te4" xml:lang="grc-x-beta">
-		<word id="1" form="toi=si" lemma="o(1" postag="l--------" head="4" relation="OBJ" />
-		<word id="2" form="de\" lemma="de/1" postag="g--------" head="0" relation="COORD" />
-		<word id="3" form="mu/qwn" lemma="mu=qos1" postag="n-p---mg-" head="4" relation="OBJ" />
-		<word id="4" form="h)=rxe" lemma="a)/rxw1" postag="v3sria---" head="2" relation="PRED_CO" />
-		<word id="5" form="path\r" lemma="path/r1" postag="n-s---mn-" head="4" relation="SBJ" />
-		<word id="6" form="a)ndrw=n" lemma="a)nh/r1" postag="n-p---mg-" head="9" relation="ATR_CO" />
-		<word id="7" form="te" lemma="te1" postag="g--------" head="9" relation="AuxY" />
-		<word id="8" form="qew=n" lemma="qeo/s1" postag="n-p---mg-" head="9" relation="ATR_CO" />
-		<word id="9" form="te" lemma="te1" postag="g--------" head="5" relation="COORD" />
-	</sentence>
-	<sentence id="16" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="mnh/sato0:*)ore/sths0" xml:lang="grc-x-beta">
-		<word id="1" form="mnh/sato" lemma="mimnh/skw1" postag="v3sai----" head="0" relation="PRED" />
-		<word id="2" form="ga\r" lemma="ga/r1" postag="g--------" head="1" relation="AuxY" />
-		<word id="3" form="kata\" lemma="kata/1" postag="r--------" head="1" relation="AuxP" />
-		<word id="4" form="qumo\n" lemma="qumo/s1" postag="n-s---ma-" head="3" relation="ADV" />
-		<word id="5" form="a)mu/monos" lemma="a)mu/mwn1" postag="a-s----g-" head="6" relation="ATR" />
-		<word id="6" form="*ai)gi/sqoio" lemma="*ai)/gisqos1" postag="n-s---mg-" head="1" relation="OBJ" />
-		<word id="7" form="," lemma="comma1" postag="u--------" head="12" relation="AuxX" />
-		<word id="8" form="to/n" lemma="o(1" postag="l--------" head="12" relation="OBJ" />
-		<word id="9" form="r(&apos;" lemma="a)/ra" postag="g--------" head="12" relation="AuxY" />
-		<word id="10" form="*)agamemnoni/dhs" lemma="*)agamemnoni/dhs1" postag="n-s---mn-" head="12" relation="SBJ_AP_ExD_APOS" />
-		<word id="11" form="thlekluto\s" lemma="thlekluto/s1" postag="a-s---mn-" head="13" relation="ATR" />
-		<word id="12" form="e)/ktan&apos;" lemma="ktei/nw1" postag="v3saia---" head="6" relation="ATR" />
-		<word id="13" form="*)ore/sths" lemma="*)ore/sths1" postag="n-s---mn-" head="12" relation="SBJ_AP_ExD_APOS" />
-	</sentence>
-	<sentence id="p70871" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="tou=0:methu/da0" xml:lang="grc-x-beta">
-		<word id="1" form="tou=" lemma="o(1" postag="l--------" head="4" relation="OBJ" />
-		<word id="2" form="o(/" lemma="o(1" postag="l--------" head="7" relation="SBJ" />
-		<word id="3" form="g&apos;" lemma="ge1" postag="g--------" head="2" relation="AuxZ" />
-		<word id="4" form="e)pimnhsqei\s" lemma="e)pimimnh/skomai1" postag="t-sappmn-" head="7" relation="ADV" />
-		<word id="5" form="e)/pe&apos;" lemma="e)/pos1" postag="n-p---na-" head="7" relation="OBJ" />
-		<word id="6" form="a)qana/toisi" lemma="a)qa/natos1" postag="a-p---md-" head="7" relation="OBJ" />
-		<word id="7" form="methu/da" lemma="metauda/w1" postag="v3siia---" head="0" relation="PRED" />
-	</sentence>
-	<sentence id="p70872" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="w)\0:ai)tio/wntai0" xml:lang="grc-x-beta">
-		<word id="2" form="w)\" lemma="w)=1" postag="e--------" head="3" relation="AuxZ" />
-		<word id="3" form="po/poi" lemma="po/poi1" postag="e--------" head="10" relation="AuxY" />
-		<word id="4" form="," lemma="comma1" postag="u--------" head="3" relation="AuxX" />
-		<word id="5" form="oi(=on" lemma="oi(=os1" postag="a-s---na-" head="10" relation="ADV" />
-		<word id="6" form="dh/" lemma="dh/1" postag="g--------" head="10" relation="AuxY" />
-		<word id="7" form="nu" lemma="nu=n1" postag="d--------" head="10" relation="ADV" />
-		<word id="8" form="qeou\s" lemma="qeo/s1" postag="n-p---ma-" head="10" relation="OBJ" />
-		<word id="9" form="brotoi\" lemma="broto/s1" postag="n-p---mn-" head="10" relation="SBJ" />
-		<word id="10" form="ai)tio/wntai" lemma="ai)tia/omai1" postag="v3ppie---" head="0" relation="PRED" />
-	</sentence>
-	<sentence id="p70873" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="e)c0:a)/koitin0" xml:lang="grc-x-beta">
-		<word id="1" form="e)c" lemma="e)k1" postag="r--------" head="6" relation="AuxP" />
-		<word id="2" form="h(me/wn" lemma="e)gw/1" postag="p-p---mg-" head="1" relation="OBJ" />
-		<word id="3" form="ga/r" lemma="ga/r1" postag="g--------" head="4" relation="AuxY" />
-		<word id="4" form="fasi" lemma="fhmi/1" postag="v3ppia---" head="9" relation="PRED_CO" />
-		<word id="5" form="ka/k&apos;" lemma="ka/kh1" postag="n-p---fn-" head="6" relation="SBJ" />
-		<word id="6" form="e)/mmenai" lemma="ei)mi/1" postag="v--pna---" head="4" relation="OBJ" />
-		<word id="7" form="," lemma="comma1" postag="u--------" head="9" relation="AuxX" />
-		<word id="8" form="oi(" lemma="o(1" postag="l--------" head="11" relation="ATR" />
-		<word id="9" form="de\" lemma="de/1" postag="g--------" head="0" relation="COORD" />
-		<word id="10" form="kai\" lemma="kai/1" postag="c--------" head="11" relation="AuxZ" />
-		<word id="11" form="au)toi\" lemma="au)to/s1" postag="a-p---mn-" head="17" relation="SBJ" />
-		<word id="12" form="sfh=|sin" lemma="sfo/s1" postag="a-p---fd-" head="13" relation="ATR" />
-		<word id="13" form="a)tasqali/h|sin" lemma="a)tasqali/a1" postag="n-p---fd-" head="17" relation="ADV" />
-		<word id="14" form="u(pe\r" lemma="u(pe/r1" postag="r--------" head="17" relation="AuxP" />
-		<word id="15" form="mo/ron" lemma="mo/ros1" postag="n-s---ma-" head="14" relation="ADV" />
-		<word id="16" form="a)/lge&apos;" lemma="a)/lgos1" postag="n-p---na-" head="17" relation="OBJ" />
-		<word id="17" form="e)/xousin" lemma="e)/xw1" postag="v3ppia---" head="9" relation="PRED_CO" />
-		<word id="18" form="," lemma="comma1" postag="u--------" head="19" relation="AuxX" />
-		<word id="19" form="w(s" lemma="w(s1" postag="c--------" head="17" relation="AuxC" />
-		<word id="20" form="kai\" lemma="kai/" postag="d--------" head="21" relation="AuxZ" />
-		<word id="21" form="nu=n" lemma="nu=n1" postag="d--------" head="31" relation="ADV" />
-		<word id="22" form="*ai)/gisqos" lemma="*ai)/gisqos1" postag="n-s---mn-" head="26" relation="SBJ" />
-		<word id="23" form="u(pe\r" lemma="u(pe/r1" postag="r--------" head="31" relation="AuxP" />
-		<word id="24" form="mo/ron" lemma="mo/ros1" postag="n-s---ma-" head="23" relation="ADV" />
-		<word id="25" form="*)atrei/+dao" lemma="*)atrei/dhs1" postag="n-s---mg-" head="27" relation="ATR" />
-		<word id="26" form="gh=m&apos;" lemma="game/w1" postag="v3saia---" head="31" relation="ADV_CO" />
-		<word id="27" form="a)/loxon" lemma="a)/loxos1" postag="n-s---fa-" head="26" relation="OBJ" />
-		<word id="28" form="mnhsth/n" lemma="mnhsto/s1" postag="a-s---fa-" head="27" relation="ATR" />
-		<word id="29" form="," lemma="comma1" postag="u--------" head="31" relation="AuxX" />
-		<word id="30" form="to\n" lemma="o(1" postag="l--------" head="32" relation="OBJ" />
-		<word id="31" form="d&apos;" lemma="de/1" postag="g--------" head="19" relation="COORD" />
-		<word id="32" form="e)/ktane" lemma="ktei/nw1" postag="v3saia---" head="31" relation="ADV_CO" />
-		<word id="33" form="nosth/santa" lemma="noste/w1" postag="t-sapama-" head="30" relation="ATR" />
-		<word id="34" form="," lemma="comma1" postag="u--------" head="35" relation="AuxX" />
-		<word id="35" form="ei)dw\s" lemma="oi)=da1" postag="t-srpamn-" head="31" relation="ADV" />
-		<word id="36" form="ai)pu\n" lemma="ai)pu/s1" postag="a-s---ma-" head="37" relation="ATR" />
-		<word id="37" form="o)/leqron" lemma="o)/leqros1" postag="n-s---ma-" head="35" relation="OBJ" />
-		<word id="38" form="," lemma="comma1" postag="u--------" head="39" relation="AuxX" />
-		<word id="39" form="e)pei\" lemma="e)pei/1" postag="c--------" head="35" relation="AuxC" />
-		<word id="40" form="pro/" lemma="pro/" postag="d--------" head="42" relation="ADV" />
-		<word id="41" form="oi(" lemma="e(/1" postag="p-s---md-" head="42" relation="OBJ" />
-		<word id="42" form="ei)/pomen" lemma="ei)=pon1" postag="v1paia---" head="39" relation="ADV" />
-		<word id="43" form="h(mei=s" lemma="e)gw/1" postag="p-p---mn-" head="42" relation="SBJ" />
-		<word id="44" form="," lemma="comma1" postag="u--------" head="46" relation="AuxX" />
-		<word id="45" form="*(ermei/an" lemma="*(ermh=s1" postag="n-s---ma-" head="47" relation="OBJ_AP" />
-		<word id="46" form="pe/myantes" lemma="pe/mpw1" postag="t-papamn-" head="42" relation="ADV" />
-		<word id="47" form="," lemma="comma1" postag="u--------" head="46" relation="APOS" />
-		<word id="48" form="e)u/skopon" lemma="eu)/skopos1" postag="a-s---ma-" head="49" relation="ATR" />
-		<word id="49" form="a)rgei+fo/nthn" lemma="*)argeifo/nths1" postag="n-s---ma-" head="47" relation="OBJ_AP" />
-		<word id="50" form="," lemma="comma1" postag="u--------" head="54" relation="AuxX" />
-		<word id="51" form="mh/t&apos;" lemma="mh/te1" postag="g--------" head="54" relation="AuxY" />
-		<word id="52" form="au)to\n" lemma="au)to/s1" postag="a-s---ma-" head="53" relation="OBJ" />
-		<word id="53" form="ktei/nein" lemma="ktei/nw1" postag="v--pna---" head="54" relation="OBJ_CO" />
-		<word id="54" form="mh/te" lemma="mh/te1" postag="g--------" head="42" relation="COORD" />
-		<word id="55" form="mna/asqai" lemma="mna/omai1" postag="v--pne---" head="54" relation="OBJ_CO" />
-		<word id="56" form="a)/koitin" lemma="a)/koitis1" postag="n-s---fa-" head="55" relation="OBJ" />
-	</sentence>
-	<sentence id="p70874" document_id="Perseus:text:1999.01.0135" subdoc="book=1:card=1" span="e)k0:ai)/hs0" xml:lang="grc-x-beta">
-		<word id="1" form="e)k" lemma="e)k1" postag="r--------" head="5" relation="AuxP" />
-		<word id="2" form="ga\r" lemma="ga/r1" postag="g--------" head="5" relation="AuxY" />
-		<word id="3" form="*)ore/stao" lemma="*)ore/sths1" postag="n-s---mg-" head="1" relation="OBJ" />
-		<word id="4" form="ti/sis" lemma="ti/sis1" postag="n-s---fn-" head="5" relation="SBJ" />
-		<word id="5" form="e)/ssetai" lemma="ei)mi/1" postag="v3sfi----" head="0" relation="PRED" />
-		<word id="6" form="*)atrei/+dao" lemma="*)atrei/dhs1" postag="n-s---mg-" head="4" relation="ATR" />
-		<word id="7" form="," lemma="comma1" postag="u--------" head="8" relation="AuxX" />
-		<word id="8" form="o(ppo/t&apos;" lemma="o(po/te1" postag="d--------" head="5" relation="AuxC" />
-		<word id="9" form="a)\n" lemma="a)/n1" postag="g--------" head="8" relation="AuxZ" />
-		<word id="10" form="h(bh/sh|" lemma="h(ba/w1" postag="v3sasa---" head="12" relation="ADV_CO" />
-		<word id="11" form="te" lemma="te1" postag="g--------" head="12" relation="AuxY" />
-		<word id="12" form="kai\" lemma="kai/1" postag="c--------" head="8" relation="COORD" />
-		<word id="13" form="h(=s" lemma="o(/s1" postag="p-s---fg-" head="15" relation="ATR" />
-		<word id="14" form="i(mei/retai" lemma="i(mei/rw1" postag="v3sas----" head="12" relation="ADV_CO" />
-		<word id="15" form="ai)/hs" lemma="ai)=a1" postag="n-s---fg-" head="14" relation="OBJ" />
+		<word id="19" form=":" lemma="punc1" postag="u--------" head="0" relation="AuxK" />
 	</sentence>
 </treebank>
