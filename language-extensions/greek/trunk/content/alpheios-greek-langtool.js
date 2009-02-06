@@ -2,7 +2,7 @@
  * @fileoverview Greek extension of Alph.LanguageTool class
  * @version $Id$
  *
- * Copyright 2008 Cantus Foundation
+ * Copyright 2008-2009 Cantus Foundation
  * http://alpheios.net
  * 
  * This file is part of Alpheios.
@@ -445,7 +445,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
             a_params.xslt_params.group4 = 'hdwd';
         }
-        if (a_params.type == 'refl')
+        if (a_params.type == 'refl' || a_params.type == 'pos')
         {
             a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
             a_params.xslt_params.group4 = 'pers';

@@ -53,6 +53,10 @@
                           <item>Intensive
                               <ptr target="#pronoun|type:inten"/>
                           </item>
+                          <item>Possessive
+                              <ptr target="#pronoun|type:pos"/>
+                          </item>
+                          
                       </list>
                   </item>
                   <item>Articles
