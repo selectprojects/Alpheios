@@ -146,6 +146,12 @@ let $corrections :=
     <entry key="Φυλεύς">
       son of Augēas of Elis
     </entry>
+    <entry key="ωὑτός">
+      the same
+    </entry>
+    <entry key="ἀνιάω">
+      be a torment, nuisance
+    </entry>
   </corrections>
 let $correctedLemmas := $corrections/entry/@key
 
