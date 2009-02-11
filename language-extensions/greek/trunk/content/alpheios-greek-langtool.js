@@ -478,26 +478,33 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
              * and deduping duplicate endings (by attributes case, number, gender)
              */
             a_infl_type = is_simple[1];
-            a_params.order = 'gend-decl-type';
-            a_params.xslt_params.dedupe_by='case-num-gend';
+            a_params.xml_url =
+                'chrome://alpheios-greek/content/inflections/alph-infl-' +
+                a_infl_type + '-simpl.xml';
+            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
+            a_params.group4 = 'gend';
+            a_params.title = 'alph-infl-title-noun';
         }
-        a_params.xml_url =
-            'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
-        a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
-        a_params.xslt_params.match_pofs = a_infl_type;
-
-        if (a_params.order )
+        else
         {
+            a_params.xml_url =
+                'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
+            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
+            a_params.xslt_params.match_pofs = a_infl_type;
 
-            var order = a_params.order.split('-');
-            if (order.length > 0)
+            if (a_params.order )
             {
-                a_params.xslt_params.group4 = order[0];
-                a_params.xslt_params.group5 = order[1];
-                a_params.xslt_params.group6 = order[2];
+    
+                var order = a_params.order.split('-');
+                if (order.length > 0)
+                {
+                    a_params.xslt_params.group4 = order[0];
+                    a_params.xslt_params.group5 = order[1];
+                    a_params.xslt_params.group6 = order[2];
+                }
             }
         }
-        else if (a_infl_type == 'cardinal')
+        if (a_infl_type == 'cardinal')
         {
             a_params.xslt_params.group4 = 'hdwd';
         }

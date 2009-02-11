@@ -19,7 +19,14 @@
               <head>Alpheios Greek Inflection Tables</head>
               <list>
                   <item>Nouns
-                          <ptr target="#noun"/>
+                      <list>
+                          <item>Full table
+                              <ptr target="#noun"/>
+                          </item>
+                          <item>Simplified table
+                              <ptr target="#noun_simplified"/>
+                          </item>
+                      </list>
                   </item>
                   <item>Adjectives
                       <ptr target="#adjective"/>
