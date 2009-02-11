@@ -6,6 +6,11 @@
          xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
     <script type="application/x-javascript" src="chrome://alpheios-greek/content/alpheios-greek-langtool.js" />
     
+    <stringbundleset id="stringbundleset">
+        <stringbundle id="alpheios-strings-greek" 
+                      src="chrome://alpheios-greek/locale/alpheios-greek-prefs.properties"/>
+    </stringbundleset>
+
     <broadcasterset id="mainBroadcasterSet">
         <!-- broadcaster which hides greek-specific menu elements -->
         <broadcaster id="alph-lang-greek-hide"
