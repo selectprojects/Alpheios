@@ -55,8 +55,18 @@
                           </item>
                           <item>Possessive
                               <ptr target="#pronoun|type:pos"/>
+                              <list>
+                                  <item>1st Person
+                                      <ptr target="#pronoun|type:pos1"/>
+                                  </item>
+                                  <item>2nd Person
+                                      <ptr target="#pronoun|type:pos2"/>
+                                  </item>
+                                  <item>3rd Person
+                                      <ptr target="#pronoun|type:pos3"/>
+                                  </item>
+                              </list>
                           </item>
-                          
                       </list>
                   </item>
                   <item>Articles

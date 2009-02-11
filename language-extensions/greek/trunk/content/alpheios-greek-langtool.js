@@ -194,7 +194,8 @@ Alph.LanguageToolSet.greek.PRONOUNS =
     ['inter',['τίς']],
     ['inten',['αὐτός']],
     ['recip',['ἀλλήλων']],
-    ['refl',['ἐμαυτοῦ','σαυτοῦ','ἑαυτοῦ']]
+    ['refl',['ἐμαυτοῦ','σαυτοῦ','ἑαυτοῦ']],
+    ['pos',['']]
 ];
 
 /**
@@ -445,7 +446,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
             a_params.xslt_params.group4 = 'hdwd';
         }
-        if (a_params.type == 'refl' || a_params.type == 'pos')
+        if (a_params.type == 'refl' || a_params.type.match(/^pos/))
         {
             a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
             a_params.xslt_params.group4 = 'pers';
