@@ -97,6 +97,8 @@
                type="regular primary">εσιv</infl-ending>
         <infl-ending
                type="regular primary">ασι</infl-ending>
+        <infl-ending
+               type="regular primary">ασιv</infl-ending>
     </infl-ending-set>
     <infl-ending-set
        num="plural"   case="genitive" gend="masculine feminine neuter">
@@ -157,11 +159,6 @@
                type="regular primary">η</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-       num="plural"   case="dative" gend="neuter">
-        <infl-ending
-               type="regular primary">ασιv</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
        num="plural"   case="nominative" gend="neuter">
         <infl-ending
                type="regular primary">α</infl-ending>
@@ -192,6 +189,8 @@
     <infl-ending-set
        num="singular"   case="accusative" gend="masculine feminine neuter">
         <infl-ending
+               type="regular primary">_</infl-ending>
+        <infl-ending
                type="regular primary">ον</infl-ending>
         <infl-ending
                type="regular primary">α</infl-ending>
@@ -200,6 +199,10 @@
     </infl-ending-set>
     <infl-ending-set
        num="singular"   case="dative" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">αι</infl-ending>
+        <infl-ending
+               type="regular primary">ι</infl-ending>
         <infl-ending
                type="regular primary">ῳ</infl-ending>
     </infl-ending-set>
@@ -218,6 +221,8 @@
        num="singular"   case="nominative" gend="masculine feminine neuter">
         <infl-ending
                type="regular primary">_</infl-ending>
+        <infl-ending
+               type="regular primary">v</infl-ending>
     </infl-ending-set>
     <infl-ending-set
        num="singular"   case="vocative" gend="masculine feminine neuter">
@@ -242,8 +247,6 @@
         <infl-ending
                type="regular primary">ῃ</infl-ending>
         <infl-ending
-               type="regular primary">ι</infl-ending>
-        <infl-ending
                type="regular primary">ει</infl-ending>
     </infl-ending-set>
     <infl-ending-set
@@ -256,11 +259,11 @@
                type="regular primary">ις</infl-ending>
         <infl-ending
                type="regular primary">vς</infl-ending>
-        <infl-ending
-               type="regular primary">v</infl-ending>
     </infl-ending-set>
     <infl-ending-set
        num="singular"   case="vocative" gend="masculine feminine">
+        <infl-ending
+               type="regular primary">ς</infl-ending>
         <infl-ending
                type="regular primary">α</infl-ending>
         <infl-ending
@@ -279,11 +282,6 @@
                type="regular primary">ας</infl-ending>
         <infl-ending
                type="regular primary">ης</infl-ending>
-    </infl-ending-set>
-    <infl-ending-set
-       num="singular"   case="dative" gend="neuter">
-        <infl-ending
-               type="regular primary">αι</infl-ending>
     </infl-ending-set>
     <infl-ending-set
        num="singular"   case="nominative" gend="neuter">
