@@ -163,6 +163,7 @@ Alph.LanguageToolSet.greek.prototype.loadStripper = function()
 
     return true;
 }
+
 /**
  *  Mapping table which maps the part of speech or mood
  *  to the key name for producing the inflection table
@@ -483,7 +484,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
                 a_infl_type + '-simpl.xml';
             a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
             a_params.group4 = 'gend';
-            a_params.title = 'alph-infl-title-noun';
+            a_params.title = 'alph-infl-title-'+a_infl_type;
         }
         else
         {
@@ -888,3 +889,4 @@ Alph.LanguageToolSet.greek.prototype.get_lemma_id = function(a_lemma_key)
     }
     return lemma_id;
 }
+

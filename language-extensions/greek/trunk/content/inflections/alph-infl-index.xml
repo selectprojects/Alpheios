@@ -29,7 +29,14 @@
                       </list>
                   </item>
                   <item>Adjectives
-                      <ptr target="#adjective"/>
+                      <list>
+                          <item>Full table
+                              <ptr target="#adjective"/>
+                          </item>
+                          <item>Simplified table
+                              <ptr target="#adjective_simplified"/>
+                          </item>
+                      </list>
                   </item>
                   <item>Pronouns
                       <list>
