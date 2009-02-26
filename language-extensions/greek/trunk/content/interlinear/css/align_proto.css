@@ -98,3 +98,11 @@ div#header {
 	padding-right: .25em;
 
 }
+
+.stdfooter hr {
+    display: none;
+}
+
+.rights_info {
+    background-color: white !important;
+}
