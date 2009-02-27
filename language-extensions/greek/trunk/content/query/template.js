@@ -95,6 +95,24 @@ str[NEU] = 'N';
 str[SIN] = 'Singular';
 str[DUA] = 'Dual';
 str[PLUR] = 'Plural';
+str[IND] = 'Indicative';
+str[SUB] = 'Subjunctive';
+str[OPT] = 'Optative';
+str[IMP] = 'Imperative';
+str[PRE] = 'Present';
+str[IPF] = 'Imperfect';
+str[FUT] = 'Future';
+str[AOR] = 'Aorist';
+str[PER] = 'Perfect';
+str[PLU] = 'Pluperfect';
+str[FPF] = 'Future Perfect';
+str[AOR2] = '2nd Aorist';
+str[FUT2] = '2nd Future';
+str[PER2] = '2nd Perfect';
+str[PLU2] = '2nd Pluperfect';
+str[ACT] = 'Active';
+str[MID] = 'Middle';
+str[PAS] = 'Passive';
 
 /**
  * @singleton 
@@ -105,14 +123,22 @@ var TEMPLATE =
      * verb query template
      */
     verb:
-          { data_file: "chrome://alpheios-greek/content/inflections/alph-infl-verb-luo.xml",
+          { data_file: "chrome://alpheios-greek/content/inflections/alph-query-verb.xml",
+            xslt_file: "chrome://alpheios/skin/alph-infl-verbform.xsl",
+            load_data_on_start: false,
             /* table columns */
             cols: 
             [
-                [VOICE,[ACT,MID,PAS]],
-                [TENSE,[PRE,IPF,FUT,AOR,PER,PLU,FPF]],
+                [VOICE,[ACT,MID,PAS],{
+                    group1: MOOD,
+                    group4: TENSE }],
+                [TENSE,[PRE,IPF,FUT,AOR,PER,PLU,FPF],{
+                    group1: MOOD,
+                    group4: VOICE }],
                 [TENSE2,function(args){ return []}],
-                [MOOD,[IND,SUB,OPT,IMP]],
+                [MOOD,[IND,SUB,OPT,IMP],{
+                    group1: TENSE,
+                    group4: VOICE } ],
                 [NUM,[SIN,DUA,PLUR]],
                 [PERS,[FIRST,SECOND,THIRD]]
             ],
@@ -160,7 +186,9 @@ var TEMPLATE =
                 { mood: IMP,
                   pers: FIRST
                 }                   
-            ]
+            ],
+            /* temporary - additional noun definitions for testing */
+            test_defs: ['tell', 'seek', 'plan']
     },
     /**
      * noun query template
@@ -168,6 +196,8 @@ var TEMPLATE =
     noun:
           { data_file: "chrome://alpheios-greek/content/inflections/alph-query-noun.xml",
             xslt_file: "chrome://alpheios/skin/alph-infl-substantive-query.xsl",
+            load_data_on_start: true,
+
             /* table columns */
             cols: 
             [
@@ -222,7 +252,7 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
                             '<div class="choice" context="' + a_att + '">' +
                             '<input type="radio" name="' + attname + 
                             '"  value="' + a_att + '"/>' + 
-                            '<span class="attribute">' + a_att + '</span></div>\n'; 
+                            '<span class="attribute">' + a_att.replace(/_/,' ') + '</span></div>\n'; 
                     }
                 );
                 div = div + '</div>\n';
@@ -235,13 +265,24 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
    
     var buttons = '<div class="buttons"><button id="reset">reset</button></div>';
     html = html + '<div class="query-decl"/>' + buttons + '</div>';
-        
-    activate_table(a_elem,a_ans,template,html,a_callback)
-    $("#reset",a_elem).bind('click',
-        {base_elem: a_elem,
-         answer:a_ans,
-         filters:template.filters,
-         data_file: template.data_file},reset_table);
+    $(a_elem).append(html);
+    
+    var bind_data = 
+    {
+        answer:a_ans,
+        base_elem: a_elem,
+        template: template,
+        callback:a_callback
+    };
+    
+    $(".choice input",a_elem).bind('click',bind_data,check_answer);
+   
+    $("#reset",a_elem).bind('click',bind_data,reset_table);
+         
+    if (template.load_data_on_start)
+    {
+        activate_table(a_elem,a_ans,template,a_callback);
+    }
 }
 
 /**
@@ -268,49 +309,54 @@ function reset_table(a_event)
 
 /**
  * add the inflection table element
- * @param {Element} a_elem the DOM node to which the query html is appended
+ * @param {Element} a_elem the DOM node to which the query table is appended
  * @param {Element} a_ans the object containing the correct inflection details
- * @param {Object} a_temlate the table template data
- * @param {Object} a_html the query html built up so far
- * @param {Function} a_callback callback executed upon correct answer selected 
+ * @param {Object} a_tepmlate the table template data
+ * @param {Function} a_callback callback executed upon correct answer selected
+ * @param {Object} a_xslt_param optional xslt parameters 
  */
-function activate_table(a_elem,a_ans,a_template,a_html,a_callback)
+function activate_table(a_elem,a_ans,a_template,a_callback,a_xslt_param)
 {
-    var decl_table = load_forms(a_template.data_file, a_template.xslt_file);
-    $(a_elem).get(0).ownerDocument.importNode(
-        decl_table.getElementById("alph-infl-table"),true);
+    var decl_table = load_forms(a_template.data_file, a_template.xslt_file, a_xslt_param);
+    var table_elem = decl_table.getElementById("alph-infl-table") 
+    $(a_elem).get(0).ownerDocument.importNode(table_elem,true);
 
-    $("th",decl_table.getElementById("alph-infl-table")).each(
+    $("th",table_elem).each(
         function()
         {
             replace_string(this);        
         }
     );
     
-    $("th span",decl_table.getElementById("alph-infl-table")).each(
+    $("th span",table_elem).each(
         function()
         {
             replace_string(this);        
         }
     );
     
-    $("td.ending-group",decl_table.getElementById("alph-infl-table"))
+    $("td.ending-group",table_elem)
         .hover(toggle_cell_hover,toggle_cell_hover)
         .bind('click',{ answer: a_ans,
-                        filters:a_template.filters,
+                        template: a_template,
                         callback: a_callback}, show_table_form);
 
-        
-    $(".query-table",a_elem).remove();
-    $(".form-att",a_elem).remove();
+
+    // invalidate any empty cells
+    $("td.ending-group",table_elem).each(
+        function()
+        {
+            if ($(".ending",this).length == 0)
+            {
+                $(this).addClass("invalid");
+            }
+        }
+    );
+                        
+    $("#alph-infl-table",a_elem).remove();
     
-    a_elem.append(a_html);
     $(".query-decl",a_elem).append(decl_table.getElementById("alph-infl-table"));
     
-    $(".choice input",a_elem).bind('click',{ answer:a_ans,
-                                       filters:a_template.filters,
-                                       data_file:a_template.data_file,
-                                       callback:a_callback},check_answer);
 }
 
 /**
@@ -320,7 +366,7 @@ function activate_table(a_elem,a_ans,a_template,a_html,a_callback)
 function check_answer(a_event)
 {
     
-    var filters = a_event.data.filters;
+    var filters = a_event.data.template.filters;
     
     var parent_doc = this.ownerDocument;
     var parent_tbl = $(this).parents('div.query-table').get(0);
@@ -333,7 +379,33 @@ function check_answer(a_event)
     selected_val = selected_val.replace(/_/,' ');
     if (selected_val == a_event.data.answer.attributes['alph-'+ selected_name])
     {
-    
+        // if the table isn't already activated check to
+        // see if we should now show it
+        if ( $("#alph-infl-table",parent_doc).length == 0)
+        {
+            a_event.data.template.cols.forEach(
+                function(a_tcol)
+                {
+                    // if this is a filtering attribute,
+                    // activate the table
+                    if (a_tcol[0] == selected_name &&
+                        typeof a_tcol[2] == 'object')
+                    {
+                        activate_table(
+                            a_event.data.base_elem,
+                            a_event.data.answer,
+                            a_event.data.template,
+                            a_event.data.callback,
+                            $.extend(
+                                { filter_by: selected_name + '=' + selected_val
+                                  
+                                },a_tcol[2])
+                         );
+                    }
+                }
+            );
+        }
+        
         $(this).parent('.choice').addClass("correct").siblings(".choice").each(
             function()
             {
@@ -345,6 +417,7 @@ function check_answer(a_event)
         );
         
         $(this).unbind('click',check_answer);
+        
         $(parent_col).siblings('.query-col').each(
             function()
             {
@@ -352,7 +425,7 @@ function check_answer(a_event)
                 var other_att = $(this).attr('context');
         
                 // iterate through the filters, and if we find one which 
-                // has a matching pair of attributes, invalid the cell
+                // has a matching pair of attributes, invalidate the cell
                 for (var i=0; i<filters.length; i++)
                 {
                     if (
@@ -449,8 +522,9 @@ function show_form(event)
  * load the inflection form data
  * @param {String} a_file the url to the xml file containing the data
  * @param {String} a_xslt the url to the xslt to use to transform the data
+ * @param {Object} a_xslt_param optional xslt transform parameters
  */
-function load_forms(a_file,a_xslt)
+function load_forms(a_file,a_xslt,a_xslt_param)
 {
         var formXML = document.implementation.createDocument("", "", null);
         formXML.async = false;
@@ -463,6 +537,13 @@ function load_forms(a_file,a_xslt)
         var xsltProcessor = new XSLTProcessor();
         xsltProcessor.importStylesheet(xsltDoc);
         
+        if (typeof a_xslt_param != "undefined")
+        {
+            for (var param in a_xslt_param)
+            {
+                xsltProcessor.setParameter("",param,a_xslt_param[param]);
+            }
+        }
         var formHTML = '';
         try
         {
@@ -486,6 +567,7 @@ function load_forms(a_file,a_xslt)
 function replace_string(a_elem,a_props)
 {
     var text = jQuery.trim($(a_elem).text());
+    text = text.replace(/ /,'_');
     try 
     {
         //var newtext = a_props.getString(text);
@@ -494,6 +576,7 @@ function replace_string(a_elem,a_props)
         {
             $(a_elem).text(newtext);        
         }
+        
     } 
     catch(e)
     {
@@ -599,7 +682,7 @@ function show_table_form(a_event,a_cell)
         var answer_terms = [];
         for (var prop in a_event.data.answer.attributes)
         {
-            if (prop.match(/^alph-/))
+            if (prop.match(/^alph-/) && a_event.data.answer.attributes[prop] != '' )
             {
                 answer_terms.push(a_event.data.answer.attributes[prop]);
             }
@@ -653,16 +736,16 @@ function auto_select_answer(a_col,a_data)
         
                 // iterate through the filters, and if we find one which 
                 // has a matching pair of attributes, invalidate the cell
-                for (var i=0; i<a_data.filters.length; i++)
+                for (var i=0; i<a_data.template.filters.length; i++)
                 {
                     if (
-                            a_data.filters[i][other_att] &&
-                            a_data.filters[i][col_name] && 
-                            a_data.filters[i][col_name]==auto_value
+                            a_data.template.filters[i][other_att] &&
+                            a_data.template.filters[i][col_name] && 
+                            a_data.template.filters[i][col_name]==answer
                         )
                     {
-                        $(".choice input[value='" + a_data.filters[i][other_att] + "']",col)
-                        parent('.choice').addClass("invalid");
+                        $(".choice input[value='" + a_data.template.filters[i][other_att] + "']",col)
+                        .parent('.choice').addClass("invalid");
                     }
                 }
             }

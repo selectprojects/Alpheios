@@ -1,0 +1,2112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="file:/C:/work/schemas/inflections.css"?>
+<infl-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/work/schemas/verb_conj_irreg.xsd"
+    xml:lang="greek">
+  <order-table>
+    <order-item attname="pers" order="1">1st</order-item>
+    <order-item attname="pers" order="2">2nd</order-item>
+    <order-item attname="pers" order="3">3rd</order-item>
+    <order-item attname="type" order="2">regular</order-item>
+    <order-item attname="type" order="3">irregular</order-item>
+    <order-item attname="num" order="1">singular</order-item>
+    <order-item attname="num" order="2">dual</order-item>
+    <order-item attname="num" order="3">plural</order-item>
+    <order-item attname="tense" order="1">present</order-item>
+    <order-item attname="tense" order="2">imperfect</order-item>
+    <order-item attname="tense" order="3">future</order-item>
+    <order-item attname="tense" order="4">aorist</order-item>
+    <order-item attname="tense" order="5">perfect</order-item>
+    <order-item attname="tense" order="6">pluperfect</order-item>
+    <order-item attname="tense" order="7">future perfect</order-item>
+    <order-item attname="mood" order="1">indicative</order-item>
+    <order-item attname="mood" order="2">subjunctive</order-item>
+    <order-item attname="mood" order="3">optative</order-item>
+    <order-item attname="mood" order="4">imperative</order-item>
+    <order-item attname="voice" order="1">active</order-item>
+    <order-item attname="voice" order="2">middle</order-item>
+    <order-item attname="voice" order="3">passive</order-item>
+  </order-table>
+  <inflection type="conjugation">
+    <hdwd-set>
+      <hdwd source="morpheus">παύω</hdwd>
+    </hdwd-set>
+  
+    <infl-form-set
+      tense="present" voice="active" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄ω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">ἔπαῡον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄σω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">ἔπαῡσα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">πέπαυκα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπεπαύκη</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄ομαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπαῡόμην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄σομαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπαῡσάμην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">πέπαυμαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπεπαύμην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">πεπαύ̄σομαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπαύθην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">παυθήσομαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄ομαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπαῡόμην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="1st" num="singular" mood="indicative">
+      <infl-form type="regular">πέπαυμαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="passive" pers="1st" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπεπαύμην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄εις</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">ἔπαῡες</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄σεις</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">ἔπαῡσας</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="2nd" num="singular" mood="indicative">
+      <infl-form type="regular">πέπαυκας</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπεπαύκης</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄ῃ</infl-form>
+        <infl-form type="regular">παύ̄ει</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄ου</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄σῃ</infl-form>
+        <infl-form type="regular">παύ̄σει</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄σω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="2nd" num="singular" mood="indicative">
+      <infl-form type="regular">πέπαυσαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="2nd" num="singular" mood="indicative">
+      <infl-form type="regular">ἐπέπαυσο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">πεπαύ̄σῃ</infl-form>
+        <infl-form type="regular">πεπαύ̄σει</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπαύθης</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">παυθήσῃ</infl-form>
+        <infl-form type="regular">παυθήσει</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄ῃπαύ̄ει</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="2nd" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄ου</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="2nd" num="singular" mood="indicative">
+      <infl-form type="regular">πέπαυσαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="passive" pers="2nd" num="singular" mood="indicative">
+      <infl-form type="regular">ἐπέπαυσο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄ει</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">ἔπαῡε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄σει</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">ἔπαῡσε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="3rd" num="singular" mood="indicative">
+      <infl-form type="regular">πέπαυκε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπεπαύκειν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄εται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄ετο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄σεται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄σατο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="3rd" num="singular" mood="indicative">
+      <infl-form type="regular">πέπαυται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="3rd" num="singular" mood="indicative">
+      <infl-form type="regular">ἐπέπαυτο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">πεπαύ̄σεται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπαύθη</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">παυθήσεται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">παύ̄εται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="3rd" num="singular" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄ετο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="3rd" num="singular" mood="indicative">
+      <infl-form type="regular">πέπαυται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="passive" pers="3rd" num="singular" mood="indicative">
+      <infl-form type="regular">ἐπέπαυτο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">παύ̄ετον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄ετον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">παύ̄σετον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄σατον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">πεπαύκατον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπεπαύκετον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">παύ̄εσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄εσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">παύ̄σεσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄σασθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="2nd" num="dual" mood="indicative">
+      <infl-form type="regular">πέπαυσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="2nd" num="dual" mood="indicative">
+      <infl-form type="regular">ἐπέπαυσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">πεπαύ̄σεσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπαύθητον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">παυθήσεσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">παύ̄εσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="2nd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄εσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="2nd" num="dual" mood="indicative">
+      <infl-form type="regular">πέπαυσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="passive" pers="2nd" num="dual" mood="indicative">
+      <infl-form type="regular">ἐπέπαυσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">παύ̄ετον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπαῡέτην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">παύ̄σετον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπαῡσάτην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">πεπαύκατον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπεπαυκέτην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">παύ̄εσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπαῡέσθην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">παύ̄σεσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπαῡσάσθην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="3rd" num="dual" mood="indicative">
+      <infl-form type="regular">πέπαυσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπεπαύσθην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">πεπαύ̄σεσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="3rd" num="dual" mood="indicative">
+      <infl-form type="regular">ἐπυπαήτην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">παυθήσεσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">παύ̄εσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπαῡέσθην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="3rd" num="dual" mood="indicative">
+      <infl-form type="regular">πέπαυσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="passive" pers="3rd" num="dual" mood="indicative">
+        <infl-form type="regular">ἐπεπαύσθην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">παύ̄ομεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄ομεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">παύ̄σομεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄σαμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">πεπαύκαμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπεπαύκεμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">παῡόμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαῡόμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">παῡσόμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαῡσάμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">πεπαύμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπεπαύμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">πεπαῡσόμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύθημεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">παυθησόμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">παῡόμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαῡόμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">πεπαύμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="passive" pers="1st" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπεπαύμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">παύ̄ετε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄ετε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">παύ̄σετε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄σατε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">πεπαύκατε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπεπαύκετε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">παύ̄εσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄εσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">παύ̄σεσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄σασθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="2nd" num="plural" mood="indicative">
+      <infl-form type="regular">πέπαυσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="2nd" num="plural" mood="indicative">
+      <infl-form type="regular">ἐπέπαυσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">πεπαύ̄σεσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύθητε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">παυθήσεσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">παύ̄εσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="2nd" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄εσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="2nd" num="plural" mood="indicative">
+      <infl-form type="regular">πέπαυσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="passive" pers="2nd" num="plural" mood="indicative">
+      <infl-form type="regular">ἐπέπαυσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">παύ̄ουσι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">ἔπαῡον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">παύ̄σουσι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">ἔπαῡσαν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">πεπαύκᾱσι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπεπαύκεσαν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">παύ̄ονται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄οντο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">παύ̄σονται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄σαντο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="3rd" num="plural" mood="indicative">
+      <infl-form type="regular">πέπαυνται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="3rd" num="plural" mood="indicative">
+      <infl-form type="regular">ἐπέπαυντο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">πεπαύ̄σονται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύθησαν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">παυθήσονται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">παύ̄ονται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="3rd" num="plural" mood="indicative">
+        <infl-form type="regular">ἐπαύ̄οντο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="3rd" num="plural" mood="indicative">
+      <infl-form type="regular">πέπαπαται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="passive" pers="3rd" num="plural" mood="indicative">
+      <infl-form type="regular">ἐπέπαπατο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="1st" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄ω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="1st" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="1st" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="1st" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄σω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="1st" num="singular" mood="subjunctive">
+        <infl-form type="regular">πεπαυκὼς ὦ</infl-form>
+        <infl-form type="regular">πεπαύκω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="1st" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="1st" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄ωμαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="1st" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="1st" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="1st" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄σωμαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="1st" num="singular" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένος ὦ</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="1st" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="1st" num="singular" mood="subjunctive">
+        <infl-form type="regular">παυθῶ</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="1st" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="1st" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="1st" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄ωμαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="1st" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="1st" num="singular" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένος ὦ</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="2nd" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄ῃς</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="2nd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="2nd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="2nd" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄σῃς</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="2nd" num="singular" mood="subjunctive">
+        <infl-form type="regular">πεπαυκὼς ᾖς</infl-form>
+        <infl-form type="regular">πεπαύκῃς</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="2nd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="2nd" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄ῃ</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="2nd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="2nd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="2nd" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄σῃ</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="2nd" num="singular" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένος ᾖς</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="2nd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="2nd" num="singular" mood="subjunctive">
+        <infl-form type="regular">παυθῇς</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="2nd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="2nd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="2nd" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄ῃ</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="2nd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="2nd" num="singular" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένος ᾖς</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="3rd" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄ῃ</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="3rd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="3rd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="3rd" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄σῃ</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="3rd" num="singular" mood="subjunctive">
+        <infl-form type="regular">πεπαυκὼς ᾖ</infl-form>
+        <infl-form type="regular">πεπαύκῃ</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="3rd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="3rd" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄ηται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="3rd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="3rd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="3rd" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄σηται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="3rd" num="singular" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένος ᾖ</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="3rd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="3rd" num="singular" mood="subjunctive">
+        <infl-form type="regular">παυθῇ</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="3rd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="3rd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="3rd" num="singular" mood="subjunctive">
+        <infl-form type="regular">παύ̄ηται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="3rd" num="singular" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="3rd" num="singular" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένος ᾖ</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="2nd" num="dual" mood="subjunctive">
+        <infl-form type="regular">παύ̄ητον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="2nd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="2nd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="2nd" num="dual" mood="subjunctive">
+        <infl-form type="regular">παύ̄σητον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="2nd" num="dual" mood="subjunctive">
+        <infl-form type="regular">πεπαυκότε ἦτον</infl-form>
+        <infl-form type="regular">πεπαύκητον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="2nd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="2nd" num="dual" mood="subjunctive">
+        <infl-form type="regular">παύ̄ησθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="2nd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="2nd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="2nd" num="dual" mood="subjunctive">
+        <infl-form type="regular">παύ̄σησθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="2nd" num="dual" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένω ἦτον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="2nd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="2nd" num="dual" mood="subjunctive">
+        <infl-form type="regular">παυθῆτον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="2nd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="2nd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="2nd" num="dual" mood="subjunctive">
+        <infl-form type="regular">παύ̄ησθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="2nd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="2nd" num="dual" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένω ἦτον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="3rd" num="dual" mood="subjunctive">
+        <infl-form type="regular">παύ̄ητον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="3rd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="3rd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="3rd" num="dual" mood="subjunctive">
+        <infl-form type="regular">παύ̄σητον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="3rd" num="dual" mood="subjunctive">
+        <infl-form type="regular">πεπαυκότε ἦτον</infl-form>
+        <infl-form type="regular">πεπαύκητον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="3rd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="3rd" num="dual" mood="subjunctive">
+        <infl-form type="regular">παύ̄ησθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="3rd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="3rd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="3rd" num="dual" mood="subjunctive">
+        <infl-form type="regular">παύ̄σησθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="3rd" num="dual" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένω ἦτον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="3rd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="3rd" num="dual" mood="subjunctive">
+        <infl-form type="regular">παυθῆτον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="3rd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="3rd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="3rd" num="dual" mood="subjunctive">
+        <infl-form type="regular">παύ̄ησθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="3rd" num="dual" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="3rd" num="dual" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένω ἦτον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="1st" num="plural" mood="subjunctive">
+        <infl-form type="regular">παύ̄ωμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="1st" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="1st" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="1st" num="plural" mood="subjunctive">
+        <infl-form type="regular">παύ̄σωμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="1st" num="plural" mood="subjunctive">
+        <infl-form type="regular">πεπαυκότες ὦμεν</infl-form>
+        <infl-form type="regular">πεπαύκωμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="1st" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="1st" num="plural" mood="subjunctive">
+        <infl-form type="regular">παῡώμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="1st" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="1st" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="1st" num="plural" mood="subjunctive">
+        <infl-form type="regular">παῡσώμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="1st" num="plural" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένοι ὦμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="1st" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="1st" num="plural" mood="subjunctive">
+        <infl-form type="regular">παυθῶμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="1st" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="1st" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="1st" num="plural" mood="subjunctive">
+        <infl-form type="regular">παῡώμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="1st" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="1st" num="plural" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένοι ὦμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="2nd" num="plural" mood="subjunctive">
+        <infl-form type="regular">παύ̄ητε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="2nd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="2nd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="2nd" num="plural" mood="subjunctive">
+        <infl-form type="regular">παύ̄σητε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="2nd" num="plural" mood="subjunctive">
+        <infl-form type="regular">πεπαυκότες ἦτε</infl-form>
+        <infl-form type="regular">πεπαύκητε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="2nd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="2nd" num="plural" mood="subjunctive">
+        <infl-form type="regular">παύ̄ησθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="2nd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="2nd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="2nd" num="plural" mood="subjunctive">
+        <infl-form type="regular">παύ̄σησθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="2nd" num="plural" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένοι ἦτε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="2nd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="2nd" num="plural" mood="subjunctive">
+        <infl-form type="regular">παυθῆτε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="2nd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="2nd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="2nd" num="plural" mood="subjunctive">
+        <infl-form type="regular">παύ̄ησθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="2nd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="2nd" num="plural" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένοι ἦτε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="3rd" num="plural" mood="subjunctive">
+        <infl-form type="regular">παύ̄ωσι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="3rd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="3rd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="3rd" num="plural" mood="subjunctive">
+        <infl-form type="regular">παύ̄σωσι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="3rd" num="plural" mood="subjunctive">
+        <infl-form type="regular">πεπαυκότες ὦσι</infl-form>
+        <infl-form type="regular">πεπαύκωσι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="3rd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="3rd" num="plural" mood="subjunctive">
+        <infl-form type="regular">παύ̄ωνται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="3rd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="3rd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="3rd" num="plural" mood="subjunctive">
+        <infl-form type="regular">παύ̄σωνται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="3rd" num="plural" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένοι ὦσι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="3rd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="3rd" num="plural" mood="subjunctive">
+        <infl-form type="regular">παυθῶσι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="3rd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="3rd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="3rd" num="plural" mood="subjunctive">
+        <infl-form type="regular">παύ̄ωνται</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="3rd" num="plural" mood="subjunctive">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="3rd" num="plural" mood="subjunctive">
+        <infl-form type="regular">πεπαυμένοι ὦσι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄οιμι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄σοιμι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="1st" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄σαιμι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">πεπαυκὼς εἴην</infl-form>
+        <infl-form type="regular">πεπαύκοιμι</infl-form>
+        <infl-form type="regular">-οίην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="1st" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">παῡοίμην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="1st" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">παῡσοίμην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">παῡσαίμην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">πεπαυμένος εἴην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="1st" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">πεπαῡσοίμην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">παυθείην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">παυθησοίμην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">παῡοίμην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="1st" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="1st" num="singular" mood="optative">
+        <infl-form type="regular">πεπαυμένος εἴην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄οις</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄σοις</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="2nd" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄σαις</infl-form>
+        <infl-form type="regular">παύ̄σειας</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">πεπαυκὼς εἴης</infl-form>
+        <infl-form type="regular">πεπαύκοις</infl-form>
+        <infl-form type="regular">-οίης</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="2nd" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄οιο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="2nd" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄σοιο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄σαιο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">πεπαυμένος εἴης</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="2nd" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">πεπαύ̄σοιο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">παυθείης</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">παυθήσοιο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄οιο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="2nd" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="2nd" num="singular" mood="optative">
+        <infl-form type="regular">πεπαυμένος εἴης</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄οι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄σοι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="3rd" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄σαι</infl-form>
+        <infl-form type="regular">παύ̄σειε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">πεπαυκὼς εἴη</infl-form>
+        <infl-form type="regular">πεπαύκοι</infl-form>
+        <infl-form type="regular">-οίη</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="3rd" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄οιτο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="3rd" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄σοιτο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄σαιτο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">πεπαυμένος εἴη</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="3rd" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">πεπαύ̄σοιτο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">παυθείη</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">παυθήσοιτο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">παύ̄οιτο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="3rd" num="singular" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="3rd" num="singular" mood="optative">
+        <infl-form type="regular">πεπαυμένος εἴη</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">παύ̄οιτον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">παύ̄σοιτον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="2nd" num="dual" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">παύ̄σαιτον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">πεπαυκότε εἴητον</infl-form>
+        <infl-form type="regular">πεπαυκότε εἶτον</infl-form>
+        <infl-form type="regular">πεπαύκοιτον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="2nd" num="dual" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">παύ̄οισθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="2nd" num="dual" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">παύ̄σοισθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">παύ̄σαισθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">πεπαυμένω εἴητον</infl-form>
+        <infl-form type="regular">εἶτον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="2nd" num="dual" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">πεπαύ̄σοισθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">παυθεῖτον</infl-form>
+        <infl-form type="regular">παυθείητον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">παυθήσοισθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">παύ̄οισθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="2nd" num="dual" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="2nd" num="dual" mood="optative">
+        <infl-form type="regular">πεπαυμένω εἴητον</infl-form>
+        <infl-form type="regular">εἶτον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">παῡοίτην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">παῡσοίτην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="3rd" num="dual" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">παῡσαίτην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">πεπαυκότε εἰήτην</infl-form>
+        <infl-form type="regular">πεπαυκότε εἴτην</infl-form>
+        <infl-form type="regular">πεπαυκοίτην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="3rd" num="dual" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">παῡοίσθην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="3rd" num="dual" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">παῡσοίσθην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">παῡσαίσθην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">πεπαυμένω εἰήτην</infl-form>
+        <infl-form type="regular">εἴτην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="3rd" num="dual" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">πεπαῡσοίσθην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">παυθείτην</infl-form>
+        <infl-form type="regular">παυθειήτην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">παυθησοίσθην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">παῡοίσθην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="3rd" num="dual" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="3rd" num="dual" mood="optative">
+        <infl-form type="regular">πεπαυμένω εἰήτην</infl-form>
+        <infl-form type="regular">εἴτην</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄οιμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄σοιμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="1st" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄σαιμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">πεπαυκότες εἴημεν</infl-form>
+        <infl-form type="regular">πεπαυκότες ει῏μεν</infl-form>
+        <infl-form type="regular">πεπαύκοιμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="1st" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">παῡοίμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="1st" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">παῡσοίμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">παῡσαίμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">πεπαυμένοι εἴημεν</infl-form>
+        <infl-form type="regular">εἶμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="1st" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">πεπαῡσοίμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">παυθεῖμεν</infl-form>
+        <infl-form type="regular">παυθείημεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">παυθησοίμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">παῡοίμεθα</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="1st" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="1st" num="plural" mood="optative">
+        <infl-form type="regular">πεπαυμένοι εἴημεν</infl-form>
+        <infl-form type="regular">εἶμεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄οιτε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄σοιτε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="2nd" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄σαιτε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">πεπαυκότες εἴητε</infl-form>
+        <infl-form type="regular">πεπαυκότες εἶτε</infl-form>
+        <infl-form type="regular">πεπαύκοιτε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="2nd" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄οισθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="2nd" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄σοισθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄σαισθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">πεπαυμένοι εἴητε</infl-form>
+        <infl-form type="regular">εἶτε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="2nd" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">πεπαύ̄σοισθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">παυθεῖτε</infl-form>
+        <infl-form type="regular">παυθείητε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">παυθήσοισθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄οισθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="2nd" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="2nd" num="plural" mood="optative">
+        <infl-form type="regular">πεπαυμένοι εἴητε</infl-form>
+        <infl-form type="regular">εἶτε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄οιεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄σοιεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="3rd" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄σαιεν</infl-form>
+        <infl-form type="regular">παύ̄σειαν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">πεπαυκότες εἴησαν</infl-form>
+        <infl-form type="regular">πεπαυκότες εἶεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="3rd" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄οιντο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="3rd" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄σοιντο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄σαιντο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">πεπαυμένοι εἴησαν</infl-form>
+        <infl-form type="regular">εἶεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="3rd" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">πεπαύ̄σοιντο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">παυθεῖεν</infl-form>
+        <infl-form type="regular">παυθείησαν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">παυθήσοιντο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">παύ̄οιντο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="3rd" num="plural" mood="optative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="3rd" num="plural" mood="optative">
+        <infl-form type="regular">πεπαυμένοι εἴησαν</infl-form>
+        <infl-form type="regular">εἶεν</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="2nd" num="singular" mood="imperative">
+        <infl-form type="regular">παῦε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="2nd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="2nd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="2nd" num="singular" mood="imperative">
+        <infl-form type="regular">παῦσον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="2nd" num="singular" mood="imperative">
+        <infl-form type="regular">πεπαυκὼς ἴσθι</infl-form>
+      <infl-form type="regular">πέπαπαε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="2nd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="2nd" num="singular" mood="imperative">
+        <infl-form type="regular">παύ̄ου</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="2nd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="2nd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="2nd" num="singular" mood="imperative">
+        <infl-form type="regular">παῦσαι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="2nd" num="singular" mood="imperative">
+      <infl-form type="regular">πέασο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="2nd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="2nd" num="singular" mood="imperative">
+        <infl-form type="regular">παύθητι</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="2nd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="2nd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="2nd" num="singular" mood="imperative">
+        <infl-form type="regular">παύ̄ου</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="2nd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="2nd" num="singular" mood="imperative">
+      <infl-form type="regular">πέπασο</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="3rd" num="singular" mood="imperative">
+        <infl-form type="regular">παῡέτω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="3rd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="3rd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="3rd" num="singular" mood="imperative">
+        <infl-form type="regular">παῡσάτω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="3rd" num="singular" mood="imperative">
+        <infl-form type="regular">πεπαυκὼς ἔστω</infl-form>
+        <infl-form type="regular">πεπαυκέτω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="3rd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="3rd" num="singular" mood="imperative">
+        <infl-form type="regular">παῡέσθω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="3rd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="3rd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="3rd" num="singular" mood="imperative">
+        <infl-form type="regular">παῡσάσθω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="3rd" num="singular" mood="imperative">
+        <infl-form type="regular">πεπαύσθω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="3rd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="3rd" num="singular" mood="imperative">
+        <infl-form type="regular">παυθήτω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="3rd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="3rd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="3rd" num="singular" mood="imperative">
+        <infl-form type="regular">παῡέσθω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="3rd" num="singular" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="3rd" num="singular" mood="imperative">
+        <infl-form type="regular">πεπαύσθω</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="2nd" num="dual" mood="imperative">
+        <infl-form type="regular">παύ̄ετον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="2nd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="2nd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="2nd" num="dual" mood="imperative">
+        <infl-form type="regular">παύ̄σατον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="2nd" num="dual" mood="imperative">
+        <infl-form type="regular">πεπαυκότε ἔστον</infl-form>
+        <infl-form type="regular">πεπαύκετον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="2nd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="2nd" num="dual" mood="imperative">
+        <infl-form type="regular">παύ̄εσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="2nd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="2nd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="2nd" num="dual" mood="imperative">
+        <infl-form type="regular">παύ̄σασθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="2nd" num="dual" mood="imperative">
+      <infl-form type="regular">πέπαπαθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="2nd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="2nd" num="dual" mood="imperative">
+        <infl-form type="regular">παύθητον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="2nd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="2nd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="2nd" num="dual" mood="imperative">
+        <infl-form type="regular">παύ̄εσθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="2nd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="2nd" num="dual" mood="imperative">
+      <infl-form type="regular">πέπαπαθον</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="3rd" num="dual" mood="imperative">
+        <infl-form type="regular">παῡέτων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="3rd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="3rd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="3rd" num="dual" mood="imperative">
+        <infl-form type="regular">παῡσάτων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="3rd" num="dual" mood="imperative">
+        <infl-form type="regular">πεπαυκότε ἔστων</infl-form>
+        <infl-form type="regular">πεπαυκέτων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="3rd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="3rd" num="dual" mood="imperative">
+        <infl-form type="regular">παῡέσθων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="3rd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="3rd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="3rd" num="dual" mood="imperative">
+        <infl-form type="regular">παῡσάσθων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="3rd" num="dual" mood="imperative">
+        <infl-form type="regular">πεπαύσθων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="3rd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="3rd" num="dual" mood="imperative">
+        <infl-form type="regular">παυθήτων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="3rd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="3rd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="3rd" num="dual" mood="imperative">
+        <infl-form type="regular">παῡέσθων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="3rd" num="dual" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="3rd" num="dual" mood="imperative">
+        <infl-form type="regular">πεπαύσθων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="2nd" num="plural" mood="imperative">
+        <infl-form type="regular">παύ̄ετε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="2nd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="2nd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="2nd" num="plural" mood="imperative">
+        <infl-form type="regular">παύ̄σατε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="2nd" num="plural" mood="imperative">
+        <infl-form type="regular">πεπαυκότες ἐστέ</infl-form>
+        <infl-form type="regular">πεπαύκετε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="2nd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="2nd" num="plural" mood="imperative">
+        <infl-form type="regular">παύ̄εσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="2nd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="2nd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="2nd" num="plural" mood="imperative">
+        <infl-form type="regular">παύ̄σασθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="2nd" num="plural" mood="imperative">
+      <infl-form type="regular">πέπαπαθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="2nd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="2nd" num="plural" mood="imperative">
+        <infl-form type="regular">παύθητε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="2nd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="2nd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="2nd" num="plural" mood="imperative">
+        <infl-form type="regular">παύ̄εσθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="2nd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="2nd" num="plural" mood="imperative">
+      <infl-form type="regular">πέπαπαθε</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="active" pers="3rd" num="plural" mood="imperative">
+        <infl-form type="regular">παῡόντων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="active" pers="3rd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="active" pers="3rd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="active" pers="3rd" num="plural" mood="imperative">
+        <infl-form type="regular">παῡσάντων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="active" pers="3rd" num="plural" mood="imperative">
+        <infl-form type="regular">πεπαυκότες ὄντων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="active" pers="3rd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="middle" pers="3rd" num="plural" mood="imperative">
+        <infl-form type="regular">παῡέσθων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="middle" pers="3rd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="middle" pers="3rd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="middle" pers="3rd" num="plural" mood="imperative">
+        <infl-form type="regular">παῡσάσθων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="middle" pers="3rd" num="plural" mood="imperative">
+        <infl-form type="regular">πεπαύσθων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="pluperfect" voice="middle" pers="3rd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future perfect" voice="passive" pers="3rd" num="plural" mood="imperative">
+        <infl-form type="regular">παυθέντων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="aorist" voice="passive" pers="3rd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="future" voice="passive" pers="3rd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="present" voice="passive" pers="3rd" num="plural" mood="imperative">
+        <infl-form type="regular">παῡέσθων</infl-form>
+    </infl-form-set>
+    <infl-form-set
+      tense="imperfect" voice="passive" pers="3rd" num="plural" mood="imperative">
+    </infl-form-set>
+    <infl-form-set
+      tense="perfect" voice="passive" pers="3rd" num="plural" mood="imperative">
+        <infl-form type="regular">πεπαύσθων</infl-form>
+    </infl-form-set>
+  </inflection>
+</infl-data>

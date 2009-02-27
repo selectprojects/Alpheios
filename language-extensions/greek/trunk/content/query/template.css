@@ -51,7 +51,7 @@
     height: 100%;
 }
 
-.invalid {
+div.invalid {
     visibility: hidden;
 }
 
@@ -100,6 +100,11 @@
     padding-right: 1em;
     border: 1px solid black;
     border-collapse: collapse;
+}
+
+#alph-infl-table caption {
+    font-size: 110%;
+    font-weight: bold;
 }
 
 #alph-infl-table td, #alph-infl-table th {
@@ -156,4 +161,27 @@
 #alph-infl-table td.ending-group .ending.matchingform{
     color: black;
     background-color: lightblue;
+}
+
+#alph-infl-table tr.group1row * {
+    border-bottom: none;
+}
+
+#alph-infl-table tr.group2row * {
+    border-top: none;
+}
+
+#alph-infl-table tr.group1row th, #alph-infl-table tr.group2row th {
+    white-space: nowrap;
+    font-style: italic;
+    border-right: none;
+}
+
+#alph-infl-table tr.group1row td, #alph-infl-table tr.group2row td {
+    border-left: none;
+    border-right: none;
+}
+
+#alph-infl-table td.invalid, #alph-infl-table td.ending-group.incorrect.invalid {
+    background-color: #707070;
 }
