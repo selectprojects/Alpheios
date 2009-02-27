@@ -20,7 +20,7 @@ pref("extensions.alpheios.greek.shift_handler","handleInflections");
 pref("extensions.alpheios.greek.panels.use.defaults",true);
 pref("extensions.alpheios.greek.dictionaries.full","lsj,lsjharvard,aut");
 pref("extensions.alpheios.greek.dictionaries.short","aut,lsj,ml");
-pref("extensions.alpheios.greek.dictionaries.short.default","aut");
+pref("extensions.alpheios.greek.dictionaries.short.default","lsj");
 pref("extensions.alpheios.greek.dictionaries.full.default","lsj");
 pref("extensions.alpheios.greek.dictionary.full.lsj.search.lemma_url",
      "http://dev.alpheios.net:8800/exist/rest/db/xquery/lexi-lemma2html.xquery?");
