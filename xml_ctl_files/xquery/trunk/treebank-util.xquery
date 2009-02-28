@@ -213,9 +213,14 @@ declare variable $tbu:s_tables :=
   <category id="voice" n="6"
             xmlns="http://alpheios.net/namespaces/treebank-util">
     <entry>
+      <short>m</short>
+      <long>middle</long>
+    </entry>
+    <entry>
       <short>a</short>
       <long>active</long>
-    </entry>    <entry>
+    </entry>
+    <entry>
       <short>p</short>
       <long>passive</long>
     </entry>
