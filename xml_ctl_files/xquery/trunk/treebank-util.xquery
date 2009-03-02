@@ -102,6 +102,10 @@ declare variable $tbu:s_tables :=
       <short>u</short>
       <long>punctuation</long>
     </entry>
+    <entry>
+      <short>f</short>
+      <long>foreign</long>
+    </entry>
   </category>,
 
   (: person :)
