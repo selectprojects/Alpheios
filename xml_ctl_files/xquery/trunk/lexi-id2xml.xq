@@ -22,13 +22,13 @@
   XQuery to retrieve lexicon entries by id
 
   Form of request is:
-    .../lexi-lemma2html.xquery?lg=<>&lx=<>&n=<>[&n=<>...]
+    .../lexi-lemma2html.xq?lg=<>&lx=<>&n=<>[&n=<>...]
   where
     lg is the language of the lemma
     lx is the code for the lexicon to use
     n is the if an entry to retrieve.  Multiple ids may be specified.
 
-  Output is transformed to HTML.
+  Output is returned as XML.
 
   Possible error messages, as plain text, are:
     "No id specified" if no n parameters were supplied
@@ -42,7 +42,7 @@
 
 import module namespace request="http://exist-db.org/xquery/request";
 import module namespace transform="http://exist-db.org/xquery/transform";  
-declare option exist:serialize "method=xhtml media-type=text/html";
+declare option exist:serialize "method=xml media-type=text/xml";
 
 declare variable $f_defaultLexicon :=
 (
@@ -72,7 +72,7 @@ let $entries :=
   else
     $entries
 
-let $xml-output :=
+return
   if (count($ids) = 0)
   then
     <alph:error xmlns:alph="http://alpheios.net/namespaces/tei">{
@@ -95,7 +95,3 @@ let $xml-output :=
         $entry
       }
   }</alph:output>
-
-return
-  (: transform TEI to HTML :)
-  transform:transform($xml-output, doc("/db/xslt/alpheios-lexi-tei.xsl"), ())

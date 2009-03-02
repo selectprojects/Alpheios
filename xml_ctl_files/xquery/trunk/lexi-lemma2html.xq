@@ -22,13 +22,13 @@
   XQuery to retrieve lexicon entries by lemma
 
   Form of request is:
-    .../lexi-lemma2html.xquery?lg=<>&lx=<>&l=<>[&l=<>...]
+    .../lexi-lemma2html.xq?lg=<>&lx=<>&l=<>[&l=<>...]
   where
     lg is the language of the lemma
     lx is the code for the lexicon to use
     l is the lemma to retrieve.  Multiple lemmas may be specified.
 
-  Output is returned as XML.
+  Output is transformed to HTML.
 
   Possible error messages, as plain text, are:
     "No lemma specified" if no l parameters were supplied
@@ -37,9 +37,9 @@
   Output will be returned in the same order as the lemmas in the request.
  :)
 
-import module namespace request="http://exist-db.org/xquery/request";  
-import module namespace transform="http://exist-db.org/xquery/transform";  
-declare option exist:serialize "method=xml media-type=text/xml";
+import module namespace request="http://exist-db.org/xquery/request";
+import module namespace transform="http://exist-db.org/xquery/transform";
+declare option exist:serialize "method=xhtml media-type=text/html";
 
 declare variable $f_defaultLexicon :=
 (
@@ -67,7 +67,7 @@ let $index := doc(concat("/db/indexes/",
 (: get lemmas from request :)
 let $lemmas := request:get-parameter("l", ())
 
-return
+let $xml-output :=
   if (count($lemmas) = 0)
   then
     <alph:error xmlns:alph="http://alpheios.net/namespaces/tei">{
@@ -161,3 +161,7 @@ return
           ("Lemma ", $lemma, " not found")
         }
   }</alph:output>
+
+return
+  (: transform TEI to HTML :)
+  transform:transform($xml-output, doc("/db/xslt/alpheios-lexi-tei.xsl"), ())
