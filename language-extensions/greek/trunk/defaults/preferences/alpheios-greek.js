@@ -23,25 +23,25 @@ pref("extensions.alpheios.greek.dictionaries.short","aut,lsj,ml");
 pref("extensions.alpheios.greek.dictionaries.short.default","lsj");
 pref("extensions.alpheios.greek.dictionaries.full.default","lsj");
 pref("extensions.alpheios.greek.dictionary.full.lsj.search.lemma_url",
-     "http://dev.alpheios.net:8800/exist/rest/db/xquery/lexi-lemma2html.xquery?");
+     "http://dev.alpheios.net:8800/exist/rest/db/xq/lexi-lemma2html.xq?");
 pref("extensions.alpheios.greek.dictionary.full.lsj.search.lemma_param",
      "l");
 pref("extensions.alpheios.greek.dictionary.full.lsj.search.multiple_lemmas"
     ,false);
 pref("extensions.alpheios.greek.dictionary.full.lsj.search.id_url",
-     "http://dev.alpheios.net:8800/exist/rest/db/xquery/lexi-id2html.xquery?");
+     "http://dev.alpheios.net:8800/exist/rest/db/xq/lexi-id2html.xq?");
 pref("extensions.alpheios.greek.dictionary.full.lsj.search.lemma_id_param",
      "n");
 pref("extensions.alpheios.greek.dictionary.full.lsj.search.multiple_lemma_ids"
     ,false);
 pref("extensions.alpheios.greek.dictionary.full.aut.search.lemma_url",
-     "http://dev.alpheios.net:8800/exist/rest/db/xquery/lexi-lemma2html.xquery?");
+     "http://dev.alpheios.net:8800/exist/rest/db/xq/lexi-lemma2html.xq?");
 pref("extensions.alpheios.greek.dictionary.full.aut.search.lemma_param",
      "l");
 pref("extensions.alpheios.greek.dictionary.full.aut.search.multiple_lemmas"
     ,false);
 pref("extensions.alpheios.greek.dictionary.full.aut.search.id_url",
-     "http://dev.alpheios.net:8800/exist/rest/db/xquery/lexi-id2html.xquery?");
+     "http://dev.alpheios.net:8800/exist/rest/db/xq/lexi-id2html.xq?");
 pref("extensions.alpheios.greek.dictionary.full.aut.search.lemma_id_param",
      "n");
 pref("extensions.alpheios.greek.dictionary.full.aut.search.multiple_lemma_ids"
