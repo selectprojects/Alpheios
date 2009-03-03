@@ -144,7 +144,7 @@ div.invalid {
 }
 
 #alph-infl-table td.ending-group.incorrect {
-    background-color: #eeeeee;
+    background-color: #999;
 }
 
 #alph-infl-table td.ending-group.correct .ending{
@@ -183,5 +183,5 @@ div.invalid {
 }
 
 #alph-infl-table td.invalid, #alph-infl-table td.ending-group.incorrect.invalid {
-    background-color: #707070;
+    background-color: #333;
 }
