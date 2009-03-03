@@ -357,8 +357,24 @@ function activate_table(a_elem,a_ans,a_template,a_callback,a_xslt_param)
     
     $(".query-decl",a_elem).append(decl_table.getElementById("alph-infl-table"));
     
+    // iterate through the incorrect choices so far, updating the table to gray out the
+    // incorrect selections
+    $(".query-col .choice.incorrect",a_elem).each(
+        function()
+        {
+            mark_cell_incorrect(this,table_elem.ownerDocument);
+        }
+    );
+    
 }
 
+function mark_cell_incorrect(a_choice,a_doc)
+{
+    var regex = $("input",a_choice).attr('name') + ':' + $("input",a_choice).attr("value");
+    $("#alph-infl-table td.ending-group .ending[context*=" + regex + "]",a_doc)
+        .parent("td").addClass("incorrect");
+
+}
 /**
  * Checks user input
  * @param {Event} a_event the user input event
@@ -410,9 +426,7 @@ function check_answer(a_event)
             function()
             {
                 $(this).addClass("incorrect");
-                var regex = $("input",this).attr('name') + ':' + $("input",this).attr("value");
-                $("#alph-infl-table td.ending-group .ending[context*=" + regex + "]",parent_doc)
-                .parent("td").addClass("incorrect");
+                mark_cell_incorrect(this,parent_doc);
             }
         );
         
