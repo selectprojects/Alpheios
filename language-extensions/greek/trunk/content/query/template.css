@@ -1,6 +1,7 @@
 .query-table {
+    clear: both;
     width:100%;
-    margin-top: 1em;
+    margin-top: 2em;
 }
 
 .selected {
@@ -90,7 +91,7 @@ div.invalid {
 }
 
 .query-decl {
-    margin-top: 1em;
+    margin-top: 2em;
     padding-left: .25em;
 }
 
