@@ -211,7 +211,29 @@ var TEMPLATE =
             ],
             /* temporary - additional noun definitions for testing */
             test_defs: ['life', 'a man', 'end']
+          },
+    /**
+     * article query template
+     */
+    article:
+          { data_file: "chrome://alpheios-greek/content/inflections/alph-query-article.xml",
+            xslt_file: "chrome://alpheios/skin/alph-infl-substantive-query.xsl",
+            load_data_on_start: true,
+            invalidate_empty_cells: false,
+
+            /* table columns */
+            cols: 
+            [
+                [CASE,[NOM,ACC,DAT,GEN,VOC]],
+                [NUM,[SIN,DUA,PLUR]],
+                [GEND,[MAS,FEM,NEU]]
+            ],
+            filters: [
+            ],
+            /* temporary - additional definitions for testing */
+            test_defs: []
           }
+
 };
 
 
