@@ -48,3 +48,8 @@ ul.sf-menu li {
     font-size: 10px;
     font-style: italic;
 }
+
+.perseus-funder,.perseus-publication {
+    font-size: small;
+
+}
