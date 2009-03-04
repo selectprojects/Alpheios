@@ -126,6 +126,7 @@ var TEMPLATE =
           { data_file: "chrome://alpheios-greek/content/inflections/alph-query-verb.xml",
             xslt_file: "chrome://alpheios/skin/alph-infl-verbform.xsl",
             load_data_on_start: false,
+            invalidate_empty_cells: true,
             /* table columns */
             cols: 
             [
@@ -197,6 +198,7 @@ var TEMPLATE =
           { data_file: "chrome://alpheios-greek/content/inflections/alph-query-noun.xml",
             xslt_file: "chrome://alpheios/skin/alph-infl-substantive-query.xsl",
             load_data_on_start: true,
+            invalidate_empty_cells: false,
 
             /* table columns */
             cols: 
@@ -342,17 +344,25 @@ function activate_table(a_elem,a_ans,a_template,a_callback,a_xslt_param)
                         callback: a_callback}, show_table_form);
 
 
-    // invalidate any empty cells
-    $("td.ending-group",table_elem).each(
-        function()
-        {
-            if ($(".ending",this).length == 0)
+    if (a_template.invalidate_empty_cells)
+    {
+        // invalidate any empty cells
+        $("td.ending-group",table_elem).each(
+            function()
             {
-                $(this).addClass("invalid");
+                if ($(".ending",this).length == 0)
+                {
+                    $(this).addClass("invalid");
+                }
             }
-        }
-    );
-                        
+        );
+    }
+    
+    var num_cols = $("col",table_elem).length;
+    var width = ((1/num_cols)*100).toFixed(0);
+    $("td",table_elem).css("width",width+'%');
+    $("th",table_elem).css("width",width+'%');
+    
     $("#alph-infl-table",a_elem).remove();
     
     $(".query-decl",a_elem).append(decl_table.getElementById("alph-infl-table"));
