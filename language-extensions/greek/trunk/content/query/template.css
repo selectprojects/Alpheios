@@ -166,6 +166,12 @@ div.invalid {
     background-color: lightblue;
 }
 
+#alph-infl-table td.ending-group.correct .ending.matchingform{
+    color: red;
+    background-color: white;
+}
+
+
 #alph-infl-table tr.group1row * {
     border-bottom: none;
 }

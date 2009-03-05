@@ -231,7 +231,7 @@ var TEMPLATE =
             filters: [
             ],
             /* temporary - additional definitions for testing */
-            test_defs: []
+            test_defs: ['who','he','a']
           }
 
 };
@@ -691,7 +691,7 @@ function show_table_form(a_event,a_cell)
             function()
             {
                 $(this).addClass("showform");
-                if ($(this).text() == a_event.data.answer.form )
+                if ($(this).text() == a_event.data.answer.form)
                 {
                     $(this).addClass('matchingform');
                 }
