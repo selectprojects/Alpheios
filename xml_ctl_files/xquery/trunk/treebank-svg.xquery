@@ -64,6 +64,13 @@ declare function tbs:word-set(
   (: return group :)
   element g
   {
+    (: box around text :)
+    element rect
+    {
+      attribute fill { "none" },
+      attribute stroke-width { "0" }
+    },
+
     (: text element with form :)
     element text
     {
