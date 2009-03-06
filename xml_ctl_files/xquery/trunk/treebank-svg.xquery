@@ -64,6 +64,13 @@ declare function tbs:word-set(
   (: return group :)
   element g
   {
+    attribute class { "tree-node" },
+
+    attribute id
+    {
+      concat($a_sentence/@id, "-", $word/@id)
+    },
+
     (: box around text :)
     element rect
     {
@@ -74,28 +81,25 @@ declare function tbs:word-set(
     (: text element with form :)
     element text
     {
-      attribute class
-      {
-        (: convert part of speech code to long name :)
-        let $pos := tbu:postag-to-name("pos", $word/@postag)
-        return if (string-length($pos) > 0) then $pos else "-"
-      },
-      attribute id
-      {
-        concat($a_sentence/@id, "-", $word/@id)
-      },
+      attribute class { "node-label" },
+      let $pos := tbu:postag-to-name("pos", $word/@postag)
+      return
+      if (string-length($pos) > 0)
+      then
+        attribute pos { $pos }
+      else (),
       text { $word/@form }
     },
 
-    (: label for line to parent word :)
+    (: label for arc to parent word :)
     element text
     {
-      attribute class { "line-label" },
+      attribute class { "arc-label" },
       text { $word/@relation }
     },
 
-    (: line to parent word :)
-    element line {},
+    (: arc to parent word :)
+    element line{},
 
     (: process children (words that depend on this) :)
     tbs:word-set($a_sentence, $a_sentence/word[./@head = $word/@id])
@@ -128,22 +132,38 @@ declare function tbs:get-svg(
   {
     if ($sentence)
     then
-    element g
-    {
-      element text
+    (
+      element g
       {
-        $sentence/@id,
-        text
+        attribute class { "tree" },
+        element text
         {
-          if ($a_usespan)
-          then
-            $sentence/@span
-          else
-            "#"
-        }
+          attribute class { "node-label" },
+          $sentence/@id,
+          text
+          {
+            if ($a_usespan)
+            then
+              $sentence/@span
+            else
+              "#"
+          }
+        },
+        tbs:word-set($sentence, $rootwords)
       },
-      tbs:word-set($sentence, $rootwords)
-    }
+      element g
+      {
+        attribute class { "text" },
+        for $word in $sentence/*:word
+        return
+        element text
+        {
+          attribute class { "text-word" },
+          attribute tbref { concat($sentence/@id, "-", $word/@id) },
+          text { $word/@form }
+        }
+      }
+    )
     else
     element text
     {
