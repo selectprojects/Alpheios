@@ -160,7 +160,8 @@ declare function tbs:get-svg(
         {
           attribute class { "text-word" },
           attribute tbref { concat($sentence/@id, "-", $word/@id) },
-          text { $word/@form }
+          (: form preceded by non-breaking space :)
+          text { concat("&#x00A0;", $word/@form) }
         }
       }
     )
