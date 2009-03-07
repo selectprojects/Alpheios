@@ -95,7 +95,14 @@ declare function tbs:word-set(
     element text
     {
       attribute class { "arc-label" },
-      text { $word/@relation }
+      text
+      {
+        if (contains($word/@relation, "_"))
+        then
+          substring-before($word/@relation, "_")
+        else
+          $word/@relation
+      }
     },
 
     (: arc to parent word :)
