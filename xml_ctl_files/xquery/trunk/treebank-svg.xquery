@@ -143,33 +143,57 @@ declare function tbs:get-svg(
       element g
       {
         attribute class { "tree" },
-        element text
+        $sentence/@id,
+
+        (: synthetic root :)
+        element g
         {
-          attribute class { "node-label" },
-          $sentence/@id,
-          text
+          attribute class { "tree-node" },
+          attribute id
           {
-            if ($a_usespan)
-            then
-              $sentence/@span
-            else
-              "#"
-          }
-        },
-        tbs:word-set($sentence, $rootwords)
+            concat($sentence/@id, "-0")
+          },
+          element rect
+          {
+            attribute fill { "none" },
+            attribute stroke-width { "0" }
+          },
+          element text
+          {
+            attribute class { "node-label" },
+            text
+            {
+              if ($a_usespan)
+              then
+                $sentence/@span
+              else
+                "#"
+            }
+          },
+          tbs:word-set($sentence, $rootwords)
+        }
       },
       element g
       {
         attribute class { "text" },
         for $word in $sentence/*:word
         return
-        element text
-        {
-          attribute class { "text-word" },
-          attribute tbref { concat($sentence/@id, "-", $word/@id) },
-          (: form preceded by non-breaking space :)
-          text { concat("&#x00A0;", $word/@form) }
-        }
+        (
+          element rect
+          {
+            attribute class { "text-word-bound" },
+            attribute tbref { concat($sentence/@id, "-", $word/@id) },
+            attribute fill { "none" },
+            attribute stroke-width { "0" }
+          },
+          element text
+          {
+            attribute class { "text-word" },
+            attribute tbref { concat($sentence/@id, "-", $word/@id) },
+            (: form preceded by non-breaking space :)
+            text { concat("&#x00A0;", $word/@form) }
+          }
+        )
       }
     )
     else
