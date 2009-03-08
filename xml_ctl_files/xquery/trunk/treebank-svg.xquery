@@ -97,11 +97,13 @@ declare function tbs:word-set(
       attribute class { "arc-label" },
       text
       {
-        if (contains($word/@relation, "_"))
-        then
-          substring-before($word/@relation, "_")
-        else
-          $word/@relation
+        tbu:relation-to-display(
+          if (contains($word/@relation, "_"))
+          then
+            substring-before($word/@relation, "_")
+          else
+            $word/@relation
+        )
       }
     },
 

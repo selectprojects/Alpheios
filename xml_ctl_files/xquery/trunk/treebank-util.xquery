@@ -102,10 +102,6 @@ declare variable $tbu:s_tables :=
       <short>u</short>
       <long>punctuation</long>
     </entry>
-    <entry>
-      <short>f</short>
-      <long>foreign</long>
-    </entry>
   </category>,
 
   (: person :)
@@ -311,6 +307,69 @@ declare variable $tbu:s_tables :=
   </category>
 );
 
+declare variable $tbu:s_relations :=
+(
+  <category id="rel" n="1"
+            xmlns="http://alpheios.net/namespaces/treebank-util">
+    <entry>
+      <aldt>APOS</aldt>
+      <disp>APPOS</disp>
+    </entry>
+    <entry>
+      <aldt>ATR</aldt>
+      <disp>ATTR</disp>
+    </entry>
+    <entry>
+      <aldt>ATV</aldt>
+      <disp>COMP</disp>
+    </entry>
+    <entry>
+      <aldt>AtvV</aldt>
+      <disp>COMP</disp>
+    </entry>
+    <entry>
+      <aldt>AuxC</aldt>
+      <disp>CONJ</disp>
+    </entry>
+    <entry>
+      <aldt>AuxG</aldt>
+      <disp>BRCKT</disp>
+    </entry>
+    <entry>
+      <aldt>AuxK</aldt>
+      <disp>TERM</disp>
+    </entry>
+    <entry>
+      <aldt>AuxP</aldt>
+      <disp>PREP</disp>
+    </entry>
+    <entry>
+      <aldt>AuxR</aldt>
+      <disp>RFLX</disp>
+    </entry>
+    <entry>
+      <aldt>AuxV</aldt>
+      <disp>AUXV</disp>
+    </entry>
+    <entry>
+      <aldt>AuxX</aldt>
+      <disp>COMMA</disp>
+    </entry>
+    <entry>
+      <aldt>AuxY</aldt>
+      <disp>SADV</disp>
+    </entry>
+    <entry>
+      <aldt>AuxZ</aldt>
+      <disp>EMPH</disp>
+    </entry>
+    <entry>
+      <aldt>ExD</aldt>
+      <disp>ELLIP</disp>
+    </entry>
+  </category>
+);
+
 (:
   Function to convert morphology postag to full name
   
@@ -392,4 +451,22 @@ declare function tbu:name-to-code(
   string($tbu:s_tables[@id = $a_category]
             /tbu:entry[tbu:long = $a_name]
             /tbu:short)
+};
+
+(:
+  Function to convert ALDT relation name to display form
+  
+  Parameters:
+    $a_rel           relation
+
+  Return value:
+    equivalent display name, or input value if no display form found
+ :)
+declare function tbu:relation-to-display(
+  $a_rel as xs:string) as xs:string
+{
+  let $display :=
+    string($tbu:s_relations/tbu:entry[tbu:aldt = $a_rel]/tbu:disp)
+  return
+  if (string-length($display) > 0) then $display else $a_rel
 };
