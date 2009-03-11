@@ -382,11 +382,14 @@ declare variable $tbu:s_relations :=
  :)
 declare function tbu:postag-to-name(
   $a_category as xs:string,
-  $a_tag as xs:string) as xs:string?
+  $a_tag as xs:string?) as xs:string?
 {
-  let $table := $tbu:s_tables[@id = $a_category]
-  let $entry := $table/tbu:entry[tbu:short = substring($a_tag, $table/@n, 1)]
-  return string($entry/tbu:long)
+  if ($a_tag)
+  then
+    let $table := $tbu:s_tables[@id = $a_category]
+    let $entry := $table/tbu:entry[tbu:short = substring($a_tag, $table/@n, 1)]
+    return string($entry/tbu:long)
+  else ()
 };
 
 (:
@@ -403,16 +406,19 @@ declare function tbu:postag-to-name(
  :)
 declare function tbu:postag-to-lexicon(
   $a_category as xs:string,
-  $a_tag as xs:string) as xs:string?
+  $a_tag as xs:string?) as xs:string?
 {
-  let $table := $tbu:s_tables[@id = $a_category]
-  let $entry := $table/tbu:entry[tbu:short = substring($a_tag, $table/@n, 1)]
-  return
-    if (exists($entry/tbu:lex))
-    then
-      string($entry/tbu:lex)
-    else
-      string($entry/tbu:long)
+  if ($a_tag)
+  then
+    let $table := $tbu:s_tables[@id = $a_category]
+    let $entry := $table/tbu:entry[tbu:short = substring($a_tag, $table/@n, 1)]
+    return
+      if (exists($entry/tbu:lex))
+      then
+        string($entry/tbu:lex)
+      else
+        string($entry/tbu:long)
+  else ()
 };
 
 (:
@@ -427,11 +433,14 @@ declare function tbu:postag-to-lexicon(
  :)
 declare function tbu:code-to-name(
   $a_category as xs:string,
-  $a_code as xs:string) as xs:string?
+  $a_code as xs:string?) as xs:string?
 {
-  string($tbu:s_tables[@id = $a_category]
-            /tbu:entry[tbu:short = $a_code]
-            /tbu:long)
+  if ($a_code)
+  then
+    string($tbu:s_tables[@id = $a_category]
+              /tbu:entry[tbu:short = $a_code]
+              /tbu:long)
+  else ()
 };
 
 (:
@@ -446,11 +455,14 @@ declare function tbu:code-to-name(
  :)
 declare function tbu:name-to-code(
   $a_category as xs:string,
-  $a_name as xs:string) as xs:string?
+  $a_name as xs:string?) as xs:string?
 {
-  string($tbu:s_tables[@id = $a_category]
-            /tbu:entry[tbu:long = $a_name]
-            /tbu:short)
+  if ($a_name)
+  then
+    string($tbu:s_tables[@id = $a_category]
+              /tbu:entry[tbu:long = $a_name]
+              /tbu:short)
+  else ()
 };
 
 (:
@@ -460,13 +472,17 @@ declare function tbu:name-to-code(
     $a_rel           relation
 
   Return value:
+    empty if no input specified, else
     equivalent display name, or input value if no display form found
  :)
 declare function tbu:relation-to-display(
-  $a_rel as xs:string) as xs:string
+  $a_rel as xs:string?) as xs:string
 {
-  let $display :=
-    string($tbu:s_relations/tbu:entry[tbu:aldt = $a_rel]/tbu:disp)
-  return
-  if (string-length($display) > 0) then $display else $a_rel
+  if ($a_rel)
+  then
+    let $display :=
+      string($tbu:s_relations/tbu:entry[tbu:aldt = $a_rel]/tbu:disp)
+    return
+    if (string-length($display) > 0) then $display else $a_rel
+  else ()
 };

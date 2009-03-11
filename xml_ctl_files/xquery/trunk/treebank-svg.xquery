@@ -60,16 +60,14 @@ declare function tbs:word-set(
 {
   (: for each word :)
   for $word in $a_words
+  (: get child words that depend on this :)
+  let $children := $a_sentence/word[./@head = $word/@id]
   return
   (: return group :)
   element g
   {
     attribute class { "tree-node" },
-
-    attribute id
-    {
-      concat($a_sentence/@id, "-", $word/@id)
-    },
+    attribute id { concat($a_sentence/@id, "-", $word/@id) },
 
     (: box around text :)
     element rect
@@ -91,27 +89,37 @@ declare function tbs:word-set(
       text { $word/@form }
     },
 
-    (: label for arc to parent word :)
-    element text
-    {
-      attribute class { "arc-label" },
-      text
+    (: for each child :)
+    for $child in $children
+    let $relation := $child/@relation
+    return
+    (
+      (: label for arc to child word :)
+      element text
       {
-        tbu:relation-to-display(
-          if (contains($word/@relation, "_"))
-          then
-            substring-before($word/@relation, "_")
-          else
-            $word/@relation
-        )
+        attribute class { "arc-label" },
+        attribute idref { concat($a_sentence/@id, "-", $child/@id) },
+        text
+        {
+          tbu:relation-to-display(
+            if (contains($relation, "_"))
+            then
+              substring-before($relation, "_")
+            else
+              $relation
+          )
+        }
+      },
+
+      (: arc to child word :)
+      element line
+      {
+        attribute idref { concat($a_sentence/@id, "-", $child/@id) }
       }
-    },
+    ),
 
-    (: arc to parent word :)
-    element line{},
-
-    (: process children (words that depend on this) :)
-    tbs:word-set($a_sentence, $a_sentence/word[./@head = $word/@id])
+    (: groups for children :)
+    tbs:word-set($a_sentence, $children)
   }
 };
 
@@ -134,7 +142,12 @@ declare function tbs:get-svg(
 {
   let $doc := doc($a_docname)
   let $sentence := $doc//sentence[@id = $a_id]
-  let $rootwords := $sentence/word[@head = "0"]
+  let $rootword :=
+    element word
+    {
+      attribute id { "0" },
+      attribute form { if ($a_usespan) then $sentence/@span else "#" }
+    }
 
   return
   <svg xmlns="http://www.w3.org/2000/svg">
@@ -146,34 +159,7 @@ declare function tbs:get-svg(
       {
         attribute class { "tree" },
         $sentence/@id,
-
-        (: synthetic root :)
-        element g
-        {
-          attribute class { "tree-node" },
-          attribute id
-          {
-            concat($sentence/@id, "-0")
-          },
-          element rect
-          {
-            attribute fill { "none" },
-            attribute stroke-width { "0" }
-          },
-          element text
-          {
-            attribute class { "node-label" },
-            text
-            {
-              if ($a_usespan)
-              then
-                $sentence/@span
-              else
-                "#"
-            }
-          },
-          tbs:word-set($sentence, $rootwords)
-        }
+        tbs:word-set($sentence, $rootword)
       },
       element g
       {
