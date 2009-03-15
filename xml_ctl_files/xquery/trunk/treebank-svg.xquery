@@ -70,11 +70,7 @@ declare function tbs:word-set(
     attribute id { concat($a_sentence/@id, "-", $word/@id) },
 
     (: box around text :)
-    element rect
-    {
-      attribute fill { "none" },
-      attribute stroke-width { "0" }
-    },
+    element rect {},
 
     (: text element with form :)
     element text
@@ -140,27 +136,32 @@ declare function tbs:get-svg(
   $a_id as xs:string,
   $a_usespan as xs:boolean) as element()?
 {
+  (: get sentence and create synthetic root :)
   let $doc := doc($a_docname)
   let $sentence := $doc//sentence[@id = $a_id]
   let $rootword :=
     element word
     {
       attribute id { "0" },
-      attribute form { if ($a_usespan) then $sentence/@span else "#" }
+      attribute form { if ($a_usespan) then $sentence/@span else "" }
     }
 
   return
   <svg xmlns="http://www.w3.org/2000/svg">
   {
+    (: if sentence found :)
     if ($sentence)
     then
     (
+      (: tree structure :)
       element g
       {
         attribute class { "tree" },
         $sentence/@id,
         tbs:word-set($sentence, $rootword)
       },
+
+      (: text of sentence :)
       element g
       {
         attribute class { "text" },
@@ -170,9 +171,7 @@ declare function tbs:get-svg(
           element rect
           {
             attribute class { "text-word-bound" },
-            attribute tbref { concat($sentence/@id, "-", $word/@id) },
-            attribute fill { "none" },
-            attribute stroke-width { "0" }
+            attribute tbref { concat($sentence/@id, "-", $word/@id) }
           },
           element text
           {
@@ -182,6 +181,25 @@ declare function tbs:get-svg(
             text { concat("&#x00A0;", $word/@form) }
           }
         )
+      },
+
+      (: key :)
+      element g
+      {
+        attribute class { "key" },
+        element rect {},
+        element g
+        {
+          element rect { attribute showme { "focus" } },
+          element text { "Focus word" },
+          element rect { attribute showme { "focus-parent" } },
+          element text { "Word that focus word depends on" },
+          element rect { attribute showme { "focus-child" } },
+          element text { "Words that immediately depend on focus word" },
+          element rect { attribute showme { "focus-descendant" } },
+          element text { "Other words that depend on focus word" },
+          element text { "LABEL on arc = dependency relation" }
+        }
       }
     )
     else
