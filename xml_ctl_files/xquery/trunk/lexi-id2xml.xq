@@ -63,7 +63,7 @@ let $lexicon := collection(concat("/db/lexica/",
                                   $lexiCode))
 
 (: get ids from request and find entries :)
-let $ids := request:get-parameter("n", ())
+let $ids := distinct-values(request:get-parameter("n", ()))
 let $entries := $lexicon//entryFree[@id = $ids]
 let $entries :=
   if (count($entries) = 0)

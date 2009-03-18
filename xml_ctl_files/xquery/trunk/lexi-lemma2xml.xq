@@ -65,7 +65,7 @@ let $index := doc(concat("/db/indexes/",
                          "-index.xml"))
 
 (: get lemmas from request :)
-let $lemmas := request:get-parameter("l", ())
+let $lemmas := distinct-values(request:get-parameter("l", ()))
 
 return
   if (count($lemmas) = 0)

@@ -698,11 +698,13 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
             }
 
             // if definition found
+            var startText;
+            var endText;
             if (defData)
             {
                 // find start and end of definition
-                var startText = defData.indexOf(sep, 0) + 1;
-                var endText = defData.indexOf('\n', startText);
+                startText = defData.indexOf(sep, 0) + 1;
+                endText = defData.indexOf('\n', startText);
                 if (defData.charAt(endText - 1) == '\r')
                     endText--;
 
@@ -719,10 +721,23 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
                                     documentElement.
                                     textContent;
                     defData = defs.findData(hdwd);
-                    startText = defData.indexOf(sep, 0) + 1;
-                    endText = defData.indexOf('\n', startText);
+                    if (!defData)
+                    {
+                        // remove trailing digits and retry
+                        hdwd = hdwd.substr(0, hdwd.length - toRemove);
+                        defData = defs.findData(hdwd);
+                    }
+                    if (defData)
+                    {
+                        startText = defData.indexOf(sep, 0) + 1;
+                        endText = defData.indexOf('\n', startText);
+                    }
                 }
+            }
 
+            // if we found lemma
+            if (defData)
+            {
                 // build meaning element
                 var meanElt = '<div class="alph-mean">' +
                               defData.substr(startText, endText - startText) +
@@ -737,11 +752,12 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
                 Alph.util.log("meaning for " + hdwd + " not found [" + lex + "]");
             }
 
+            // if special case
             if (idData)
             {
                 // find start and end of id
-                var startText = idData.indexOf(sep, 0) + 1;
-                var endText = idData.indexOf('\n', startText);
+                startText = idData.indexOf(sep, 0) + 1;
+                endText = idData.indexOf('\n', startText);
                 if (idData.charAt(endText - 1) == '\r')
                     endText--;
 
@@ -758,10 +774,24 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
                                     documentElement.
                                     textContent;
                     idData = ids.findData(hdwd);
-                    startText = idData.indexOf(sep, 0) + 1;
-                    endText = idData.indexOf('\n', startText);
-                }
+                    if (!idData)
+                    {
+                        // remove trailing digits and retry
+                        hdwd = hdwd.substr(0, hdwd.length - toRemove);
+                        idData = ids.findData(hdwd);
+                    }
 
+                    if (idData)
+                    {
+                        startText = idData.indexOf(sep, 0) + 1;
+                        endText = idData.indexOf('\n', startText);
+                    }
+                }
+            }
+
+            // if we found lemma
+            if (idData)
+            {
                 // get id 
                 var lemma_id = idData.substr(startText, endText - startText);
 
