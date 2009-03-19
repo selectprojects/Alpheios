@@ -4,7 +4,7 @@
  *
  * Copyright 2008-2009 Cantus Foundation
  * http://alpheios.net
- * 
+ *
  * This file is part of Alpheios.
  *
  * Alpheios is free software: you can redistribute it and/or modify
@@ -19,12 +19,12 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- * 
+ *
  * Morpheus is from Perseus Digital Library http://www.perseus.tufts.edu
- * and is licensed under the Mozilla Public License 1.1. 
+ * and is licensed under the Mozilla Public License 1.1.
  * You should have received a copy of the MPL 1.1
  * along with this program. If not, see http://www.mozilla.org/MPL/MPL-1.1.html.
- * 
+ *
  * The Smyth Grammar and LSJ Meanings come from the Perseus Digital Library
  * They are licensed under Creative Commons NonCommercial ShareAlike 3.0
  * License http://creativecommons.org/licenses/by-nc-sa/3.0/us
@@ -68,13 +68,13 @@ Alph.LanguageToolSet.greek.implementsAlphLanguageTool = true;
  */
 Alph.LanguageToolSet.greek.prototype.loadShortDefs = function()
 {
-    this.short_lex_code = 
+    this.short_lex_code =
         Alph.util.getPref("dictionaries.short.default",this.source_language)
 
     // load the local short definitions dictionary data file
     try
     {
-        this.defsFile = 
+        this.defsFile =
             new Alph.Datafile("chrome://alpheios-greek/content/dictionaries/" +
                               this.short_lex_code +
                               "/grc-" +
@@ -103,20 +103,20 @@ Alph.LanguageToolSet.greek.prototype.loadShortDefs = function()
  */
 Alph.LanguageToolSet.greek.prototype.loadLexIds = function()
 {
-    this.full_lex_code = 
+    this.full_lex_code =
         Alph.util.getPref("dictionaries.full.default",this.source_language)
 
     if (this.full_lex_code == '' || this.full_lex_code == null)
     {
-        this.idsFile == null;    
+        this.idsFile == null;
     }
-    else 
+    else
     {
         try
         {
-           this.idsFile = 
+           this.idsFile =
                 new Alph.Datafile("chrome://alpheios-greek/content/dictionaries/" +
-                                  this.full_lex_code + 
+                                  this.full_lex_code +
                                   "/grc-" +
                                   this.full_lex_code +
                                   "-ids.dat",
@@ -260,7 +260,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                 }
             }
             Alph.util.log("irregular:" + irregular);
-            
+
             var infls = {};
 
             // gather the moods for the verbs
@@ -292,7 +292,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                 // isn't one we support then just move on to the next part of speech
                 if ( infl_pofs.length == 0 ||
                      (pofs == 'verb_irregular' && ! irregular) ||  // context pofs for irregular verbs is just 'verb'
-                     (pofs != 'verb_irregular' 
+                     (pofs != 'verb_irregular'
                         && Alph.$(infl_pofs[0]).attr("context") != check_pofs)
                    )
                 {
@@ -331,7 +331,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                     {
                         params.links = Alph.LanguageToolSet.greek.INFLECTION_MAP[pofs].links;
                         //Alph.LanguageToolSet.greek.setInflectionXSL(params,infl_type,pofs,a_node,Alph.$(this).get(0));
-                        
+
                         // if it's a pronoun, what type?
                         if (infl_type == 'pronoun')
                         {
@@ -346,7 +346,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                                 var type = pronoun_list[0];
                                 for (var j=0; j < pronoun_list[1].length; j++)
                                 {
-                                    
+
                                     if (dict_hdwd == pronoun_list[1][j])
                                     {
                                         // reset the type
@@ -357,7 +357,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                             }
                             Alph.util.log("Pronoun type="+params.type);
                         } // end pronoun identification
-                    } 
+                    }
 
                 } // end infl-type
             }
@@ -386,7 +386,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
     a_params.xslt_params.fragment = 1;
     a_params.xslt_params.selected_endings = a_params.entries[a_infl_type];
     a_params.xslt_params.form = a_form || "";
-    
+
 
     // get rid of the selected endings parameter if we couldn't find any
     if (typeof a_params.xslt_params.selected_endings == "undefined" ||
@@ -440,7 +440,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
     else if (a_infl_type == 'pronoun')
     {
         a_params.xml_url =
-            'chrome://alpheios-greek/content/inflections/alph-infl-' + 
+            'chrome://alpheios-greek/content/inflections/alph-infl-' +
             a_infl_type + '-' + a_params.type + '.xml';
         if (a_params.type == 'dem')
         {
@@ -459,12 +459,12 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             {
                 a_params.xslt_params.group4 = 'pers';
             }
-            else 
+            else
             {
                 a_params.xslt_params.group4 = 'gend';
             }
         }
-        
+
         a_params.xslt_params.match_pofs = a_infl_type;
         a_params.title = 'alph-infl-title-pronoun-' + a_params.type;
     }
@@ -495,7 +495,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
 
             if (a_params.order )
             {
-    
+
                 var order = a_params.order.split('-');
                 if (order.length > 0)
                 {
@@ -510,7 +510,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xslt_params.group4 = 'hdwd';
         }
 
-    }    
+    }
 }
 
 /**
@@ -551,9 +551,9 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_
                             // and make sure to unhide any endings
                             // of the same stem class
                             if (Alph.$(this).hasClass("highlight-ending")
-                                // TODO - need to disambiguate stems for matched 
+                                // TODO - need to disambiguate stems for matched
                                 //(vs. selected) endings
-                                && ! Alph.$(this).hasClass("matched")) 
+                                && ! Alph.$(this).hasClass("matched"))
                             {
                                 var stem_class = Alph.$(this).attr("stem-class");
                                 if (stem_class != null && stem_class != '')
@@ -592,11 +592,11 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_
                     }
                 );
 
-                
-                
+
+
 
             }
-            // push the index of this table cell onto the return arry if 
+            // push the index of this table cell onto the return arry if
             // if it has been flagged as containg any collapsed endings
             if (collapsed)
             {
@@ -610,7 +610,7 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_
         function(a_stemclass,a_i)
         {
             Alph.$("#" + a_stemclass,a_tbl).addClass("highlight-ending");
-            
+
             // don't unhide the related endings for now -- too cluttered
             //var like_stems = Alph.$("span.ending[stem-class='" + a_stemclass + "']",a_tbl);
             //Alph.$(like_stems).each(
@@ -622,24 +622,24 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_
                         //Alph.$(this).nextAll("[ending-index='" + ending_index + "']").removeClass("ending-collapsed");
                     //}
                 //}
-                
+
             //)
 
         }
     );
-    
+
     if (a_params.showpofs.indexOf('_simplified')!= -1)
     {
-        // in the simplified view of the table, 
+        // in the simplified view of the table,
         // hide the declension headerrow and flag the
         // table as simplified to enable
         // other modifications via the css
         Alph.$('#headerrow2',a_tbl).css('display','none');
         Alph.$(a_tbl).addClass("simplified");
     }
-    
+
     return ret_cells;
-    
+
 }
 
 /**
@@ -651,97 +651,33 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
     var defs = this.defsFile;
     var ids = this.idsFile;
     var lex = this.short_lex_code;
-    var sep = this.defsFile.getSeparator();
-    var specialFlag = '@';
     var stripper = this.stripper;
     Alph.$(".alph-entry", a_node).each(
         function()
         {
             // get lemma
-            var lemma_key = Alph.$(".alph-dict", this).attr("lemma-key");
+            var lemmaKey = Alph.$(".alph-dict", this).attr("lemma-key");
 
-            // strip vowel length diacritics and capitalization
-            stripper.setParameter(null, "input", lemma_key);
-            stripper.setParameter(null, "strip-vowels", true);
-            stripper.setParameter(null, "strip-caps", true);
-            var x = (new DOMParser()).parseFromString("<dummy/>", "text/xml");
-            var hdwd =
-                  stripper.transformToDocument(x).documentElement.textContent;
+            // get data from def and id files
+            var defReturn =
+                    Alph.LanguageToolSet.greek.lookupLemma(lemmaKey,
+                                                           null,
+                                                           defs,
+                                                           stripper);
+            var defData = defReturn[1];
+            var idReturn =
+                    Alph.LanguageToolSet.greek.lookupLemma(lemmaKey,
+                                                           defReturn[0],
+                                                           ids,
+                                                           stripper);
+            var hdwd = idReturn[0];
+            var lemmaId = idReturn[1];
 
-            // count trailing digits
-            var toRemove = 0;
-            for (; toRemove <= hdwd.length; ++toRemove)
-            {
-                // if not a digit, done
-                var c = hdwd.substr(hdwd.length - (toRemove + 1), 1);
-                if ((c < "0") || ("9" < c))
-                    break;
-            }
-
-            // find definition and id
-            var defData = defs.findData(hdwd);
-            var idData;
-            if (ids != null)
-            { 
-                idData = ids.findData(hdwd);
-            }
-
-            // if not found
-            if ((!defData || !idData) && (toRemove > 0))
-            {
-                // remove trailing digits and retry
-                hdwd = hdwd.substr(0, hdwd.length - toRemove);
-                if (!defData)
-                    defData = defs.findData(hdwd);
-                if (!idData && ids != null)
-                    idData = ids.findData(hdwd);
-            }
-
-            // if definition found
-            var startText;
-            var endText;
-            if (defData)
-            {
-                // find start and end of definition
-                startText = defData.indexOf(sep, 0) + 1;
-                endText = defData.indexOf('\n', startText);
-                if (defData.charAt(endText - 1) == '\r')
-                    endText--;
-
-                // if special case
-                if (((endText - startText) == 1) &&
-                    (defData.charAt(startText) == specialFlag))
-                {
-                    // retry using flag plus lemma without caps removed
-                    stripper.setParameter(null, "input", lemma_key);
-                    stripper.setParameter(null, "strip-vowels", true);
-                    stripper.setParameter(null, "strip-caps", false);
-                    hdwd = specialFlag +
-                           stripper.transformToDocument(x).
-                                    documentElement.
-                                    textContent;
-                    defData = defs.findData(hdwd);
-                    if (!defData)
-                    {
-                        // remove trailing digits and retry
-                        hdwd = hdwd.substr(0, hdwd.length - toRemove);
-                        defData = defs.findData(hdwd);
-                    }
-                    if (defData)
-                    {
-                        startText = defData.indexOf(sep, 0) + 1;
-                        endText = defData.indexOf('\n', startText);
-                    }
-                }
-            }
-
-            // if we found lemma
+            // if we found definition
             if (defData)
             {
                 // build meaning element
-                var meanElt = '<div class="alph-mean">' +
-                              defData.substr(startText, endText - startText) +
-                              '</div>';
+                var meanElt = '<div class="alph-mean">' + defData + '</div>';
 
                 // insert meaning into document
                 Alph.util.log("adding " + meanElt);
@@ -749,59 +685,21 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
             }
             else
             {
-                Alph.util.log("meaning for " + hdwd + " not found [" + lex + "]");
+                Alph.util.log("meaning for " +
+                              defReturn[0] +
+                              " not found [" + lex + "]");
             }
 
-            // if special case
-            if (idData)
+            // if we found id
+            if (lemmaId)
             {
-                // find start and end of id
-                startText = idData.indexOf(sep, 0) + 1;
-                endText = idData.indexOf('\n', startText);
-                if (idData.charAt(endText - 1) == '\r')
-                    endText--;
-
-                // if special case
-                if (((endText - startText) == 1) &&
-                    (idData.charAt(startText) == specialFlag))
-                {
-                    // retry using flag plus lemma without caps removed
-                    stripper.setParameter(null, "input", lemma_key);
-                    stripper.setParameter(null, "strip-vowels", true);
-                    stripper.setParameter(null, "strip-caps", false);
-                    hdwd = specialFlag +
-                           stripper.transformToDocument(x).
-                                    documentElement.
-                                    textContent;
-                    idData = ids.findData(hdwd);
-                    if (!idData)
-                    {
-                        // remove trailing digits and retry
-                        hdwd = hdwd.substr(0, hdwd.length - toRemove);
-                        idData = ids.findData(hdwd);
-                    }
-
-                    if (idData)
-                    {
-                        startText = idData.indexOf(sep, 0) + 1;
-                        endText = idData.indexOf('\n', startText);
-                    }
-                }
-            }
-
-            // if we found lemma
-            if (idData)
-            {
-                // get id 
-                var lemma_id = idData.substr(startText, endText - startText);
-
                 // set lemma attributes
                 Alph.util.log('adding @lemma-key="' + hdwd + '"');
-                Alph.util.log('adding @lemma-id="' + lemma_id + '"');
+                Alph.util.log('adding @lemma-id="' + lemmaId + '"');
                 Alph.util.log('adding @lemma-lang="grc"');
                 Alph.util.log('adding @lemma-lex="' + lex + '"');
                 Alph.$(".alph-dict", this).attr("lemma-key", hdwd);
-                Alph.$(".alph-dict", this).attr("lemma-id", lemma_id);
+                Alph.$(".alph-dict", this).attr("lemma-id", lemmaId);
                 Alph.$(".alph-dict", this).attr("lemma-lang", "grc");
                 Alph.$(".alph-dict", this).attr("lemma-lex", lex);
             }
@@ -829,11 +727,11 @@ Alph.LanguageToolSet.greek.prototype.fixHarvardLSJ = function(a_html)
 
 /**
  * Greek-specific implementation of {@link Alph.LanguageTool#observe_pref_change}.
- * 
+ *
  * calls loadShortDefs if the default short dictionary changed
  * calls loadLexIds if the default full dictionary changed
  * @param {String} a_name the name of the preference which changed
- * @param {Object} a_value the new value of the preference 
+ * @param {Object} a_value the new value of the preference
  */
 Alph.LanguageToolSet.greek.prototype.observe_pref_change = function(a_name,a_value)
 {
@@ -850,12 +748,12 @@ Alph.LanguageToolSet.greek.prototype.observe_pref_change = function(a_name,a_val
 
 /**
  * Greek-specific implementation of {@link Alph.LanguageTool#get_lemma_id}.
- * 
- * @param {String} a_lemma_key the lemma key
+ *
+ * @param {String} a_lemmaKey the lemma key
  * @return the lemma id or null if not found
- * @type String 
+ * @type String
  */
-Alph.LanguageToolSet.greek.prototype.get_lemma_id = function(a_lemma_key)
+Alph.LanguageToolSet.greek.prototype.get_lemma_id = function(a_lemmaKey)
 {
     var lemma_id = null;
     if (this.idsFile == null)
@@ -863,60 +761,123 @@ Alph.LanguageToolSet.greek.prototype.get_lemma_id = function(a_lemma_key)
         Alph.util.log("No lemma ids loaded");
         return;
     }
-    var idData = this.idsFile.findData(a_lemma_key);
-    
-    var toRemove = 0;
-    // count trailing digits
-    for (; toRemove <= a_lemma_key.length; ++toRemove)
+
+    // get data from ids file
+    var lemma_id = Alph.LanguageToolSet.greek.lookupLemma(a_lemmaKey,
+                                                          a_lemmaKey,
+                                                          this.idsFile,
+                                                          this.stripper)[1];
+    if (!lemma_id)
     {
-        // if not a digit, done
-        var c = a_lemma_key.substr(a_lemma_key.length - (toRemove + 1), 1);
-        if ((c < "0") || ("9" < c))
-        break;
+        Alph.util.log("id for " +
+                      a_lemmaKey +
+                      " not found [" +
+                      this.full_lex_code + ']');
     }
 
-    // if not found
-    if ((!idData) && (toRemove > 0))
+    return lemma_id;
+}
+
+/**
+ * Lookup lemma
+ *
+ * @param {String} a_lemma original lemma
+ * @param {String} a_key key to look up or null
+ * @param {Alph.Datafile} a_datafile datafile to search with key
+ * @param a_stripper transform to remove diacritics, etc.
+ * @return {Array} (key, data)
+ * @type String
+ */
+Alph.LanguageToolSet.greek.lookupLemma =
+function(a_lemma, a_key, a_datafile, a_stripper)
+{
+    if (!a_datafile)
+        return Array(null, null);
+
+    var key;
+    var x = null;
+    if (!a_key)
     {
-        // remove trailing digits and retry
-        a_lemma_key = a_lemma_key.substr(0, a_lemma_key.length - toRemove);
-        idData = this.idsFile.findData(a_lemma_key);
+        // if no key given, strip vowel length diacritics and capitalization
+        a_stripper.setParameter(null, "input", a_lemma);
+        a_stripper.setParameter(null, "strip-vowels", true);
+        a_stripper.setParameter(null, "strip-caps", true);
+        x = (new DOMParser()).parseFromString("<dummy/>", "text/xml");
+        key = a_stripper.transformToDocument(x).documentElement.textContent;
     }
-    if (idData)
+    else
     {
-        var sep = this.idsFile.getSeparator();
+        // use supplied key
+        key = a_key;
+    }
+
+    // count trailing digits
+    var toRemove = 0;
+    for (; toRemove <= key.length; ++toRemove)
+    {
+        // if not a digit, done
+        var c = key.substr(key.length - (toRemove + 1), 1);
+        if ((c < "0") || ("9" < c))
+            break;
+    }
+
+    // try to find data
+    var data = a_datafile.findData(key);
+    if (!data && (toRemove > 0))
+    {
+        // if not found, remove trailing digits and retry
+        key = key.substr(0, key.length - toRemove);
+        data = a_datafile.findData(key);
+    }
+
+    // if data found
+    if (data)
+    {
+        var sep = a_datafile.getSeparator();
         var specialFlag = '@';
-        var stripper = this.stripper;
-        // find start and end of id
-        var startText = idData.indexOf(sep, 0) + 1;
-        var endText = idData.indexOf('\n', startText);
-        if (idData.charAt(endText - 1) == '\r')
+
+        // find start and end of definition
+        var startText = data.indexOf(sep, 0) + 1;
+        var endText = data.indexOf('\n', startText);
+        if (data.charAt(endText - 1) == '\r')
             endText--;
 
         // if special case
         if (((endText - startText) == 1) &&
-            (idData.charAt(startText) == specialFlag))
+            (data.charAt(startText) == specialFlag))
         {
             // retry using flag plus lemma without caps removed
-            stripper.setParameter(null, "input", lemma_key);
-            stripper.setParameter(null, "strip-vowels", true);
-            stripper.setParameter(null, "strip-caps", false);
-            a_lemma_key = specialFlag +
-                stripper.transformToDocument(x).
-                    documentElement.
-                    textContent;
-            idData = this.idsFile.findData(a_lemma_key);
-            startText = idData.indexOf(sep, 0) + 1;
-            endText = idData.indexOf('\n', startText);
+            a_stripper.setParameter(null, "input", a_lemma);
+            a_stripper.setParameter(null, "strip-vowels", true);
+            a_stripper.setParameter(null, "strip-caps", false);
+            if (!x)
+                x = (new DOMParser()).parseFromString("<dummy/>", "text/xml");
+            key = specialFlag +
+                   a_stripper.transformToDocument(x).
+                            documentElement.
+                            textContent;
+            data = a_datafile.findData(key);
+            if (!data)
+            {
+                // if not found, remove trailing digits and retry
+                key = key.substr(0, key.length - toRemove);
+                data = a_datafile.findData(key);
+            }
+
+            if (data)
+            {
+                startText = data.indexOf(sep, 0) + 1;
+                endText = data.indexOf('\n', startText);
+                if (data.charAt(endText - 1) == '\r')
+                    endText--;
+            }
         }
 
-        // get id 
-        lemma_id = idData.substr(startText, endText - startText);    
+        // real data found
+        if (data)
+            return Array(key, data.substr(startText, endText - startText));
     }
-    if (!lemma_id)
-    {
-        Alph.util.log("id for " + a_lemma_key + " not found [" +  this.full_lex_code + ']');
-    }
-    return lemma_id;
-}
 
+    // nothing found
+    return Array(key, null);
+}
