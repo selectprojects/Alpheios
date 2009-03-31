@@ -179,6 +179,7 @@ Alph.LanguageToolSet.greek.INFLECTION_MAP =
       pronoun: { keys: ['pronoun'],links:[] },
       article: { keys: ['article'],links:[] },
       cardinal: { keys: ['cardinal'],links:[] },
+      verb: { keys: ['verb'],links:[] },
 };
 
 Alph.LanguageToolSet.greek.IRREG_VERBS =
@@ -395,39 +396,13 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         delete a_params.xslt_params.selected_endings;
     }
 
-    if (a_infl_type == 'verb_irregular')
+    if (a_infl_type == 'verb')
     {
-        a_params.xml_url = 'chrome://alpheios-greek/content/inflections/alph-verb-conj-irreg.xml';
-        a_params.xslt_url = 'chrome://alpheios-greek/skin/alph-verb-conj-irreg.xsl';
-        a_params.xslt_params.hdwd = a_params.hdwd;
-    }
-    else if ( a_infl_type.indexOf('verb_') == 0 )
-    {
-        a_params.xml_url = 'chrome://alpheios-greek/content/inflections/alph-verb-conj-supp.xml';
-        a_params.xslt_url = 'chrome://alpheios-greek/skin/alph-verb-conj-supp.xsl';
-
-        var mood = (a_infl_type.split(/_/))[1];
-        a_params.xslt_params.mood = mood;
-
-    }
-    else if (a_infl_type == 'verb')
-    {
-        a_params.xml_url = 'chrome://alpheios-greek/content/inflections/alph-verb-conj.xml';
-        a_params.xslt_url = 'chrome://alpheios/skin/alph-verb-conj-group.xsl';
-
-        if (! a_params.order )
-        {
-            // default sort order
-            a_params.order = "voice-conj-mood";
-        }
-
-        var order = a_params.order.split('-');
-        if (order.length > 0)
-        {
-            a_params.xslt_params.group4 = order[0];
-            a_params.xslt_params.group5 = order[1];
-            a_params.xslt_params.group6 = order[2];
-        }
+        a_params.xml_url = 'chrome://alpheios-greek/content/inflections/alph-infl-verb-paradigms.xml';
+        a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-paradigm.xsl';
+        a_params.xslt_params.paradigm_id = a_params.paradigm_id;
+        a_params.html_url = "chrome://alpheios-greek/content/inflections/alph-infl-verb-paradigms.html";
+        a_params.title = 'alph-infl-title-none';
     }
     else if (a_infl_type == 'article')
     {

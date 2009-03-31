@@ -89,6 +89,49 @@
                   <item>Cardinals
                       <ptr target="#cardinal"/>
                   </item>
+                  <item>Verb Paradigms
+                      <list>
+                          <item>ω-Verbs: Present System Active<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm1"/>
+                          </item>
+                          <item>ω-Verbs: Present System Middle-Passive<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm2"/>
+                          </item>
+                          <item>Future System (without contraction)<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm3"/>
+                          </item>
+                          <item>Future System (Active and Middle) with contraction in -έω<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm4"/>
+                          </item>
+                          <item>Future System (Active) with contraction in -άω<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm5"/>
+                          </item>
+                          <item>Strong (2nd) Aorist System Active<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm6"/>
+                          </item>
+                          <item>Strong (2nd) Aorist System Middle<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm7"/>
+                          </item>
+                          <item>Weak (1st) Aorist System Active<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm8"/>
+                          </item>
+                          <item>Weak (1st) Aorist System Middle<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm9"/>
+                          </item>
+                          <item>Aorist Passive System<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm10"/>
+                          </item>
+                          <item>Perfect Active System<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm11"/>
+                          </item>
+                          <item>Perfect System Middle-Passive: indicative, infinitive, participle<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm12"/>
+                          </item>
+                          <item>Perfect System Middle-Passive: periphrastic subjunctive, optative, imperative<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm13"/>
+                          </item>
+                          <item>Perfect System Middle-Passive: simple subjunctive, optative, imperative<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm14"/>
+                          </item>
+                          <item>Pluperfect Middle-Passive Indicative<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm15"/>
+                          </item>
+                          <item>Future Perfect Indicative, Infinitive, Participle<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm16"/>
+                          </item>
+                          <item>Present System Active of Contract Verbs in -έω<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm18"/>
+                          </item>
+                          <item>Present System Active of Contract Verbs in -έω (monosyllabic stems)<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm19"/>
+                          </item>
+                          <item>Present System Middle-Passive of Contract Verbs in -έω<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm20"/>
+                          </item>
+                          <item>Present System Middle-Passive of Contract Verbs in -έω (monosyllabic stem)<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm21"/>
+                          </item>                      </list>
+                  </item>
               </list>
           </div>
       </front>
