@@ -91,23 +91,218 @@
           <att name="tense" value="present"></att>
           <att name="voice" value="mediopassive"></att>
       </paradigm>
+      <paradigm id="verbpdgm22">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm23">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm24">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="mediopassive"></att>
+      </paradigm>
+      <paradigm id="verbpdgm25">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="mediopassive"></att>
+      </paradigm>
+      <paradigm id="verbpdgm26">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm27">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="mediopassive"></att>
+      </paradigm>
+      <paradigm id="verbpdgm28">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm29">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="mediopassive"></att>
+      </paradigm>
+      <paradigm id="verbpdgm30">
+          <att name="tense" value="aorist"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm31">
+          <att name="tense" value="aorist"></att>
+          <att name="voice" value="middle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm32">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm33">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="mediopassive"></att>
+      </paradigm>
+      <paradigm id="verbpdgm34">
+          <att name="tense" value="aorist"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm35">
+          <att name="tense" value="aorist"></att>
+          <att name="voice" value="middle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm36">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm37">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="mediopassive"></att>
+      </paradigm>
+      <paradigm id="verbpdgm38">
+          <att name="tense" value="aorist"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm39">
+          <att name="tense" value="aorist"></att>
+          <att name="voice" value="middle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm40">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm41">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="mediopassive"></att>
+      </paradigm>
+      <paradigm id="verbpdgm42">
+          <att name="tense" value="aorist"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm43">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="mediopassive"></att>
+      </paradigm>
+      <paradigm id="verbpdgm44">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm45">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="mediopassive"></att>
+      </paradigm>
+      <paradigm id="verbpdgm46">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm47">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm48">
+          <att name="tense" value="present"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm49">
+          <att name="tense" value="aorist"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm50">
+          <att name="tense" value="aorist"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm51">
+          <att name="tense" value="aorist"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm52">
+          <att name="tense" value="aorist"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm53">
+          <att name="tense" value="perfect"></att>
+          <att name="voice" value="active"></att>
+      </paradigm>
+      <paradigm id="verbpdgm54">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm55">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm56">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm57">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm58">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm59">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm60">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm61">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm62">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm63">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm64">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm65">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      <paradigm id="verbpdgm66">
+          <att name="mood" value="participle"></att>
+      </paradigm>
+      
+      
+      
+      
+      
+      
+      
+      
   </xsl:variable>
   <xsl:variable name="attribute-lookup">
       <abbreviations>
           <item abbr="s">singular</item>
+          <item abbr="sing">singular</item>
           <item abbr="pl">plural</item>
           <item abbr="d">dual</item>
           <item abbr="1">1st</item>
           <item abbr="2">2nd</item>
           <item abbr="3">3rd</item>
+          <item abbr="pres">present</item>
           <item abbr="perf">perfect</item>
           <item abbr="subj">subjunctive</item>
           <item abbr="ind">indicative</item>
           <item abbr="indic">indicative</item>
+          <item abbr="imprtv">imperative</item>
+          <item abbr="fut">future</item>
+          <item abbr="imperf">imperfect</item>
           <item abbr="opt">optative</item>
           <item abbr="inf">infinitive</item>
           <item abbr="part">participle</item>
+          <item abbr="pluperf">pluperfect</item>
           <item abbr="act">active</item>
+          <item abbr="masc">masculine</item>
+          <item abbr="fem">feminine</item>
+          <item abbr="n">nominative</item>
+          <item abbr="nom">nominative</item>
+          <item abbr="v">vocative</item>
+          <item abbr="voc">vocative</item>
+          <item abbr="gen">genitive</item>
+          <item abbr="dat">dative</item>
+          <item abbr="g">genitive</item>
+          <item abbr="gd">genitive dative</item>
+          <item abbr="nv">nominative vocative</item>
+          <item abbr="nav">nominative accusative vocative</item>
+          <item abbr="a">accusative</item>
+          <item abbr="acc">accusative</item>
       </abbreviations>
       <order-table>
           <order-item attname="case" order="1">nominative</order-item>
@@ -115,6 +310,9 @@
           <order-item attname="case" order="3">dative</order-item>
           <order-item attname="case" order="4">accusative</order-item>
           <order-item attname="case" order="5">vocative</order-item>
+          <order-item attname="case" order="6">nominative accusative vocative</order-item>
+          <order-item attname="case" order="7">nominative vocative</order-item>
+          <order-item attname="case" order="8">genitive dative</order-item>
           <order-item attname="gend" order="1">masculine</order-item>        
           <order-item attname="gend" order="2">feminine</order-item>
           <order-item attname="gend" order="3">neuter</order-item>
@@ -218,7 +416,8 @@
         
         <xsl:variable name="row1headers">
             <xsl:choose>
-                <xsl:when test="count(xhtml:tr[1]/xhtml:td/xhtml:span/@class[. = 'greekred']) &gt; 0"></xsl:when>
+                <!-- if the first row has any greekred elements in it, it's probably not table headers -->
+                <xsl:when test="xhtml:tr[1]/xhtml:td/xhtml:span[@class = 'greekred']"></xsl:when>
                 <xsl:otherwise>1</xsl:otherwise>
             </xsl:choose>
         </xsl:variable>
@@ -265,7 +464,7 @@
                         <xsl:if test="($col1label and $col2label and $col &gt; 2) or ($col1label and $col &gt; 1)">
                             <!-- get the last col 1 label text -->
                             <xsl:variable name="col1_label_text">
-                                <xsl:call-template name="get-label-text">
+                                <xsl:call-template name="get-col-label-text">
                                     <xsl:with-param name="item" select="."/>
                                     <xsl:with-param name="row_num" select="$row_num"/>
                                     <xsl:with-param name="col_num" select="1"/>
@@ -277,7 +476,7 @@
                         </xsl:if>
                         <xsl:if test="$col2label and $col &gt; 2">
                             <xsl:variable name="col2_label_text">
-                                <xsl:call-template name="get-label-text">
+                                <xsl:call-template name="get-col-label-text">
                                     <xsl:with-param name="item" select="."/>
                                     <xsl:with-param name="row_num" select="$row_num"/>
                                     <xsl:with-param name="col_num" select="2"/>
@@ -287,9 +486,15 @@
                                 <xsl:with-param name="item" select="$col2_label_text"/>
                             </xsl:call-template>
                         </xsl:if>
-                        <xsl:if test="$row1headers">
+                        <xsl:if test="$row1headers='1'">
+                            <xsl:variable name="row_label_text">
+                                <xsl:call-template name="get-row-label-text">
+                                    <xsl:with-param name="item" select="."/>
+                                    <xsl:with-param name="col_num" select="$col"/>
+                                </xsl:call-template>
+                            </xsl:variable>
                             <xsl:call-template name="find-attributes">
-                                <xsl:with-param name="item" select="../../xhtml:tr[1]/xhtml:td[$col]"></xsl:with-param>
+                                <xsl:with-param name="item" select="$row_label_text"></xsl:with-param>
                             </xsl:call-template>
                         </xsl:if>
                         <xsl:call-template name="process_text">
@@ -309,7 +514,7 @@
         </xsl:for-each>
     </xsl:template>
        
-    <xsl:template name="get-label-text">
+    <xsl:template name="get-col-label-text">
         <xsl:param name="item"/>
         <xsl:param name="row_num"/>
         <xsl:param name="col_num"/>
@@ -318,10 +523,27 @@
                 <xsl:value-of select="$item/ancestor::xhtml:table/xhtml:tr[number($row_num)]/xhtml:td[number($col_num)]/text()"/>
             </xsl:when>
             <xsl:when test="number($row_num) - 1 &gt; 1">
-                <xsl:call-template name="get-label-text">
+                <xsl:call-template name="get-col-label-text">
                     <xsl:with-param name="item" select="$item"/>
                     <xsl:with-param name="row_num" select="number($row_num)-1"/>
                     <xsl:with-param name="col_num" select="$col_num"/>
+                </xsl:call-template>
+            </xsl:when>
+            <xsl:otherwise></xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template name="get-row-label-text">
+        <xsl:param name="item"/>
+        <xsl:param name="col_num"/>
+        <xsl:choose>
+            <xsl:when test="$item/ancestor::xhtml:table/xhtml:tr[1]/xhtml:td[number($col_num)]/text()">
+                <xsl:value-of select="$item/ancestor::xhtml:table/xhtml:tr[1]/xhtml:td[number($col_num)]/text()"/>
+            </xsl:when>
+            <xsl:when test="number($col_num) - 1 &gt; 0">
+                <xsl:call-template name="get-row-label-text">
+                    <xsl:with-param name="item" select="$item"/>
+                    <xsl:with-param name="col_num" select="number($col_num)-1"/>
                 </xsl:call-template>
             </xsl:when>
             <xsl:otherwise></xsl:otherwise>
