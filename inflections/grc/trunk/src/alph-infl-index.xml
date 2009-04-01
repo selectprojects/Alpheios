@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI
+  xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:math="http://www.w3.org/1998/Math/MathML"
+  xmlns="http://www.tei-c.org/ns/1.0">
+  <teiHeader>
+    <fileDesc>
+      <titleStmt>
+        <title>Alpheios Greek Inflection Tables</title>
+      </titleStmt>
+      <publicationStmt><p/></publicationStmt>
+      <sourceDesc><p/></sourceDesc>
+    </fileDesc>
+  </teiHeader>
+  <text>
+      <front>
+          <div type="contents">
+              <head>Alpheios Greek Inflection Tables</head>
+              <list>
+                  <item>Nouns
+                      <list>
+                          <item>Full table
+                              <ptr target="#noun"/>
+                          </item>
+                          <item>Simplified table
+                              <ptr target="#noun_simplified"/>
+                          </item>
+                      </list>
+                  </item>
+                  <item>Adjectives
+                      <list>
+                          <item>Full table
+                              <ptr target="#adjective"/>
+                          </item>
+                          <item>Simplified table
+                              <ptr target="#adjective_simplified"/>
+                          </item>
+                      </list>
+                  </item>
+                  <item>Pronouns
+                      <list>
+                          <item>Personal
+                              <ptr target="#pronoun|type:pers"/>
+                          </item>
+                          <item>Reflexive
+                              <ptr target="#pronoun|type:refl"/>
+                          </item>
+                          <item>Reciprocal
+                              <ptr target="#pronoun|type:recip"/>
+                          </item>
+                          <item>Demonstrative
+                            <ptr target="#pronoun|type:dem"/>
+                          </item>
+                          <item>Relative
+                              <ptr target="#pronoun|type:rel"/>
+                          </item>
+                          <item>General Relative
+                              <ptr target="#pronoun|type:genrel"/>
+                          </item>
+                          <item>Interrogative
+                              <ptr target="#pronoun|type:inter"/>
+                          </item>
+                          <item>Indefinite
+                              <ptr target="#pronoun|type:indef"/>
+                          </item>
+                          <item>Intensive
+                              <ptr target="#pronoun|type:inten"/>
+                          </item>
+                          <item>Possessive
+                              <ptr target="#pronoun|type:pos"/>
+                              <list>
+                                  <item>1st Person
+                                      <ptr target="#pronoun|type:pos1"/>
+                                  </item>
+                                  <item>2nd Person
+                                      <ptr target="#pronoun|type:pos2"/>
+                                  </item>
+                                  <item>3rd Person
+                                      <ptr target="#pronoun|type:pos3"/>
+                                  </item>
+                              </list>
+                          </item>
+                      </list>
+                  </item>
+                  <item>Articles
+                      <ptr target="#article"/>
+                  </item>
+                  <item>Cardinals
+                      <ptr target="#cardinal"/>
+                  </item>
+                  <item>Verb Paradigms
+                      <list>
+                          <item>ω-Verbs: Present System Active<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm1"/>
+                          </item>
+                          <item>ω-Verbs: Present System Middle-Passive<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm2"/>
+                          </item>
+                          <item>Future System (without contraction)<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm3"/>
+                          </item>
+                          <item>Future System (Active and Middle) with contraction in -έω<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm4"/>
+                          </item>
+                          <item>Future System (Active) with contraction in -άω<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm5"/>
+                          </item>
+                          <item>Strong (2nd) Aorist System Active<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm6"/>
+                          </item>
+                          <item>Strong (2nd) Aorist System Middle<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm7"/>
+                          </item>
+                          <item>Weak (1st) Aorist System Active<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm8"/>
+                          </item>
+                          <item>Weak (1st) Aorist System Middle<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm9"/>
+                          </item>
+                          <item>Aorist Passive System<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm10"/>
+                          </item>
+                          <item>Perfect Active System<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm11"/>
+                          </item>
+                          <item>Perfect System Middle-Passive: indicative, infinitive, participle<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm12"/>
+                          </item>
+                          <item>Perfect System Middle-Passive: periphrastic subjunctive, optative, imperative<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm13"/>
+                          </item>
+                          <item>Perfect System Middle-Passive: simple subjunctive, optative, imperative<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm14"/>
+                          </item>
+                          <item>Pluperfect Middle-Passive Indicative<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm15"/>
+                          </item>
+                          <item>Future Perfect Indicative, Infinitive, Participle<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm16"/>
+                          </item>
+                          <item>Present System Active of Contract Verbs in -έω<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm18"/>
+                          </item>
+                          <item>Present System Active of Contract Verbs in -έω (monosyllabic stems)<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm19"/>
+                          </item>
+                          <item>Present System Middle-Passive of Contract Verbs in -έω<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm20"/>
+                          </item>
+                          <item>Present System Middle-Passive of Contract Verbs in -έω (monosyllabic stem)<ptr target="#verb|type:paradigm|paradigm_id:verbpdgm21"/>
+                          </item>                      </list>
+                  </item>
+              </list>
+          </div>
+      </front>
+      <body>
+          <div/>
+      </body>
+  </text>
+</TEI>

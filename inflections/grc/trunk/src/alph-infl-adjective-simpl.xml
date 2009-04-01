@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="file:/C:/work/schemas/inflections.css"?>
+<infl-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/work/schemas/infl-endings-ungrouped.xsd"
+    xml:lang="greek">
+  <order-table>
+    <order-item attname="case" order="1">nominative</order-item>
+    <order-item attname="case" order="2">genitive</order-item>
+    <order-item attname="case" order="3">dative</order-item>
+    <order-item attname="case" order="4">accusative</order-item>
+    <order-item attname="case" order="5">vocative</order-item>
+    <order-item attname="gend" order="1">feminine</order-item>
+    <order-item attname="gend" order="2">masculine</order-item>
+    <order-item attname="gend" order="3">masculine feminine</order-item>
+    <order-item attname="gend" order="5">neuter</order-item>
+    <order-item attname="gend" order="6">masculine feminine neuter</order-item>
+    <order-item attname="type" order="1">regular</order-item>
+    <order-item attname="type" order="2">irregular</order-item>
+    <order-item attname="num" order="1">singular</order-item>
+    <order-item attname="num" order="2">dual</order-item>
+    <order-item attname="num" order="3">plural</order-item>
+  </order-table>
+  <infl-endings>
+    <infl-ending-set
+       num="dual"   case="accusative" gend="feminine">
+        <infl-ending
+               type="regular primary">α</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="dual"   case="dative" gend="feminine">
+        <infl-ending
+               type="regular primary">αιν</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="dual"   case="genitive" gend="feminine">
+        <infl-ending
+               type="regular primary">αιν</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="dual"   case="nominative" gend="feminine">
+        <infl-ending
+               type="regular primary">α</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="dual"   case="vocative" gend="feminine">
+        <infl-ending
+               type="regular primary">α</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="dual"   case="accusative" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">ω</infl-ending>
+        <infl-ending
+               type="regular primary">ε</infl-ending>
+        <infl-ending
+               type="regular primary">ει</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="dual"   case="dative" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">οιν</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="dual"   case="genitive" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">οιν</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="dual"   case="nominative" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">ω</infl-ending>
+        <infl-ending
+               type="regular primary">ε</infl-ending>
+        <infl-ending
+               type="regular primary">ει</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="dual"   case="vocative" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">ω</infl-ending>
+        <infl-ending
+               type="regular primary">ε</infl-ending>
+        <infl-ending
+               type="regular primary">ει</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="plural"   case="dative" gend="feminine">
+        <infl-ending
+               type="regular primary">αις</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="plural"   case="dative" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">οις</infl-ending>
+        <infl-ending
+               type="regular primary">σι</infl-ending>
+        <infl-ending
+               type="regular primary">σιv</infl-ending>
+        <infl-ending
+               type="regular primary">εσι</infl-ending>
+        <infl-ending
+               type="regular primary">εσιv</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="plural"   case="genitive" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">ων</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="plural"   case="nominative" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">ες</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="plural"   case="accusative" gend="masculine feminine">
+        <infl-ending
+               type="regular primary">ας</infl-ending>
+        <infl-ending
+               type="regular primary">ους</infl-ending>
+        <infl-ending
+               type="regular primary">εις</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="plural"   case="nominative" gend="masculine feminine">
+        <infl-ending
+               type="regular primary">αι</infl-ending>
+        <infl-ending
+               type="regular primary">οι</infl-ending>
+        <infl-ending
+               type="regular primary">εις</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="plural"   case="vocative" gend="masculine feminine">
+        <infl-ending
+               type="regular primary">αι</infl-ending>
+        <infl-ending
+               type="regular primary">οι</infl-ending>
+        <infl-ending
+               type="regular primary">εις</infl-ending>
+        <infl-ending
+               type="regular primary">ες</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="plural"   case="accusative" gend="neuter">
+        <infl-ending
+               type="regular primary">α</infl-ending>
+        <infl-ending
+               type="regular primary">η</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="plural"   case="nominative" gend="neuter">
+        <infl-ending
+               type="regular primary">α</infl-ending>
+        <infl-ending
+               type="regular primary">η</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="plural"   case="vocative" gend="neuter">
+        <infl-ending
+               type="regular primary">α</infl-ending>
+        <infl-ending
+               type="regular primary">η</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="accusative" gend="feminine">
+        <infl-ending
+               type="regular primary">αv</infl-ending>
+        <infl-ending
+               type="regular primary">ην</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="dative" gend="feminine">
+        <infl-ending
+               type="regular primary">ᾳ</infl-ending>
+        <infl-ending
+               type="regular primary">ῃ</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="genitive" gend="feminine">
+        <infl-ending
+               type="regular primary">ας</infl-ending>
+        <infl-ending
+               type="regular primary">ης</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="nominative" gend="feminine">
+        <infl-ending
+               type="regular primary">α</infl-ending>
+        <infl-ending
+               type="regular primary">η</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="vocative" gend="feminine">
+        <infl-ending
+               type="regular primary">α</infl-ending>
+        <infl-ending
+               type="regular primary">η</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="accusative" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">_</infl-ending>
+        <infl-ending
+               type="regular primary">ον</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="dative" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">ῳ</infl-ending>
+        <infl-ending
+               type="regular primary">ει</infl-ending>
+        <infl-ending
+               type="regular primary">ι</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="genitive" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">ou</infl-ending>
+        <infl-ending
+               type="regular primary">οuς</infl-ending>
+        <infl-ending
+               type="regular primary">ος</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="nominative" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">_</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="vocative" gend="masculine feminine neuter">
+        <infl-ending
+               type="regular primary">_</infl-ending>
+        <infl-ending
+               type="regular primary">ές</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="accusative" gend="masculine feminine">
+        <infl-ending
+               type="regular primary">α</infl-ending>
+        <infl-ending
+               type="regular primary">η</infl-ending>
+        <infl-ending
+               type="regular primary">v</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="nominative" gend="masculine feminine">
+        <infl-ending
+               type="regular primary">ος</infl-ending>
+        <infl-ending
+               type="regular primary">ης</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="vocative" gend="masculine feminine">
+        <infl-ending
+               type="regular primary">ε</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="nominative" gend="masculine">
+        <infl-ending
+               type="regular primary">οuς</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="accusative" gend="neuter">
+        <infl-ending
+               type="regular primary">ές</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="nominative" gend="neuter">
+        <infl-ending
+               type="regular primary">oν</infl-ending>
+        <infl-ending
+               type="regular primary">ες</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+       num="singular"   case="vocative" gend="neuter">
+        <infl-ending
+               type="regular primary">oν</infl-ending>
+    </infl-ending-set>
+  </infl-endings>
+</infl-data>
