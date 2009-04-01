@@ -367,7 +367,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
     // identify the correct xslt parameters for the requested inflection type
     if (params.showpofs)
     {
-        params.html_url = "chrome://alpheios-greek/content/inflections/alph-infl-substantive.html";
+        params.html_url = "chrome://alpheios-greek/content/html/alph-infl-substantive.html";
         Alph.LanguageToolSet.greek.setInflectionXSL(params,params.showpofs,form);
         // TODO -remove this HACK which suppresses the Javascript matching algorithm
         //params.suppress_match = true;
@@ -400,8 +400,11 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
     {
         a_params.xml_url = 'chrome://alpheios-greek/content/inflections/alph-infl-verb-paradigms.xml';
         a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-paradigm.xsl';
-        a_params.xslt_params.paradigm_id = a_params.paradigm_id;
-        a_params.html_url = "chrome://alpheios-greek/content/inflections/alph-infl-verb-paradigms.html";
+        if (typeof a_params.paradigm_id != 'undefined' && a_params.paradigm_id != null)
+        {
+            a_params.xslt_params.paradigm_id = a_params.paradigm_id;
+        }
+        a_params.html_url = "chrome://alpheios-greek/content/html/alph-infl-verb-paradigms.html";
         a_params.title = 'alph-infl-title-none';
     }
     else if (a_infl_type == 'article')
