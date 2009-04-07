@@ -406,14 +406,12 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         }
         a_params.html_url = "chrome://alpheios-greek/content/html/alph-infl-verb-paradigms.html";
         a_params.title = 'alph-infl-title-none';
-        a_params.xslt_params.match_pofs = a_infl_type;
     }
     else if (a_infl_type == 'article')
     {
              a_params.xml_url =
             'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
         a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
-        a_params.xslt_params.match_pofs = a_infl_type;
         a_params.xslt_params.group4 = 'gend';
     }
     else if (a_infl_type == 'pronoun')
@@ -444,7 +442,6 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             }
         }
 
-        a_params.xslt_params.match_pofs = a_infl_type;
         a_params.title = 'alph-infl-title-pronoun-' + a_params.type;
     }
     else if (a_infl_type.match(/^(noun|adjective|cardinal)/))
@@ -470,7 +467,6 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xml_url =
                 'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
             a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
-            a_params.xslt_params.match_pofs = a_infl_type;
 
             if (a_params.order )
             {
@@ -488,8 +484,8 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         {
             a_params.xslt_params.group4 = 'hdwd';
         }
-
     }
+    a_params.xslt_params.match_pofs = a_infl_type;
 }
 
 /**
