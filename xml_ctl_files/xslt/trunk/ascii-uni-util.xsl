@@ -147,7 +147,7 @@
       </entry>
       <entry>
         <ascii>E</ascii>
-        <unic>&#0114;</unic>
+        <unic>&#x0114;</unic>
         <unid></unid>
       </entry>
       <entry>
