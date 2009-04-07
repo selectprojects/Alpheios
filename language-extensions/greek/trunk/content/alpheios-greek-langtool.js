@@ -406,6 +406,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         }
         a_params.html_url = "chrome://alpheios-greek/content/html/alph-infl-verb-paradigms.html";
         a_params.title = 'alph-infl-title-none';
+        a_params.xslt_params.match_pofs = a_infl_type;
     }
     else if (a_infl_type == 'article')
     {
