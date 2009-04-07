@@ -8181,14 +8181,14 @@
          <row role="data">
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">infinitives</cell>
-            <cell role="data" tense="present" voice="active">
+            <cell role="data" tense="present" voice="active" mood="infinitive">
                <span xml:lang="grc">εἶναι</span>, fut.<span xml:lang="grc">ἔσεσθαι</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participles</cell>
-            <cell role="data" tense="present" voice="active">
+            <cell role="data" tense="present" voice="active" mood="participle">
                <span xml:lang="grc">ὤν, οὖσᾰ, ὄν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm57">decl.</reflink>), fut.<span xml:lang="grc">ἐσόμενος, -η, -ον</span>.(see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">decl.</reflink>)</cell>
          </row>
       </table>
@@ -9567,7 +9567,7 @@
          <row role="data">
             <cell role="label" tense="perfect" voice="active"/>
             <cell role="label" tense="perfect" voice="active">participles</cell>
-            <cell role="data" tense="perfect" voice="active">
+            <cell role="data" tense="perfect" voice="active" mood="participle">
                <span xml:lang="grc">εἰδώς, εἰδυῖᾰ, εἰδός</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm63">declension</reflink>)</cell>
          </row>
       </table>
