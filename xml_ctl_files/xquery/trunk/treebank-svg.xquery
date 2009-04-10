@@ -93,7 +93,7 @@ declare function tbs:word-set(
       (: label for arc to child word :)
       element text
       {
-        attribute class { "arc-label" },
+        attribute class { "arc-label", "alpheios-ignore" },
         attribute idref { concat($a_sentence/@id, "-", $child/@id) },
         text
         {
@@ -190,6 +190,7 @@ declare function tbs:get-svg(
         element rect {},
         element g
         {
+          attribute class { "alpheios-ignore" },
           element rect { attribute showme { "focus" } },
           element text { "Focus word" },
           element rect { attribute showme { "focus-parent" } },
