@@ -1,0 +1,64 @@
+div.summary {
+    border-style: solid;
+    width: 250px;
+    border-width: thin;
+}
+
+div.summary * {
+    font-size: 15px;
+}
+
+span.heading {
+}
+
+g text {
+    font-size: 20px;
+    fill: black;
+}
+text.headwd {
+    font-size: 20px;
+}
+g.alignment text {
+    font-size: 15px;
+}
+text.free {
+    fill: red;
+}
+text.edit-focus {
+    font-weight: bold;
+}
+text.browse-focus {
+    font-weight: bold;
+}
+
+line.divider {
+    stroke-width: 2px;
+    stroke: black;
+}
+
+g rect {
+    stroke-width: 0;
+    fill: none;
+}
+g rect.marked {
+    stroke-width: 1px;
+    stroke: gray;
+}
+g rect.browse-focus {
+    fill: yellow;
+    stroke-width: 1px;
+    stroke: gray;
+}
+g rect.edit-focus {
+    fill: #F0F0F0;
+    stroke-width: 1px;
+    stroke: gray;
+}
+g rect.aligned-focus {
+    fill: #C0FFC0;
+}
+g rect.selected {
+    fill: yellow;
+    stroke-width: 1px;
+    stroke: black;
+}
