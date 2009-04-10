@@ -1,3 +1,10 @@
+label {
+    margin: 2px;
+    color:black;
+    font-family:'trebuchet ms',helvetica,sans-serif;
+    font-size:84%;
+    font-weight:bold;
+}
 button {
     margin: 2px;
     background-color:#8795a2;
