@@ -74,6 +74,12 @@ declare function alst:get-list-page(
       attribute rel { "stylesheet" },
       attribute type { "text/css" },
       attribute href { "../css/alph-align-list.css" }
+    },
+    element script
+    {
+      attribute language { "javascript" },
+      attribute type { "text/javascript" },
+      attribute src { "../script/alph-align-list.js" }
     }
   },
 
@@ -97,6 +103,18 @@ declare function alst:get-list-page(
       let $queryURL := concat($a_queryBase, $i)
       let $l1Words := $sent/*:wds[@lnum="L1"]/*:w
       let $l2Words := $sent/*:wds[@lnum="L2"]/*:w
+      let $marks :=
+        for $word in ($l1Words, $l2Words)
+        let $mark := $word/@mark
+        return
+        if (exists($mark))
+        then
+          element tr
+          {
+            element td { $word/text() },
+            element td { data($mark) }
+          }
+        else ()
       return
       (
         element li
@@ -107,19 +125,47 @@ declare function alst:get-list-page(
             attribute href { $queryURL },
             element div
             {
-              attribute class { "sentence" },
-              element div {
+              attribute class
+              {
+                "sentence",
+                if (count($marks) > 0) then "marked" else ()
+              },
+              if (count($marks) > 0)
+              then
+              (
+                attribute onmouseover { "ShowMarks(this)" },
+                attribute onmouseout { "HideMarks(this)" }
+              )
+              else (),
+
+              element div
+              {
                 (: concatenated words from L1 :)
                 string-join((for $j in 1 to $a_maxWords return $l1Words[$j],
                              if (count($l1Words) > $a_maxWords) then "..." else ""),
                             ' ')
               },
-              element div {
+              element div
+              {
                 (: concatenated words from L2 :)
                 string-join((for $j in 1 to $a_maxWords return $l2Words[$j],
                              if (count($l1Words) > $a_maxWords) then "..." else ""),
                             ' ')
+              },
+
+              if (count($marks) > 0)
+              then
+              element div
+              {
+                attribute class { "alph-marks" },
+                element table
+                {
+                  element th { "Word" },
+                  element th { "Comment" },
+                  $marks
+                }
               }
+              else ()
             }
           }
         }
