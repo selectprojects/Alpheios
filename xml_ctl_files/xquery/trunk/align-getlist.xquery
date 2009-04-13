@@ -30,6 +30,7 @@ module namespace alst="http://alpheios.net/namespaces/align-list";
 
   Parameters:
     $a_docName     name of aligned text document
+    $a_docStem     document stem 
     $a_queryBase   query to invoke when sentence is selected
     $a_maxWords    maximum number of words to use from sentence
     $a_maxSents    maximum number of sentences to use from document
@@ -39,6 +40,7 @@ module namespace alst="http://alpheios.net/namespaces/align-list";
  :)
 declare function alst:get-list-page(
   $a_docName as xs:string,
+  $a_docStem as xs:string,
   $a_queryBase as xs:string,
   $a_maxWords as xs:integer,
   $a_maxSents as xs:integer) as element()?
@@ -96,6 +98,14 @@ declare function alst:get-list-page(
     {
       concat("Sentence list for document ", $docId, " [file ", $a_docName, "]")
     },
+
+    <div>
+      <form name="backup" action="./align-backup.xq">
+        <input type="submit" value="Backup/Restore"/>
+        <input type="hidden" name="doc" value="{ $a_docStem }"/>
+      </form>
+    </div>,
+
     element ol
     {
       (: for each sentence :)

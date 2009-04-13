@@ -32,7 +32,7 @@ import module namespace alut="http://alpheios.net/namespaces/align-util"
 
   Parameters:
     $a_docName     name of aligned text document
-    $a_docId       document id
+    $a_docStem     document stem
     $a_sentId      id of sentence to edit
     $a_saveURL     query to invoked to save sentence
     $a_listURL     query to invoked to list sentences
@@ -44,7 +44,7 @@ import module namespace alut="http://alpheios.net/namespaces/align-util"
  :)
 declare function aled:get-edit-page(
   $a_docName as xs:string,
-  $a_docId as xs:string,
+  $a_docStem as xs:string,
   $a_sentId as xs:integer,
   $a_saveURL as xs:string,
   $a_listURL as xs:string,
@@ -133,7 +133,7 @@ declare function aled:get-edit-page(
           attribute action { $a_editURL },
           attribute name { "sent-navigation-goto" },
 
-          <input type="hidden" name="doc" value="{ $a_docId }"/>,
+          <input type="hidden" name="doc" value="{ $a_docStem }"/>,
           <input type="hidden"
                  name="maxSentId"
                  disabled="yes"
@@ -154,7 +154,7 @@ declare function aled:get-edit-page(
           attribute action { $a_editURL },
           attribute name { "sent-navigation-buttons" },
 
-          <input type="hidden" name="doc" value="{ $a_docId }"/>,
+          <input type="hidden" name="doc" value="{ $a_docStem }"/>,
           <input type="hidden"
                  name="maxSentId"
                  disabled="yes"
@@ -221,7 +221,7 @@ declare function aled:get-edit-page(
           attribute action { $a_listURL },
           attribute name { "sent-navigation-list" },
 
-          <input type="hidden" name="doc" value="{ $a_docId }"/>,
+          <input type="hidden" name="doc" value="{ $a_docStem }"/>,
 
           element button
           {
@@ -286,7 +286,7 @@ declare function aled:get-edit-page(
     alut:xml-to-svg(
       $sent,
       (
-        attribute alph-docid { $a_docId },
+        attribute alph-doc { $a_docStem },
         attribute alph-sentid { $a_sentId },
         attribute alph-saveurl { $a_saveURL },
         attribute onload { "Init(evt)" },

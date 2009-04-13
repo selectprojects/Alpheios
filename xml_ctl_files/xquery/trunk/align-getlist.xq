@@ -25,13 +25,39 @@
 import module namespace request="http://exist-db.org/xquery/request";
 import module namespace alst="http://alpheios.net/namespaces/align-list"
               at "align-getlist.xquery";
+import module namespace albu="http://alpheios.net/namespaces/align-backup"
+              at "align-backup.xquery";
 declare option exist:serialize "method=xhtml media-type=text/html";
 
-let $id := request:get-parameter("doc", ())
-let $docName := concat("/db/repository/alignment/", $id, ".xml")
+let $docStem := request:get-parameter("doc", ())
+let $collName := "/db/repository/alignment/"
+let $docName := concat($collName, $docStem, ".xml")
 let $editBase := concat("./align-editsentence.xq",
                         "?doc=",
-                        encode-for-uri($id),
+                        encode-for-uri($docStem),
                         "&amp;s=")
 
-return alst:get-list-page($docName, $editBase, 25, 1000)
+(: see if backup was requested :)
+let $backup := request:get-parameter("backup", "n")
+let $usets := request:get-parameter("usets", "off")
+let $timestamp :=
+  if ($usets eq "on")
+  then
+    request:get-parameter("ts", ())
+  else ()
+let $doBackup :=
+  if ($backup eq "y")
+  then
+    albu:do-backup($collName, $docStem, $timestamp)
+  else ()
+
+(: see if restore was requested :)
+let $restoreStem := request:get-parameter("restore", ())
+let $doRestore :=
+  if ($restoreStem)
+  then
+    albu:do-restore($collName, $docStem, $restoreStem)
+  else ()
+
+(: now go get actual list :)
+return alst:get-list-page($docName, $docStem, $editBase, 25, 1000)

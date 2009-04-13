@@ -40,8 +40,8 @@ declare function alsv:save-sentence(
 {
   if ($a_data)
   then
-    let $docId := $a_data/@alph-docid
-    let $docName := concat("/db/repository/alignment/", $docId, ".xml")
+    let $docStem := $a_data/@alph-doc
+    let $docName := concat("/db/repository/alignment/", $docStem, ".xml")
     let $sentId := $a_data/@alph-sentid
     let $doc := doc($docName)
     let $oldSent := subsequence($doc//sentence, $sentId, 1)

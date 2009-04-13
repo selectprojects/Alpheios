@@ -30,15 +30,15 @@ declare option exist:serialize
         doctype-public=-//W3C//DTD&#160;XHTML&#160;1.0&#160;Transitional//EN
         doctype-system=http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd";
 
-let $docId := request:get-parameter("doc", ())
-let $docName := concat("/db/repository/alignment/", $docId, ".xml")
+let $docStem := request:get-parameter("doc", ())
+let $docName := concat("/db/repository/alignment/", $docStem, ".xml")
 let $sentId := request:get-parameter("s", ())
 let $saveURL := "./align-savesentence.xq"
 let $listURL := "./align-getlist.xq"
 let $editURL := "./align-editsentence.xq"
 
 return aled:get-edit-page($docName,
-                          $docId,
+                          $docStem,
                           number($sentId),
                           $saveURL,
                           $listURL,
