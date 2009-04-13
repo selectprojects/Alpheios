@@ -52,7 +52,7 @@ declare function local:get-timestamp() as xs:string
   Stems are returned in descending order so that stem+timestamp
   will appear with latest timestamps first.
  :)
-declare function local:get-docStems(
+declare function local:get-doc-stems(
   $a_collection as xs:string,
   $a_docStem as xs:string,
   $a_includeStem as xs:boolean) as xs:string*
@@ -88,7 +88,9 @@ declare function albu:get-backup-page(
   $a_docStem as xs:string) as element()?
 {
   (: get potential restorable files :)
-  let $docStems := local:get-docStems($a_collection, $a_docStem, false())
+  let $docStems := local:get-doc-stems($a_collection,
+                                       concat($a_docStem, ".bak"),
+                                       false())
   
   return
   <html xmlns="http://www.w3.org/1999/xhtml"
