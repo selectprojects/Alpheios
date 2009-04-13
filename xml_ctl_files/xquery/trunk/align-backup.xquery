@@ -101,6 +101,13 @@ declare function albu:get-backup-page(
     {
       "Alpheios:Backup/Restore Aligned Sentence Document",
       data($a_docStem)
+    },
+
+    element link
+    {
+      attribute rel { "stylesheet" },
+      attribute type { "text/css" },
+      attribute href { "../css/alph-align-list.css" }
     }
   },
 
@@ -118,17 +125,15 @@ declare function albu:get-backup-page(
     (: backup controls :)
     <div>
       <form name="backup-form" action="./align-getlist.xq">
-        <input type="submit" value="Backup"/>
+        <button type="submit">Backup</button>
         <div>
           <input type="hidden" name="doc" value="{ $a_docStem }"/>
           <input type="hidden" name="backup" value="y"/>
           <label for="usets">Include timestamp in name</label>
           <input type="checkbox" id="usets" name="usets" checked="yes"/>
-          <input type="hidden"
-                 name="ts"
-                 value="{ local:get-timestamp() }"/>
         </div>
       </form>
+      <hr align="left" width="50%"/>
     </div>,
 
     (: restore controls, if any backups exist :)
@@ -136,25 +141,32 @@ declare function albu:get-backup-page(
     then
     <div>
       <form name="restore-form" action="./align-getlist.xq">
-        <input type="submit" value="Restore"/>
+        <button type="submit">Restore</button>
         <label>:</label>
         <input type="hidden" name="doc" value="{ $a_docStem }"/>
         <div>{
-          for $id at $i in $docStems
+          for $stem at $i in $docStems
+          let $id := concat("restore-", $i)
           return
           (
             element input
             {
               if ($i eq 1) then attribute checked { "yes" } else (),
+              attribute id { $id },
               attribute type { "radio" },
               attribute name { "restore" },
-              attribute value { $id },
-              $id
+              attribute value { $stem }
+            },
+            element label
+            {
+              attribute for { $id },
+              $stem
             },
             <br/>
           )
         }</div>
       </form>
+      <hr align="left" width="50%"/>
     </div>
     else
       <h4>No backups exist.</h4>,
@@ -162,7 +174,7 @@ declare function albu:get-backup-page(
     (: return without doing anything :)
     <div>
       <form name="return" action="./align-getlist.xq">
-        <input type="submit" value="Return to sentence list"/>
+        <button type="submit">Return to sentence list</button>
         <input type="hidden" name="doc" value="{ $a_docStem }"/>
       </form>
     </div>
@@ -185,14 +197,14 @@ declare function albu:get-backup-page(
 declare function albu:do-backup(
   $a_collName as xs:string,
   $a_docStem as xs:string,
-  $a_timestamp as xs:string?) as xs:string?
+  $a_timestamp as xs:boolean) as xs:string?
 {
   let $docName := concat($a_collName, $a_docStem, ".xml")
   let $buName := concat($a_docStem,
                         ".bak",
                         if ($a_timestamp)
                         then
-                          concat('.', $a_timestamp)
+                          concat('.', local:get-timestamp())
                         else "",
                         ".xml")
   let $doc := doc($docName)

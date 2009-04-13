@@ -101,7 +101,7 @@ declare function alst:get-list-page(
 
     <div>
       <form name="backup" action="./align-backup.xq">
-        <input type="submit" value="Backup/Restore"/>
+        <button type="submit">Backup/Restore</button>
         <input type="hidden" name="doc" value="{ $a_docStem }"/>
       </form>
     </div>,

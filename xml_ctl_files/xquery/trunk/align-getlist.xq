@@ -40,15 +40,10 @@ let $editBase := concat("./align-editsentence.xq",
 (: see if backup was requested :)
 let $backup := request:get-parameter("backup", "n")
 let $usets := request:get-parameter("usets", "off")
-let $timestamp :=
-  if ($usets eq "on")
-  then
-    request:get-parameter("ts", ())
-  else ()
 let $doBackup :=
   if ($backup eq "y")
   then
-    albu:do-backup($collName, $docStem, $timestamp)
+    albu:do-backup($collName, $docStem, ($usets eq "on"))
   else ()
 
 (: see if restore was requested :)
