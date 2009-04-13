@@ -23,6 +23,7 @@
  :)
 
 module namespace albu="http://alpheios.net/namespaces/align-backup";
+import module namespace xmldb="http://exist-db.org/xquery/xmldb";
 
 (:
   Local function to get timestamp in form to be used in file name
