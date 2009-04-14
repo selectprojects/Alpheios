@@ -43,7 +43,7 @@ button:hover {
     background-color: #4e6376;
     color: white;
 }
-button: active {
+button:active {
     border-style: inset;
     background-color: #8795a2;
 }
@@ -69,7 +69,7 @@ span.heading {
 
 g text {
     font-size: 20px;
-    fill: black;
+    fill: #404040;
 }
 text.headwd {
     font-size: 20px;
@@ -78,13 +78,19 @@ g.alignment text {
     font-size: 15px;
 }
 text.free {
-    fill: red;
+    fill: #FF4040;
 }
 text.edit-focus {
-    font-weight: bold;
+    fill: black;
+}
+text.free.edit-focus {
+    fill: red;
 }
 text.browse-focus {
-    font-weight: bold;
+    fill: black;
+}
+text.free.browse-focus {
+    fill: red;
 }
 
 line.divider {

@@ -43,7 +43,7 @@ button:hover {
     background-color: #4e6376;
     color: white;
 }
-button: active {
+button:active {
     border-style: inset;
     background-color: #8795a2;
 }
