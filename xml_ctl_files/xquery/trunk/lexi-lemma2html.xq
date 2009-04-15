@@ -93,25 +93,30 @@ let $xml-output :=
         $dict-entry
       else
         (:
-          transform lemma to unicode
+          transform lemma to unicode if language is Greek
           Note: In order to ensure precomposed unicode,
           we first convert to betacode (which will leave
           betacode input unchanged), then convert to unicode
          :)
-        let $beta-lemma :=
-          transform:transform(
-            <dummy/>,
-            doc("/db/xslt/alpheios-uni2betacode.xsl"),
-            <parameters>
-              <param name="input" value="{ $lemma }"/>
-            </parameters>)
         let $uni-lemma :=
-          transform:transform(
-            <dummy/>,
-            doc("/db/xslt/alpheios-beta2unicode.xsl"),
-            <parameters>
-              <param name="input" value="{ $beta-lemma }"/>
-            </parameters>)
+          if ($langCode eq "grc")
+          then
+            let $beta-lemma :=
+              transform:transform(
+                <dummy/>,
+                doc("/db/xslt/alpheios-uni2betacode.xsl"),
+                <parameters>
+                  <param name="input" value="{ $lemma }"/>
+                </parameters>)
+            return
+              transform:transform(
+                <dummy/>,
+                doc("/db/xslt/alpheios-beta2unicode.xsl"),
+                <parameters>
+                  <param name="input" value="{ $beta-lemma }"/>
+                </parameters>)
+          else
+            $lemma
         (: see if unicode lemma can be found directly :)
         let $dict-entry :=
           if ($uni-lemma ne $lemma)
