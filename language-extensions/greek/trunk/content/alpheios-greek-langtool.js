@@ -80,7 +80,7 @@ Alph.LanguageToolSet.greek.prototype.loadShortDefs = function()
                               "/grc-" +
                               this.short_lex_code +
                               "-defs.dat",
-                              "UTF-8", "|");
+                              "UTF-8");
             Alph.util.log("Loaded Greek defs [" +
                       this.defsFile.getData().length +
                       " bytes]");
@@ -120,7 +120,7 @@ Alph.LanguageToolSet.greek.prototype.loadLexIds = function()
                                   "/grc-" +
                                   this.full_lex_code +
                                   "-ids.dat",
-                                  "UTF-8", "|");
+                                  "UTF-8");
             Alph.util.log("Loaded Greek ids [" +
                           this.idsFile.getData().length +
                           " bytes]");
@@ -625,7 +625,8 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
 {
     var defs = this.defsFile;
     var ids = this.idsFile;
-    var lex = this.short_lex_code;
+    var shortLex = this.short_lex_code;
+    var fullLex = this.full_lex_code;
     var stripper = this.stripper;
     Alph.$(".alph-entry", a_node).each(
         function()
@@ -662,7 +663,7 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
             {
                 Alph.util.log("meaning for " +
                               defReturn[0] +
-                              " not found [" + lex + "]");
+                              " not found [" + shortLex + "]");
             }
 
             // if we found id
@@ -672,15 +673,15 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
                 Alph.util.log('adding @lemma-key="' + hdwd + '"');
                 Alph.util.log('adding @lemma-id="' + lemmaId + '"');
                 Alph.util.log('adding @lemma-lang="grc"');
-                Alph.util.log('adding @lemma-lex="' + lex + '"');
+                Alph.util.log('adding @lemma-lex="' + shortLex + '"');
                 Alph.$(".alph-dict", this).attr("lemma-key", hdwd);
                 Alph.$(".alph-dict", this).attr("lemma-id", lemmaId);
                 Alph.$(".alph-dict", this).attr("lemma-lang", "grc");
-                Alph.$(".alph-dict", this).attr("lemma-lex", lex);
+                Alph.$(".alph-dict", this).attr("lemma-lex", shortLex);
             }
             else
             {
-                Alph.util.log("id for " + hdwd + " not found [" + lex + "]");
+                Alph.util.log("id for " + hdwd + " not found [" + fullLex + "]");
             }
         }
     );
@@ -809,7 +810,7 @@ function(a_lemma, a_key, a_datafile, a_stripper)
     if (data)
     {
         var sep = a_datafile.getSeparator();
-        var specialFlag = '@';
+        var specialFlag = a_datafile.getSpecialHandlingFlag();
 
         // find start and end of definition
         var startText = data.indexOf(sep, 0) + 1;

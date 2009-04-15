@@ -1,0 +1,12 @@
+Various lemma corrections:
+  With /: "antistro/phe" "augu/rius" - leave as is
+  With ': "min'" etc. - leave as is
+  Garbled?: "cardu .s" "vi^den'?"
+  "Hermu aelig;doelig;o^n" -> "Hermu aedoeo^n"
+  "Re_gium (Rhe_g" -> "Re_gium"
+
+ls-J:
+entry 25148 (key="J"): Engfish -> English
+
+ls-P:
+entry 33274 (key="P"): Greek II -> Greek <foreign lang="greek">*p</foreign>
