@@ -89,6 +89,9 @@ text.free.edit-focus {
 text.browse-focus {
     fill: black;
 }
+text.aligned-focus {
+    fill: black;
+}
 text.free.browse-focus {
     fill: red;
 }
@@ -117,7 +120,7 @@ g rect.edit-focus {
     stroke: gray;
 }
 g rect.aligned-focus {
-    fill: #C0FFC0;
+    fill: yellow;
 }
 g rect.selected {
     fill: yellow;

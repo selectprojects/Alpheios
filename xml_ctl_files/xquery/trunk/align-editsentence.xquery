@@ -175,6 +175,7 @@ declare function aled:get-edit-page(
           {
             attribute type { "submit" },
             attribute name { $a_editParam },
+            attribute accesskey { "<" },
             attribute value { $sentId - 1 },
             if ($sentId <= 1)
             then
@@ -192,6 +193,7 @@ declare function aled:get-edit-page(
           {
             attribute type { "submit" },
             attribute name { $a_editParam },
+            attribute accesskey { ">" },
             attribute value { $sentId + 1 },
             if ($sentId >= $maxSentId)
             then
