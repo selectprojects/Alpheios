@@ -5,7 +5,7 @@
 }
 
 .selected {
-    background-color: yellow;
+    background-color: #F6D918;
 }
 
 .query-table-header {
@@ -38,7 +38,7 @@
 .choice.noselect .attribute{
     cursor: default;
     font-weight: lighter;
-    color: gray;
+    color: #666666;
 }
 
 .choice.correct .attribute{
@@ -66,7 +66,7 @@ div.invalid {
     vertical-align: bottom;
     position: absolute top:0;
     font-weight: normal;
-    color: black;
+    color: #333333;
 }
 
 *:lang(grc) {
@@ -142,12 +142,12 @@ div.invalid {
 
 #alph-infl-table td.ending-group .ending {
     visibility: hidden;
-    color: black;
+    color: #333333;
     cursor: pointer;
 }
 
 #alph-infl-table td.ending-group.incorrect {
-    background-color: #999;
+    background-color: #7E8897;
 }
 
 #alph-infl-table td.ending-group.correct .ending{
@@ -162,8 +162,8 @@ div.invalid {
 
 
 #alph-infl-table td.ending-group .ending.matchingform{
-    color: black;
-    background-color: lightblue;
+    color: #333333;
+    background-color: #73CCDE;
 }
 
 #alph-infl-table td.ending-group.correct .ending.matchingform{
@@ -192,5 +192,5 @@ div.invalid {
 }
 
 #alph-infl-table td.invalid, #alph-infl-table td.ending-group.incorrect.invalid {
-    background-color: #333;
+    background-color: #4E6476;
 }
