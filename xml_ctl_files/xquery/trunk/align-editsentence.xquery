@@ -245,10 +245,10 @@ declare function aled:get-edit-page(
               onclick="ClickOnRedo(event)">Redo &gt;</button>,
 
       <form>
-        <label for="align-checkbox">Show interlinear text</label>
-        <input id="align-checkbox"
+        <label for="interlinear-checkbox">Show interlinear text</label>
+        <input id="interlinear-checkbox"
                type="checkbox"
-               onclick="ToggleAlignmentDisplay(event)"/>
+               onclick="ToggleInterlinearDisplay(event)"/>
       </form>
     },
 
