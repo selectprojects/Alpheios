@@ -19,7 +19,7 @@
 
         <prefpane id="alpheios-prefs-greek" 
                   label="&alpheios.greek.prefs.title;" 
-                  image="">
+                  image="chrome://alpheios/skin/icons/languages_32.png">
             <preferences>
                 <preference id="pref-greek-lexicon" 
                         name="extensions.alpheios.greek.url.lexicon" 
