@@ -120,6 +120,7 @@
                 <xs:element name="comp" type="ComparisonEnumeration"/>
                 <xs:element name="conj" type="OrdinalEnumeration"/>
                 <xs:element name="decl" type="OrdinalEnumeration"/>
+                <xs:element name="dial" type="xs:string"/>
                 <xs:element name="gend" type="GenderEnumeration"/>
                 <xs:element name="mood" type="MoodEnumeration"/>
                 <xs:element name="note" type="xs:string"/>
