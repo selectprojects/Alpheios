@@ -52,6 +52,7 @@ declare variable $tbu:s_tables :=
     <entry>
       <short>t</short>
       <long>participle</long>
+      <lex>verb participle</lex>
     </entry>
     <entry>
       <short>a</short>
@@ -72,7 +73,6 @@ declare variable $tbu:s_tables :=
     <entry>
       <short>g</short>
       <long>particle</long>
-      <lex>verb particle</lex>
     </entry>
     <entry>
       <short>r</short>

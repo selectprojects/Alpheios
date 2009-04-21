@@ -91,7 +91,8 @@ declare function tbm:get-morphology(
           {
             $word/../@xml:lang,
             text { $word/@lemma }
-          }
+          },
+          tbm:morph-element("pofs", "pos", $word/@postag)
         },
         element infl
         {
