@@ -1,435 +1,454 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:xml="http://www.w3.org/XML/1998/namespace">
-    
-    <!--
-    Schema describing XML markup used in lexicon output
-
-    This schema is intentionally rather lax in a couple of ways:
-    - Inflection and dictionary elements are defined as essentially unordered
-        sets of elements.  In fact, the program will only put out the elements in
-        certain orders and with certain elements according to the part of speech.
-    - Several types, such as area and geography, that do not correspond to
-        grammatical entities or notions are left as text strings, whereas any
-        particular lexical program may have a defined set of possible values.
-
-    Change history:
-     7-Dec-2007       mgursky        Original version (adapted from WordsXML.xsd)
-     7-Dec-2007       mgursky        Add <unknown> and <error> elements
-    13-Dec-2007       mgursky        Add case and part-of-speech order attributes
-     1-Oct-2008       mgursky        Add <form> element to <word>
+<!--
+  Copyright 2007-2009 Cantus Foundation
+  http://alpheios.net
+  
+  This file is part of Alpheios.
+  
+  Alpheios is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+  
+  Alpheios is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+  
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
 -->
-    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
-               schemaLocation="xml-1998.xsd"/>
 
+<!--
+  Schema describing XML markup used in lexicon output
+  
+  This schema is intentionally rather lax in a couple of ways:
+  - Inflection and dictionary elements are defined as essentially unordered
+  sets of elements.  In fact, the program will only put out the elements in
+  certain orders and with certain elements according to the part of speech.
+  - Several types, such as area and geography, that do not correspond to
+  grammatical entities or notions are left as text strings, whereas any
+  particular lexical program may have a defined set of possible values.
+-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:xml="http://www.w3.org/XML/1998/namespace">
+
+  <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+    schemaLocation="xml-1998.xsd"/>
+
+  <xs:annotation>
+    <xs:documentation>Structure of lexicon output</xs:documentation>
+  </xs:annotation>
+
+  <!-- Top-level elements -->
+  <xs:element name="words">
     <xs:annotation>
-        <xs:documentation>Structure of lexicon output</xs:documentation>
+      <xs:documentation>Output from program execution</xs:documentation>
     </xs:annotation>
-
-    <!-- Top-level elements -->
-    <xs:element name="words">
-        <xs:annotation>
-            <xs:documentation>Output from program execution</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-            <xs:sequence maxOccurs="unbounded">
-                <xs:element name="phrase" type="TextType" minOccurs="0">
-                    <xs:annotation>
-                        <xs:documentation>Input phrase</xs:documentation>
-                    </xs:annotation>
-                </xs:element>
-                <xs:choice maxOccurs="unbounded">
-                    <xs:element ref="error"/>
-                    <xs:element ref="unknown"/>
-                    <xs:element ref="word"/>
-                </xs:choice>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <xs:element name="error" type="xs:string">
-        <xs:annotation>
-            <xs:documentation>Unrecoverable error</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-
-    <xs:element name="unknown" type="xs:string">
-        <xs:annotation>
-            <xs:documentation>Unknown word</xs:documentation>
-        </xs:annotation>
-    </xs:element>
-
-    <xs:element name="word">
-        <xs:annotation>
-            <xs:documentation>Output for a single word</xs:documentation>
-        </xs:annotation>
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="form" type="TextType" minOccurs="0"/>
-                <xs:element name="entry" type="EntryType" maxOccurs="unbounded"/>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
-
-    <!-- Element types -->
-    <xs:complexType name="EntryType">
-        <xs:annotation>
-            <xs:documentation>Entry for single meaning/part of speech</xs:documentation>
-        </xs:annotation>
+    <xs:complexType>
+      <xs:sequence maxOccurs="unbounded">
+        <xs:element name="phrase" type="TextType" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Input phrase</xs:documentation>
+          </xs:annotation>
+        </xs:element>
         <xs:choice maxOccurs="unbounded">
-            <xs:element name="dict" type="DictionaryType"/>
-            <xs:element name="infl" type="InflectionType" maxOccurs="unbounded"/>
-            <xs:element name="mean" type="xs:string"/>
-            <xs:element name="note" type="xs:string"/>
+          <xs:element ref="error"/>
+          <xs:element ref="unknown"/>
+          <xs:element ref="word"/>
         </xs:choice>
+      </xs:sequence>
     </xs:complexType>
+  </xs:element>
 
-    <xs:complexType name="DictionaryType">
-        <xs:annotation>
-            <xs:documentation>Dictionary details of entry</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element name="hdwd" type="TextType" minOccurs="0"/>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
-                <xs:element name="age" type="AgeType"/>
-                <xs:element name="area" type="xs:string"/>
-                <xs:element name="case" type="CaseType"/>
-                <xs:element name="conj" type="OrdinalEnumeration"/>
-                <xs:element name="decl" type="OrdinalEnumeration"/>
-                <xs:element name="freq" type="FrequencyType"/>
-                <xs:element name="gend" type="GenderEnumeration"/>
-                <xs:element name="geo" type="xs:string"/>
-                <xs:element name="kind" type="VerbKindEnumeration"/>
-                <xs:element name="note" type="xs:string"/>
-                <xs:element name="pofs" type="PartOfSpeechType"/>
-                <xs:element name="pron" type="xs:string"/>
-                <xs:element name="src" type="xs:string"/>
-            </xs:choice>
-        </xs:sequence>
+  <xs:element name="error" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Unrecoverable error</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="unknown" type="xs:string">
+    <xs:annotation>
+      <xs:documentation>Unknown word</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+
+  <xs:element name="word">
+    <xs:annotation>
+      <xs:documentation>Output for a single word</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="form" type="TextType" minOccurs="0"/>
+        <xs:element name="entry" type="EntryType" maxOccurs="unbounded"/>
+      </xs:sequence>
     </xs:complexType>
+  </xs:element>
 
-    <xs:complexType name="InflectionType">
-        <xs:annotation>
-            <xs:documentation>Inflected form of entry</xs:documentation>
-        </xs:annotation>
-        <xs:sequence>
-            <xs:element name="term" type="TermType"/>
-            <xs:choice minOccurs="0" maxOccurs="unbounded">
-                <xs:element name="pofs" type="PartOfSpeechType"/>
-                <xs:element name="case" type="CaseType"/>
-                <xs:element name="comp" type="ComparisonEnumeration"/>
-                <xs:element name="conj" type="OrdinalEnumeration"/>
-                <xs:element name="decl" type="OrdinalEnumeration"/>
-                <xs:element name="dial" type="xs:string"/>
-                <xs:element name="gend" type="GenderEnumeration"/>
-                <xs:element name="mood" type="MoodEnumeration"/>
-                <xs:element name="note" type="xs:string"/>
-                <xs:element name="num" type="NumberEnumeration"/>
-                <xs:element name="pers" type="OrdinalEnumeration"/>
-                <xs:element name="sort" type="NumeralKindEnumeration"/>
-                <xs:element name="tense" type="TenseEnumeration"/>
-                <xs:element name="var" type="OrdinalEnumeration"/>
-                <xs:element name="voice" type="VoiceEnumeration"/>
-                <xs:element name="xmpl" type="xs:string"/>
-            </xs:choice>
-        </xs:sequence>
-    </xs:complexType>
+  <!-- Element types -->
+  <xs:complexType name="EntryType">
+    <xs:annotation>
+      <xs:documentation>Entry for single meaning/part of
+        speech</xs:documentation>
+    </xs:annotation>
+    <xs:choice maxOccurs="unbounded">
+      <xs:element name="dict" type="DictionaryType"/>
+      <xs:element name="infl" type="InflectionType" maxOccurs="unbounded"/>
+      <xs:element name="mean" type="xs:string"/>
+      <xs:element name="note" type="xs:string"/>
+    </xs:choice>
+  </xs:complexType>
 
-    <xs:complexType name="AgeType" mixed="true">
+  <xs:complexType name="DictionaryType">
+    <xs:annotation>
+      <xs:documentation>Dictionary details of entry</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="hdwd" type="TextType" minOccurs="0"/>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="age" type="AgeType"/>
+        <xs:element name="area" type="xs:string"/>
+        <xs:element name="case" type="CaseType"/>
+        <xs:element name="conj" type="OrdinalEnumeration"/>
+        <xs:element name="decl" type="OrdinalEnumeration"/>
+        <xs:element name="freq" type="FrequencyType"/>
+        <xs:element name="gend" type="GenderEnumeration"/>
+        <xs:element name="geo" type="xs:string"/>
+        <xs:element name="kind" type="VerbKindEnumeration"/>
+        <xs:element name="note" type="xs:string"/>
+        <xs:element name="pofs" type="PartOfSpeechType"/>
+        <xs:element name="pron" type="xs:string"/>
+        <xs:element name="src" type="xs:string"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="InflectionType">
+    <xs:annotation>
+      <xs:documentation>Inflected form of entry</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="term" type="TermType"/>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="pofs" type="PartOfSpeechType"/>
+        <xs:element name="case" type="CaseType"/>
+        <xs:element name="comp" type="ComparisonEnumeration"/>
+        <xs:element name="conj" type="OrdinalEnumeration"/>
+        <xs:element name="decl" type="OrdinalEnumeration"/>
+        <xs:element name="derivtype" type="xs:string"/>
+        <xs:element name="dial" type="xs:string"/>
+        <xs:element name="gend" type="GenderEnumeration"/>
+        <xs:element name="geo" type="xs:string"/>
+        <xs:element name="mood" type="MoodEnumeration"/>
+        <xs:element name="morph" type="xs:string"/>
+        <xs:element name="note" type="xs:string"/>
+        <xs:element name="num" type="NumberEnumeration"/>
+        <xs:element name="pers" type="OrdinalEnumeration"/>
+        <xs:element name="sort" type="NumeralKindEnumeration"/>
+        <xs:element name="stemtype" type="xs:string"/>
+        <xs:element name="tense" type="TenseEnumeration"/>
+        <xs:element name="var" type="OrdinalEnumeration"/>
+        <xs:element name="voice" type="VoiceEnumeration"/>
+        <xs:element name="xmpl" type="xs:string"/>
+      </xs:choice>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="AgeType" mixed="true">
+    <xs:attribute name="order" type="xs:positiveInteger"/>
+  </xs:complexType>
+
+  <xs:complexType name="CaseType">
+    <xs:simpleContent>
+      <xs:extension base="CaseEnumeration">
         <xs:attribute name="order" type="xs:positiveInteger"/>
-    </xs:complexType>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
-    <xs:complexType name="CaseType">
-        <xs:simpleContent>
-            <xs:extension base="CaseEnumeration">
-                <xs:attribute name="order" type="xs:positiveInteger"/>
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
+  <xs:complexType name="FrequencyType" mixed="true">
+    <xs:attribute name="order" type="xs:positiveInteger"/>
+  </xs:complexType>
 
-    <xs:complexType name="FrequencyType" mixed="true">
+  <xs:complexType name="TextType" mixed="true">
+    <xs:attribute ref="xml:lang"/>
+  </xs:complexType>
+
+  <xs:complexType name="PartOfSpeechType">
+    <xs:simpleContent>
+      <xs:extension base="PartOfSpeechEnumeration">
         <xs:attribute name="order" type="xs:positiveInteger"/>
-    </xs:complexType>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
 
-    <xs:complexType name="TextType" mixed="true">
-        <xs:attribute ref="xml:lang"/>
-    </xs:complexType>
+  <xs:complexType name="TermType">
+    <xs:sequence>
+      <xs:element name="stem" type="xs:string" minOccurs="0"/>
+      <xs:element name="suff" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute ref="xml:lang"/>
+  </xs:complexType>
 
-    <xs:complexType name="PartOfSpeechType">
-        <xs:simpleContent>
-            <xs:extension base="PartOfSpeechEnumeration">
-                <xs:attribute name="order" type="xs:positiveInteger"/>
-            </xs:extension>
-        </xs:simpleContent>
-    </xs:complexType>
-    
-    <xs:complexType name="TermType">
-        <xs:sequence>
-            <xs:element name="stem" type="xs:string" minOccurs="0"/>
-            <xs:element name="suff" type="xs:string" minOccurs="0"/>
-        </xs:sequence>
-        <xs:attribute ref="xml:lang"/>
-    </xs:complexType>
+  <!-- Enumerated types -->
+  <xs:simpleType name="CaseEnumeration">
+    <xs:annotation>
+      <xs:documentation> List of potential cases from
+        http://en.wikipedia.org/wiki/Grammatical_case </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="abessive"/>
+      <xs:enumeration value="ablative"/>
+      <xs:enumeration value="absolutive"/>
+      <xs:enumeration value="accusative"/>
+      <xs:enumeration value="addirective"/>
+      <xs:enumeration value="adelative"/>
+      <xs:enumeration value="adessive"/>
+      <xs:enumeration value="adverbial"/>
+      <xs:enumeration value="allative"/>
+      <xs:enumeration value="antessive"/>
+      <xs:enumeration value="apudessive"/>
+      <xs:enumeration value="aversive"/>
+      <xs:enumeration value="benefactive"/>
+      <xs:enumeration value="caritive"/>
+      <xs:enumeration value="causal"/>
+      <xs:enumeration value="causal-final"/>
+      <xs:enumeration value="comitative"/>
+      <xs:enumeration value="dative"/>
+      <xs:enumeration value="delative"/>
+      <xs:enumeration value="direct"/>
+      <xs:enumeration value="distributive"/>
+      <xs:enumeration value="distributive-temporal"/>
+      <xs:enumeration value="elative"/>
+      <xs:enumeration value="ergative"/>
+      <xs:enumeration value="essive"/>
+      <xs:enumeration value="essive-formal"/>
+      <xs:enumeration value="essive-modal"/>
+      <xs:enumeration value="equative"/>
+      <xs:enumeration value="evitative"/>
+      <xs:enumeration value="exessive"/>
+      <xs:enumeration value="final"/>
+      <xs:enumeration value="formal"/>
+      <xs:enumeration value="genitive"/>
+      <xs:enumeration value="illative"/>
+      <xs:enumeration value="inelative"/>
+      <xs:enumeration value="inessive"/>
+      <xs:enumeration value="instructive"/>
+      <xs:enumeration value="instrumental"/>
+      <xs:enumeration value="instrumental-comitative"/>
+      <xs:enumeration value="intransitive"/>
+      <xs:enumeration value="lative"/>
+      <xs:enumeration value="locative"/>
+      <xs:enumeration value="modal"/>
+      <xs:enumeration value="multiplicative"/>
+      <xs:enumeration value="nominative"/>
+      <xs:enumeration value="partitive"/>
+      <xs:enumeration value="pegative"/>
+      <xs:enumeration value="perlative"/>
+      <xs:enumeration value="possessive"/>
+      <xs:enumeration value="postelative"/>
+      <xs:enumeration value="postdirective"/>
+      <xs:enumeration value="postessive"/>
+      <xs:enumeration value="postpositional"/>
+      <xs:enumeration value="prepositional"/>
+      <xs:enumeration value="privative"/>
+      <xs:enumeration value="prolative"/>
+      <xs:enumeration value="prosecutive"/>
+      <xs:enumeration value="proximative"/>
+      <xs:enumeration value="separative"/>
+      <xs:enumeration value="sociative"/>
+      <xs:enumeration value="subdirective"/>
+      <xs:enumeration value="subessive"/>
+      <xs:enumeration value="subelative"/>
+      <xs:enumeration value="sublative"/>
+      <xs:enumeration value="superdirective"/>
+      <xs:enumeration value="superessive"/>
+      <xs:enumeration value="superlative"/>
+      <xs:enumeration value="suppressive"/>
+      <xs:enumeration value="temporal"/>
+      <xs:enumeration value="terminative"/>
+      <xs:enumeration value="translative"/>
+      <xs:enumeration value="vialis"/>
+      <xs:enumeration value="vocative"/>
+    </xs:restriction>
+  </xs:simpleType>
 
-    <!-- Enumerated types -->
-    <xs:simpleType name="CaseEnumeration">
-        <xs:annotation>
-            <xs:documentation> List of potential cases from
-                http://en.wikipedia.org/wiki/Grammatical_case </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="abessive"/>
-            <xs:enumeration value="ablative"/>
-            <xs:enumeration value="absolutive"/>
-            <xs:enumeration value="accusative"/>
-            <xs:enumeration value="addirective"/>
-            <xs:enumeration value="adelative"/>
-            <xs:enumeration value="adessive"/>
-            <xs:enumeration value="adverbial"/>
-            <xs:enumeration value="allative"/>
-            <xs:enumeration value="antessive"/>
-            <xs:enumeration value="apudessive"/>
-            <xs:enumeration value="aversive"/>
-            <xs:enumeration value="benefactive"/>
-            <xs:enumeration value="caritive"/>
-            <xs:enumeration value="causal"/>
-            <xs:enumeration value="causal-final"/>
-            <xs:enumeration value="comitative"/>
-            <xs:enumeration value="dative"/>
-            <xs:enumeration value="delative"/>
-            <xs:enumeration value="direct"/>
-            <xs:enumeration value="distributive"/>
-            <xs:enumeration value="distributive-temporal"/>
-            <xs:enumeration value="elative"/>
-            <xs:enumeration value="ergative"/>
-            <xs:enumeration value="essive"/>
-            <xs:enumeration value="essive-formal"/>
-            <xs:enumeration value="essive-modal"/>
-            <xs:enumeration value="equative"/>
-            <xs:enumeration value="evitative"/>
-            <xs:enumeration value="exessive"/>
-            <xs:enumeration value="final"/>
-            <xs:enumeration value="formal"/>
-            <xs:enumeration value="genitive"/>
-            <xs:enumeration value="illative"/>
-            <xs:enumeration value="inelative"/>
-            <xs:enumeration value="inessive"/>
-            <xs:enumeration value="instructive"/>
-            <xs:enumeration value="instrumental"/>
-            <xs:enumeration value="instrumental-comitative"/>
-            <xs:enumeration value="intransitive"/>
-            <xs:enumeration value="lative"/>
-            <xs:enumeration value="locative"/>
-            <xs:enumeration value="modal"/>
-            <xs:enumeration value="multiplicative"/>
-            <xs:enumeration value="nominative"/>
-            <xs:enumeration value="partitive"/>
-            <xs:enumeration value="pegative"/>
-            <xs:enumeration value="perlative"/>
-            <xs:enumeration value="possessive"/>
-            <xs:enumeration value="postelative"/>
-            <xs:enumeration value="postdirective"/>
-            <xs:enumeration value="postessive"/>
-            <xs:enumeration value="postpositional"/>
-            <xs:enumeration value="prepositional"/>
-            <xs:enumeration value="privative"/>
-            <xs:enumeration value="prolative"/>
-            <xs:enumeration value="prosecutive"/>
-            <xs:enumeration value="proximative"/>
-            <xs:enumeration value="separative"/>
-            <xs:enumeration value="sociative"/>
-            <xs:enumeration value="subdirective"/>
-            <xs:enumeration value="subessive"/>
-            <xs:enumeration value="subelative"/>
-            <xs:enumeration value="sublative"/>
-            <xs:enumeration value="superdirective"/>
-            <xs:enumeration value="superessive"/>
-            <xs:enumeration value="superlative"/>
-            <xs:enumeration value="suppressive"/>
-            <xs:enumeration value="temporal"/>
-            <xs:enumeration value="terminative"/>
-            <xs:enumeration value="translative"/>
-            <xs:enumeration value="vialis"/>
-            <xs:enumeration value="vocative"/>
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="ComparisonEnumeration">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="positive"/>
+      <xs:enumeration value="comparative"/>
+      <xs:enumeration value="superlative"/>
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="ComparisonEnumeration">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="positive"/>
-            <xs:enumeration value="comparative"/>
-            <xs:enumeration value="superlative"/>
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="GenderEnumeration">
+    <xs:annotation>
+      <xs:documentation> List of potential genders from
+        http://en.wikipedia.org/wiki/Grammatical_gender </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="all"/>
+      <xs:enumeration value="masculine"/>
+      <xs:enumeration value="feminine"/>
+      <xs:enumeration value="neuter"/>
+      <xs:enumeration value="common"/>
+      <xs:enumeration value="animate"/>
+      <xs:enumeration value="inanimate"/>
+      <!-- Polish gender types -->
+      <xs:enumeration value="personal masculine"/>
+      <xs:enumeration value="animate masculine"/>
+      <xs:enumeration value="inanimate masculine"/>
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="GenderEnumeration">
-        <xs:annotation>
-            <xs:documentation> List of potential genders from
-                http://en.wikipedia.org/wiki/Grammatical_gender </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="all"/>
-            <xs:enumeration value="masculine"/>
-            <xs:enumeration value="feminine"/>
-            <xs:enumeration value="neuter"/>
-            <xs:enumeration value="common"/>
-            <xs:enumeration value="animate"/>
-            <xs:enumeration value="inanimate"/>
-            <!-- Polish gender types -->
-            <xs:enumeration value="personal masculine"/>
-            <xs:enumeration value="animate masculine"/>
-            <xs:enumeration value="inanimate masculine"/>
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="MoodEnumeration">
+    <xs:annotation>
+      <xs:documentation> List of potential moods from
+        http://en.wikipedia.org/wiki/Grammatical_mood with additions from other
+        programs </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="admirative"/>
+      <xs:enumeration value="cohortative"/>
+      <xs:enumeration value="conditional"/>
+      <xs:enumeration value="declarative"/>
+      <xs:enumeration value="dubitative"/>
+      <xs:enumeration value="energetic"/>
+      <xs:enumeration value="eventive"/>
+      <xs:enumeration value="generic"/>
+      <xs:enumeration value="gerundive"/>
+      <xs:enumeration value="hypothetical"/>
+      <xs:enumeration value="imperative"/>
+      <xs:enumeration value="indicative"/>
+      <xs:enumeration value="inferential"/>
+      <xs:enumeration value="infinitive"/>
+      <xs:enumeration value="interrogative"/>
+      <xs:enumeration value="jussive"/>
+      <xs:enumeration value="negative"/>
+      <xs:enumeration value="optative"/>
+      <xs:enumeration value="participle"/>
+      <xs:enumeration value="presumptive"/>
+      <xs:enumeration value="renarrative"/>
+      <xs:enumeration value="subjunctive"/>
+      <xs:enumeration value="supine"/>
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="MoodEnumeration">
-        <xs:annotation>
-            <xs:documentation> List of potential moods from
-                http://en.wikipedia.org/wiki/Grammatical_mood with additions from other programs
-            </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="admirative"/>
-            <xs:enumeration value="cohortative"/>
-            <xs:enumeration value="conditional"/>
-            <xs:enumeration value="declarative"/>
-            <xs:enumeration value="dubitative"/>
-            <xs:enumeration value="energetic"/>
-            <xs:enumeration value="eventive"/>
-            <xs:enumeration value="generic"/>
-            <xs:enumeration value="gerundive"/>
-            <xs:enumeration value="hypothetical"/>
-            <xs:enumeration value="imperative"/>
-            <xs:enumeration value="indicative"/>
-            <xs:enumeration value="inferential"/>
-            <xs:enumeration value="infinitive"/>
-            <xs:enumeration value="interrogative"/>
-            <xs:enumeration value="jussive"/>
-            <xs:enumeration value="negative"/>
-            <xs:enumeration value="optative"/>
-            <xs:enumeration value="participle"/>
-            <xs:enumeration value="presumptive"/>
-            <xs:enumeration value="renarrative"/>
-            <xs:enumeration value="subjunctive"/>
-            <xs:enumeration value="supine"/>
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="NumberEnumeration">
+    <xs:annotation>
+      <xs:documentation> List of potential number types from
+        http://en.wikipedia.org/wiki/Grammatical_number </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="singular"/>
+      <xs:enumeration value="plural"/>
+      <xs:enumeration value="dual"/>
+      <xs:enumeration value="trial"/>
+      <xs:enumeration value="paucal"/>
+      <xs:enumeration value="singulative"/>
+      <xs:enumeration value="collective"/>
+      <xs:enumeration value="distributive plural"/>
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="NumberEnumeration">
-        <xs:annotation>
-            <xs:documentation> List of potential number types from
-                http://en.wikipedia.org/wiki/Grammatical_number </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="singular"/>
-            <xs:enumeration value="plural"/>
-            <xs:enumeration value="dual"/>
-            <xs:enumeration value="trial"/>
-            <xs:enumeration value="paucal"/>
-            <xs:enumeration value="singulative"/>
-            <xs:enumeration value="collective"/>
-            <xs:enumeration value="distributive plural"/>
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="NumeralKindEnumeration">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="cardinal"/>
+      <xs:enumeration value="ordinal"/>
+      <xs:enumeration value="distributive"/>
+      <xs:enumeration value="numeral adverb"/>
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="NumeralKindEnumeration">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="cardinal"/>
-            <xs:enumeration value="ordinal"/>
-            <xs:enumeration value="distributive"/>
-            <xs:enumeration value="numeral adverb"/>
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="OrdinalEnumeration">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="1st"/>
+      <xs:enumeration value="2nd"/>
+      <xs:enumeration value="3rd"/>
+      <xs:enumeration value="4th"/>
+      <xs:enumeration value="5th"/>
+      <xs:enumeration value="6th"/>
+      <xs:enumeration value="7th"/>
+      <xs:enumeration value="8th"/>
+      <xs:enumeration value="9th"/>
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="OrdinalEnumeration">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="1st"/>
-            <xs:enumeration value="2nd"/>
-            <xs:enumeration value="3rd"/>
-            <xs:enumeration value="4th"/>
-            <xs:enumeration value="5th"/>
-            <xs:enumeration value="6th"/>
-            <xs:enumeration value="7th"/>
-            <xs:enumeration value="8th"/>
-            <xs:enumeration value="9th"/>
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="PartOfSpeechEnumeration">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="adjective"/>
+      <xs:enumeration value="adverb"/>
+      <xs:enumeration value="adverbial"/>
+      <xs:enumeration value="article"/>
+      <xs:enumeration value="conjunction"/>
+      <xs:enumeration value="exclamation"/>
+      <xs:enumeration value="interjection"/>
+      <xs:enumeration value="irregular"/>
+      <xs:enumeration value="noun"/>
+      <xs:enumeration value="numeral"/>
+      <xs:enumeration value="particle"/>
+      <xs:enumeration value="prefix"/>
+      <xs:enumeration value="preposition"/>
+      <xs:enumeration value="pronoun"/>
+      <xs:enumeration value="suffix"/>
+      <xs:enumeration value="supine"/>
+      <xs:enumeration value="verb"/>
+      <xs:enumeration value="verb participle"/>
+      <!-- Specific to William Whitaker's Words -->
+      <xs:enumeration value="packon"/>
+      <xs:enumeration value="tackon"/>
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="PartOfSpeechEnumeration">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="adjective"/>
-            <xs:enumeration value="adverb"/>
-            <xs:enumeration value="adverbial"/>
-            <xs:enumeration value="article"/>
-            <xs:enumeration value="conjunction"/>
-            <xs:enumeration value="exclamation"/>
-            <xs:enumeration value="interjection"/>
-            <xs:enumeration value="irregular"/>
-            <xs:enumeration value="noun"/>
-            <xs:enumeration value="numeral"/>
-            <xs:enumeration value="particle"/>
-            <xs:enumeration value="prefix"/>
-            <xs:enumeration value="preposition"/>
-            <xs:enumeration value="pronoun"/>
-            <xs:enumeration value="suffix"/>
-            <xs:enumeration value="supine"/>
-            <xs:enumeration value="verb"/>
-            <xs:enumeration value="verb participle"/>
-            <!-- Specific to William Whitaker's Words -->
-            <xs:enumeration value="packon"/>
-            <xs:enumeration value="tackon"/>
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="TenseEnumeration">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="aorist"/>
+      <xs:enumeration value="future"/>
+      <xs:enumeration value="future perfect"/>
+      <xs:enumeration value="imperfect"/>
+      <xs:enumeration value="past absolute"/>
+      <xs:enumeration value="perfect"/>
+      <xs:enumeration value="pluperfect"/>
+      <xs:enumeration value="present"/>
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="TenseEnumeration">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="aorist"/>
-            <xs:enumeration value="future"/>
-            <xs:enumeration value="future perfect"/>
-            <xs:enumeration value="imperfect"/>
-            <xs:enumeration value="past absolute"/>
-            <xs:enumeration value="perfect"/>
-            <xs:enumeration value="pluperfect"/>
-            <xs:enumeration value="present"/>
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="VerbKindEnumeration">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="to be"/>
+      <xs:enumeration value="compounds of to be"/>
+      <xs:enumeration value="taking ablative"/>
+      <xs:enumeration value="taking dative"/>
+      <xs:enumeration value="taking genitive"/>
+      <xs:enumeration value="transitive"/>
+      <xs:enumeration value="intransitive"/>
+      <xs:enumeration value="impersonal"/>
+      <xs:enumeration value="deponent"/>
+      <xs:enumeration value="semideponent"/>
+      <xs:enumeration value="perfect definite"/>
+    </xs:restriction>
+  </xs:simpleType>
 
-    <xs:simpleType name="VerbKindEnumeration">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="to be"/>
-            <xs:enumeration value="compounds of to be"/>
-            <xs:enumeration value="taking ablative"/>
-            <xs:enumeration value="taking dative"/>
-            <xs:enumeration value="taking genitive"/>
-            <xs:enumeration value="transitive"/>
-            <xs:enumeration value="intransitive"/>
-            <xs:enumeration value="impersonal"/>
-            <xs:enumeration value="deponent"/>
-            <xs:enumeration value="semideponent"/>
-            <xs:enumeration value="perfect definite"/>
-        </xs:restriction>
-    </xs:simpleType>
-
-    <xs:simpleType name="VoiceEnumeration">
-        <xs:annotation>
-            <xs:documentation> List of potential voices from
-                http://en.wikipedia.org/wiki/Grammatical_voice </xs:documentation>
-        </xs:annotation>
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="active"/>
-            <xs:enumeration value="passive"/>
-            <xs:enumeration value="mediopassive"/>
-            <xs:enumeration value="impersonal passive"/>
-            <xs:enumeration value="middle"/>
-            <xs:enumeration value="antipassive"/>
-            <xs:enumeration value="reflexive"/>
-            <xs:enumeration value="reciprocal"/>
-            <xs:enumeration value="causative"/>
-            <xs:enumeration value="adjutative"/>
-            <xs:enumeration value="applicative"/>
-            <xs:enumeration value="circumstantial"/>
-            <xs:enumeration value="deponent"/>
-        </xs:restriction>
-    </xs:simpleType>
+  <xs:simpleType name="VoiceEnumeration">
+    <xs:annotation>
+      <xs:documentation> List of potential voices from
+        http://en.wikipedia.org/wiki/Grammatical_voice </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="active"/>
+      <xs:enumeration value="passive"/>
+      <xs:enumeration value="mediopassive"/>
+      <xs:enumeration value="impersonal passive"/>
+      <xs:enumeration value="middle"/>
+      <xs:enumeration value="antipassive"/>
+      <xs:enumeration value="reflexive"/>
+      <xs:enumeration value="reciprocal"/>
+      <xs:enumeration value="causative"/>
+      <xs:enumeration value="adjutative"/>
+      <xs:enumeration value="applicative"/>
+      <xs:enumeration value="circumstantial"/>
+      <xs:enumeration value="deponent"/>
+    </xs:restriction>
+  </xs:simpleType>
 
 </xs:schema>
