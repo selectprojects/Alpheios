@@ -179,7 +179,8 @@ Alph.LanguageToolSet.greek.INFLECTION_MAP =
       pronoun: { keys: ['pronoun'],links:[] },
       article: { keys: ['article'],links:[] },
       cardinal: { keys: ['cardinal'],links:[] },
-      verb: { keys: ['verb'],links:[] },
+      verb: { keys: ['verb'],links:['verb_all'] },
+      verb_all: { keys: ['verb_all'],links:['verb'] }
 };
 
 Alph.LanguageToolSet.greek.IRREG_VERBS =
@@ -396,11 +397,15 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         delete a_params.xslt_params.selected_endings;
     }
 
-    if (a_infl_type == 'verb')
+    if (a_infl_type.match(/^verb/))
     {
         a_params.xml_url = 'chrome://alpheios-greek/content/inflections/alph-infl-verb-paradigms.xml';
         a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-paradigm.xsl';
-        if (typeof a_params.paradigm_id != 'undefined' && a_params.paradigm_id != null)
+        if (a_infl_type.match(/_all$/))
+        {
+            a_params.xslt_params.paradigm_id = 'all';
+        }
+        else if (typeof a_params.paradigm_id != 'undefined' && a_params.paradigm_id != null)
         {
             a_params.xslt_params.paradigm_id = a_params.paradigm_id;
         }
