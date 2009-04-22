@@ -11787,7 +11787,7 @@
         </match>            
         <match paradigm_id_ref="verbpdgm47" match_order="2">
             <constraint name="stemtype">irreg_mi</constraint>
-            <constraint name="lemma">εἰμι</constraint>
+           <constraint name="lemma">εἶμι</constraint>
         </match>            
         <match paradigm_id_ref="verbpdgm48" match_order="2">
             <constraint name="stemtype">ath_primary</constraint>
