@@ -178,7 +178,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">βουλεύων, βουλεύουσᾰ, βουλεῦον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm54">declension</reflink>)</cell>
+               <span xml:lang="grc">βουλεύων, βουλεύουσᾰ, βουλεῦον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm54">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -359,7 +359,7 @@
             <cell role="label" tense="present" voice="mediopassive"/>
             <cell role="label" tense="present" voice="mediopassive">participle</cell>
             <cell role="data" tense="present" voice="mediopassive" mood="participle">
-               <span xml:lang="grc">βουλευόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">βουλευόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -522,13 +522,13 @@
             <cell role="label" tense="future"/>
             <cell role="label" tense="future">act. part.</cell>
             <cell role="data" tense="future" voice="active" mood="participle">
-               <span xml:lang="grc">βουλεύσων, βουλεύσουσᾰ, βουλεῦσον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm54">declension</reflink>)</cell>
+               <span xml:lang="grc">βουλεύσων, βουλεύσουσᾰ, βουλεῦσον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm54">declension</reflink>)</cell>
          </row>
          <row role="data">
             <cell role="label" tense="future"/>
             <cell role="label" tense="future">middle part.</cell>
             <cell role="data" tense="future" voice="middle" mood="participle">
-               <span xml:lang="grc">βουλευσόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">βουλευσόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
       <table role="sub">
@@ -631,7 +631,7 @@
             <cell role="label" tense="future"/>
             <cell role="label" tense="future">pass. part.</cell>
             <cell role="data" tense="future" mood="participle">
-               <span xml:lang="grc">βουλευθησόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">βουλευθησόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -795,13 +795,13 @@
             <cell role="label" tense="future"/>
             <cell role="label" tense="future">act. part.</cell>
             <cell role="data" tense="future" voice="active" mood="participle">
-               <span xml:lang="grc">βαλῶν, βαλοῦσᾰ, βαλοῦν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm55">declension</reflink>)</cell>
+               <span xml:lang="grc">βαλῶν, βαλοῦσᾰ, βαλοῦν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm55">declension</reflink>)</cell>
          </row>
          <row role="data">
             <cell role="label" tense="future"/>
             <cell role="label" tense="future">middle part.</cell>
             <cell role="data" tense="future" voice="middle" mood="participle">
-               <span xml:lang="grc">ἀποθανούμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">ἀποθανούμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -908,7 +908,7 @@
             <cell role="label" tense="future" voice="active"/>
             <cell role="label" tense="future" voice="active">act. part.</cell>
             <cell role="data" tense="future" voice="active" mood="participle">
-               <span xml:lang="grc">ελῶν, ἐλῶσᾰ, ἐλῶν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm56">declension</reflink>)</cell>
+               <span xml:lang="grc">ελῶν, ἐλῶσᾰ, ἐλῶν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm56">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -1064,7 +1064,7 @@
             <cell role="label" tense="aorist" voice="active"/>
             <cell role="label" tense="aorist" voice="active">part.</cell>
             <cell role="data" tense="aorist" voice="active" mood="participle">
-               <span xml:lang="grc">ἀγαγών, ἀγαγοῦσᾰ, ἀγαγόν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm57">declension</reflink>)</cell>
+               <span xml:lang="grc">ἀγαγών, ἀγαγοῦσᾰ, ἀγαγόν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm57">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -1220,7 +1220,7 @@
             <cell role="label" tense="aorist" voice="middle"/>
             <cell role="label" tense="aorist" voice="middle">part.</cell>
             <cell role="data" tense="aorist" voice="middle" mood="participle">
-               <span xml:lang="grc">ἀγαγόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">ἀγαγόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -1376,7 +1376,7 @@
             <cell role="label" tense="aorist" voice="active"/>
             <cell role="label" tense="aorist" voice="active">part.</cell>
             <cell role="data" tense="aorist" voice="active" mood="participle">
-               <span xml:lang="grc">βουλεύσας, βουλεύσασᾰ, βουλεῦσαν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm58">declension</reflink>)</cell>
+               <span xml:lang="grc">βουλεύσας, βουλεύσασᾰ, βουλεῦσαν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm58">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -1532,7 +1532,7 @@
             <cell role="label" tense="aorist" voice="middle"/>
             <cell role="label" tense="aorist" voice="middle">part.</cell>
             <cell role="data" tense="aorist" voice="middle" mood="participle">
-               <span xml:lang="grc">βουλευσάμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">βουλευσάμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -1688,7 +1688,7 @@
             <cell role="label" tense="aorist" voice="passive"/>
             <cell role="label" tense="aorist" voice="passive">part.</cell>
             <cell role="data" tense="aorist" voice="passive" mood="participle">
-               <span xml:lang="grc">βουλευθείς, βουλευθεῖσᾰ, βουλευθέν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm60">declension</reflink>)</cell>
+               <span xml:lang="grc">βουλευθείς, βουλευθεῖσᾰ, βουλευθέν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm60">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -1983,13 +1983,13 @@
             <cell role="label" tense="perfect" voice="active"/>
             <cell role="label" tense="perfect" voice="active">part.</cell>
             <cell role="data" tense="perfect" voice="active" mood="participle">
-               <span xml:lang="grc">λελυκώς, λελυκυῖᾰ, λελυκός </span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm63">declension</reflink>)</cell>
+               <span xml:lang="grc">λελυκώς, λελυκυῖᾰ, λελυκός </span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm63">declension</reflink>)</cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="active"/>
             <cell role="label" tense="perfect" voice="active"/>
             <cell role="data" tense="perfect" voice="active" mood="participle">
-               <span xml:lang="grc">λελοιπώς, λελοιπυῖᾰ, λελοιπός</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm63">declension</reflink>)</cell>
+               <span xml:lang="grc">λελοιπώς, λελοιπυῖᾰ, λελοιπός</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm63">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -3004,7 +3004,7 @@
          <row role="data">
             <cell role="label" tense="future perfect" mood="indicatve">middle-passive part.</cell>
             <cell role="label" tense="future perfect" mood="participle" voice="middle-passive">
-               <span xml:lang="grc">λελυσόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">λελυσόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -3195,7 +3195,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">ποιῶν, ποιοῦσᾰ, ποιοῦν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm55">declension</reflink>)</cell>
+               <span xml:lang="grc">ποιῶν, ποιοῦσᾰ, ποιοῦν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm55">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -3376,7 +3376,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">πλέων, πλέουσᾰ, πλέον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm54">declension</reflink>)</cell>
+               <span xml:lang="grc">πλέων, πλέουσᾰ, πλέον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm54">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -3558,7 +3558,7 @@
             <cell role="label" tense="present" voice="mediopassive"/>
             <cell role="label" tense="present" voice="mediopassive">participle</cell>
             <cell role="data" tense="present" voice="mediopassive" mood="participle">
-               <span xml:lang="grc">ποιούμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">ποιούμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -3739,7 +3739,7 @@
             <cell role="label" tense="present" voice="mediopassive"/>
             <cell role="label" tense="present" voice="mediopassive">participle</cell>
             <cell role="data" tense="present" voice="mediopassive" mood="participle">
-               <span xml:lang="grc">δεόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">δεόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -3930,7 +3930,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">ὁρῶν, ὁρῶσᾰ, ὁρῶν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm56">declension</reflink>)</cell>
+               <span xml:lang="grc">ὁρῶν, ὁρῶσᾰ, ὁρῶν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm56">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -4111,7 +4111,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">χρῶν, χρῶσᾰ, χρῶν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm56">declension</reflink>)</cell>
+               <span xml:lang="grc">χρῶν, χρῶσᾰ, χρῶν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm56">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -4293,7 +4293,7 @@
             <cell role="label" tense="present" voice="mediopassive"/>
             <cell role="label" tense="present" voice="mediopassive">participle</cell>
             <cell role="data" tense="present" voice="mediopassive" mood="participle">
-               <span xml:lang="grc">ὁρώμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">ὁρώμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -4474,7 +4474,7 @@
             <cell role="label" tense="present" voice="mediopassive"/>
             <cell role="label" tense="present" voice="mediopassive">participle</cell>
             <cell role="data" tense="present" voice="mediopassive" mood="participle">
-               <span xml:lang="grc">χρώμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">χρώμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -4665,7 +4665,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">δηλῶν, δηλοῦσᾰ, δηλοῦν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm55">declension</reflink>)</cell>
+               <span xml:lang="grc">δηλῶν, δηλοῦσᾰ, δηλοῦν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm55">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -4847,7 +4847,7 @@
             <cell role="label" tense="present" voice="mediopassive"/>
             <cell role="label" tense="present" voice="mediopassive">participle</cell>
             <cell role="data" tense="present" voice="mediopassive" mood="participle">
-               <span xml:lang="grc">δηλούμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">δηλούμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -5029,7 +5029,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">τιθείς, τιθεῖσᾰ, τιθέν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm60">declension</reflink>)</cell>
+               <span xml:lang="grc">τιθείς, τιθεῖσᾰ, τιθέν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm60">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -5211,7 +5211,7 @@
             <cell role="label" tense="present" voice="mediopassive"/>
             <cell role="label" tense="present" voice="mediopassive">participle</cell>
             <cell role="data" tense="present" voice="mediopassive" mood="participle">
-               <span xml:lang="grc">τιθέμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">τιθέμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -5368,7 +5368,7 @@
             <cell role="label" tense="aorist" voice="active"/>
             <cell role="label" tense="aorist" voice="active">part.</cell>
             <cell role="data" tense="aorist" voice="active" mood="participle">
-               <span xml:lang="grc">θείς, θεῖσᾰ, θέν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm60">declension</reflink>)</cell>
+               <span xml:lang="grc">θείς, θεῖσᾰ, θέν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm60">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -5525,7 +5525,7 @@
             <cell role="label" tense="aorist" voice="middle"/>
             <cell role="label" tense="aorist" voice="middle">part.</cell>
             <cell role="data" tense="aorist" voice="middle" mood="participle">
-               <span xml:lang="grc">θέμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">θέμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -5707,7 +5707,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">ἱείς, ἱεῖσᾰ, ἱέν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm60">declension</reflink>)</cell>
+               <span xml:lang="grc">ἱείς, ἱεῖσᾰ, ἱέν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm60">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -5889,7 +5889,7 @@
             <cell role="label" tense="present" voice="mediopassive"/>
             <cell role="label" tense="present" voice="mediopassive">participle</cell>
             <cell role="data" tense="present" voice="mediopassive" mood="participle">
-               <span xml:lang="grc">ἱέμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">ἱέμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -6046,7 +6046,7 @@
             <cell role="label" tense="aorist" voice="active"/>
             <cell role="label" tense="aorist" voice="active">part.</cell>
             <cell role="data" tense="aorist" voice="active" mood="participle">
-               <span xml:lang="grc">(ἀφ)είς, (ἀφ)εῖσᾰ, (ἀφ)έν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm60">declension</reflink>)</cell>
+               <span xml:lang="grc">(ἀφ)είς, (ἀφ)εῖσᾰ, (ἀφ)έν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm60">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -6203,7 +6203,7 @@
             <cell role="label" tense="aorist" voice="middle"/>
             <cell role="label" tense="aorist" voice="middle">part.</cell>
             <cell role="data" tense="aorist" voice="middle" mood="participle">
-               <span xml:lang="grc">(ἀφ)έμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">(ἀφ)έμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -6385,7 +6385,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">διδούς, διδοῦσᾰ, διδόν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm61">declension</reflink>)</cell>
+               <span xml:lang="grc">διδούς, διδοῦσᾰ, διδόν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm61">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -6567,7 +6567,7 @@
             <cell role="label" tense="present" voice="mediopassive"/>
             <cell role="label" tense="present" voice="mediopassive">participle</cell>
             <cell role="data" tense="present" voice="mediopassive" mood="participle">
-               <span xml:lang="grc">διδόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">διδόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -6724,7 +6724,7 @@
             <cell role="label" tense="aorist" voice="active"/>
             <cell role="label" tense="aorist" voice="active">part.</cell>
             <cell role="data" tense="aorist" voice="active" mood="participle">
-               <span xml:lang="grc">δούς, δοῦσᾰ, δόν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm61">declension</reflink>)</cell>
+               <span xml:lang="grc">δούς, δοῦσᾰ, δόν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm61">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -6881,7 +6881,7 @@
             <cell role="label" tense="aorist" voice="middle"/>
             <cell role="label" tense="aorist" voice="middle">part.</cell>
             <cell role="data" tense="aorist" voice="middle" mood="participle">
-               <span xml:lang="grc">δόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">δόμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -7063,7 +7063,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">ἱστάς, ἱστᾶσᾰ, ἱστάν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm59">declension</reflink>)</cell>
+               <span xml:lang="grc">ἱστάς, ἱστᾶσᾰ, ἱστάν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm59">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -7245,7 +7245,7 @@
             <cell role="label" tense="present" voice="mediopassive"/>
             <cell role="label" tense="present" voice="mediopassive">participle</cell>
             <cell role="data" tense="present" voice="mediopassive" mood="participle">
-               <span xml:lang="grc">ἱστάμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">ἱστάμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -7402,7 +7402,7 @@
             <cell role="label" tense="aorist" voice="active"/>
             <cell role="label" tense="aorist" voice="active">part.</cell>
             <cell role="data" tense="aorist" voice="active" mood="participle">
-               <span xml:lang="grc">στάς, στᾶσᾰ, στάν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm59">declension</reflink>)</cell>
+               <span xml:lang="grc">στάς, στᾶσᾰ, στάν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm59">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -7595,7 +7595,7 @@
             <cell role="label" tense="present" voice="mediopassive"/>
             <cell role="label" tense="present" voice="mediopassive">participle</cell>
             <cell role="data" tense="present" voice="mediopassive" mood="participle">
-               <span xml:lang="grc">δυνάμενος, -η, -ον (ἐπιστάμενος, -η, -ον)</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">δυνάμενος, -η, -ον (ἐπιστάμενος, -η, -ον)</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -7777,7 +7777,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">δεικνύς, δεικνῦσᾰ, δεικνύν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm62">declension</reflink>)</cell>
+               <span xml:lang="grc">δεικνύς, δεικνῦσᾰ, δεικνύν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm62">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -7959,7 +7959,7 @@
             <cell role="label" tense="present" voice="mediopassive"/>
             <cell role="label" tense="present" voice="mediopassive">participle</cell>
             <cell role="data" tense="present" voice="mediopassive" mood="participle">
-               <span xml:lang="grc">δεικνύμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">declension</reflink>)</cell>
+               <span xml:lang="grc">δεικνύμενος, -η, -ον</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -8189,7 +8189,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participles</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">ὤν, οὖσᾰ, ὄν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm57">decl.</reflink>), fut.<span xml:lang="grc">ἐσόμενος, -η, -ον</span>.(see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm65">decl.</reflink>)</cell>
+               <span xml:lang="grc">ὤν, οὖσᾰ, ὄν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm57">decl.</reflink>), fut.<span xml:lang="grc">ἐσόμενος, -η, -ον</span>.(see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm65">decl.</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -8419,7 +8419,7 @@
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
             <cell role="data" tense="present" voice="active" mood="participle">
-               <span xml:lang="grc">ἰών, ἰοῦσᾰ, ἰόν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm57">declension</reflink>)</cell>
+               <span xml:lang="grc">ἰών, ἰοῦσᾰ, ἰόν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm57">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -8648,7 +8648,7 @@
          <row role="data">
             <cell role="label" tense="present" voice="active"/>
             <cell role="label" tense="present" voice="active">participle</cell>
-            <cell role="data" tense="present" voice="active" mood="participle">(poetic) <span xml:lang="grc">φάς, φᾶσᾰ, φάν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm59">declension</reflink>)</cell>
+            <cell role="data" tense="present" voice="active" mood="participle">(poetic) <span xml:lang="grc">φάς, φᾶσᾰ, φάν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm59">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -8827,7 +8827,7 @@
             <cell role="label" tense="aorist" voice="active"/>
             <cell role="label" tense="aorist" voice="active">participle</cell>
             <cell role="data" tense="aorist" voice="active" mood="participle">
-               <span xml:lang="grc">βάς, βᾶσᾰ, βάν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm59">declension</reflink>)</cell>
+               <span xml:lang="grc">βάς, βᾶσᾰ, βάν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm59">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -9006,7 +9006,7 @@
             <cell role="label" tense="aorist" voice="active"/>
             <cell role="label" tense="aorist" voice="active">participle</cell>
             <cell role="data" tense="aorist" voice="active" mood="participle">
-               <span xml:lang="grc">γνούς, γνοῦσᾰ, γνόν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm61">declension</reflink>)</cell>
+               <span xml:lang="grc">γνούς, γνοῦσᾰ, γνόν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm61">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -9181,7 +9181,7 @@
             <cell role="label" tense="aorist" voice="active"/>
             <cell role="label" tense="aorist" voice="active">participle</cell>
             <cell role="data" tense="aorist" voice="active" mood="participle">
-               <span xml:lang="grc">ἁλούς, ἁλοῦσᾰ, ἁλόν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm61">declension</reflink>)</cell>
+               <span xml:lang="grc">ἁλούς, ἁλοῦσᾰ, ἁλόν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm61">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -9338,7 +9338,7 @@
             <cell role="label" tense="aorist" voice="active"/>
             <cell role="label" tense="aorist" voice="active">participle</cell>
             <cell role="data" tense="aorist" voice="active" mood="participle">
-               <span xml:lang="grc">δύς, δῦσᾰ, δύν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm62">declension</reflink>)</cell>
+               <span xml:lang="grc">δύς, δῦσᾰ, δύν</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm62">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -9568,7 +9568,7 @@
             <cell role="label" tense="perfect" voice="active"/>
             <cell role="label" tense="perfect" voice="active">participles</cell>
             <cell role="data" tense="perfect" voice="active" mood="participle">
-               <span xml:lang="grc">εἰδώς, εἰδυῖᾰ, εἰδός</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="verbpdgm63">declension</reflink>)</cell>
+               <span xml:lang="grc">εἰδώς, εἰδυῖᾰ, εἰδός</span> (see <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="inflect:#verb|type:paradigm|paradigm_id:verbpdgm63">declension</reflink>)</cell>
          </row>
       </table>
    </infl-paradigm>
@@ -11549,4 +11549,266 @@
       <footnote id="foot-1">With neuter plural subject, periphrastic forms are sometimes found in the indicative, but more commonly the 3rd sing. form is used instead.</footnote>
       <footnote id="foot-2">thus is late Greek with a neuter plural subject, but in classical Attic the 3rd sing. form is used with neuter plural subject.</footnote>
    </footnotes>
+    <morpheus-paradigm-match>
+        <match paradigm_id_ref="verbpdgm1" match_order="2">
+            <constraint name="stemtype">w_stem</constraint>
+            <constraint name="voice">active</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm2" match_order="2">
+            <constraint name="stemtype">w_stem</constraint>
+            <constraint name="voice">mediopassive</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm3" match_order="1">
+            <constraint name="stemtype">reg_fut</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm4" match_order="2">
+            <constraint name="stemtype">reg_fut</constraint>
+            <constraint name="morphflags">contr</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm3" match_order="1">
+            <constraint name="stemtype">aw_fut</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm4" match_order="2">
+            <constraint name="stemtype">aw_fut</constraint>
+            <constraint name="morphflags">contr</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm3" match_order="1">
+            <constraint name="stemtype">ew_fut</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm4" match_order="2">
+            <constraint name="stemtype">ew_fut</constraint>
+            <constraint name="morphflags">contr</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm5" match_order="3">
+            <constraint name="stemtype">aw_fut</constraint>
+            <constraint name="morphflags">contr</constraint>
+            <constraint name="dial">doric</constraint>
+        </match> 
+        <match paradigm_id_ref="verbpdgm5" match_order="3">
+            <constraint name="stemtype">aw_fut</constraint>
+            <constraint name="morphflags">contr</constraint>
+            <constraint name="dial">aeolic</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm6" match_order="1">
+            <constraint name="stemtype">aor2</constraint>
+            <constraint name="voice">active</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm7" match_order="1">
+            <constraint name="stemtype">aor2</constraint>
+            <constraint name="voice">middle</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm8" match_order="1">
+            <constraint name="stemtype">aor1</constraint>
+            <constraint name="voice">active</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm9" match_order="1">
+            <constraint name="stemtype">aor1</constraint>
+            <constraint name="voice">middle</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm10" match_order="1">
+            <constraint name="stemtype">aor_pass</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm11" match_order="1">
+            <constraint name="stemtype">perf_act</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm12" match_order="1">
+            <constraint name="voice">mediopassive</constraint>
+            <constraint name="mood">indicative</constraint>
+            <constraint name="tense">perfect</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm12" match_order="1">
+            <constraint name="voice">mediopassive</constraint>
+            <constraint name="mood">infinitive</constraint>
+            <constraint name="tense">perfect</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm12" match_order="1">
+            <constraint name="voice">mediopassive</constraint>
+            <constraint name="mood">participle</constraint>
+            <constraint name="tense">perfect</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm13" match_order="1">
+            <constraint name="voice">mediopassive</constraint>
+            <constraint name="mood">subjunctive</constraint>
+            <constraint name="tense">perfect</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm13" match_order="1">
+            <constraint name="voice">mediopassive</constraint>
+            <constraint name="mood">optative</constraint>
+            <constraint name="tense">perfect</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm13" match_order="1">
+            <constraint name="voice">mediopassive</constraint>
+            <constraint name="mood">imperative</constraint>
+            <constraint name="tense">perfect</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm14" match_order="1">
+            <constraint name="voice">mediopassive</constraint>
+            <constraint name="mood">subjunctive</constraint>
+            <constraint name="tense">perfect</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm14" match_order="1">
+            <constraint name="voice">mediopassive</constraint>
+            <constraint name="mood">optative</constraint>
+            <constraint name="tense">perfect</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm14" match_order="1">
+            <constraint name="voice">mediopassive</constraint>
+            <constraint name="mood">imperative</constraint>
+            <constraint name="tense">perfect</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm15" match_order="1">
+            <constraint name="voice">mediopassive</constraint>
+            <constraint name="mood">indicative</constraint>
+            <constraint name="tense">pluperfect</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm16" match_order="1">
+            <constraint name="stemtype">fut_perf</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm17" match_order="1">
+            <constraint name="stemtype">perf2_act</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm18" match_order="1">
+            <constraint name="stemtype">ew_pr</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm20" match_order="1">
+            <constraint name="stemtype">ew_pr</constraint>
+        </match>                    
+        <match paradigm_id_ref="verbpdgm19" match_order="1">
+            <constraint name="stemtype">evw_pr</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm21" match_order="2">
+            <constraint name="stemtype">evw_pr</constraint>
+            <constraint name="voice">mediopassive</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm22" match_order="2">
+            <constraint name="stemtype">aw_pr</constraint>
+            <constraint name="morphflags">contr</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm23" match_order="1">
+            <constraint name="stemtype">ajw_pr</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm24" match_order="2">
+            <constraint name="stemtype">aw_pr</constraint>
+            <constraint name="voice">mediopassive</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm25" match_order="2">
+            <constraint name="stemtype">ajw_pr</constraint>
+            <constraint name="voice">mediopassive</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm26" match_order="2">
+            <constraint name="stemtype">ow_pr</constraint>
+            <constraint name="voice">active</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm27" match_order="2">
+            <constraint name="stemtype">ow_pr</constraint>
+            <constraint name="voice">mediopassive</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm28" match_order="2">
+            <constraint name="stemtype">emi_pr</constraint>
+            <constraint name="voice">active</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm29" match_order="2">
+            <constraint name="stemtype">emi_pr</constraint>
+            <constraint name="voice">mediopassive</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm30" match_order="2">
+            <constraint name="stemtype">emi_or</constraint>
+            <constraint name="voice">active</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm31" match_order="2">
+            <constraint name="stemtype">emi_or</constraint>
+            <constraint name="voice">middle</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm32" match_order="2">
+            <constraint name="lemma">ἵημι</constraint>
+            <constraint name="voice">active</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm33" match_order="2">
+            <constraint name="lemma">ἵημι</constraint>
+            <constraint name="voice">mediopassive</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm34" match_order="3">
+            <constraint name="lemma">ἵημι</constraint>
+            <constraint name="voice">acive</constraint>
+            <constraint name="tense">aorist</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm35" match_order="3">
+            <constraint name="lemma">ἵημι</constraint>
+            <constraint name="voice">middle</constraint>
+            <constraint name="tense">aorist</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm35" match_order="3">
+            <constraint name="lemma">ἵημι</constraint>
+            <constraint name="voice">mediopassive</constraint>
+            <constraint name="tense">aorist</constraint>
+        </match>
+        <match paradigm_id_ref="verbpdgm36" match_order="2">
+            <constraint name="stemtype">omi_or</constraint>
+            <constraint name="voice">active</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm37" match_order="2">
+            <constraint name="stemtype">omi_or</constraint>
+            <constraint name="voice">mediopassive</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm38" match_order="2">
+            <constraint name="stemtype">omi_aor</constraint>
+            <constraint name="voice">active</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm39" match_order="2">
+            <constraint name="stemtype">omi_aor</constraint>
+            <constraint name="voice">mediopassive</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm40" match_order="2">
+            <constraint name="stemtype">ami_pr</constraint>
+            <constraint name="voice">active</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm41" match_order="2">
+            <constraint name="stemtype">ami_pr</constraint>
+            <constraint name="voice">mediopassive</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm42" match_order="2">
+            <constraint name="stemtype">ami_aor</constraint>
+            <constraint name="voice">active</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm43" match_order="1">
+            <constraint name="stemtype">ami_shorr</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm44" match_order="2">
+            <constraint name="stemtype">umi_pr</constraint>
+            <constraint name="voice">active</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm45" match_order="2">
+            <constraint name="stemtype">umi_pr</constraint>
+            <constraint name="voice">mediopassive</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm46" match_order="2">
+            <constraint name="stemtype">irreg_mi</constraint>
+            <constraint name="lemma">εἰμί</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm47" match_order="2">
+            <constraint name="stemtype">irreg_mi</constraint>
+            <constraint name="lemma">εἰμι</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm48" match_order="2">
+            <constraint name="stemtype">ath_primary</constraint>
+            <constraint name="voice">active</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm49" match_order="1">
+            <constraint name="stemtype">ath_h_aor</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm50" match_order="1">
+            <constraint name="stemtype">ath_w_aor</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm51" match_order="1">
+            <constraint name="stemtype">ath_w_aor</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm52" match_order="1">
+            <constraint name="stemtype">ath_u_aor</constraint>
+        </match>            
+        <match paradigm_id_ref="verbpdgm53" match_order="1">
+            <constraint name="stemtype">perf_act</constraint>
+        </match>
+       <nomatch>See <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="grammar:smyth:s355">Smyth #355 - 495 Verbs</reflink></nomatch>
+    </morpheus-paradigm-match>
+    
 </infl-paradigms>
