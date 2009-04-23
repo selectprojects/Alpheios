@@ -191,6 +191,12 @@ declare function tbs:get-svg(
         element g
         {
           attribute class { "alpheios-ignore" },
+          element rect {},
+          element text
+          {
+            attribute class { "heading" },
+            "Key to Diagram Colors"
+          },
           element rect { attribute showme { "focus" } },
           element text { "Focus word" },
           element rect { attribute showme { "focus-parent" } },
@@ -199,6 +205,7 @@ declare function tbs:get-svg(
           element text { "Words that immediately depend on focus word" },
           element rect { attribute showme { "focus-descendant" } },
           element text { "Other words that depend on focus word" },
+          element rect {},
           element text { "LABEL on arc = dependency relation" }
         }
       }
