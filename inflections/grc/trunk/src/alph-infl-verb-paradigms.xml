@@ -11682,7 +11682,6 @@
         </match>            
         <match paradigm_id_ref="verbpdgm22" match_order="2">
             <constraint name="stemtype">aw_pr</constraint>
-            <constraint name="morphflags">contr</constraint>
         </match>            
         <match paradigm_id_ref="verbpdgm23" match_order="1">
             <constraint name="stemtype">ajw_pr</constraint>
@@ -11702,7 +11701,15 @@
         <match paradigm_id_ref="verbpdgm27" match_order="2">
             <constraint name="stemtype">ow_pr</constraint>
             <constraint name="voice">mediopassive</constraint>
-        </match>            
+        </match>
+       <match paradigm_id_ref="verbpdgm26" match_order="2">
+          <constraint name="stemtype">ww_pr</constraint>
+          <constraint name="voice">active</constraint>
+       </match>            
+       <match paradigm_id_ref="verbpdgm27" match_order="2">
+          <constraint name="stemtype">ww_pr</constraint>
+          <constraint name="voice">mediopassive</constraint>
+       </match>            
         <match paradigm_id_ref="verbpdgm28" match_order="2">
             <constraint name="stemtype">emi_pr</constraint>
             <constraint name="voice">active</constraint>
