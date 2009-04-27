@@ -103,3 +103,10 @@ div.alph-marks table th {
     padding: 0px;
     font-size: 80%;
 }
+
+body {
+    font-family: Arial;
+}
+ol {
+    font-family: Georgia;
+}

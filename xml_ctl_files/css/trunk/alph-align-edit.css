@@ -55,21 +55,28 @@ button[disabled] {
 }
 
 div.summary {
+    font-family: Georgia;
+    font-size: 15px;
     border-style: solid;
     width: 250px;
     border-width: thin;
 }
 
-div.summary * {
-    font-size: 15px;
+div.summary table {
+    border-collapse: collapse;
 }
-
-span.heading {
+div.summary table td {
+    padding: 1px;
+    padding-left: 3px;
+    padding-right: 3px;
+    border-style: solid;
+    border-width: thin;
 }
 
 g text {
+    font-family: Georgia;
     font-size: 20px;
-    fill: #404040;
+    fill: #333333;
 }
 text.headwd {
     font-size: 20px;
@@ -78,7 +85,7 @@ g.alignment text {
     font-size: 15px;
 }
 text.free {
-    fill: #FF4040;
+    fill: #FF3333;
 }
 text.edit-focus {
     fill: black;
@@ -110,7 +117,7 @@ g rect.marked {
     stroke: gray;
 }
 g rect.browse-focus {
-    fill: yellow;
+    fill: #F6D918;
     stroke-width: 1px;
     stroke: gray;
 }
@@ -120,10 +127,10 @@ g rect.edit-focus {
     stroke: gray;
 }
 g rect.aligned-focus {
-    fill: yellow;
+    fill: #F6D918;
 }
 g rect.selected {
-    fill: yellow;
+    fill: #F6D918;
     stroke-width: 1px;
     stroke: black;
 }

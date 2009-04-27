@@ -169,7 +169,7 @@ declare function aled:get-edit-page(
             then
               attribute disabled { "yes" }
             else (),
-            "1&#xA0;&#xA0;&lt;&lt;"
+            "1&#xA0;&#x25C2;&#x25C2;"
           },
           element button
           {
@@ -181,10 +181,10 @@ declare function aled:get-edit-page(
             then
             (
               attribute disabled { "yes" },
-              "1&#xA0;&#xA0;&lt;"
+              "1&#xA0;&#x25C2;"
             )
             else
-              concat($sentId - 1, "&#xA0;&#xA0;&lt;")
+              concat($sentId - 1, "&#xA0;&#x25C2;")
           },
           
           element label { $sentId },
@@ -199,10 +199,10 @@ declare function aled:get-edit-page(
             then
             (
               attribute disabled { "yes" },
-              concat("&gt;&#xA0;&#xA0;", $maxSentId)
+              concat("&#x25B8;&#xA0;", $maxSentId)
             )
             else
-              concat("&gt;&#xA0;&#xA0;", $sentId + 1)
+              concat("&#x25B8;&#xA0;", $sentId + 1)
           },
           element button
           {
@@ -213,7 +213,7 @@ declare function aled:get-edit-page(
             then
               attribute disabled { "yes" }
             else (),
-            concat("&gt;&gt;&#xA0;&#xA0;", $maxSentId)
+            concat("&#x25B8;&#x25B8;&#xA0;", $maxSentId)
           }
         },
 
@@ -254,34 +254,48 @@ declare function aled:get-edit-page(
 
     (: summary statistics :)
     <div class="summary alpheios-ignore">
-      <div>
-        <span class="heading">{
-          concat("&#xA0;&#xA0;&#xA0;&#xA0;", $l1Lang, ":")
-        }</span>
-        <span class="heading">&#xA0;&#xA0;&lt;</span>
-        <span id="L1:S0">0</span>
-        <span class="heading">&#xA0;&#xA0;=</span>
-        <span id="L1:S1">0</span>
-        <span class="heading">&#xA0;&#xA0;&gt;</span>
-        <span id="L1:S2">0</span>
-        <span class="heading">&#xA0;&#xA0;&#xD8;</span>
-        <span id="L1:S3">0</span>
-      </div>
-      <div>
-        <span class="heading">{
-          concat("&#xA0;&#xA0;&#xA0;&#xA0;", $l2Lang, ":")
-        }</span>
-        <span class="heading">&#xA0;&#xA0;&lt;</span>
-        <span id="L2:S0">0</span>
-        <span class="heading">&#xA0;&#xA0;=</span>
-        <span id="L2:S1">0</span>
-        <span class="heading">&#xA0;&#xA0;&gt;</span>
-        <span id="L2:S2">0</span>
-        <span class="heading">&#xA0;&#xA0;&#xD8;</span>
-        <span id="L2:S3">0</span>
-      </div>
+      <table>
+        <tr>
+          <th>{ concat("&#xA0;&#xA0;&#xA0;&#xA0;", $l1Lang, ":") }</th>
+          <td>
+            <span class="heading">&#xA0;&#xA0;&lt;</span>
+            <span id="L1:S0">0</span>
+          </td>
+          <td>
+            <span class="heading">&#xA0;&#xA0;=</span>
+            <span id="L1:S1">0</span>
+          </td>
+          <td>
+            <span class="heading">&#xA0;&#xA0;&gt;</span>
+            <span id="L1:S2">0</span>
+          </td>
+          <td>
+            <span class="heading">&#xA0;&#xA0;&#xD8;</span>
+            <span id="L1:S3">0</span>
+          </td>
+        </tr>
+        <tr>
+          <th>{ concat("&#xA0;&#xA0;&#xA0;&#xA0;", $l2Lang, ":") }</th>
+          <td>
+            <span class="heading">&#xA0;&#xA0;&lt;</span>
+            <span id="L2:S0">0</span>
+          </td>
+          <td>
+            <span class="heading">&#xA0;&#xA0;=</span>
+            <span id="L2:S1">0</span>
+          </td>
+          <td>
+            <span class="heading">&#xA0;&#xA0;&gt;</span>
+            <span id="L2:S2">0</span>
+          </td>
+          <td>
+            <span class="heading">&#xA0;&#xA0;&#xD8;</span>
+            <span id="L2:S3">0</span>
+          </td>
+        </tr>
+      </table>
     </div>,
-    
+
     <br/>,
 
     (: svg of sentence :)
