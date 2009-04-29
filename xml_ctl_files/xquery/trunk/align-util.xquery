@@ -55,24 +55,24 @@ declare function alut:xml-to-svg(
 
     for $lang in ("L1", "L2")
     let $otherLang := if ($lang eq "L1") then "L2" else "L1"
-    let $words := $a_sent/*:wds[@lnum eq $lang]/*:w
-    let $otherWords := $a_sent/*:wds[@lnum eq $otherLang]/*:w
+    let $words := $a_sent/*:wds[@*:lnum eq $lang]/*:w
+    let $otherWords := $a_sent/*:wds[@*:lnum eq $otherLang]/*:w
     return
     element g
     {
       attribute class { "sentence", $lang },
-      attribute xml:lang { $a_sent/*:wds[@lnum = $lang]/@lang },
+      attribute xml:lang { $a_sent/../*:language[@*:lnum = $lang]/@xml:lang },
 
       for $word in $words
-      let $refs := tokenize($word/@nrefs, ' ')
+      let $refs := tokenize($word/*:refs/@*:nrefs, ' ')
       return
       element g
       {
         attribute class { "word" },
-        attribute id { concat($lang, ":", $word/@n) },
-        if ($word/@mark)
+        attribute id { concat($lang, ":", $word/@*:n) },
+        if ($word/*:mark)
         then
-          attribute xlink:title { $word/@mark }
+          attribute xlink:title { $word/*:mark/text() }
         else (),
 
         (: highlighting rectangle :)
@@ -89,7 +89,7 @@ declare function alut:xml-to-svg(
             (: if this has no aligned words, flag it :)
             if (count($refs) eq 0) then "free" else ()
           },
-          $word/text()
+          $word/*:text/text()
         },
 
         (: aligned words :)
@@ -106,7 +106,7 @@ declare function alut:xml-to-svg(
           element text
           {
             attribute idref { concat($otherLang, ":", $n) },
-            $otherWords[@n eq $n]/text()
+            $otherWords[@*:n eq $n]/*:text/text()
           }
         }
       }
@@ -134,44 +134,46 @@ declare function alut:svg-to-xml(
   {
     for $lang in ("L1", "L2")
 (: following has problems in eXist 1.2.5: :)
-(:  let $svgSent := $a_sent/*:g[tokenize(@class, ' ') = $lang] :)
+(:  let $svgSent := $a_sent/*:g[tokenize(@*:class, ' ') = $lang] :)
 (: so instead do: :)
     let $svgSent :=
       for $g in $a_sent/*:g
-      return if (tokenize($g/@class, ' ') = $lang) then $g else ()
+      return if (tokenize($g/@*:class, ' ') = $lang) then $g else ()
     let $words := $svgSent/*:g/*:g
     return
     element wds
     {
       attribute lnum { $lang },
-      attribute lang { $svgSent/@xml:lang },
 
       for $word in $words
       return
       element w
       {
         (: id of this word :)
-        attribute n { substring-after($word/@id, ':') },
+        attribute n { substring-after($word/@*:id, ':') },
+
+        (: text of this word :)
+        element text { $word/*:text/text() },
 
         (: copy mark, if any :)
         if ($word/@xlink:title)
         then
-          attribute mark { $word/@xlink:title }
+          element mark { data($word/@xlink:title) }
         else (),
 
         (: references to aligned words :)
         let $refs :=
           for $aligned-word in $word/*:g/*:text
           return
-            substring-after($aligned-word/@idref, ':')
+            substring-after($aligned-word/@*:idref, ':')
         return
           if (count($refs) > 0)
           then
-            attribute nrefs { string-join($refs, ' ') }
-          else (),
-
-        (: text of this word :)
-        $word/*:text/text()
+            element refs
+            {
+              attribute nrefs { string-join($refs, ' ') }
+            }
+          else ()
       }
     }
   }

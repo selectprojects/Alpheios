@@ -54,8 +54,8 @@ declare function aled:get-edit-page(
   let $doc := doc($a_docName)
   let $maxSentId := count($doc//sentence)
   let $sent := ($doc//sentence)[$a_sentId]
-  let $l1Lang := $sent/wds[@lnum = "L1"]/@lang
-  let $l2Lang := $sent/wds[@lnum = "L2"]/@lang
+  let $l1Lang := $sent/../language[@*:lnum = "L1"]/@xml:lang
+  let $l2Lang := $sent/../language[@*:lnum = "L2"]/@xml:lang
 
   return
   <html xmlns="http://www.w3.org/1999/xhtml"
@@ -69,7 +69,7 @@ declare function aled:get-edit-page(
     element title
     {
       "Alpheios:Edit Aligned Sentence",
-      data($sent/@document_id)
+      data($sent/@*:document_id)
     },
 
     (: metadata :)

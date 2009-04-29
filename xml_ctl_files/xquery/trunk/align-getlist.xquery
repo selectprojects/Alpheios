@@ -63,12 +63,12 @@ declare function alst:get-list-page(
     element meta
     {
       attribute name { "L1:lang" },
-      attribute content { $sents[1]/*:wds[@lnum = "L1"]/@lang }
+      attribute content { $doc//*:language[@*:lnum = "L1"]/@xml:lang }
     },
     element meta
     {
       attribute name { "L2:lang" },
-      attribute content { $sents[1]/*:wds[@lnum = "L2"]/@lang }
+      attribute content { $doc//*:language[@*:lnum = "L2"]/@xml:lang }
     },
 
     element link
@@ -111,17 +111,17 @@ declare function alst:get-list-page(
       (: for each sentence :)
       for $sent at $i in $sents
       let $queryURL := concat($a_queryBase, $i)
-      let $l1Words := $sent/*:wds[@lnum="L1"]/*:w
-      let $l2Words := $sent/*:wds[@lnum="L2"]/*:w
+      let $l1Words := $sent/*:wds[@*:lnum="L1"]/*:w
+      let $l2Words := $sent/*:wds[@*:lnum="L2"]/*:w
       let $marks :=
         for $word in ($l1Words, $l2Words)
-        let $mark := $word/@mark
+        let $mark := $word/*:mark
         return
         if (exists($mark))
         then
           element tr
           {
-            element td { $word/text() },
+            element td { $word/*:text/text() },
             element td { data($mark) }
           }
         else ()
@@ -151,14 +151,16 @@ declare function alst:get-list-page(
               element div
               {
                 (: concatenated words from L1 :)
-                string-join((for $j in 1 to $a_maxWords return $l1Words[$j],
+                string-join((for $j in 1 to $a_maxWords
+                             return $l1Words[$j]/*:text/text(),
                              if (count($l1Words) > $a_maxWords) then "..." else ""),
                             ' ')
               },
               element div
               {
                 (: concatenated words from L2 :)
-                string-join((for $j in 1 to $a_maxWords return $l2Words[$j],
+                string-join((for $j in 1 to $a_maxWords
+                             return $l2Words[$j]/*:text/text(),
                              if (count($l1Words) > $a_maxWords) then "..." else ""),
                             ' ')
               },
