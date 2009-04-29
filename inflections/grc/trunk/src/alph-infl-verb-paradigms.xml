@@ -2006,141 +2006,141 @@
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative">s.</cell>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="singular">1</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="1st">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="1st" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">λέλυμαι</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="1st">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="1st" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">πέπεισμαι</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="1st">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="1st" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">γέγραμμαι</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="singular">2</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">λέλυσαι</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">πέπεισαι</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">γέγραψαι</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="singular">3</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">λέλυται</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">πέπεισται</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">γέγραπται</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative">d.</cell>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="dual">2</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">λέλυσθον</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">πέπεισθον</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">γέγραφθον</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="dual">3</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">λέλυσθον</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">πέπεισθον</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">γέγραφθον</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative">pl.</cell>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="plural">1</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="1st">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="1st" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">λελύμεθα</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="1st">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="1st" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">πεπείσμεθα</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="1st">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="1st" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">γεγράμμεθα</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="plural">2</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">λέλυσθε</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">πέπεισθε</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">γέγραφθε</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="plural">3</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">λέλυνται</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">πεπεισμένοι (-αι) εἰσί(ν) </span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">γεγραμμένοι (-αι) εἰσί(ν)</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="plural"/>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc"/>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">or <span xml:lang="grc" footnote="foot-1">πεπεισμένα ἐστί(ν)</span>
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_d perfp_s perfp_r"><span xml:lang="grc" footnote="foot-1">πεπεισμένα ἐστί(ν)</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot1">or <span xml:lang="grc">γεγραμμένα ἐστί(ν)</span>
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot1" stemtype="perfp_p perfp_mp perfp_s perfp_r"><span xml:lang="grc">γεγραμμένα ἐστί(ν)</span>
             </cell>
          </row>
          <row role="data">
-            <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
-            <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="plural"> inf.</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural">
+            <cell role="label" tense="perfect" voice="mediopassive" mood="infinitive"/>
+            <cell role="label" tense="perfect" voice="mediopassive" mood="infinitive"> inf.</cell>
+            <cell role="data" tense="perfect" voice="mediopassive" mood="infinitive" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">λελύσθαι</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="infinitive" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">πεπεῖσθαι</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="infinitive" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">γεγράφθαι</span>
             </cell>
          </row>
          <row role="data">
-            <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
-            <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="plural">part.</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="participle" num="plural">
+            <cell role="label" tense="perfect" voice="mediopassive" mood="participle"/>
+            <cell role="label" tense="perfect" voice="mediopassive" mood="participle">part.</cell>
+            <cell role="data" tense="perfect" voice="mediopassive" mood="participle" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">λελυμένος, -η, -ον</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="participle" num="plural">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="participle" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">πεπεισμένος, -η, -ον</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="participle" num="plural">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="participle" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">γεγραμμένος, -η, -ον</span>
             </cell>
          </row>
@@ -2158,140 +2158,140 @@
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative">s.</cell>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="singular">1</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="1st">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="1st" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">πέπραγμαι</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="1st">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="1st" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἤγγελμαι</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="1st">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="1st" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">πέφασμαι</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="singular">2</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">πέπραξαι</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἤγγελσαι</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">———</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="singular">3</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">πέπρακται</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἤγγελται</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">πέφανται</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative">d.</cell>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="dual">2</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">πέπραχθον</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἤγγελθον</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">πέφανθον</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="dual">3</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">πέπραχθον</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἤγγελθον</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">πέφανθον</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative">pl.</cell>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="plural">1</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="1st">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="1st" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">πεπράγμεθα</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="1st">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="1st" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἠγγέλμεθα</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="1st">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="1st" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">πεφάσμεθα</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="plural">2</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">πέπραχθε</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἤγγελθε</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">πέφανθε</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="plural">3</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">πεπραγμένοι (-αι) εἰσί(ν) </span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἠγγελμένοι (-αι) εἰσί(ν)</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">πεφασμένοι (-αι) εἰσί(ν)</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="plural"/>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-1">or <span xml:lang="grc">πεπραγμένα ἐστί(ν)</span>
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-1" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s" ><span xml:lang="grc">πεπραγμένα ἐστί(ν)</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-1">or <span xml:lang="grc">ἠγγελμένα ἐστί(ν)</span>
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-1" stemtype="perfp_l perfp_s perfp_r"><span xml:lang="grc">ἠγγελμένα ἐστί(ν)</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-1">or <span xml:lang="grc">πεφασμένα ἐστί(ν)</span>
+            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-1" stemtype="perfp_n perfp_un perfp_s perfp_r"><span xml:lang="grc">πεφασμένα ἐστί(ν)</span>
             </cell>
          </row>
          <row role="data">
-            <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
-            <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="plural"> inf.</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural">
+            <cell role="label" tense="perfect" voice="mediopassive" mood="infinitive"/>
+            <cell role="label" tense="perfect" voice="mediopassive" mood="infinitive"> inf.</cell>
+            <cell role="data" tense="perfect" voice="mediopassive" mood="infinitive" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">πεπρᾶχθαι</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="infinitive" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἠγγέλθαι</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="indicative" num="plural">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="infinitive" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">πεφάνθαι</span>
             </cell>
          </row>
          <row role="data">
-            <cell role="label" tense="perfect" voice="mediopassive" mood="indicative"/>
-            <cell role="label" tense="perfect" voice="mediopassive" mood="indicative" num="plural">part.</cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="participle" num="plural">
+            <cell role="label" tense="perfect" voice="mediopassive" mood="participle"/>
+            <cell role="label" tense="perfect" voice="mediopassive" mood="participle">part.</cell>
+            <cell role="data" tense="perfect" voice="mediopassive" mood="participle" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">πεπραγμένος, -η, -ον</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="participle" num="plural">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="participle" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἠγγελμένος, -η, -ον</span>
             </cell>
-            <cell role="data" tense="perfect" voice="mediopassive" mood="participle" num="plural">
+            <cell role="data" tense="perfect" voice="mediopassive" mood="participle" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">πεφασμένος, -η, -ον</span>
             </cell>
          </row>
@@ -2580,13 +2580,13 @@
             <cell role="data" tense="pluperfect" voice="active" mood="indicative" num="singular" pers="1st">
                <span xml:lang="grc">ἐλελύκη</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="1st">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="1st" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">ἐλελύμην</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="1st">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="1st" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">ἐπεπείσμην</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="1st">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="1st" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">ἐγεγράμμην</span>
             </cell>
          </row>
@@ -2596,13 +2596,13 @@
             <cell role="data" tense="pluperfect" voice="active" mood="indicative" num="singular" pers="2nd">
                <span xml:lang="grc">ἐλελύκης</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">ἐλέλυσο</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">ἐπέπεισο</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">ἐγέγραψο</span>
             </cell>
          </row>
@@ -2612,13 +2612,13 @@
             <cell role="data" tense="pluperfect" voice="active" mood="indicative" num="singular" pers="3rd">
                <span xml:lang="grc">ἐλελύκει(ν)</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">ἐλέλυτο</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">ἐπέπειστο</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">ἐγέγραπτο</span>
             </cell>
          </row>
@@ -2628,13 +2628,13 @@
             <cell role="data" tense="pluperfect" voice="active" mood="indicative" num="dual" pers="2nd">
                <span xml:lang="grc">ἐλελύκετον</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">ἐλέλυσθον</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">ἐπέπεισθον</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">ἐγέγραφθον</span>
             </cell>
          </row>
@@ -2644,13 +2644,13 @@
             <cell role="data" tense="pluperfect" voice="active" mood="indicative" num="dual" pers="3rd">
                <span xml:lang="grc">ἐλελυκέτην</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">ἐλελύσθην</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">ἐπεπείσθην</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">ἐγεγράφθην</span>
             </cell>
          </row>
@@ -2660,45 +2660,45 @@
             <cell role="data" tense="pluperfect" voice="active" mood="indicative" num="plural" pers="1st">
                <span xml:lang="grc">ἐλελύκεμεν</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="1st">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="1st" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">ἐλελύμεθα</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="1st">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="1st" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">ἐπεπείσμεθα</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="1st">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="1st" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">ἐγεγράμμεθα</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural">2</cell>
-            <cell role="data" tense="pluperfect" voice="active" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="active" mood="indicative" num="plural" pers="2nd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">ἐλελύκετε</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">ἐλέλυσθε</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">ἐπέπεισθε</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">ἐγέγραφθε</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural">3</cell>
-            <cell role="data" tense="pluperfect" voice="active" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="active" mood="indicative" num="plural" pers="3rd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">ἐλελύκεσαν</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc">ἐλέλυντο</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_d perfp_s perfp_r">
                <span xml:lang="grc">πεπεισμένοι (-αι) ἦσαν </span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_p perfp_mp perfp_s perfp_r">
                <span xml:lang="grc">γεγραμμένοι (-αι) ἦσαν</span>
             </cell>
          </row>
@@ -2706,11 +2706,11 @@
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural"/>
             <cell role="data" tense="pluperfect" voice="active" mood="indicative" num="plural" pers="3rd"/>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_vow perpf_s perfp_r">
                <span xml:lang="grc"/>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-2">(or <span xml:lang="grc">πεπεισμένα ἦν</span>)</cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-2">(or <span xml:lang="grc">γεγραμμένα ἦν</span>)</cell>
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-2" stemtype="perfp_d perfp_s perfp_r"><span xml:lang="grc">πεπεισμένα ἦν</span></cell>
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-2" stemtype="perfp_p perfp_mp perfp_s perfp_r"><span xml:lang="grc">γεγραμμένα ἦν</span></cell>
          </row>
       </table>
       <table role="sub">
@@ -2726,113 +2726,113 @@
          <row role="data">
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative">s.</cell>
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular">1</cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="1st">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="1st" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">ἐπεπράγμην</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="1st">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="1st" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἠγγέλμην</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="1st">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="1st" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">ἐπεφάσμην</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular">2</cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">ἐπέπραξο</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἤγγελσο</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="2nd" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">———</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular">3</cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">ἐπέπρακτο</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἤγγελτο</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="singular" pers="3rd" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">ἐπέφαντο</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative">d.</cell>
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual">2</cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">ἐπέπραχθον</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἤγγελθον</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="2nd" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">ἐπέφανθον</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual">3</cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">ἐπεπράχθην</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἠγγέλθην</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="dual" pers="3rd" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">ἐπεφάνθην</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative">pl.</cell>
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural">1</cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="1st">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="1st" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">ἐπεπράγμεθα</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="1st">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="1st" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἠγγέλμεθα</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="1st">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="1st" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">ἐπεφάσμεθα</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural">2</cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">ἐπέπραχθε</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἤγγελθε</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="2nd" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">ἐπέφανθε</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural">3</cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s">
                <span xml:lang="grc">πεπραγμένοι (-αι) ἦσαν </span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_l perfp_s perfp_r">
                <span xml:lang="grc">ἠγγελμένοι (-αι) ἦσαν</span>
             </cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd">
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" stemtype="perfp_n perfp_un perfp_s perfp_r">
                <span xml:lang="grc">πεφασμένοι (-αι) ἦσαν</span>
             </cell>
          </row>
          <row role="data">
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative"/>
             <cell role="label" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural"/>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-2">(or <span xml:lang="grc">πεπραγμένα ἦν</span>)</cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-2">(or <span xml:lang="grc">ἠγγελμένα ἦν</span>)</cell>
-            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-2">(or <span xml:lang="grc">πεφασμένα ἦν</span>)</cell>
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-2" stemtype="perfp_g perfp_gx perfp_gg perfp_r perfp_s"><span xml:lang="grc">πεπραγμένα ἦν</span></cell>
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-2" stemtype="perfp_l perfp_s perfp_r"><span xml:lang="grc">ἠγγελμένα ἦν</span></cell>
+            <cell role="data" tense="pluperfect" voice="mediopassive" mood="indicative" num="plural" pers="3rd" footnote="foot-2" stemtype="perfp_n perfp_un perfp_s perfp_r"><span xml:lang="grc">πεφασμένα ἦν</span></cell>
          </row>
       </table>
    </infl-paradigm>
