@@ -177,6 +177,7 @@ Alph.LanguageToolSet.greek.INFLECTION_MAP =
       adjective_simplified: {keys: ['adjective_simplified'], links:[] },
       noun_simplified: {keys: ['noun_simplified'], links:[] },
       pronoun: { keys: ['pronoun'],links:[] },
+      irregular: { keys: ['pronoun_interrogative'],links:[] },
       article: { keys: ['article'],links:[] },
       cardinal: { keys: ['cardinal'],links:[] },
       verb: { keys: ['verb'],links:['verb_all'] },
@@ -187,18 +188,32 @@ Alph.LanguageToolSet.greek.IRREG_VERBS =
 [
 ];
 
+/**
+ * lookup table for pronouns
+ * array of pronoun types and the constraints for matching
+ * [0] = pronoun type abbreviation 
+ *       (matches suffix on the inflection table xml file alph-infl-pronoun-<type>.xml)
+ * [1] = Array of possible lemmas for this pronoun type
+ * [2] = Optional morpheus stemtype value restriction (when lemma alone isn't enough)
+ */
 Alph.LanguageToolSet.greek.PRONOUNS =
 [
     ['dem',['ὅδε','οὗτος','ἐκεῖνος','τοσόσδε','τοιόσδε','τηλικόσδε','τοσοῦτος','τοιοῦτος','τηλικοῦτος']],
-    ['rel',['ὅς']],
-    ['genrel'['ὅστις']],
+    ['rel',['@ὅς','ὅς']],// there's a special flag on lemma for ὅς
+    ['genrel',['ὅστις']],
     ['pers',['ἐγώ','σύ','ἕ']],
-    ['indef',['τις']],
-    ['inter',['τίς']],
+    ['indef',['τις'],'indef'],
+    ['inter',['τίς'],'indecl'],
     ['inten',['αὐτός']],
     ['recip',['ἀλλήλων']],
-    ['refl',['ἐμαυτοῦ','σαυτοῦ','ἑαυτοῦ']],
-    ['pos',['']]
+    ['refl',['ἐμαυτοῦ','σαυτοῦ','ἑαυτοῦ']]
+    /**
+     * commenting out until we have a solution for Bug 283
+    ['pos',['ἐμός','ἡμέτερος','σός','ὑ̄μέτερος','ὅς','σφέτερος'],['pronoun_pos1','pronoun_pos2','pronoun_pos3']],
+    ['pos1',['ἐμός','ἡμέτερος']],
+    ['pos2',['σός','ὑ̄μέτερος']],
+    ['pos3',['ὅς','σφέτερος']]
+    **/
 ];
 
 /**
@@ -214,6 +229,8 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
     // initialize the suffix arrays
     // TODO should flip this to be a single object keys on infl_type
     params.entries = {};
+    // clear out the links
+    params.links = [];
 
     var form = Alph.$(".alph-word",a_node).attr("context");
 
@@ -233,6 +250,8 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
         {
             var dict = Alph.$(this).siblings(".alph-dict");
             var word = Alph.$(this).attr("context");
+            var stemtype = Alph.$(".alph-stemtype",this).attr("context");
+            var lemma = Alph.$(dict).attr("lemma-key");
 
             // check for the pofs first as a child of this element, and if not present,
             // then from the sibling dictionary entry
@@ -245,18 +264,15 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
 
             // check for irregular verbs
 
-            var dict_hdwd = Alph.$(".alph-hdwd",dict).text();
-            // remove the trailing :
-            dict_hdwd = dict_hdwd.replace(/\:\s*$/,'');
-            Alph.util.log("hdwd for inflection set: " + dict_hdwd);
+            Alph.util.log("lemma for inflection set: " + lemma);
 
             var irregular = false;
             for (var i=0; i< Alph.LanguageToolSet.greek.IRREG_VERBS.length; i++)
             {
-                if (dict_hdwd == Alph.LanguageToolSet.greek.IRREG_VERBS[i])
+                if (lemma == Alph.LanguageToolSet.greek.IRREG_VERBS[i])
                 {
                     // reset the context
-                    params.hdwd = dict_hdwd;
+                    params.hdwd = lemma;
                     irregular = true;
                     break;
                 }
@@ -292,11 +308,8 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                 var check_pofs = pofs.replace(/_simplified$/,'');
                 // if we couldn't find the part of speech or the part of speech
                 // isn't one we support then just move on to the next part of speech
-                if ( infl_pofs.length == 0 ||
-                     (pofs == 'verb_irregular' && ! irregular) ||  // context pofs for irregular verbs is just 'verb'
-                     (pofs != 'verb_irregular'
-                        && Alph.$(infl_pofs[0]).attr("context") != check_pofs)
-                   )
+                if ( infl_pofs.length == 0  ||
+                     Alph.$(infl_pofs[0]).attr("context") != check_pofs)
                 {
                     continue;
                 }
@@ -326,33 +339,39 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
 
                     // identify the correct file and links for the inflection type
                     // being displayed
-                    // TODO - this doesn't work right if multiple different possibilities
-                    // of the same pofs (e.g. look at estote). Handle differently.
-
                     if (params.showpofs == infl_type)
                     {
                         params.links = Alph.LanguageToolSet.greek.INFLECTION_MAP[pofs].links;
-                        //Alph.LanguageToolSet.greek.setInflectionXSL(params,infl_type,pofs,a_node,Alph.$(this).get(0));
+                    
 
                         // if it's a pronoun, what type?
-                        if (infl_type == 'pronoun')
+                        if (infl_type.match(/^pronoun/))
                         {
-                            for (var i=0; i< Alph.LanguageToolSet.greek.PRONOUNS.length; i++)
-                            {
-                                // done if we have already identified the type of pronoun
-                                if (typeof params.type != 'undefined')
-                                {
-                                    break;
-                                }
+                             params.type = '';
+                             for (var i=0; i< Alph.LanguageToolSet.greek.PRONOUNS.length; i++)
+                             {
                                 var pronoun_list = Alph.LanguageToolSet.greek.PRONOUNS[i];
                                 var type = pronoun_list[0];
                                 for (var j=0; j < pronoun_list[1].length; j++)
                                 {
-
-                                    if (dict_hdwd == pronoun_list[1][j])
+    
+                                    if (lemma == pronoun_list[1][j])
                                     {
-                                        // reset the type
-                                        params.type = type;
+                                        // if there is an additional stemtype restriction
+                                        // make sure it matches
+                                        if (typeof pronoun_list[2] == "undefined" 
+                                            || (stemtype == pronoun_list[2]))
+                                        {
+                                            if (params.type == '')                                            {
+                                                params.type = type;
+                                            }
+                                            else if (params.type != type)
+                                            {
+                                                // TODO handling multiple pronoun
+                                                // types for a single lemma isn't
+                                                // implemented 
+                                            }
+                                        }
                                         break;
                                     }
                                 }
@@ -360,7 +379,6 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                             Alph.util.log("Pronoun type="+params.type);
                         } // end pronoun identification
                     }
-
                 } // end infl-type
             }
         }
@@ -370,6 +388,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
     {
         params.html_url = "chrome://alpheios-greek/content/html/alph-infl-substantive.html";
         Alph.LanguageToolSet.greek.setInflectionXSL(params,params.showpofs,form);
+        
         // TODO -remove this HACK which suppresses the Javascript matching algorithm
         //params.suppress_match = true;
         params.always_expand = true;
@@ -419,8 +438,10 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
         a_params.xslt_params.group4 = 'gend';
     }
-    else if (a_infl_type == 'pronoun')
+    else if (a_infl_type.match(/^pronoun/))
     {
+        a_params.title = 'alph-infl-title-pronoun-' + a_params.type;
+        a_infl_type = a_infl_type.replace(/_interrogative$/,'');
         a_params.xml_url =
             'chrome://alpheios-greek/content/inflections/alph-infl-' +
             a_infl_type + '-' + a_params.type + '.xml';
@@ -429,12 +450,12 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
             a_params.xslt_params.group4 = 'hdwd';
         }
-        if (a_params.type == 'refl' || a_params.type.match(/^pos/))
+        else if (a_params.type == 'refl' || a_params.type.match(/^pos/))
         {
             a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
             a_params.xslt_params.group4 = 'pers';
         }
-        else
+        else if (a_params.type != '')
         {
             a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
             if (a_params.type == 'pers')
@@ -446,8 +467,15 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
                 a_params.xslt_params.group4 = 'gend';
             }
         }
-
-        a_params.title = 'alph-infl-title-pronoun-' + a_params.type;
+        else
+        {
+            // if we don't have a specific mapping for this type of pronoun, just
+            // show the inflection index
+            a_params.xml_url =
+                "chrome://alpheios-greek/content/inflections/alph-infl-index.xml";
+            a_params.xslt_url =
+                "chrome://alpheios/skin/alph-infl-index.xsl";
+        }
     }
     else if (a_infl_type.match(/^(noun|adjective|cardinal)/))
     {
@@ -490,7 +518,10 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xslt_params.group4 = 'hdwd';
         }
     }
-    a_params.xslt_params.match_pofs = a_infl_type;
+    if (typeof a_params.xslt_params.match_pofs  == 'undefined')
+    {
+        a_params.xslt_params.match_pofs = a_infl_type;
+    }
 }
 
 /**
