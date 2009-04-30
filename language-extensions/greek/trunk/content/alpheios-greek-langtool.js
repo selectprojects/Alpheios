@@ -441,10 +441,18 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
     else if (a_infl_type.match(/^pronoun/))
     {
         a_params.title = 'alph-infl-title-pronoun-' + a_params.type;
-        a_infl_type = a_infl_type.replace(/_interrogative$/,'');
+        // morpheus specifies 'irregular' as the part of speech for the interrogative pronoun
+        if (a_infl_type.match(/_interrogative$/))
+        {
+            a_params.xslt_params.match_pofs = 'irregular';
+            a_infl_type = a_infl_type.replace(/_interrogative$/,'');
+        }
         a_params.xml_url =
             'chrome://alpheios-greek/content/inflections/alph-infl-' +
             a_infl_type + '-' + a_params.type + '.xml';
+        // pronoun tables contain full forms
+        a_params.xslt_params.match_form = true;
+        
         if (a_params.type == 'dem')
         {
             a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
