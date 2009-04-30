@@ -181,6 +181,7 @@ Alph.LanguageToolSet.greek.INFLECTION_MAP =
       article: { keys: ['article'],links:[] },
       cardinal: { keys: ['cardinal'],links:[] },
       verb: { keys: ['verb'],links:['verb_all'] },
+      verb_participle: { keys: ['verb_participle'],links:['verb_all'] },
       verb_all: { keys: ['verb_all'],links:['verb'] }
 };
 
