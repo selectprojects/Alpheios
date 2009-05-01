@@ -1993,7 +1993,7 @@
          </row>
       </table>
    </infl-paradigm>
-   <infl-paradigm id="verbpdgm12">
+   <infl-paradigm id="verbpdgm12"  lemmas="λύω πείθω γράφω πράσσω γράφω ἀγγέλλω ">
       <title>Perfect System Middle-Passive: indicative, infinitive, participle</title>
       <table>
          <row role="label">
@@ -11807,9 +11807,14 @@
           <constraint name="tense">future</constraint>
           <constraint name="voice">passive</constraint>
        </match>
-        <match paradigm_id_ref="verbpdgm15" match_order="1">
+        <match paradigm_id_ref="verbpdgm11" match_order="1">
             <constraint name="stemtype">perf_act</constraint>
         </match>
+       <match paradigm_id_ref="verbpdgm15" match_order="3">
+          <constraint name="stemtype">perf_act</constraint>
+          <constraint name="tense">pluperfect</constraint>
+          <constraint name="voice">active</constraint>
+       </match>
         <match paradigm_id_ref="verbpdgm12" match_order="1">
             <constraint name="voice">mediopassive</constraint>
             <constraint name="mood">indicative</constraint>
@@ -12086,8 +12091,10 @@
           <constraint name="stemtype">ath_primary</constraint>
           <constraint name="tense">perfect</constraint>
        </match>       
-        <match paradigm_id_ref="verbpdgm53" match_order="1">
+        <match paradigm_id_ref="verbpdgm53" match_order="3">
             <constraint name="stemtype">perf_act</constraint>
+           <constraint name="tense">pluperfect</constraint>
+           <constraint name="voice">active</constraint>
         </match>
        <!-- verb_participles should never match verb tables
             and participle tables, so bump up the match order 
