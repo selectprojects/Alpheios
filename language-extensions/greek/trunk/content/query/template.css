@@ -194,3 +194,12 @@ div.invalid {
 #alph-infl-table td.invalid, #alph-infl-table td.ending-group.incorrect.invalid {
     background-color: #4E6476;
 }
+
+.notfirst {
+    padding-left: 0px;
+
+}
+.notfirst:before {
+    content: ", ";
+
+}

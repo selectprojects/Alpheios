@@ -76,7 +76,8 @@ const MAS = 'masculine';
 const FEM = 'feminine';
 const NEU = 'neuter';
 const COM = 'common';
-
+const MF = 'masculine_feminine'
+const MFN = 'masculine_feminine_neuter'
 /*
  * temporary string object for table headers - to be moved to a properties file
  */
@@ -92,6 +93,8 @@ str[DECL] = 'Declension';
 str[FEM] = 'F';
 str[MAS] = 'M';
 str[NEU] = 'N';
+str[MF] = 'M/F';
+str[MFN] = 'M/F/N';
 str[SIN] = 'Singular';
 str[DUA] = 'Dual';
 str[PLUR] = 'Plural';
@@ -195,8 +198,31 @@ var TEMPLATE =
      * noun query template
      */
     noun:
-          { data_file: "chrome://alpheios-greek/content/inflections/alph-query-noun.xml",
+          { data_file: "chrome://alpheios-greek/content/inflections/alph-infl-noun.xml",
             xslt_file: "chrome://alpheios/skin/alph-infl-substantive-query.xsl",
+            xslt_params: this.get_noun_params,
+            load_data_on_start: true,
+            invalidate_empty_cells: false,
+
+            /* table columns */
+            cols: 
+            [
+                [CASE,[NOM,ACC,DAT,GEN,VOC]],
+                [NUM,[SIN,DUA,PLUR]],
+                [GEND,[MAS,FEM,NEU]]
+            ],
+            filters: [
+            ],
+            /* temporary - additional noun definitions for testing */
+            test_defs: ['life', 'a man', 'end']
+          },
+     /**
+     * noun query template
+     */
+    adjective:
+          { data_file: "chrome://alpheios-greek/content/inflections/alph-infl-adjective.xml",
+            xslt_file: "chrome://alpheios/skin/alph-infl-substantive-query.xsl",
+            xslt_params: this.get_noun_params,
             load_data_on_start: true,
             invalidate_empty_cells: false,
 
@@ -305,7 +331,8 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
          
     if (template.load_data_on_start)
     {
-        activate_table(a_elem,a_ans,template,a_callback);
+        var xslt_params = template.xslt_params(a_ans);
+        activate_table(a_elem,a_ans,template,a_callback,xslt_params);
     }
 }
 
@@ -344,6 +371,12 @@ function activate_table(a_elem,a_ans,a_template,a_callback,a_xslt_param)
     var decl_table = load_forms(a_template.data_file, a_template.xslt_file, a_xslt_param);
     var table_elem = decl_table.getElementById("alph-infl-table") 
     $(a_elem).get(0).ownerDocument.importNode(table_elem,true);
+    $(table_elem).tableHover({colClass: "",
+                              rowClass: "",
+                              headCols: true,
+                              allowHead: false});
+    this.hide_empty_cols(table_elem);
+    
 
     $("th",table_elem).each(
         function()
@@ -547,7 +580,7 @@ function show_form(event)
             att_names.push($(this).attr('context'));
         }
     );
-    var xpath = '[context *=' + selected_att + ":" + $(a_elem).attr('value').replace(/_/," ") + "]";
+    var xpath = '[context *=' + selected_att + ":" + $(a_elem).attr('value') + "]";
     att_names.forEach(
         function(a_att)
         {
@@ -672,7 +705,7 @@ function show_table_form(a_event,a_cell)
                 // only check attributes which are actually defined in the answer
                 if (typeof a_event.data.answer.attributes[ans_key] != "undefined")
                 {
-                    if (a_event.data.answer.attributes[ans_key] != pair[1])
+                    if (pair[1].indexOf(a_event.data.answer.attributes[ans_key]) == -1)
                     {
                         match = false;
                     }
@@ -686,12 +719,30 @@ function show_table_form(a_event,a_cell)
     if (match)
     {
         $(a_cell).parent('td').addClass("correct");
+        // add the ending to the correct cell if it's not already there
+        var found_form = false
+        $(a_cell).siblings('.ending').andSelf().each(
+            function()
+            {
+                if ($(this).text() == a_event.data.answer.ending)
+                {
+                    found_form = true;
+                }
+            }
+        );
+        if (! found_form)
+        {
+            $(a_cell).parent('td').children('.ending').eq(0).addClass('notfirst');
+            $(a_cell).parent('td')
+                     .prepend('<span class="ending">'+a_event.data.answer.ending + '</span>');
+        }        
         var table = $(a_cell).parents('table').get(0);
+        
         $(".ending",table).each(
             function()
             {
                 $(this).addClass("showform");
-                if ($(this).text() == a_event.data.answer.form)
+                if ($(this).text() == a_event.data.answer.ending)
                 {
                     $(this).addClass('matchingform');
                 }
@@ -739,7 +790,7 @@ function show_table_form(a_event,a_cell)
     {
         $(a_cell).parent('td').addClass("incorrect");
         $(a_cell).addClass("showform");
-        if ($(a_cell).text() == a_event.data.answer.form )
+        if ($(a_cell).text() == a_event.data.answer.ending )
         {
             $(this).addClass('matchingform');
         }
@@ -799,4 +850,99 @@ function auto_select_answer(a_col,a_data)
         return $(selector).get(0);
     }
     return null;
+}
+
+function get_noun_params(a_ans)
+{
+    var params = {};
+    var declension = a_ans.attributes['alph-decl'];
+    if (declension)
+    {
+        params.decl = declension;
+    }
+    return params;
+}
+
+function hide_empty_cols(a_tbl)
+{
+    var data_rows = $("tr.data-row",a_tbl).length;
+    var empty_cols = [];
+    // iterate through the columns, hiding any which are completely empty
+    $('col',a_tbl).each (
+          function() {
+            var index = $(this).attr("realIndex");
+            var num_empty = $("td[realIndex='" + index + "'] span.emptycell",a_tbl).length;
+            if (num_empty == data_rows) 
+            {
+                empty_cols.push(index);    
+            }
+  
+          }
+    );
+
+    var reduce_cols = {headerrow1: {},
+                       headerrow2: {}};
+    empty_cols.forEach( 
+        function(a_o, a_i)
+        {
+            $("td[realIndex='" + a_o + "']",a_tbl).css("display","none");
+                
+            $("tr[id^=headerrow] th",a_tbl).each(
+                function()
+                {
+                    var realIndex = this.realIndex;
+                    var colspan;
+                    var id = $(this).parent("tr").attr("id");
+                    try 
+                    {
+                        colspan = parseInt($(this).attr("colspan"));
+                    }
+                    catch(e)
+                    {
+                    }
+                    
+                    if (typeof realIndex != "undefined" && 
+                        (realIndex == a_o
+                          || (a_o > realIndex && a_o < (realIndex + colspan))))
+                    {
+                        if (typeof reduce_cols[id][realIndex] == "undefined")
+                        {
+                            reduce_cols[id][realIndex] = 1;
+                        }
+                        else
+                        {
+                            reduce_cols[id][realIndex] = reduce_cols[id][realIndex] + 1;    
+                        }
+                        
+                    }
+                }
+            );
+        }
+    );
+    for (var id in reduce_cols)
+    {
+        if (id.substring("headerrow") == -1)
+        {
+            continue;
+        }
+        for (var colindex in reduce_cols[id])
+        {
+            if (typeof reduce_cols[id][colindex] == "number")
+            {
+                var col_header = 
+                    $("tr#" + id + " th[realIndex='" + colindex + "']",a_tbl)
+                    .get(0);
+                var col_span = parseInt(col_header.getAttribute("colspan"));
+                if (reduce_cols[id][colindex] == col_span)
+                {
+                    $(col_header).css("display","none");
+                }
+                else
+                {
+                    col_header.setAttribute("colspan",col_span - reduce_cols[id][colindex]);
+                    col_header.setAttribute("origColspan",col_span);
+                }
+            }
+        }
+    } 
 }
