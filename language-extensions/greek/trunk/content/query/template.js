@@ -78,44 +78,6 @@ const NEU = 'neuter';
 const COM = 'common';
 const MF = 'masculine_feminine'
 const MFN = 'masculine_feminine_neuter'
-/*
- * temporary string object for table headers - to be moved to a properties file
- */
-var str = {};
-str[NUM] = 'Number';
-str[VOICE] = 'Voice';
-str[TENSE] = 'Tense';
-str[MOOD] = 'Mood';
-str[PERS] = 'Person';
-str[GEND] = 'Gender';
-str[CASE] = 'Case';
-str[DECL] = 'Declension';
-str[FEM] = 'F';
-str[MAS] = 'M';
-str[NEU] = 'N';
-str[MF] = 'M/F';
-str[MFN] = 'M/F/N';
-str[SIN] = 'Singular';
-str[DUA] = 'Dual';
-str[PLUR] = 'Plural';
-str[IND] = 'Indicative';
-str[SUB] = 'Subjunctive';
-str[OPT] = 'Optative';
-str[IMP] = 'Imperative';
-str[PRE] = 'Present';
-str[IPF] = 'Imperfect';
-str[FUT] = 'Future';
-str[AOR] = 'Aorist';
-str[PER] = 'Perfect';
-str[PLU] = 'Pluperfect';
-str[FPF] = 'Future Perfect';
-str[AOR2] = '2nd Aorist';
-str[FUT2] = '2nd Future';
-str[PER2] = '2nd Perfect';
-str[PLU2] = '2nd Pluperfect';
-str[ACT] = 'Active';
-str[MID] = 'Middle';
-str[PAS] = 'Passive';
 
 /**
  * @singleton 
@@ -205,12 +167,7 @@ var TEMPLATE =
             invalidate_empty_cells: false,
 
             /* table columns */
-            cols: 
-            [
-                [CASE,[NOM,ACC,DAT,GEN,VOC]],
-                [NUM,[SIN,DUA,PLUR]],
-                [GEND,[MAS,FEM,NEU]]
-            ],
+            cols: {},
             filters: [
             ],
             /* temporary - additional noun definitions for testing */
@@ -227,12 +184,7 @@ var TEMPLATE =
             invalidate_empty_cells: false,
 
             /* table columns */
-            cols: 
-            [
-                [CASE,[NOM,ACC,DAT,GEN,VOC]],
-                [NUM,[SIN,DUA,PLUR]],
-                [GEND,[MAS,FEM,NEU]]
-            ],
+            cols: {}, 
             filters: [
             ],
             /* temporary - additional noun definitions for testing */
@@ -274,30 +226,41 @@ var TEMPLATE =
 function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
 {
     var template = TEMPLATE[a_pofs];
+    
+    var infl_table;
+    if (template.load_data_on_start)
+    {
+        var xslt_params = template.xslt_params(a_ans);
+        infl_table = activate_table(a_elem,a_ans,template,a_callback,xslt_params);
+    }
+    
     var html = '<div class="query-table">\n<div class="query-cols">\n';    
 
     // col headers
-    template.cols.forEach(
-        function(a_col,a_i)
+    for (var a_col in template.cols)
+    {
+        if (template.cols.hasOwnProperty(a_col))
         {
-            var attname = a_col[0];
+            var attname = a_col;
             var att_list;
-            if (typeof a_col[1] == 'function')
+            if (typeof template.cols[a_col] == 'function')
             {
-                att_list = a_col[1]();
+                att_list = template.cols[a_col]();
             }
             else 
             {
-                att_list = a_col[1];
+                att_list = template.cols[a_col].match(/,(.*?)(?=,)/g);
+                
             }
             if (att_list.length > 0)
             {
                 var div = 
                     '<div class="query-col" context="' + attname + '">\n' +
-                    '<div class="query-col-header">' + str[attname] + '</div>\n';
+                    '<div class="query-col-header">' + get_string(attname)  + '</div>\n';
                 att_list.forEach(
                     function(a_att)
                     {
+                        a_att = a_att.replace(/,/,'');
                         div = div +
                             '<div class="choice" context="' + a_att + '">' +
                             '<input type="radio" name="' + attname + 
@@ -309,7 +272,7 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
                 html = html + div;
             }
         }
-    );
+    }
     
     html = html + "</div>";
    
@@ -326,14 +289,13 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
     };
     
     $(".choice input",a_elem).bind('click',bind_data,check_answer);
+    $("#alph-infl-table",a_elem).remove();
+    
+    $(".query-decl",a_elem).append(infl_table);
    
     $("#reset",a_elem).bind('click',bind_data,reset_table);
          
-    if (template.load_data_on_start)
-    {
-        var xslt_params = template.xslt_params(a_ans);
-        activate_table(a_elem,a_ans,template,a_callback,xslt_params);
-    }
+    
 }
 
 /**
@@ -359,12 +321,13 @@ function reset_table(a_event)
 }
 
 /**
- * add the inflection table element
+ * activate the inflection table element
  * @param {Element} a_elem the DOM node to which the query table is appended
  * @param {Element} a_ans the object containing the correct inflection details
  * @param {Object} a_tepmlate the table template data
  * @param {Function} a_callback callback executed upon correct answer selected
  * @param {Object} a_xslt_param optional xslt parameters 
+ * @return {Element} the inflection table element
  */
 function activate_table(a_elem,a_ans,a_template,a_callback,a_xslt_param)
 {
@@ -377,11 +340,48 @@ function activate_table(a_elem,a_ans,a_template,a_callback,a_xslt_param)
                               allowHead: false});
     this.hide_empty_cols(table_elem);
     
-
+    // set the radio button selection options 
+    // to match what is shown on the inflection table
+ 
     $("th",table_elem).each(
         function()
         {
-            replace_string(this);        
+            if ($(this).css("display") != 'none')
+            {
+                var att_name = $(this).attr("context");
+                if ($(this).attr("alph-"+att_name))
+                {
+                    var att_values = $(this).attr("alph-"+att_name).split(/\s|,|\|/);
+                    if ( typeof a_template.cols[att_name] == "undefined")
+                    {
+                        a_template.cols[att_name] = ',';
+                        att_values.forEach(
+                            function(a_val)
+                            {
+                                 a_template.cols[att_name] = 
+                                     a_template.cols[att_name] + a_val + ',';
+                            }
+                        ); 
+                    }
+                    else 
+                    {
+                        att_values.forEach(
+                            function(a_val)
+                            {
+                                var pattern = new RegExp(',' + a_val + ',');
+                                 if ( pattern.exec(a_template.cols[att_name]) ==  null)
+                                 {
+        
+                                    a_template.cols[att_name] = 
+                                        a_template.cols[att_name] + a_val + ',';
+                                 }
+                            }
+                        ); 
+                        
+                    }
+                }
+                replace_string(this);
+            }        
         }
     );
     
@@ -417,11 +417,7 @@ function activate_table(a_elem,a_ans,a_template,a_callback,a_xslt_param)
     var width = ((1/num_cols)*100).toFixed(0);
     $("td",table_elem).css("width",width+'%');
     $("th",table_elem).css("width",width+'%');
-    
-    $("#alph-infl-table",a_elem).remove();
-    
-    $(".query-decl",a_elem).append(decl_table.getElementById("alph-infl-table"));
-    
+        
     // iterate through the incorrect choices so far, updating the table to gray out the
     // incorrect selections
     $(".query-col .choice.incorrect",a_elem).each(
@@ -431,14 +427,39 @@ function activate_table(a_elem,a_ans,a_template,a_callback,a_xslt_param)
         }
     );
     
+    return table_elem;
+    
 }
 
 function mark_cell_incorrect(a_choice,a_doc)
 {
-    var regex = $("input",a_choice).attr('name') + ':' + $("input",a_choice).attr("value");
-    $("#alph-infl-table td.ending-group .ending[context*=" + regex + "]",a_doc)
-        .parent("td").addClass("incorrect");
+    var att_name = $("input",a_choice).attr('name') ; 
+    var regex = 'alph-' + att_name +
+        ' *= |'+ $("input",a_choice).attr("value") + '|';
 
+    // iterate through the table cells which contain the selected
+    // value in the corresponding alph- attribute
+    $("#alph-infl-table td.ending-group .ending[" + regex + "]",a_doc).each
+    (
+        function()
+        {
+            // alph- attributes may be multi-valued, so only 
+            // mark the cell incorrect if all possible values for the
+            // cell have beeen identified as being incorrect
+            var possible = 
+                $(this).attr('alph-'+att_name)
+                    .match(/\|(.*?)(?=\|)/g);
+            var num_incorrect = $(this).attr("incorrect-"+att_name) || 0; 
+            if ((num_incorrect + 1) == possible.length)
+            {
+                $(this).parent('td').addClass("incorrect");
+            }
+            else
+            {
+                $(this).attr("incorrect-"+att_name,num_incorrect+1);
+            }
+        }
+    );
 }
 /**
  * Checks user input
@@ -456,9 +477,18 @@ function check_answer(a_event)
     var parent_col = $(this).parents('div.query-col').get(0);
     var selected_name = this.getAttribute('name');
     var selected_val = this.getAttribute('value');
-    var table_regex = selected_name + ':' + selected_val;
-    selected_val = selected_val.replace(/_/,' ');
-    if (selected_val == a_event.data.answer.attributes['alph-'+ selected_name])
+    var table_regex= 'alph-'+ selected_name + '*= |'+ selected_val + '|';
+    var ans_vals = a_event.data.answer.attributes['alph-'+ selected_name].split(/\|/);
+    var matched_val = ''
+    for (var i=0; i<ans_vals.length;i++)
+    {
+        if (selected_val == ans_vals[i])
+        {
+            matched_val=selected_val;
+            break;
+        }
+    }
+    if (matched_val != '')
     {
         // if the table isn't already activated check to
         // see if we should now show it
@@ -527,9 +557,7 @@ function check_answer(a_event)
     {
         $(this).parent('.choice').addClass("incorrect");
         
-        $("#alph-infl-table td.ending-group .ending[context*=" + table_regex + "]",
-            parent_doc).parent("td").addClass("incorrect");
-        
+        mark_cell_incorrect($(this).parent('.choice'),parent_doc);        
     }
     $(all_cols).each(
             function()
@@ -580,17 +608,14 @@ function show_form(event)
             att_names.push($(this).attr('context'));
         }
     );
-    var xpath = '[context *=' + selected_att + ":" + $(a_elem).attr('value') + "]";
+    var xpath = '[alph-' + selected_att + '*= |' + $(a_elem).attr('value') + '|]';
     att_names.forEach(
         function(a_att)
         {
             var value = a_ans['alph-' + a_att];
-            value = value.replace(/\_/, " ");
             xpath = 
                 xpath + 
-                "[context *= " + a_att + ":" + 
-                 value
-                + "]"; 
+                '[alph-' + a_att + '*= |' + value + '|]';
         }
     );
     var cell = $("#alph-infl-table td.ending-group .ending"+xpath,parent_doc).get(0);
@@ -639,18 +664,13 @@ function load_forms(a_file,a_xslt,a_xslt_param)
 /**
  * replace a string from properties
  * @param {Element} a_elem the DOM node containing the text to be replaced
- * @param {Object} a_props the properties file with the string to be displayed
- * TODO - make this really use a properties file rather than the temporary 
- * hardcoded STR object
  */
 function replace_string(a_elem,a_props)
 {
     var text = jQuery.trim($(a_elem).text());
-    text = text.replace(/ /,'_');
     try 
     {
-        //var newtext = a_props.getString(text);
-        var newtext = str[text];
+        var newtext = $("#alph-infl-strings").get(0).getString(text);
         if (newtext)
         {
             $(a_elem).text(newtext);        
@@ -659,8 +679,30 @@ function replace_string(a_elem,a_props)
     } 
     catch(e)
     {
-        alert(e)   
+        //alert(e)   
     }  
+}
+
+/**
+ * get a string from properties
+ */
+function get_string(a_text)
+{
+    try 
+    {
+        var newtext = $("#alph-infl-strings").get(0).getString(
+            jQuery.trim(a_text));
+        if (newtext)
+        {
+            a_text = newtext;      
+        }
+        
+    } 
+    catch(e)
+    {
+        //alert(e)   
+    }  
+    return a_text;
 }
 
 /**
@@ -691,32 +733,55 @@ function show_table_form(a_event,a_cell)
     if (a_cell == null) {
         a_cell = $(".ending",this).get(0);
     }
+
+    var must_match = 0;
+    var matched = 0;
     
-    var atts = $(a_cell).attr("context").split(/-/);
-    var match = true;
-    
-    atts.forEach(
-        function(a_att)
+    for(var k=0; k<a_cell.attributes.length; k++)
+    {
+        var a_att = a_cell.attributes[k];
+        if (a_att.name.indexOf('alph-') == 0)
         {
-            if (a_att)
+            var ans_key = a_att.name;
+            // only check attributes which are actually defined in the answer
+            if (typeof a_event.data.answer.attributes[ans_key] != "undefined")
             {
-                var pair = a_att.split(/:/);
-                var ans_key = 'alph-' + pair[0];
-                // only check attributes which are actually defined in the answer
-                if (typeof a_event.data.answer.attributes[ans_key] != "undefined")
+             
+                must_match++;
+                // split the value of the cell on |, dropping off the leading
+                // and trailing |s so we don't get empty strings
+                var cell_values = 
+                    a_att.value
+                         .replace(/^\|/,'')
+                         .replace(/\|$/,'')
+                         .split(/\|/);
+                var ans_values = a_event.data.answer.attributes[ans_key].split(/\|/); 
+                var found_value = false;
+                CELL_LOOP:
+                for (var i=0; i<cell_values.length; i++)
                 {
-                    if (pair[1].indexOf(a_event.data.answer.attributes[ans_key]) == -1)
+                    ANS_LOOP:
+                    for (var j=0; j<ans_values.length; j++)
                     {
-                        match = false;
+                        if (cell_values[i] == ans_values[j])
+                        {
+                            found_value = true;
+                            break CELL_LOOP;
+                        }
                     }
                 }
+                if (found_value)
+                {
+                    matched++;
+                }
             }
-        }   
-    );
+        }
+    }   
+    
     
     $(a_cell).addClass("showform");
     // if it's a match, indicate that it's correct, and show the rest of the forms
-    if (match)
+    if (matched == must_match)
     {
         $(a_cell).parent('td').addClass("correct");
         // add the ending to the correct cell if it's not already there
