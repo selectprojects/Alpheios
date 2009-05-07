@@ -449,9 +449,9 @@
     <infl-ending-set
       num="dual" decl="2nd" case="nominative" gend="masculine feminine">
         <infl-ending
-            footnote="foot-60"   type="regular primary">ώ</infl-ending>
+            footnote="foot-60"   type="regular primary">ω</infl-ending>
         <infl-ending
-            footnote="foot-60"   type="regular">ω</infl-ending>
+            footnote="foot-60"   type="regular">ώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       num="dual" decl="2nd" case="vocative" gend="masculine feminine">

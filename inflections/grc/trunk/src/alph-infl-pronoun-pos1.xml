@@ -72,6 +72,16 @@
                type="primary regular">ἡμέτεροιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
+      pers="1st plural" num="dual"   case="genitive" gend="masculine">
+        <infl-ending
+               type="primary regular">ἡμέτεροιν</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+      pers="1st plural" num="dual"   case="nominative" gend="masculine">
+        <infl-ending
+               type="primary regular">ἡμέτερω</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
       pers="1st singular" num="dual"   case="accusative" gend="masculine">
         <infl-ending
                type="primary regular">ἐμώ</infl-ending>
@@ -80,6 +90,16 @@
       pers="1st singular" num="dual"   case="dative" gend="masculine">
         <infl-ending
                type="primary regular">ἐμοῖν</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+      pers="1st singular" num="dual"   case="genitive" gend="masculine">
+        <infl-ending
+               type="primary regular">ἐμοῖν</infl-ending>
+    </infl-ending-set>
+    <infl-ending-set
+      pers="1st singular" num="dual"   case="nominative" gend="masculine">
+        <infl-ending
+               type="primary regular">ἐμώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="1st plural" num="dual"   case="accusative" gend="neuter">
