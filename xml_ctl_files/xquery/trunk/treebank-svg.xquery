@@ -50,18 +50,26 @@ import module namespace tbu="http://alpheios.net/namespaces/treebank-util"
   Parameters:
     $a_sentence   sentence containing words
     $a_words      words to process
+    $a_nopunc     whether to suppress display of terminal punctuation
 
   Return value:
     SVG equivalent of words
  :)
 declare function tbs:word-set(
   $a_sentence as element(),
-  $a_words as element()*) as element()*
+  $a_words as element()*,
+  $a_nopunc as xs:boolean) as element()*
 {
   (: for each word :)
   for $word in $a_words
   (: get child words that depend on this :)
-  let $children := $a_sentence/word[./@head = $word/@id]
+  (: ignoring terminal punctuation nodes if so requested :)
+  let $children :=
+    for $child in $a_sentence/word[./@head = $word/@id]
+    where not($a_nopunc and
+              ($child/@lemma = ("comma1", "period1", "punc1")) and
+              count($a_sentence/word[./@head = $child/@id]) = 0)
+    return $child
   return
   (: return group :)
   element g
@@ -115,7 +123,7 @@ declare function tbs:word-set(
     ),
 
     (: groups for children :)
-    tbs:word-set($a_sentence, $children)
+    tbs:word-set($a_sentence, $children, $a_nopunc)
   }
 };
 
@@ -126,15 +134,17 @@ declare function tbs:word-set(
     $a_docname     name of treebank document
     $a_id          id of sentence
     $a_usespan     whether to use span as label for root node
+    $a_nopunc      whether to suppress display of terminal punctuation
 
   Return value:
     <svg> element containing SVG equivalent of sentence,
-    else <svg><text> with error message
+    else <svg><text>error message</text></svg>
  :)
 declare function tbs:get-svg(
   $a_docname as xs:string,
   $a_id as xs:string,
-  $a_usespan as xs:boolean) as element()?
+  $a_usespan as xs:boolean,
+  $a_nopunc as xs:boolean) as element()?
 {
   (: get sentence and create synthetic root :)
   let $doc := doc($a_docname)
@@ -158,7 +168,7 @@ declare function tbs:get-svg(
       {
         attribute class { "tree" },
         $sentence/@id,
-        tbs:word-set($sentence, $rootword)
+        tbs:word-set($sentence, $rootword, $a_nopunc)
       },
 
       (: text of sentence :)
@@ -195,7 +205,7 @@ declare function tbs:get-svg(
           element text
           {
             attribute class { "heading" },
-            "Key to Diagram Colors"
+            "Key to Background Colors"
           },
           element rect { attribute showme { "focus" } },
           element text { "Focus word" },
@@ -205,6 +215,27 @@ declare function tbs:get-svg(
           element text { "Words that immediately depend on focus word" },
           element rect { attribute showme { "focus-descendant" } },
           element text { "Other words that depend on focus word" },
+          element rect { attribute first { "yes" } },
+          element text { "First selected word" },
+          element rect {},
+          element text {},
+          element rect {},
+          element text
+          {
+            attribute class { "heading" },
+            "Key to Text Colors"
+          },
+          for $pos in ("Adjective", "Adverb", "Article",
+                       "Conjunction", "Interjection", "Noun",
+                       "Preposition", "Pronoun", "Verb",
+                       "Other parts of speech")
+          return
+          (
+            element rect {},
+            element text { attribute pos { lower-case($pos) }, $pos }
+          ),
+          element rect {},
+          element text {},
           element rect {},
           element text { "LABEL on arc = dependency relation" }
         }

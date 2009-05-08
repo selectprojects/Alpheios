@@ -48,5 +48,5 @@ return
   then
     element error { concat("Treebank for ", $base, " not available") }
   else
-    (: get SVG, using "#" as root label :)
-    tbs:get-svg($docname, $id, false())
+    (: get SVG, using "#" as root label, and suppressing punctuation :)
+    tbs:get-svg($docname, $id, false(), true())
