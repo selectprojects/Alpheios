@@ -221,11 +221,17 @@ var TEMPLATE =
  * @param {String} a_pofs the part of speech for the query
  * @param {Element} a_ans the object containing the correct inflection data
  * @param {Function} a_callback callback function to be called when the correct
- *                              answer is found   
+ *                              answer is found
+ * @return true if able to create the inflection query element, otherwise false
+ * @type Boolean   
  */
 function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
 {
     var template = TEMPLATE[a_pofs];
+    if (typeof template == "undefined")
+    {
+        return false;
+    }
     
     var infl_table;
     if (template.load_data_on_start)
@@ -295,7 +301,7 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
    
     $("#reset",a_elem).bind('click',bind_data,reset_table);
          
-    
+    return true;
 }
 
 /**
@@ -715,7 +721,7 @@ function show_all_forms(a_doc,a_event)
     $("#alph-infl-table .ending",a_doc).each(
         function()
         {
-            show_table_form(a_event,this);    
+            show_table_form(a_event,this,true);    
         }
     );
 }
@@ -725,15 +731,23 @@ function show_all_forms(a_doc,a_event)
  * to a user click on the cell, or selection of the correct answer
  * by process of elimination
  * @param {Event} a_event the event which initiated the action
- * @param {Element} a_cell the DOM node containing the form 
+ * @param {Element} a_cell the DOM node containing the form
+ * @param {Boolean} a_skip_callback flag to indicate not to execute callback
+ *                                  upon correct form shown
  */
-function show_table_form(a_event,a_cell)
+function show_table_form(a_event,a_cell,a_skip_callback)
 {
     // if a_cell is null, then called from an event handler
     if (a_cell == null) {
         a_cell = $(".ending",this).get(0);
     }
-
+    
+    // default is to execute the callback if the correct
+    // form is shown
+    if (typeof a_skip_callback == "undefined") {
+        a_skip_callback = false;
+    }
+            
     var must_match = 0;
     var matched = 0;
     
@@ -823,24 +837,6 @@ function show_table_form(a_event,a_cell)
         );
         $("#reset",parent_doc).css("display","none");
          
-        atts.forEach(
-        function(a_att)
-        {
-            if (a_att)
-            {
-                var pair = a_att.split(/:/);
-                var ans_key = 'alph-' + pair[0];
-                // only check attributes which are actually defined in the answer
-                if (typeof a_event.data.answer.attributes[ans_key] != "undefined")
-                {
-                    if (a_event.data.answer.attributes[ans_key] != pair[1])
-                    {
-                        match = false;
-                    }
-                }
-            }
-        }   
-    );
         var answer_terms = [];
         for (var prop in a_event.data.answer.attributes)
         {
@@ -849,16 +845,25 @@ function show_table_form(a_event,a_cell)
                 answer_terms.push(a_event.data.answer.attributes[prop]);
             }
         }
-        a_event.data.callback(answer_terms.join(', '));
+        if (! a_skip_callback)
+        {
+            a_event.data.callback();
+        }
     }
     else
     {
         $(a_cell).parent('td').addClass("incorrect");
-        $(a_cell).addClass("showform");
-        if ($(a_cell).text() == a_event.data.answer.ending )
-        {
-            $(this).addClass('matchingform');
-        }
+        $(a_cell).siblings('ending').andSelf().each
+        (
+            function()
+            {
+                $(this).addClass("showform");
+                if ($(this).text() == a_event.data.answer.ending )
+                {
+                    $(this).addClass('matchingform');
+                }
+            }
+        );
 
     }
     

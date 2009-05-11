@@ -195,6 +195,12 @@ div.invalid {
     background-color: #4E6476;
 }
 
+#alph-infl-table td.ending, 
+.alph-query-dict .alph-hdwd, 
+.alph-query-infl .alph-infl-set .alph-term {
+    font-family: Georgia, "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif !important;
+}
+
 .notfirst {
     padding-left: 0px;
 
