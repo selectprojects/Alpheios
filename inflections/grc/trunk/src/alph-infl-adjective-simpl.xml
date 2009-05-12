@@ -267,14 +267,14 @@
     <infl-ending-set
        num="singular"   case="nominative" gend="neuter">
         <infl-ending
-               type="regular primary">oν</infl-ending>
+               type="regular primary">ον</infl-ending>
         <infl-ending
                type="regular primary">ες</infl-ending>
     </infl-ending-set>
     <infl-ending-set
        num="singular"   case="vocative" gend="neuter">
         <infl-ending
-               type="regular primary">oν</infl-ending>
+               type="regular primary">ον</infl-ending>
     </infl-ending-set>
   </infl-endings>
 </infl-data>
