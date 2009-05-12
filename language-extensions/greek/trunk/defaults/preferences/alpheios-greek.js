@@ -16,7 +16,6 @@ pref("extensions.alpheios.greek.grammar.hotlinks",
 pref("extensions.alpheios.greek.features.alpheios-grammar",true);
 pref("extensions.alpheios.greek.features.alpheios-inflect",true);
 pref("extensions.alpheios.greek.context_handler","grammarContext");
-pref("extensions.alpheios.greek.shift_handler","handleInflections");
 pref("extensions.alpheios.greek.panels.use.defaults",true);
 pref("extensions.alpheios.greek.dictionaries.full","lsj,lsjharvard,aut");
 pref("extensions.alpheios.greek.dictionaries.short","aut,lsj,ml");
