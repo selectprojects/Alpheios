@@ -1,5 +1,6 @@
 .ending, caption {
-    font-family: Georgia, "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif; 
+    font-family: Georgia, "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif;
+    line-height: 1em; 
 }
 
 .notfirst:before {
