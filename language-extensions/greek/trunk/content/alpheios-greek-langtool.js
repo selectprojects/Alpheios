@@ -424,6 +424,8 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         if (a_infl_type.match(/_all$/))
         {
             a_params.xslt_params.paradigm_id = 'all';
+            a_params.xslt_params.match_pofs = 'verb';
+            a_params.xslt_params.selected_endings = a_params.entries.verb;
         }
         else if (typeof a_params.paradigm_id != 'undefined' && a_params.paradigm_id != null)
         {

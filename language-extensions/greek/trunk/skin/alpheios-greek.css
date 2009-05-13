@@ -15,6 +15,6 @@
     color: #5BC8DC;
 }
 
-.alph-hdwd, .alph-phrase, .alph-term, *:lang(gre), *:lang(grc), *.greek {
+.alph-hdwd, .alph-phrase, .alph-term, .alph-infl-form, *:lang(gre), *:lang(grc), *.greek {
     font-family: Georgia, "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif;
 }
