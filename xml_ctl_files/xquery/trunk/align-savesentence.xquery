@@ -45,7 +45,7 @@ declare function alsv:save-sentence(
     let $docName := concat($a_collection, $a_data/@alph-doc, ".xml")
     let $sentId := $a_data/@alph-sentid
     let $doc := doc($docName)
-    let $oldSent := subsequence($doc//sentence, $sentId, 1)
+    let $oldSent := subsequence($doc//*:sentence, $sentId, 1)
     return
     if ($oldSent)
     then

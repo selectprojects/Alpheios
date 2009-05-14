@@ -1,4 +1,4 @@
-a(:
+(:
   Copyright 2009 Cantus Foundation
   http://alpheios.net
 
