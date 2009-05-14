@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="file:/C:/work/schemas/inflections.css"?>
 <infl-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="file:/C:/work/schemas/infl-endings-ungrouped.xsd"
-    xml:lang="greek"
-    footnote="foot-1">
+    xsi:noNamespaceSchemaLocation="file:/C:/work/schemas/infl-endings-ungrouped.xsd" xml:lang="greek" footnote="foot-1">
   <order-table>
     <order-item attname="case" order="1">nominative</order-item>
     <order-item attname="case" order="2">genitive</order-item>
@@ -70,7 +68,7 @@
         <infl-ending
                type="primary regular">σφᾶς</infl-ending>
         <infl-ending
-               type="primary regular">αὐτά̄ς </infl-ending>
+               type="primary regular">αὑτά̄ς </infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="3rd" num="plural"   case="dative" gend="feminine">
@@ -79,7 +77,7 @@
         <infl-ending
                type="primary regular">σφίσιν</infl-ending>
         <infl-ending
-               type="primary regular">αὐταῖς  </infl-ending>
+               type="primary regular">αὑταῖς  </infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="3rd" num="plural"   case="genitive" gend="feminine">
@@ -88,7 +86,7 @@
         <infl-ending
                type="primary regular">σφῶν</infl-ending>
         <infl-ending
-               type="primary regular">αὐτῶν</infl-ending>
+               type="primary regular">αὑτῶν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="1st" num="plural"   case="accusative" gend="masculine">
@@ -139,7 +137,7 @@
         <infl-ending
                type="primary regular">σφᾶς</infl-ending>
         <infl-ending
-               type="primary regular">αὐτούς</infl-ending>
+               type="primary regular">αὑτούς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="3rd" num="plural"   case="dative" gend="masculine">
@@ -148,7 +146,7 @@
         <infl-ending
                type="primary regular">σφίσιν</infl-ending>
         <infl-ending
-               type="primary regular">αὐτοῖς</infl-ending>
+               type="primary regular">αὑτοῖς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="3rd" num="plural"   case="genitive" gend="masculine">
@@ -157,7 +155,7 @@
         <infl-ending
                type="primary regular">σφῶν</infl-ending>
         <infl-ending
-               type="primary regular">αὐτῶν</infl-ending>
+               type="primary regular">αὑτῶν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="3rd" num="plural"   case="accusative" gend="neuter">
@@ -166,7 +164,7 @@
         <infl-ending
                type="primary regular">σφᾶς</infl-ending>
         <infl-ending
-               type="primary regular">αὐτά</infl-ending>
+               type="primary regular">αὑτά</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="3rd" num="plural"   case="dative" gend="neuter">
@@ -175,7 +173,7 @@
         <infl-ending
                type="primary regular">σφίσιν</infl-ending>
         <infl-ending
-               type="primary regular">αὐτοῖς</infl-ending>
+               type="primary regular">αὑτοῖς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="3rd" num="plural"   case="genitive" gend="neuter">
@@ -184,7 +182,7 @@
         <infl-ending
                type="primary regular">σφῶν</infl-ending>
         <infl-ending
-               type="primary regular">αὐτῶν</infl-ending>
+               type="primary regular">αὑτῶν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="1st" num="singular"   case="accusative" gend="feminine">
