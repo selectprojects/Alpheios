@@ -115,9 +115,9 @@ declare function alst:get-list-page(
       let $l2Words := $sent/*:wds[@*:lnum="L2"]/*:w
       let $marks :=
         for $word in ($l1Words, $l2Words)
-        let $mark := $word/*:mark
+        let $mark := ($word/*:mark, $word/*:comment[@*:class = "mark"])
         return
-        if (exists($mark))
+        if (count($mark) > 0)
         then
           element tr
           {

@@ -87,7 +87,11 @@ declare function alcv:convert-sentence(
         element text { $word/text() },
         if ($word/@mark)
         then
-          element mark { data($word/@mark) }
+          element comment
+          {
+            attribute class { "mark" },
+            data($word/@mark)
+          }
         else (),
         if ($word/@nrefs)
         then

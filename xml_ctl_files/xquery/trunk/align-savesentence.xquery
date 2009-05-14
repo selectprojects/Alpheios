@@ -30,18 +30,19 @@ import module namespace alut="http://alpheios.net/namespaces/align-util"
   Function to save SVG in alignment document
 
   Parameters:
+    $a_collection  collection to put document in
     $a_data        SVG data
 
   Return value:
     HTML page with status/error
  :)
 declare function alsv:save-sentence(
+  $a_collection as xs:string,
   $a_data as element()?) as element()?
 {
   if ($a_data)
   then
-    let $docStem := $a_data/@alph-doc
-    let $docName := concat("/db/repository/alignment/", $docStem, ".xml")
+    let $docName := concat($a_collection, $a_data/@alph-doc, ".xml")
     let $sentId := $a_data/@alph-sentid
     let $doc := doc($docName)
     let $oldSent := subsequence($doc//sentence, $sentId, 1)

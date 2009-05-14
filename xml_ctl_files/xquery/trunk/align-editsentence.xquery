@@ -1,4 +1,4 @@
-(:
+a(:
   Copyright 2009 Cantus Foundation
   http://alpheios.net
 
@@ -33,6 +33,7 @@ import module namespace alut="http://alpheios.net/namespaces/align-util"
   Parameters:
     $a_docName     name of aligned text document
     $a_docStem     document stem
+    $a_base        base path to current request
     $a_sentId      id of sentence to edit
     $a_saveURL     query to invoked to save sentence
     $a_listURL     query to invoked to list sentences
@@ -45,6 +46,7 @@ import module namespace alut="http://alpheios.net/namespaces/align-util"
 declare function aled:get-edit-page(
   $a_docName as xs:string,
   $a_docStem as xs:string,
+  $a_base as xs:string,
   $a_sentId as xs:integer,
   $a_saveURL as xs:string,
   $a_listURL as xs:string,
@@ -52,10 +54,10 @@ declare function aled:get-edit-page(
   $a_editParam as xs:string) as element()?
 {
   let $doc := doc($a_docName)
-  let $maxSentId := count($doc//sentence)
-  let $sent := ($doc//sentence)[$a_sentId]
-  let $l1Lang := $sent/../language[@*:lnum = "L1"]/@xml:lang
-  let $l2Lang := $sent/../language[@*:lnum = "L2"]/@xml:lang
+  let $maxSentId := count($doc//*:sentence)
+  let $sent := ($doc//*:sentence)[$a_sentId]
+  let $l1Lang := $sent/../*:language[@*:lnum = "L1"]/@xml:lang
+  let $l2Lang := $sent/../*:language[@*:lnum = "L2"]/@xml:lang
 
   return
   <html xmlns="http://www.w3.org/1999/xhtml"
@@ -89,6 +91,37 @@ declare function aled:get-edit-page(
       attribute name { "alpheios-pedagogical-text" },
       attribute content { "true" }
     },
+    if ($doc//*:comment[@*:class = "tbref"])
+    then
+      let $docId := $doc//*:comment[@*:class = "tbref"]/@*:docid
+      return
+      (
+        element meta
+        {
+          attribute name { "alpheios-treebank-diagram-url" },
+          attribute content
+          {
+            concat($a_base, "/treebank-getsvg.xq",
+                   "?",
+                   "f=", $docId,
+                   "&amp;",
+                   "s=SENTENCE")
+          }
+        },
+        element meta
+        {
+          attribute name { "alpheios-treebank-url" },
+          attribute content
+          {
+            concat($a_base, "/treebank-getmorph.xq",
+                   "?",
+                   "f=", $docId,
+                   "&amp;",
+                   "w=WORD")
+          }
+        }
+      )
+    else (),
 
     element link
     {
@@ -96,6 +129,7 @@ declare function aled:get-edit-page(
       attribute type { "text/css" },
       attribute href { "../css/alph-align-edit.css" }
     },
+
     element script
     {
       attribute language { "javascript" },

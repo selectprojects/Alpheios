@@ -31,4 +31,4 @@ declare option exist:serialize
         doctype-public=-//W3C//DTD&#160;XHTML&#160;1.0&#160;Transitional//EN
         doctype-system=http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd";
 
-alsv:save-sentence(request:get-data())
+alsv:save-sentence("/db/repository/alignment/", request:get-data())

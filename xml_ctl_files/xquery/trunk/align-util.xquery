@@ -53,26 +53,74 @@ declare function alut:xml-to-svg(
     (: include additional attributes :)
     $a_attrs,
 
+    (: preserve any sentence-level comments :)
+    if ($a_sent/*:comment)
+    then
+      <desc xmlns="http://alpheios.net/namespaces/aligned-text">
+      {
+        $a_sent/*:comment
+      }
+      </desc>
+    else (),
+
     for $lang in ("L1", "L2")
     let $otherLang := if ($lang eq "L1") then "L2" else "L1"
-    let $words := $a_sent/*:wds[@*:lnum eq $lang]/*:w
+    let $wordSet := $a_sent/*:wds[@*:lnum eq $lang]
+    let $words := $wordSet/*:w
     let $otherWords := $a_sent/*:wds[@*:lnum eq $otherLang]/*:w
+    let $tbrefs :=
+      if ($lang eq "L1")
+      then
+        $a_sent/../*:comment[@*:class="tbref"]/*:match[@*:as=$a_sent/@*:id]
+      else ()
     return
     element g
     {
       attribute class { "sentence", $lang },
       attribute xml:lang { $a_sent/../*:language[@*:lnum = $lang]/@xml:lang },
 
-      for $word in $words
+      (: preserve any wordset-level comments :)
+      if ($wordSet/*:comment)
+      then
+        <desc xmlns="http://alpheios.net/namespaces/aligned-text">
+        {
+          $wordSet/*:comment
+        }
+        </desc>
+      else (),
+
+      for $word at $i in $words
       let $refs := tokenize($word/*:refs/@*:nrefs, ' ')
+      let $tbref := $tbrefs[@*:aw <= $i][last()]
       return
       element g
       {
         attribute class { "word" },
         attribute id { concat($lang, ":", $word/@*:n) },
+        if ($tbref)
+        then
+          attribute tbref
+          {
+            concat($tbref/@*:ts, '-', $tbref/@*:tw + ($i - $tbref/@*:aw))
+          }
+        else (),
         if ($word/*:mark)
         then
           attribute xlink:title { $word/*:mark/text() }
+        else (),
+        if ($word/*:comment[@*:class = "mark"])
+        then
+          attribute xlink:title { $word/*:comment[@*:class = "mark"]/text() }
+        else (),
+
+        (: preserve any word-level comments that aren't marks :)
+        if ($word/*:comment[not(@*:class = "mark")])
+        then
+          <desc xmlns="http://alpheios.net/namespaces/aligned-text">
+          {
+            $word/*:comment[not(@*:class = "mark")]
+          }
+          </desc>
         else (),
 
         (: highlighting rectangle :)
@@ -130,20 +178,26 @@ declare function alut:svg-to-xml(
 {
   if ($a_sent)
   then
-  element sentence
+  <sentence xmlns="http://alpheios.net/namespaces/aligned-text">
   {
+    (: copy any comments :)
+    $a_sent/desc/*,
+
     for $lang in ("L1", "L2")
 (: following has problems in eXist 1.2.5: :)
-(:  let $svgSent := $a_sent/*:g[tokenize(@*:class, ' ') = $lang] :)
+(:  let $svgWordSet := $a_sent/*:g[tokenize(@*:class, ' ') = $lang] :)
 (: so instead do: :)
-    let $svgSent :=
+    let $svgWordSet :=
       for $g in $a_sent/*:g
       return if (tokenize($g/@*:class, ' ') = $lang) then $g else ()
-    let $words := $svgSent/*:g/*:g
+    let $words := $svgWordSet/*:g/*:g
     return
     element wds
     {
       attribute lnum { $lang },
+
+      (: copy any comments :)
+      $svgWordSet/*:desc/*,
 
       for $word in $words
       return
@@ -158,8 +212,15 @@ declare function alut:svg-to-xml(
         (: copy mark, if any :)
         if ($word/@xlink:title)
         then
-          element mark { data($word/@xlink:title) }
+          element comment
+          {
+            attribute class { "mark" },
+            data($word/@xlink:title)
+          }
         else (),
+
+        (: copy any remaining comments :)
+        $word/*:desc/*,
 
         (: references to aligned words :)
         let $refs :=
@@ -177,6 +238,7 @@ declare function alut:svg-to-xml(
       }
     }
   }
+  </sentence>
 
   else ()
 };

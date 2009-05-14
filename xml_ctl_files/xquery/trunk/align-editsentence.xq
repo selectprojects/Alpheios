@@ -36,9 +36,19 @@ let $sentId := request:get-parameter("s", ())
 let $saveURL := "./align-savesentence.xq"
 let $listURL := "./align-getlist.xq"
 let $editURL := "./align-editsentence.xq"
+let $base := request:get-url()
+let $base := substring($base,
+                       1,
+                       string-length($base) - 
+                       string-length(request:get-path-info()))
+let $base := substring($base,
+                       1,
+                       string-length($base) -
+                       string-length(tokenize($base, '/')[last()]))
 
 return aled:get-edit-page($docName,
                           $docStem,
+                          $base,
                           number($sentId),
                           $saveURL,
                           $listURL,
