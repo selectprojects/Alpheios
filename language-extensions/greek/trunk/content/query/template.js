@@ -88,73 +88,18 @@ var TEMPLATE =
      * verb query template
      */
     verb:
-          { data_file: "chrome://alpheios-greek/content/inflections/alph-query-verb.xml",
-            xslt_file: "chrome://alpheios/skin/alph-infl-verbform.xsl",
-            load_data_on_start: false,
-            invalidate_empty_cells: true,
-            /* table columns */
-            cols: 
-            [
-                [VOICE,[ACT,MID,PAS],{
-                    group1: MOOD,
-                    group4: TENSE }],
-                [TENSE,[PRE,IPF,FUT,AOR,PER,PLU,FPF],{
-                    group1: MOOD,
-                    group4: VOICE }],
-                [TENSE2,function(args){ return []}],
-                [MOOD,[IND,SUB,OPT,IMP],{
-                    group1: TENSE,
-                    group4: VOICE } ],
-                [NUM,[SIN,DUA,PLUR]],
-                [PERS,[FIRST,SECOND,THIRD]]
-            ],
-            /* filters defining invalid combinations of attributes */
+          { data_file: "chrome://alpheios-greek/content/inflections/alph-infl-verb-paradigms.xml",
+            xslt_file: "chrome://alpheios/skin/alph-infl-paradigm.xsl",
+            css_file: "chrome://alpheios/skin/alph-infl-paradigm.css",
+            load_data_on_start: true,
+            invalidate_empty_cells: false,
+            xslt_params: this.get_verb_params,
+            add_form_if_missing: false,
+                        /* table columns */
+            cols: {},
             filters: [
-                { mood: SUB,
-                  tense: IPF  
-                },
-                { mood: SUB,
-                  tense: FUT  
-                },  
-                { mood: SUB,
-                  tense: PLU  
-                },
-                { mood: SUB,
-                  tense: FPF  
-                },
-                { mood: OPT,
-                  tense: IPF  
-                },
-                { mood: OPT,
-                  tense: PLU  
-                },
-                { mood: IMP,
-                  tense: IPF  
-                },
-                { mood: IMP,
-                  tense: FUT  
-                },  
-                { mood: IMP,
-                  tense: PLU  
-                },
-                { mood: IMP,
-                  tense: FPF  
-                },
-                { num: DUA,
-                  pers: FIRST
-                },
-                { voice: ACT,
-                  tense: FPF
-                },
-                { voice: MID,
-                  tense: FPF
-                },
-                { mood: IMP,
-                  pers: FIRST
-                }                   
             ],
-            /* temporary - additional noun definitions for testing */
-            test_defs: ['tell', 'seek', 'plan']
+
     },
     /**
      * noun query template
@@ -165,13 +110,12 @@ var TEMPLATE =
             xslt_params: this.get_noun_params,
             load_data_on_start: true,
             invalidate_empty_cells: false,
+            add_form_if_missing: true,
 
             /* table columns */
             cols: {},
             filters: [
             ],
-            /* temporary - additional noun definitions for testing */
-            test_defs: ['life', 'a man', 'end']
           },
      /**
      * noun query template
@@ -182,35 +126,29 @@ var TEMPLATE =
             xslt_params: this.get_noun_params,
             load_data_on_start: true,
             invalidate_empty_cells: false,
+            add_form_if_missing: true,
 
             /* table columns */
             cols: {}, 
             filters: [
             ],
-            /* temporary - additional noun definitions for testing */
-            test_defs: ['life', 'a man', 'end']
-          },
-    /**
-     * article query template
-     */
-    article:
-          { data_file: "chrome://alpheios-greek/content/inflections/alph-query-article.xml",
-            xslt_file: "chrome://alpheios/skin/alph-infl-substantive-query.xsl",
-            load_data_on_start: true,
-            invalidate_empty_cells: false,
-
-            /* table columns */
-            cols: 
-            [
-                [CASE,[NOM,ACC,DAT,GEN,VOC]],
-                [NUM,[SIN,DUA,PLUR]],
-                [GEND,[MAS,FEM,NEU]]
-            ],
-            filters: [
-            ],
-            /* temporary - additional definitions for testing */
-            test_defs: ['who','he','a']
           }
+    /**
+     * article query template - not yet working
+     *    
+     * article:
+     *    { data_file: "chrome://alpheios-greek/content/inflections/alph-infl-article.xml",
+     *       xslt_file: "chrome://alpheios/skin/alph-infl-substantive-query.xsl",
+     *       load_data_on_start: true,
+     *       invalidate_empty_cells: false,
+     *       xslt_params: this.get_article_params,
+     *       add_form_if_missing: true,
+     * 
+     *       cols: {}, 
+     *       filters: [
+     *       ],
+     *     }
+     */
 
 };
 
@@ -233,6 +171,11 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
         return false;
     }
     
+    if (typeof template.css_file == "string")
+    {
+        $("head",$(a_elem).get(0).ownerDocument).append(
+            '<link type="text/css" rel="stylesheet" href="' + template.css_file + '"/>');
+    }
     var infl_table;
     if (template.load_data_on_start)
     {
@@ -445,7 +388,7 @@ function mark_cell_incorrect(a_choice,a_doc)
 
     // iterate through the table cells which contain the selected
     // value in the corresponding alph- attribute
-    $("#alph-infl-table td.ending-group .ending[" + regex + "]",a_doc).each
+    $("#alph-infl-table td.ending-group[" + regex + "]",a_doc).each
     (
         function()
         {
@@ -458,7 +401,7 @@ function mark_cell_incorrect(a_choice,a_doc)
             var num_incorrect = $(this).attr("incorrect-"+att_name) || 0; 
             if ((num_incorrect + 1) == possible.length)
             {
-                $(this).parent('td').addClass("incorrect");
+                $(this).addClass("incorrect");
             }
             else
             {
@@ -483,7 +426,6 @@ function check_answer(a_event)
     var parent_col = $(this).parents('div.query-col').get(0);
     var selected_name = this.getAttribute('name');
     var selected_val = this.getAttribute('value');
-    var table_regex= 'alph-'+ selected_name + '*= |'+ selected_val + '|';
     var ans_vals = a_event.data.answer.attributes['alph-'+ selected_name].split(/\|/);
     var matched_val = ''
     for (var i=0; i<ans_vals.length;i++)
@@ -624,7 +566,7 @@ function show_form(event)
                 '[alph-' + a_att + '*= |' + value + '|]';
         }
     );
-    var cell = $("#alph-infl-table td.ending-group .ending"+xpath,parent_doc).get(0);
+    var cell = $("#alph-infl-table td.ending-group" + xpath + " .ending",parent_doc).get(0);
     show_table_form({data:event.data},cell);        
 }
 
@@ -673,20 +615,8 @@ function load_forms(a_file,a_xslt,a_xslt_param)
  */
 function replace_string(a_elem,a_props)
 {
-    var text = jQuery.trim($(a_elem).text());
-    try 
-    {
-        var newtext = $("#alph-infl-strings").get(0).getString(text);
-        if (newtext)
-        {
-            $(a_elem).text(newtext);        
-        }
-        
-    } 
-    catch(e)
-    {
-        //alert(e)   
-    }  
+    var newtext = this.get_string($(a_elem).text());
+    $(a_elem).text(newtext);          
 }
 
 /**
@@ -694,20 +624,40 @@ function replace_string(a_elem,a_props)
  */
 function get_string(a_text)
 {
+    a_text = jQuery.trim(a_text);
+    var newtext = ''; 
     try 
     {
-        var newtext = $("#alph-infl-strings").get(0).getString(
-            jQuery.trim(a_text));
-        if (newtext)
-        {
-            a_text = newtext;      
-        }
-        
-    } 
+        newtext = $("#alph-infl-strings").get(0).getString(a_text);
+    }
     catch(e)
     {
-        //alert(e)   
-    }  
+        // try splitting into multiple strings
+        if (a_text.match(/\s+/))
+        {
+            var replaced = [];
+            try 
+            { 
+                a_text.split(/\s+/).forEach(
+                    function(a_str)
+                    {
+                            replaced.push(
+                                $("#alph-infl-strings").get(0).getString(a_str));             
+                    }
+                );
+                newtext = replaced.join(' ');
+             }
+            catch(a_e)
+            {
+                // quietly ignore errors retrieving strings not found in properties
+            }
+        }
+    }
+    if (newtext != '')
+    {
+        a_text = newtext;      
+    }
+    
     return a_text;
 }
 
@@ -751,9 +701,10 @@ function show_table_form(a_event,a_cell,a_skip_callback)
     var must_match = 0;
     var matched = 0;
     
-    for(var k=0; k<a_cell.attributes.length; k++)
+    var parent_cell = $(a_cell).parent('td').get(0);
+    for(var k=0; k<parent_cell.attributes.length; k++)
     {
-        var a_att = a_cell.attributes[k];
+        var a_att = parent_cell.attributes[k];
         if (a_att.name.indexOf('alph-') == 0)
         {
             var ans_key = a_att.name;
@@ -794,40 +745,57 @@ function show_table_form(a_event,a_cell,a_skip_callback)
     
     
     $(a_cell).addClass("showform");
+    var pofs = 
+        $(".alph-infl-set .alph-pofs", a_event.data.src_node).attr("context") ||
+        $(".alph-dict .alph-pofs", a_event.data.src_node).attr("context");
+
     // if it's a match, indicate that it's correct, and show the rest of the forms
-    if (matched == must_match)
+    // hack for verb particples to check the pofs too
+    if (matched == must_match && 
+        (!$(parent_cell).attr("alph-pofs") || $(parent_cell).attr("alph-pofs") == pofs ))
     {
         $(a_cell).parent('td').addClass("correct");
         // add the ending to the correct cell if it's not already there
         var found_form = false
-        $(a_cell).siblings('.ending').andSelf().each(
-            function()
-            {
-                if ($(this).text() == a_event.data.answer.ending)
+        if (a_event.data.template.add_form_if_missing)
+        {
+            $(a_cell).siblings('.ending').andSelf().each(
+                function()
                 {
-                    found_form = true;
+                    if ($(this).text() == a_event.data.answer.ending)
+                    {
+                        found_form = true;
+                    }
                 }
+            );
+            if (! found_form)
+            {
+                $(a_cell).parent('td').children('.ending').eq(0).addClass('notfirst');
+                $(a_cell).parent('td')
+                         .prepend('<span class="ending">'+a_event.data.answer.ending + '</span>');
+            }
+        }
+        var tables = [];
+        tables.push($(a_cell).parents('table').get(0));
+        tables.push($(a_cell).parents('table').siblings('table').get());
+        
+        // show all the remaining forms in all inflection tables in the display
+        tables.forEach(
+            function(a_table)
+            {
+                $(".ending",a_table).each(
+                    function()
+                    {
+                        $(this).addClass("showform");
+                        if ($(this).text() == a_event.data.answer.ending)
+                        {
+                            $(this).addClass('matchingform');
+                        }
+                    }
+                );
+                $('td:not(.correct)',a_table).addClass("incorrect");
             }
         );
-        if (! found_form)
-        {
-            $(a_cell).parent('td').children('.ending').eq(0).addClass('notfirst');
-            $(a_cell).parent('td')
-                     .prepend('<span class="ending">'+a_event.data.answer.ending + '</span>');
-        }        
-        var table = $(a_cell).parents('table').get(0);
-        
-        $(".ending",table).each(
-            function()
-            {
-                $(this).addClass("showform");
-                if ($(this).text() == a_event.data.answer.ending)
-                {
-                    $(this).addClass('matchingform');
-                }
-            }
-        )
-        $('td:not(.correct)',table).addClass("incorrect");
         var parent_doc = a_cell.ownerDocument;
         $(".query-col",parent_doc).each(
             function()
@@ -920,6 +888,23 @@ function auto_select_answer(a_col,a_data)
         return $(selector).get(0);
     }
     return null;
+}
+
+function get_verb_params(a_ans)
+{
+    var params = {};
+    params.selected_endings = [ $(".alph-entry",a_ans.src_node).get(0) ];
+    params.form = a_ans.form;
+    params.fragment = 1;
+    params.match_pofs = 'verb'
+    params.query_mode = true;
+    return params;
+}
+    
+function get_article_params(a_ans)
+{
+    return { group4: 'gend',
+             group5: 'num'};     
 }
 
 function get_noun_params(a_ans)

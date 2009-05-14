@@ -95,7 +95,7 @@ div.invalid {
     padding-left: .25em;
 }
 
-#alph-infl-table {
+#alph-infl-table, #alph-infl-table table {
     margin-left: .5em;
     margin-right: 1em;
     padding-right: 1em;
@@ -134,10 +134,10 @@ div.invalid {
 
 #alph-infl-table td.ending-group.hovered {
     border-collapse: separate;
-    border-top: 2px solid blue !important;
-    border-bottom: 2px solid blue !important;
-    border-left: 2px solid blue !important;
-    border-right: 2px solid blue !important;
+    border-top: 2px solid #5BC8DC !important;
+    border-bottom: 2px solid #5BC8DC !important;
+    border-left: 2px solid #5BC8DC !important;
+    border-right: 2px solid #5BC8DC !important;
 }
 
 #alph-infl-table td.ending-group .ending {
@@ -197,7 +197,8 @@ div.invalid {
 
 #alph-infl-table td.ending, 
 .alph-query-dict .alph-hdwd, 
-.alph-query-infl .alph-infl-set .alph-term {
+.alph-query-infl .alph-infl-set .alph-term,
+.alph-infl-form {
     font-family: Georgia, "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif !important;
 }
 
@@ -208,4 +209,28 @@ div.invalid {
 .notfirst:before {
     content: ", ";
 
+}
+/* hide a bunch of things on the inflection table when in query mode */
+#alph-infl-table .caption,  
+#alph-infl-table .alph-infl-form,
+#alph-infl-table .alph-reflink
+{
+    display:none;
+}
+
+/* okay to show the form in the hint*/
+#alph-infl-table .alpheios-hint .alph-infl-form {
+    display: inline;
+    font-weight: bold;
+}
+
+#alph-infl-table .title {
+    font-weight: bold;
+    margin-left: 1em;
+}
+
+.alpheios-hint {
+    color: #4E6476;
+    font-style: italic;
+    margin-bottom: 1em;
 }
