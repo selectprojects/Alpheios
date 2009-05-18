@@ -43,6 +43,7 @@
 module namespace tbs = "http://alpheios.net/namespaces/treebank-svg";
 import module namespace tbu="http://alpheios.net/namespaces/treebank-util"
               at "treebank-util.xquery";
+declare namespace xlink="http://www.w3.org/1999/xlink";
 
 (:
   Function to process set of words
@@ -95,7 +96,12 @@ declare function tbs:word-set(
 
     (: for each child :)
     for $child in $children
-    let $relation := $child/@relation
+    let $relation :=
+      if (contains($child/@relation, "_"))
+      then
+        substring-before($child/@relation, "_")
+      else
+        string($child/@relation)
     return
     (
       (: label for arc to child word :)
@@ -103,15 +109,12 @@ declare function tbs:word-set(
       {
         attribute class { "arc-label", "alpheios-ignore" },
         attribute idref { concat($a_sentence/@id, "-", $child/@id) },
-        text
+        text { tbu:relation-to-display($relation) },
+        element text
         {
-          tbu:relation-to-display(
-            if (contains($relation, "_"))
-            then
-              substring-before($relation, "_")
-            else
-              $relation
-          )
+          attribute class { "arc-label-help" },
+          attribute visibility { "hidden" },
+          tbu:relation-to-help($relation)
         }
       },
 
@@ -157,8 +160,16 @@ declare function tbs:get-svg(
     }
 
   return
-  <svg xmlns="http://www.w3.org/2000/svg">
+  <svg xmlns="http://www.w3.org/2000/svg"
+       xmlns:xlink="http://www.w3.org/1999/xlink">
   {
+    element script
+    {
+      attribute language { "javascript" },
+      attribute type { "text/javascript" },
+      attribute src { "../script/alph-align-list.js" }
+    },
+
     (: if sentence found :)
     if ($sentence)
     then
@@ -191,6 +202,24 @@ declare function tbs:get-svg(
             text { concat("&#x00A0;", $word/@form) }
           }
         )
+      },
+
+      (: help :)
+      element g
+      {
+        attribute class { "help alpheios-ignore" },
+        element g
+        {
+          attribute class { "help-mousemove" },
+          element text { "Mouse over words in sentence or tree to explore
+                          structure and view morphology." }
+        },
+        element g
+        {
+          attribute class { "help-dblclick" },
+          element text { "Mouse over words in sentence or tree to explore
+                          structure; double-click to view morphology." }
+        }
       },
 
       (: key :)

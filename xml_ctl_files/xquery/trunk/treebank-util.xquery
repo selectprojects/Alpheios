@@ -312,60 +312,103 @@ declare variable $tbu:s_relations :=
   <category id="rel" n="1"
             xmlns="http://alpheios.net/namespaces/treebank-util">
     <entry>
+      <aldt>ADV</aldt>
+      <help>adverbial</help>
+    </entry>
+    <entry>
       <aldt>APOS</aldt>
       <disp>APPOS</disp>
+      <help>apposing element</help>
     </entry>
     <entry>
       <aldt>ATR</aldt>
       <disp>ATTR</disp>
+      <help>attributive</help>
     </entry>
     <entry>
       <aldt>ATV</aldt>
       <disp>COMP</disp>
+      <help>complement</help>
     </entry>
     <entry>
       <aldt>AtvV</aldt>
       <disp>COMP</disp>
+      <help>complement</help>
     </entry>
     <entry>
       <aldt>AuxC</aldt>
       <disp>CONJ</disp>
+      <help>conjunction</help>
     </entry>
     <entry>
       <aldt>AuxG</aldt>
       <disp>BRCKT</disp>
+      <help>bracketing punctuation</help>
     </entry>
     <entry>
       <aldt>AuxK</aldt>
       <disp>TERM</disp>
+      <help>terminal punctuation</help>
     </entry>
     <entry>
       <aldt>AuxP</aldt>
       <disp>PREP</disp>
+      <help>preposition</help>
     </entry>
     <entry>
       <aldt>AuxR</aldt>
       <disp>RFLX</disp>
+      <help>reflexive passive</help>
     </entry>
     <entry>
       <aldt>AuxV</aldt>
       <disp>AUXV</disp>
+      <help>auxiliary verb</help>
     </entry>
     <entry>
       <aldt>AuxX</aldt>
       <disp>COMMA</disp>
+      <help>comma</help>
     </entry>
     <entry>
       <aldt>AuxY</aldt>
       <disp>SADV</disp>
+      <help>sentence adverbial</help>
     </entry>
     <entry>
       <aldt>AuxZ</aldt>
       <disp>EMPH</disp>
+      <help>emphasizing particle</help>
+    </entry>
+    <entry>
+      <aldt>COORD</aldt>
+      <help>coordinator</help>
     </entry>
     <entry>
       <aldt>ExD</aldt>
       <disp>ELLIP</disp>
+      <help>ellipsis</help>
+    </entry>
+    <entry>
+      <aldt>OCOMP</aldt>
+      <help>object complement</help>
+    </entry>
+    <entry>
+      <aldt>OBJ</aldt>
+      <help>object</help>
+    </entry>
+    <entry>
+      <aldt>PNOM</aldt>
+      <help>predicate nominal</help>
+    </entry>
+    <entry>
+      <aldt>PRED</aldt>
+      <help>predicate</help>
+    </entry>
+    <entry>
+      <aldt>SBJ</aldt>
+      <disp>SUBJ</disp>
+      <help>subject</help>
     </entry>
   </category>
 );
@@ -412,7 +455,7 @@ declare function tbu:postag-to-lexicon(
   then
     let $table := $tbu:s_tables[@id = $a_category]
     let $entry := $table/tbu:entry[tbu:short = substring($a_tag, $table/@n, 1)]
-    return
+a    return
       if (exists($entry/tbu:lex))
       then
         string($entry/tbu:lex)
@@ -466,23 +509,35 @@ declare function tbu:name-to-code(
 };
 
 (:
-  Function to convert ALDT relation name to display form
+  Functions to convert ALDT relation name to display form/help
   
   Parameters:
     $a_rel           relation
 
   Return value:
     empty if no input specified, else
-    equivalent display name, or input value if no display form found
+    1) equivalent display name, or input value if no display form found
+    2) help text
  :)
 declare function tbu:relation-to-display(
   $a_rel as xs:string?) as xs:string
 {
   if ($a_rel)
   then
-    let $display :=
-      string($tbu:s_relations/tbu:entry[tbu:aldt = $a_rel]/tbu:disp)
+    let $entry := $tbu:s_relations/tbu:entry[tbu:aldt = $a_rel]
+    let $display := string($entry/tbu:disp)
     return
-    if (string-length($display) > 0) then $display else $a_rel
+      if ($entry/tbu:disp) then string($entry/tbu:disp) else $a_rel
+  else ()
+};
+
+declare function tbu:relation-to-help(
+  $a_rel as xs:string?) as xs:string
+{
+  if ($a_rel)
+  then
+    let $entry := $tbu:s_relations/tbu:entry[tbu:aldt = $a_rel]
+    return
+      string($entry/tbu:help)
   else ()
 };
