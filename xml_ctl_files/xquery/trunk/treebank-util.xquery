@@ -455,7 +455,7 @@ declare function tbu:postag-to-lexicon(
   then
     let $table := $tbu:s_tables[@id = $a_category]
     let $entry := $table/tbu:entry[tbu:short = substring($a_tag, $table/@n, 1)]
-a    return
+    return
       if (exists($entry/tbu:lex))
       then
         string($entry/tbu:lex)
