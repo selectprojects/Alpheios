@@ -313,7 +313,7 @@ declare variable $tbu:s_relations :=
             xmlns="http://alpheios.net/namespaces/treebank-util">
     <entry>
       <aldt>ADV</aldt>
-      <help>adverbial</help>
+      <help>adverbial (&#x2191; modified word)</help>
     </entry>
     <entry>
       <aldt>APOS</aldt>
@@ -323,7 +323,7 @@ declare variable $tbu:s_relations :=
     <entry>
       <aldt>ATR</aldt>
       <disp>ATTR</disp>
-      <help>attributive</help>
+      <help>attribute (&#x2191; modified word)</help>
     </entry>
     <entry>
       <aldt>ATV</aldt>
@@ -343,12 +343,12 @@ declare variable $tbu:s_relations :=
     <entry>
       <aldt>AuxG</aldt>
       <disp>BRCKT</disp>
-      <help>bracketing punctuation</help>
+      <help>bracketing punctuation (&#x2191; head of phrase)</help>
     </entry>
     <entry>
       <aldt>AuxK</aldt>
       <disp>TERM</disp>
-      <help>terminal punctuation</help>
+      <help>terminal punctuation (&#x2191; root)</help>
     </entry>
     <entry>
       <aldt>AuxP</aldt>
@@ -363,12 +363,12 @@ declare variable $tbu:s_relations :=
     <entry>
       <aldt>AuxV</aldt>
       <disp>AUXV</disp>
-      <help>auxiliary verb</help>
+      <help>auxiliary verb (&#x2191; tensed verb)</help>
     </entry>
     <entry>
       <aldt>AuxX</aldt>
       <disp>COMMA</disp>
-      <help>comma</help>
+      <help>comma (&#x2191; head of clause)</help>
     </entry>
     <entry>
       <aldt>AuxY</aldt>
@@ -391,24 +391,24 @@ declare variable $tbu:s_relations :=
     </entry>
     <entry>
       <aldt>OCOMP</aldt>
-      <help>object complement</help>
+      <help>object complement (&#x2191; verb)</help>
     </entry>
     <entry>
       <aldt>OBJ</aldt>
-      <help>object</help>
+      <help>object (&#x2191; verb)</help>
     </entry>
     <entry>
       <aldt>PNOM</aldt>
-      <help>predicate nominal</help>
+      <help>predicate nominal (&#x2191; verb)</help>
     </entry>
     <entry>
       <aldt>PRED</aldt>
-      <help>predicate</help>
+      <help>predicate (&#x2191; root)</help>
     </entry>
     <entry>
       <aldt>SBJ</aldt>
       <disp>SUBJ</disp>
-      <help>subject</help>
+      <help>subject (&#x2191; verb)</help>
     </entry>
   </category>
 );
