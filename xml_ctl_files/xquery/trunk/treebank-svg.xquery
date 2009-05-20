@@ -110,11 +110,18 @@ declare function tbs:word-set(
         attribute class { "arc-label", "alpheios-ignore" },
         attribute idref { concat($a_sentence/@id, "-", $child/@id) },
         text { tbu:relation-to-display($relation) },
+
+        let $helps := tbu:relation-to-help($relation)
+        for $help in $helps
+        return
         element text
         {
-          attribute class { "arc-label-help" },
+          attribute class { concat("arc-label-help-", $help/@dir) },
           attribute visibility { "hidden" },
-          tbu:relation-to-help($relation)
+          concat(
+            if ($help/@dir = "dn") then '&#x2193;' else '&#x2191;',
+            ' ',
+            $help)
         }
       },
 

@@ -313,102 +313,113 @@ declare variable $tbu:s_relations :=
             xmlns="http://alpheios.net/namespaces/treebank-util">
     <entry>
       <aldt>ADV</aldt>
-      <help>adverbial (&#x2191; modified word)</help>
+      <help dir="up">modified word</help>
+      <help dir="dn">adverbial</help>
     </entry>
     <entry>
       <aldt>APOS</aldt>
       <disp>APPOS</disp>
-      <help>apposing element</help>
+      <help dir="dn">apposing element</help>
     </entry>
     <entry>
       <aldt>ATR</aldt>
       <disp>ATTR</disp>
-      <help>attribute (&#x2191; modified word)</help>
+      <help dir="up">modified word</help>
+      <help dir="dn">attribute</help>
     </entry>
     <entry>
       <aldt>ATV</aldt>
       <disp>COMP</disp>
-      <help>complement</help>
+      <help dir="dn">complement</help>
     </entry>
     <entry>
       <aldt>AtvV</aldt>
       <disp>COMP</disp>
-      <help>complement</help>
+      <help dir="dn">complement</help>
     </entry>
     <entry>
       <aldt>AuxC</aldt>
       <disp>CONJ</disp>
-      <help>conjunction</help>
+      <help dir="dn">conjunction</help>
     </entry>
     <entry>
       <aldt>AuxG</aldt>
       <disp>BRCKT</disp>
-      <help>bracketing punctuation (&#x2191; head of phrase)</help>
+      <help dir="up">head of phrase</help>
+      <help dir="dn">bracketing punctuation</help>
     </entry>
     <entry>
       <aldt>AuxK</aldt>
       <disp>TERM</disp>
-      <help>terminal punctuation (&#x2191; root)</help>
+      <help dir="up">root</help>
+      <help dir="dn">terminal punctuation</help>
     </entry>
     <entry>
       <aldt>AuxP</aldt>
       <disp>PREP</disp>
-      <help>preposition</help>
+      <help dir="dn">preposition</help>
     </entry>
     <entry>
       <aldt>AuxR</aldt>
       <disp>RFLX</disp>
-      <help>reflexive passive</help>
+      <help dir="dn">reflexive passive</help>
     </entry>
     <entry>
       <aldt>AuxV</aldt>
       <disp>AUXV</disp>
-      <help>auxiliary verb (&#x2191; tensed verb)</help>
+      <help dir="up">tensed verb</help>
+      <help dir="dn">auxiliary verb</help>
     </entry>
     <entry>
       <aldt>AuxX</aldt>
       <disp>COMMA</disp>
-      <help>comma (&#x2191; head of clause)</help>
+      <help dir="up">head of clause</help>
+      <help dir="dn">comma</help>
     </entry>
     <entry>
       <aldt>AuxY</aldt>
       <disp>SADV</disp>
-      <help>sentence adverbial</help>
+      <help dir="dn">sentence adverbial</help>
     </entry>
     <entry>
       <aldt>AuxZ</aldt>
       <disp>EMPH</disp>
-      <help>emphasizing particle</help>
+      <help dir="dn">emphasizing particle</help>
     </entry>
     <entry>
       <aldt>COORD</aldt>
-      <help>coordinator</help>
+      <help dir="dn">coordinator</help>
     </entry>
     <entry>
       <aldt>ExD</aldt>
       <disp>ELLIP</disp>
-      <help>ellipsis</help>
+      <help dir="dn">ellipsis</help>
     </entry>
     <entry>
       <aldt>OCOMP</aldt>
-      <help>object complement (&#x2191; verb)</help>
+      <help dir="up">verb</help>
+      <help dir="dn">object complement</help>
     </entry>
     <entry>
       <aldt>OBJ</aldt>
-      <help>object (&#x2191; verb)</help>
+      <help dir="up">verb</help>
+      <help dir="dn">object</help>
     </entry>
     <entry>
       <aldt>PNOM</aldt>
-      <help>predicate nominal (&#x2191; verb)</help>
+      <help dir="up">verb</help>
+      <help dir="dn">predicate nominal</help>
     </entry>
     <entry>
       <aldt>PRED</aldt>
-      <help>predicate (&#x2191; root)</help>
+      <help dir="up">root</help>
+      <help dir="dn">predicate</help>
     </entry>
     <entry>
       <aldt>SBJ</aldt>
       <disp>SUBJ</disp>
-      <help>subject (&#x2191; verb)</help>
+      <help dir="up">verb</help>
+      <help dir="dn">subject</help>
     </entry>
   </category>
 );
@@ -532,12 +543,12 @@ declare function tbu:relation-to-display(
 };
 
 declare function tbu:relation-to-help(
-  $a_rel as xs:string?) as xs:string
+  $a_rel as xs:string?) as element()*
 {
   if ($a_rel)
   then
     let $entry := $tbu:s_relations/tbu:entry[tbu:aldt = $a_rel]
     return
-      string($entry/tbu:help)
+      $entry/tbu:help
   else ()
 };
