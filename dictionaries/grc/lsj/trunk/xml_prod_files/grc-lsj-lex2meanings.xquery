@@ -3,17 +3,17 @@
   http://alpheios.net
  
   This file is part of Alpheios.
- 
+
   Alpheios is free software: you can redistribute it and/or modify
   it under the terms of the GNU General Public License as published by
   the Free Software Foundation, either version 3 of the License, or
   (at your option) any later version.
- 
+
   Alpheios is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
   GNU General Public License for more details.
- 
+
   You should have received a copy of the GNU General Public License
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  :)
@@ -561,6 +561,10 @@ let $corrections :=
       <meaning>this, that</meaning>
     </entry>
     <entry>
+      <lemma>ὅς2</lemma>
+      <meaning>his, her</meaning>
+    </entry>
+    <entry>
       <lemma>ἀλλά</lemma>
       <meaning>otherwise</meaning>
     </entry>
@@ -648,6 +652,216 @@ let $corrections :=
       <lemma>νόσφῐ</lemma>
       <meaning>aloof, apart, afar, away</meaning>
     </entry>
+    <entry>
+      <lemma>λύω</lemma>
+      <meaning>loosen</meaning>
+    </entry>
+    <entry>
+      <lemma>φαίνω</lemma>
+      <meaning>bring to light, cause to appear</meaning>
+    </entry>
+    <entry>
+      <lemma>ἀνά</lemma>
+      <meaning>on board; on, upon; up, from bottom to top, up along</meaning>
+    </entry>
+    <entry>
+      <lemma>ἔχω</lemma>
+      <meaning>have, hold</meaning>
+    </entry>
+    <entry>
+      <lemma>δοκεύς</lemma>
+      <meaning>bearing-beam, main beam</meaning>
+    </entry>
+    <entry>
+      <lemma>ὑπό</lemma>
+      <meaning>from under</meaning>
+    </entry>
+    <entry>
+      <lemma>εἶπος</lemma>
+      <meaning>the piece of wood that falls and catches the mouse</meaning>
+    </entry>
+    <entry>
+      <lemma>δέομαι</lemma>
+      <meaning>to be in want or need, require</meaning>
+    </entry>
+    <entry>
+      <lemma>μετά</lemma>
+      <meaning>in the midst of, among, between</meaning>
+    </entry>
+    <entry>
+      <lemma>λαμβάνω</lemma>
+      <meaning>take</meaning>
+    </entry>
+    <entry>
+      <lemma>ἀπό</lemma>
+      <meaning>from, away from</meaning>
+    </entry>
+    <entry>
+      <lemma>ἕτερος</lemma>
+      <meaning>one or the other of two</meaning>
+    </entry>
+    <entry>
+      <lemma>θεάω</lemma>
+      <meaning>gaze at, behold</meaning>
+    </entry>
+    <entry>
+      <lemma>πρῶτος</lemma>
+      <meaning>foremost</meaning>
+    </entry>
+    <entry>
+      <lemma>ὑπέρ</lemma>
+      <meaning>over, above; over, beyond</meaning>
+    </entry>
+    <entry>
+      <lemma>μᾶλλον</lemma>
+      <meaning>more, rather</meaning>
+    </entry>
+    <entry>
+      <lemma>πατήρ</lemma>
+      <meaning>father</meaning>
+    </entry>
+    <entry>
+      <lemma>Ἀθηναῖος</lemma>
+      <meaning>Athenian</meaning>
+    </entry>
+    <entry>
+      <lemma>ὁράω</lemma>
+      <meaning>see, look</meaning>
+    </entry>
+    <entry>
+      <lemma>μείς</lemma>
+      <meaning>month</meaning>
+    </entry>
+    <entry>
+      <lemma>Σωκράτης</lemma>
+      <meaning>Socrates</meaning>
+    </entry>
+    <entry>
+      <lemma>ἔργον</lemma>
+      <meaning>work</meaning>
+    </entry>
+    <entry>
+      <lemma>ἐράομαι</lemma>
+      <meaning>love</meaning>
+    </entry>
+    <entry>
+      <lemma>ποτέ</lemma>
+      <meaning>at some time or other</meaning>
+    </entry>
+    <entry>
+      <lemma>ἄρα</lemma>
+      <meaning>then</meaning>
+    </entry>
+    <entry>
+      <lemma>αἴρω</lemma>
+      <meaning>lift, raise up</meaning>
+    </entry>
+    <entry>
+      <lemma>ἀείρω</lemma>
+      <meaning>lift, raise up</meaning>
+    </entry>
+    <entry>
+      <lemma>πάσχω</lemma>
+      <meaning>have something done to one, suffer</meaning>
+    </entry>
+    <entry>
+      <lemma>ἀδῐκέω</lemma>
+      <meaning>to do wrong, to be in the wrong</meaning>
+    </entry>
+    <entry>
+      <lemma>μάλιστα</lemma>
+      <meaning>most, especially, far, by far</meaning>
+    </entry>
+    <entry>
+      <lemma>ἀείρω</lemma>
+      <meaning>lift, raise up</meaning>
+    </entry>
+    <entry>
+      <lemma>αἴρω</lemma>
+      <meaning>lift, raise up</meaning>
+    </entry>
+    <entry>
+      <lemma>φέρω</lemma>
+      <meaning>bear or carry a load</meaning>
+    </entry>
+    <entry>
+      <lemma>ἔοικα</lemma>
+      <meaning>to be like, look like</meaning>
+    </entry>
+    <entry>
+      <lemma>εἶδον</lemma>
+      <meaning>to see, perceive, behold</meaning>
+    </entry>
+    <entry>
+      <lemma>εἶμι</lemma>
+      <meaning>to go</meaning>
+    </entry>
+    <entry>
+      <lemma>πάρειμι</lemma>
+      <meaning>to be by or near</meaning>
+    </entry>
+    <entry>
+      <lemma>τίθημι</lemma>
+      <meaning>set, put, place</meaning>
+    </entry>
+    <entry>
+      <lemma>χρή</lemma>
+      <meaning>it is necessary</meaning>
+    </entry>
+    <entry>
+      <lemma>υἱός</lemma>
+      <meaning>son</meaning>
+    </entry>
+    <entry>
+      <lemma>ὁμολογέω</lemma>
+      <meaning>agree with, say the same thing as</meaning>
+    </entry>
+    <entry>
+      <lemma>χράομαι</lemma>
+      <meaning>desire, yearn after</meaning>
+    </entry>
+    <entry>
+      <lemma>οὐκοῦν</lemma>
+      <meaning>surely then</meaning>
+    </entry>
+    <entry>
+      <lemma>Γαῖα</lemma>
+      <meaning>earth</meaning>
+    </entry>
+    <entry>
+      <lemma>πού</lemma>
+      <meaning>anywhere, somewhere</meaning>
+    </entry>
+    <entry>
+      <lemma>ἔργνυμι</lemma>
+      <meaning>to confine</meaning>
+    </entry>
+    <entry>
+      <lemma>ἐμός</lemma>
+      <meaning>mine (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>ἡμέτερος</lemma>
+      <meaning>our (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>σός</lemma>
+      <meaning>thy, thine (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>ὑμέτερος</lemma>
+      <meaning>your, yours (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>σφέτερος</lemma>
+      <meaning>their own, their (also possessive pronoun)</meaning>
+    </entry>
+(:
+    <entry>
+      <lemma></lemma>
+      <meaning></meaning>
+    </entry>
+ :)
   </corrections>
 let $correctedLemmas := $corrections/entry/lemma/text()
 
