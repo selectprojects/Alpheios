@@ -215,9 +215,9 @@
     <infl-ending-set
        num="singular"   case="genitive" gend="masculine feminine neuter">
         <infl-ending
-               type="regular primary">ou</infl-ending>
+               type="regular primary">ου</infl-ending>
         <infl-ending
-               type="regular primary">οuς</infl-ending>
+               type="regular primary">ους</infl-ending>
         <infl-ending
                type="regular primary">ος</infl-ending>
     </infl-ending-set>
@@ -257,7 +257,7 @@
     <infl-ending-set
        num="singular"   case="nominative" gend="masculine">
         <infl-ending
-               type="regular primary">οuς</infl-ending>
+               type="regular primary">ους</infl-ending>
     </infl-ending-set>
     <infl-ending-set
        num="singular"   case="accusative" gend="neuter">
@@ -267,14 +267,14 @@
     <infl-ending-set
        num="singular"   case="nominative" gend="neuter">
         <infl-ending
-               type="regular primary">ον</infl-ending>
+               type="regular primary">oν</infl-ending>
         <infl-ending
                type="regular primary">ες</infl-ending>
     </infl-ending-set>
     <infl-ending-set
        num="singular"   case="vocative" gend="neuter">
         <infl-ending
-               type="regular primary">ον</infl-ending>
+               type="regular primary">oν</infl-ending>
     </infl-ending-set>
   </infl-endings>
 </infl-data>
