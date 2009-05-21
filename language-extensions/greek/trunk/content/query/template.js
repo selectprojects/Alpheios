@@ -240,6 +240,10 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
         callback:a_callback
     };
     
+    $(".choice",a_elem).hover(
+        toggle_choice_hover,
+        toggle_choice_hover
+    );
     $(".choice input",a_elem).bind('click',bind_data,check_answer);
     $("#alph-infl-table",a_elem).remove();
     
@@ -877,6 +881,21 @@ function show_table_form(a_event,a_cell,a_skip_callback)
 function toggle_cell_hover(a_event)
 {
     $(this).toggleClass("hovered");
+}
+
+
+/** 
+ * hover the corresponding table header when hovering over a radio choice
+ */
+function toggle_choice_hover(a_event)
+{
+    var att_name = $("input",this).attr('name') ;
+    var regex = 'alph-' + att_name +
+        ' *= |'+ $("input",this).attr("value") + '|';
+
+    // iterate through the table cells which contain the selected
+    // value in the corresponding alph- attribute
+    $("#alph-infl-table th[" + regex + "]",this.ownerDocument).toggleClass("hovered");
 }
 
 /**
