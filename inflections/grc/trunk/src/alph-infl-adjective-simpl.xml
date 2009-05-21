@@ -166,7 +166,7 @@
         <infl-ending
                type="regular primary">αv</infl-ending>
         <infl-ending
-               type="regular primary">ην</infl-ending>
+               type="regular primary">ηv</infl-ending>
     </infl-ending-set>
     <infl-ending-set
        num="singular"   case="dative" gend="feminine">
@@ -201,7 +201,7 @@
         <infl-ending
                type="regular primary">_</infl-ending>
         <infl-ending
-               type="regular primary">ον</infl-ending>
+               type="regular primary">οv</infl-ending>
     </infl-ending-set>
     <infl-ending-set
        num="singular"   case="dative" gend="masculine feminine neuter">
@@ -274,7 +274,7 @@
     <infl-ending-set
        num="singular"   case="vocative" gend="neuter">
         <infl-ending
-               type="regular primary">oν</infl-ending>
+               type="regular primary">ov</infl-ending>
     </infl-ending-set>
   </infl-endings>
 </infl-data>
