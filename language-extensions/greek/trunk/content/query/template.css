@@ -41,15 +41,12 @@
     color: #666666;
 }
 
-.choice.correct .attribute{
-    color: red;
-    font-weight: bold;
+.choice.correct .attribute, .choice.incorrect .attribute{
     cursor: default;
 }
-.choice.incorrect .attribute{
-    text-decoration: line-through;
-    cursor: default;
-    height: 100%;
+
+.choice.correct input, .choice.incorrect input {
+    display: none;
 }
 
 div.invalid {
@@ -64,7 +61,6 @@ div.invalid {
 .showform {
     visibility: hidden;
     vertical-align: bottom;
-    position: absolute top:0;
     font-weight: normal;
     color: #333333;
 }
@@ -106,7 +102,6 @@ div.invalid {
 
 #alph-infl-table caption {
     margin-top: 1em;
-    font-size: 110%;
     font-weight: bold;
 }
 
@@ -115,6 +110,7 @@ div.invalid {
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
     padding: 2px;
+    font-weight: normal;
 }
 
 #alph-infl-table th.emptyheader {
@@ -132,26 +128,20 @@ div.invalid {
     border-top: 0;
 }
 
-#alph-infl-table td.ending-group.hovered {
-    border-collapse: separate;
-    border-top: 2px solid #5BC8DC !important;
-    border-bottom: 2px solid #5BC8DC !important;
-    border-left: 2px solid #5BC8DC !important;
-    border-right: 2px solid #5BC8DC !important;
-}
 
 #alph-infl-table td.ending-group .ending {
     visibility: hidden;
     color: #333333;
     cursor: pointer;
+    font-size: 110%;
 }
 
-#alph-infl-table td.ending-group.incorrect {
-    background-color: #7E8897;
+.incorrect {
+    background-color: #D1D1D0;
 }
 
 #alph-infl-table td.ending-group.correct .ending{
-    color: red;
+    color: green;
     font-weight: bold;
 }
 
@@ -167,7 +157,7 @@ div.invalid {
 }
 
 #alph-infl-table td.ending-group.correct .ending.matchingform{
-    color: red;
+    color: green;
     background-color: white;
 }
 

@@ -211,10 +211,13 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
                     {
                         a_att = a_att.replace(/,/,'');
                         div = div +
-                            '<div class="choice" context="' + a_att + '">' +
+                            '<label class="choice" context="' + a_att + '">' +
                             '<input type="radio" name="' + attname + 
                             '"  value="' + a_att + '"/>' + 
-                            '<span class="attribute">' + a_att.replace(/_/,' ') + '</span></div>\n'; 
+                            '<span class="attribute">'  +
+                            get_string(a_att).replace(/_/,' ') + 
+                            '</span></label><br/>\n';
+                            
                     }
                 );
                 div = div + '</div>\n';
@@ -225,7 +228,7 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
     
     html = html + "</div>";
    
-    var buttons = '<div class="buttons"><button id="reset">reset</button></div>';
+    var buttons = '<div class="buttons"><button id="reset" class="alpheios-button">reset</button></div>';
     html = html + '<div class="query-decl"/>' + buttons + '</div>';
     $(a_elem).append(html);
     
@@ -300,7 +303,10 @@ function activate_table(a_elem,a_ans,a_template,a_callback,a_xslt_param)
                 var att_name = $(this).attr("context");
                 if ($(this).attr("alph-"+att_name))
                 {
-                    var att_values = $(this).attr("alph-"+att_name).split(/\s|,|\|/);
+                    var att_val_list = $(this).attr("alph-"+att_name);
+                    att_val_list = att_val_list.replace(/^\|/,'');
+                    att_val_list = att_val_list.replace(/\|$/,'');
+                    var att_values = att_val_list.split(/\s|,|\|/);
                     if ( typeof a_template.cols[att_name] == "undefined")
                     {
                         a_template.cols[att_name] = ',';
@@ -330,6 +336,9 @@ function activate_table(a_elem,a_ans,a_template,a_callback,a_xslt_param)
                     }
                 }
                 replace_string(this);
+                $(this)
+                    .hover(toggle_head_hover,toggle_head_hover)
+                    .one('click',select_head_cell);
             }        
         }
     );
@@ -346,7 +355,6 @@ function activate_table(a_elem,a_ans,a_template,a_callback,a_xslt_param)
         .bind('click',{ answer: a_ans,
                         template: a_template,
                         callback: a_callback}, show_table_form);
-
 
     if (a_template.invalidate_empty_cells)
     {
@@ -388,7 +396,7 @@ function mark_cell_incorrect(a_choice,a_doc)
 
     // iterate through the table cells which contain the selected
     // value in the corresponding alph- attribute
-    $("#alph-infl-table td.ending-group[" + regex + "]",a_doc).each
+    $("#alph-infl-table *[" + regex + "]",a_doc).each
     (
         function()
         {
@@ -504,7 +512,6 @@ function check_answer(a_event)
     else
     {
         $(this).parent('.choice').addClass("incorrect");
-        
         mark_cell_incorrect($(this).parent('.choice'),parent_doc);        
     }
     $(all_cols).each(
@@ -754,7 +761,32 @@ function show_table_form(a_event,a_cell,a_skip_callback)
     if (matched == must_match && 
         (!$(parent_cell).attr("alph-pofs") || $(parent_cell).attr("alph-pofs") == pofs ))
     {
-        $(a_cell).parent('td').addClass("correct");
+        $(parent_cell).addClass("correct");
+        // mark the header cells correct
+        $(parent_cell).prevAll('th').addClass("correct");
+        var cell_index = parent_cell.realIndex;              
+        $("tr[id^=headerrow] th",parent_cell.ownerDocument).each(
+            function()
+            {
+                var realIndex = this.realIndex;
+                var colspan;
+                var id = $(this).parent("tr").attr("id");
+                try 
+                {
+                    colspan = parseInt($(this).attr("colspan"));
+                }
+                catch(e)
+                {
+                    colspan = 1;
+                }
+                if (typeof realIndex != "undefined" && 
+                    (realIndex == cell_index
+                    || (cell_index > realIndex && cell_index < (realIndex + colspan))))
+                {
+                    $(this).addClass("correct");            
+                }
+            }
+        );
         // add the ending to the correct cell if it's not already there
         var found_form = false
         if (a_event.data.template.add_form_if_missing)
@@ -794,6 +826,7 @@ function show_table_form(a_event,a_cell,a_skip_callback)
                     }
                 );
                 $('td:not(.correct)',a_table).addClass("incorrect");
+                $('th:not(.correct)',a_table).addClass("incorrect");
             }
         );
         var parent_doc = a_cell.ownerDocument;
@@ -843,8 +876,84 @@ function show_table_form(a_event,a_cell,a_skip_callback)
  */
 function toggle_cell_hover(a_event)
 {
-    $(this).toggleClass("hovered");   
+    $(this).toggleClass("hovered");
 }
+
+/**
+ * toggle the hover class over an inflection table heading
+ * @param {Event} a_event the hover event
+ */
+function toggle_head_hover(a_event)
+{
+    var elem = this;
+    var context = $(elem).attr("context");
+    if (! context)
+    {
+        return;
+    }
+    var values = $(elem).attr("alph-" + context);
+    var value_list = [];
+    var match;
+    if (match = values.match(/\|(.*?)\|$/))
+    {
+        value_list = match[1].split(/\|+/); 
+    }
+    else
+    {
+        value_list.push(values);    
+    }
+    value_list.forEach(
+        function(a_v)
+        {
+            var col_select = $('input[name=' + context + '][value=' + a_v +']',
+                elem.ownerDocument);
+            if (col_select.length > 0)
+            {
+                // hover the corresponding radio element if any
+                $(col_select).parent().toggleClass("hovered");
+                        
+            }
+        }
+    );
+    $(elem).toggleClass("hovered");
+         
+}
+
+/**
+ * respond to a click on an inflection table heading
+ * @param {Event} a_event the click event
+ */
+function select_head_cell(a_event)
+{
+    var elem = this;
+    var context = $(elem).attr("context");
+    if (! context)
+    {
+        return;
+    }
+    var values = $(elem).attr("alph-" + context);
+    var value_list = [];
+    var match;
+    if (match = values.match(/\|(.*?)\|$/))
+    {
+        value_list = match[1].split(/\|+/); 
+    }
+    else
+    {
+        value_list.push(values);    
+    }
+    value_list.forEach(
+        function(a_v)
+        {
+            var col_select = $('input[name=' + context + '][value=' + a_v+']',elem.ownerDocument);
+            if (col_select.length > 0)
+            {
+                $(col_select).click();
+            }
+        }
+    );
+}
+
 
 /**
  * auto-select an answer (because only one option left due to
@@ -861,7 +970,8 @@ function auto_select_answer(a_col,a_data)
     if (selector.length == 1)
     {
         $(selector).attr("checked",true);
-        $(selector).parent('.choice').addClass('correct');
+        $(selector).parent('.choice').addClass('correct')
+                   .siblings('.choice').addClass('incorrect');
         $(selector).unbind('click',check_answer);
         $(a_col).siblings('.query-col').each(
             function()
