@@ -77,27 +77,27 @@
     <infl-ending-set
       pers="1st" num="plural"  case="nominative" >
         <infl-ending
-          type="primary regular">ἡμεῖς</infl-ending>
+               type="primary regular">ἡμεῖς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="2nd" num="plural"  case="accusative" >
         <infl-ending
-          type="primary regular">ὑ̄μᾶς</infl-ending>
+               type="primary regular">ὑμᾶς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="2nd" num="plural"  case="dative" >
         <infl-ending
-          type="primary regular">ὑ̄μῖν</infl-ending>
+               type="primary regular">ὑμῖν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="2nd" num="plural"  case="genitive" >
         <infl-ending
-          type="primary regular">ὑ̄μῶν</infl-ending>
+               type="primary regular">ὑμῶν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="2nd" num="plural"  case="nominative" >
         <infl-ending
-          type="primary regular">ὑ̄μεῖς</infl-ending>
+               type="primary regular">ὑμεῖς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="3rd" num="plural"  case="accusative" >
@@ -109,7 +109,7 @@
         <infl-ending
                type="primary regular">σφίσι</infl-ending>
         <infl-ending
-               type="primary regular">σφίσιv</infl-ending>
+               type="primary regular">σφίσιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
       pers="3rd" num="plural"  case="genitive" >
