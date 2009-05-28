@@ -61,37 +61,45 @@ Alph.LanguageToolSet.greek.implementsAlphLanguageTool = true;
 
 /**
  * Greek-specific startup method in the derived instance which
- * loads the dictionary file. Called by the derived instance
+ * loads the dictionary files. Called by the derived instance
  * keyed by the preference setting 'extensions.alpheios.greek.methods.startup'.
  * @returns true if successful, otherwise false
  * @type boolean
  */
 Alph.LanguageToolSet.greek.prototype.loadShortDefs = function()
 {
+    this.defsFile = Array();
     this.short_lex_code =
-        Alph.util.getPref("dictionaries.short.default",this.source_language)
+            Alph.util.getPref("dictionaries.short", this.source_language).split(',');
 
-    // load the local short definitions dictionary data file
-    try
+    for (var i = 0; i < this.short_lex_code.length; ++i)
     {
-        this.defsFile =
-            new Alph.Datafile("chrome://alpheios-greek/content/dictionaries/" +
-                              this.short_lex_code +
-                              "/grc-" +
-                              this.short_lex_code +
-                              "-defs.dat",
-                              "UTF-8");
-            Alph.util.log("Loaded Greek defs [" +
-                      this.defsFile.getData().length +
-                      " bytes]");
+        // load the local short definitions dictionary data file
+        try
+        {
+            this.defsFile[i] =
+                new Alph.Datafile(
+                        "chrome://alpheios-greek/content/dictionaries/" +
+                        this.short_lex_code[i] +
+                        "/grc-" +
+                        this.short_lex_code[i] +
+                        "-defs.dat",
+                        "UTF-8");
+            Alph.util.log(
+                "Loaded Greek defs for " +
+                this.short_lex_code[i] +
+                "[" +
+                this.defsFile[i].getData().length +
+                " bytes]");
 
+        }
+        catch (ex)
+        {
+            alert("error loading definitions: " + ex);
+            return false;
+        }
     }
-    catch (ex)
-    {
-        alert("error loading definitions: " + ex);
-        return false;
-    }
-   return true;
+    return true;
 };
 
 /**
@@ -103,27 +111,28 @@ Alph.LanguageToolSet.greek.prototype.loadShortDefs = function()
  */
 Alph.LanguageToolSet.greek.prototype.loadLexIds = function()
 {
-    this.full_lex_code =
-        Alph.util.getPref("dictionaries.full.default",this.source_language)
+    this.idsFile = Array();
+    this.full_lex_code = Alph.util.getPref("dictionaries.full",
+                                      this.source_language).split(',');
 
-    if (this.full_lex_code == '' || this.full_lex_code == null)
-    {
-        this.idsFile == null;
-    }
-    else
+    for (var i = 0; i < this.full_lex_code.length; ++i)
     {
         try
         {
-           this.idsFile =
-                new Alph.Datafile("chrome://alpheios-greek/content/dictionaries/" +
-                                  this.full_lex_code +
-                                  "/grc-" +
-                                  this.full_lex_code +
-                                  "-ids.dat",
-                                  "UTF-8");
-            Alph.util.log("Loaded Greek ids [" +
-                          this.idsFile.getData().length +
-                          " bytes]");
+           this.idsFile[i] =
+                new Alph.Datafile(
+                        "chrome://alpheios-greek/content/dictionaries/" +
+                        this.full_lex_code[i] +
+                        "/grc-" +
+                        this.full_lex_code[i] +
+                        "-ids.dat",
+                        "UTF-8");
+            Alph.util.log(
+                "Loaded Greek ids for " +
+                this.full_lex_code[i] +
+                "[" +
+                this.idsFile[i].getData().length +
+                " bytes]");
         }
         catch (ex)
         {
@@ -309,7 +318,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                 var check_pofs = pofs.replace(/_simplified$/,'');
                 // if we couldn't find the part of speech or the part of speech
                 // isn't one we support then just move on to the next part of speech
-                if ( infl_pofs.length == 0  ||
+                if ( infl_pofs.length == 0 ||
                      Alph.$(infl_pofs[0]).attr("context") != check_pofs)
                 {
                     continue;
@@ -355,7 +364,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                                 var type = pronoun_list[0];
                                 for (var j=0; j < pronoun_list[1].length; j++)
                                 {
-    
+
                                     if (lemma == pronoun_list[1][j])
                                     {
                                         // if there is an additional stemtype restriction
@@ -709,64 +718,52 @@ Alph.LanguageToolSet.greek.prototype.handle_inflection_feature = function(a_even
 Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
 {
     var defs = this.defsFile;
-    var ids = this.idsFile;
-    var shortLex = this.short_lex_code;
-    var fullLex = this.full_lex_code;
+    var lex = this.short_lex_code;
     var stripper = this.stripper;
     Alph.$(".alph-entry", a_node).each(
         function()
         {
             // get lemma
             var lemmaKey = Alph.$(".alph-dict", this).attr("lemma-key");
+            var defReturn = Array(null, null);
+            var i;
 
-            // get data from def and id files
-            var defReturn =
+            // for each lexicon
+            for (i = 0; i < lex.length; ++i)
+            {
+                // get data from defs file
+                var defReturn =
                     Alph.LanguageToolSet.greek.lookupLemma(lemmaKey,
                                                            null,
-                                                           defs,
+                                                           defs[i],
                                                            stripper);
-            var defData = defReturn[1];
-            var idReturn =
-                    Alph.LanguageToolSet.greek.lookupLemma(lemmaKey,
-                                                           defReturn[0],
-                                                           ids,
-                                                           stripper);
-            var hdwd = idReturn[0];
-            var lemmaId = idReturn[1];
+                if (defReturn[1])
+                    break;
+            }
 
             // if we found definition
-            if (defData)
+            if (defReturn[1])
             {
                 // build meaning element
-                var meanElt = '<div class="alph-mean">' + defData + '</div>';
+                var meanElt = '<div class="alph-mean">' + defReturn[1] + '</div>';
 
                 // insert meaning into document
                 Alph.util.log("adding " + meanElt);
                 Alph.$(".alph-dict", this).after(meanElt);
+
+                // set lemma attributes
+                Alph.util.log('adding @lemma-lang="grc"');
+                Alph.util.log('adding @lemma-key="' + defReturn[0] + '"');
+                Alph.util.log('adding @lemma-lex="' + lex[i] + '"');
+                Alph.$(".alph-dict", this).attr("lemma-lang", "grc");
+                Alph.$(".alph-dict", this).attr("lemma-key", defReturn[0]);
+                Alph.$(".alph-dict", this).attr("lemma-lex", lex[i]);
             }
             else
             {
                 Alph.util.log("meaning for " +
-                              defReturn[0] +
-                              " not found [" + shortLex + "]");
-            }
-
-            // if we found id
-            if (lemmaId)
-            {
-                // set lemma attributes
-                Alph.util.log('adding @lemma-key="' + hdwd + '"');
-                Alph.util.log('adding @lemma-id="' + lemmaId + '"');
-                Alph.util.log('adding @lemma-lang="grc"');
-                Alph.util.log('adding @lemma-lex="' + shortLex + '"');
-                Alph.$(".alph-dict", this).attr("lemma-key", hdwd);
-                Alph.$(".alph-dict", this).attr("lemma-id", lemmaId);
-                Alph.$(".alph-dict", this).attr("lemma-lang", "grc");
-                Alph.$(".alph-dict", this).attr("lemma-lex", shortLex);
-            }
-            else
-            {
-                Alph.util.log("id for " + hdwd + " not found [" + fullLex + "]");
+                              lemmaKey +
+                              " not found [" + lex.join() + "]");
             }
         }
     );
@@ -789,54 +786,47 @@ Alph.LanguageToolSet.greek.prototype.fixHarvardLSJ = function(a_html)
 /**
  * Greek-specific implementation of {@link Alph.LanguageTool#observe_pref_change}.
  *
- * calls loadShortDefs if the default short dictionary changed
- * calls loadLexIds if the default full dictionary changed
+ * calls loadShortDefs and loadLexIds if the dictionary list changed
  * @param {String} a_name the name of the preference which changed
  * @param {Object} a_value the new value of the preference
  */
 Alph.LanguageToolSet.greek.prototype.observe_pref_change = function(a_name,a_value)
 {
-    if (a_name.indexOf('dictionaries.short.default') != -1)
+    if (a_name.indexOf('dictionaries') != -1)
     {
         this.loadShortDefs();
-    }
-    if (a_name.indexOf('dictionaries.full.default') != -1)
-    {
         this.loadLexIds();
     }
-
 }
 
 /**
  * Greek-specific implementation of {@link Alph.LanguageTool#get_lemma_id}.
  *
  * @param {String} a_lemmaKey the lemma key
- * @return the lemma id or null if not found
- * @type String
+ * @return {Array} (lemma id, lexicon code) or (null, null) if not found
+ * @type Array
  */
 Alph.LanguageToolSet.greek.prototype.get_lemma_id = function(a_lemmaKey)
 {
-    var lemma_id = null;
-    if (this.idsFile == null)
+    // for each lexicon
+    for (var i = 0; i < this.full_lex_code.length; ++i)
     {
-        Alph.util.log("No lemma ids loaded");
-        return;
+        // get data from ids file
+        var lemma_id =
+            Alph.LanguageToolSet.greek.lookupLemma(a_lemmaKey,
+                                                   a_lemmaKey,
+                                                   this.idsFile[i],
+                                                   this.stripper)[1];
+        if (lemma_id)
+            return Array(lemma_id, this.full_lex_code[i]);
     }
 
-    // get data from ids file
-    var lemma_id = Alph.LanguageToolSet.greek.lookupLemma(a_lemmaKey,
-                                                          a_lemmaKey,
-                                                          this.idsFile,
-                                                          this.stripper)[1];
-    if (!lemma_id)
-    {
-        Alph.util.log("id for " +
-                      a_lemmaKey +
-                      " not found [" +
-                      this.full_lex_code + ']');
-    }
+    Alph.util.log("id for " +
+                  a_lemmaKey +
+                  " not found [" +
+                  this.full_lex_code.join() + ']');
 
-    return lemma_id;
+    return Array(null, null);
 }
 
 /**

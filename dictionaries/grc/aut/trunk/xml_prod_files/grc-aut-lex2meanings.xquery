@@ -152,6 +152,15 @@ let $corrections :=
     <entry key="ἀνιάω">
       be a torment, nuisance
     </entry>
+    <entry key="οὐδός2">
+      way, path, road, journey
+    </entry>
+    <entry key="ἕ">
+      him, her
+    </entry>
+    <entry key="ὅστε">
+      who, which
+    </entry>
   </corrections>
 let $correctedLemmas := $corrections/entry/@key
 

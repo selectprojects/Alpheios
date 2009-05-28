@@ -1,13 +1,14 @@
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-  xmlns:dc="http://purl.org/dc/elements/1.1/"
-  xmlns:dcterms="http://purl.org/dc/terms/"
-  xmlns:dctype="http://purl.org/dc/dcmitype/"
-  xmlns:ptext="http://www.perseus.org/meta/ptext.rdfs#"
-  xmlns:perseus="http://www.perseus.org/meta/perseus.rdfs#"
-  xmlns:persq="http://www.perseus.org/meta/persq.rdfs#"
-  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-  xmlns:tufts="http://www.tufts.edu/"
+<?xml version="1.0" encoding="UTF-8"?>
+<xsl:stylesheet xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:alph="http://alpheios.net/namespaces/tei"
+  xmlns:dctype="http://purl.org/dc/dcmitype/"
+  xmlns:tufts="http://www.tufts.edu/"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:perseus="http://www.perseus.org/meta/perseus.rdfs#"
+  xmlns:ptext="http://www.perseus.org/meta/ptext.rdfs#"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:persq="http://www.perseus.org/meta/persq.rdfs#"
   exclude-result-prefixes="ptext rdf dcterms dc rdf persq" version="1.0">
   <xsl:preserve-space elements="*"/>
   <xsl:output method="html" encoding="utf-8"/>
@@ -42,9 +43,9 @@
 
   <xsl:template match="/">
     <div class="text_container {$lang}">
-        <xsl:apply-templates
-          select="/alph:error|/alph:output/alph:entry|/alph:output/alph:error|/TEI.2/text/front|/tei.2/text/front|/TEI.2/text/body|/tei.2/text/back|/TEI.2/text/back|/TEI.2/text/group/text"/>
-        <xsl:text> </xsl:text>
+      <xsl:apply-templates
+        select="/alph:error|/alph:output/alph:entry|/alph:output/alph:error|/TEI.2/text/front|/tei.2/text/front|/TEI.2/text/body|/tei.2/text/back|/TEI.2/text/back|/TEI.2/text/group/text"/>
+      <xsl:text> </xsl:text>
       <!-- The space is necessary here so that we don't run the risk of
            outputting an empty DIV tag, which some browsers may interpret
            poorly, if there are no footnotes -->
@@ -170,7 +171,8 @@
     <div class="lex_sense lex_sense{@level}">
       <xsl:call-template name="correct-sense"/>
       <xsl:if test="not(@n='')">
-        <b><xsl:value-of select="@n"/>.</b>
+        <b>
+          <xsl:value-of select="@n"/>.</b>
       </xsl:if>
       <xsl:apply-templates select="node()"/>
     </div>
@@ -187,7 +189,8 @@
     <div class="lex_sense">
       <xsl:call-template name="correct-sense"/>
       <xsl:if test="not(@n='')">
-        <b><xsl:value-of select="@n"/>.</b>
+        <b>
+          <xsl:value-of select="@n"/>.</b>
       </xsl:if>
       <xsl:apply-templates/>
     </div>
@@ -318,7 +321,11 @@
     </u>
   </xsl:template>
 
-
+  <xsl:template match="alph:source">
+    <div class="alph-source">
+      <xsl:apply-templates/>
+    </div>
+  </xsl:template>
 
   <xsl:template match="name[@key!='']">
     <a target="gazetteer"
@@ -784,19 +791,17 @@
         </blockquote>
       </xsl:when>
       <xsl:otherwise>
-
         <xsl:choose>
           <xsl:when test="parent::cit and ancestor::quote">
             <xsl:apply-templates/>
           </xsl:when>
           <xsl:otherwise>
-
             <xsl:choose>
               <xsl:when test="self::quote">
-                <xsl:text>&#x201C;</xsl:text>
+                <xsl:text>“</xsl:text>
               </xsl:when>
               <xsl:otherwise>
-                <xsl:text>&#x2018;</xsl:text>
+                <xsl:text>‘</xsl:text>
               </xsl:otherwise>
             </xsl:choose>
 
@@ -810,10 +815,10 @@
               <xsl:otherwise>
                 <xsl:choose>
                   <xsl:when test="self::quote">
-                    <xsl:text>&#x201D;</xsl:text>
+                    <xsl:text>”</xsl:text>
                   </xsl:when>
                   <xsl:otherwise>
-                    <xsl:text>&#x2019;</xsl:text>
+                    <xsl:text>’</xsl:text>
                   </xsl:otherwise>
                 </xsl:choose>
 
@@ -929,7 +934,8 @@
   <xsl:template match="caesura"> &#160;&#160;&#160;&#160; </xsl:template>
 
   <xsl:template match="milestone[@unit='chapter']">
-    <b><xsl:value-of select="@n"/>.</b>
+    <b>
+      <xsl:value-of select="@n"/>.</b>
     <xsl:text> </xsl:text>
   </xsl:template>
 
@@ -942,7 +948,8 @@
     </xsl:call-template>
 
     <xsl:text> </xsl:text>
-    <b><xsl:value-of select="@n"/>.</b>
+    <b>
+      <xsl:value-of select="@n"/>.</b>
     <xsl:text> </xsl:text>
   </xsl:template>
 
@@ -958,7 +965,8 @@
 
     <xsl:text> </xsl:text>
     <b>
-      <i><xsl:value-of select="@n"/>.</i>
+      <i>
+        <xsl:value-of select="@n"/>.</i>
     </b>
     <xsl:text> </xsl:text>
   </xsl:template>
