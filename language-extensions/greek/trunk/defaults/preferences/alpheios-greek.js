@@ -17,31 +17,11 @@ pref("extensions.alpheios.greek.features.alpheios-grammar",true);
 pref("extensions.alpheios.greek.features.alpheios-inflect",true);
 pref("extensions.alpheios.greek.context_handler","grammarContext");
 pref("extensions.alpheios.greek.panels.use.defaults",true);
-pref("extensions.alpheios.greek.dictionaries.full","lsj,aut");
-pref("extensions.alpheios.greek.dictionaries.short","aut,lsj,ml");
-pref("extensions.alpheios.greek.dictionaries.short.default","lsj");
+pref("extensions.alpheios.greek.dictionaries.short","aut,ml,lsj");
+pref("extensions.alpheios.greek.dictionaries.full","aut,lsj,ml");
 pref("extensions.alpheios.greek.dictionaries.full.default","lsj");
-pref("extensions.alpheios.greek.dictionary.full.lsj.search.lemma_url",
-     "http://dev.alpheios.net:8800/exist/rest/db/xq/lexi-lemma2html.xq?");
-pref("extensions.alpheios.greek.dictionary.full.lsj.search.lemma_param",
-     "l");
-pref("extensions.alpheios.greek.dictionary.full.lsj.search.multiple_lemmas"
-    ,false);
-pref("extensions.alpheios.greek.dictionary.full.lsj.search.id_url",
-     "http://dev.alpheios.net:8800/exist/rest/db/xq/lexi-id2html.xq?");
-pref("extensions.alpheios.greek.dictionary.full.lsj.search.lemma_id_param",
-     "n");
-pref("extensions.alpheios.greek.dictionary.full.lsj.search.multiple_lemma_ids"
-    ,false);
-pref("extensions.alpheios.greek.dictionary.full.aut.search.lemma_url",
-     "http://dev.alpheios.net:8800/exist/rest/db/xq/lexi-lemma2html.xq?");
-pref("extensions.alpheios.greek.dictionary.full.aut.search.lemma_param",
-     "l");
-pref("extensions.alpheios.greek.dictionary.full.aut.search.multiple_lemmas"
-    ,false);
-pref("extensions.alpheios.greek.dictionary.full.aut.search.id_url",
-     "http://dev.alpheios.net:8800/exist/rest/db/xq/lexi-id2html.xq?");
-pref("extensions.alpheios.greek.dictionary.full.aut.search.lemma_id_param",
-     "n");
-pref("extensions.alpheios.greek.dictionary.full.aut.search.multiple_lemma_ids"
-    ,false);
+pref("extensions.alpheios.greek.dictionary.full.search.url",
+     "http://localhost:8080/exist/rest/db/xq/lexi-get.xq?lx=<LEXICON>&lg=grc&out=html");
+pref("extensions.alpheios.greek.dictionary.full.search.lemma_param","l");
+pref("extensions.alpheios.greek.dictionary.full.search.id_param","n");
+pref("extensions.alpheios.greek.dictionary.full.search.multiple",true);
