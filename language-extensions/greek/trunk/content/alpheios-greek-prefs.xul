@@ -121,6 +121,8 @@
     </tabbox>
     
     <vbox id="alpheios-dict-tabs-advanced">
-        <vbox id="dicts-prefs-language-details-adv-greek" hidden="true"/> 
+        <groupbox id="dicts-prefs-language-details-adv-greek" hidden="true">
+            <caption label="&alpheios.greek.prefs.tablabel;"/>
+        </groupbox> 
     </vbox>
 </overlay>
