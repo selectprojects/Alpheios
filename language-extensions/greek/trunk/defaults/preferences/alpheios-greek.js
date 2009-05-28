@@ -21,7 +21,7 @@ pref("extensions.alpheios.greek.dictionaries.short","aut,ml,lsj");
 pref("extensions.alpheios.greek.dictionaries.full","aut,lsj,ml");
 pref("extensions.alpheios.greek.dictionaries.full.default","lsj");
 pref("extensions.alpheios.greek.dictionary.full.search.url",
-     "http://localhost:8080/exist/rest/db/xq/lexi-get.xq?lx=<LEXICON>&lg=grc&out=html");
+     "http://dev.alpheios.net:8800/exist/rest/db/xq/lexi-get.xq?lx=<LEXICON>&lg=grc&out=html");
 pref("extensions.alpheios.greek.dictionary.full.search.lemma_param","l");
 pref("extensions.alpheios.greek.dictionary.full.search.id_param","n");
 pref("extensions.alpheios.greek.dictionary.full.search.multiple",true);
