@@ -792,10 +792,13 @@ Alph.LanguageToolSet.greek.prototype.fixHarvardLSJ = function(a_html)
  */
 Alph.LanguageToolSet.greek.prototype.observe_pref_change = function(a_name,a_value)
 {
-    if (a_name.indexOf('dictionaries') != -1)
-    {
+    if (a_name.indexOf('dictionaries.short') != -1)
         this.loadShortDefs();
+
+    if (a_name.indexOf('dictionaries.full') != -1)
+    {
         this.loadLexIds();
+        this.lexicon_setup();
     }
 }
 
