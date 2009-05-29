@@ -1,9 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE TEI.2 PUBLIC "-//TEI P4//DTD Main DTD Driver File//EN" "/sgml/dtd/teip4/tei2.dtd" [
-<!ENTITY % TEI.XML "INCLUDE">
-<!ENTITY % PersDict PUBLIC "-//Perseus P4//DTD Perseus Dictionaries//EN" "/sgml/dtd/perseusp4/PersDict.dtd" >
-%PersDict;
-]>
 <TEI.2>
   <teiHeader status="new" type="text">
     <fileDesc>
@@ -107,7 +102,7 @@
           converted to P4/XML
           
           Revision 1.5  2004/10/07 14:57:49  packel
-          &koppa;/&san; -&gt; koppa/san
+          &amp;koppa;/&amp;san; -&gt; koppa/san
           
           Revision 1.4  2004/09/02 15:31:17  packel
           for entries w/ identical keys, appended numbers to keys to distinguish them
