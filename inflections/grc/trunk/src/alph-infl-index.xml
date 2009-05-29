@@ -86,8 +86,8 @@
                   <item>Articles
                       <ptr target="#article"/>
                   </item>
-                  <item>Cardinals
-                      <ptr target="#cardinal"/>
+                  <item>Numerals
+                      <ptr target="#numeral"/>
                   </item>
                   <item>Verb Paradigms
                       <list>
