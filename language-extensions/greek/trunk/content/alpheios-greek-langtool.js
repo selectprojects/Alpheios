@@ -188,7 +188,7 @@ Alph.LanguageToolSet.greek.INFLECTION_MAP =
       pronoun: { keys: ['pronoun'],links:[] },
       irregular: { keys: ['pronoun_interrogative'],links:[] },
       article: { keys: ['article'],links:[] },
-      cardinal: { keys: ['cardinal'],links:[] },
+      numeral: { keys: ['numeral'],links:[] },
       verb: { keys: ['verb'],links:['verb_all'] },
       verb_participle: { keys: ['verb_participle'],links:['verb_all'] },
       verb_all: { keys: ['verb_all'],links:['verb'] }
@@ -417,6 +417,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
     a_params.xslt_params.fragment = 1;
     a_params.xslt_params.selected_endings = a_params.entries[a_infl_type];
     a_params.xslt_params.form = a_form || "";
+    a_params.xslt_params.normalize_greek = true;
 
 
     // get rid of the selected endings parameter if we couldn't find any
@@ -449,6 +450,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
         a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
         a_params.xslt_params.group4 = 'gend';
+        a_params.xslt_params.match_form = true;
     }
     else if (a_infl_type.match(/^pronoun/))
     {
@@ -497,7 +499,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
                 "chrome://alpheios/skin/alph-infl-index.xsl";
         }
     }
-    else if (a_infl_type.match(/^(noun|adjective|cardinal)/))
+    else if (a_infl_type.match(/^(noun|adjective|numeral)/))
     {
         var is_simple = a_infl_type.match(/^(.+)_simplified$/)
         if (is_simple != null)
@@ -512,7 +514,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
                 'chrome://alpheios-greek/content/inflections/alph-infl-' +
                 a_infl_type + '-simpl.xml';
             a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
-            a_params.group4 = 'gend';
+            a_params.xslt_params.group4 = 'gend';
             a_params.title = 'alph-infl-title-'+a_infl_type;
         }
         else
@@ -533,9 +535,10 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
                 }
             }
         }
-        if (a_infl_type == 'cardinal')
+        if (a_infl_type == 'numeral')
         {
             a_params.xslt_params.group4 = 'hdwd';
+            a_params.xslt_params.match_form = true;
         }
     }
     if (typeof a_params.xslt_params.match_pofs  == 'undefined')

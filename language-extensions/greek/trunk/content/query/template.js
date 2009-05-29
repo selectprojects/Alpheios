@@ -798,7 +798,18 @@ function show_table_form(a_event,a_cell,a_skip_callback)
             $(a_cell).siblings('.ending').andSelf().each(
                 function()
                 {
-                    if ($(this).text() == a_event.data.answer.ending)
+                    // if we're passed a conversion function, convert cell data before
+                    // comparing with supplied form
+                    var converted_form;
+                    if (typeof a_event.data.answer.convert_text == 'function')
+                    {
+                        converted_form = a_event.data.answer.convert_text($(this).text());
+                    }
+                    else
+                    {
+                        converted_form = $(this).text();
+                    }
+                    if (converted_form == a_event.data.answer.ending )
                     {
                         found_form = true;
                     }
@@ -1032,13 +1043,16 @@ function get_verb_params(a_ans)
     
 function get_article_params(a_ans)
 {
-    return { group4: 'gend',
+    return { group1: 'case',
+             group4: 'gend',
              group5: 'num'};     
 }
 
 function get_noun_params(a_ans)
 {
-    var params = {};
+    var params = { group1: 'case',
+                   group4: 'num',
+                   group5: 'gend'};
     var declension = a_ans.attributes['alph-decl'];
     if (declension)
     {
