@@ -191,7 +191,8 @@ Alph.LanguageToolSet.greek.INFLECTION_MAP =
       numeral: { keys: ['numeral'],links:[] },
       verb: { keys: ['verb'],links:['verb_all'] },
       verb_participle: { keys: ['verb_participle'],links:['verb_all'] },
-      verb_all: { keys: ['verb_all'],links:['verb'] }
+      verb_all: { keys: ['verb_all'],links:['verb'] },
+      adverb: {keys: ['adverb'],links:[]}
 };
 
 Alph.LanguageToolSet.greek.IRREG_VERBS =
@@ -492,11 +493,13 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         else
         {
             // if we don't have a specific mapping for this type of pronoun, just
-            // show the inflection index
-            a_params.xml_url =
-                "chrome://alpheios-greek/content/inflections/alph-infl-index.xml";
+            // present a link to Smyth's Pronouns
+            a_params.xml_url = null;
+            a_params.xml_obj =
+                (new DOMParser()).parseFromString("<infl-data/>","text/xml");
             a_params.xslt_url =
-                "chrome://alpheios/skin/alph-infl-index.xsl";
+                "chrome://alpheios/skin/alph-infl-substantive.xsl";
+            a_params.xslt_params.link_content="grammar:smyth:s325|See Smyth Sections 325-340 Pronouns"
         }
     }
     else if (a_infl_type.match(/^(noun|adjective|numeral)/))
@@ -540,6 +543,16 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xslt_params.group4 = 'hdwd';
             a_params.xslt_params.match_form = true;
         }
+    }
+    else if (a_infl_type == 'adverb')
+    {
+        a_params.xml_url = null;
+        a_params.xml_obj =
+            (new DOMParser()).parseFromString("<infl-data/>","text/xml");
+        a_params.xslt_url =
+            "chrome://alpheios/skin/alph-infl-substantive.xsl";
+        a_params.xslt_params.link_content="grammar:smyth:s341|See Smyth Sections 341-346 Adverbs"
+
     }
     if (typeof a_params.xslt_params.match_pofs  == 'undefined')
     {
