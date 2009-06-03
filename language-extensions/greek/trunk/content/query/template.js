@@ -793,6 +793,7 @@ function show_table_form(a_event,a_cell,a_skip_callback)
         );
         // add the ending to the correct cell if it's not already there
         var found_form = false
+        var ending = convert_form(a_event.data,a_event.data.answer.ending);
         if (a_event.data.template.add_form_if_missing)
         {
             $(a_cell).siblings('.ending').andSelf().each(
@@ -800,16 +801,8 @@ function show_table_form(a_event,a_cell,a_skip_callback)
                 {
                     // if we're passed a conversion function, convert cell data before
                     // comparing with supplied form
-                    var converted_form;
-                    if (typeof a_event.data.answer.convert_text == 'function')
-                    {
-                        converted_form = a_event.data.answer.convert_text($(this).text());
-                    }
-                    else
-                    {
-                        converted_form = $(this).text();
-                    }
-                    if (converted_form == a_event.data.answer.ending )
+                    var form = convert_form(a_event.data,$(this).text()); 
+                    if (form == ending )
                     {
                         found_form = true;
                     }
@@ -834,7 +827,7 @@ function show_table_form(a_event,a_cell,a_skip_callback)
                     function()
                     {
                         $(this).addClass("showform");
-                        if ($(this).text() == a_event.data.answer.ending)
+                        if (convert_form(a_event.data,$(this).text()) == ending)
                         {
                             $(this).addClass('matchingform');
                         }
@@ -869,12 +862,15 @@ function show_table_form(a_event,a_cell,a_skip_callback)
     else
     {
         $(a_cell).parent('td').addClass("incorrect");
+        var ending = convert_form(a_event.data,a_event.data.answer.ending);
         $(a_cell).siblings('ending').andSelf().each
-        (
+        (            
             function()
             {
                 $(this).addClass("showform");
-                if ($(this).text() == a_event.data.answer.ending )
+
+                var form = convert_form(a_event.data,$(this).text());
+                if (form == ending )
                 {
                     $(this).addClass('matchingform');
                 }
@@ -1142,5 +1138,18 @@ function hide_empty_cols(a_tbl)
                 }
             }
         }
+    }
+    
+}
+
+function convert_form(a_data,a_text)
+{
+    if (typeof a_data.answer.convert_obj == 'undefined' || a_text.match(/^[-_]$/))
+    {
+        return a_text;
+    }
+    else
+    {
+        return a_data.answer.convert_obj.normalize_greek(a_text,true,'\/^_');
     } 
 }

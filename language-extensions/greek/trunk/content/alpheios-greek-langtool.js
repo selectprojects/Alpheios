@@ -209,7 +209,7 @@ Alph.LanguageToolSet.greek.IRREG_VERBS =
  */
 Alph.LanguageToolSet.greek.PRONOUNS =
 [
-    ['dem',['ὅδε','οὗτος','ἐκεῖνος','τοσόσδε','τοιόσδε','τηλικόσδε','τοσοῦτος','τοιοῦτος','τηλικοῦτος']],
+    ['dem',['ὅδε','οὗτος','ἐκεῖνος','τοσόσδε','τοιόσδε','τηλικόσδε']],
     ['rel',['@ὅς','ὅς']],// there's a special flag on lemma for ὅς
     ['genrel',['ὅστις']],
     ['pers',['ἐγώ','σύ','ἕ']],
@@ -444,6 +444,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         }
         a_params.html_url = "chrome://alpheios-greek/content/html/alph-infl-verb-paradigms.html";
         a_params.title = 'alph-infl-title-verb-paradigms';
+        a_params.xslt_params.normalize_greek = false;
     }
     else if (a_infl_type == 'article')
     {
