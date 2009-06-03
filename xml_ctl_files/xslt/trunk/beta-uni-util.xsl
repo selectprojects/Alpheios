@@ -1821,12 +1821,14 @@
       $strip-vowels     whether to strip vowel length diacritics
       $strip-diaereses  whether to strip diaeresis diacritics
       $strip-caps       whether to strip capitalization
+      $strip-string     betacode characters to remove
   -->
   <xsl:template name="beta-strip">
     <xsl:param name="input"/>
     <xsl:param name="strip-vowels" select="true()"/>
     <xsl:param name="strip-diaereses" select="true()"/>
     <xsl:param name="strip-caps" select="true()"/>
+    <xsl:param name="strip-string" select="''"/>
 
     <!-- strip vowels if requested -->
     <xsl:variable name="temp1">
@@ -1850,8 +1852,8 @@
         <xsl:when test="$strip-diaereses">
           <xsl:value-of
             select="translate($temp1,
-            $beta-with-diaeresis,
-            $beta-without-diaeresis)"
+                              $beta-with-diaeresis,
+                              $beta-without-diaeresis)"
           />
         </xsl:when>
         <xsl:otherwise>
@@ -1859,20 +1861,33 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-    
+
     <!-- strip capitalization if requested -->
+    <xsl:variable name="temp3">
+      <xsl:choose>
+        <xsl:when test="$strip-caps">
+          <xsl:value-of
+            select="translate($temp2,
+                              $beta-with-caps,
+                              $beta-without-caps)"
+          />
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$temp2"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <!-- strip characters if requested -->
     <xsl:choose>
-      <xsl:when test="$strip-caps">
-        <xsl:value-of
-          select="translate($temp2,
-                            $beta-with-caps,
-                            $beta-without-caps)"
-        />
+      <xsl:when test="string-length($strip-string) > 0">
+        <xsl:value-of select="translate($temp3, $strip-string, '')"/>
       </xsl:when>
       <xsl:otherwise>
-        <xsl:value-of select="$temp2"/>
+        <xsl:value-of select="$temp3"/>
       </xsl:otherwise>
     </xsl:choose>
+
   </xsl:template>
 
   <!--
@@ -1895,8 +1910,8 @@
         <xsl:when test="$strip-vowels">
           <xsl:value-of
             select="translate($input,
-            $uni-with-length,
-            $uni-without-length)"
+                              $uni-with-length,
+                              $uni-without-length)"
           />
         </xsl:when>
         <xsl:otherwise>
@@ -1911,8 +1926,8 @@
         <xsl:when test="$strip-diaereses">
           <xsl:value-of
             select="translate($temp1,
-            $uni-with-diaeresis,
-            $uni-without-diaeresis)"
+                              $uni-with-diaeresis,
+                              $uni-without-diaeresis)"
           />
         </xsl:when>
         <xsl:otherwise>
@@ -1920,15 +1935,12 @@
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-    
+
     <!-- strip capitalization if requested -->
     <xsl:choose>
       <xsl:when test="$strip-caps">
         <xsl:value-of
-          select="translate($temp2,
-          $uni-with-caps,
-          $uni-without-caps)"
-        />
+          select="translate($temp2, $uni-with-caps, $uni-without-caps)"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="$temp2"/>
