@@ -8,7 +8,7 @@ pref("extensions.alpheios.greek.methods.lexicon",'webservice');
 pref("extensions.alpheios.greek.url.lexicon", 'http://localhost:8200');
 pref("extensions.alpheios.greek.url.lexicon.request", "/greek?word=<WORD>");
 pref("extensions.alpheios.greek.url.lexicon.timeout",5000);
-pref("extensions.alpheios.greek.popuptrigger",'mousemove');
+pref("extensions.alpheios.greek.popuptrigger",'dblclick');
 pref("extensions.alpheios.greek.url.grammar",
      "chrome://alpheios-greek/content/alph-greek-grammar.xul");
 pref("extensions.alpheios.greek.grammar.hotlinks",
