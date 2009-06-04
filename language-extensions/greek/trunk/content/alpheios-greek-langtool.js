@@ -436,7 +436,8 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         {
             a_params.xslt_params.paradigm_id = 'all';
             a_params.xslt_params.match_pofs = 'verb';
-            a_params.xslt_params.selected_endings = a_params.entries.verb;
+            a_params.xslt_params.selected_endings = 
+                a_params.entries.verb.concat(a_params.entries.verb_participle);
         }
         else if (typeof a_params.paradigm_id != 'undefined' && a_params.paradigm_id != null)
         {
