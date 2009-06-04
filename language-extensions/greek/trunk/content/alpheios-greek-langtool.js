@@ -209,15 +209,15 @@ Alph.LanguageToolSet.greek.IRREG_VERBS =
  */
 Alph.LanguageToolSet.greek.PRONOUNS =
 [
-    ['dem',['ὅδε','οὗτος','ἐκεῖνος','τοσόσδε','τοιόσδε','τηλικόσδε']],
+    ['dem',['ὅδε','οὗτος','ἐκεῖνος']],
     ['rel',['@ὅς','ὅς']],// there's a special flag on lemma for ὅς
     ['genrel',['ὅστις']],
     ['pers',['ἐγώ','σύ','ἕ']],
-    ['indef',['τις'],'indef'],
-    ['inter',['τίς'],'indecl'],
+    ['indef',['τις']],
+    ['inter',['τίς']],
     ['inten',['αὐτός']],
     ['recip',['ἀλλήλων']],
-    ['refl',['ἐμαυτοῦ','σαυτοῦ','ἑαυτοῦ']]
+    ['refl',['ἐμαυτοῦ','σαυτοῦ','ἑαυτοῦ','σφεῖς']]
     /**
      * commenting out until we have a solution for Bug 283
     ['pos',['ἐμός','ἡμέτερος','σός','ὑ̄μέτερος','ὅς','σφέτερος'],['pronoun_pos1','pronoun_pos2','pronoun_pos3']],
