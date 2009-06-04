@@ -117,7 +117,7 @@ g rect.marked {
     stroke: gray;
 }
 g rect.browse-focus {
-    fill: #F6D918;
+    fill: #FDE543;
     stroke-width: 1px;
     stroke: gray;
 }
@@ -127,10 +127,10 @@ g rect.edit-focus {
     stroke: gray;
 }
 g rect.aligned-focus {
-    fill: #F6D918;
+    fill: #FDE543;
 }
 g rect.selected {
-    fill: #F6D918;
+    fill: #FDE543;
     stroke-width: 1px;
     stroke: black;
 }
