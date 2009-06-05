@@ -57,6 +57,10 @@
           <xsl:call-template name="beta-strip">
             <xsl:with-param name="input" select="$temp1"/>
             <xsl:with-param name="strip-string" select="$strip"/>
+            <xsl:with-param name="strip-vowels" select="false()"/>
+            <xsl:with-param name="strip-diaereses" select="false()"/>
+            <xsl:with-param name="strip-caps" select="false()"/>
+            
           </xsl:call-template>
         </xsl:when>
         <xsl:otherwise>
