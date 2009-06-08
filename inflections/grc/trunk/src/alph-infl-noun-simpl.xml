@@ -9,8 +9,8 @@
     <order-item attname="case" order="3">dative</order-item>
     <order-item attname="case" order="4">accusative</order-item>
     <order-item attname="case" order="5">vocative</order-item>
-    <order-item attname="gend" order="1">feminine</order-item>
-    <order-item attname="gend" order="2">masculine</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
     <order-item attname="gend" order="3">masculine feminine</order-item>
     <order-item attname="gend" order="5">neuter</order-item>
     <order-item attname="gend" order="6">masculine feminine neuter</order-item>

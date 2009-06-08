@@ -17,8 +17,8 @@
     <order-item attname="num" order="1">singular</order-item>
     <order-item attname="num" order="2">dual</order-item>
     <order-item attname="num" order="3">plural</order-item>
-    <order-item attname="gend" order="1">feminine</order-item>
-    <order-item attname="gend" order="2">masculine</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
     <order-item attname="gend" order="3">neuter</order-item>
     <order-item attname="gend" order="4">masculine feminine neuter</order-item>
   </order-table>

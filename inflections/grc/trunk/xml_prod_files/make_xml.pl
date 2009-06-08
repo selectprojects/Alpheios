@@ -21,16 +21,24 @@ my %ATTS =
 		'stem-class' => [8,undef, \&format_stemclass,1],
 		'footnote' => [9,undef,\&format_footnote,1]
 	},
+	'noun-simpl' =>
+	{	
+		'num'   => [1,[qw(singular dual plural)]],
+		'gend'  => [2,[qw(feminine masculine neuter)]],
+		'case'  => [3,[qw(nominative genitive dative accusative vocative)]],
+		'type'  => [4,[qw(primary regular irregular)]],
+		'infl-ending' =>[5, undef,undef,1],
+	},
 	'adj' =>
 	{	
 		'decl'  => [1,[qw(1st 2nd 3rd)]],
 		'num'   => [2,[qw(singular dual plural)]],
 		'gend'  => [3,[qw(feminine masculine neuter common)]],
 		'case'  => [4,[qw(nominative genitive dative accusative vocative)]],
-		'type'  => [5,[qw(primary regular)]],
+		'type'  => [5,[qw(primary regular irregular)]],
 		'infl-ending' =>[6, undef,undef,1],
-		'stem-class' => [7,undef, \&format_stemclass,1],
-		'dialects' => [8,\&check_dialect,\&format_dialect,1],
+		'dialects' => [7,\&check_dialect,\&format_dialect,1],
+		'stem-class' => [8,undef, \&format_stemclass,1],
 		'footnote' => [9,undef,\&format_footnote,1]
 	},
 	'article' =>
@@ -44,7 +52,53 @@ my %ATTS =
 		'stem-class' => [8,undef, \&format_stemclass,1],
 		'footnote' => [9,undef,\&format_footnote,1]
 	},
-	'pronoun' =>
+	'pronoun-dem' =>
+	{	
+		'hdwd'  => [1,undef,undef,1],
+		'num'   => [2,[qw(singular dual plural)]],
+		'gend'  => [3,[qw(feminine masculine neuter common)]],
+		'case'  => [4,[qw(nominative genitive dative accusative)]],
+		'type'  => [5,[qw(primary regular irregular)]],
+		'infl-ending' =>[6, undef,undef,1],
+		'dialects' => [7,\&check_dialect,\&format_dialect,1],
+		'stem-class' => [8,undef, \&format_stemclass,1],
+		'footnote' => [9,undef,\&format_footnote,1]
+	},
+	'pronoun-in' =>
+	{	
+		'num'   => [2,[qw(singular dual plural)]],
+		'gend'  => [3,[qw(feminine masculine neuter common)]],
+		'case'  => [4,[qw(nominative genitive dative accusative vocative)]],
+		'type'  => [5,[qw(primary regular irregular)]],
+		'infl-ending' =>[6, undef,undef,1],
+		'dialects' => [7,\&check_dialect,\&format_dialect,1],
+		'stem-class' => [8,undef, \&format_stemclass,1],
+		'footnote' => [9,undef,\&format_footnote,1]
+	},
+	'pronoun-rel' =>
+	{	
+		'num'   => [2,[qw(singular dual plural)]],
+		'gend'  => [3,[qw(feminine masculine neuter common)]],
+		'case'  => [4,[qw(nominative genitive dative accusative vocative)]],
+		'type'  => [5,[qw(primary regular irregular)]],
+		'infl-ending' =>[6, undef,undef,1],
+		'dialects' => [7,\&check_dialect,\&format_dialect,1],
+		'stem-class' => [8,undef, \&format_stemclass,1],
+		'footnote' => [9,undef,\&format_footnote,1]
+	},
+	'pronoun-pos' =>
+	{	
+		'pers'  => [1,undef,undef,1],
+		'num'   => [2,[qw(singular dual plural)]],
+		'gend'  => [3,[qw(feminine masculine neuter common)]],
+		'case'  => [4,[qw(nominative genitive dative accusative)]],
+		'type'  => [5,[qw(primary regular irregular)]],
+		'infl-ending' =>[6, undef,undef,1],
+		'dialects' => [7,\&check_dialect,\&format_dialect,1],
+		'stem-class' => [8,undef, \&format_stemclass,1],
+		'footnote' => [9,undef,\&format_footnote,1]
+	},
+	'pronoun-pers' =>
 	{	
 		'num'   => [2,[qw(singular dual plural)]],
 		'pers'  => [3,[qw(1st 2nd 3rd)]],
@@ -55,8 +109,43 @@ my %ATTS =
 		'stem-class' => [8,undef, \&format_stemclass,1],
 		'footnote' => [9,undef,\&format_footnote,1]
 	},
+	'pronoun-refl' =>
+	{	
+		'pers'  => [1,[qw(1st 2nd 3rd)]],
+		'num'   => [2,[qw(singular dual plural)]],
+		'gend'  => [3,[qw(feminine masculine neuter common)]],
+		'case'  => [4,[qw(nominative genitive dative accusative)]],
+		'type'  => [5,[qw(primary regular irregular)]],
+		'infl-ending' =>[6, undef,undef,1],
+		'dialects' => [7,\&check_dialect,\&format_dialect,1],
+		'stem-class' => [8,undef, \&format_stemclass,1],
+		'footnote' => [9,undef,\&format_footnote,1]
+	},
+	'pronoun-recip' =>
+	{	
+		'num'   => [2,[qw(dual plural)]],
+		'gend'  => [3,[qw(feminine masculine neuter common)]],
+		'case'  => [4,[qw(nominative genitive dative accusative)]],
+		'type'  => [5,[qw(primary regular irregular)]],
+		'infl-ending' =>[6, undef,undef,1],
+		'dialects' => [7,\&check_dialect,\&format_dialect,1],
+		'stem-class' => [8,undef, \&format_stemclass,1],
+		'footnote' => [9,undef,\&format_footnote,1]
+	},
+	'pronoun-inten' =>
+	{	
+		'num'   => [2,[qw(singular dual plural)]],
+		'gend'  => [3,[qw(feminine masculine neuter common)]],
+		'case'  => [4,[qw(nominative genitive dative accusative vocative)]],
+		'type'  => [5,[qw(primary regular irregular)]],
+		'infl-ending' =>[6, undef,undef,1],
+		'dialects' => [7,\&check_dialect,\&format_dialect,1],
+		'stem-class' => [8,undef, \&format_stemclass,1],
+		'footnote' => [9,undef,\&format_footnote,1]
+	},
 	'cardinal' =>
 	{	
+		'hdwd'   => [1,undef,undef,1],
 		'num'   => [2,[qw(singular dual plural)]],
 		'gend'  => [3,[qw(feminine masculine neuter common)]],
 		'case'  => [4,[qw(nominative genitive dative accusative)]],
@@ -71,7 +160,7 @@ my %ATTS =
 
 my %atts = %{$ATTS{$pofs}};
 
-my @group_by = qw( decl num gend pers case );
+my @group_by = qw( decl hdwd num gend pers case );
 my @ending_atts = qw( type dialects footnote stem-class);
 
 my $num_cols = scalar keys %atts;
@@ -126,10 +215,30 @@ $XML_TABLES{'noun'} = <<"EOS";
     <order-item attname="case" order="3">dative</order-item>
     <order-item attname="case" order="4">accusative</order-item>
     <order-item attname="case" order="5">vocative</order-item>
-    <order-item attname="gend" order="1">feminine</order-item>
-    <order-item attname="gend" order="2">masculine</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
     <order-item attname="gend" order="3">masculine feminine</order-item>
     <order-item attname="gend" order="5">neuter</order-item>
+    <order-item attname="type" order="1">regular</order-item>
+    <order-item attname="type" order="2">irregular</order-item>
+    <order-item attname="num" order="1">singular</order-item>
+    <order-item attname="num" order="2">dual</order-item>
+    <order-item attname="num" order="3">plural</order-item>
+  </order-table>
+  <infl-endings>
+EOS
+$XML_TABLES{'noun-simpl'} = <<"EOS";
+  <order-table>
+    <order-item attname="case" order="1">nominative</order-item>
+    <order-item attname="case" order="2">genitive</order-item>
+    <order-item attname="case" order="3">dative</order-item>
+    <order-item attname="case" order="4">accusative</order-item>
+    <order-item attname="case" order="5">vocative</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
+    <order-item attname="gend" order="3">masculine feminine</order-item>
+    <order-item attname="gend" order="5">neuter</order-item>
+    <order-item attname="gend" order="6">masculine feminine neuter</order-item>
     <order-item attname="type" order="1">regular</order-item>
     <order-item attname="type" order="2">irregular</order-item>
     <order-item attname="num" order="1">singular</order-item>
@@ -146,7 +255,7 @@ $XML_TABLES{'adj'} = <<"EOS";
 @{[join "\n", map {qq!    <stem-class id="stem-$_">$stems{$_}</stem-class>! } keys %stems]}
   </stem-table>
   <order-table>
-    <order-item attname="decl" order="1">1st</order-item>
+    <order-item attname="decl" order="1" footnote="foot-1">1st</order-item>
     <order-item attname="decl" order="2" footnote="foot-6">2nd</order-item>
     <order-item attname="decl" order="3" footnote="foot-13">3rd</order-item>
     <order-item attname="case" order="1">nominative</order-item>
@@ -154,8 +263,8 @@ $XML_TABLES{'adj'} = <<"EOS";
     <order-item attname="case" order="3">dative</order-item>
     <order-item attname="case" order="4">accusative</order-item>
     <order-item attname="case" order="5">vocative</order-item>
-    <order-item attname="gend" order="1">feminine</order-item>
-    <order-item attname="gend" order="2">masculine</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
     <order-item attname="gend" order="3">masculine feminine</order-item>
     <order-item attname="gend" order="4">common</order-item>
     <order-item attname="gend" order="5">neuter</order-item>
@@ -174,8 +283,8 @@ $XML_TABLES{'article'} = <<"EOS";
     <order-item attname="case" order="3">dative</order-item>
     <order-item attname="case" order="4">accusative</order-item>
     <order-item attname="case" order="5">vocative</order-item>
-    <order-item attname="gend" order="1">feminine</order-item>
-    <order-item attname="gend" order="2">masculine</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
     <order-item attname="gend" order="3">neuter</order-item>
     <order-item attname="type" order="2">regular</order-item>
     <order-item attname="type" order="3">irregular</order-item>
@@ -185,7 +294,27 @@ $XML_TABLES{'article'} = <<"EOS";
   </order-table>
   <infl-endings>
 EOS
-$XML_TABLES{'pronoun'} = <<"EOS";
+$XML_TABLES{'pronoun-pos'} = <<"EOS";
+  <order-table>
+    <order-item attname="case" order="1">nominative</order-item>
+    <order-item attname="case" order="2">genitive</order-item>
+    <order-item attname="case" order="3">dative</order-item>
+    <order-item attname="case" order="4">accusative</order-item>
+    <order-item attname="case" order="5">vocative</order-item>
+    <order-item attname="pers" order="1">1st, 2nd and 3rd singular</order-item>
+    <order-item attname="pers" order="2">1st, 2nd and 3rd plural</order-item>
+    <order-item attname="type" order="2">regular</order-item>
+    <order-item attname="type" order="3">irregular</order-item>
+    <order-item attname="num" order="1">singular</order-item>
+    <order-item attname="num" order="2">dual</order-item>
+    <order-item attname="num" order="3">plural</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
+    <order-item attname="gend" order="3">neuter</order-item>
+  </order-table>
+  <infl-endings>
+EOS
+$XML_TABLES{'pronoun-pers'} = <<"EOS";
   <order-table>
     <order-item attname="case" order="1">nominative</order-item>
     <order-item attname="case" order="2">genitive</order-item>
@@ -203,18 +332,134 @@ $XML_TABLES{'pronoun'} = <<"EOS";
   </order-table>
   <infl-endings>
 EOS
-$XML_TABLES{'cardinal'} = <<"EOS";
+$XML_TABLES{'pronoun-refl'} = <<"EOS";
+  <order-table>
+    <order-item attname="case" order="1">nominative</order-item>
+    <order-item attname="case" order="2">genitive</order-item>
+    <order-item attname="case" order="3">dative</order-item>
+    <order-item attname="case" order="4">accusative</order-item>
+    <order-item attname="pers" order="1">1st</order-item>
+    <order-item attname="pers" order="2">2nd</order-item>
+    <order-item attname="pers" order="3">3rd</order-item>
+    <order-item attname="type" order="2">regular</order-item>
+    <order-item attname="type" order="3">irregular</order-item>
+    <order-item attname="num" order="1">singular</order-item>
+    <order-item attname="num" order="3">plural</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
+    <order-item attname="gend" order="3">neuter</order-item>
+  </order-table>
+  <infl-endings>
+EOS
+$XML_TABLES{'pronoun-rel'} = <<"EOS";
   <order-table>
     <order-item attname="case" order="1">nominative</order-item>
     <order-item attname="case" order="2">genitive</order-item>
     <order-item attname="case" order="3">dative</order-item>
     <order-item attname="case" order="4">accusative</order-item>
     <order-item attname="case" order="5">vocative</order-item>
-    <order-item attname="gend" order="1">feminine</order-item>
-    <order-item attname="gend" order="2">masculine</order-item>
-    <order-item attname="gend" order="3">masculine feminine</order-item>
-    <order-item attname="gend" order="4">three genders</order-item>
+    <order-item attname="type" order="2">regular</order-item>
+    <order-item attname="type" order="3">irregular</order-item>
+    <order-item attname="num" order="1">singular</order-item>
+    <order-item attname="num" order="2">dual</order-item>
+    <order-item attname="num" order="3">plural</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
+    <order-item attname="gend" order="4">neuter</order-item>
+    <order-item attname="gend" order="5">masculine feminine neuter</order-item>
+  </order-table>
+  <infl-endings>
+EOS
+$XML_TABLES{'pronoun-dem'} = <<"EOS";
+  <order-table>
+    <order-item attname="hdwd" order="1">ὅδε</order-item>
+    <order-item attname="hdwd" order="2">οὗτος</order-item>
+    <order-item attname="hdwd" order="3">ἐκεῖνος</order-item>
+    <order-item attname="case" order="1">nominative</order-item>
+    <order-item attname="case" order="2">genitive</order-item>
+    <order-item attname="case" order="3">dative</order-item>
+    <order-item attname="case" order="4">accusative</order-item>
+    <order-item attname="case" order="5">vocative</order-item>
+    <order-item attname="type" order="2">regular</order-item>
+    <order-item attname="type" order="3">irregular</order-item>
+    <order-item attname="num" order="1">singular</order-item>
+    <order-item attname="num" order="2">dual</order-item>
+    <order-item attname="num" order="3">plural</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
+    <order-item attname="gend" order="4">neuter</order-item>
+    <order-item attname="gend" order="5">masculine feminine neuter</order-item>
+  </order-table>
+  <infl-endings>
+EOS
+$XML_TABLES{'pronoun-in'} = <<"EOS";
+  <order-table>
+    <order-item attname="case" order="1">nominative</order-item>
+    <order-item attname="case" order="2">genitive</order-item>
+    <order-item attname="case" order="3">dative</order-item>
+    <order-item attname="case" order="4">accusative</order-item>
+    <order-item attname="case" order="5">vocative</order-item>
+    <order-item attname="type" order="2">regular</order-item>
+    <order-item attname="type" order="3">irregular</order-item>
+    <order-item attname="num" order="1">singular</order-item>
+    <order-item attname="num" order="2">dual</order-item>
+    <order-item attname="num" order="3">plural</order-item>
+    <order-item attname="gend" order="4">masculine feminine</order-item>
     <order-item attname="gend" order="5">neuter</order-item>
+  </order-table>
+  <infl-endings>
+EOS
+$XML_TABLES{'pronoun-recip'} = <<"EOS";
+  <order-table>
+    <order-item attname="case" order="1">nominative</order-item>
+    <order-item attname="case" order="2">genitive</order-item>
+    <order-item attname="case" order="3">dative</order-item>
+    <order-item attname="case" order="4">accusative</order-item>
+    <order-item attname="case" order="5">vocative</order-item>
+    <order-item attname="type" order="2">regular</order-item>
+    <order-item attname="type" order="3">irregular</order-item>
+    <order-item attname="num" order="2">dual</order-item>
+    <order-item attname="num" order="3">plural</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
+    <order-item attname="gend" order="3">neuter</order-item>
+  </order-table>
+  <infl-endings>
+EOS
+$XML_TABLES{'pronoun-inten'} = <<"EOS";
+  <order-table>
+    <order-item attname="case" order="1">nominative</order-item>
+    <order-item attname="case" order="2">genitive</order-item>
+    <order-item attname="case" order="3">dative</order-item>
+    <order-item attname="case" order="4">accusative</order-item>
+    <order-item attname="case" order="5">vocative</order-item>
+    <order-item attname="type" order="2">regular</order-item>
+    <order-item attname="type" order="3">irregular</order-item>
+    <order-item attname="num" order="1">singular</order-item>
+    <order-item attname="num" order="2">dual</order-item>
+    <order-item attname="num" order="3">plural</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
+    <order-item attname="gend" order="3">neuter</order-item>
+  </order-table>
+  <infl-endings>
+EOS
+$XML_TABLES{'cardinal'} = <<"EOS";
+  <order-table>
+    <order-item attname="hdwd" order="1">εἱς - μία - ἑν (1)</order-item>
+    <order-item attname="hdwd" order="2">δύο (2)</order-item>
+    <order-item attname="hdwd" order="3">τρεῖς - τρία (3)</order-item>
+    <order-item attname="hdwd" order="4">τέτταρες - τέτταρα (4)</order-item>
+    <order-item attname="case" order="1">nominative</order-item>
+    <order-item attname="case" order="2">genitive</order-item>
+    <order-item attname="case" order="3">dative</order-item>
+    <order-item attname="case" order="4">accusative</order-item>
+    <order-item attname="case" order="5">vocative</order-item>
+    <order-item attname="gend" order="2">feminine</order-item>
+    <order-item attname="gend" order="1">masculine</order-item>
+    <order-item attname="gend" order="5">neuter</order-item>
+    <order-item attname="gend" order="3">masculine feminine</order-item>
+    <order-item attname="gend" order="4">masculine feminine neuter</order-item>
     <order-item attname="type" order="2">regular</order-item>
     <order-item attname="type" order="3">irregular</order-item>
     <order-item attname="num" order="1">singular</order-item>
@@ -229,7 +474,10 @@ while (<DATA>){
     $i++;
     next if $_ =~/^\s*$/;
     my @cells = 
-    	map {	s/^\"\s*//; 
+    	map {	
+                # replace hyphens in the cell value because used as a separator
+	        if ($i != 1 && $_ !~ /foot-/) { s/-/_/g } ; 
+		s/^\"\s*//; 
 		s/\s*\"$//; 
 		s/\"\"/"/g;
 		$_; 
@@ -316,6 +564,7 @@ sub print_data() {
 	    }
 	    my %set_atts;
 	    for (my $i=0; $i<@group_by; $i++) {
+		@set_atts[$i] =~ s/_/-/g;
 		$set_atts{$group_by[$i]} = @set_atts[$i];
  	    }
 
