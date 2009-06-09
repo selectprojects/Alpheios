@@ -578,7 +578,7 @@ let $corrections :=
     </entry>
     <entry>
       <lemma>φημί</lemma>
-      <meaning>to declare, make known</meaning>
+      <meaning>to declare, make known; say, speak</meaning>
     </entry>
     <entry>
       <lemma>ἑαυτοῦ</lemma>
@@ -639,15 +639,15 @@ let $corrections :=
     <entry>
       <lemma>τρῦπα</lemma>
       <meaning>hole</meaning>
-    </entry>,
+    </entry>
     <entry>
       <lemma>ἕ</lemma>
       <meaning>him, her</meaning>
-    </entry>,
+    </entry>
     <entry>
       <lemma>Ποσειδεών</lemma>
       <meaning>Poseidon</meaning>
-    </entry>,
+    </entry>
     <entry>
       <lemma>νόσφῐ</lemma>
       <meaning>aloof, apart, afar, away</meaning>
@@ -662,7 +662,7 @@ let $corrections :=
     </entry>
     <entry>
       <lemma>ἀνά</lemma>
-      <meaning>on board; on, upon; up, from bottom to top, up along</meaning>
+      <meaning>on, upon; up, from bottom to top, up along</meaning>
     </entry>
     <entry>
       <lemma>ἔχω</lemma>
@@ -686,7 +686,7 @@ let $corrections :=
     </entry>
     <entry>
       <lemma>μετά</lemma>
-      <meaning>in the midst of, among, between</meaning>
+      <meaning>in the midst of, among, between; along with; after, behind; according to</meaning>
     </entry>
     <entry>
       <lemma>λαμβάνω</lemma>
@@ -855,6 +855,102 @@ let $corrections :=
     <entry>
       <lemma>σφέτερος</lemma>
       <meaning>their own, their (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>ἄν</lemma>
+      <meaning>modal particle used with verbs to indicate that the action is limited by circumstances or defined by conditions</meaning>
+    </entry>
+    <entry>
+      <lemma>ὅστις</lemma>
+      <meaning>any one who, anything which, whosoever, whichsoever</meaning>
+    </entry>
+    <entry>
+      <lemma>λέγω</lemma>
+      <meaning>pick up; count, tell; say, speak</meaning>
+    </entry>
+    <entry>
+      <lemma>ὡς</lemma>
+      <meaning>so, thus; as; that; so that, in order that; since, because</meaning>
+    </entry>
+    <entry>
+      <lemma>ἤ</lemma>
+      <meaning>or; than, as; either . . or</meaning>
+    </entry>
+    <entry>
+      <lemma>γίγνομαι</lemma>
+      <meaning>come into being; become, to be</meaning>
+    </entry>
+    <entry>
+      <lemma>πολύς</lemma>
+      <meaning>many, much</meaning>
+    </entry>
+    <entry>
+      <lemma>οὖν</lemma>
+      <meaning>certainly, in fact; so, then; then, therefore</meaning>
+    </entry>
+    <entry>
+      <lemma>οὐδείς</lemma>
+      <meaning>not one, no one, none</meaning>
+    </entry>
+    <entry>
+      <lemma>διά</lemma>
+      <meaning>through; throughout; thoroughly</meaning>
+    </entry>
+    <entry>
+      <lemma>κατά</lemma>
+      <meaning>downwards; along; towards; against; according to; during</meaning>
+    </entry>
+    <entry>
+      <lemma>οὐδέ</lemma>
+      <meaning>but not; and not, nor; not even; also not, not . . either, nor yet . . </meaning>
+    </entry>
+    <entry>
+      <lemma>λόγος</lemma>
+      <meaning>computation, reckoning; account; reason; word</meaning>
+    </entry>
+    <entry>
+      <lemma>παρά</lemma>
+      <meaning>from the side of, beside, alongside of, to the side of, motion alongside of, beyond, nearby</meaning>
+    </entry>
+    <entry>
+      <lemma>οὔτε</lemma>
+      <meaning>and not, neither . . nor</meaning>
+    </entry>
+    <entry>
+      <lemma>θεός</lemma>
+      <meaning>god</meaning>
+    </entry>
+    <entry>
+      <lemma>αὐτός</lemma>
+      <meaning>self, the very one, the same</meaning>
+    </entry>
+    <entry>
+      <lemma>πρότερος</lemma>
+      <meaning>before, in front; former, earlier</meaning>
+    </entry>
+    <entry>
+      <lemma>ἡμός</lemma>
+      <meaning>our (= ἡμέτερος)</meaning>
+    </entry>
+    <entry>
+      <lemma>εἷς</lemma>
+      <meaning>one</meaning>
+    </entry>
+    <entry>
+      <lemma>πράσσω</lemma>
+      <meaning>pass through, pass over; experience; achieve, effect, accomplish; practise</meaning>
+    </entry>
+    <entry>
+      <lemma>δίκαιος</lemma>
+      <meaning>observant of custom or rule; meet and right, fitting</meaning>
+    </entry>
+    <entry>
+      <lemma>ὥστε</lemma>
+      <meaning>as being, inasmuch as; that, to, in order that, since</meaning>
+    </entry>
+    <entry>
+      <lemma>ὅσος</lemma>
+      <meaning>as great as, how great; so far as, so much as</meaning>
     </entry>
 (:
     <entry>

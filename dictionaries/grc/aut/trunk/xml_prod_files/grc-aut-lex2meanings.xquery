@@ -125,44 +125,110 @@ declare function local:get-meaning($a_entry as element()) as xs:string*
 (: corrections :)
 let $corrections :=
   <corrections>
-    <entry key="ἆ">
-      interjection expressive of pity or horror, freq. w. voc. of “δειλός”
+    <entry>
+      <lemma>ἆ</lemma>
+      <meaning>interjection expressive of pity or horror, freq. w. voc. of “δειλός”</meaning>
     </entry>
-    <entry key="Αἴγισθος">
-      son of Thyestes, and cousin of Agamemnon
+    <entry>
+      <lemma>Αἴγισθος</lemma>
+      <meaning>son of Thyestes, and cousin of Agamemnon</meaning>
     </entry>
-    <entry key="Ἀμφιάραος">
-      a seer and warrior of Argos, son of Oecles, great grandson of the seer Melampus
+    <entry>
+      <lemma>Ἀμφιάραος</lemma>
+      <meaning>a seer and warrior of Argos, son of Oecles, great grandson of the seer Melampus</meaning>
     </entry>
-    <entry key="ἔδαφος">
-      floor of a ship
+    <entry>
+      <lemma>ἔδαφος</lemma>
+      <meaning>floor of a ship</meaning>
     </entry>
-    <entry key="Ζέλεια">
-      a town at the foot of Mt. Ida
+    <entry>
+      <lemma>Ζέλεια</lemma>
+      <meaning>a town at the foot of Mt. Ida</meaning>
     </entry>
-    <entry key="ιμάς">
-      strap or thong; straps; reins; halter; chin-strap; cestus; leash or latchstring
+    <entry>
+      <lemma>ιμάς</lemma>
+      <meaning>strap or thong; straps; reins; halter; chin-strap; cestus; leash or latchstring</meaning>
     </entry>
-    <entry key="Φυλεύς">
-      son of Augēas of Elis
+    <entry>
+      <lemma>Φυλεύς</lemma>
+      <meaning>son of Augēas of Elis</meaning>
     </entry>
-    <entry key="ωὑτός">
-      the same
+    <entry>
+      <lemma>ωὑτός</lemma>
+      <meaning>the same</meaning>
     </entry>
-    <entry key="ἀνιάω">
-      be a torment, nuisance
+    <entry>
+      <lemma>ἀνιάω</lemma>
+      <meaning>be a torment, nuisance</meaning>
     </entry>
-    <entry key="οὐδός2">
-      way, path, road, journey
+    <entry>
+      <lemma>οὐδός2</lemma>
+      <meaning>way, path, road, journey</meaning>
     </entry>
-    <entry key="ἕ">
-      him, her
+    <entry>
+      <lemma>ἕ</lemma>
+      <meaning>him, her</meaning>
     </entry>
-    <entry key="ὅστε">
-      who, which
+    <entry>
+      <lemma>ὅστε</lemma>
+      <meaning>who, which</meaning>
     </entry>
+    <entry>
+      <lemma>δέ1</lemma>
+      <meaning>but, and</meaning>
+    </entry>
+    <entry>
+      <lemma>εἰμί1</lemma>
+      <meaning>to be; exist, be possible</meaning>
+    </entry>
+    <entry>
+      <lemma>αὐτός</lemma>
+      <meaning>same, self</meaning>
+    </entry>
+    <entry>
+      <lemma>ὅς1</lemma>
+      <meaning>he, this, that; who, that, which</meaning>
+    </entry>
+    <entry>
+      <lemma>μέν</lemma>
+      <meaning>in truth, indeed, certainly; to be sure</meaning>
+    </entry>
+    <entry>
+      <lemma>ἀλλά</lemma>
+      <meaning>but, nay but, but yet, yet</meaning>
+    </entry>
+    <entry>
+      <lemma>ἀνά</lemma>
+      <meaning>up; up! quick!; up there, thereon; back, 'hold up'; up on, upon; up to, up through</meaning>
+    </entry>
+    <entry>
+      <lemma>ὅστις</lemma>
+      <meaning>who(so)ever, which(so)ever, what(so)ever</meaning>
+    </entry>
+    <entry>
+      <lemma>ἤ</lemma>
+      <meaning>or, than, whether; either . . or</meaning>
+    </entry>
+    <entry>
+      <lemma>μή</lemma>
+      <meaning>not, lest</meaning>
+    </entry>
+    <entry>
+      <lemma>οὖν</lemma>
+      <meaning>now, then; if, 'for that matter'</meaning>
+    </entry>
+    <entry>
+      <lemma>διά</lemma>
+      <meaning>between, through</meaning>
+    </entry>
+(:
+    <entry>
+      <lemma></lemma>
+      <meaning></meaning>
+    </entry>
+ :)
   </corrections>
-let $correctedLemmas := $corrections/entry/@key
+let $correctedLemmas := $corrections/entry/lemma/text()
 
 return
 (: wrap everything in <entrylist> :)
@@ -178,7 +244,7 @@ element entrylist
       (: if correction exists, use it :)
       if ($lemma = $correctedLemmas)
       then
-        $corrections/entry[./@key = $lemma]
+        $corrections/entry[./lemma = $lemma]/meaning
       else
         $entry
     )

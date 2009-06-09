@@ -52,6 +52,24 @@ let $invalids :=
 (: corrections :)
 let $corrections :=
   <corrections>
+    <entry>
+      <lemma>ἄν2</lemma>
+      <meaning>if haply</meaning>
+    </entry>
+    <entry>
+      <lemma>ἕ</lemma>
+      <meaning>him, her</meaning>
+    </entry>
+    <entry>
+      <lemma>ἄλλος1</lemma>
+      <meaning>another, one besides</meaning>
+    </entry>
+(:
+    <entry>
+      <lemma></lemma>
+      <meaning></meaning>
+    </entry>
+ :)
   </corrections>
 let $correctedLemmas := $corrections/entry/lemma/text()
 
