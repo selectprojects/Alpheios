@@ -1,0 +1,14 @@
+.alph-hdwd, 
+.alph-phrase, 
+.alph-term, 
+.alph-infl-form,
+#alph-infl-table .ending, 
+#alph-infl-table caption,   
+#alph-query-frame .answer,
+g text,
+*:lang(gre), 
+*:lang(grc),
+*.greek 
+{
+    font-family: "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif;
+}

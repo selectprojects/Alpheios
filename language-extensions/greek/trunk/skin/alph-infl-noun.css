@@ -1,6 +1,4 @@
-.ending, caption {
-    font-family: Georgia, "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif; 
-}
+@import url("chrome://alpheios-greek/skin/alpheios-greek-os.css");
 
 .ending {
     line-height: 1em;

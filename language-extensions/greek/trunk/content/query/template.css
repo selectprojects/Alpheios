@@ -1,3 +1,5 @@
+@import url("chrome://alpheios-greek/skin/alpheios-greek-os.css");
+
 .query-table {
     clear: both;
     width:100%;
@@ -63,10 +65,6 @@ div.invalid {
     vertical-align: bottom;
     font-weight: normal;
     color: #333333;
-}
-
-*:lang(grc) {
-    font-family: Georgia, "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif;
 }
 
 .selected-form {
@@ -183,13 +181,6 @@ div.invalid {
 
 #alph-infl-table td.invalid, #alph-infl-table td.ending-group.incorrect.invalid {
     background-color: #4E6476;
-}
-
-#alph-infl-table td.ending, 
-.alph-query-dict .alph-hdwd, 
-.alph-query-infl .alph-infl-set .alph-term,
-.alph-infl-form {
-    font-family: Georgia, "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif !important;
 }
 
 .notfirst {
