@@ -18,7 +18,7 @@
     To get around tree fragment restrictions in XSLT 1.0, the actual variable
     uses exsl:node-set().
   -->
-  <xsl:variable name="raw-table">
+  <xsl:variable name="raw-ascii-table">
     <uni-ascii-table>
       <entry>
         <ascii>A</ascii>
@@ -495,7 +495,7 @@
     
   </xsl:variable>
   <xsl:variable name="uni-ascii-table"
-    select="exsl:node-set($raw-table)/uni-ascii-table"/>
+    select="exsl:node-set($raw-ascii-table)/uni-ascii-table"/>
 
   <!--
     Convert unicode to transliterated ascii
