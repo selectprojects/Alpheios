@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <infl-paradigms xmlns:xhtml="http://www.w3.org/1999/xhtml">
+   <disclaimer>
+      Verb paradigm tables derived from <reflink xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="http://ucbclassics.dreamhosters.com/ancgreek/">Ancient Greek Tutorials</reflink>, by Donald J. Mastronarde, Berkeley Language Center of the University of California, Berkeley. 
+      ©1999-2005 The Regents of the University of California.      
+   </disclaimer>
    <infl-paradigm id="verbpdgm1">
       <title>
          <span xml:lang="grc">ω</span>-Verbs: Present System Active</title>
