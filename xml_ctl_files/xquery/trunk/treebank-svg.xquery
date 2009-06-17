@@ -252,7 +252,7 @@ declare function tbs:get-svg(
           element rect { attribute showme { "focus-descendant" } },
           element text { "Other words that depend on focus word" },
           element rect { attribute first { "yes" } },
-          element text { "First selected word" },
+          element text { "First selected word(s)" },
           element rect {},
           element text {},
           element rect {},

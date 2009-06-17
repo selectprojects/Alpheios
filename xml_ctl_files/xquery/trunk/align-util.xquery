@@ -99,10 +99,26 @@ declare function alut:xml-to-svg(
         attribute id { concat($lang, ":", $word/@*:n) },
         if ($tbref)
         then
-          attribute tbref
-          {
-            concat($tbref/@*:ts, '-', $tbref/@*:tw + ($i - $tbref/@*:aw))
-          }
+          let $numRefs :=
+            (: if @len exists, there is 1-to-1 relation :)
+            if (exists($tbref/@*:len)) then 1
+            (: if @lena=1, there is 1-to-many relation :)
+            else if ($tbref/@*:lena = 1) then xs:integer($tbref/@*:lent)
+            (: otherwise, don't know what to do :)
+            else 0
+          return
+          if ($numRefs > 0)
+          then
+            attribute tbrefs
+            {
+              string-join(
+                let $prefix := concat($tbref/@*:ts, '-')
+                for $j in (0 to $numRefs - 1)
+                return
+                  concat($prefix, $tbref/@*:tw + ($i - $tbref/@*:aw) + $j),
+                ' ')
+            }
+          else ()
         else (),
         if ($word/*:mark)
         then

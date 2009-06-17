@@ -18,6 +18,9 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  :)
 
+import module namespace almt="http://alpheios.net/namespaces/alignment-match"
+              at "alignment-match.xquery";
+
 (:
   Calculate comments to add to alignment text for correlation with
   treebank data
@@ -28,9 +31,9 @@
 
 (:
   External parameters
-    collection      collection in which documents are to be found
-    text            name of text
-    lang            language of text
+    adocName        name of alignment document
+    tdocName        name of treebank document
+    tdocId          treebank document id
  :)
 declare variable $e_adocName external;
 declare variable $e_tdocName external;
@@ -44,8 +47,11 @@ declare variable $e_tdocId external;
     $a_tids      treebank sentence ids
     $a_alens     lengths of alignment sentences
     $a_tlens     lengths of treebank sentences
-    $a_acount    remaining count in current alignment sentence
-    $a_tcount    remaining count in current treebank sentence
+    $a_matches   text match elements
+    $a_maoff     alignment offset in current match element
+    $a_mtoff     treebank offset in current match element
+    $a_aoff      offset in current alignment sentence
+    $a_toff      offset in current treebank sentence
 
   Return value:
     sequence of <match> elements with attributes:
@@ -61,74 +67,150 @@ declare function local:match(
   $a_tids as xs:string*,
   $a_alens as xs:integer*,
   $a_tlens as xs:integer*,
-  $a_acount as xs:integer?,
-  $a_tcount as xs:integer?) as element()*
+  $a_matches as element(match)*,
+  $a_maoff as xs:integer?,
+  $a_mtoff as xs:integer?,
+  $a_aoff as xs:integer?,
+  $a_toff as xs:integer?) as element(match)*
 {
-  if ((count($a_aids) eq 0) or (count($a_tids) eq 0))
-  then ()
-  else
-    let $astart := ($a_alens[1] - $a_acount) + 1
-    let $tstart := ($a_tlens[1] - $a_tcount) + 1
-    let $len := min(($a_acount, $a_tcount))
-    return
-    (
+  if ((count($a_aids) eq 0) or (count($a_tids) eq 0)) then () else
+
+  let $len := min(($a_alens[1] - $a_aoff, $a_tlens[1] - $a_toff))
+  let $mtype := $a_matches[1]/@type
+  let $malen := $a_matches[1]/@l1 - $a_maoff
+  return
+  (
+    (: if texts match :)
+    if ($mtype = "1-to-1")
+    then
       element match
       {
         attribute as { $a_aids[1] },
-        attribute aw { $astart },
+        attribute aw { $a_aoff + 1 },
         attribute ts { $a_tids[1] },
-        attribute tw { $tstart },
-        attribute len { $len }
-      },
-    if ($a_acount > $a_tcount)
+        attribute tw { $a_toff + 1 },
+        attribute len { min(($len, $malen)) }
+      }
+    else if ($mtype = "mismatch")
     then
+      element match
+      {
+        attribute as { $a_aids[1] },
+        attribute aw { $a_aoff + 1 },
+        attribute ts { $a_tids[1] },
+        attribute tw { $a_toff + 1 },
+        attribute lena { min(($a_alens[1] - $a_aoff, $malen)) },
+        attribute lent { min(($a_tlens[1] - $a_toff,
+                              $a_matches[1]/@l2 - $a_mtoff)) }
+      }
+    else (),
+
+    (: see how much we've advanced :)
+    let $ainc :=
+      if ($mtype = "1-to-1")
+      then
+        min(($len, $malen))
+      else if ($mtype = "mismatch")
+      then
+        min(($a_alens[1] - $a_aoff, $malen))
+      else if ($a_matches[1]/@l1)
+      then
+        $a_matches[1]/@l1
+      else 0
+    let $tinc :=
+      if ($mtype = "1-to-1")
+      then
+        min(($len, $malen))
+      else if ($mtype = "mismatch")
+      then
+        min(($a_tlens[1] - $a_toff, $a_matches[1]/@l2 - $a_mtoff))
+      else if ($a_matches[1]/@l2)
+      then
+        $a_matches[1]/@l2
+      else 0
+    let $morema :=
+      if ($a_matches[1]/@l1)
+      then
+        ($a_maoff + $ainc) < $a_matches[1]/@l1
+      else false()
+    let $moremt :=
+      if ($a_matches[1]/@l2)
+      then
+        ($a_mtoff + $tinc) < $a_matches[1]/@l2
+      else false()
+    return
+      (: element match { ($ainc, $tinc, $morema, $moremt) } :)
       local:match(
-        $a_aids,
-        subsequence($a_tids, 2),
-        $a_alens,
-        subsequence($a_tlens, 2),
-        $a_acount - $len,
-        $a_tlens[2])
-    else if ($a_acount < $a_tcount)
-    then
-      local:match(
-        subsequence($a_aids, 2),
-        $a_tids,
-        subsequence($a_alens, 2),
-        $a_tlens,
-        $a_alens[2],
-        $a_tcount - $len)
-    else
-      local:match(
-        subsequence($a_aids, 2),
-        subsequence($a_tids, 2),
-        subsequence($a_alens, 2),
-        subsequence($a_tlens, 2),
-        $a_alens[2],
-        $a_tlens[2])
+        if ($a_aoff + $ainc >= $a_alens[1])
+        then
+          subsequence($a_aids, 2)
+        else $a_aids,
+        if ($a_toff + $tinc >= $a_tlens[1])
+        then
+          subsequence($a_tids, 2)
+        else $a_tids,
+        if ($a_aoff + $ainc >= $a_alens[1])
+        then
+          subsequence($a_alens, 2)
+        else $a_alens,
+        if ($a_toff + $tinc >= $a_tlens[1])
+        then
+          subsequence($a_tlens, 2)
+        else $a_tlens,
+        if ($morema or $moremt)
+        then
+          $a_matches
+        else
+          subsequence($a_matches, 2),
+        if ($morema or $moremt)
+        then
+          xs:integer($a_maoff + $ainc)
+        else 0,
+        if ($morema or $moremt)
+        then
+          xs:integer($a_mtoff + $tinc)
+        else 0,
+        if ($a_aoff + $ainc < $a_alens[1])
+        then
+          xs:integer($a_aoff + $ainc)
+        else 0,
+        if ($a_toff + $tinc < $a_tlens[1])
+        then
+          xs:integer($a_toff + $tinc)
+        else 0)
     )
 };
 
 let $adoc := doc($e_adocName)
 let $tdoc := doc($e_tdocName)
-let $lnum := $adoc//language[@xml:lang="grc"]/@lnum
+let $sen1 := 1
+let $lnum := "L1"
 let $acounts :=
-  for $wdset at $i in $adoc//wds[@lnum=$lnum]
-  return count($wdset/w)
+  for $wdset at $i in subsequence($adoc//*:sentence, $sen1)/*:wds[@lnum=$lnum]
+  return count($wdset/*:w)
 let $aids :=
-  for $wdset at $i in $adoc//wds[@lnum=$lnum]
-  return $wdset/../@id
+  for $wdset at $i in subsequence($adoc//*:sentence, $sen1)/*:wds[@lnum=$lnum]
+  return string($wdset/../@id)
 let $tcounts :=
-  for $sent at $i in $tdoc//sentence
-  return count($sent/word)
+  for $sent at $i in subsequence($tdoc//*:sentence, $sen1)
+  return count($sent/*:word)
 let $tids :=
-  for $sent at $i in $tdoc//sentence
-  return $sent/@id
+  for $sent at $i in subsequence($tdoc//*:sentence, $sen1)
+  return string($sent/@id)
+
+let $awords :=
+  for $word in subsequence($adoc//*:sentence, $sen1)/*:wds[@lnum=$lnum]/*:w
+  return lower-case(normalize-space($word/*:text))
+let $twords :=
+  for $word in subsequence($tdoc//*:sentence, $sen1)/*:word
+  return lower-case(normalize-space($word/@form))
+let $matches :=
+  almt:match($awords, $twords, 1, 1)
 
 return
   element comment
   {
     attribute class { "tbref" },
     attribute docid { $e_tdocId },
-    local:match($aids, $tids, $acounts, $tcounts, $acounts[1], $tcounts[1])
+    local:match($aids, $tids, $acounts, $tcounts, $matches, 0, 0, 0, 0)
   }
