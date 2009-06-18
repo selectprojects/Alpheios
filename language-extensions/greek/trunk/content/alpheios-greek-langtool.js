@@ -735,6 +735,7 @@ Alph.LanguageToolSet.greek.prototype.handle_inflection_feature = function(a_even
  */
 Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
 {
+    var lang_obj = this;
     var defs = this.defsFile;
     var lex = this.short_lex_code;
     var stripper = this.stripper;
@@ -768,6 +769,12 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
                 // insert meaning into document
                 Alph.util.log("adding " + meanElt);
                 Alph.$(".alph-dict", this).after(meanElt);
+                
+                // build dictionary source element
+                var srcElt = '<div class="alph-dict-source">' +
+                    lang_obj.get_string('dict.' + lex[i] + '.copyright');
+                    '</div>';
+                Alph.$(".alph-dict", this).append(srcElt);
 
                 // set lemma attributes
                 Alph.util.log('adding @lemma-lang="grc"');
@@ -785,6 +792,9 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
             }
         }
     );
+    var copyright = this.get_string('popup.credits');
+    Alph.$('#alph-morph-credits',a_node).html(copyright);
+    
 }
 
 /**
