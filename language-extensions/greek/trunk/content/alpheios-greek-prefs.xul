@@ -120,6 +120,18 @@
         </tabpanels>
     </tabbox>
     
+    <tabbox id="site-prefs">
+        <tabs id="site-prefs-language-tabs">
+            <tab id="site-prefs-language-tabs-greek"
+                 label="&alpheios.greek.prefs.tablabel;"/>
+        </tabs>
+        <tabpanels id="site-prefs-language-details">
+            <tabpanel>
+                <vbox id="site-prefs-language-details-greek"/> 
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+    
     <vbox id="alpheios-dict-tabs-advanced">
         <groupbox id="dicts-prefs-language-details-adv-greek" hidden="true">
             <caption label="&alpheios.greek.prefs.tablabel;"/>

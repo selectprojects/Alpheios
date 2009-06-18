@@ -25,3 +25,4 @@ pref("extensions.alpheios.greek.dictionary.full.search.url",
 pref("extensions.alpheios.greek.dictionary.full.search.lemma_param","l");
 pref("extensions.alpheios.greek.dictionary.full.search.id_param","n");
 pref("extensions.alpheios.greek.dictionary.full.search.multiple",true);
+pref("extensions.alpheios.greek.sites.autoenable","http://www.hs-augsburg.de/~harsch/graeca/,http://www.classicpersuasion.org/pw/heraclitus/herpatu.htm");
