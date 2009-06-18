@@ -14,7 +14,7 @@
         <order-item attname="tense" order="3">future</order-item>
         <order-item attname="tense" order="4" footnote="Footnote-3">perfect</order-item>
         <order-item attname="tense" order="5" footnote="Footnote-2">pluperfect</order-item>
-        <order-item attname="tense" order="6" footnote="Footnote-2">future perfect</order-item>
+        <order-item attname="tense" order="6" footnote="Footnote-2">future_perfect</order-item>
         <order-item attname="mood" order="1">indicative</order-item>
         <order-item attname="mood" order="2">subjunctive</order-item>
         <order-item attname="voice" order="1">active</order-item>
@@ -1791,267 +1791,267 @@
             tense="pluperfect" 
             num="plural" 
             pers="3rd"><infl-ending type="regular">īvissent</infl-ending></infl-ending-set>
-<!--First Future Perfect Active-->
+<!--First future_perfect Active-->
         <infl-ending-set 
             conj="1st" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"><infl-ending type="regular">āverō</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="1st" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="2nd"><infl-ending type="regular">āveris</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="1st" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect"
+            tense="future_perfect"
             num="singular" 
             pers="3rd"><infl-ending type="regular">āverit</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="1st" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect"
+            tense="future_perfect"
             num="plural" 
             pers="1st"><infl-ending type="regular">āverimus</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="1st" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"><infl-ending type="regular">āveritis</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="1st" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect"
+            tense="future_perfect"
             num="plural" 
             pers="3rd"><infl-ending type="regular">āverint</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="1st" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"/>
         <infl-ending-set 
             conj="1st" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect"
+            tense="future_perfect"
             num="singular" 
             pers="2nd"/>
         <infl-ending-set 
             conj="1st" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="3rd"/>
         <infl-ending-set 
             conj="1st" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="1st"/>
         <infl-ending-set 
             conj="1st" 
             voice="active" 
             mood="subjunctive"
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"/>
         <infl-ending-set 
             conj="1st" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="3rd"/>
-<!--2nd future perfect active-->
+<!--2nd future_perfect active-->
         <infl-ending-set 
             conj="2nd"
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"><infl-ending type="regular">verō</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="2nd" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect"  
+            tense="future_perfect"  
             num="singular" 
             pers="2nd"><infl-ending type="regular">vēris</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="2nd" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="3rd"><infl-ending type="regular">vērit</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="2nd" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="1st"><infl-ending type="regular">vērimus</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="2nd" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"><infl-ending type="regular">vēritis</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="2nd" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="3rd"><infl-ending type="regular">vērint</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="2nd" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"/>
         <infl-ending-set 
             conj="2nd" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="2nd"/>
         <infl-ending-set 
             conj="2nd" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="3rd"/>
         <infl-ending-set 
             conj="2nd" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="1st"/>
         <infl-ending-set 
             conj="2nd" 
             voice="active" 
             mood="subjunctive"
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"/>
         <infl-ending-set 
             conj="2nd" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="3rd"/>
-<!--Third future perfect active -->
+<!--Third future_perfect active -->
         <infl-ending-set 
             conj="3rd" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"><infl-ending type="regular">erō</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="3rd" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="2nd"><infl-ending type="regular">eris</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="3rd" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect"
+            tense="future_perfect"
             num="singular" 
             pers="3rd"><infl-ending type="regular">erit</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="3rd" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect"
+            tense="future_perfect"
             num="plural" 
             pers="1st"><infl-ending type="regular">erimus</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="3rd" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"><infl-ending type="regular">eritis</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="3rd" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect"
+            tense="future_perfect"
             num="plural" 
             pers="3rd"><infl-ending type="regular">erint</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="3rd" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"/>
         <infl-ending-set 
             conj="3rd" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect"
+            tense="future_perfect"
             num="singular" 
             pers="2nd"/>
         <infl-ending-set 
             conj="3rd" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="3rd"/>
         <infl-ending-set 
             conj="3rd" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="1st"/>
         <infl-ending-set 
             conj="3rd" 
             voice="active" 
             mood="subjunctive"
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"/>
         <infl-ending-set 
             conj="3rd" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="3rd"/>
-<!--4th future perfect active -->
+<!--4th future_perfect active -->
         <infl-ending-set 
             conj="4th"
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st">
             <infl-ending type="regular">īverō</infl-ending></infl-ending-set>
@@ -2059,7 +2059,7 @@
             conj="4th" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="2nd">
             <infl-ending type="regular">īveris</infl-ending></infl-ending-set>
@@ -2067,7 +2067,7 @@
             conj="4th" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="3rd">
             <infl-ending type="regular">īverit</infl-ending></infl-ending-set>
@@ -2075,7 +2075,7 @@
             conj="4th" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="1st">
             <infl-ending type="regular">īverimus</infl-ending></infl-ending-set>
@@ -2083,7 +2083,7 @@
             conj="4th" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd">
             <infl-ending type="regular">īveritis</infl-ending></infl-ending-set>
@@ -2091,7 +2091,7 @@
             conj="4th" 
             voice="active" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="3rd">
             <infl-ending type="regular">īverint</infl-ending></infl-ending-set>
@@ -2099,42 +2099,42 @@
             conj="4th" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"/>
         <infl-ending-set 
             conj="4th" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="2nd"/>
         <infl-ending-set 
             conj="4th" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="3rd"/>
         <infl-ending-set 
             conj="4th" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="1st"/>
         <infl-ending-set 
             conj="4th" 
             voice="active" 
             mood="subjunctive"
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"/>
         <infl-ending-set 
             conj="4th" 
             voice="active" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="3rd"/>
 <!--First Present Passive-->
@@ -4000,267 +4000,267 @@
             tense="pluperfect" 
             num="plural" 
             pers="3rd"><infl-ending type="regular">īti essent</infl-ending></infl-ending-set>
-<!--First Future Perfect Passive-->
+<!--First future_perfect Passive-->
         <infl-ending-set 
             conj="1st" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"><infl-ending type="regular">ātus erō</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="1st" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="2nd"><infl-ending type="regular">ātus eris</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="1st" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect"
+            tense="future_perfect"
             num="singular" 
             pers="3rd"><infl-ending type="regular">ātus erit</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="1st" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect"
+            tense="future_perfect"
             num="plural" 
             pers="1st"><infl-ending type="regular">āti erimus</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="1st" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"><infl-ending type="regular">āti eritis</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="1st" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect"
+            tense="future_perfect"
             num="plural" 
             pers="3rd"><infl-ending type="regular">āti erunt</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="1st" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"/>
         <infl-ending-set 
             conj="1st" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect"
+            tense="future_perfect"
             num="singular" 
             pers="2nd"/>
         <infl-ending-set 
             conj="1st" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="3rd"/>
         <infl-ending-set 
             conj="1st" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="1st"/>
         <infl-ending-set 
             conj="1st" 
             voice="passive" 
             mood="subjunctive"
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"/>
         <infl-ending-set 
             conj="1st" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="3rd"/>
-<!--2nd future perfect passive-->
+<!--2nd future_perfect passive-->
         <infl-ending-set 
             conj="2nd"
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"><infl-ending type="regular">itus erō</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="2nd" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect"  
+            tense="future_perfect"  
             num="singular" 
             pers="2nd"><infl-ending type="regular">itus eris</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="2nd" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="3rd"><infl-ending type="regular">itus erit</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="2nd" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="1st"><infl-ending type="regular">itī erimus</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="2nd" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"><infl-ending type="regular">itī eritis</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="2nd" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="3rd"><infl-ending type="regular">itī erunt</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="2nd" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"/>
         <infl-ending-set 
             conj="2nd" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="2nd"/>
         <infl-ending-set 
             conj="2nd" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="3rd"/>
         <infl-ending-set 
             conj="2nd" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="1st"/>
         <infl-ending-set 
             conj="2nd" 
             voice="passive" 
             mood="subjunctive"
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"/>
         <infl-ending-set 
             conj="2nd" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="3rd"/>
-<!--Third future perfect passive -->
+<!--Third future_perfect passive -->
         <infl-ending-set 
             conj="3rd" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"><infl-ending type="regular">us erō</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="3rd" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="2nd"><infl-ending type="regular">us eris</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="3rd" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect"
+            tense="future_perfect"
             num="singular" 
             pers="3rd"><infl-ending type="regular">us erit</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="3rd" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect"
+            tense="future_perfect"
             num="plural" 
             pers="1st"><infl-ending type="regular">ī erimus</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="3rd" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"><infl-ending type="regular">ī eritis</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="3rd" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect"
+            tense="future_perfect"
             num="plural" 
             pers="3rd"><infl-ending type="regular">ī erunt</infl-ending></infl-ending-set>
         <infl-ending-set 
             conj="3rd" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"/>
         <infl-ending-set 
             conj="3rd" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect"
+            tense="future_perfect"
             num="singular" 
             pers="2nd"/>
         <infl-ending-set 
             conj="3rd" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="3rd"/>
         <infl-ending-set 
             conj="3rd" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="1st"/>
         <infl-ending-set 
             conj="3rd" 
             voice="passive" 
             mood="subjunctive"
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"/>
         <infl-ending-set 
             conj="3rd" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="3rd"/>
-<!--4th future perfect passive -->
+<!--4th future_perfect passive -->
         <infl-ending-set 
             conj="4th"
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st">
             <infl-ending type="regular">ītus erō</infl-ending></infl-ending-set>
@@ -4268,7 +4268,7 @@
             conj="4th" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="2nd">
             <infl-ending type="regular">ītus eris</infl-ending></infl-ending-set>
@@ -4276,7 +4276,7 @@
             conj="4th" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="3rd">
             <infl-ending type="regular">ītus erit</infl-ending></infl-ending-set>
@@ -4284,7 +4284,7 @@
             conj="4th" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="1st">
             <infl-ending type="regular">ītī erimus</infl-ending></infl-ending-set>
@@ -4292,7 +4292,7 @@
             conj="4th" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd">
             <infl-ending type="regular">ītī eritis</infl-ending></infl-ending-set>
@@ -4300,7 +4300,7 @@
             conj="4th" 
             voice="passive" 
             mood="indicative" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="3rd">
             <infl-ending type="regular">ītī erunt</infl-ending></infl-ending-set>
@@ -4308,42 +4308,42 @@
             conj="4th" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="1st"/>
         <infl-ending-set 
             conj="4th" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="2nd"/>
         <infl-ending-set 
             conj="4th" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="singular" 
             pers="3rd"/>
         <infl-ending-set 
             conj="4th" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="1st"/>
         <infl-ending-set 
             conj="4th" 
             voice="passive" 
             mood="subjunctive"
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="2nd"/>
         <infl-ending-set 
             conj="4th" 
             voice="passive" 
             mood="subjunctive" 
-            tense="future perfect" 
+            tense="future_perfect" 
             num="plural" 
             pers="3rd"/>
     </infl-endings>

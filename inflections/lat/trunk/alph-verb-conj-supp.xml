@@ -16,7 +16,7 @@
     <order-item attname="voice" order="2">passive</order-item>
     <order-item attname="mood" order="1">imperative</order-item>      
     <order-item attname="mood" order="2">infinitive</order-item>
-    <order-item attname="mood" order="3">participle</order-item>
+    <order-item attname="mood" order="3">verb_participle</order-item>
     <order-item attname="mood" order="4">gerundive</order-item>
     <order-item attname="mood" order="5">supine</order-item>
     <order-item attname="conj" order="1">1st</order-item>
@@ -36,7 +36,7 @@
     <order-item attname="case" order="6">locative</order-item>
     <order-item attname="case" order="7">vocative</order-item>
   </order-table>
-  <endings>       
+  <infl-endings>       
     <!-- Imperative -->
     <!-- 1st imperative present -->
     <infl-ending-set
@@ -639,11 +639,11 @@
           tense="future">
           <infl-ending type="regular">ītum īrī</infl-ending>
       </infl-ending-set>          
-      <!-- Participles -->
+      <!-- verb_participles -->
       <infl-ending-set
           conj="1st"
           voice="active"
-          mood="participle"
+          mood="verb_participle"
           tense="present">
           <infl-ending type="regular">āns</infl-ending>
           <infl-ending type="irregular">antis</infl-ending>
@@ -651,7 +651,7 @@
       <infl-ending-set
           conj="2nd"
           voice="active"
-          mood="participle"
+          mood="verb_participle"
           tense="present">
           <infl-ending type="regular">ēns</infl-ending>
           <infl-ending type="irregular">ventis</infl-ending>
@@ -659,7 +659,7 @@
       <infl-ending-set
           conj="3rd"
           voice="active"
-          mood="participle"
+          mood="verb_participle"
           tense="present">
           <infl-ending type="regular">ēns</infl-ending>
           <infl-ending type="irregular">entis</infl-ending>
@@ -667,7 +667,7 @@
       <infl-ending-set
           conj="4th"
           voice="active"
-          mood="participle"
+          mood="verb_participle"
           tense="present">
           <infl-ending type="regular">iēns</infl-ending>
           <infl-ending type="irregular">ientis</infl-ending>
@@ -675,27 +675,27 @@
       <infl-ending-set
           conj="1st"
           voice="active"
-          mood="participle"
+          mood="verb_participle"
           tense="perfect"/>
       <infl-ending-set
           conj="2nd"
           voice="active"
-          mood="participle"
+          mood="verb_participle"
           tense="perfect"/>
       <infl-ending-set
           conj="3rd"
           voice="active"
-          mood="participle"
+          mood="verb_participle"
           tense="perfect"/>
       <infl-ending-set
           conj="4th"
           voice="active"
-          mood="participle"
+          mood="verb_participle"
           tense="perfect"/>      
       <infl-ending-set
           conj="1st"
           voice="active"
-          mood="participle"
+          mood="verb_participle"
           tense="future">
           <infl-ending type="regular">ātūrus</infl-ending>
           <infl-ending type="irregular">a</infl-ending>
@@ -704,7 +704,7 @@
       <infl-ending-set
           conj="2nd"
           voice="active"
-          mood="participle"
+          mood="verb_participle"
           tense="future">
           <infl-ending type="regular">tūrus</infl-ending>
           <infl-ending type="irregular">a</infl-ending>
@@ -713,7 +713,7 @@
       <infl-ending-set
           conj="3rd"
           voice="active"
-          mood="participle"
+          mood="verb_participle"
           tense="future">
           <infl-ending type="regular">tūrus</infl-ending>
           <infl-ending type="irregular">a</infl-ending>
@@ -722,34 +722,34 @@
       <infl-ending-set
           conj="4th"
           voice="active"
-          mood="participle"
+          mood="verb_participle"
           tense="future">
           <infl-ending type="regular">ītūrus esse</infl-ending>
       </infl-ending-set>
       <infl-ending-set
           conj="1st"
           voice="passive"
-          mood="participle"
+          mood="verb_participle"
           tense="present"/>
       <infl-ending-set
           conj="2nd"
           voice="passive"
-          mood="participle"
+          mood="verb_participle"
           tense="present"/>
       <infl-ending-set
           conj="3rd"
           voice="passive"
-          mood="participle"
+          mood="verb_participle"
           tense="present"/>
       <infl-ending-set
           conj="4th"
           voice="passive"
-          mood="participle"
+          mood="verb_participle"
           tense="present"/>
       <infl-ending-set
           conj="1st"
           voice="passive"
-          mood="participle"
+          mood="verb_participle"
           tense="perfect">
           <infl-ending type="regular">ātus</infl-ending>
           <infl-ending type="irregular">a</infl-ending>
@@ -758,7 +758,7 @@
       <infl-ending-set
           conj="2nd"
           voice="passive"
-          mood="participle"
+          mood="verb_participle"
           tense="perfect">
           <infl-ending type="regular">itus</infl-ending>
           <infl-ending type="irregular">a</infl-ending>
@@ -767,7 +767,7 @@
       <infl-ending-set
           conj="3rd"
           voice="passive"
-          mood="participle"
+          mood="verb_participle"
           tense="perfect">
           <infl-ending type="regular">tus</infl-ending>
           <infl-ending type="irregular">a</infl-ending>
@@ -776,7 +776,7 @@
       <infl-ending-set
           conj="4th"
           voice="passive"
-          mood="participle"
+          mood="verb_participle"
           tense="perfect">
           <infl-ending type="regular">ītus</infl-ending>
           <infl-ending type="irregular">a</infl-ending>
@@ -785,7 +785,7 @@
       <infl-ending-set
           conj="1st"
           voice="passive"
-          mood="participle"
+          mood="verb_participle"
           tense="future">
           <infl-ending type="regular">andus</infl-ending>
           <infl-ending type="irregular">a</infl-ending>
@@ -794,7 +794,7 @@
       <infl-ending-set
           conj="2nd"
           voice="passive"
-          mood="participle"
+          mood="verb_participle"
           tense="future">
           <infl-ending type="regular">endus</infl-ending>
           <infl-ending type="irregular">a</infl-ending>
@@ -803,14 +803,14 @@
       <infl-ending-set
           conj="3rd"
           voice="passive"
-          mood="participle"
+          mood="verb_participle"
           tense="future">
           <infl-ending type="regular">endus</infl-ending>
       </infl-ending-set>
       <infl-ending-set
           conj="4th"
           voice="passive"
-          mood="participle"
+          mood="verb_participle"
           tense="future">
           <infl-ending type="regular">iendus</infl-ending>
           <infl-ending type="irregular">a</infl-ending>
@@ -1106,7 +1106,7 @@
           voice="passive"
           case="ablative"
           mood="supine"/>           
-  </endings>
+  </infl-endings>
   <footnotes>
     <footnote id="Footnote-1">Verbs of the Third Conjugation ending in io, retain the i before a, o, u and long e and before short e in the
         future tense, participles, gerund and gerundive, giving them in these forms the appearance of a fourth counjugation

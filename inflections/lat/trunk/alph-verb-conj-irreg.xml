@@ -8,12 +8,12 @@
     <order-item attname="tense" order="3">future</order-item>
     <order-item attname="tense" order="4">perfect</order-item>
     <order-item attname="tense" order="5">pluperfect</order-item>
-    <order-item attname="tense" order="6">future perfect</order-item>
+    <order-item attname="tense" order="6">future_perfect</order-item>
     <order-item attname="mood" order="1">indicative</order-item>
     <order-item attname="mood" order="2">subjunctive</order-item>
     <order-item attname="mood" order="3">imperative</order-item>      
     <order-item attname="mood" order="4">infinitive</order-item>
-    <order-item attname="mood" order="5">participle</order-item>
+    <order-item attname="mood" order="5">verb_participle</order-item>
     <order-item attname="mood" order="6">gerundive</order-item>
     <order-item attname="mood" order="7">supine</order-item>
     <order-item attname="voice" order="1">active</order-item>
@@ -328,7 +328,7 @@
       <infl-form type="irregular">fore</infl-form>
     </infl-form-set>
     <infl-form-set
-      mood="participle"
+      mood="verb_participle"
       tense="future">
       <infl-form type="regular">futūrus</infl-form>
       <infl-form type="irregular">-a</infl-form>
@@ -512,47 +512,47 @@
       tense="pluperfect" >
       <infl-form type="regular">fuissent</infl-form>
     </infl-form-set>
-    <!-- Future Perfect -->
+    <!-- future_perfect -->
     <infl-form-set
       mood="indicative" 
       num="singular" 
       pers="1st" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">fuerō</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="singular" 
       pers="2nd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">fueris</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="singular" 
       pers="3rd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">fuerit</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="plural" 
       pers="1st" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">fuerimus</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="plural" 
       pers="2nd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">fueritis</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="plural" 
       pers="3rd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">fuerint</infl-form>
     </infl-form-set>    
   </conjugation>  
@@ -802,14 +802,14 @@
       <infl-form type="regular">ferrī</infl-form>
     </infl-form-set>
     <infl-form-set
-      mood="participle"
+      mood="verb_participle"
       tense="present"
       voice="active">
       <infl-form type="regular">ferēns</infl-form>
       <infl-form type="irregular">-entis</infl-form>
     </infl-form-set>
     <infl-form-set
-      mood="participle"
+      mood="verb_participle"
       tense="present"
       voice="passive"/>      
     <!-- Imperfect -->
@@ -1181,13 +1181,13 @@
       <infl-form type="regular">latūm īrī</infl-form>
     </infl-form-set>
     <infl-form-set
-      mood="participle"
+      mood="verb_participle"
       tense="future"
       voice="active">
       <infl-form type="regular">latūrus</infl-form>
     </infl-form-set>
     <infl-form-set
-      mood="participle"
+      mood="verb_participle"
       tense="future"
       voice="passive">
       <infl-form type="regular" footnote="Footnote-4">ferundus</infl-form>
@@ -1399,11 +1399,11 @@
       <infl-form type="regular">lātus esse</infl-form>
     </infl-form-set>
     <infl-form-set
-      mood="participle"
+      mood="verb_participle"
       tense="perfect"
       voice="active"/>
     <infl-form-set
-      mood="participle"
+      mood="verb_participle"
       tense="perfect"
       voice="passive">
       <infl-form type="regular" footnote="Footnote-8">lātus, -ta, -tum</infl-form>
@@ -1602,12 +1602,12 @@
       voice="passive">
       <infl-form type="regular">latī (-ae, -a) essent</infl-form>
     </infl-form-set>
-    <!-- Future Perfect -->
+    <!-- future_perfect -->
     <infl-form-set
       mood="indicative" 
       num="singular" 
       pers="1st" 
-      tense="future perfect"
+      tense="future_perfect"
       voice="active">
       <infl-form type="regular">tulerō</infl-form>
     </infl-form-set>
@@ -1615,7 +1615,7 @@
       mood="indicative" 
       num="singular" 
       pers="2nd" 
-      tense="future perfect"
+      tense="future_perfect"
       voice="active">
       <infl-form type="regular">tuleris</infl-form>
     </infl-form-set>
@@ -1623,7 +1623,7 @@
       mood="indicative" 
       num="singular" 
       pers="3rd" 
-      tense="future perfect" 
+      tense="future_perfect" 
       voice="active">
       <infl-form type="regular">tulerit</infl-form>
     </infl-form-set>
@@ -1631,7 +1631,7 @@
       mood="indicative" 
       num="plural" 
       pers="1st" 
-      tense="future perfect" 
+      tense="future_perfect" 
       voice="active">
       <infl-form type="regular">tulerimus</infl-form>
     </infl-form-set>
@@ -1639,7 +1639,7 @@
       mood="indicative" 
       num="plural" 
       pers="2nd" 
-      tense="future perfect"
+      tense="future_perfect"
       voice="active">
       <infl-form type="regular">tuleritis</infl-form>
     </infl-form-set>
@@ -1647,7 +1647,7 @@
       mood="indicative" 
       num="plural" 
       pers="3rd" 
-      tense="future perfect" 
+      tense="future_perfect" 
       voice="active">
       <infl-form type="regular">tulerint</infl-form>
     </infl-form-set> 
@@ -1655,7 +1655,7 @@
       mood="indicative" 
       num="singular" 
       pers="1st" 
-      tense="future perfect"
+      tense="future_perfect"
       voice="passive">
       <infl-form type="regular">lātus (-a, -um) erō</infl-form>
     </infl-form-set>
@@ -1663,7 +1663,7 @@
       mood="indicative" 
       num="singular" 
       pers="2nd" 
-      tense="future perfect"
+      tense="future_perfect"
       voice="passive">
       <infl-form type="regular">lātus (-a, -um) eris</infl-form>
     </infl-form-set>
@@ -1671,7 +1671,7 @@
       mood="indicative" 
       num="singular" 
       pers="3rd" 
-      tense="future perfect" 
+      tense="future_perfect" 
       voice="passive">
       <infl-form type="regular">lātus (-a, -um) erit</infl-form>
     </infl-form-set>
@@ -1679,7 +1679,7 @@
       mood="indicative" 
       num="plural" 
       pers="1st" 
-      tense="future perfect" 
+      tense="future_perfect" 
       voice="passive">
       <infl-form type="regular">latī (-ae, -a) erimus</infl-form>
     </infl-form-set>
@@ -1687,7 +1687,7 @@
       mood="indicative" 
       num="plural" 
       pers="2nd" 
-      tense="future perfect"
+      tense="future_perfect"
       voice="passive">
       <infl-form type="regular">latī (-ae, -a) ēritis</infl-form>
     </infl-form-set>
@@ -1695,7 +1695,7 @@
       mood="indicative" 
       num="plural" 
       pers="3rd" 
-      tense="future perfect" 
+      tense="future_perfect" 
       voice="passive">
       <infl-form type="regular">latī (-ae, -a) ērunt</infl-form>
     </infl-form-set>    
@@ -1834,7 +1834,7 @@
       <infl-form type="regular">velle</infl-form>
     </infl-form-set>
     <infl-form-set
-      mood="participle"
+      mood="verb_participle"
       tense="present">
       <infl-form type="regular">volēns</infl-form>
       <infl-form type="irregular">-entis</infl-form>
@@ -2142,47 +2142,47 @@
       tense="pluperfect" >
       <infl-form type="regular">voluissent</infl-form>
     </infl-form-set>
-    <!-- Future Perfect -->
+    <!-- future_perfect -->
     <infl-form-set
       mood="indicative" 
       num="singular" 
       pers="1st" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">voluerō</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="singular" 
       pers="2nd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">volueris</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="singular" 
       pers="3rd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">voluerit</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="plural" 
       pers="1st" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">voluerimus</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="plural" 
       pers="2nd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">volueritis</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="plural" 
       pers="3rd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">voluerunt</infl-form>
     </infl-form-set>    
   </conjugation>
@@ -2306,7 +2306,7 @@
       <infl-form type="regular">īre</infl-form>
     </infl-form-set>
     <infl-form-set
-      mood="participle"
+      mood="verb_participle"
       tense="present">
       <infl-form type="regular">iēns</infl-form>
       <infl-form type="irregular">euntis</infl-form>
@@ -2473,12 +2473,12 @@
       <infl-form type="regular">itūrus esse</infl-form>
     </infl-form-set>
     <infl-form-set
-      mood="participle"
+      mood="verb_participle"
       tense="future">
       <infl-form type="regular">itūrus</infl-form>
     </infl-form-set>
     <infl-form-set
-      mood="participle"
+      mood="verb_participle"
       tense="future"
       voice="passive">
       <infl-form type="regular" footnote="Footnote-4">eundum</infl-form>
@@ -2661,12 +2661,12 @@
       tense="pluperfect" >
       <infl-form type="regular">īssent</infl-form>
     </infl-form-set>
-    <!-- Future Perfect -->
+    <!-- future_perfect -->
     <infl-form-set
       mood="indicative" 
       num="singular" 
       pers="1st" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">ierō</infl-form>
       <infl-form type="regular">īverō</infl-form>
     </infl-form-set>
@@ -2674,35 +2674,35 @@
       mood="indicative" 
       num="singular" 
       pers="2nd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">ieris</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="singular" 
       pers="3rd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">ierit</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="plural" 
       pers="1st" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">ierimus</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="plural" 
       pers="2nd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">ieritis</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="plural" 
       pers="3rd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">ierunt</infl-form>
     </infl-form-set>
     <infl-form-set
@@ -2850,7 +2850,7 @@
       <infl-form type="irregular" footnote="Footnote-12">potesse</infl-form>
     </infl-form-set>    
     <infl-form-set
-      mood="participle"
+      mood="verb_participle"
       tense="present">
       <infl-form type="regular">potēns</infl-form>
     </infl-form-set>
@@ -3158,47 +3158,47 @@
       tense="pluperfect" >
       <infl-form type="regular">potuissent</infl-form>
     </infl-form-set>
-    <!-- Future Perfect -->
+    <!-- future_perfect -->
     <infl-form-set
       mood="indicative" 
       num="singular" 
       pers="1st" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">potuerō</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="singular" 
       pers="2nd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">potueris</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="singular" 
       pers="3rd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">potuerit</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="plural" 
       pers="1st" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">potuerimus</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="plural" 
       pers="2nd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">potueritis</infl-form>
     </infl-form-set>
     <infl-form-set
       mood="indicative" 
       num="plural" 
       pers="3rd" 
-      tense="future perfect" >
+      tense="future_perfect" >
       <infl-form type="regular">potuerint</infl-form>
     </infl-form-set>    
   </conjugation>
