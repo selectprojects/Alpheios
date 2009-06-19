@@ -35,7 +35,7 @@ module namespace almt="http://alpheios.net/namespaces/alignment-match";
     w2 - first word in run in second set of words
     wd - first word in run (type "1-to-1" only)
 
-  If the type is "skip" then only one of o1/l1/w1 and o2/l2/w2 will appear,
+  If the type is "skip" then only one of {o1,l1,w1} and {o2,l2,w2} will appear,
   depending on which set of words the skipped text belongs to.
   If the type is "1-to-1" then wd appears and w1/w2 are absent.
 
@@ -116,13 +116,11 @@ declare function almt:gen-sync-list(
 };
 
 (:
-  Recursive function to generate word sequence matches
+  Function to generate word sequence matches
 
   Parameters:
     $a_w1        first list of words
     $a_w2        second list of words
-    $a_o1        offset in first list
-    $a_o2        offset in second list
 
   Return value:
     sequence of <match> elements with attributes:
@@ -135,6 +133,25 @@ declare function almt:gen-sync-list(
       l2 = length of l2 matching sequence
  :)
 declare function almt:match(
+  $a_w1 as xs:string*,
+  $a_w2 as xs:string*) as element()*
+{
+  almt:do-match($a_w1, $a_w2, 1, 1)
+};
+
+(:
+  Recursive function to generate word sequence matches
+
+  Parameters:
+    $a_w1        first list of words
+    $a_w2        second list of words
+    $a_o1        offset in first list
+    $a_o2        offset in second list
+
+  Return value:
+    sequence of <match> elements
+ :)
+declare function almt:do-match(
   $a_w1 as xs:string*,
   $a_w2 as xs:string*,
   $a_o1 as xs:integer,
@@ -211,15 +228,17 @@ declare function almt:match(
       },
 
       (: continue matching from sync point :)
-      almt:match($a_w1,
-                 $a_w2,
-                 xs:integer($a_o1 + $lastMatch + $sync/@l1),
-                 xs:integer($a_o2 + $lastMatch + $sync/@l2))
+      almt:do-match($a_w1,
+                    $a_w2,
+                    xs:integer($a_o1 + $lastMatch + $sync/@l1),
+                    xs:integer($a_o2 + $lastMatch + $sync/@l2))
     )
     else
       let $o1 := $a_o1 + $lastMatch
       let $o2 := $a_o2 + $lastMatch
       return
+        if (($o1 <= count($a_w1)) or ($o2 <= count($a_w2)))
+        then
         element oops
         {
           attribute w1 { $a_w1[$o1] },
@@ -227,6 +246,7 @@ declare function almt:match(
           attribute o1 { $o1 },
           attribute o2 { $o2 }
         }
+        else ()
   )
 };
 

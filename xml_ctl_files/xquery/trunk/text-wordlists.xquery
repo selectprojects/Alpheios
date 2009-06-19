@@ -18,34 +18,61 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  :)
 
+import module namespace almt="http://alpheios.net/namespaces/alignment-match"
+              at "alignment-match.xquery";
+
 (: extract wordlists for testing and verification :)
 
+let $root := "/sgml/proj10/prop-1.2"
+let $align-name := concat($root, ".align.xml")
+let $align-doc := doc($align-name)
+let $l1-lang := data($align-doc//language[@lnum = "L1"]/@xml:lang)
+let $l2-lang := data($align-doc//language[@lnum = "L2"]/@xml:lang)
+
 (: get words from original text :)
-let $text-words := doc("/sgml/proj10/apollod-1.grc.xml")//wd/text()
+let $l1-text-name := concat($root, ".", $l1-lang, ".xml")
+let $l1-text-words := doc($l1-text-name)//wd/text()
 
 (: get words from aligned text :)
-let $align-doc := doc("/sgml/proj10/apollod-1.align.xml")
-let $greek-lnum := $align-doc//language[@xml:lang="grc"]/@lnum
-let $align-words :=
-  for $word in $align-doc//wds[@lnum = $greek-lnum]/w/text/text()
-  where not(matches($word, "^[“”—&quot;‘’,.:;·'?!\[\]-]+$"))
+let $l1-align-words :=
+  for $word in $align-doc//*:wds[@lnum = "L1"]/*:w/*:text/text()
+  where not(matches($word, "^[“”—&quot;‘’,.:;·'?!\[\](){}-]+$"))
+  return
+    $word
+let $l2-align-words :=
+  for $word in $align-doc//*:wds[@lnum = "L2"]/*:w/*:text/text()
+  where not(matches($word, "^[“”—&quot;‘’,.:;·'?!\[\](){}-]+$"))
   return
     $word
 
 (: get words from treebank :)
+let $tb-name := concat($root, ".tb.xml")
 let $tb-words :=
-  for $word in doc("/sgml/proj10/apollod-1.tb.xml")//word
-  where not(matches($word/@form, "^[“”—&quot;‘’,.:;·'?!\[\]-]+$"))
+  for $word in doc(concat($root, ".tb.xml"))//word
+  where not(matches($word/@form, "^[“”—&quot;‘’,.:;·'?!\[\](){}-]+$"))
   return
     $word/@form
 
+(: get words from translation :)
+let $l2-text-name := concat($root, ".", $l2-lang, ".xml")
+let $l2-text-words := doc($l2-text-name)//wd/text()
+
 return
 (
-  count($text-words),
-  count($align-words),
+  "&#x000A;Original Language (", $l1-lang, ")",
+  count($l1-text-words),
+  count($l1-align-words),
   count($tb-words),
 
-  for $word at $i in $text-words
-  return
-    concat("&#x000A;", $word, ' ', $align-words[$i], ' ', $tb-words[$i])
+  "&#x000A;Text/Alignment&#x000A;",
+  almt:match($l1-text-words, $l1-align-words),
+  "&#x000A;Text/Treebank&#x000A;",
+  almt:match($l1-text-words, $tb-words),
+
+  "&#x000A;&#x000A;Translation (", $l2-lang, ")",
+  count($l2-text-words),
+  count($l2-align-words),
+
+  "&#x000A;Text/Alignment&#x000A;",
+  almt:match($l2-text-words, $l2-align-words)
 )

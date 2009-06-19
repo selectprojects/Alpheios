@@ -205,7 +205,7 @@ let $twords :=
   for $word in subsequence($tdoc//*:sentence, $sen1)/*:word
   return lower-case(normalize-space($word/@form))
 let $matches :=
-  almt:match($awords, $twords, 1, 1)
+  almt:match($awords, $twords)
 
 return
   element comment
