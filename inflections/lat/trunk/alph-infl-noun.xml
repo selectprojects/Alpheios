@@ -50,12 +50,12 @@
          <infl-ending type="irregular" footnote="foot-7">on</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="nominative" decl="3rd" gend="masculine feminine">
-         <infl-ending type="regular">_</infl-ending>
+         <infl-ending type="regular">-</infl-ending>
          <infl-ending type="irregular">os</infl-ending>
          <infl-ending type="irregular" footnote="foot-7">ōn</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="nominative" decl="3rd" gend="neuter">
-         <infl-ending type="regular">_</infl-ending>
+         <infl-ending type="regular">-</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="nominative" decl="4th" gend="masculine feminine">
          <infl-ending type="regular">us</infl-ending>
@@ -152,7 +152,7 @@
          <infl-ending type="irregular" footnote="foot-7">a</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="accusative" decl="3rd" gend="neuter">
-         <infl-ending type="regular">_</infl-ending>
+         <infl-ending type="regular">-</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="accusative" decl="4th" gend="masculine feminine">
          <infl-ending type="regular">um</infl-ending>
@@ -235,10 +235,10 @@
          <infl-ending type="irregular" footnote="foot-7">on</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="vocative" decl="3rd" gend="masculine feminine">
-         <infl-ending type="irregular" footnote="foot-7">_</infl-ending>
+         <infl-ending type="irregular" footnote="foot-7">-</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="vocative" decl="3rd" gend="neuter">
-         <infl-ending type="regular">_</infl-ending>
+         <infl-ending type="regular">-</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="vocative" decl="4th" gend="masculine feminine">
          <infl-ending type="regular">us</infl-ending>
