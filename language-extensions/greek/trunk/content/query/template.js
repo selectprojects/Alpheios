@@ -109,13 +109,14 @@ var TEMPLATE =
             xslt_file: "chrome://alpheios/skin/alph-infl-substantive-query.xsl",
             xslt_params: this.get_noun_params,
             load_data_on_start: true,
+            exclude_test: this.missing_decl,
             invalidate_empty_cells: false,
             add_form_if_missing: true,
 
             /* table columns */
             cols: {},
             filters: [
-            ],
+            ]
           },
      /**
      * noun query template
@@ -123,8 +124,9 @@ var TEMPLATE =
     adjective:
           { data_file: "chrome://alpheios-greek/content/inflections/alph-infl-adjective.xml",
             xslt_file: "chrome://alpheios/skin/alph-infl-substantive-query.xsl",
-            xslt_params: this.get_noun_params,
+            xslt_params: this.get_adj_params,
             load_data_on_start: true,
+            exclude_test: this.missing_decl,
             invalidate_empty_cells: false,
             add_form_if_missing: true,
 
@@ -167,6 +169,11 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
 {
     var template = TEMPLATE[a_pofs];
     if (typeof template == "undefined")
+    {
+        return false;
+    }
+    
+    if (typeof template.exclude_test == 'function' && template.exclude_test(a_ans))
     {
         return false;
     }
@@ -1055,6 +1062,25 @@ function get_noun_params(a_ans)
         params.decl = declension;
     }
     return params;
+}
+
+function get_adj_params(a_ans)
+{
+    var params = { group1: 'case',
+                   group4: 'num',
+                   group5: 'gend'};
+    var declension = a_ans.attributes['alph-decl'];
+    if (declension)
+    {
+        params.decl = declension.replace(/_adjective/,'');
+    }
+    return params;
+}
+
+function missing_decl(a_ans)
+{
+    var declension = a_ans.attributes['alph-decl'];
+    return (typeof declension == 'undefined' || declension == ''); 
 }
 
 function hide_empty_cols(a_tbl)
