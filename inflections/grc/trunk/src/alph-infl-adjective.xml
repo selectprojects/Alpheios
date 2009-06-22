@@ -108,6 +108,9 @@
                type="primary regular">ῶν</infl-ending>
         <infl-ending
             footnote="foot-16"   type="irregular">έων</infl-ending>
+       <infl-ending 
+            dialects="Homer" type="irregular">άων</infl-ending>
+
     </infl-ending-set>
     <infl-ending-set
        num="plural"  decl="1st" case="nominative" gend="feminine">
@@ -353,6 +356,12 @@
             footnote="foot-16"   type="irregular">έοις</infl-ending>
         <infl-ending
             footnote="foot-16"   type="irregular">όοις</infl-ending>
+         <infl-ending 
+                dialects="Homer" type="irregular">οῖσι</infl-ending>
+         <infl-ending
+                dialects="Homer" type="irregular">οῖσιν</infl-ending>
+         <infl-ending
+                dialects="Homer" type="irregular">ῃσιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
        num="plural"  decl="2nd" case="genitive" gend="masculine feminine">
@@ -420,6 +429,10 @@
             footnote="foot-16"   type="irregular">έοις</infl-ending>
         <infl-ending
             footnote="foot-16"   type="irregular">όοις</infl-ending>
+        <infl-ending 
+               dialects="Homer" type="irregular">οῖσι</infl-ending>
+        <infl-ending
+              dialects="Homer" type="irregular">οῖσιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
        num="plural"  decl="2nd" case="genitive" gend="neuter">
@@ -496,6 +509,8 @@
             footnote="foot-16"   type="irregular">έου</infl-ending>
         <infl-ending
             footnote="foot-16"   type="irregular">όου</infl-ending>
+       <infl-ending
+              dialects="Homer" type="irregular">οῖο</infl-ending>           
     </infl-ending-set>
     <infl-ending-set
        num="singular"  decl="2nd" case="nominative" gend="masculine feminine">
@@ -565,6 +580,9 @@
             footnote="foot-16"   type="irregular">έου</infl-ending>
         <infl-ending
             footnote="foot-16"   type="irregular">όου</infl-ending>
+       <infl-ending
+                  dialects="Homer" type="irregular">οῖο</infl-ending>
+           
     </infl-ending-set>
     <infl-ending-set
        num="singular"  decl="2nd" case="nominative" gend="neuter">
@@ -843,6 +861,9 @@
                type="regular">εινῶν</infl-ending>
         <infl-ending
                type="regular">εσσῶν</infl-ending>
+       <infl-ending 
+              dialects="Homer" type="irregular">άων</infl-ending>
+           
     </infl-ending-set>
     <infl-ending-set
        num="plural"  decl="3rd" case="nominative" gend="feminine">
@@ -932,6 +953,9 @@
             footnote="foot-18"   type="regular">ένων</infl-ending>
         <infl-ending
             footnote="foot-18"   type="regular">έντων</infl-ending>
+           <infl-ending 
+                  dialects="Homer" type="irregular">άων</infl-ending>
+           
     </infl-ending-set>
     <infl-ending-set
        num="plural"  decl="3rd" case="nominative" gend="masculine feminine">
@@ -1021,6 +1045,8 @@
                type="regular">ένων</infl-ending>
         <infl-ending
                type="regular">έντων</infl-ending>
+       <infl-ending 
+                  dialects="Homer" type="irregular">άων</infl-ending>
     </infl-ending-set>
     <infl-ending-set
        num="plural"  decl="3rd" case="nominative" gend="neuter">
