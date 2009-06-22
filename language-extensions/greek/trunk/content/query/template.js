@@ -1176,6 +1176,6 @@ function convert_form(a_data,a_text)
     }
     else
     {
-        return a_data.answer.convert_obj.normalize_greek(a_text,true,'\/^_');
+        return a_data.answer.convert_obj.normalize_greek(a_text,true,'\/^_=');
     } 
 }
