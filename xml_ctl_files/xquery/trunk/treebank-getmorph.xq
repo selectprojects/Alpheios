@@ -36,18 +36,15 @@ import module namespace tbm="http://alpheios.net/namespaces/treebank-morph"
 declare option exist:serialize "method=xml media-type=text/xml";
 
 let $base := request:get-parameter("f", ())
-let $id := request:get-parameter("w", ())
+let $ids := request:get-parameter("w", ())
 let $docname := concat("/db/repository/treebank/", $base, ".tb.xml")
 
 return
   if (not($base))
   then
     element error { "Treebank not specified" }
-  else if (not($id))
-  then
-    element error { "Word not specified" }
   else if (not(doc-available($docname)))
   then
     element error { concat("Treebank for ", $base, " not available") }
   else
-    tbm:get-morphology($docname, $id)
+a    tbm:get-morphology(doc($docname), $ids)

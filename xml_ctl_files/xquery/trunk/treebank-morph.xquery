@@ -55,63 +55,75 @@ declare function tbm:morph-element(
   Function to get morphology for word
 
   Parameters:
-    $a_docname     name of treebank document
-    $a_id          id of word (in form <sentence#>-<word#>)
+    $a_doc         treebank document
+    $a_ids         ids of words (in form <sentence#>-<word#>)
 
   Return value:
     <words> element in lexicon format,
     or <error> element if word not found
  :)
 declare function tbm:get-morphology(
-  $a_docname as xs:string,
-  $a_id as xs:string) as element()?
+  $a_doc as node()?,
+  $a_ids as xs:string*) as element()?
 {
-  let $doc := doc($a_docname)
-  let $word := $doc//sentence[@id = substring-before($a_id, "-")]
-                    /word[@id = substring-after($a_id, "-")]
+  (: check arguments :)
+  if (not($a_doc)) then element error { "Treebank not specified" } else
+  if (count($a_ids) eq 0) then element error { "Word(s) not specified" } else
+
+  let $words :=
+    for $id in $a_ids
+    let $word :=
+      $a_doc//sentence[@id = substring-before($id, "-")]
+             /word[@id = substring-after($id, "-")]
+    return
+    if ($word)
+    then
+      element wrapper { attribute id { $id }, $word }
+    else
+      element error { concat("Word ", $id, " not found") }
 
   return
-  if ($word)
-  then
   element words
   {
-    element word
-    {
-      attribute id { $a_id },
-      element form
+    for $w in $words
+    return
+    if (local-name($w) eq "wrapper")
+    then
+      let $word := $w/word
+      return
+      element word
       {
-        $word/../@xml:lang,
-        text { $word/@form }
-      },
-      element entry
-      {
-        element dict
+        attribute id { $w/@id },
+        element form
         {
-          element hdwd
-          {
-            $word/../@xml:lang,
-            text { $word/@lemma }
-          },
-          tbm:morph-element("pofs", "pos", $word/@postag)
+          $word/../@xml:lang,
+          text { $word/@form }
         },
-        element infl
+        element entry
         {
-          tbm:morph-element("pofs", "pos", $word/@postag),
-          tbm:morph-element("pers", "person", $word/@postag),
-          tbm:morph-element("num", "number", $word/@postag),
-          tbm:morph-element("tense", "tense", $word/@postag),
-          tbm:morph-element("mood", "mood", $word/@postag),
-          tbm:morph-element("voice", "voice", $word/@postag),
-          tbm:morph-element("gend", "gender", $word/@postag),
-          tbm:morph-element("case", "case", $word/@postag),
-          tbm:morph-element("comp", "degree", $word/@postag)
+          element dict
+          {
+            element hdwd
+            {
+              $word/../@xml:lang,
+              text { $word/@lemma }
+            },
+            tbm:morph-element("pofs", "pos", $word/@postag)
+          },
+          element infl
+          {
+            tbm:morph-element("pofs", "pos", $word/@postag),
+            tbm:morph-element("pers", "person", $word/@postag),
+            tbm:morph-element("num", "number", $word/@postag),
+            tbm:morph-element("tense", "tense", $word/@postag),
+            tbm:morph-element("mood", "mood", $word/@postag),
+            tbm:morph-element("voice", "voice", $word/@postag),
+            tbm:morph-element("gend", "gender", $word/@postag),
+            tbm:morph-element("case", "case", $word/@postag),
+            tbm:morph-element("comp", "degree", $word/@postag)
+          }
         }
       }
-    }
-  }
-  else
-  element error
-  {
-    concat("Word ", $a_id, " not found")
+     else $w
   }
 };
