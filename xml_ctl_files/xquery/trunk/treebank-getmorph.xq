@@ -47,4 +47,4 @@ return
   then
     element error { concat("Treebank for ", $base, " not available") }
   else
-a    tbm:get-morphology(doc($docname), $ids)
+    tbm:get-morphology(doc($docname), $ids)
