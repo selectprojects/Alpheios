@@ -211,24 +211,6 @@ declare function tbs:get-svg(
         )
       },
 
-      (: help :)
-      element g
-      {
-        attribute class { "help alpheios-ignore" },
-        element g
-        {
-          attribute class { "help-mousemove" },
-          element text { "Mouse over words in sentence or tree to explore
-                          structure and view morphology." }
-        },
-        element g
-        {
-          attribute class { "help-dblclick" },
-          element text { "Mouse over words in sentence or tree to explore
-                          structure; double-click to view morphology." }
-        }
-      },
-
       (: key :)
       element g
       {
