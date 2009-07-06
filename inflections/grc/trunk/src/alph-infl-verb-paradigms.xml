@@ -10650,8 +10650,6 @@
             <cell role="label" pofs="verb_participle" tense="aorist" voice="passive"/>
             <cell role="label" pofs="verb_participle" tense="aorist" voice="passive"/>
          </row>
-      </table>
-      <table>
          <row role="label">
             <cell role="label" pofs="verb_participle"/>
             <cell role="label" pofs="verb_participle"/>
