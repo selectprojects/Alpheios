@@ -221,6 +221,26 @@ let $corrections :=
       <lemma>διά</lemma>
       <meaning>between, through</meaning>
     </entry>
+    <entry>
+      <lemma>ἐμός</lemma>
+      <meaning>my, mine (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>ἡμέτερος</lemma>
+      <meaning>our, ours (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>σός</lemma>
+      <meaning>thy, thine (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>ὑμέτερος</lemma>
+      <meaning>your, yours (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>σφέτερος</lemma>
+      <meaning>their (also possessive pronoun)</meaning>
+    </entry>
 (:
     <entry>
       <lemma></lemma>

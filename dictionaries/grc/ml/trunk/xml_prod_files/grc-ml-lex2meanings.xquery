@@ -64,6 +64,26 @@ let $corrections :=
       <lemma>ἄλλος1</lemma>
       <meaning>another, one besides</meaning>
     </entry>
+    <entry>
+      <lemma>ἐμός</lemma>
+      <meaning>mine (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>ἡμέτερος</lemma>
+      <meaning>our (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>σός</lemma>
+      <meaning>thy, thine (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>ὑμέτερος</lemma>
+      <meaning>your, yours (also possessive pronoun)</meaning>
+    </entry>
+    <entry>
+      <lemma>σφέτερος</lemma>
+      <meaning>their own, their (also possessive pronoun)</meaning>
+    </entry>
 (:
     <entry>
       <lemma></lemma>
