@@ -23,38 +23,35 @@ import module namespace almt="http://alpheios.net/namespaces/alignment-match"
 
 (: extract wordlists for testing and verification :)
 
-let $root := "/sgml/proj10/prop-1.2"
+let $root := "/sgml/textproc/1999.01.0135/od1"
 let $align-name := concat($root, ".align.xml")
 let $align-doc := doc($align-name)
 let $l1-lang := data($align-doc//language[@lnum = "L1"]/@xml:lang)
 let $l2-lang := data($align-doc//language[@lnum = "L2"]/@xml:lang)
 
 (: get words from original text :)
-let $l1-text-name := concat($root, ".", $l1-lang, ".xml")
+let $l1-text-name := concat($root, ".pre.", $l1-lang, ".xml")
 let $l1-text-words := doc($l1-text-name)//wd/text()
 
 (: get words from aligned text :)
 let $l1-align-words :=
   for $word in $align-doc//*:wds[@lnum = "L1"]/*:w/*:text/text()
   where not(matches($word, "^[“”—&quot;‘’,.:;·'?!\[\](){}-]+$"))
-  return
-    $word
+  return $word
 let $l2-align-words :=
   for $word in $align-doc//*:wds[@lnum = "L2"]/*:w/*:text/text()
   where not(matches($word, "^[“”—&quot;‘’,.:;·'?!\[\](){}-]+$"))
-  return
-    $word
+  return $word
 
 (: get words from treebank :)
 let $tb-name := concat($root, ".tb.xml")
 let $tb-words :=
   for $word in doc(concat($root, ".tb.xml"))//word
   where not(matches($word/@form, "^[“”—&quot;‘’,.:;·'?!\[\](){}-]+$"))
-  return
-    $word/@form
+  return $word/@form
 
 (: get words from translation :)
-let $l2-text-name := concat($root, ".", $l2-lang, ".xml")
+let $l2-text-name := concat($root, ".pre.", $l2-lang, ".xml")
 let $l2-text-words := doc($l2-text-name)//wd/text()
 
 return
@@ -65,14 +62,14 @@ return
   count($tb-words),
 
   "&#x000A;Text/Alignment&#x000A;",
-  almt:match($l1-text-words, $l1-align-words),
+  almt:match($l1-text-words, $l1-align-words, true()),
   "&#x000A;Text/Treebank&#x000A;",
-  almt:match($l1-text-words, $tb-words),
+  almt:match($l1-text-words, $tb-words, true()),
 
   "&#x000A;&#x000A;Translation (", $l2-lang, ")",
   count($l2-text-words),
   count($l2-align-words),
 
   "&#x000A;Text/Alignment&#x000A;",
-  almt:match($l2-text-words, $l2-align-words)
+  almt:match($l2-text-words, $l2-align-words, true())
 )

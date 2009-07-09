@@ -279,14 +279,14 @@ let $tbWords :=
 let $fix1 :=
   local:fix-words($textWords,
                   $alignWords,
-                  almt:match(data($textWords/wd), data($alignWords)),
+                  almt:match(data($textWords/wd), data($alignWords), true()),
                   false())
 let $fix2 :=
   if ($treebanked)
   then
     local:fix-words($fix1,
                     $tbWords,
-                    almt:match(data($textWords/wd), data($tbWords)),
+                    almt:match(data($textWords/wd), data($tbWords), true()),
                     true())
   else $fix1
 

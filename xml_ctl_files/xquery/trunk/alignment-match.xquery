@@ -121,6 +121,7 @@ declare function almt:gen-sync-list(
   Parameters:
     $a_w1        first list of words
     $a_w2        second list of words
+    $a_ignore    whether to do case-insensitive compares
 
   Return value:
     sequence of <match> elements with attributes:
@@ -134,9 +135,10 @@ declare function almt:gen-sync-list(
  :)
 declare function almt:match(
   $a_w1 as xs:string*,
-  $a_w2 as xs:string*) as element()*
+  $a_w2 as xs:string*,
+  $a_ignore as xs:boolean) as element()*
 {
-  almt:do-match($a_w1, $a_w2, 1, 1)
+  almt:do-match($a_w1, $a_w2, $a_ignore, 1, 1)
 };
 
 (:
@@ -145,6 +147,7 @@ declare function almt:match(
   Parameters:
     $a_w1        first list of words
     $a_w2        second list of words
+    $a_ignore    whether to do case-insensitive compares
     $a_o1        offset in first list
     $a_o2        offset in second list
 
@@ -154,6 +157,7 @@ declare function almt:match(
 declare function almt:do-match(
   $a_w1 as xs:string*,
   $a_w2 as xs:string*,
+  $a_ignore as xs:boolean,
   $a_o1 as xs:integer,
   $a_o2 as xs:integer) as element()*
 {
@@ -165,7 +169,15 @@ declare function almt:do-match(
   let $firstMisMatch :=
   (
     for $i in (0 to $len)
-    where $a_w1[$a_o1 + $i] != $a_w2[$a_o2 + $i]
+    let $differ :=
+      if ($a_ignore)
+      then
+        if (lower-case($a_w1[$a_o1 + $i]) = lower-case($a_w2[$a_o2 + $i]))
+        then false() else true()
+      else
+        if ($a_w1[$a_o1 + $i] = $a_w2[$a_o2 + $i])
+      then false() else true()
+    where $differ
     return $i
   )[1]
   let $lastMatch :=
@@ -191,6 +203,7 @@ declare function almt:do-match(
     (: skip match and find next sync point :)
     let $sync := almt:sync($a_w1,
                            $a_w2,
+                           $a_ignore,
                            $a_o1 + $lastMatch,
                            $a_o2 + $lastMatch,
                            1)
@@ -230,6 +243,7 @@ declare function almt:do-match(
       (: continue matching from sync point :)
       almt:do-match($a_w1,
                     $a_w2,
+                    $a_ignore,
                     xs:integer($a_o1 + $lastMatch + $sync/@l1),
                     xs:integer($a_o2 + $lastMatch + $sync/@l2))
     )
@@ -256,6 +270,7 @@ declare function almt:do-match(
   Parameters:
     $a_w1        first list of words
     $a_w2        second list of words
+    $a_ignore    whether to do case-insensitive compares
     $a_o1        offset in first list
     $a_o2        offset in second list
     $a_isync     index into synchronization test point sequence
@@ -269,6 +284,7 @@ declare function almt:do-match(
 declare function almt:sync(
   $a_w1 as xs:string*,
   $a_w2 as xs:string*,
+  $a_ignore as xs:boolean,
   $a_o1 as xs:integer,
   $a_o2 as xs:integer,
   $a_isync as xs:integer) as element()?
@@ -302,8 +318,14 @@ declare function almt:sync(
     let $nmatches :=
       sum(for $i in (0 to $almt:s_match - 1)
           return
-            if ($a_w1[$a_o1 + $so1 + $i] = $a_w2[$a_o2 + $so2 + $i])
-            then 1 else 0
+            if ($a_ignore)
+            then
+              if (lower-case($a_w1[$a_o1 + $so1 + $i]) =
+                  lower-case($a_w2[$a_o2 + $so2 + $i]))
+              then 1 else 0
+            else
+              if ($a_w1[$a_o1 + $so1 + $i] = $a_w2[$a_o2 + $so2 + $i])
+              then 1 else 0
          )
     return
     (: if all words match :)
@@ -317,5 +339,5 @@ declare function almt:sync(
       }
     else
       (: try next sync point :)
-      almt:sync($a_w1, $a_w2, $a_o1, $a_o2, $a_isync + 1)
+      almt:sync($a_w1, $a_w2, $a_ignore, $a_o1, $a_o2, $a_isync + 1)
 };
