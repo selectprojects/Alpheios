@@ -158,11 +158,7 @@ Alph.LanguageToolSet.greek.prototype.loadStripper = function()
 {
     try
     {
-        this.stripper = new XSLTProcessor();
-        var xsltDoc = document.implementation.createDocument("", "", null);
-        xsltDoc.async = false;
-        xsltDoc.load("chrome://alpheios/skin/alpheios-unistrip.xsl");
-        this.stripper.importStylesheet(xsltDoc);
+        this.stripper = Alph.util.get_xslt_processor('alpheios','alpheios-unistrip.xsl');
     }
     catch (ex)
     {
@@ -431,7 +427,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
     if (a_infl_type.match(/^verb/))
     {
         a_params.xml_url = 'chrome://alpheios-greek/content/inflections/alph-infl-verb-paradigms.xml';
-        a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-paradigm.xsl';
+        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-paradigm.xsl');
         if (a_infl_type.match(/_all$/))
         {
             a_params.xslt_params.paradigm_id = 'all';
@@ -451,7 +447,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
     {
              a_params.xml_url =
             'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
-        a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
+        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-single-grouping.xsl');
         a_params.xslt_params.group4 = 'gend';
         a_params.xslt_params.match_form = true;
     }
@@ -472,17 +468,17 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         
         if (a_params.type == 'dem')
         {
-            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
+            a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-substantive.xsl');
             a_params.xslt_params.group4 = 'hdwd';
         }
         else if (a_params.type == 'refl' || a_params.type.match(/^pos/))
         {
-            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
+            a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-substantive.xsl');
             a_params.xslt_params.group4 = 'pers';
         }
         else if (a_params.type != '')
         {
-            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
+            a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-single-grouping.xsl');
             if (a_params.type == 'pers')
             {
                 a_params.xslt_params.group4 = 'pers';
@@ -499,8 +495,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xml_url = null;
             a_params.xml_obj =
                 (new DOMParser()).parseFromString("<infl-data/>","text/xml");
-            a_params.xslt_url =
-                "chrome://alpheios/skin/alph-infl-substantive.xsl";
+            a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-substantive.xsl');
             a_params.xslt_params.link_content="grammar:smyth:s325|See Smyth Sections 325-340 Pronouns"
         }
     }
@@ -518,7 +513,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
             a_params.xml_url =
                 'chrome://alpheios-greek/content/inflections/alph-infl-' +
                 a_infl_type + '-simpl.xml';
-            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-single-grouping.xsl';
+            a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-single-grouping.xsl');
             a_params.xslt_params.group4 = 'gend';
             a_params.title = 'alph-infl-title-'+a_infl_type;
         }
@@ -526,7 +521,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         {
             a_params.xml_url =
                 'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
-            a_params.xslt_url = 'chrome://alpheios/skin/alph-infl-substantive.xsl';
+            a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-substantive.xsl');
 
             if (a_params.order )
             {
@@ -551,8 +546,7 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         a_params.xml_url = null;
         a_params.xml_obj =
             (new DOMParser()).parseFromString("<infl-data/>","text/xml");
-        a_params.xslt_url =
-            "chrome://alpheios/skin/alph-infl-substantive.xsl";
+        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-substantive.xsl');
         a_params.xslt_params.link_content="grammar:smyth:s341|See Smyth Sections 341-346 Adverbs"
 
     }
@@ -689,44 +683,6 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_
 
     return ret_cells;
 
-}
-
-/**
- * Greek-specific implementation of {@link Alph.LanguageTool#handle_inflection_feature
- */
-Alph.LanguageToolSet.greek.prototype.handle_inflection_feature = function(a_event,a_elem)
-{
-    if (Alph.$(a_elem).hasClass('principal-parts'))
-    {
-        if (Alph.$(a_elem).next("#principal_parts").length == 1)
-        {
-            Alph.$(a_elem).next("#principal_parts").css('display','inline');
-        }
-        else
-        {
-            var lemmas = Alph.$(a_elem).attr('href').substring(1);
-            var pps_target =
-            {
-                xml_url: 'chrome://alpheios-greek/content/inflections/alph-infl-verb-pps.xml',
-                xslt_url: 'chrome://alpheios/skin/verb_principal_parts.xsl',
-                xslt_params: {lemma_list: lemmas}
-            }
-            var pps_html = Alph.util.transform(pps_target);
-            Alph.$("#principal_parts",pps_html).prepend('<div class="alph-close-button">&#160;</div><br/>');
-            var pps_node = 
-                    a_elem.ownerDocument.importNode(pps_html.getElementById("principal_parts"),true);
-           Alph.$(a_elem).after(pps_node);
-            Alph.$("#principal_parts .alph-close-button",a_elem.ownerDocument).bind("click",    
-                function()
-                {
-                    Alph.$(this).parent('#principal_parts').css("display","none");
-                    return false;
-                }
-            );
-
-
-        }        
-    }
 }
 
 /**
