@@ -419,12 +419,34 @@
           </xsl:call-template>
         </xsl:attribute>
         <xsl:apply-templates select="$in[1]/term"/>
-        <xsl:if test="$in[1]/pofs != $in[1]/../dict[1]/pofs">
-          <xsl:call-template name="parenthesize">
-            <xsl:with-param name="items" select="$in[1]/pofs"/>
-            <xsl:with-param name="span-name">pofs</xsl:with-param>
-            <xsl:with-param name="span-context" select="$in[1]/pofs"/>
-          </xsl:call-template>
+        <xsl:if test="($in[1]/pofs and
+                       not($in[1]/pofs = $in[1]/../dict[1]/pofs)) or
+                      ($in[1]/decl and
+                       not($in[1]/decl = $in[1]/../dict[1]/decl))">
+          <span>
+            <span class="alph-nopad alph-text">(</span>
+            <xsl:if test="$in[1]/pofs and
+                          not($in[1]/pofs = $in[1]/../dict[1]/pofs)">
+              <xsl:call-template name="item-plus-text-plus-context">
+                <xsl:with-param name="item" select="$in[1]/pofs"/>
+                <xsl:with-param name="name" select="'pofs'"/>
+                <xsl:with-param name="nopad" select="true()"/>
+              </xsl:call-template>
+              <xsl:if test="$in[1]/decl and
+                            not($in[1]/decl = $in[1]/../dict[1]/decl)">
+                <span class="alph-nopad alph-text">, </span>
+              </xsl:if>
+            </xsl:if>
+            <xsl:if test="$in[1]/decl and
+                          not($in[1]/decl = $in[1]/../dict[1]/decl)">
+              <xsl:call-template name="declension">
+                <xsl:with-param name="item" select="$in[1]/decl"/>
+                <xsl:with-param name="pofs" select="$in[1]/pofs"/>
+                <xsl:with-param name="nopad" select="true()"/>
+              </xsl:call-template>
+            </xsl:if>
+            <span class="alph-nopad alph-text">)</span>
+          </span>
         </xsl:if>
         <xsl:call-template name="parenthesize">
           <xsl:with-param name="items" select="$in[1]/dial"/>
@@ -791,6 +813,7 @@
   <xsl:template name="declension">
     <xsl:param name="item"/>
     <xsl:param name="pofs"/>
+    <xsl:param name="nopad" select="false()"/>
 
     <!-- append '_adjective' to context if adjective, else no suffix -->
     <xsl:variable name="context-suffix">
@@ -818,6 +841,7 @@
             <xsl:with-param name="item" select="exsl:node-set($first)"/>
             <xsl:with-param name="name" select="'decl'"/>
             <xsl:with-param name="context-suffix" select="$context-suffix"/>
+            <xsl:with-param name="nopad" select="$nopad"/>
           </xsl:call-template>
           <xsl:text>&amp; </xsl:text>
           <!-- create y -->
@@ -831,6 +855,7 @@
             <xsl:with-param name="name" select="'decl'"/>
             <xsl:with-param name="suffix" select="' declension'"/>
             <xsl:with-param name="context-suffix" select="$context-suffix"/>
+            <xsl:with-param name="nopad" select="$nopad"/>
           </xsl:call-template>
         </xsl:when>
         <xsl:otherwise>
@@ -839,6 +864,7 @@
             <xsl:with-param name="name" select="'decl'"/>
             <xsl:with-param name="suffix" select="' declension'"/>
             <xsl:with-param name="context-suffix" select="$context-suffix"/>
+            <xsl:with-param name="nopad" select="$nopad"/>
           </xsl:call-template>
         </xsl:otherwise>
       </xsl:choose>
