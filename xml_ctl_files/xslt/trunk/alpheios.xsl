@@ -419,34 +419,50 @@
           </xsl:call-template>
         </xsl:attribute>
         <xsl:apply-templates select="$in[1]/term"/>
-        <xsl:if test="($in[1]/pofs and
-                       not($in[1]/pofs = $in[1]/../dict[1]/pofs)) or
-                      ($in[1]/decl and
-                       not($in[1]/decl = $in[1]/../dict[1]/decl))">
-          <span>
-            <span class="alph-nopad alph-text">(</span>
-            <xsl:if test="$in[1]/pofs and
-                          not($in[1]/pofs = $in[1]/../dict[1]/pofs)">
-              <xsl:call-template name="item-plus-text-plus-context">
-                <xsl:with-param name="item" select="$in[1]/pofs"/>
-                <xsl:with-param name="name" select="'pofs'"/>
-                <xsl:with-param name="nopad" select="true()"/>
-              </xsl:call-template>
-              <xsl:if test="$in[1]/decl and
-                            not($in[1]/decl = $in[1]/../dict[1]/decl)">
-                <span class="alph-nopad alph-text">, </span>
-              </xsl:if>
+
+        <!-- get pofs and decl from dictionary entry (or first inflection) -->
+        <xsl:variable name="dict-pofs">
+          <xsl:choose>
+            <xsl:when test="$in[1]/../dict[1]/pofs">
+              <xsl:value-of select="$in[1]/../dict[1]/pofs"/>
+            </xsl:when>
+            <xsl:when test="$in[1]/../infl[1]/pofs">
+              <xsl:value-of select="$in[1]/../infl[1]/pofs"/>
+            </xsl:when>
+          </xsl:choose>
+        </xsl:variable>
+        <xsl:variable name="dict-decl">
+          <xsl:choose>
+            <xsl:when test="$in[1]/../dict[1]/decl">
+              <xsl:value-of select="$in[1]/../dict[1]/decl"/>
+            </xsl:when>
+            <xsl:when test="$in[1]/../infl[1]/decl">
+              <xsl:value-of select="$in[1]/../infl[1]/decl"/>
+            </xsl:when>
+          </xsl:choose>
+        </xsl:variable>
+
+        <xsl:if test="($in[1]/pofs and not($in[1]/pofs = $dict-pofs)) or
+                      ($in[1]/decl and not($in[1]/decl = $dict-decl))">
+          <span class="alph-nopad alph-formatting">(</span>
+          <xsl:if test="$in[1]/pofs and not($in[1]/pofs = $dict-pofs)">
+            <xsl:call-template name="item-plus-text-plus-context">
+              <xsl:with-param name="item" select="$in[1]/pofs"/>
+              <xsl:with-param name="name" select="'pofs'"/>
+              <xsl:with-param name="nopad" select="true()"/>
+            </xsl:call-template>
+            <xsl:if test="$in[1]/decl and not($in[1]/decl = $dict-decl)">
+              <span class="alph-nopad alph-formatting">, </span>
             </xsl:if>
-            <xsl:if test="$in[1]/decl and
-                          not($in[1]/decl = $in[1]/../dict[1]/decl)">
-              <xsl:call-template name="declension">
-                <xsl:with-param name="item" select="$in[1]/decl"/>
-                <xsl:with-param name="pofs" select="$in[1]/pofs"/>
-                <xsl:with-param name="nopad" select="true()"/>
-              </xsl:call-template>
-            </xsl:if>
-            <span class="alph-nopad alph-text">)</span>
-          </span>
+          </xsl:if>
+          <xsl:if test="$in[1]/decl and not($in[1]/decl = $dict-decl)">
+            <xsl:call-template name="declension">
+              <xsl:with-param name="item" select="$in[1]/decl"/>
+              <xsl:with-param name="pofs" select="$in[1]/pofs"/>
+              <xsl:with-param name="nopad" select="true()"/>
+            </xsl:call-template>
+          </xsl:if>
+          <span class="alph-formatting">)</span>
         </xsl:if>
         <xsl:call-template name="parenthesize">
           <xsl:with-param name="items" select="$in[1]/dial"/>
