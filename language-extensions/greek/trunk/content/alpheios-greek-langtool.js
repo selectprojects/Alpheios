@@ -725,7 +725,7 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
                 
                 // build dictionary source element
                 var srcElt = '<div class="alph-dict-source">' +
-                    lang_obj.get_string('dict.' + lex[i] + '.copyright');
+                    lang_obj.get_string('dict.' + lex[i] + '.copyright') +
                     '</div>';
                 Alph.$(".alph-dict", this).append(srcElt);
 
