@@ -716,8 +716,18 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
             // if we found definition
             if (defReturn[1])
             {
+                // if extra info occurs in meaning, flag it with <span>
+                defReturn[1] =
+                    defReturn[1].replace(
+                        '(also possessive pronoun)',
+                        '<span class="alph-mean-extra">' +
+                          '(also possessive pronoun)' +
+                        '</span>');
+
                 // build meaning element
-                var meanElt = '<div class="alph-mean">' + defReturn[1] + '</div>';
+                var meanElt = '<div class="alph-mean">' +
+                                defReturn[1] +
+                              '</div>';
 
                 // insert meaning into document
                 Alph.util.log("adding " + meanElt);
