@@ -12,7 +12,7 @@ pref("extensions.alpheios.greek.popuptrigger",'dblclick');
 pref("extensions.alpheios.greek.url.grammar",
      "chrome://alpheios-greek/content/alph-greek-grammar.xul");
 pref("extensions.alpheios.greek.grammar.hotlinks",
-     "alph-decl,alph-pofs,alph-mood,alph-case,alph-voice,alph-pers,alph-tense");
+     "alph-decl,alph-pofs,alph-mood,alph-case,alph-voice,alph-pers,alph-tense,alph-pofs-extra");
 pref("extensions.alpheios.greek.features.alpheios-grammar",true);
 pref("extensions.alpheios.greek.features.alpheios-inflect",true);
 pref("extensions.alpheios.greek.context_handler","grammarContext");
