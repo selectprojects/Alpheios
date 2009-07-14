@@ -14,371 +14,371 @@
     <order-item attname="pers" order="2">2nd plural</order-item>
     <order-item attname="type" order="2">regular</order-item>
     <order-item attname="type" order="3">irregular</order-item>
-    <order-item attname="num" order="1">singular</order-item>
-    <order-item attname="num" order="2">dual</order-item>
-    <order-item attname="num" order="3">plural</order-item>
+    <order-item attname="objnum" order="1">singular</order-item>
+    <order-item attname="objnum" order="2">dual</order-item>
+    <order-item attname="objnum" order="3">plural</order-item>
     <order-item attname="gend" order="2">feminine</order-item>
     <order-item attname="gend" order="1">masculine</order-item>
     <order-item attname="gend" order="3">neuter</order-item>
   </order-table>
   <infl-endings>
     <infl-ending-set
-      pers="2nd plural" num="dual"   case="accusative" gend="feminine">
+      pers="2nd plural" num="plural" objnum="dual"   case="accusative" gend="feminine">
         <infl-ending
                type="primary regular">ὑ̄μέτερα</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="dual"   case="dative" gend="feminine">
+      pers="2nd plural" num="plural" objnum="dual"   case="dative" gend="feminine">
         <infl-ending
                type="primary regular">ὑ̄μέτεραιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="dual"   case="genitive" gend="feminine">
+      pers="2nd plural" num="plural" objnum="dual"   case="genitive" gend="feminine">
         <infl-ending
                type="primary regular">ὑ̄μέτεραιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="dual"   case="nominative" gend="feminine">
+      pers="2nd plural" num="plural" objnum="dual"   case="nominative" gend="feminine">
         <infl-ending
                type="primary regular">ὑ̄μέτερα</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="dual"   case="accusative" gend="feminine">
+      pers="2nd singular" num="singular" objnum="dual"   case="accusative" gend="feminine">
         <infl-ending
                type="primary regular">σά</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="dual"   case="dative" gend="feminine">
+      pers="2nd singular" num="singular" objnum="dual"   case="dative" gend="feminine">
         <infl-ending
                type="primary regular">σαῖν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="dual"   case="genitive" gend="feminine">
+      pers="2nd singular" num="singular" objnum="dual"   case="genitive" gend="feminine">
         <infl-ending
                type="primary regular">σαῖν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="dual"   case="nominative" gend="feminine">
+      pers="2nd singular" num="singular" objnum="dual"   case="nominative" gend="feminine">
         <infl-ending
                type="primary regular">σά</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="dual"   case="accusative" gend="masculine">
+      pers="2nd plural" num="plural" objnum="dual"   case="accusative" gend="masculine">
         <infl-ending
                type="primary regular">ὑ̄μέτερω</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="dual"   case="dative" gend="masculine">
+      pers="2nd plural" num="plural" objnum="dual"   case="dative" gend="masculine">
         <infl-ending
                type="primary regular">ὑ̄μέτεροιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="dual"   case="genitive" gend="masculine">
+      pers="2nd plural" num="plural" objnum="dual"   case="genitive" gend="masculine">
         <infl-ending
                type="primary regular">ὑ̄μέτεροιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="dual"   case="nominative" gend="masculine">
+      pers="2nd plural" num="plural" objnum="dual"   case="nominative" gend="masculine">
         <infl-ending
                type="primary regular">ὑ̄μέτερω</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="dual"   case="accusative" gend="masculine">
+      pers="2nd singular" num="singular" objnum="dual"   case="accusative" gend="masculine">
         <infl-ending
                type="primary regular">σώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="dual"   case="dative" gend="masculine">
+      pers="2nd singular" num="singular" objnum="dual"   case="dative" gend="masculine">
         <infl-ending
                type="primary regular">σοῖν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="dual"   case="genitive" gend="masculine">
+      pers="2nd singular" num="singular" objnum="dual"   case="genitive" gend="masculine">
         <infl-ending
                type="primary regular">σοῖν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="dual"   case="nominative" gend="masculine">
+      pers="2nd singular" num="singular" objnum="dual"   case="nominative" gend="masculine">
         <infl-ending
                type="primary regular">σώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="dual"   case="accusative" gend="neuter">
+      pers="2nd plural" num="plural" objnum="dual"   case="accusative" gend="neuter">
         <infl-ending
                type="primary regular">ὑ̄μέτερω</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="dual"   case="dative" gend="neuter">
+      pers="2nd plural" num="plural" objnum="dual"   case="dative" gend="neuter">
         <infl-ending
                type="primary regular">ὑ̄μέτεροιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="dual"   case="genitive" gend="neuter">
+      pers="2nd plural" num="plural" objnum="dual"   case="genitive" gend="neuter">
         <infl-ending
                type="primary regular">ὑ̄μέτεροιν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="dual"   case="nominative" gend="neuter">
+      pers="2nd plural" num="plural" objnum="dual"   case="nominative" gend="neuter">
         <infl-ending
                type="primary regular">ὑ̄μέτερω</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="dual"   case="accusative" gend="neuter">
+      pers="2nd singular" num="singular" objnum="dual"   case="accusative" gend="neuter">
         <infl-ending
                type="primary regular">σώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="dual"   case="dative" gend="neuter">
+      pers="2nd singular" num="singular" objnum="dual"   case="dative" gend="neuter">
         <infl-ending
                type="primary regular">σοῖν    </infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="dual"   case="genitive" gend="neuter">
+      pers="2nd singular" num="singular" objnum="dual"   case="genitive" gend="neuter">
         <infl-ending
                type="primary regular">σοῖν    </infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="dual"   case="nominative" gend="neuter">
+      pers="2nd singular" num="singular" objnum="dual"   case="nominative" gend="neuter">
         <infl-ending
                type="primary regular">σώ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="plural"   case="accusative" gend="feminine">
+      pers="2nd plural" num="plural" objnum="plural"   case="accusative" gend="feminine">
         <infl-ending
                type="primary regular">ὑ̄μέτερας</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="plural"   case="dative" gend="feminine">
+      pers="2nd plural" num="plural" objnum="plural"   case="dative" gend="feminine">
         <infl-ending
                type="primary regular">ὑ̄μέτεραις</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="plural"   case="genitive" gend="feminine">
+      pers="2nd plural" num="plural" objnum="plural"   case="genitive" gend="feminine">
         <infl-ending
                type="primary regular">ὑ̄μέτερων</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="plural"   case="nominative" gend="feminine">
+      pers="2nd plural" num="plural" objnum="plural"   case="nominative" gend="feminine">
         <infl-ending
                type="primary regular">ὑ̄μέτεραι</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="plural"   case="accusative" gend="feminine">
+      pers="2nd singular" num="singular" objnum="plural"   case="accusative" gend="feminine">
         <infl-ending
                type="primary regular">σά̄ς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="plural"   case="dative" gend="feminine">
+      pers="2nd singular" num="singular" objnum="plural"   case="dative" gend="feminine">
         <infl-ending
                type="primary regular">σαῖς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="plural"   case="genitive" gend="feminine">
+      pers="2nd singular" num="singular" objnum="plural"   case="genitive" gend="feminine">
         <infl-ending
                type="primary regular">σῶν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="plural"   case="nominative" gend="feminine">
+      pers="2nd singular" num="singular" objnum="plural"   case="nominative" gend="feminine">
         <infl-ending
                type="primary regular">σαί</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="plural"   case="accusative" gend="masculine">
+      pers="2nd plural" num="plural" objnum="plural"   case="accusative" gend="masculine">
         <infl-ending
                type="primary regular">ὑ̄μέτερους</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="plural"   case="dative" gend="masculine">
+      pers="2nd plural" num="plural" objnum="plural"   case="dative" gend="masculine">
         <infl-ending
                type="primary regular">ὑ̄μέτεροις</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="plural"   case="genitive" gend="masculine">
+      pers="2nd plural" num="plural" objnum="plural"   case="genitive" gend="masculine">
         <infl-ending
                type="primary regular">ὑ̄μέτερων</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="plural"   case="nominative" gend="masculine">
+      pers="2nd plural" num="plural" objnum="plural"   case="nominative" gend="masculine">
         <infl-ending
                type="primary regular">ὑ̄μέτεροι</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="plural"   case="accusative" gend="masculine">
+      pers="2nd singular" num="singular" objnum="plural"   case="accusative" gend="masculine">
         <infl-ending
                type="primary regular">σούς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="plural"   case="dative" gend="masculine">
+      pers="2nd singular" num="singular" objnum="plural"   case="dative" gend="masculine">
         <infl-ending
                type="primary regular">σοῖς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="plural"   case="genitive" gend="masculine">
+      pers="2nd singular" num="singular" objnum="plural"   case="genitive" gend="masculine">
         <infl-ending
                type="primary regular">σῶν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="plural"   case="nominative" gend="masculine">
+      pers="2nd singular" num="singular" objnum="plural"   case="nominative" gend="masculine">
         <infl-ending
                type="primary regular">σοί</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="plural"   case="accusative" gend="neuter">
+      pers="2nd plural" num="plural" objnum="plural"   case="accusative" gend="neuter">
         <infl-ending
                type="primary regular">ὑ̄μέτερα</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="plural"   case="dative" gend="neuter">
+      pers="2nd plural" num="plural" objnum="plural"   case="dative" gend="neuter">
         <infl-ending
                type="primary regular">ὑ̄μέτεροις</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="plural"   case="genitive" gend="neuter">
+      pers="2nd plural" num="plural" objnum="plural"   case="genitive" gend="neuter">
         <infl-ending
                type="primary regular">ὑ̄μέτερων</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="plural"   case="nominative" gend="neuter">
+      pers="2nd plural" num="plural" objnum="plural"   case="nominative" gend="neuter">
         <infl-ending
                type="primary regular">ὑ̄μέτερα</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="plural"   case="accusative" gend="neuter">
+      pers="2nd singular" num="singular" objnum="plural"   case="accusative" gend="neuter">
         <infl-ending
                type="primary regular">σά</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="plural"   case="dative" gend="neuter">
+      pers="2nd singular" num="singular" objnum="plural"   case="dative" gend="neuter">
         <infl-ending
                type="primary regular">σοῖς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="plural"   case="genitive" gend="neuter">
+      pers="2nd singular" num="singular" objnum="plural"   case="genitive" gend="neuter">
         <infl-ending
                type="primary regular">σῶν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="plural"   case="nominative" gend="neuter">
+      pers="2nd singular" num="singular" objnum="plural"   case="nominative" gend="neuter">
         <infl-ending
                type="primary regular">σά</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="singular"   case="accusative" gend="feminine">
+      pers="2nd plural" num="plural" objnum="singular"   case="accusative" gend="feminine">
         <infl-ending
                type="primary regular">ὑ̄μέτεραν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="singular"   case="dative" gend="feminine">
+      pers="2nd plural" num="plural" objnum="singular"   case="dative" gend="feminine">
         <infl-ending
                type="primary regular">ὑ̄μέτερᾳ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="singular"   case="genitive" gend="feminine">
+      pers="2nd plural" num="plural" objnum="singular"   case="genitive" gend="feminine">
         <infl-ending
                type="primary regular">ὑ̄μέτερας</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="singular"   case="nominative" gend="feminine">
+      pers="2nd plural" num="plural" objnum="singular"   case="nominative" gend="feminine">
         <infl-ending
                type="primary regular">ὑ̄μέτερα</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="singular"   case="accusative" gend="feminine">
+      pers="2nd singular" num="singular" objnum="singular"   case="accusative" gend="feminine">
         <infl-ending
                type="primary regular">σήν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="singular"   case="dative" gend="feminine">
+      pers="2nd singular" num="singular" objnum="singular"   case="dative" gend="feminine">
         <infl-ending
                type="primary regular">σῇ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="singular"   case="genitive" gend="feminine">
+      pers="2nd singular" num="singular" objnum="singular"   case="genitive" gend="feminine">
         <infl-ending
                type="primary regular">σῆς</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="singular"   case="nominative" gend="feminine">
+      pers="2nd singular" num="singular" objnum="singular"   case="nominative" gend="feminine">
         <infl-ending
                type="primary regular">σή</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="singular"   case="accusative" gend="masculine">
+      pers="2nd plural" num="plural" objnum="singular"   case="accusative" gend="masculine">
         <infl-ending
                type="primary regular">ὑ̄μέτερον</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="singular"   case="dative" gend="masculine">
+      pers="2nd plural" num="plural" objnum="singular"   case="dative" gend="masculine">
         <infl-ending
                type="primary regular">ὑ̄μέτερῳ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="singular"   case="genitive" gend="masculine">
+      pers="2nd plural" num="plural" objnum="singular"   case="genitive" gend="masculine">
         <infl-ending
                type="primary regular">ὑ̄μέτερου</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="singular"   case="nominative" gend="masculine">
+      pers="2nd plural" num="plural" objnum="singular"   case="nominative" gend="masculine">
         <infl-ending
                type="primary regular">ὑ̄μέτερος</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="singular"   case="accusative" gend="masculine">
+      pers="2nd singular" num="singular" objnum="singular"   case="accusative" gend="masculine">
         <infl-ending
                type="primary regular">σόν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="singular"   case="dative" gend="masculine">
+      pers="2nd singular" num="singular" objnum="singular"   case="dative" gend="masculine">
         <infl-ending
                type="primary regular">σῷ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="singular"   case="genitive" gend="masculine">
+      pers="2nd singular" num="singular" objnum="singular"   case="genitive" gend="masculine">
         <infl-ending
                type="primary regular">σοῦ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="singular"   case="nominative" gend="masculine">
+      pers="2nd singular" num="singular" objnum="singular"   case="nominative" gend="masculine">
         <infl-ending
                type="primary regular">σός</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="singular"   case="accusative" gend="neuter">
+      pers="2nd plural" num="plural" objnum="singular"   case="accusative" gend="neuter">
         <infl-ending
                type="primary regular">ὑ̄μέτερον</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="singular"   case="dative" gend="neuter">
+      pers="2nd plural" num="plural" objnum="singular"   case="dative" gend="neuter">
         <infl-ending
                type="primary regular">ὑ̄μέτερῳ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="singular"   case="genitive" gend="neuter">
+      pers="2nd plural" num="plural" objnum="singular"   case="genitive" gend="neuter">
         <infl-ending
                type="primary regular">ὑ̄μέτερου</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd plural" num="singular"   case="nominative" gend="neuter">
+      pers="2nd plural" num="plural" objnum="singular"   case="nominative" gend="neuter">
         <infl-ending
                type="primary regular">ὑ̄μέτερον</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="singular"   case="accusative" gend="neuter">
+      pers="2nd singular" num="singular" objnum="singular"   case="accusative" gend="neuter">
         <infl-ending
                type="primary regular">σόν</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="singular"   case="dative" gend="neuter">
+      pers="2nd singular" num="singular" objnum="singular"   case="dative" gend="neuter">
         <infl-ending
                type="primary regular">σῷ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="singular"   case="genitive" gend="neuter">
+      pers="2nd singular" num="singular" objnum="singular"   case="genitive" gend="neuter">
         <infl-ending
                type="primary regular">σοῦ</infl-ending>
     </infl-ending-set>
     <infl-ending-set
-      pers="2nd singular" num="singular"   case="nominative" gend="neuter">
+      pers="2nd singular" num="singular" objnum="singular"   case="nominative" gend="neuter">
         <infl-ending
                type="primary regular">σόν  </infl-ending>
     </infl-ending-set>
