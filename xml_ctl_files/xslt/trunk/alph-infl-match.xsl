@@ -158,7 +158,14 @@
                                  or
                                  contains($match_decl,
                                  concat('|',@context,'|'))
-                            )])">
+                            )])
+                            or 
+                            ($filtered_data//span[contains(@class,'alph-decl')
+                            and (contains($match_decl,
+                            concat('|',substring-before(@context,'_'),'|')) 
+                            or
+                            contains($match_decl,
+                            concat('|',@context,'|')))])">
                         <xsl:value-of select="count($filtered_data//span[contains(@class,'alph-case')
                             and ($match_case = '' or contains($match_case,concat('|',substring-before(@context,'-'),'|')))
                             and (@alph-pofs = $match_pofs)
