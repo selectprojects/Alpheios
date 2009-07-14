@@ -46,6 +46,56 @@ import module namespace tbu="http://alpheios.net/namespaces/treebank-util"
 declare namespace xlink="http://www.w3.org/1999/xlink";
 
 (:
+  Function to fix up words in a sentence
+
+  Parameters:
+    $a_words      words in sentence
+
+  Return value:
+    word set with extra words added for ellipses
+ :)
+declare function tbs:fix-words(
+  $a_words as element()*) as element()*
+{
+  for $word in $a_words
+  return
+    if (matches($word/@relation, "_ExD\d+_"))
+    then
+      let $rel1 := replace($word/@relation, "^(.*?)_ExD(\d+)_(.*)$", "$1")
+      let $num  := replace($word/@relation, "^(.*?)_ExD(\d+)_(.*)$", "$2")
+      let $rel2 := replace($word/@relation, "^(.*?)_ExD(\d+)_(.*)$", "$3")
+      return
+      (
+        (: point this word at synthetic node :)
+        element word
+        {
+          $word/@id,
+          $word/@hide,
+          $word/@form,
+          $word/@lemma,
+          $word/@postag,
+          attribute head { concat($word/@head, "-", $num) },
+          attribute relation { $rel1 }
+        },
+        (: create synthetic node and fix it :)
+        tbs:fix-words(
+          element word
+          {
+            attribute id { concat($word/@head, "-", $num) },
+            attribute hide {},
+            attribute form { concat("[", $num, "]") },
+            attribute lemma {},
+            attribute postag { "---------" },
+            attribute head { $word/@head },
+            attribute relation { $rel2 }
+          }
+        )
+      )
+    else
+      $word
+};
+
+(:
   Function to process set of words
 
   Parameters:
@@ -105,11 +155,15 @@ declare function tbs:word-set(
     return
     (
       (: label for arc to child word :)
-      element text
+      element g
       {
         attribute class { "arc-label", "alpheios-ignore" },
-        attribute idref { concat($a_sentence/@id, "-", $child/@id) },
-        text { tbu:relation-to-display($relation) },
+        element text
+        {
+          attribute class { "arc-label-text" },
+          attribute idref { concat($a_sentence/@id, "-", $child/@id) },
+          text { tbu:relation-to-display($relation) }
+        },
 
         let $helps := tbu:relation-to-help($relation)
         for $help in $helps
@@ -159,6 +213,24 @@ declare function tbs:get-svg(
   (: get sentence and create synthetic root :)
   let $doc := doc($a_docname)
   let $sentence := $doc//sentence[@id = $a_id]
+  let $sentence :=
+    if ($sentence)
+    then
+      element sentence
+      {
+        $sentence/@*,
+        let $words := tbs:fix-words($sentence/*:word)
+        return
+        (: remove duplicate words :)
+        for $word at $i in $words
+        return
+          if (every $w in $words[position() < $i] satisfies
+              not(deep-equal($w, $word)))
+          then
+            $word
+          else ()
+      }
+    else ()
   let $rootword :=
     element word
     {
@@ -170,13 +242,6 @@ declare function tbs:get-svg(
   <svg xmlns="http://www.w3.org/2000/svg"
        xmlns:xlink="http://www.w3.org/1999/xlink">
   {
-    element script
-    {
-      attribute language { "javascript" },
-      attribute type { "text/javascript" },
-      attribute src { "../script/alph-align-list.js" }
-    },
-
     (: if sentence found :)
     if ($sentence)
     then
@@ -193,7 +258,7 @@ declare function tbs:get-svg(
       element g
       {
         attribute class { "text" },
-        for $word in $sentence/*:word
+        for $word in $sentence/*:word[not(@hide)]
         return
         (
           element rect
@@ -255,7 +320,9 @@ declare function tbs:get-svg(
           element rect {},
           element text {},
           element rect {},
-          element text { "LABEL on arc = dependency relation" }
+          element text { "LABEL on arc = dependency relation" },
+          element rect {},
+          element text { "[0], [1], etc. = implied (elided) words" }
         }
       }
     )
