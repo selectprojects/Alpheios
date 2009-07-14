@@ -857,7 +857,6 @@
             <xsl:with-param name="item" select="exsl:node-set($first)"/>
             <xsl:with-param name="name" select="'decl'"/>
             <xsl:with-param name="context-suffix" select="$context-suffix"/>
-            <xsl:with-param name="nopad" select="$nopad"/>
           </xsl:call-template>
           <xsl:text>&amp; </xsl:text>
           <!-- create y -->

@@ -726,7 +726,8 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
                         '(also possessive pronoun)',
                         '<span class="alph-mean-extra">' +
                           '(also possessive ' +
-                          '<span class="alph-pofs-extra" context="pronoun">' +
+                          '<span class="alph-nopad alph-pofs-extra" ' +
+                            'context="pronoun">' +
                             'pronoun' +
                           '</span>)' +
                         '</span>');
