@@ -28,22 +28,25 @@ ul.toc {
 
 li.toc {
     margin-left: .5em; 
-    margin-left: .5em; 
+    margin-left: 1em; 
     text-align: left;
     text-indent: -.5em;
+    position: relative;
 }
 .toc-widget {
-    float: left;
+    position: absolute;
+    left: -1.5em;
+    top: 5px;
     cursor: pointer;
+    width: 9px;
+    height: 9px;
 }
 
-.toc-closed:before {
-     content: "[+] ";
-     color: blue;
+.toc-closed {
+    background: url("chrome://alpheios/skin/twisty-clsd.png") no-repeat;
 }
-.toc-open:before {
-     content: "[-] ";
-     color: blue;
+.toc-open {
+     background: url("chrome://alpheios/skin/twisty-open.png") no-repeat;
 }
 
 .toc {
