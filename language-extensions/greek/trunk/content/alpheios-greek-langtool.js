@@ -472,6 +472,10 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
         {
             a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-substantive.xsl');
             a_params.xslt_params.group4 = 'pers';
+            if (a_params.type.match(/^pos/))
+            {
+                a_params.xslt_params.group1 = 'objnum';
+            }
         }
         else if (a_params.type != '')
         {
