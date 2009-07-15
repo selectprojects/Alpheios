@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:annotation>
+        <xs:documentation>
+            Alpheios Schema for Declension of Pronouns.
+            Extends inflections.xsd.
+            Contains declined forms and form-endings identified by pronoun class
+            and headword set.
+        </xs:documentation>
+    </xs:annotation>
+    
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+        schemaLocation="xml-1998.xsd"/>
+    
+    <xs:include schemaLocation="inflections.xsd"></xs:include>
+
+    <xs:element name="infl-data">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="order-table" minOccurs="0" maxOccurs="1" type="OrderTableType"/>
+                <xs:element name="pronoun-data-set" type="PronounDataSetType" minOccurs="0" maxOccurs="unbounded"/>
+                <xs:element name="footnotes" maxOccurs="1" minOccurs="0" type="FootnoteTableType"/>
+            </xs:sequence>
+            <xs:attribute ref="xml:lang"/>
+        </xs:complexType>
+    </xs:element>
+    <xs:complexType name="PronounDataSetType">
+        <xs:annotation>
+            <xs:documentation>
+                Holds a set of pronoun forms or endings for a specific pronoun or pronouns
+                belonging to the pronoun class identified in the class attribute for this
+                data set.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="hdwd-set" type="HdwdSetType" minOccurs="0" maxOccurs="1"/>
+            <xs:element name="infl-form-set" type="InflectionSetType" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="class" type="PronounClassEnumeration"/>
+        <xs:attribute name="footnote" type="xs:IDREF"/>
+    </xs:complexType>
+      
+    <xs:simpleType name="PronounClassEnumeration">
+        <xs:annotation>
+            <xs:documentation>
+                List of Pronoun classes or types from 
+                http://en.wikipedia.org/wiki/Pronoun#Types_of_pronouns
+            </xs:documentation>
+        </xs:annotation>
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="personal"/>
+            <xs:enumeration value="possessive"/>
+            <xs:enumeration value="demonstrative"/>
+            <xs:enumeration value="indefinite"/>
+            <xs:enumeration value="relative"/>
+            <xs:enumeration value="interrogative"/>
+            <xs:enumeration value="subjective"/>
+            <xs:enumeration value="inclusive"/>
+            <xs:enumeration value="exclusive"/>
+            <xs:enumeration value="intensive"/>
+            <xs:enumeration value="objective"/>
+            <xs:enumeration value="direct object"/>
+            <xs:enumeration value="indirect object"/>
+            <xs:enumeration value="reflexive"/>
+            <xs:enumeration value="reciprocal"/>
+            <xs:enumeration value="prepositional"/>
+            <xs:enumeration value="disjunctive"/>
+            <xs:enumeration value="dummy"/>
+            <xs:enumeration value="weak"/>
+            <xs:enumeration value="distributive"/>
+            <xs:enumeration value="negative"/>
+            <xs:enumeration value="indefinite relative"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+</xs:schema>
