@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="alpheios repository" default="deploy" basedir=".">
+    
+    <property name="svnant.lib.dir" value="/svnant-1.0.0"/>
+    <property name="lib.dir" value="libs"/>
+    <property name="build.dir" value="build"/>
+    <property name="repository.db" value="eXist-1.3.0"/>
+    <property name="server.dir" value="${lib.dir}/${repository.db}"/>
+    
+    <taskdef resource="net/sf/antcontrib/antlib.xml"/>
+
+    <path id="project.classpath">
+        <fileset dir="${svnant.lib.dir}" includes="**/*.jar"/>
+    </path>
+    
+    <path id="classpath.core">
+        <fileset dir="${server.dir}/lib/core">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement path="${server.dir}/exist.jar"/>
+        <pathelement path="${server.dir}/exist-optional.jar"/>
+    </path>
+    
+    <typedef resource="org/exist/ant/antlib.xml" uri="http://exist-db.org/ant">  
+        <classpath refid="classpath.core"/>  
+    </typedef>
+    
+    <taskdef resource="svntask.properties" classpathref="project.classpath"/>
+    
+    <!-- timestamp for this build -->
+	<tstamp>
+	   <format property="build.time" pattern="yyyyMMddHHmmss"/>
+	   <format property="build.date" pattern="yyyyMMdd"/>
+	</tstamp>
+
+    <target name="deploy" depends="clean,get-resources,store">
+    </target>
+
+	<!-- clean the local build directories -->
+	<target name="clean">
+		<echo>Deleting directory ${build.dir}</echo>
+	   <delete dir="${build.dir}"/>
+	</target>
+	
+	<!-- store the files to the repositories -->
+	<target name="store"  xmlns:xmldb="http://exist-db.org/ant">
+		<!-- iterate through hosts defined for the build via the deploy.hosts property -->
+	    <for list="${deploy.hosts}" param="host">
+	    	<sequential>
+	    		<!-- iterate through the projects defined for the build via the svn.projects property -->
+	    		<for list="${svn.projects}" param="type">
+		            <sequential>
+		            	<!-- if a repository collection is defined for this project, store the files to the repository -->
+		                <if>
+		                   <isset property="svn.projects.@{type}.repository.collection"/>
+		                    <then>
+		                    	   <!-- if the collection exists, backup it up before we store the updated/new files -->
+		                    	   <if>  
+		                    	       <xdb:exist xmlns:xdb="http://exist-db.org/ant"  
+		                    	            uri="xmldb:exist://localhost:8080/exist/xmlrpc/db/${svn.projects.@{type}.repository.collection}"/>  
+		                    	       <then>
+		                    	    	   <xdb:backup xmlns:xdb="http://exist-db.org/ant"  
+		                    	    	    uri="xmldb:exist://${host.@{host}.url}/exist/xmlrpc/db/${svn.projects.@{type}.repository.collection}"  
+		                    	    	    dir="${backup.dir}/@{host}/@{type}/${build.time}" user="${host.@{host}.user}" password="${host.@{host}.passwd}"/>
+		                    	   	   </then>
+		                    	   	</if>
+	                                <xmldb:store 
+	                                	uri="xmldb:exist://${host.@{host}.url}/exist/xmlrpc/db/${svn.projects.@{type}.repository.collection}"
+	                                    user="${host.@{host}.user}" password="${host.@{host}.passwd}"
+	                                    createcollection="true">                                 
+	                                    <fileset dir="${build.dir}/@{type}" includes="${svn.projects.@{type}.filelist}">
+	                                          <include name="${svn.projects.@{type}.include}"/>
+	                                    	  <exclude name="${svn.projects.@{type}.exclude}"/>
+	                                      </fileset>
+	                                </xmldb:store>
+		                    </then>
+		                    <else>
+		                        <echo>No repository collection set for svn.projects.@{type}</echo>
+		                    </else>
+		                </if>
+		            </sequential>
+		        </for>
+	        </sequential>
+	    </for>
+		
+	</target>
+    
+	<!-- get repository files from svn -->
+    <target name="get-resources">
+    	<!-- iterate through the list of projects defined for the biuld -->
+        <for list="${svn.projects}" param="type">
+            <sequential>
+            	<echo>Get resources for @{type}</echo>
+            	<!-- if a project-specific branch was defined, use it, otherwise use the global build branch -->
+                <if>
+                    <isset property="${svn.projects.@{type}.branch}" />
+                    <then><property name="branch" value="${svn.projects.@{type}.branch}"/></then>
+                    <else><property name="branch" value="${svn.branch}"/></else>
+                </if>
+            	<if>
+            	   <isset property="svn.projects.@{type}.dir"/>
+            		<then>
+            			<echo>Export for @{type}</echo>
+                		<for list="${svn.projects.@{type}.dir}" param="dir">
+                		    <sequential>
+                			    <svn>
+                    	            <export 
+                    	        	    srcUrl="${svn.url}/@{dir}/${branch}"
+                    	                destPath="${build.dir}/@{type}"
+                	                    force="true"/>
+                	            </svn>
+            		       </sequential>
+            		   </for>
+            	    </then>
+            		<else>
+            			<echo>No SVN directory set for svn.projects.@{type}</echo>
+            		</else>
+            	</if>
+            </sequential>
+        </for>
+    </target>    
+</project>
