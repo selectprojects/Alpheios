@@ -12,7 +12,7 @@
       <order-item attname="decl" order="2">2nd</order-item>
       <order-item attname="decl" order="3">3rd</order-item>
       <order-item attname="decl" order="4">4th</order-item>
-      <order-item attname="decl" order="5">5th</order-item>
+      <order-item attname="decl" order="5" footnote="foot-18">5th</order-item>
       <order-item attname="num" order="1">singular</order-item>
       <order-item attname="num" order="2">plural</order-item>
       <order-item attname="case" order="1">nominative</order-item>     
@@ -40,6 +40,7 @@
          <infl-ending type="regular">us</infl-ending>
          <infl-ending type="regular">er</infl-ending>
          <infl-ending type="regular">ir</infl-ending>
+         <infl-ending type="irregular">-</infl-ending>
          <infl-ending type="irregular" footnote="foot-1">os</infl-ending>
          <infl-ending type="irregular">ōs</infl-ending>
          <infl-ending type="irregular" footnote="foot-7">ō</infl-ending>
@@ -225,8 +226,10 @@
       </infl-ending-set>
       <infl-ending-set num="singular" case="vocative" decl="2nd" gend="masculine feminine">
          <infl-ending type="regular">e</infl-ending>
+         <infl-ending type="regular">er</infl-ending>
+         <infl-ending type="regular">ir</infl-ending>
+         <infl-ending type="irregular">-</infl-ending>
          <infl-ending type="irregular" footnote="foot-8">ī</infl-ending>
-         <infl-ending type="irregular">er</infl-ending>
          <infl-ending type="irregular">ōs</infl-ending>
          <infl-ending type="irregular" footnote="foot-7">e</infl-ending>
       </infl-ending-set>
@@ -235,7 +238,7 @@
          <infl-ending type="irregular" footnote="foot-7">on</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="vocative" decl="3rd" gend="masculine feminine">
-         <infl-ending type="irregular" footnote="foot-7">-</infl-ending>
+         <infl-ending type="regular">-</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="singular" case="vocative" decl="3rd" gend="neuter">
          <infl-ending type="regular">-</infl-ending>
@@ -287,6 +290,7 @@
       </infl-ending-set>
       <infl-ending-set num="plural" case="genitive" decl="2nd" gend="neuter">
          <infl-ending type="regular">ōrum</infl-ending>
+         <infl-ending type="irregular">um</infl-ending>
       </infl-ending-set>
       <infl-ending-set num="plural" case="genitive" decl="3rd" gend="masculine feminine">
          <infl-ending type="regular">um</infl-ending>
@@ -458,5 +462,6 @@
       <footnote id="foot-15">Often in names of plants and trees and in nouns ending in -tus</footnote>
       <footnote id="foot-16">When pronounced as one syllable</footnote>
       <footnote id="foot-17">early</footnote>
+      <footnote id="foot-18">dies and meridies are masculine</footnote>
    </footnotes>
 </infl-data>
