@@ -1,0 +1,345 @@
+/*
+ * Base CSS for Inflection tables
+ */
+body, th, td {
+    font-family: "Arial Unicode MS", sans-serif;
+    font-size: 90%;
+    color: #0E2233;
+}
+
+a {
+    color: #3E8D9C;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #5BC8DC;
+}
+
+#alph-inflect-title {
+    text-align: center;
+    clear:both; 
+}
+
+.title {
+    font-weight: bold;
+    text-align: center;
+    font-size: 110%;
+}
+
+div#alph-infl-index-link {
+    color: #3E8D9C;
+    font-weight: bold;
+    float:left;
+}
+
+div#alph-infl-index-link:hover {
+    color: #5BC8DC;
+}
+
+#links a, #infl-links a {
+    padding-right: 1em;
+}
+
+#expand-table-link {
+    display: none;
+}
+
+#infl-links {
+    display: none; 
+    padding: 2px;
+    margin: 1em;
+}
+
+#infl-links-label {
+    font-style: italic;
+}
+
+#reorder {
+    display: none;
+    padding: 2px;
+}
+
+#reorder-label {
+    font-style: italic;
+}
+
+select#sortorder option, select#infl-links-select option{
+    /* TODO want this to be smaller but having trouble with selected */
+    /* font-size: 90% */
+}
+
+table#alph-infl-table {
+	border-collapse: collapse;
+	border: 2px solid;
+	/*width: auto;*/
+	table-layout: fixed;
+}
+
+#alph-infl-table caption {
+    font-weight: bold;
+    text-align: left;
+}
+
+#alph-infl-table tr {
+	border: 1px solid #4E6476;
+	padding: 2px;
+}
+
+
+#expand-table-link {
+    display: none;
+}
+
+th {
+    display: none;
+    border-left: 1px solid #4E6476;
+    border-right: 1px solid #4E6476;
+    border-top: 1px solid #4E6476;
+    border-bottom: 1px solid #4E6476;
+    padding: 2px;
+}
+
+th.always-visible {
+  display:table-cell;
+}
+
+
+tr#headerrow1 th:first-child {
+    /*visibility: hidden; */ 
+}
+
+
+tr#headerrow1-irreg th {
+    border-top: 2px solid #0E2233;
+    border-bottom: 1px solid #0E2233;
+    border-left: 1px solid #0E2233;
+    border-right: 1px solid #0E2233;
+    
+}
+
+tr.group1row th {
+    white-space: nowrap;
+}
+
+tr.group1row th.emptyheader {
+    border-left: none;
+    border-right: none;
+}
+
+tr#headerrow1-irreg th:first-child {
+    visibility: hidden; 
+}
+
+tr.data-row th {
+   display:table-cell;
+   font-weight: normal;
+   font-style: italic;
+   border-left: 1px solid #0E2233;
+   border-right: none;
+}
+
+tr.data-row th.rowgroupheader {
+    border-right: 1px solid #4E6476;
+}
+
+tr.group1row td {
+    border-left: none;
+    border-right: none;    
+    border-top: 1px solid #4E6476;
+    border-bottom: 1px solid #4E6476;
+}
+
+
+tr.group1row th {
+    border-left: 1px solid #0E2233;
+    border-right: none;
+    text-align: left;
+}
+
+tr.data-row td.emptycell {
+    border-left: none;
+    border-right: none;
+    color: red;
+}
+
+td {
+    display: none;
+}
+
+
+.ending {
+    padding-left: 2px;
+    display: inline;
+    white-space: nowrap;
+}
+
+a.footnote:after {
+    content: " ";
+
+}
+
+.footnote {
+    vertical-align: super;
+    color: #3E8D9C;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.footnote:hover {
+    color: #5BC8DC;
+}
+
+.footnote-delimiter {
+    vertical-align: super;
+}
+
+.footnote-text {
+    display: none;
+}
+
+.footnote-visible {
+    display: inline;
+    position: absolute;
+    color: #0E2233;
+    padding: 2px;
+    font-weight: normal;
+    border: 1px outset #B8B7B5 !important;
+    white-space: normal;
+    background-color: white;
+}
+
+td.highlight-ending {
+   
+}
+
+span.highlight-ending {
+    background-color: #FFEE77;
+    font-weight: bold;
+    font-size: 1.25em;
+}
+
+span.highlight-ending.matched {
+    background-color: #BCE6F0;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.highlight-hover {
+   background-color: #D1D1D0;
+   
+}
+
+td {
+    border-left: 1px solid #4E6476; 
+    border-right: 1px solid #4E6476;
+    border-top: 1px solid #4E6476;
+    border-bottom: 1px solid #4E6476;
+    padding: 2px;
+    white-space: nowrap;
+    vertical-align: bottom;
+    
+} 
+
+.notfirst {
+    padding-left: 0px;
+
+}
+.notfirst:before {
+    content: ", ";
+
+}
+
+.loading {
+    padding-left: 18px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    background: transparent url(loading.gif) no-repeat;
+    cursor: progress;
+    white-space: nowrap;
+}
+
+.ending-collapsed {
+    display: none;
+}
+
+.ending-collapsed.ending-expanded {
+    display: inline;
+}
+
+.endings-toggle {
+    display: inline;
+    color: #3E8D9C;
+    font-weight: bold;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 100%;
+    padding-left: .5em;
+}
+
+.endings-toggle:hover {
+    color: #5BC8DC
+}
+
+th.reloading {
+    padding-right: 10px;
+    background: transparent url(loading.gif) right no-repeat;
+    cursor: progress;
+}
+
+.alph-infl-term {
+    display: inline;
+}
+
+.alph-infl-form {
+    font-weight: bold;
+}
+
+.footnote-text ul, .footnote-text li {
+    text-align: left;
+}
+
+.alph-infl-caption {
+    font-weight: bold;
+}
+
+/*
+ * Index classes
+ */
+.tocitem {
+    list-style: url(list-item.gif);
+}
+
+.tochead {
+    list-style-image: url(arrow-rit-sharp.gif);
+    cursor: pointer;
+}
+
+.tochead.openmenu {
+    list-style-image: url(arrow-dn-sharp.gif);
+}
+.paradigm-nomatch {
+    margin-left: 2em;
+    margin-top: 1em;
+}
+
+table#alph-infl-table.nomatch, 
+table#alph-infl-table.nomatch * {
+    border: none;
+}
+
+.alpheios-hint {
+    color: #4E6476;
+    font-weight: normal;
+    font-style: italic;
+    margin-bottom: 1em;
+    padding-left: 18px;
+    font-family:  Arial, sans-serif;
+    background: url(chrome://alpheios/skin/icons/information-16-g.png) 0 0 no-repeat;
+}
+#alph-version-info {
+    float: right;
+}

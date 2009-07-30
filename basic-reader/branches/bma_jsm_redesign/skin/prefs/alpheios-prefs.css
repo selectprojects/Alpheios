@@ -1,0 +1,36 @@
+#url-lexicon {
+    width: 50em;
+}
+
+#url-grammar {
+    width: 50em;
+}
+
+.row-header {
+    font-weight: bold;
+}
+
+#alpheios-panel-prefs rows row {
+    -moz-box-align: center;
+}
+
+tabpanel radiogroup caption {
+    background: inherit;
+}
+
+
+textbox.url {
+    width: 50em;
+}
+
+textbox.param {
+    width: 5em;
+}
+
+label.cbxlabel {
+    margin-left: 0; 
+}
+
+.site-enabled {
+    font-weight: bold;
+}
