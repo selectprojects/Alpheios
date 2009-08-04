@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM "chrome://alpheios-arabic/locale/alpheios-arabic.dtd">
+
+<overlay id="alpheios-arabic-overlay" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="chrome://alpheios-arabic/content/alpheios-arabic-langtool.js" />
+    
+    <stringbundleset id="stringbundleset">
+        <stringbundle id="alpheios-strings-arabic" 
+                      src="chrome://alpheios-arabic/locale/alpheios-arabic-prefs.properties"/>
+    </stringbundleset>
+
+    <broadcasterset id="mainBroadcasterSet">
+        <!-- broadcaster which hides arabic-specific menu elements -->
+        <broadcaster id="alph-lang-arabic-hide"
+                     hidden="true"
+                     disabled="true"
+                     class="alpheios-language-disabled-notifier"/>
+    </broadcasterset>
+
+    <menupopup id="alpheios-lang-popup-cm">
+        <menuitem id="alpheios-cm-lang-arabic"
+                  label="&alpheios.lang.arabic;"
+                  value="arabic"
+                  type="checkbox"
+                  hidden="false"/>
+    </menupopup>
+    <menupopup id="alpheios-lang-popup-tm">
+        <menuitem id="alpheios-tm-lang-arabic"
+                  label="&alpheios.lang.arabic;"
+                  value="arabic"
+                  type="checkbox"
+                  hidden="false"/>
+    </menupopup>
+</overlay>

@@ -1,0 +1,12 @@
+content alpheios-arabic chrome/content/
+content alpheios-arabic chrome/content/ contentaccessible=yes
+locale	alpheios-arabic	en-US		chrome/locale/en-US/
+skin	alpheios-arabic	classic/1.0	chrome/skin/
+
+overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-arabic/content/alpheios-arabic.xul
+overlay chrome://alpheios/content/alpheios-prefs.xul    chrome://alpheios-arabic/content/alpheios-arabic-prefs.xul
+overlay chrome://alpheios/content/alpheios-svc-prefs.xul    chrome://alpheios-arabic/content/alpheios-arabic-prefs.xul
+overlay chrome://alpheios/content/alpheios-dict-prefs-adv.xul    chrome://alpheios-arabic/content/alpheios-arabic-prefs.xul
+overlay chrome://alpheios/content/alpheios-panel-prefs.xul    chrome://alpheios-arabic/content/alpheios-arabic-prefs.xul
+overlay chrome://alpheios/content/alpheios-site-prefs.xul    chrome://alpheios-arabic/content/alpheios-arabic-prefs.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://alpheios-arabic/skin/alpheios-arabic.css
