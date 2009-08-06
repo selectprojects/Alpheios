@@ -160,7 +160,6 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
     {
         xslt_params = template.xslt_params(a_ans);
     }
-    window.opener.Alph.util.log("Data file: " + template.data_file);
     // if we don't have a data file, just return false to indicate
     // inflection query not supported
     if (template.data_file == null || typeof template.data_file == "undefined")

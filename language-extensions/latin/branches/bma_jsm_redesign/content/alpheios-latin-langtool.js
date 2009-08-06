@@ -24,8 +24,10 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+Alph.LanguageToolFactory.add_lang('latin','LanguageTool_Latin');
+
 /**
- * @class  Alph.LanguageToolSet.latin extends {@link Alph.LanguageTool} to define
+ * @class  Alph.LanguageTool_Latin extends {@link Alph.LanguageTool} to define
  * Latin-specific functionality for the alpheios extension.
  *
  * @constructor
@@ -34,7 +36,7 @@
  *                                  the object (accessor methods will be dynamically created)
  * @see Alph.LanguageTool
  */
-Alph.LanguageToolSet.latin = function(a_lang, props)
+Alph.LanguageTool_Latin = function(a_lang, props)
 {
     Alph.LanguageTool.call(this,a_lang,{});
 };
@@ -42,15 +44,7 @@ Alph.LanguageToolSet.latin = function(a_lang, props)
 /**
  * @ignore
  */
-Alph.LanguageToolSet.latin.prototype = new Alph.LanguageTool();
-
-/**
- * Flag to indicate that this class extends Alph.LanguageTool.
- * (Shouldn't be necessary but because they are not packaged in the same extension
- * the instanceof operator won't work.)
- * @type boolean
- */
-Alph.LanguageToolSet.latin.implementsAlphLanguageTool = true;
+Alph.LanguageTool_Latin.prototype = new Alph.LanguageTool();
 
 /**
  *  Mapping table which maps the part of speech or mood
@@ -59,7 +53,7 @@ Alph.LanguageToolSet.latin.implementsAlphLanguageTool = true;
  *      pofs or mood: { keys: [array of inflectable table keys]
  *                      links: [array of other links] }
  */
-Alph.LanguageToolSet.latin.INFLECTION_MAP =
+Alph.LanguageTool_Latin.INFLECTION_MAP =
 {     noun: { keys: ['noun'], links: [] },
       // link verb participles to both verb and adjective inflection tables
       adjective: { keys: ['adjective'], links: [] },
@@ -72,7 +66,7 @@ Alph.LanguageToolSet.latin.INFLECTION_MAP =
       verb: { keys: ['verb'], links: [] }
 };
 
-Alph.LanguageToolSet.latin.IRREG_VERBS =
+Alph.LanguageTool_Latin.IRREG_VERBS =
 [
     // irregular verbs (Whitaker hdwd)
     'eo, ire, ivi(ii), itus',
@@ -90,16 +84,16 @@ Alph.LanguageToolSet.latin.IRREG_VERBS =
  * @param {String} a_params optional requested parameters
  * @return the parameters object for the inflection window
  */
-Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_params)
+Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params)
 {
     var params = a_params || {};
 
     params.entries = {};
     var form = Alph.$(".alph-word",a_node).attr("context");
 
-    for (var infl_type in Alph.LanguageToolSet.latin.INFLECTION_MAP )
+    for (var infl_type in Alph.LanguageTool_Latin.INFLECTION_MAP )
     {
-        var key = Alph.LanguageToolSet.latin.INFLECTION_MAP[infl_type].keys[0];
+        var key = Alph.LanguageTool_Latin.INFLECTION_MAP[infl_type].keys[0];
         params.entries[key] = [];
     }
 
@@ -128,12 +122,12 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
             var dict_hdwd = Alph.$(".alph-hdwd",dict).text();
             // remove the trailing :
             dict_hdwd = dict_hdwd.replace(/\:\s*$/,'');
-            Alph.util.log("hdwd for inflection set: " + dict_hdwd);
+            Alph.MozUtils.log("hdwd for inflection set: " + dict_hdwd);
 
             var irregular = false;
-            for (var i=0; i< Alph.LanguageToolSet.latin.IRREG_VERBS.length; i++)
+            for (var i=0; i< Alph.LanguageTool_Latin.IRREG_VERBS.length; i++)
             {
-                if (dict_hdwd == Alph.LanguageToolSet.latin.IRREG_VERBS[i])
+                if (dict_hdwd == Alph.LanguageTool_Latin.IRREG_VERBS[i])
                 {
                     // reset the context
                     params.hdwd = dict_hdwd;
@@ -141,7 +135,7 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
                     break;
                 }
             }
-            Alph.util.log("irregular:" + irregular);
+            Alph.MozUtils.log("irregular:" + irregular);
             var infls = {};
 
             // gather the moods for the verbs
@@ -153,19 +147,19 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
                     // a supplemental table rather than primary verb pofs table
 
                     var mood = Alph.$(".alph-mood",this).attr('context');
-                    if (Alph.LanguageToolSet.latin.INFLECTION_MAP[mood])
+                    if (Alph.LanguageTool_Latin.INFLECTION_MAP[mood])
                     {
-                        infls[Alph.LanguageToolSet.latin.INFLECTION_MAP[mood].keys[0]] = Alph.$(this).get(0);
+                        infls[Alph.LanguageTool_Latin.INFLECTION_MAP[mood].keys[0]] = Alph.$(this).get(0);
                     }
                 }
             );
             if (irregular)
             {
-                infls[Alph.LanguageToolSet.latin.INFLECTION_MAP['verb_irregular'].keys[0]] = Alph.$(this).get(0);
+                infls[Alph.LanguageTool_Latin.INFLECTION_MAP['verb_irregular'].keys[0]] = Alph.$(this).get(0);
             }
-            for (var pofs in Alph.LanguageToolSet.latin.INFLECTION_MAP)
+            for (var pofs in Alph.LanguageTool_Latin.INFLECTION_MAP)
             {
-                var map_pofs = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].keys[0];
+                var map_pofs = Alph.LanguageTool_Latin.INFLECTION_MAP[pofs].keys[0];
 
 
                 // if we couldn't find the part of speech or the part of speech
@@ -202,10 +196,10 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
 
 
                     // duplicate entries if necessary
-                    var num_pofs = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].keys.length;
+                    var num_pofs = Alph.LanguageTool_Latin.INFLECTION_MAP[pofs].keys.length;
                     for (var i=1; i<num_pofs; i++)
                     {
-                        var extra_pofs = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].keys[i];
+                        var extra_pofs = Alph.LanguageTool_Latin.INFLECTION_MAP[pofs].keys[i];
                         params.entries[extra_pofs].push(
                             Alph.$(this).parent(".alph-entry").get(0));
                     }
@@ -217,8 +211,8 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
 
                     if (params.showpofs == infl_type)
                     {
-                        params.links = Alph.LanguageToolSet.latin.INFLECTION_MAP[pofs].links;
-                        //Alph.LanguageToolSet.latin.setInflectionXSL(params,infl_type,pofs,a_node,Alph.$(this).get(0));
+                        params.links = Alph.LanguageTool_Latin.INFLECTION_MAP[pofs].links;
+                        //Alph.LanguageTool_Latin.setInflectionXSL(params,infl_type,pofs,a_node,Alph.$(this).get(0));
                     }
 
                 } // end infl-type
@@ -228,7 +222,7 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
     // identify the correct xslt parameters for the requested inflection type
     if (params.showpofs)
     {
-        Alph.LanguageToolSet.latin.setInflectionXSL(params,params.showpofs,form);
+        Alph.LanguageTool_Latin.setInflectionXSL(params,params.showpofs,form);
     }
     return params;
 }
@@ -238,7 +232,7 @@ Alph.LanguageToolSet.latin.prototype.getInflectionTable = function(a_node, a_par
  * @param {String} a_params the other params for the window
  * @param {String} a_infl_type the inflection type
  */
-Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
+Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
 {
     // TODO still need to link to big verb table
 
@@ -368,7 +362,7 @@ Alph.LanguageToolSet.latin.setInflectionXSL = function(a_params,a_infl_type,a_fo
  * @param {String} a_name the name of the preference which changed
  * @param {Object} a_value the new value of the preference
  */
-Alph.LanguageToolSet.latin.prototype.observe_pref_change = function(a_name,a_value)
+Alph.LanguageTool_Latin.prototype.observe_pref_change = function(a_name,a_value)
 {
     if (a_name.indexOf('dictionaries.full') != -1)
     {
@@ -384,10 +378,10 @@ Alph.LanguageToolSet.latin.prototype.observe_pref_change = function(a_name,a_val
  * @returns true if successful, otherwise false
  * @type boolean
  */
-Alph.LanguageToolSet.latin.prototype.loadLexIds = function()
+Alph.LanguageTool_Latin.prototype.loadLexIds = function()
 {
     this.full_lex_code =
-        Alph.util.getPref("dictionaries.full",this.source_language)
+        Alph.MozUtils.getPref("dictionaries.full",this.source_language)
 
     if (this.full_lex_code == '' || this.full_lex_code == null)
     {
@@ -404,7 +398,7 @@ Alph.LanguageToolSet.latin.prototype.loadLexIds = function()
                                   this.full_lex_code +
                                   "-ids.dat",
                                   "UTF-8");
-            Alph.util.log("Loaded Latin ids [" +
+            Alph.MozUtils.log("Loaded Latin ids [" +
                           this.idsFile.getData().length +
                           " bytes]");
         }
@@ -414,7 +408,7 @@ Alph.LanguageToolSet.latin.prototype.loadLexIds = function()
             // provided dictionaries
             // so just quietly log the error in this case
             // later code must take a null ids file into account
-            Alph.util.log("error loading ids: " + ex);
+            Alph.MozUtils.log("error loading ids: " + ex);
             return false;
         }
     }
@@ -425,7 +419,7 @@ Alph.LanguageToolSet.latin.prototype.loadLexIds = function()
  * Latin-specific implementation of {@link Alph.LanguageTool#postTransform}.
  * Looks up the lemma in the file of dictionary ids
  */
-Alph.LanguageToolSet.latin.prototype.postTransform = function(a_node)
+Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
 {
     var ids = this.idsFile;
     var fullLex = this.full_lex_code;
@@ -434,16 +428,16 @@ Alph.LanguageToolSet.latin.prototype.postTransform = function(a_node)
         {
             var lemmaKey = Alph.$(".alph-dict", this).attr("lemma-key");
             var idReturn =
-                    Alph.LanguageToolSet.latin.lookupLemma(lemmaKey, ids);
+                    Alph.LanguageTool_Latin.lookupLemma(lemmaKey, ids);
             var hdwd = idReturn[0];
             var lemmaId = idReturn[1];
 
             // set lemma attributes
             if (hdwd)
             {
-                Alph.util.log('adding @lemma-key="' + hdwd + '"');
-                Alph.util.log('adding @lemma-lang="lat"');
-                Alph.util.log('adding @lemma-lex="' + fullLex + '"');
+                Alph.MozUtils.log('adding @lemma-key="' + hdwd + '"');
+                Alph.MozUtils.log('adding @lemma-lang="lat"');
+                Alph.MozUtils.log('adding @lemma-lex="' + fullLex + '"');
                 Alph.$(".alph-dict", this).attr("lemma-key", hdwd);
                 Alph.$(".alph-dict", this).attr("lemma-lang", "lat");
                 Alph.$(".alph-dict", this).attr("lemma-lex", fullLex);
@@ -452,12 +446,12 @@ Alph.LanguageToolSet.latin.prototype.postTransform = function(a_node)
                 if (lemmaId)
                 {
                     // set lemma attributes
-                    Alph.util.log('adding @lemma-id="' + lemmaId + '"');
+                    Alph.MozUtils.log('adding @lemma-id="' + lemmaId + '"');
                     Alph.$(".alph-dict", this).attr("lemma-id", lemmaId);
                 }
                 else
                 {
-                    Alph.util.log(
+                    Alph.MozUtils.log(
                         "id for " + hdwd + " not found [" + fullLex + "]");
                 }
             }
@@ -475,14 +469,14 @@ Alph.LanguageToolSet.latin.prototype.postTransform = function(a_node)
  * @return {Array} (lemma id, lexicon code) or (null, null) if not found
  * @type Array
  */
-Alph.LanguageToolSet.latin.prototype.get_lemma_id = function(a_lemmaKey)
+Alph.LanguageTool_Latin.prototype.get_lemma_id = function(a_lemmaKey)
 {
     // get data from ids file
     var lemma_data =
-            Alph.LanguageToolSet.latin.lookupLemma(a_lemmaKey, this.idsFile);
+            Alph.LanguageTool_Latin.lookupLemma(a_lemmaKey, this.idsFile);
     if (!lemma_data[1])
     {
-        Alph.util.log("id for " +
+        Alph.MozUtils.log("id for " +
                       a_lemmaKey +
                       " not found [" +
                       this.full_lex_code + ']');
@@ -499,7 +493,7 @@ Alph.LanguageToolSet.latin.prototype.get_lemma_id = function(a_lemmaKey)
  * @return {Array} (key, data)
  * @type Array
  */
-Alph.LanguageToolSet.latin.lookupLemma = function(a_lemma, a_datafile)
+Alph.LanguageTool_Latin.lookupLemma = function(a_lemma, a_datafile)
 {
     // if no datafile or no lemma
     if (!a_datafile || !a_lemma)
