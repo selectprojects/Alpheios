@@ -1165,12 +1165,12 @@ function hide_empty_cols(a_tbl)
 
 function convert_form(a_data,a_text)
 {
-    if (typeof a_data.answer.convert_obj == 'undefined' || a_text.match(/^[-_]$/))
+    if (a_text.match(/^[-_]$/))
     {
         return a_text;
     }
     else
     {
-        return a_data.answer.convert_obj.normalize_greek(a_text,true,'\/^_=');
+        return Alph.Convert.normalize_greek(a_text,true,'\/^_=');
     } 
 }

@@ -30,8 +30,10 @@
  * License http://creativecommons.org/licenses/by-nc-sa/3.0/us
  */
 
+Alph.LanguageToolFactory.add_lang('greek','LanguageTool_Greek');
+
 /**
- * @class  Alph.LanguageToolSet.greek extends {@link Alph.LanguageTool} to define
+ * @class  Alph.LanguageTool_Greek extends {@link Alph.LanguageTool} to define
  * Greek-specific functionality for the alpheios extension.
  *
  * @constructor
@@ -40,7 +42,7 @@
  *                                  the object (accessor methods will be dynamically created)
  * @see Alph.LanguageTool
  */
-Alph.LanguageToolSet.greek = function(a_lang, props)
+Alph.LanguageTool_Greek = function(a_lang, props)
 {
     Alph.LanguageTool.call(this,a_lang,{});
 };
@@ -48,7 +50,7 @@ Alph.LanguageToolSet.greek = function(a_lang, props)
 /**
  * @ignore
  */
-Alph.LanguageToolSet.greek.prototype = new Alph.LanguageTool();
+Alph.LanguageTool_Greek.prototype = new Alph.LanguageTool();
 
 /**
  * Flag to indicate that this class extends Alph.LanguageTool.
@@ -57,7 +59,7 @@ Alph.LanguageToolSet.greek.prototype = new Alph.LanguageTool();
  * TODO - address this by making Alph.LanguageTool a JS Module??
  * @type boolean
  */
-Alph.LanguageToolSet.greek.implementsAlphLanguageTool = true;
+Alph.LanguageTool_Greek.implementsAlphLanguageTool = true;
 
 /**
  * Greek-specific startup method in the derived instance which
@@ -66,11 +68,11 @@ Alph.LanguageToolSet.greek.implementsAlphLanguageTool = true;
  * @returns true if successful, otherwise false
  * @type boolean
  */
-Alph.LanguageToolSet.greek.prototype.loadShortDefs = function()
+Alph.LanguageTool_Greek.prototype.loadShortDefs = function()
 {
     this.defsFile = Array();
     this.short_lex_code =
-            Alph.util.getPref("dictionaries.short", this.source_language).split(',');
+            Alph.MozUtils.getPref("dictionaries.short", this.source_language).split(',');
 
     for (var i = 0; i < this.short_lex_code.length; ++i)
     {
@@ -85,7 +87,7 @@ Alph.LanguageToolSet.greek.prototype.loadShortDefs = function()
                         this.short_lex_code[i] +
                         "-defs.dat",
                         "UTF-8");
-            Alph.util.log(
+            Alph.MozUtils.log(
                 "Loaded Greek defs for " +
                 this.short_lex_code[i] +
                 "[" +
@@ -109,10 +111,10 @@ Alph.LanguageToolSet.greek.prototype.loadShortDefs = function()
  * @returns true if successful, otherwise false
  * @type boolean
  */
-Alph.LanguageToolSet.greek.prototype.loadLexIds = function()
+Alph.LanguageTool_Greek.prototype.loadLexIds = function()
 {
     this.idsFile = Array();
-    this.full_lex_code = Alph.util.getPref("dictionaries.full",
+    this.full_lex_code = Alph.MozUtils.getPref("dictionaries.full",
                                       this.source_language).split(',');
 
     for (var i = 0; i < this.full_lex_code.length; ++i)
@@ -127,7 +129,7 @@ Alph.LanguageToolSet.greek.prototype.loadLexIds = function()
                         this.full_lex_code[i] +
                         "-ids.dat",
                         "UTF-8");
-            Alph.util.log(
+            Alph.MozUtils.log(
                 "Loaded Greek ids for " +
                 this.full_lex_code[i] +
                 "[" +
@@ -140,7 +142,7 @@ Alph.LanguageToolSet.greek.prototype.loadLexIds = function()
             // provided dictionaries
             // so just quietly log the error in this case
             // later code must take a null ids file into account
-            Alph.util.log("error loading ids: " + ex);
+            Alph.MozUtils.log("error loading ids: " + ex);
             return false;
         }
     }
@@ -154,7 +156,7 @@ Alph.LanguageToolSet.greek.prototype.loadLexIds = function()
  * @returns true if successful, otherwise false
  * @type boolean
  */
-Alph.LanguageToolSet.greek.prototype.loadStripper = function()
+Alph.LanguageTool_Greek.prototype.loadStripper = function()
 {
     try
     {
@@ -176,7 +178,7 @@ Alph.LanguageToolSet.greek.prototype.loadStripper = function()
  *      pofs or mood: { keys: [array of inflectable table keys]
  *                      links: [array of other links] }
  */
-Alph.LanguageToolSet.greek.INFLECTION_MAP =
+Alph.LanguageTool_Greek.INFLECTION_MAP =
 {     noun: { keys: ['noun'], links: [] },
       adjective: {keys: ['adjective'], links:[] },
       adjective_simplified: {keys: ['adjective_simplified'], links:[] },
@@ -191,7 +193,7 @@ Alph.LanguageToolSet.greek.INFLECTION_MAP =
       adverb: {keys: ['adverb'],links:[]}
 };
 
-Alph.LanguageToolSet.greek.IRREG_VERBS =
+Alph.LanguageTool_Greek.IRREG_VERBS =
 [
 ];
 
@@ -203,7 +205,7 @@ Alph.LanguageToolSet.greek.IRREG_VERBS =
  * [1] = Array of possible lemmas for this pronoun type
  * [2] = Optional morpheus stemtype value restriction (when lemma alone isn't enough)
  */
-Alph.LanguageToolSet.greek.PRONOUNS =
+Alph.LanguageTool_Greek.PRONOUNS =
 [
     ['dem',['ὅδε','οὗτος','ἐκεῖνος']],
     ['rel',['@ὅς','ὅς']],// there's a special flag on lemma for ὅς
@@ -226,7 +228,7 @@ Alph.LanguageToolSet.greek.PRONOUNS =
  * @param {String} a_params optional requested parameters
  * @return the parameters object for the inflection window
  */
-Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_params)
+Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params)
 {
     var params = a_params || {};
 
@@ -238,9 +240,9 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
 
     var form = Alph.$(".alph-word",a_node).attr("context");
 
-    for (var infl_type in Alph.LanguageToolSet.greek.INFLECTION_MAP )
+    for (var infl_type in Alph.LanguageTool_Greek.INFLECTION_MAP )
     {
-        var key = Alph.LanguageToolSet.greek.INFLECTION_MAP[infl_type].keys[0];
+        var key = Alph.LanguageTool_Greek.INFLECTION_MAP[infl_type].keys[0];
         params.entries[key] = [];
     }
 
@@ -268,12 +270,12 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
 
             // check for irregular verbs
 
-            Alph.util.log("lemma for inflection set: " + lemma);
+            Alph.MozUtils.log("lemma for inflection set: " + lemma);
 
             var irregular = false;
-            for (var i=0; i< Alph.LanguageToolSet.greek.IRREG_VERBS.length; i++)
+            for (var i=0; i< Alph.LanguageTool_Greek.IRREG_VERBS.length; i++)
             {
-                if (lemma == Alph.LanguageToolSet.greek.IRREG_VERBS[i])
+                if (lemma == Alph.LanguageTool_Greek.IRREG_VERBS[i])
                 {
                     // reset the context
                     params.hdwd = lemma;
@@ -281,7 +283,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                     break;
                 }
             }
-            Alph.util.log("irregular:" + irregular);
+            Alph.MozUtils.log("irregular:" + irregular);
 
             var infls = {};
 
@@ -294,19 +296,19 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                     // a supplemental table rather than primary verb pofs table
 
                     var mood = Alph.$(".alph-mood",this).attr('context');
-                    if (Alph.LanguageToolSet.greek.INFLECTION_MAP[mood])
+                    if (Alph.LanguageTool_Greek.INFLECTION_MAP[mood])
                     {
-                        infls[Alph.LanguageToolSet.greek.INFLECTION_MAP[mood].keys[0]] = Alph.$(this).get(0);
+                        infls[Alph.LanguageTool_Greek.INFLECTION_MAP[mood].keys[0]] = Alph.$(this).get(0);
                     }
                 }
             );
             if (irregular)
             {
-                infls[Alph.LanguageToolSet.greek.INFLECTION_MAP['verb_irregular'].keys[0]] = Alph.$(this).get(0);
+                infls[Alph.LanguageTool_Greek.INFLECTION_MAP['verb_irregular'].keys[0]] = Alph.$(this).get(0);
             }
-            for (var pofs in Alph.LanguageToolSet.greek.INFLECTION_MAP)
+            for (var pofs in Alph.LanguageTool_Greek.INFLECTION_MAP)
             {
-                var map_pofs = Alph.LanguageToolSet.greek.INFLECTION_MAP[pofs].keys[0];
+                var map_pofs = Alph.LanguageTool_Greek.INFLECTION_MAP[pofs].keys[0];
 
 
                 var check_pofs = pofs.replace(/_simplified$/,'');
@@ -345,16 +347,16 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                     // being displayed
                     if (params.showpofs == infl_type)
                     {
-                        params.links = Alph.LanguageToolSet.greek.INFLECTION_MAP[pofs].links;
+                        params.links = Alph.LanguageTool_Greek.INFLECTION_MAP[pofs].links;
                     
 
                         // if it's a pronoun, what type?
                         if (infl_type.match(/^pronoun/))
                         {
                              params.type = '';
-                             for (var i=0; i< Alph.LanguageToolSet.greek.PRONOUNS.length; i++)
+                             for (var i=0; i< Alph.LanguageTool_Greek.PRONOUNS.length; i++)
                              {
-                                var pronoun_list = Alph.LanguageToolSet.greek.PRONOUNS[i];
+                                var pronoun_list = Alph.LanguageTool_Greek.PRONOUNS[i];
                                 var type = pronoun_list[0];
                                 for (var j=0; j < pronoun_list[1].length; j++)
                                 {
@@ -380,7 +382,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
                                     }
                                 }
                             }
-                            Alph.util.log("Pronoun type="+params.type);
+                            Alph.MozUtils.log("Pronoun type="+params.type);
                         } // end pronoun identification
                     }
                 } // end infl-type
@@ -391,7 +393,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
     if (params.showpofs)
     {
         params.html_url = "chrome://alpheios-greek/content/html/alph-infl-substantive.html";
-        Alph.LanguageToolSet.greek.setInflectionXSL(params,params.showpofs,form);
+        Alph.LanguageTool_Greek.setInflectionXSL(params,params.showpofs,form);
         
         // TODO -remove this HACK which suppresses the Javascript matching algorithm
         //params.suppress_match = true;
@@ -405,7 +407,7 @@ Alph.LanguageToolSet.greek.prototype.getInflectionTable = function(a_node, a_par
  * @param {String} a_params the other params for the window
  * @param {String} a_infl_type the inflection type
  */
-Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
+Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
 {
     a_params.xslt_params = {};
     a_params.xslt_params.fragment = 1;
@@ -563,11 +565,11 @@ Alph.LanguageToolSet.greek.setInflectionXSL = function(a_params,a_infl_type,a_fo
  * @param {Elemen} a_str the strings for the table display
  * @param {Object} a_params the inflection window parameters
  */
-Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_str,a_params)
+Alph.LanguageTool_Greek.prototype.handleInflectionDisplay = function(a_tbl,a_str,a_params)
 {
     // collapse all non-primary endings
     // TODO - this may only be temporary - experimenting with different approaches
-    //window.opener.Alph.util.log("Handling inflection display");
+    //window.opener.Alph.MozUtils.log("Handling inflection display");
     var ret_cells = [];
     var show_stem_classes = [];
     Alph.$("td.ending-group",a_tbl).each(
@@ -690,7 +692,7 @@ Alph.LanguageToolSet.greek.prototype.handleInflectionDisplay = function(a_tbl,a_
  * Greek-specific implementation of {@link Alph.LanguageTool#postTransform}.
  * Looks up the lemma in the file of LSJ short meanings
  */
-Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
+Alph.LanguageTool_Greek.prototype.postTransform = function(a_node)
 {
     var lang_obj = this;
     var defs = this.defsFile;
@@ -709,7 +711,7 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
             {
                 // get data from defs file
                 var defReturn =
-                    Alph.LanguageToolSet.greek.lookupLemma(lemmaKey,
+                    Alph.LanguageTool_Greek.lookupLemma(lemmaKey,
                                                            null,
                                                            defs[i],
                                                            stripper);
@@ -738,7 +740,7 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
                               '</div>';
 
                 // insert meaning into document
-                Alph.util.log("adding " + meanElt);
+                Alph.MozUtils.log("adding " + meanElt);
                 Alph.$(".alph-dict", this).after(meanElt);
                 
                 // build dictionary source element
@@ -748,16 +750,16 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
                 Alph.$(".alph-dict", this).append(srcElt);
 
                 // set lemma attributes
-                Alph.util.log('adding @lemma-lang="grc"');
-                Alph.util.log('adding @lemma-key="' + defReturn[0] + '"');
-                Alph.util.log('adding @lemma-lex="' + lex[i] + '"');
+                Alph.MozUtils.log('adding @lemma-lang="grc"');
+                Alph.MozUtils.log('adding @lemma-key="' + defReturn[0] + '"');
+                Alph.MozUtils.log('adding @lemma-lex="' + lex[i] + '"');
                 Alph.$(".alph-dict", this).attr("lemma-lang", "grc");
                 Alph.$(".alph-dict", this).attr("lemma-key", defReturn[0]);
                 Alph.$(".alph-dict", this).attr("lemma-lex", lex[i]);
             }
             else
             {
-                Alph.util.log("meaning for " +
+                Alph.MozUtils.log("meaning for " +
                               lemmaKey +
                               " not found [" + lex.join() + "]");
             }
@@ -771,7 +773,7 @@ Alph.LanguageToolSet.greek.prototype.postTransform = function(a_node)
 /**
  * Removes the previous/next block from the Harvard LSJ output
  */
-Alph.LanguageToolSet.greek.prototype.fixHarvardLSJ = function(a_html)
+Alph.LanguageTool_Greek.prototype.fixHarvardLSJ = function(a_html)
 {
     // look for the first <hr/> and remove everything before it
     var match_hr = a_html.match(/(<hr\s*\/>)/m);
@@ -789,7 +791,7 @@ Alph.LanguageToolSet.greek.prototype.fixHarvardLSJ = function(a_html)
  * @param {String} a_name the name of the preference which changed
  * @param {Object} a_value the new value of the preference
  */
-Alph.LanguageToolSet.greek.prototype.observe_pref_change = function(a_name,a_value)
+Alph.LanguageTool_Greek.prototype.observe_pref_change = function(a_name,a_value)
 {
     if (a_name.indexOf('dictionaries.short') != -1)
         this.loadShortDefs();
@@ -808,14 +810,14 @@ Alph.LanguageToolSet.greek.prototype.observe_pref_change = function(a_name,a_val
  * @return {Array} (lemma id, lexicon code) or (null, null) if not found
  * @type Array
  */
-Alph.LanguageToolSet.greek.prototype.get_lemma_id = function(a_lemmaKey)
+Alph.LanguageTool_Greek.prototype.get_lemma_id = function(a_lemmaKey)
 {
     // for each lexicon
     for (var i = 0; i < this.full_lex_code.length; ++i)
     {
         // get data from ids file
         var lemma_id =
-            Alph.LanguageToolSet.greek.lookupLemma(a_lemmaKey,
+            Alph.LanguageTool_Greek.lookupLemma(a_lemmaKey,
                                                    a_lemmaKey,
                                                    this.idsFile[i],
                                                    this.stripper)[1];
@@ -823,7 +825,7 @@ Alph.LanguageToolSet.greek.prototype.get_lemma_id = function(a_lemmaKey)
             return Array(lemma_id, this.full_lex_code[i]);
     }
 
-    Alph.util.log("id for " +
+    Alph.MozUtils.log("id for " +
                   a_lemmaKey +
                   " not found [" +
                   this.full_lex_code.join() + ']');
@@ -841,7 +843,7 @@ Alph.LanguageToolSet.greek.prototype.get_lemma_id = function(a_lemmaKey)
  * @return {Array} (key, data)
  * @type String
  */
-Alph.LanguageToolSet.greek.lookupLemma =
+Alph.LanguageTool_Greek.lookupLemma =
 function(a_lemma, a_key, a_datafile, a_stripper)
 {
     if (!a_datafile)
@@ -934,3 +936,81 @@ function(a_lemma, a_key, a_datafile, a_stripper)
     // nothing found
     return Array(key, null);
 }
+
+  /**
+     * greek ascii transliteration (unicode to betacode)
+     * @param {String} a_str the string to convert
+     * @return the converted string
+     * @type {String}
+     */
+Alph.Convert.bind('greek_to_ascii',
+    function(a_str)
+    {
+        /* initialize the XSLT converter if we haven't done so already */
+        if (this.u2bConverter == null)
+        {
+            this.u2bConverter = Alph.util.get_xslt_processor('alpheios','alpheios-uni2betacode.xsl');
+        }
+        var betaText = '';
+        try
+        {
+            this.u2bConverter.setParameter(null, "input", a_str);
+            var dummy = (new DOMParser()).parseFromString("<root/>","text/xml");
+            betaText = this.u2bConverter.transformToDocument(dummy).documentElement.textContent;
+        }
+        catch (e)
+        {
+            Alph.MozUtils.log(e);
+        }
+        return betaText;
+    }
+);
+
+/**
+ * greek normalization (precomposed/decomposed Unicode)
+ * @param {String} a_str the string to normalize
+ * @param {Boolean} a_precomposed whether to output precomposed Unicode
+ *   (default = true)
+ * @param {String} a_strip characters/attributes to remove
+ *   (specified as betacode characters - e.g. "/\\=" to remove accents)
+ *   (default = no stripping)
+ * @param {Boolean} a_partial whether this is partial word
+ *   (if true, ending sigma is treated as medial not final)
+ *   (default = false)
+ * @return the normalized string
+ * @type {String}
+ */
+Alph.Convert.bind('normalize_greek',
+    function(a_str, a_precomposed, a_strip, a_partial)
+    {
+        /* initialize the XSLT converter if we haven't done so already */
+        if (this.uNormalizer == null)
+        {
+            this.uNormalizer = Alph.util.get_xslt_processor('alpheios','alpheios-normalize-greek.xsl');
+        }
+
+        // set defaults for missing params
+        if (typeof a_precomposed == "undefined")
+            a_precomposed = true;
+        if (typeof a_strip == "undefined")
+            a_strip = "";
+        if (typeof a_partial == "undefined")
+            a_partial = false;
+
+        var normText = '';
+        try
+        {
+            this.uNormalizer.setParameter(null, "input", a_str);
+            this.uNormalizer.setParameter(null, "precomposed", (a_precomposed ? 1 : 0));
+            this.uNormalizer.setParameter(null, "strip", a_strip);
+            this.uNormalizer.setParameter(null, "partial", (a_partial ? 1 : 0));
+            var dummy = (new DOMParser()).parseFromString("<root/>","text/xml");
+            normText = this.uNormalizer.transformToDocument(dummy).documentElement.textContent;
+        }
+        catch (e)
+        {
+            Alph.MozUtils.log(e);
+        }
+        return normText;
+    }
+);
