@@ -162,7 +162,7 @@ Alph.Grammar = {
             typeof href_target != "undefined"
             )
         {
-            Alph.MozUtils.log("Resetting href to " + 
+            Alph.BrowserUtils.log("Resetting href to " + 
                 Alph.Grammar.BASE_URL + 
                 href_target + href);
             Alph.$(this).attr("href", 
@@ -200,7 +200,7 @@ Alph.Grammar = {
      */
     loadAnchorMap: function()
     {
-        var file_contents = Alph.MozUtils.readFile(this.BASE_URL + "anchor_map");
+        var file_contents = Alph.BrowserUtils.readFile(this.BASE_URL + "anchor_map");
         var anchor_map;
         try 
         {
@@ -208,8 +208,8 @@ Alph.Grammar = {
         } 
         catch(exception)
         {
-            Alph.MozUtils.log("Could not process grammar anchor_map: " + exception);
-            Alph.MozUtils.log(file_contents);
+            Alph.BrowserUtils.log("Could not process grammar anchor_map: " + exception);
+            Alph.BrowserUtils.log(file_contents);
         }
         
         return anchor_map;

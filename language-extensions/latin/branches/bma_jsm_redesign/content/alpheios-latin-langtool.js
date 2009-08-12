@@ -122,7 +122,7 @@ Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params
             var dict_hdwd = Alph.$(".alph-hdwd",dict).text();
             // remove the trailing :
             dict_hdwd = dict_hdwd.replace(/\:\s*$/,'');
-            Alph.MozUtils.log("hdwd for inflection set: " + dict_hdwd);
+            Alph.BrowserUtils.log("hdwd for inflection set: " + dict_hdwd);
 
             var irregular = false;
             for (var i=0; i< Alph.LanguageTool_Latin.IRREG_VERBS.length; i++)
@@ -135,7 +135,7 @@ Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params
                     break;
                 }
             }
-            Alph.MozUtils.log("irregular:" + irregular);
+            Alph.BrowserUtils.log("irregular:" + irregular);
             var infls = {};
 
             // gather the moods for the verbs
@@ -381,7 +381,7 @@ Alph.LanguageTool_Latin.prototype.observePrefChange = function(a_name,a_value)
 Alph.LanguageTool_Latin.prototype.loadLexIds = function()
 {
     this.d_fullLexCode =
-        Alph.MozUtils.getPref("dictionaries.full",this.d_sourceLanguage)
+        Alph.BrowserUtils.getPref("dictionaries.full",this.d_sourceLanguage)
 
     if (this.d_fullLexCode == '' || this.d_fullLexCode == null)
     {
@@ -398,7 +398,7 @@ Alph.LanguageTool_Latin.prototype.loadLexIds = function()
                                   this.d_fullLexCode +
                                   "-ids.dat",
                                   "UTF-8");
-            Alph.MozUtils.log("Loaded Latin ids [" +
+            Alph.BrowserUtils.log("Loaded Latin ids [" +
                           this.d_idsFile.getData().length +
                           " bytes]");
         }
@@ -408,7 +408,7 @@ Alph.LanguageTool_Latin.prototype.loadLexIds = function()
             // provided dictionaries
             // so just quietly log the error in this case
             // later code must take a null ids file into account
-            Alph.MozUtils.log("error loading ids: " + ex);
+            Alph.BrowserUtils.log("error loading ids: " + ex);
             return false;
         }
     }
@@ -435,9 +435,9 @@ Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
             // set lemma attributes
             if (hdwd)
             {
-                Alph.MozUtils.log('adding @lemma-key="' + hdwd + '"');
-                Alph.MozUtils.log('adding @lemma-lang="lat"');
-                Alph.MozUtils.log('adding @lemma-lex="' + fullLex + '"');
+                Alph.BrowserUtils.log('adding @lemma-key="' + hdwd + '"');
+                Alph.BrowserUtils.log('adding @lemma-lang="lat"');
+                Alph.BrowserUtils.log('adding @lemma-lex="' + fullLex + '"');
                 Alph.$(".alph-dict", this).attr("lemma-key", hdwd);
                 Alph.$(".alph-dict", this).attr("lemma-lang", "lat");
                 Alph.$(".alph-dict", this).attr("lemma-lex", fullLex);
@@ -446,12 +446,12 @@ Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
                 if (lemmaId)
                 {
                     // set lemma attributes
-                    Alph.MozUtils.log('adding @lemma-id="' + lemmaId + '"');
+                    Alph.BrowserUtils.log('adding @lemma-id="' + lemmaId + '"');
                     Alph.$(".alph-dict", this).attr("lemma-id", lemmaId);
                 }
                 else
                 {
-                    Alph.MozUtils.log(
+                    Alph.BrowserUtils.log(
                         "id for " + hdwd + " not found [" + fullLex + "]");
                 }
             }
@@ -476,7 +476,7 @@ Alph.LanguageTool_Latin.prototype.getLemmaId = function(a_lemmaKey)
             Alph.LanguageTool_Latin.lookupLemma(a_lemmaKey, this.d_idsFile);
     if (!lemma_data[1])
     {
-        Alph.MozUtils.log("id for " +
+        Alph.BrowserUtils.log("id for " +
                       a_lemmaKey +
                       " not found [" +
                       this.d_fullLexCode + ']');
@@ -635,7 +635,7 @@ Alph.Convert.bind('latinToAscii',
             /[\u00f9-\u00fc\u0169\u016b\u016d\u016f\u0171\u0173]/g, 
             'u');
         
-        var converter =  Alph.MozSvc.getSvc('UnicodeConverter');            
+        var converter =  Alph.BrowserUtils.getSvc('UnicodeConverter');            
         // for now, just remove anyting else that's not ASCII  
         // TODO - implement full transliteration
         converter.charset = 'US-ASCII';
