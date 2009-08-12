@@ -63,7 +63,7 @@ Alph.LanguageTool_Greek.prototype.loadShortDefs = function()
 {
     this.d_defsFile = Array();
     this.d_shortLexCode =
-            Alph.MozUtils.getPref("dictionaries.short", this.d_sourceLanguage).split(',');
+            Alph.BrowserUtils.getPref("dictionaries.short", this.d_sourceLanguage).split(',');
 
     for (var i = 0; i < this.d_shortLexCode.length; ++i)
     {
@@ -78,7 +78,7 @@ Alph.LanguageTool_Greek.prototype.loadShortDefs = function()
                         this.d_shortLexCode[i] +
                         "-defs.dat",
                         "UTF-8");
-            Alph.MozUtils.log(
+            Alph.BrowserUtils.log(
                 "Loaded Greek defs for " +
                 this.d_shortLexCode[i] +
                 "[" +
@@ -105,7 +105,7 @@ Alph.LanguageTool_Greek.prototype.loadShortDefs = function()
 Alph.LanguageTool_Greek.prototype.loadLexIds = function()
 {
     this.d_idsFile = Array();
-    this.d_fullLexCode = Alph.MozUtils.getPref("dictionaries.full",
+    this.d_fullLexCode = Alph.BrowserUtils.getPref("dictionaries.full",
                                       this.d_sourceLanguage).split(',');
 
     for (var i = 0; i < this.d_fullLexCode.length; ++i)
@@ -120,7 +120,7 @@ Alph.LanguageTool_Greek.prototype.loadLexIds = function()
                         this.d_fullLexCode[i] +
                         "-ids.dat",
                         "UTF-8");
-            Alph.MozUtils.log(
+            Alph.BrowserUtils.log(
                 "Loaded Greek ids for " +
                 this.d_fullLexCode[i] +
                 "[" +
@@ -133,7 +133,7 @@ Alph.LanguageTool_Greek.prototype.loadLexIds = function()
             // provided dictionaries
             // so just quietly log the error in this case
             // later code must take a null ids file into account
-            Alph.MozUtils.log("error loading ids: " + ex);
+            Alph.BrowserUtils.log("error loading ids: " + ex);
             return false;
         }
     }
@@ -261,7 +261,7 @@ Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params
 
             // check for irregular verbs
 
-            Alph.MozUtils.log("lemma for inflection set: " + lemma);
+            Alph.BrowserUtils.log("lemma for inflection set: " + lemma);
 
             var irregular = false;
             for (var i=0; i< Alph.LanguageTool_Greek.IRREG_VERBS.length; i++)
@@ -274,7 +274,7 @@ Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params
                     break;
                 }
             }
-            Alph.MozUtils.log("irregular:" + irregular);
+            Alph.BrowserUtils.log("irregular:" + irregular);
 
             var infls = {};
 
@@ -373,7 +373,7 @@ Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params
                                     }
                                 }
                             }
-                            Alph.MozUtils.log("Pronoun type="+params.type);
+                            Alph.BrowserUtils.log("Pronoun type="+params.type);
                         } // end pronoun identification
                     }
                 } // end infl-type
@@ -560,7 +560,7 @@ Alph.LanguageTool_Greek.prototype.handleInflectionDisplay = function(a_tbl,a_str
 {
     // collapse all non-primary endings
     // TODO - this may only be temporary - experimenting with different approaches
-    //window.opener.Alph.MozUtils.log("Handling inflection display");
+    //window.opener.Alph.BrowserUtils.log("Handling inflection display");
     var ret_cells = [];
     var show_stem_classes = [];
     Alph.$("td.ending-group",a_tbl).each(
@@ -731,7 +731,7 @@ Alph.LanguageTool_Greek.prototype.postTransform = function(a_node)
                               '</div>';
 
                 // insert meaning into document
-                Alph.MozUtils.log("adding " + meanElt);
+                Alph.BrowserUtils.log("adding " + meanElt);
                 Alph.$(".alph-dict", this).after(meanElt);
                 
                 // build dictionary source element
@@ -741,16 +741,16 @@ Alph.LanguageTool_Greek.prototype.postTransform = function(a_node)
                 Alph.$(".alph-dict", this).append(srcElt);
 
                 // set lemma attributes
-                Alph.MozUtils.log('adding @lemma-lang="grc"');
-                Alph.MozUtils.log('adding @lemma-key="' + defReturn[0] + '"');
-                Alph.MozUtils.log('adding @lemma-lex="' + lex[i] + '"');
+                Alph.BrowserUtils.log('adding @lemma-lang="grc"');
+                Alph.BrowserUtils.log('adding @lemma-key="' + defReturn[0] + '"');
+                Alph.BrowserUtils.log('adding @lemma-lex="' + lex[i] + '"');
                 Alph.$(".alph-dict", this).attr("lemma-lang", "grc");
                 Alph.$(".alph-dict", this).attr("lemma-key", defReturn[0]);
                 Alph.$(".alph-dict", this).attr("lemma-lex", lex[i]);
             }
             else
             {
-                Alph.MozUtils.log("meaning for " +
+                Alph.BrowserUtils.log("meaning for " +
                               lemmaKey +
                               " not found [" + lex.join() + "]");
             }
@@ -816,7 +816,7 @@ Alph.LanguageTool_Greek.prototype.getLemmaId = function(a_lemmaKey)
             return Array(lemma_id, this.d_fullLexCode[i]);
     }
 
-    Alph.MozUtils.log("id for " +
+    Alph.BrowserUtils.log("id for " +
                   a_lemmaKey +
                   " not found [" +
                   this.d_fullLexCode.join() + ']');
@@ -951,7 +951,7 @@ Alph.Convert.bind('greekToAscii',
         }
         catch (e)
         {
-            Alph.MozUtils.log(e);
+            Alph.BrowserUtils.log(e);
         }
         return betaText;
     }
@@ -1000,7 +1000,7 @@ Alph.Convert.bind('normalizeGreek',
         }
         catch (e)
         {
-            Alph.MozUtils.log(e);
+            Alph.BrowserUtils.log(e);
         }
         return normText;
     }
