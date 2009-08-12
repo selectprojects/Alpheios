@@ -24,7 +24,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-Alph.LanguageToolFactory.add_lang('latin','LanguageTool_Latin');
+Alph.LanguageToolFactory.addLang('latin','LanguageTool_Latin');
 
 /**
  * @class  Alph.LanguageTool_Latin extends {@link Alph.LanguageTool} to define
@@ -255,7 +255,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
     {
         a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-verb.html";
         a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj-irreg.xml';
-        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-verb-conj-irreg.xsl');
+        a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-verb-conj-irreg.xsl');
         a_params.xslt_params.hdwd = a_params.hdwd;
         // too much work to support query for irregular verbs in the alpha
          if (a_params.mode == 'query')
@@ -268,7 +268,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
     {
         a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-substantive.html";
         a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj-supp.xml';
-        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-filtered.xsl');
+        a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-filtered.xsl');
 
         // we use verb_participle as a mood in morphology popup, so keep that, otherwise
         // strip the verb_prefix
@@ -288,7 +288,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
          */
         if (a_params.mode == 'query')
         {
-            a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-filtered-query.xsl');
+            a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-filtered-query.xsl');
          
         }
 
@@ -297,7 +297,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
     {
         a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-verb.html";
         a_params.xml_url = 'chrome://alpheios-latin/content/inflections/alph-verb-conj.xml';
-        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-verb-conj-group.xsl');
+        a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-verb-conj-group.xsl');
         a_params.xslt_params.group1 = 'tense';
         a_params.xslt_params.group2 = 'num';
         a_params.xslt_params.group3 = 'pers';
@@ -322,7 +322,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
          */
         if (a_params.mode == 'query')
         {
-            a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-filtered-query.xsl');
+            a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-filtered-query.xsl');
             a_params.xslt_params.filter_key = 'conj';
             a_params.xslt_params.filter_value = 
                 Alph.$('.alph-conj',a_params.xslt_params.selected_endings).attr('context');
@@ -337,7 +337,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
         a_params.html_url = "chrome://alpheios-latin/content/html/alph-infl-substantive.html";
         a_params.xml_url =
             'chrome://alpheios-latin/content/inflections/alph-infl-' + a_infl_type + '.xml';
-        a_params.xslt_processor = Alph.util.get_xslt_processor('alpheios','alph-infl-substantive.xsl');
+        a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-substantive.xsl');
 
         a_params.xslt_params.match_pofs = a_infl_type;
 
@@ -356,18 +356,18 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
 }
 
 /**
- * Latin-specific implementation of {@link Alph.LanguageTool#observe_pref_change}.
+ * Latin-specific implementation of {@link Alph.LanguageTool#observePrefChange}.
  *
  * calls loadLexIds if the default full dictionary changed
  * @param {String} a_name the name of the preference which changed
  * @param {Object} a_value the new value of the preference
  */
-Alph.LanguageTool_Latin.prototype.observe_pref_change = function(a_name,a_value)
+Alph.LanguageTool_Latin.prototype.observePrefChange = function(a_name,a_value)
 {
     if (a_name.indexOf('dictionaries.full') != -1)
     {
         this.loadLexIds();
-        this.lexicon_setup();
+        this.lexiconSetup();
     }
 
 }
@@ -380,26 +380,26 @@ Alph.LanguageTool_Latin.prototype.observe_pref_change = function(a_name,a_value)
  */
 Alph.LanguageTool_Latin.prototype.loadLexIds = function()
 {
-    this.full_lex_code =
-        Alph.MozUtils.getPref("dictionaries.full",this.source_language)
+    this.d_fullLexCode =
+        Alph.MozUtils.getPref("dictionaries.full",this.d_sourceLanguage)
 
-    if (this.full_lex_code == '' || this.full_lex_code == null)
+    if (this.d_fullLexCode == '' || this.d_fullLexCode == null)
     {
-        this.idsFile == null;
+        this.d_idsFile == null;
     }
     else
     {
         try
         {
-           this.idsFile =
+           this.d_idsFile =
                 new Alph.Datafile("chrome://alpheios-latin/content/dictionaries/" +
-                                  this.full_lex_code +
+                                  this.d_fullLexCode +
                                   "/lat-" +
-                                  this.full_lex_code +
+                                  this.d_fullLexCode +
                                   "-ids.dat",
                                   "UTF-8");
             Alph.MozUtils.log("Loaded Latin ids [" +
-                          this.idsFile.getData().length +
+                          this.d_idsFile.getData().length +
                           " bytes]");
         }
         catch (ex)
@@ -421,8 +421,8 @@ Alph.LanguageTool_Latin.prototype.loadLexIds = function()
  */
 Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
 {
-    var ids = this.idsFile;
-    var fullLex = this.full_lex_code;
+    var ids = this.d_idsFile;
+    var fullLex = this.d_fullLexCode;
     Alph.$(".alph-entry", a_node).each(
         function()
         {
@@ -457,32 +457,32 @@ Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
             }
         }
     );
-    var copyright = this.get_string('popup.credits');
+    var copyright = this.getString('popup.credits');
     Alph.$('#alph-morph-credits',a_node).html(copyright);
     
 }
 
 /**
- * Latin-specific implementation of {@link Alph.LanguageTool#get_lemma_id}.
+ * Latin-specific implementation of {@link Alph.LanguageTool#getLemmaId}.
  *
  * @param {String} a_lemmaKey the lemma key
  * @return {Array} (lemma id, lexicon code) or (null, null) if not found
  * @type Array
  */
-Alph.LanguageTool_Latin.prototype.get_lemma_id = function(a_lemmaKey)
+Alph.LanguageTool_Latin.prototype.getLemmaId = function(a_lemmaKey)
 {
     // get data from ids file
     var lemma_data =
-            Alph.LanguageTool_Latin.lookupLemma(a_lemmaKey, this.idsFile);
+            Alph.LanguageTool_Latin.lookupLemma(a_lemmaKey, this.d_idsFile);
     if (!lemma_data[1])
     {
         Alph.MozUtils.log("id for " +
                       a_lemmaKey +
                       " not found [" +
-                      this.full_lex_code + ']');
+                      this.d_fullLexCode + ']');
     }
 
-    return Array(lemma_data[1], this.full_lex_code);
+    return Array(lemma_data[1], this.d_fullLexCode);
 }
 
 /**
@@ -586,7 +586,7 @@ Alph.LanguageTool_Latin.lookupLemma = function(a_lemma, a_datafile)
  * @return the converted string
  * @type {String}
  */
-Alph.Convert.bind('latin_to_ascii',
+Alph.Convert.bind('latinToAscii',
     function(a_str)
     {
         // upper case A
@@ -635,7 +635,7 @@ Alph.Convert.bind('latin_to_ascii',
             /[\u00f9-\u00fc\u0169\u016b\u016d\u016f\u0171\u0173]/g, 
             'u');
         
-        converter =  Alph.MozSvc.get_svc('UnicodeConverter');            
+        var converter =  Alph.MozSvc.getSvc('UnicodeConverter');            
         // for now, just remove anyting else that's not ASCII  
         // TODO - implement full transliteration
         converter.charset = 'US-ASCII';

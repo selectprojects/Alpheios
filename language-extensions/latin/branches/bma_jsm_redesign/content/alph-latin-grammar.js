@@ -21,7 +21,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-Alph.grammar = {
+Alph.Grammar = {
     
     BASE_URL: 'chrome://alpheios-latin/content/grammar/',
 
@@ -42,7 +42,7 @@ Alph.grammar = {
                 function() 
                 {
                     Alph.$("a",this.contentDocument)
-                        .click(Alph.grammar.contentClickHandler);
+                        .click(Alph.Grammar.contentClickHandler);
                 },
                 true
                 );
@@ -61,15 +61,15 @@ Alph.grammar = {
                 params.update_args_callback =
                     function(a_args)
                         {
-                            Alph.grammar.set_start_href(a_args);
+                            Alph.Grammar.setStartHref(a_args);
                         }
             }
-            this.set_start_href(params);            
+            this.setStartHref(params);            
         }
         
         // Add a click handler to the links in the toc: they set the 
         // src of the alph-latin-grammar-content iframe
-        Alph.$("a",toc_doc).click(Alph.grammar.tocClickHandler);
+        Alph.$("a",toc_doc).click(Alph.Grammar.tocClickHandler);
     
         // hide the subcontents of the toc headings
         Alph.$("div.contents",toc_doc).css("display","none");
@@ -77,7 +77,7 @@ Alph.grammar = {
 
         
         // Add a click handler to the main toc headings
-        Alph.$("h2.contents",toc_doc).click(Alph.grammar.tocheadClickHandler);
+        Alph.$("h2.contents",toc_doc).click(Alph.Grammar.tocheadClickHandler);
         Alph.$("h2.contents",toc_doc).addClass("contents-closed");
 
         
@@ -97,14 +97,14 @@ Alph.grammar = {
     {
         var toc_doc = Alph.$("#alph-latin-grammar-toc").get(0).contentDocument;
         var href = Alph.$(this).attr("href");
-        var href_target = Alph.grammar.lookup_anchor(href.substring(1));
+        var href_target = Alph.Grammar.lookupAnchor(href.substring(1));
         if (href.indexOf('#') == 0 &&
             Alph.$("a[name='"+href+"']").length==0 &&
             typeof href_target != "undefined"
             )
         {
             Alph.$("#alph-latin-grammar-content").attr("src",
-                Alph.grammar.BASE_URL +
+                Alph.Grammar.BASE_URL +
                 href_target + href
             );
             //TODO we need to do a reload here - if you follow
@@ -156,32 +156,32 @@ Alph.grammar = {
     {
         var href = Alph.$(this).attr("href");
         var href_target = 
-            Alph.grammar.lookup_anchor(href.substring(1));
+            Alph.Grammar.lookupAnchor(href.substring(1));
         if (href.indexOf('#') == 0 &&
             Alph.$("a[name='"+href+"']").length==0 &&
             typeof href_target != "undefined"
             )
         {
             Alph.MozUtils.log("Resetting href to " + 
-                Alph.grammar.BASE_URL + 
+                Alph.Grammar.BASE_URL + 
                 href_target + href);
             Alph.$(this).attr("href", 
-                Alph.grammar.BASE_URL + 
+                Alph.Grammar.BASE_URL + 
                 href_target + href);
         } 
         return true;
     },
 
     /**
-     * lookup_anchor
+     * lookupAnchor
      *   Arguments:
      *      href: an anchor name referenced in url
      *   Returns: a string containing the filename
      *            which contains that anchor
      */
-    lookup_anchor: function(href)
+    lookupAnchor: function(href)
     {
-        var anchor_map = this.get_anchor_map();
+        var anchor_map = this.getAnchorMap();
         
         var target;
         if (anchor_map[href] != null)
@@ -192,15 +192,15 @@ Alph.grammar = {
     },
     
     /**
-     * load_anchor_map
+     * loadAnchorMap
      * Reads the anchor map file from the file system
      * this maps named anchors to the file in which
      * the anchor is found.
      * Returns the anchor_map object
      */
-    load_anchor_map: function()
+    loadAnchorMap: function()
     {
-        var file_contents = Alph.MozUtils.read_file(this.BASE_URL + "anchor_map");
+        var file_contents = Alph.MozUtils.readFile(this.BASE_URL + "anchor_map");
         var anchor_map;
         try 
         {
@@ -216,18 +216,18 @@ Alph.grammar = {
     },
     
     /**
-     * get_anchor_map
+     * getAnchorMap
      * Retrieves the anchor map from the browser's alpheios object
-     * Calls load_anchor_map to load it if it hasn't already been
+     * Calls loadAnchorMap to load it if it hasn't already been
      * initialized.
      */
-    get_anchor_map: function() 
+    getAnchorMap: function() 
     {
         // if we're running directly in the chrome
         // i.e. for testing, just load and return the anchor map
         if (opener == null) 
         {
-            return this.load_anchor_map();
+            return this.loadAnchorMap();
         }
         var bro = opener.Alph.main.getCurrentBrowser();
         if (typeof bro.alpheios.latin == "undefined" ||
@@ -240,20 +240,20 @@ Alph.grammar = {
             {
                 bro.alpheios.latin = {};            
             }
-            bro.alpheios.latin.grammar_anchor_map = this.load_anchor_map();
+            bro.alpheios.latin.grammar_anchor_map = this.loadAnchorMap();
         }
     
         return bro.alpheios.latin.grammar_anchor_map; 
     },
     
     /**
-     * set_start_href - set the location for the content window
+     * setStartHref - set the location for the content window
      * Arguments:
      *  params: object containing a target_href property 
      *          which specifies the name of the target anchor in the 
      *          grammar
      */
-    set_start_href: function(params)
+    setStartHref: function(params)
      {
         // pick up the original target href for the grammar from the
         // window arguments
@@ -264,11 +264,11 @@ Alph.grammar = {
                 params.target_href  : 
                 'preface';
         
-        var start_href_target = Alph.grammar.lookup_anchor(start_href);
+        var start_href_target = Alph.Grammar.lookupAnchor(start_href);
         if (typeof start_href_target != "undefined")
         {
             Alph.$("#alph-latin-grammar-content").attr("src", 
-                Alph.grammar.BASE_URL + 
+                Alph.Grammar.BASE_URL + 
                 start_href_target + 
                 "#" + start_href
             );
