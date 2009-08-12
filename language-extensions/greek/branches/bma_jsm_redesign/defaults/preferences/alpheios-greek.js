@@ -3,7 +3,7 @@ pref("extensions.alpheios.greek.chromepkg","alpheios-greek");
 pref("extensions.alpheios.greek.languagecode","grc");
 pref("extensions.alpheios.greek.base_unit","word");
 pref("extensions.alpheios.greek.methods.startup",'loadShortDefs,loadLexIds,loadStripper');
-pref("extensions.alpheios.greek.methods.convert",'greek_to_ascii');
+pref("extensions.alpheios.greek.methods.convert",'greekToAscii');
 pref("extensions.alpheios.greek.methods.lexicon",'webservice');
 pref("extensions.alpheios.greek.url.lexicon", 'http://localhost:8200');
 pref("extensions.alpheios.greek.url.lexicon.request", "/greek?word=<WORD>");
