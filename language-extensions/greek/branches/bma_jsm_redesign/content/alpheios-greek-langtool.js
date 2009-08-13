@@ -221,6 +221,8 @@ Alph.LanguageTool_Greek.PRONOUNS =
  */
 Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params)
 {
+    var langObj = this;
+    
     var params = a_params || {};
 
     // initialize the suffix arrays
@@ -261,7 +263,7 @@ Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params
 
             // check for irregular verbs
 
-            this.s_logger.debug("lemma for inflection set: " + lemma);
+            langObj.s_logger.debug("lemma for inflection set: " + lemma);
 
             var irregular = false;
             for (var i=0; i< Alph.LanguageTool_Greek.IRREG_VERBS.length; i++)
@@ -372,7 +374,7 @@ Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params
                                     }
                                 }
                             }
-                            this.s_logger.debug("Pronoun type="+params.type);
+                            langObj.s_logger.debug("Pronoun type="+params.type);
                         } // end pronoun identification
                     }
                 } // end infl-type
@@ -729,7 +731,7 @@ Alph.LanguageTool_Greek.prototype.postTransform = function(a_node)
                               '</div>';
 
                 // insert meaning into document
-                this.s_logger.debug("adding " + meanElt);
+                lang_obj.s_logger.debug("adding " + meanElt);
                 Alph.$(".alph-dict", this).after(meanElt);
                 
                 // build dictionary source element
@@ -739,16 +741,16 @@ Alph.LanguageTool_Greek.prototype.postTransform = function(a_node)
                 Alph.$(".alph-dict", this).append(srcElt);
 
                 // set lemma attributes
-                this.s_logger.debug('adding @lemma-lang="grc"');
-                this.s_logger.debug('adding @lemma-key="' + defReturn[0] + '"');
-                this.s_logger.debug('adding @lemma-lex="' + lex[i] + '"');
+                lang_obj.s_logger.debug('adding @lemma-lang="grc"');
+                lang_obj.s_logger.debug('adding @lemma-key="' + defReturn[0] + '"');
+                lang_obj.s_logger.debug('adding @lemma-lex="' + lex[i] + '"');
                 Alph.$(".alph-dict", this).attr("lemma-lang", "grc");
                 Alph.$(".alph-dict", this).attr("lemma-key", defReturn[0]);
                 Alph.$(".alph-dict", this).attr("lemma-lex", lex[i]);
             }
             else
             {
-                this.s_logger.warn("meaning for " +
+                lang_obj.s_logger.warn("meaning for " +
                               lemmaKey +
                               " not found [" + lex.join() + "]");
             }
