@@ -26,6 +26,13 @@ Alph.Grammar = {
     BASE_URL: 'chrome://alpheios-latin/content/grammar/',
 
     /**
+     * logger for the window
+     * @type Log4Moz.Logger
+     * @static
+     */
+    s_logger: Alph.BrowserUtils.getLogger('Alpheios.Grammar'), 
+    
+    /**
      * onLoad 
      * load handler for the grammar window
      */
@@ -162,7 +169,7 @@ Alph.Grammar = {
             typeof href_target != "undefined"
             )
         {
-            Alph.BrowserUtils.log("Resetting href to " + 
+            this.s_logger.debug("Resetting href to " + 
                 Alph.Grammar.BASE_URL + 
                 href_target + href);
             Alph.$(this).attr("href", 
@@ -208,8 +215,8 @@ Alph.Grammar = {
         } 
         catch(exception)
         {
-            Alph.BrowserUtils.log("Could not process grammar anchor_map: " + exception);
-            Alph.BrowserUtils.log(file_contents);
+            this.s_logger.error("Could not process grammar anchor_map: " + exception);
+            this.s_logger.error(file_contents);
         }
         
         return anchor_map;

@@ -122,7 +122,7 @@ Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params
             var dict_hdwd = Alph.$(".alph-hdwd",dict).text();
             // remove the trailing :
             dict_hdwd = dict_hdwd.replace(/\:\s*$/,'');
-            Alph.BrowserUtils.log("hdwd for inflection set: " + dict_hdwd);
+            this.s_logger.debug("hdwd for inflection set: " + dict_hdwd);
 
             var irregular = false;
             for (var i=0; i< Alph.LanguageTool_Latin.IRREG_VERBS.length; i++)
@@ -135,7 +135,7 @@ Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params
                     break;
                 }
             }
-            Alph.BrowserUtils.log("irregular:" + irregular);
+            this.s_logger.debug("irregular:" + irregular);
             var infls = {};
 
             // gather the moods for the verbs
@@ -398,7 +398,7 @@ Alph.LanguageTool_Latin.prototype.loadLexIds = function()
                                   this.d_fullLexCode +
                                   "-ids.dat",
                                   "UTF-8");
-            Alph.BrowserUtils.log("Loaded Latin ids [" +
+            this.s_logger.info("Loaded Latin ids [" +
                           this.d_idsFile.getData().length +
                           " bytes]");
         }
@@ -408,7 +408,7 @@ Alph.LanguageTool_Latin.prototype.loadLexIds = function()
             // provided dictionaries
             // so just quietly log the error in this case
             // later code must take a null ids file into account
-            Alph.BrowserUtils.log("error loading ids: " + ex);
+            this.s_logger.error("error loading ids: " + ex);
             return false;
         }
     }
@@ -435,9 +435,9 @@ Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
             // set lemma attributes
             if (hdwd)
             {
-                Alph.BrowserUtils.log('adding @lemma-key="' + hdwd + '"');
-                Alph.BrowserUtils.log('adding @lemma-lang="lat"');
-                Alph.BrowserUtils.log('adding @lemma-lex="' + fullLex + '"');
+                this.s_logger.debug('adding @lemma-key="' + hdwd + '"');
+                this.s_logger.debug('adding @lemma-lang="lat"');
+                this.s_logger.debug('adding @lemma-lex="' + fullLex + '"');
                 Alph.$(".alph-dict", this).attr("lemma-key", hdwd);
                 Alph.$(".alph-dict", this).attr("lemma-lang", "lat");
                 Alph.$(".alph-dict", this).attr("lemma-lex", fullLex);
@@ -446,12 +446,12 @@ Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
                 if (lemmaId)
                 {
                     // set lemma attributes
-                    Alph.BrowserUtils.log('adding @lemma-id="' + lemmaId + '"');
+                    this.s_logger.debug('adding @lemma-id="' + lemmaId + '"');
                     Alph.$(".alph-dict", this).attr("lemma-id", lemmaId);
                 }
                 else
                 {
-                    Alph.BrowserUtils.log(
+                    this.s_logger.warn(
                         "id for " + hdwd + " not found [" + fullLex + "]");
                 }
             }
@@ -476,7 +476,7 @@ Alph.LanguageTool_Latin.prototype.getLemmaId = function(a_lemmaKey)
             Alph.LanguageTool_Latin.lookupLemma(a_lemmaKey, this.d_idsFile);
     if (!lemma_data[1])
     {
-        Alph.BrowserUtils.log("id for " +
+        this.s_logger.warn("id for " +
                       a_lemmaKey +
                       " not found [" +
                       this.d_fullLexCode + ']');
