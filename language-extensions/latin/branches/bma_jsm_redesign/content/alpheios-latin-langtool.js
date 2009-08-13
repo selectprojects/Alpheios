@@ -86,6 +86,7 @@ Alph.LanguageTool_Latin.IRREG_VERBS =
  */
 Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params)
 {
+    var langObj = this;
     var params = a_params || {};
 
     params.entries = {};
@@ -122,7 +123,7 @@ Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params
             var dict_hdwd = Alph.$(".alph-hdwd",dict).text();
             // remove the trailing :
             dict_hdwd = dict_hdwd.replace(/\:\s*$/,'');
-            this.s_logger.debug("hdwd for inflection set: " + dict_hdwd);
+            langObj.s_logger.debug("hdwd for inflection set: " + dict_hdwd);
 
             var irregular = false;
             for (var i=0; i< Alph.LanguageTool_Latin.IRREG_VERBS.length; i++)
@@ -135,7 +136,7 @@ Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params
                     break;
                 }
             }
-            this.s_logger.debug("irregular:" + irregular);
+            langObj.s_logger.debug("irregular:" + irregular);
             var infls = {};
 
             // gather the moods for the verbs
@@ -421,6 +422,7 @@ Alph.LanguageTool_Latin.prototype.loadLexIds = function()
  */
 Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
 {
+    var langObj = this;
     var ids = this.d_idsFile;
     var fullLex = this.d_fullLexCode;
     Alph.$(".alph-entry", a_node).each(
@@ -435,9 +437,9 @@ Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
             // set lemma attributes
             if (hdwd)
             {
-                this.s_logger.debug('adding @lemma-key="' + hdwd + '"');
-                this.s_logger.debug('adding @lemma-lang="lat"');
-                this.s_logger.debug('adding @lemma-lex="' + fullLex + '"');
+                langObj.s_logger.debug('adding @lemma-key="' + hdwd + '"');
+                langObj.s_logger.debug('adding @lemma-lang="lat"');
+                langObj.s_logger.debug('adding @lemma-lex="' + fullLex + '"');
                 Alph.$(".alph-dict", this).attr("lemma-key", hdwd);
                 Alph.$(".alph-dict", this).attr("lemma-lang", "lat");
                 Alph.$(".alph-dict", this).attr("lemma-lex", fullLex);
@@ -446,12 +448,12 @@ Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
                 if (lemmaId)
                 {
                     // set lemma attributes
-                    this.s_logger.debug('adding @lemma-id="' + lemmaId + '"');
+                    langObj.s_logger.debug('adding @lemma-id="' + lemmaId + '"');
                     Alph.$(".alph-dict", this).attr("lemma-id", lemmaId);
                 }
                 else
                 {
-                    this.s_logger.warn(
+                    langObj.s_logger.warn(
                         "id for " + hdwd + " not found [" + fullLex + "]");
                 }
             }
