@@ -5,7 +5,7 @@
 		xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
 	<Description about="urn:mozilla:install-manifest">
-		<em:name>Alpheios Ararbic Tools</em:name>
+		<em:name>Alpheios Arabic Tools</em:name>
 		<em:version>0.1.0.20090804</em:version>
 		<em:description></em:description>
 		<em:creator>Cantus Foundation</em:creator>
