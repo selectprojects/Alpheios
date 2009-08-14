@@ -55,8 +55,8 @@ var TEMPLATE =
      * noun query template
      */
     noun:
-          { data_file: "chrome://alpheios-latin/content/inflections/alph-infl-noun.xml",
-            xslt_file: "alpheios,alph-infl-substantive-query.xsl",
+          { data_file: "alph-infl-noun.xml",
+            xslt_file: "alph-infl-substantive-query.xsl",
             xslt_params: this.getNounParams,
             exclude_test: this.missing_decl,
             invalidate_empty_cells: false,
@@ -71,8 +71,8 @@ var TEMPLATE =
      * noun query template
      */
     adjective:
-          { data_file: "chrome://alpheios-latin/content/inflections/alph-infl-adjective.xml",
-            xslt_file: "alpheios,alph-infl-substantive-query.xsl",
+          { data_file: "alph-infl-adjective.xml",
+            xslt_file: "alph-infl-substantive-query.xsl",
             xslt_params: this.getAdjParams,
             exclude_test: this.missing_decl,
             invalidate_empty_cells: false,
@@ -118,6 +118,9 @@ function makeInflQuery(a_elem,a_pofs,a_ans,a_callback)
     }
     else
     {
+        template.data_file = 
+            Alph.BrowserUtils.getContentUrl(a_ans.lang_tool.getLanguage()) + 
+            '/inflections/' + template.data_file;
         xslt_params = template.xslt_params(a_ans);
     }
     // if we don't have a data file, just return false to indicate
@@ -242,8 +245,7 @@ function activateTable(a_elem,a_ans,a_template,a_callback,a_xslt_param)
     var xslt_proc;
     if (typeof a_template.xslt_proc == "undefined" || a_template.xslt_proc == null)
     {
-        var xslt_file = a_template.xslt_file.split(/,/);
-        xslt_proc = Alph.Util.getXsltProcessor(xslt_file[0],xslt_file[1]);
+        xslt_proc = Alph.Util.getXsltProcessor(a_template.xslt_file);
     }
     else
     {

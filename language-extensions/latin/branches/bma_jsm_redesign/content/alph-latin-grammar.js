@@ -23,7 +23,7 @@
 
 Alph.Grammar = {
     
-    BASE_URL: 'chrome://alpheios-latin/content/grammar/',
+    BASE_URL: Alph.BrowserUtils.getContentUrl('latin') + '/grammar/',
 
     /**
      * logger for the window
