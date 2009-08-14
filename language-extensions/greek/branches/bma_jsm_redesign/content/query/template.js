@@ -40,9 +40,9 @@ var TEMPLATE =
      * verb query template
      */
     verb:
-          { data_file: "chrome://alpheios-greek/content/inflections/alph-infl-verb-paradigms.xml",
-            xslt_file: "alpheios,alph-infl-paradigm.xsl",
-            css_file: "chrome://alpheios/skin/alph-infl-paradigm.css",
+          { data_file: "alph-infl-verb-paradigms.xml",
+            xslt_file: "alph-infl-paradigm.xsl",
+            css_file: "alph-infl-paradigm.css",
             load_data_on_start: true,
             invalidate_empty_cells: false,
             xslt_params: this.getVerbParams,
@@ -57,8 +57,8 @@ var TEMPLATE =
      * noun query template
      */
     noun:
-          { data_file: "chrome://alpheios-greek/content/inflections/alph-infl-noun.xml",
-            xslt_file: "alpheios,alph-infl-substantive-query.xsl",
+          { data_file: "alph-infl-noun.xml",
+            xslt_file: "alph-infl-substantive-query.xsl",
             xslt_params: this.getNounParams,
             load_data_on_start: true,
             exclude_test: this.missing_decl,
@@ -74,8 +74,8 @@ var TEMPLATE =
      * noun query template
      */
     adjective:
-          { data_file: "chrome://alpheios-greek/content/inflections/alph-infl-adjective.xml",
-            xslt_file: "alpheios,alph-infl-substantive-query.xsl",
+          { data_file: "alph-infl-adjective.xml",
+            xslt_file: "alph-infl-substantive-query.xsl",
             xslt_params: this.getAdjParams,
             load_data_on_start: true,
             exclude_test: this.missing_decl,
@@ -91,8 +91,8 @@ var TEMPLATE =
      * article query template - not yet working
      *    
      * article:
-     *    { data_file: "chrome://alpheios-greek/content/inflections/alph-infl-article.xml",
-     *       xslt_file: "chrome://alpheios/skin/alph-infl-substantive-query.xsl",
+     *    { data_file: "alph-infl-article.xml",
+     *       xslt_file: "alph-infl-substantive-query.xsl",
      *       load_data_on_start: true,
      *       invalidate_empty_cells: false,
      *       xslt_params: this.getArticleParams,
@@ -132,8 +132,9 @@ function makeInflQuery(a_elem,a_pofs,a_ans,a_callback)
     
     if (typeof template.css_file == "string")
     {
+        var css_file_url = Alph.BrowserUtils.getStyleUrl() + '/' + template.css_file;
         $("head",$(a_elem).get(0).ownerDocument).append(
-            '<link type="text/css" rel="stylesheet" href="' + template.css_file + '"/>');
+            '<link type="text/css" rel="stylesheet" href="' + css_file_url + '"/>');
     }
     var infl_table;
     if (template.load_data_on_start)
@@ -246,9 +247,10 @@ function resetTable(a_event)
  */
 function activateTable(a_elem,a_ans,a_template,a_callback,a_xslt_param)
 {
-    var xslt_file = a_template.xslt_file.split(/,/);
-    var xslt_proc = Alph.Util.getXsltProcessor(xslt_file[0],xslt_file[1]);
-    var decl_table = loadForms(a_template.data_file, xslt_proc, a_xslt_param);
+    var xslt_proc = Alph.Util.getXsltProcessor(a_template.xslt_file);
+    var data_file_url = Alph.BrowserUtils.getContentUrl(a_ans.lang_tool.getLanguage()) + '/inflections/'
+        + a_template.data_file;
+    var decl_table = loadForms(data_file_url, xslt_proc, a_xslt_param);
     var table_elem = decl_table.getElementById("alph-infl-table") 
     $(a_elem).get(0).ownerDocument.importNode(table_elem,true);
     $(table_elem).tableHover({colClass: "",

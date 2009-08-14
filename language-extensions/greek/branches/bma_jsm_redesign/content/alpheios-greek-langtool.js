@@ -72,7 +72,7 @@ Alph.LanguageTool_Greek.prototype.loadShortDefs = function()
         {
             this.d_defsFile[i] =
                 new Alph.Datafile(
-                        "chrome://alpheios-greek/content/dictionaries/" +
+                        Alph.BrowserUtils.getContentUrl(this.d_sourceLanguage) + '/dictionaries/' +
                         this.d_shortLexCode[i] +
                         "/grc-" +
                         this.d_shortLexCode[i] +
@@ -114,7 +114,7 @@ Alph.LanguageTool_Greek.prototype.loadLexIds = function()
         {
            this.d_idsFile[i] =
                 new Alph.Datafile(
-                        "chrome://alpheios-greek/content/dictionaries/" +
+                        Alph.BrowserUtils.getContentUrl(this.d_sourceLanguage) + '/dictionaries/' +
                         this.d_fullLexCode[i] +
                         "/grc-" +
                         this.d_fullLexCode[i] +
@@ -151,7 +151,7 @@ Alph.LanguageTool_Greek.prototype.loadStripper = function()
 {
     try
     {
-        this.d_stripper = Alph.Util.getXsltProcessor('alpheios','alpheios-unistrip.xsl');
+        this.d_stripper = Alph.Util.getXsltProcessor('alpheios-unistrip.xsl');
     }
     catch (ex)
     {
@@ -384,7 +384,9 @@ Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params
     // identify the correct xslt parameters for the requested inflection type
     if (params.showpofs)
     {
-        params.html_url = "chrome://alpheios-greek/content/html/alph-infl-substantive.html";
+        params.content_url = Alph.BrowserUtils.getContentUrl(langObj.getLanguage());
+        params.html_url = 
+            params.content_url + "/html/alph-infl-substantive.html";
         Alph.LanguageTool_Greek.setInflectionXSL(params,params.showpofs,form);
         
         // TODO -remove this HACK which suppresses the Javascript matching algorithm
@@ -407,6 +409,8 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
     a_params.xslt_params.form = a_form || "";
     a_params.xslt_params.normalize_greek = true;
 
+    var html_url = a_params.content_url + '/html/';
+    var xml_url = a_params.content_url + '/inflections/';
 
     // get rid of the selected endings parameter if we couldn't find any
     if (typeof a_params.xslt_params.selected_endings == "undefined" ||
@@ -417,8 +421,8 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
 
     if (a_infl_type.match(/^verb/))
     {
-        a_params.xml_url = 'chrome://alpheios-greek/content/inflections/alph-infl-verb-paradigms.xml';
-        a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-paradigm.xsl');
+        a_params.xml_url = xml_url + 'alph-infl-verb-paradigms.xml';
+        a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-paradigm.xsl');
         if (a_infl_type.match(/_all$/))
         {
             a_params.xslt_params.paradigm_id = 'all';
@@ -430,15 +434,14 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
         {
             a_params.xslt_params.paradigm_id = a_params.paradigm_id;
         }
-        a_params.html_url = "chrome://alpheios-greek/content/html/alph-infl-verb-paradigms.html";
+        a_params.html_url = html_url + "alph-infl-verb-paradigms.html";
         a_params.title = 'alph-infl-title-verb-paradigms';
         a_params.xslt_params.normalize_greek = false;
     }
     else if (a_infl_type == 'article')
     {
-             a_params.xml_url =
-            'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
-        a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-single-grouping.xsl');
+        a_params.xml_url = xml_url + 'alph-infl-' + a_infl_type + '.xml';
+        a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-single-grouping.xsl');
         a_params.xslt_params.group4 = 'gend';
         a_params.xslt_params.match_form = true;
     }
@@ -451,20 +454,18 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
             a_params.xslt_params.match_pofs = 'irregular';
             a_infl_type = a_infl_type.replace(/_interrogative$/,'');
         }
-        a_params.xml_url =
-            'chrome://alpheios-greek/content/inflections/alph-infl-' +
-            a_infl_type + '-' + a_params.type + '.xml';
+        a_params.xml_url = xml_url + 'alph-infl-'+ a_infl_type + '-' + a_params.type + '.xml';
         // pronoun tables contain full forms
         a_params.xslt_params.match_form = true;
         
         if (a_params.type == 'dem')
         {
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-substantive.xsl');
+            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
             a_params.xslt_params.group4 = 'hdwd';
         }
         else if (a_params.type == 'refl' || a_params.type.match(/^pos/))
         {
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-substantive.xsl');
+            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
             a_params.xslt_params.group4 = 'pers';
             if (a_params.type.match(/^pos/))
             {
@@ -473,7 +474,7 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
         }
         else if (a_params.type != '')
         {
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-single-grouping.xsl');
+            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-single-grouping.xsl');
             if (a_params.type == 'pers')
             {
                 a_params.xslt_params.group4 = 'pers';
@@ -490,7 +491,7 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
             a_params.xml_url = null;
             a_params.xml_obj =
                 (new DOMParser()).parseFromString("<infl-data/>","text/xml");
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-substantive.xsl');
+            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
             a_params.xslt_params.link_content="grammar:smyth:s325|See Smyth Sections 325-340 Pronouns"
         }
     }
@@ -505,18 +506,15 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
              * and deduping duplicate endings (by attributes case, number, gender)
              */
             a_infl_type = is_simple[1];
-            a_params.xml_url =
-                'chrome://alpheios-greek/content/inflections/alph-infl-' +
-                a_infl_type + '-simpl.xml';
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-single-grouping.xsl');
+            a_params.xml_url = xml_url + 'alph-infl-' + a_infl_type + '-simpl.xml';
+            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-single-grouping.xsl');
             a_params.xslt_params.group4 = 'gend';
             a_params.title = 'alph-infl-title-'+a_infl_type;
         }
         else
         {
-            a_params.xml_url =
-                'chrome://alpheios-greek/content/inflections/alph-infl-' + a_infl_type + '.xml';
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-substantive.xsl');
+            a_params.xml_url = xml_url + 'alph-infl-' + a_infl_type + '.xml';
+            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
 
             if (a_params.order )
             {
@@ -541,7 +539,7 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
         a_params.xml_url = null;
         a_params.xml_obj =
             (new DOMParser()).parseFromString("<infl-data/>","text/xml");
-        a_params.xslt_processor = Alph.Util.getXsltProcessor('alpheios','alph-infl-substantive.xsl');
+        a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
         a_params.xslt_params.link_content="grammar:smyth:s341|See Smyth Sections 341-346 Adverbs"
 
     }
@@ -940,7 +938,7 @@ Alph.Convert.bind('greekToAscii',
         /* initialize the XSLT converter if we haven't done so already */
         if (this.u2bConverter == null)
         {
-            this.d_u2bConverter = Alph.Util.getXsltProcessor('alpheios','alpheios-uni2betacode.xsl');
+            this.d_u2bConverter = Alph.Util.getXsltProcessor('alpheios-uni2betacode.xsl');
         }
         var betaText = '';
         try
@@ -977,7 +975,7 @@ Alph.Convert.bind('normalizeGreek',
         /* initialize the XSLT converter if we haven't done so already */
         if (this.d_uNormalizer == null)
         {
-            this.d_uNormalizer = Alph.Util.getXsltProcessor('alpheios','alpheios-normalize-greek.xsl');
+            this.d_uNormalizer = Alph.Util.getXsltProcessor('alpheios-normalize-greek.xsl');
         }
 
         // set defaults for missing params
