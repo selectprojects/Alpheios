@@ -236,7 +236,7 @@ Alph.Grammar = {
         {
             return this.loadAnchorMap();
         }
-        var bro = opener.Alph.main.getCurrentBrowser();
+        var bro = opener.Alph.Main.getCurrentBrowser();
         if (typeof bro.alpheios.latin == "undefined" ||
             typeof bro.alpheios.latin.grammar_anchor_map == "undefined")
         {
