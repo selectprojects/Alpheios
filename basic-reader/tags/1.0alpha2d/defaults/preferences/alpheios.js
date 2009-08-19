@@ -36,4 +36,4 @@ pref("extensions.alpheios.partsofspeech","noun,adjective,verb,adverb,pronoun,art
 pref("extensions.alpheios.smallicons",false);
 pref("extensions.alpheios.disable.remote",false);
 pref("extensions.alpheios.url.speech.timeout",5000);
-pref("extensions.alpheios.enable.toolbar",false);
+pref("extensions.alpheios.enable.toolbar",true);
