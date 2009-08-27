@@ -640,12 +640,11 @@ Alph.Convert.bind('latinToAscii',
         a_str = a_str.replace(
             /[\u00f9-\u00fc\u0169\u016b\u016d\u016f\u0171\u0173]/g, 
             'u');
-        
-        var converter =  Alph.BrowserUtils.getSvc('UnicodeConverter');            
+                   
         // for now, just remove anyting else that's not ASCII  
         // TODO - implement full transliteration
-        converter.charset = 'US-ASCII';
-        a_str = converter.ConvertFromUnicode(a_str);
+        this.d_uConverter.charset = 'US-ASCII';
+        a_str = this.d_uConverter.ConvertFromUnicode(a_str);
         
         // just delete the '?' in the resulting conversion
         a_str.replace(/\?/,'');
