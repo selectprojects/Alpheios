@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM "chrome://alpheios-spanish/locale/alpheios-spanish.dtd">
+
+<overlay id="alpheios-spanish-overlay" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="chrome://alpheios-spanish/content/alpheios-spanish-langtool.js" />
+    
+    <stringbundleset id="stringbundleset">
+        <stringbundle id="alpheios-strings-spanish" 
+                      src="chrome://alpheios-spanish/locale/alpheios-spanish.properties"/>
+    </stringbundleset>
+
+    <broadcasterset id="mainBroadcasterSet">
+        <!-- broadcaster which hides spanish-specific menu elements -->
+        <broadcaster id="alph-lang-spanish-hide"
+                     hidden="true"
+                     disabled="true"
+                     class="alpheios-language-disabled-notifier"/>
+    </broadcasterset>
+
+    <menupopup id="alpheios-lang-popup-cm">
+        <menuitem id="alpheios-cm-lang-spanish"
+                  label="&alpheios.lang.spanish;"
+                  value="spanish"
+                  type="checkbox"
+                  hidden="false"/>
+    </menupopup>
+    <menupopup id="alpheios-lang-popup-tm">
+        <menuitem id="alpheios-tm-lang-spanish"
+                  label="&alpheios.lang.spanish;"
+                  value="spanish"
+                  type="checkbox"
+                  hidden="false"/>
+    </menupopup>
+</overlay>
