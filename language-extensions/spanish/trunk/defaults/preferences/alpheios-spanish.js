@@ -1,4 +1,4 @@
-pref("extensions.alpheios.spanish.usemhttpd", true);
+pref("extensions.alpheios.spanish.usemhttpd", false);
 pref("extensions.alpheios.spanish.chromepkg","alpheios-spanish");
 pref("extensions.alpheios.spanish.languagecode","es");
 pref("extensions.alpheios.spanish.base_unit","word");
