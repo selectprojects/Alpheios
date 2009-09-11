@@ -61,7 +61,7 @@ declare function lxget:get-entry-by-id(
  :)
 declare function lxget:get-entry-by-lemma(
   $a_lexicon as node()*,
-  $a_index as node(),
+  $a_index as node()?,
   $a_lemma as xs:string,
   $a_lang as xs:string) as element()?
 {
@@ -115,10 +115,18 @@ declare function lxget:get-entry-by-lemma(
             Key attribute in index is lemma with vowel length
             and diaeresis stripped and capitalization removed.
            :)
-          let $index-entry := $a_index//entry[@key eq $uni-lemma]
+          let $index-entry :=
+            if ($a_index)
+            then
+              $a_index//entry[@key eq $uni-lemma]
+            else ()
 
           (: get dictionary entry :)
-          return $a_lexicon//(entryFree|entry)[@id eq string($index-entry/@id)]
+          return
+            if ($index-entry)
+            then
+              $a_lexicon//(entryFree|entry)[@id eq string($index-entry/@id)]
+            else ()
 };
 
 (:
