@@ -178,17 +178,25 @@ function make_infl_query(a_elem,a_pofs,a_ans,a_callback)
         return false;
     }
     
-    if (typeof template.css_file == "string")
-    {
-        $("head",$(a_elem).get(0).ownerDocument).append(
-            '<link type="text/css" rel="stylesheet" href="' + template.css_file + '"/>');
-    }
     var infl_table;
     if (template.load_data_on_start)
     {
         var xslt_params = template.xslt_params(a_ans);
         infl_table = activate_table(a_elem,a_ans,template,a_callback,xslt_params);
     }
+    
+    if ($(".paradigm-nomatch",infl_table).length > 0)
+    {
+        $("#alph-infl-table",a_elem).remove();
+        return false;
+    }
+    
+    if (typeof template.css_file == "string")
+    {
+        $("head",$(a_elem).get(0).ownerDocument).append(
+            '<link type="text/css" rel="stylesheet" href="' + template.css_file + '"/>');
+    }
+    
     
     var html = '<div class="query-table">\n<div class="query-cols">\n';    
 
