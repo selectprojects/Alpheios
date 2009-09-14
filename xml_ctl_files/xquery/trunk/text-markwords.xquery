@@ -23,10 +23,32 @@
  :)
 
 declare variable $e_docname external;
+declare variable $e_lang external;
 
-declare variable $s_nontext := " “”—&quot;‘’,.:;·?!\[\]-";
-declare variable $s_match-text := concat("^([^", $s_nontext, "]+).*");
-declare variable $s_match-nontext := concat("^([", $s_nontext, "]+).*");
+(: sets of characters by language :)
+(: non-text characters :)
+declare variable $s_nontext :=
+(
+  element nontext
+  {
+    attribute lang { "grc" },
+    " “”—&quot;‘’,.:;·?!\[\]{}\-"
+  },
+  element nontext
+  {
+    attribute lang { "*" },
+    " “”—&quot;‘’,.:;·?!\[\](){}\-"
+  }
+);
+(: characters which signify word break and are part of word :)
+declare variable $s_breaktext :=
+(
+  element breaktext
+  {
+    attribute lang { "grc" },
+    "᾽"
+  }
+);
 
 (:
   Process set of nodes
@@ -34,7 +56,9 @@ declare variable $s_match-nontext := concat("^([", $s_nontext, "]+).*");
 declare function local:process-nodes(
   $a_nodes as node()*,
   $a_in-text as xs:boolean,
-  $a_id as xs:string) as node()*
+  $a_id as xs:string,
+  $a_match-text as xs:string,
+  $a_match-nontext as xs:string) as node()*
 {
   (: for each node :)
   for $node at $i in $a_nodes
@@ -51,8 +75,10 @@ declare function local:process-nodes(
       local:process-nodes(
         $node/(node()|@*[not(local-name(.) = ("part", "TEIform"))]),
         ($a_in-text or (local-name($node) eq "body")) and
-          (local-name($node) ne "note"),
-        concat($a_id, "-", $i))
+        not(local-name($node) = ("note", "head")),
+        concat($a_id, "-", $i),
+        $a_match-text,
+        $a_match-nontext)
     }
 
     (: if text in body, process it else just copy it :)
@@ -60,7 +86,11 @@ declare function local:process-nodes(
     return
     if ($a_in-text)
     then
-      local:process-text(normalize-space($t), concat($a_id, "-", $i), 1)
+      local:process-text(normalize-space($t),
+                         concat($a_id, "-", $i),
+                         1,
+                         $a_match-text,
+                         $a_match-nontext)
     else
       $node
 
@@ -75,17 +105,19 @@ declare function local:process-nodes(
 declare function local:process-text(
   $a_text as xs:string,
   $a_id as xs:string,
-  $a_i as xs:integer) as node()*
+  $a_i as xs:integer,
+  $a_match-text as xs:string,
+  $a_match-nontext as xs:string) as node()*
 {
   (: if anything to process :)
   if (string-length($a_text) > 0)
   then
     (: see if it starts with text :)
-    let $is-text := matches($a_text, $s_match-text)
+    let $is-text := matches($a_text, $a_match-text)
 
     (: get initial text/non-text string :)
     let $t := replace($a_text,
-                      if ($is-text) then $s_match-text else $s_match-nontext,
+                      if ($is-text) then $a_match-text else $a_match-nontext,
                       "$1")
 
     return
@@ -102,12 +134,33 @@ declare function local:process-text(
         else
           text { $t },
       (: then recursively process rest of text :)
-      local:process-text(substring-after($a_text, $t), $a_id, $a_i + 1)
+      local:process-text(substring-after($a_text, $t),
+                         $a_id,
+                         $a_i + 1,
+                         $a_match-text,
+                         $a_match-nontext)
     )
   else ()
 };
 
 let $doc := doc($e_docname)
+let $nontext :=
+  if ($s_nontext[@lang eq $e_lang])
+  then
+    $s_nontext[@lang eq $e_lang]/text()
+  else
+    $s_nontext[@lang eq "*"]/text()
+let $breaktext :=
+  if ($s_breaktext[@lang eq $e_lang])
+  then
+    $s_breaktext[@lang eq $e_lang]/text()
+  else
+    $s_breaktext[@lang eq "*"]/text()
+let $match-text :=
+  concat("^([^", $nontext, $breaktext, "]+",
+         if ($breaktext) then concat("[", $breaktext, "]?") else (),
+         ").*")
+let $match-nontext := concat("^([", $nontext, "]+).*")
 
 return
-  local:process-nodes($doc/node(), false(), "1")
+  local:process-nodes($doc/node(), false(), "1", $match-text, $match-nontext)

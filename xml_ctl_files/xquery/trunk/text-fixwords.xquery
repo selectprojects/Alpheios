@@ -43,7 +43,7 @@ declare variable $e_add external;
 declare variable $e_lang external;
 declare variable $e_treebanked external;
 
-declare variable $s_nontext := "^[“”—&quot;‘’,.:;·'?!\[\]-]+$";
+declare variable $s_nontext := "^[“”—&quot;‘’,.:;·'?!\[\]()\-]+$";
 
 (:
   Process a set of nodes
@@ -218,7 +218,7 @@ declare function local:fix-word(
   Filenames are built from the base name by adding:
     $e_lang+$e_add+".xml" for the original text
     ".align.xml" for the alignment data
-    ".tb.xml for" the treebank data
+    ".tb.xml" for the treebank data
  :)
 
 let $treebanked := (number($e_treebanked) > 0)
