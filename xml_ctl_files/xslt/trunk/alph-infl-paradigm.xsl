@@ -369,6 +369,11 @@
                             /preceding-sibling::*[@class='alph-dict']/@lemma-key
                                 = $match_elem/constraint[$num]/text()">1
                     </xsl:if>
+                    <xsl:if 
+                        test="substring-before($infl/ancestor::div[@class='alph-infl-set']
+                        /preceding-sibling::*[@class='alph-dict']/@lemma-key,'1')
+                        = $match_elem/constraint[$num]/text()">1
+                    </xsl:if>
                 </xsl:when>
                 <!-- pofs may be on inflection set or dict -->
                 <xsl:when test="$att_name = 'alph-pofs'">
