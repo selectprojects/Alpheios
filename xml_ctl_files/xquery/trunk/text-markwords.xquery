@@ -32,12 +32,12 @@ declare variable $s_nontext :=
   element nontext
   {
     attribute lang { "grc" },
-    " “”—&quot;‘’,.:;·?!\[\]{}\-"
+    " “”—&quot;‘’,.:;&#x0387;&#x00B7;?!\[\]{}\-"
   },
   element nontext
   {
     attribute lang { "*" },
-    " “”—&quot;‘’,.:;·?!\[\](){}\-"
+    " “”—&quot;‘’,.:;&#x0387;&#x00B7;?!\[\](){}\-"
   }
 );
 (: characters which signify word break and are part of word :)

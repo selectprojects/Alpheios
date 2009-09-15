@@ -43,7 +43,7 @@ declare variable $e_add external;
 declare variable $e_lang external;
 declare variable $e_treebanked external;
 
-declare variable $s_nontext := "^[“”—&quot;‘’,.:;·'?!\[\]()\-]+$";
+declare variable $s_nontext := "^[“”—&quot;‘’,.:;&#x0387;&#x00B7;'?!\[\]()\-]+$";
 
 (:
   Process a set of nodes
