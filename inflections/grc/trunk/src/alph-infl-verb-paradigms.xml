@@ -12231,6 +12231,10 @@
           <constraint name="pofs">verb_participle</constraint>
           <constraint name="stemtype">aor_pass</constraint>          
        </match>
+       <match paradigm_id_ref="verbpdgm60" match_order="11">
+          <constraint name="pofs">verb_participle</constraint>
+          <constraint name="stemtype">aor2_pass</constraint>
+       </match>
        <match paradigm_id_ref="verbpdgm60" match_order="13">
           <constraint name="pofs">verb_participle</constraint>
           <constraint name="stemtype">irreg_mi</constraint>
