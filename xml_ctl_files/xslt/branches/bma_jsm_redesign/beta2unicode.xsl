@@ -3,7 +3,7 @@
   <xsl:import href="beta-uni-util.xsl"/>
 
 <!--
-  Copyright 2008 Cantus Foundation
+  Copyright 2008-2009 Cantus Foundation
   http://alpheios.net
 
   This file is part of Alpheios.
@@ -25,14 +25,14 @@
   <!--
     Test whether text is in betacode
     Parameters:
-      $input        string/node to be tested
+      $a_in         string/node to be tested
     Output:
       1 if encoded in betacode, else 0
     (Note: Boolean return value does not seem to work
     reliably, perhaps because of recursion.)
   -->
   <xsl:template name="is-beta">
-    <xsl:param name="input"/>
+    <xsl:param name="a_in"/>
 
     <xsl:choose>
       <!-- if xml:lang says betacode, so be it -->
@@ -41,13 +41,13 @@
       </xsl:when>
 
       <!-- if no input, can't be betacode -->
-      <xsl:when test="string-length($input) = 0">
+      <xsl:when test="string-length($a_in) = 0">
         <xsl:value-of select="0"/>
       </xsl:when>
 
       <!-- otherwise, check the characters in input -->
       <xsl:otherwise>
-        <xsl:variable name="head" select="substring($input, 1, 1)"/>
+        <xsl:variable name="head" select="substring($a_in, 1, 1)"/>
 
         <xsl:choose>
           <!-- if betacode base letter, assume it's betacode -->
@@ -74,7 +74,7 @@
               <!-- otherwise, skip letter and check remainder of string -->
               <xsl:otherwise>
                 <xsl:call-template name="is-beta">
-                  <xsl:with-param name="input" select="substring($input, 2)"/>
+                  <xsl:with-param name="a_in" select="substring($a_in, 2)"/>
                 </xsl:call-template>
               </xsl:otherwise>
             </xsl:choose>
@@ -88,15 +88,15 @@
   <!--
     Convert Greek betacode to Unicode
     Parameters:
-      $input        betacode input string to be converted
-      $pending      character waiting to be output
-      $state        diacritics associated with pending character
-      $precomposed  whether to put out precomposed or decomposed Unicode
-      $partial      whether this is a partial word
-                    (If true, do not use final sigma for last letter)
+      $a_in           betacode input string to be converted
+      $a_pending      character waiting to be output
+      $a_state        diacritics associated with pending character
+      $a_precomposed  whether to put out precomposed or decomposed Unicode
+      $a_partial      whether this is a partial word
+                      (If true, do not use final sigma for last letter)
 
     Output:
-      $input transformed to equivalent Unicode
+      $a_in transformed to equivalent Unicode
 
     The characters in the state string are maintained in a canonical order,
     which allows the lookup table to contain a single entry for each
@@ -108,35 +108,35 @@
     of input are encountered, at which point the pending character is output.
   -->
   <xsl:template name="beta-to-uni">
-    <xsl:param name="input"/>
-    <xsl:param name="pending" select="''"/>
-    <xsl:param name="state" select="''"/>
-    <xsl:param name="precomposed" select="true()"/>
-    <xsl:param name="partial" select="false()"/>
+    <xsl:param name="a_in"/>
+    <xsl:param name="a_pending" select="''"/>
+    <xsl:param name="a_state" select="''"/>
+    <xsl:param name="a_precomposed" select="true()"/>
+    <xsl:param name="a_partial" select="false()"/>
 
-    <xsl:variable name="head" select="substring($input, 1, 1)"/>
+    <xsl:variable name="head" select="substring($a_in, 1, 1)"/>
 
     <xsl:choose>
       <!-- if no more input -->
-      <xsl:when test="string-length($input) = 0">
+      <xsl:when test="string-length($a_in) = 0">
         <!-- output last pending char -->
         <xsl:choose>
           <!-- final sigma: S with no state -->
           <xsl:when
-            test="(($pending = 's') or ($pending = 'S')) and
-                  not($partial) and (string-length($state) = 0)">
+            test="(($a_pending = 's') or ($a_pending = 'S')) and
+                  not($a_partial) and (string-length($a_state) = 0)">
             <xsl:call-template name="output-uni-char">
-              <xsl:with-param name="char" select="$pending"/>
-              <xsl:with-param name="state" select="'2'"/>
-              <xsl:with-param name="precomposed" select="$precomposed"/>
+              <xsl:with-param name="a_char" select="$a_pending"/>
+              <xsl:with-param name="a_state" select="'2'"/>
+              <xsl:with-param name="a_precomposed" select="$a_precomposed"/>
             </xsl:call-template>
           </xsl:when>
 
           <xsl:otherwise>
             <xsl:call-template name="output-uni-char">
-              <xsl:with-param name="char" select="$pending"/>
-              <xsl:with-param name="state" select="$state"/>
-              <xsl:with-param name="precomposed" select="$precomposed"/>
+              <xsl:with-param name="a_char" select="$a_pending"/>
+              <xsl:with-param name="a_state" select="$a_state"/>
+              <xsl:with-param name="a_precomposed" select="$a_precomposed"/>
             </xsl:call-template>
           </xsl:otherwise>
         </xsl:choose>
@@ -146,18 +146,18 @@
       <xsl:when test="$head = '*'">
         <!-- output pending char -->
         <xsl:call-template name="output-uni-char">
-          <xsl:with-param name="char" select="$pending"/>
-          <xsl:with-param name="state" select="$state"/>
-          <xsl:with-param name="precomposed" select="$precomposed"/>
+          <xsl:with-param name="a_char" select="$a_pending"/>
+          <xsl:with-param name="a_state" select="$a_state"/>
+          <xsl:with-param name="a_precomposed" select="$a_precomposed"/>
         </xsl:call-template>
 
         <!-- recurse, capitalizing next char, erasing any saved state -->
         <xsl:call-template name="beta-to-uni">
-          <xsl:with-param name="input" select="substring($input, 2)"/>
-          <xsl:with-param name="state" select="'*'"/>
-          <xsl:with-param name="pending" select="''"/>
-          <xsl:with-param name="precomposed" select="$precomposed"/>
-          <xsl:with-param name="partial" select="$partial"/>
+          <xsl:with-param name="a_in" select="substring($a_in, 2)"/>
+          <xsl:with-param name="a_state" select="'*'"/>
+          <xsl:with-param name="a_pending" select="''"/>
+          <xsl:with-param name="a_precomposed" select="$a_precomposed"/>
+          <xsl:with-param name="a_partial" select="$a_partial"/>
         </xsl:call-template>
       </xsl:when>
 
@@ -166,18 +166,18 @@
         <!-- update state with new character -->
         <xsl:variable name="newstate">
           <xsl:call-template name="insert-diacritic">
-            <xsl:with-param name="a_string" select="$state"/>
+            <xsl:with-param name="a_string" select="$a_state"/>
             <xsl:with-param name="a_char" select="$head"/>
           </xsl:call-template>
         </xsl:variable>
 
         <!-- recurse with updated state -->
         <xsl:call-template name="beta-to-uni">
-          <xsl:with-param name="input" select="substring($input, 2)"/>
-          <xsl:with-param name="state" select="$newstate"/>
-          <xsl:with-param name="pending" select="$pending"/>
-          <xsl:with-param name="precomposed" select="$precomposed"/>
-          <xsl:with-param name="partial" select="$partial"/>
+          <xsl:with-param name="a_in" select="substring($a_in, 2)"/>
+          <xsl:with-param name="a_state" select="$newstate"/>
+          <xsl:with-param name="a_pending" select="$a_pending"/>
+          <xsl:with-param name="a_precomposed" select="$a_precomposed"/>
+          <xsl:with-param name="a_partial" select="$a_partial"/>
         </xsl:call-template>
       </xsl:when>
 
@@ -187,22 +187,22 @@
         <xsl:choose>
           <!-- final sigma: S with no state followed by word break -->
           <xsl:when
-            test="(($pending = 's') or ($pending = 'S')) and
-                  (string-length($state) = 0) and
+            test="(($a_pending = 's') or ($a_pending = 'S')) and
+                  (string-length($a_state) = 0) and
                   (contains($s_betaSeparators, $head) or
                    contains($s_betaSeparators2, $head))">
             <xsl:call-template name="output-uni-char">
-              <xsl:with-param name="char" select="$pending"/>
-              <xsl:with-param name="state" select="'2'"/>
-              <xsl:with-param name="precomposed" select="$precomposed"/>
+              <xsl:with-param name="a_char" select="$a_pending"/>
+              <xsl:with-param name="a_state" select="'2'"/>
+              <xsl:with-param name="a_precomposed" select="$a_precomposed"/>
             </xsl:call-template>
           </xsl:when>
 
           <xsl:otherwise>
             <xsl:call-template name="output-uni-char">
-              <xsl:with-param name="char" select="$pending"/>
-              <xsl:with-param name="state" select="$state"/>
-              <xsl:with-param name="precomposed" select="$precomposed"/>
+              <xsl:with-param name="a_char" select="$a_pending"/>
+              <xsl:with-param name="a_state" select="$a_state"/>
+              <xsl:with-param name="a_precomposed" select="$a_precomposed"/>
             </xsl:call-template>
           </xsl:otherwise>
         </xsl:choose>
@@ -210,20 +210,20 @@
         <!-- reset state if there was a pending character -->
         <xsl:variable name="newstate">
           <xsl:choose>
-            <xsl:when test="$pending"/>
+            <xsl:when test="$a_pending"/>
             <xsl:otherwise>
-              <xsl:value-of select="$state"/>
+              <xsl:value-of select="$a_state"/>
             </xsl:otherwise>
           </xsl:choose>
         </xsl:variable>
 
         <!-- recurse with head as pending char -->
         <xsl:call-template name="beta-to-uni">
-          <xsl:with-param name="input" select="substring($input, 2)"/>
-          <xsl:with-param name="state" select="$newstate"/>
-          <xsl:with-param name="pending" select="$head"/>
-          <xsl:with-param name="precomposed" select="$precomposed"/>
-          <xsl:with-param name="partial" select="$partial"/>
+          <xsl:with-param name="a_in" select="substring($a_in, 2)"/>
+          <xsl:with-param name="a_state" select="$newstate"/>
+          <xsl:with-param name="a_pending" select="$head"/>
+          <xsl:with-param name="a_precomposed" select="$a_precomposed"/>
+          <xsl:with-param name="a_partial" select="$a_partial"/>
         </xsl:call-template>
       </xsl:otherwise>
     </xsl:choose>
@@ -232,26 +232,26 @@
   <!--
     Output a single character with diacritics
     Parameters:
-      $char         character to be output
-      $state        diacritics associated with character
-      $precomposed  whether to put out precomposed or decomposed Unicode
+      $a_char         character to be output
+      $a_state        diacritics associated with character
+      $a_precomposed  whether to put out precomposed or decomposed Unicode
   -->
   <xsl:template name="output-uni-char">
-    <xsl:param name="char"/>
-    <xsl:param name="state"/>
-    <xsl:param name="precomposed"/>
+    <xsl:param name="a_char"/>
+    <xsl:param name="a_state"/>
+    <xsl:param name="a_precomposed"/>
 
     <xsl:choose>
       <!-- if no character pending -->
-      <xsl:when test="string-length($char) = 0">
+      <xsl:when test="string-length($a_char) = 0">
         <!-- if we have state and we're not processing a capital -->
         <xsl:if
-          test="(string-length($state) > 0) and
-                      (substring($state, 1, 1) != '*')">
+          test="(string-length($a_state) > 0) and
+                      (substring($a_state, 1, 1) != '*')">
           <!-- output just the state -->
           <!-- here precomposed=true means don't make it combining -->
           <xsl:apply-templates select="$s_betaUniTable" mode="b2u">
-            <xsl:with-param name="a_key" select="$state"/>
+            <xsl:with-param name="a_key" select="$a_state"/>
             <xsl:with-param name="a_precomposed" select="true()"/>
           </xsl:apply-templates>
         </xsl:if>
@@ -261,16 +261,17 @@
       <xsl:otherwise>
         <!-- translate to lower and back -->
         <xsl:variable name="lowerchar"
-          select="translate($char, $s_betaUppers, $s_betaLowers)"/>
+          select="translate($a_char, $s_betaUppers, $s_betaLowers)"/>
         <xsl:variable name="upperchar"
-          select="translate($char, $s_betaLowers, $s_betaUppers)"/>
+          select="translate($a_char, $s_betaLowers, $s_betaUppers)"/>
         <xsl:choose>
           <!-- if upper != lower, we have a letter -->
           <xsl:when test="$lowerchar != $upperchar">
             <!-- use letter+state as key into table -->
             <xsl:apply-templates select="$s_betaUniTable" mode="b2u">
-              <xsl:with-param name="a_key" select="concat($lowerchar, $state)"/>
-              <xsl:with-param name="a_precomposed" select="$precomposed"/>
+              <xsl:with-param name="a_key"
+                              select="concat($lowerchar, $a_state)"/>
+              <xsl:with-param name="a_precomposed" select="$a_precomposed"/>
             </xsl:apply-templates>
           </xsl:when>
 
@@ -278,11 +279,11 @@
           <xsl:otherwise>
             <!-- output character, if any, then use state as key into table -->
             <!-- this handles the case of isolated diacritics -->
-            <xsl:value-of select="$char"/>
-            <xsl:if test="string-length($state) > 0">
+            <xsl:value-of select="$a_char"/>
+            <xsl:if test="string-length($a_state) > 0">
               <xsl:apply-templates select="$s_betaUniTable" mode="b2u">
-                <xsl:with-param name="a_key" select="$state"/>
-                <xsl:with-param name="a_precomposed" select="$precomposed"/>
+                <xsl:with-param name="a_key" select="$a_state"/>
+                <xsl:with-param name="a_precomposed" select="$a_precomposed"/>
               </xsl:apply-templates>
             </xsl:if>
           </xsl:otherwise>

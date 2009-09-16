@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
 <!--
-  Copyright 2008 Cantus Foundation
+  Copyright 2008-2009 Cantus Foundation
   http://alpheios.net
  
   This file is part of Alpheios.
@@ -24,13 +24,13 @@
   <xsl:output method="text"/>
   <xsl:include href="uni2betacode.xsl"/>
 
-  <xsl:param name="input"/>
-  <xsl:param name="upper" select="false()"/>
+  <xsl:param name="e_in"/>
+  <xsl:param name="e_upper" select="false()"/>
 
   <xsl:template match="/">
     <xsl:call-template name="uni-to-beta">
-      <xsl:with-param name="input" select="$input"/>
-      <xsl:with-param name="upper" select="$upper"/>
+      <xsl:with-param name="a_in" select="$e_in"/>
+      <xsl:with-param name="a_upper" select="$e_upper"/>
     </xsl:call-template>
   </xsl:template>
 

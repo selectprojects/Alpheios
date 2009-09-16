@@ -25,25 +25,25 @@
   Normalize Greek Unicode to precomposed/decomposed characters
 
   Parameters:
-    $input        text to normalize
-    $precomposed  whether to produce precomposed output (default=true)
-    $strip        betacode characters to strip (e.g. "/\=" to remove accents)
-    $partial      whether this is a partial word (default=false)
+    $e_in           text to normalize
+    $e_precomposed  whether to produce precomposed output (default=true)
+    $e_strip        betacode characters to strip (e.g. "/\=" to remove accents)
+    $e_partial      whether this is a partial word (default=false)
     (If true, do not use final sigma for last letter)
 -->
 
   <xsl:output method="text"/>
   <xsl:include href="normalize-greek.xsl"/>
-  <xsl:param name="input"/>
-  <xsl:param name="precomposed" select="1"/>
-  <xsl:param name="strip" select="''"/>
-  <xsl:param name="partial" select="0"/>
+  <xsl:param name="e_in"/>
+  <xsl:param name="e_precomposed" select="1"/>
+  <xsl:param name="e_strip" select="''"/>
+  <xsl:param name="e_partial" select="0"/>
   <xsl:template match="/">
     <xsl:call-template name="normalize-greek">
-      <xsl:with-param name="input" select="$input"/>
-      <xsl:with-param name="precomposed" select="$precomposed != 0"/>
-      <xsl:with-param name="strip" select="$strip"/>
-      <xsl:with-param name="partial" select="$partial != 0"/>
+      <xsl:with-param name="a_in" select="$e_in"/>
+      <xsl:with-param name="a_precomposed" select="$e_precomposed != 0"/>
+      <xsl:with-param name="a_strip" select="$e_strip"/>
+      <xsl:with-param name="a_partial" select="$e_partial != 0"/>
     </xsl:call-template>
   </xsl:template>
 </xsl:stylesheet>

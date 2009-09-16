@@ -6,7 +6,7 @@
   Table mapping morphological tag abbreviations to
   full names for Ancient Language Dependency Treebank
 -->
-  <xsl:variable name="raw-aldt-morphology-table">
+  <xsl:variable name="s_rawAldtMorphologyTable">
     <aldt-morphology-table>
       <!-- part of speech -->
       <entry>
@@ -292,23 +292,25 @@
       </entry>
     </aldt-morphology-table>
   </xsl:variable>
-  <xsl:variable name="aldt-morphology-table"
-    select="exsl:node-set($raw-aldt-morphology-table)/aldt-morphology-table"/>
+  <xsl:variable name="s_aldtMorphologyTable"
+    select="exsl:node-set($s_rawAldtMorphologyTable)/aldt-morphology-table"/>
 
   <!-- keys for lookup table -->
-  <xsl:key name="aldt-morphology-lookup" match="aldt-morphology-table/entry"
-    use="short"/>
-  <xsl:key name="aldt-morphology-lookup" match="aldt-morphology-table/entry"
-    use="long"/>
+  <xsl:key name="s_aldtMorphologyLookupShort"
+           match="aldt-morphology-table/entry"
+           use="short"/>
+  <xsl:key name="s_aldtMorphologyLookupLong"
+           match="aldt-morphology-table/entry"
+           use="long"/>
 
   <!--
     Template to calculate a long name from morphology code
     
     Parameters:
-      category            morphological category (person, case, etc.)
-      key                 short value to look up
-      attribute           whether to output attribute or element (default=attr)
-      name                name of attribute/element (default=use category)
+      a_category            morphological category (person, case, etc.)
+      a_key                 short value to look up
+      a_attribute           whether to output attribute or element (default=attr)
+      a_name                name of attribute/element (default=use category)
 
     Return value:
       If code found in requested category
@@ -316,31 +318,31 @@
       If code not found, empty
   -->
   <xsl:template match="aldt-morphology-table" mode="short2long">
-    <xsl:param name="category"/>
-    <xsl:param name="key"/>
-    <xsl:param name="attribute" select="true()"/>
-    <xsl:param name="name" select="''"/>
+    <xsl:param name="a_category"/>
+    <xsl:param name="a_key"/>
+    <xsl:param name="a_attribute" select="true()"/>
+    <xsl:param name="a_name" select="''"/>
 
     <!-- use long value from entry with matching category -->
     <xsl:variable name="value"
-      select="key('aldt-morphology-lookup', $key)[category=$category]/long"/>
+      select="key('s_aldtMorphologyLookupLong', $a_key)[category=$a_category]/long"/>
 
     <xsl:if test="string-length($value) > 0">
       <!-- name to use for attribute/element -->
       <xsl:variable name="nameToUse">
         <xsl:choose>
-          <xsl:when test="string-length($name) > 0">
-            <xsl:value-of select="$name"/>
+          <xsl:when test="string-length($a_name) > 0">
+            <xsl:value-of select="$a_name"/>
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select="$category"/>
+            <xsl:value-of select="$a_category"/>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:variable>
 
       <xsl:choose>
         <!-- if returning attribute -->
-        <xsl:when test="$attribute">
+        <xsl:when test="$a_attribute">
           <xsl:attribute name="{$nameToUse}">
             <xsl:value-of select="$value"/>
           </xsl:attribute>
@@ -359,22 +361,20 @@
     Template to calculate a morphology code from a long name
     
     Parameters:
-      category            morphological category (person, case, etc.)
-      key                 short value to look up
-      attribute           whether to output attribute or element (default=attr)
-      name                name of attribute/element (default=use category)
+      a_category            morphological category (person, case, etc.)
+      a_key                 short value to look up
 
     Return value:
       If long name found in category, the short code
       If not found, "-"
   -->
   <xsl:template match="aldt-morphology-table" mode="long2short">
-    <xsl:param name="category"/>
-    <xsl:param name="key"/>
+    <xsl:param name="a_category"/>
+    <xsl:param name="a_key"/>
 
     <!-- use short value from entry with matching category -->
     <xsl:variable name="value"
-      select="key('aldt-morphology-lookup', $key)[category=$category]/short"/>
+      select="key('s_aldtMorphologyLookupShort', $a_key)[category=$a_category]/short"/>
     <xsl:if test="string-length($value) > 0">
       <xsl:value-of select="$value"/>
     </xsl:if>
