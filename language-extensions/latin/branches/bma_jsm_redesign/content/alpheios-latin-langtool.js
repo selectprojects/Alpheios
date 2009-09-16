@@ -239,18 +239,18 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
     // TODO still need to link to big verb table
 
     a_params.xslt_params = {};
-    a_params.xslt_params.fragment = 1;
-    a_params.xslt_params.selected_endings = a_params.entries[a_infl_type];
-    a_params.xslt_params.form = a_form || "";
+    a_params.xslt_params.e_fragment = 1;
+    a_params.xslt_params.e_selectedEndings = a_params.entries[a_infl_type];
+    a_params.xslt_params.e_form = a_form || "";
     // wordsxml outputs suffixes in ascii so we need to transliterate
     // the unicode in the ending tables for matching
-    a_params.xslt_params.translit_ending_table_match = true;
+    a_params.xslt_params.e_translitEndingTableMatch = true;
 
     // get rid of the selected endings parameter if we couldn't find any
-    if (typeof a_params.xslt_params.selected_endings == "undefined"
-        || a_params.xslt_params.selected_endings.length == 0)
+    if (typeof a_params.xslt_params.e_selectedEndings == "undefined"
+        || a_params.xslt_params.e_selectedEndings.length == 0)
     {
-        delete a_params.xslt_params.selected_endings;
+        delete a_params.xslt_params.e_selectedEndings;
     }
 
     var html_url = a_params.content_url + '/html/';
@@ -260,7 +260,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
         a_params.html_url = html_url + 'alph-infl-verb.html';
         a_params.xml_url = xml_url + 'alph-verb-conj-irreg.xml';
         a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-verb-conj-irreg.xsl');
-        a_params.xslt_params.hdwd = a_params.hdwd;
+        a_params.xslt_params.e_hdwd = a_params.hdwd;
         // too much work to support query for irregular verbs in the alpha
          if (a_params.mode == 'query')
         {
@@ -277,16 +277,16 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
         // we use verb_participle as a mood in morphology popup, so keep that, otherwise
         // strip the verb_prefix
         var mood = a_infl_type == 'verb_participle' ? a_infl_type : (a_infl_type.split(/_/))[1];
-        //a_params.xslt_params.mood = mood;
-        a_params.xslt_params.filter_key = 'mood';
-        a_params.xslt_params.filter_value = mood;
-        a_params.xslt_params.group1 = 
+        //a_params.xslt_params.e_mood = mood;
+        a_params.xslt_params.e_filterKey = 'mood';
+        a_params.xslt_params.e_filterValue = mood;
+        a_params.xslt_params.e_group1 = 
             (mood == 'gerundive' || mood == 'supine') ? 'case' : 'tense';
-        a_params.xslt_params.group2 = 'num';
-        a_params.xslt_params.group3 = 'pers';
-        a_params.xslt_params.group4 = 'voice';
-        a_params.xslt_params.group5 = 'conj';
-        a_params.xslt_params.match_pofs = 'verb'; 
+        a_params.xslt_params.e_group2 = 'num';
+        a_params.xslt_params.e_group3 = 'pers';
+        a_params.xslt_params.e_group4 = 'voice';
+        a_params.xslt_params.e_group5 = 'conj';
+        a_params.xslt_params.e_matchPofs = 'verb'; 
         /**
          * in query mode, use the query xsl 
          */
@@ -302,10 +302,10 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
         a_params.html_url = html_url + "alph-infl-verb.html";
         a_params.xml_url = xml_url + 'alph-verb-conj.xml';
         a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-verb-conj-group.xsl');
-        a_params.xslt_params.group1 = 'tense';
-        a_params.xslt_params.group2 = 'num';
-        a_params.xslt_params.group3 = 'pers';
-        a_params.xslt_params.match_pofs = 'verb';
+        a_params.xslt_params.e_group1 = 'tense';
+        a_params.xslt_params.e_group2 = 'num';
+        a_params.xslt_params.e_group3 = 'pers';
+        a_params.xslt_params.e_matchPofs = 'verb';
 
         if (! a_params.order )
         {
@@ -316,9 +316,9 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
         var order = a_params.order.split('-');
         if (order.length > 0)
         {
-            a_params.xslt_params.group4 = order[0];
-            a_params.xslt_params.group5 = order[1];
-            a_params.xslt_params.group6 = order[2];
+            a_params.xslt_params.e_group4 = order[0];
+            a_params.xslt_params.e_group5 = order[1];
+            a_params.xslt_params.e_group6 = order[2];
         }
         
         /**
@@ -327,12 +327,12 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
         if (a_params.mode == 'query')
         {
             a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-filtered-query.xsl');
-            a_params.xslt_params.filter_key = 'conj';
-            a_params.xslt_params.filter_value = 
-                Alph.$('.alph-conj',a_params.xslt_params.selected_endings).attr('context');
-            a_params.xslt_params.group4 = 'voice';
-            a_params.xslt_params.group5 = 'mood';
-            a_params.xslt_params.group6 = '';
+            a_params.xslt_params.e_filterKey = 'conj';
+            a_params.xslt_params.e_filterValue = 
+                Alph.$('.alph-conj',a_params.xslt_params.e_selectedEndings).attr('context');
+            a_params.xslt_params.e_group4 = 'voice';
+            a_params.xslt_params.e_group5 = 'mood';
+            a_params.xslt_params.e_group6 = '';
   
         }
     }
@@ -343,7 +343,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
             xml_url + 'alph-infl-' + a_infl_type + '.xml';
         a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
 
-        a_params.xslt_params.match_pofs = a_infl_type;
+        a_params.xslt_params.e_matchPofs = a_infl_type;
 
         if (a_params.order )
         {
@@ -351,9 +351,9 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
             var order = a_params.order.split('-');
             if (order.length > 0)
             {
-                a_params.xslt_params.group4 = order[0];
-                a_params.xslt_params.group5 = order[1];
-                a_params.xslt_params.group6 = order[2];
+                a_params.xslt_params.e_group4 = order[0];
+                a_params.xslt_params.e_group5 = order[1];
+                a_params.xslt_params.e_group6 = order[2];
             }
         }
     }

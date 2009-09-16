@@ -404,19 +404,19 @@ Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params
 Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
 {
     a_params.xslt_params = {};
-    a_params.xslt_params.fragment = 1;
-    a_params.xslt_params.selected_endings = a_params.entries[a_infl_type];
-    a_params.xslt_params.form = a_form || "";
-    a_params.xslt_params.normalize_greek = true;
+    a_params.xslt_params.e_fragment = 1;
+    a_params.xslt_params.e_selectedEndings = a_params.entries[a_infl_type];
+    a_params.xslt_params.e_form = a_form || "";
+    a_params.xslt_params.e_normalizeGreek = true;
 
     var html_url = a_params.content_url + '/html/';
     var xml_url = a_params.content_url + '/inflections/';
 
     // get rid of the selected endings parameter if we couldn't find any
-    if (typeof a_params.xslt_params.selected_endings == "undefined" ||
-         a_params.xslt_params.selected_endings.length == 0)
+    if (typeof a_params.xslt_params.e_selectedEndings == "undefined" ||
+         a_params.xslt_params.e_selectedEndings.length == 0)
     {
-        delete a_params.xslt_params.selected_endings;
+        delete a_params.xslt_params.e_selectedEndings;
     }
 
     if (a_infl_type.match(/^verb/))
@@ -425,25 +425,25 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
         a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-paradigm.xsl');
         if (a_infl_type.match(/_all$/))
         {
-            a_params.xslt_params.paradigm_id = 'all';
-            a_params.xslt_params.match_pofs = 'verb';
-            a_params.xslt_params.selected_endings = 
+            a_params.xslt_params.e_paradigmId = 'all';
+            a_params.xslt_params.e_matchPofs = 'verb';
+            a_params.xslt_params.e_selectedEndings = 
                 a_params.entries.verb.concat(a_params.entries.verb_participle);
         }
         else if (typeof a_params.paradigm_id != 'undefined' && a_params.paradigm_id != null)
         {
-            a_params.xslt_params.paradigm_id = a_params.paradigm_id;
+            a_params.xslt_params.e_paradigmId = a_params.paradigm_id;
         }
         a_params.html_url = html_url + "alph-infl-verb-paradigms.html";
         a_params.title = 'alph-infl-title-verb-paradigms';
-        a_params.xslt_params.normalize_greek = false;
+        a_params.xslt_params.e_normalizeGreek = false;
     }
     else if (a_infl_type == 'article')
     {
         a_params.xml_url = xml_url + 'alph-infl-' + a_infl_type + '.xml';
         a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-single-grouping.xsl');
-        a_params.xslt_params.group4 = 'gend';
-        a_params.xslt_params.match_form = true;
+        a_params.xslt_params.e_group4 = 'gend';
+        a_params.xslt_params.e_matchForm = true;
     }
     else if (a_infl_type.match(/^pronoun/))
     {
@@ -451,25 +451,25 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
         // morpheus specifies 'irregular' as the part of speech for the interrogative pronoun
         if (a_infl_type.match(/_interrogative$/))
         {
-            a_params.xslt_params.match_pofs = 'irregular';
+            a_params.xslt_params.e_matchPofs = 'irregular';
             a_infl_type = a_infl_type.replace(/_interrogative$/,'');
         }
         a_params.xml_url = xml_url + 'alph-infl-'+ a_infl_type + '-' + a_params.type + '.xml';
         // pronoun tables contain full forms
-        a_params.xslt_params.match_form = true;
+        a_params.xslt_params.e_matchForm = true;
         
         if (a_params.type == 'dem')
         {
             a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
-            a_params.xslt_params.group4 = 'hdwd';
+            a_params.xslt_params.e_group4 = 'hdwd';
         }
         else if (a_params.type == 'refl' || a_params.type.match(/^pos/))
         {
             a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
-            a_params.xslt_params.group4 = 'pers';
+            a_params.xslt_params.e_group4 = 'pers';
             if (a_params.type.match(/^pos/))
             {
-                a_params.xslt_params.group1 = 'objnum';
+                a_params.xslt_params.e_group1 = 'objnum';
             }
         }
         else if (a_params.type != '')
@@ -477,11 +477,11 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
             a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-single-grouping.xsl');
             if (a_params.type == 'pers')
             {
-                a_params.xslt_params.group4 = 'pers';
+                a_params.xslt_params.e_group4 = 'pers';
             }
             else
             {
-                a_params.xslt_params.group4 = 'gend';
+                a_params.xslt_params.e_group4 = 'gend';
             }
         }
         else
@@ -492,7 +492,7 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
             a_params.xml_obj =
                 (new DOMParser()).parseFromString("<infl-data/>","text/xml");
             a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
-            a_params.xslt_params.link_content="grammar:smyth:s325|See Smyth Sections 325-340 Pronouns"
+            a_params.xslt_params.e_linkContent="grammar:smyth:s325|See Smyth Sections 325-340 Pronouns"
         }
     }
     else if (a_infl_type.match(/^(noun|adjective|numeral)/))
@@ -508,7 +508,7 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
             a_infl_type = is_simple[1];
             a_params.xml_url = xml_url + 'alph-infl-' + a_infl_type + '-simpl.xml';
             a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-single-grouping.xsl');
-            a_params.xslt_params.group4 = 'gend';
+            a_params.xslt_params.e_group4 = 'gend';
             a_params.title = 'alph-infl-title-'+a_infl_type;
         }
         else
@@ -522,16 +522,16 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
                 var order = a_params.order.split('-');
                 if (order.length > 0)
                 {
-                    a_params.xslt_params.group4 = order[0];
-                    a_params.xslt_params.group5 = order[1];
-                    a_params.xslt_params.group6 = order[2];
+                    a_params.xslt_params.e_group4 = order[0];
+                    a_params.xslt_params.e_group5 = order[1];
+                    a_params.xslt_params.e_group6 = order[2];
                 }
             }
         }
         if (a_infl_type == 'numeral')
         {
-            a_params.xslt_params.group4 = 'hdwd';
-            a_params.xslt_params.match_form = true;
+            a_params.xslt_params.e_group4 = 'hdwd';
+            a_params.xslt_params.e_matchForm = true;
         }
     }
     else if (a_infl_type == 'adverb')
@@ -540,12 +540,12 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
         a_params.xml_obj =
             (new DOMParser()).parseFromString("<infl-data/>","text/xml");
         a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
-        a_params.xslt_params.link_content="grammar:smyth:s341|See Smyth Sections 341-346 Adverbs"
+        a_params.xslt_params.e_linkContent="grammar:smyth:s341|See Smyth Sections 341-346 Adverbs"
 
     }
-    if (typeof a_params.xslt_params.match_pofs  == 'undefined')
+    if (typeof a_params.xslt_params.e_matchPofs  == 'undefined')
     {
-        a_params.xslt_params.match_pofs = a_infl_type;
+        a_params.xslt_params.e_matchPofs = a_infl_type;
     }
 }
 
@@ -843,9 +843,9 @@ function(a_lemma, a_key, a_datafile, a_stripper)
     if (!a_key)
     {
         // if no key given, strip vowel length diacritics and capitalization
-        a_stripper.setParameter(null, "input", a_lemma);
-        a_stripper.setParameter(null, "strip-vowels", true);
-        a_stripper.setParameter(null, "strip-caps", true);
+        a_stripper.setParameter(null, "e_in", a_lemma);
+        a_stripper.setParameter(null, "e_stripVowels", true);
+        a_stripper.setParameter(null, "e_stripCaps", true);
         x = (new DOMParser()).parseFromString("<dummy/>", "text/xml");
         key = a_stripper.transformToDocument(x).documentElement.textContent;
     }
@@ -891,9 +891,9 @@ function(a_lemma, a_key, a_datafile, a_stripper)
             (data.charAt(startText) == specialFlag))
         {
             // retry using flag plus lemma without caps removed
-            a_stripper.setParameter(null, "input", a_lemma);
-            a_stripper.setParameter(null, "strip-vowels", true);
-            a_stripper.setParameter(null, "strip-caps", false);
+            a_stripper.setParameter(null, "e_in", a_lemma);
+            a_stripper.setParameter(null, "e_stripVowels", true);
+            a_stripper.setParameter(null, "e_stripCaps", false);
             if (!x)
                 x = (new DOMParser()).parseFromString("<dummy/>", "text/xml");
             key = specialFlag +
@@ -943,7 +943,7 @@ Alph.Convert.bind('greekToAscii',
         var betaText = '';
         try
         {
-            this.d_u2bConverter.setParameter(null, "input", a_str);
+            this.d_u2bConverter.setParameter(null, "e_in", a_str);
             var dummy = (new DOMParser()).parseFromString("<root/>","text/xml");
             betaText = this.d_u2bConverter.transformToDocument(dummy).documentElement.textContent;
         }
@@ -989,10 +989,14 @@ Alph.Convert.bind('normalizeGreek',
         var normText = '';
         try
         {
-            this.d_uNormalizer.setParameter(null, "input", a_str);
-            this.d_uNormalizer.setParameter(null, "precomposed", (a_precomposed ? 1 : 0));
-            this.d_uNormalizer.setParameter(null, "strip", a_strip);
-            this.d_uNormalizer.setParameter(null, "partial", (a_partial ? 1 : 0));
+            this.d_uNormalizer.setParameter(null, "e_in", a_str);
+            this.d_uNormalizer.setParameter(null,
+                                            "e_precomposed",
+                                            (a_precomposed ? 1 : 0));
+            this.d_uNormalizer.setParameter(null, "e_strip", a_strip);
+            this.d_uNormalizer.setParameter(null,
+                                            "e_partial",
+                                            (a_partial ? 1 : 0));
             var dummy = (new DOMParser()).parseFromString("<root/>","text/xml");
             normText = this.d_uNormalizer.transformToDocument(dummy).documentElement.textContent;
         }
