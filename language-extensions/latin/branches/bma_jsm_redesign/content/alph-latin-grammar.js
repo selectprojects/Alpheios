@@ -1,5 +1,5 @@
-/*
- * Javascript functions for the Latin Grammar Window
+/**
+ * @fileoverview Javascript functions for the Latin Grammar Window
  * $Id$
  * 
  * Copyright 2008-2009 Cantus Foundation

@@ -1,4 +1,4 @@
-/*
+/**
  * @fileoverview Latin extension of Alph.LanguageTool class
  * @version $Id: alpheios-latin-langtool.js 439 2008-03-27 00:26:41Z BridgetAlmas $
  *
