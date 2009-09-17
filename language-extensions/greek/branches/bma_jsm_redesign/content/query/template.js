@@ -32,13 +32,10 @@
  */
 
 /**
- * @singleton 
+ * @ignore
  */
 var TEMPLATE =
 {
-    /**
-     * verb query template
-     */
     verb:
           { data_file: "alph-infl-verb-paradigms.xml",
             xslt_file: "alph-infl-paradigm.xsl",
@@ -53,9 +50,6 @@ var TEMPLATE =
             ],
 
     },
-    /**
-     * noun query template
-     */
     noun:
           { data_file: "alph-infl-noun.xml",
             xslt_file: "alph-infl-substantive-query.xsl",
@@ -70,9 +64,6 @@ var TEMPLATE =
             filters: [
             ]
           },
-     /**
-     * noun query template
-     */
     adjective:
           { data_file: "alph-infl-adjective.xml",
             xslt_file: "alph-infl-substantive-query.xsl",
@@ -108,13 +99,14 @@ var TEMPLATE =
 
 
 /**
+ * @ignore
  * make the inflection query element
  * @param {Element} a_elem the DOM node to which the query element is appended
  * @param {String} a_pofs the part of speech for the query
  * @param {Element} a_ans the object containing the correct inflection data
  * @param {Function} a_callback callback function to be called when the correct
  *                              answer is found
- * @return true if able to create the inflection query element, otherwise false
+ * @returns true if able to create the inflection query element, otherwise false
  * @type Boolean   
  */
 function makeInflQuery(a_elem,a_pofs,a_ans,a_callback)
@@ -222,6 +214,7 @@ function makeInflQuery(a_elem,a_pofs,a_ans,a_callback)
 }
 
 /**
+ * @ignore
  * reset the inflection query table clearing any answers found so far
  * @param {Event} a_event the reset button click event 
  */
@@ -244,13 +237,14 @@ function resetTable(a_event)
 }
 
 /**
+ * @ignore
  * activate the inflection table element
  * @param {Element} a_elem the DOM node to which the query table is appended
  * @param {Element} a_ans the object containing the correct inflection details
  * @param {Object} a_tepmlate the table template data
  * @param {Function} a_callback callback executed upon correct answer selected
  * @param {Object} a_xslt_param optional xslt parameters 
- * @return {Element} the inflection table element
+ * @returns {Element} the inflection table element
  */
 function activateTable(a_elem,a_ans,a_template,a_callback,a_xslt_param)
 {
@@ -362,6 +356,9 @@ function activateTable(a_elem,a_ans,a_template,a_callback,a_xslt_param)
     
 }
 
+/**
+ * @ignore
+ */
 function markCellIncorrect(a_choice,a_doc)
 {
     var att_name = $("input",a_choice).attr('name') ; 
@@ -393,6 +390,7 @@ function markCellIncorrect(a_choice,a_doc)
     );
 }
 /**
+ * @ignore
  * Checks user input
  * @param {Event} a_event the user input event
  */
@@ -523,6 +521,7 @@ function checkAnswer(a_event)
 }
 
 /**
+ * @ignore
  * Show a form identified by user input
  * @param {Event} a_event the user input event
  */
@@ -558,6 +557,7 @@ function showForm(event)
 }
 
 /**
+ * @ignore
  * load the inflection form data
  * @param {String} a_file the url to the xml file containing the data
  * @param {String} a_xslt_proc the xslt processor
@@ -590,6 +590,7 @@ function loadForms(a_file,a_xslt_proc,a_xslt_param)
 }
 
 /**
+ * @ignore
  * replace a string from properties
  * @param {Element} a_elem the DOM node containing the text to be replaced
  */
@@ -600,6 +601,7 @@ function replaceString(a_elem,a_props)
 }
 
 /**
+ * @ignore
  * get a string from properties
  */
 function getString(a_text)
@@ -642,6 +644,7 @@ function getString(a_text)
 }
 
 /**
+ * @ignore
  * Show all the forms in the inflection table
  * @param {Document} a_doc the parent document
  * @param {Event} a_event the event which initated the action
@@ -657,6 +660,7 @@ function showAllForms(a_doc,a_event)
 }
 
 /**
+ * @ignore
  * Show a specific form in the inflection table - may be in response
  * to a user click on the cell, or selection of the correct answer
  * by process of elimination
@@ -845,6 +849,7 @@ function showTableForm(a_event,a_cell)
 }
 
 /**
+ * @ignore
  * toggle the hover class over an inflection table cell
  * @param {Event} a_event the hover event
  */
@@ -856,6 +861,7 @@ function toggleCellHover(a_event)
 
 /** 
  * hover the corresponding table header when hovering over a radio choice
+ * @param {Event} a_event the hover event
  */
 function toggleChoiceHover(a_event)
 {
@@ -869,6 +875,7 @@ function toggleChoiceHover(a_event)
 }
 
 /**
+ * @ignore
  * toggle the hover class over an inflection table heading
  * @param {Event} a_event the hover event
  */
@@ -909,6 +916,7 @@ function toggleHeadHover(a_event)
 }
 
 /**
+ * @ignore
  * respond to a click on an inflection table heading
  * @param {Event} a_event the click event
  */
@@ -945,6 +953,7 @@ function selectHeadCell(a_event)
 
 
 /**
+ * @ignore
  * auto-select an answer (because only one option left due to
  * process of elmination)
  * @param {Element} a_col the DOM element containing the set of data for which the answer
@@ -989,6 +998,9 @@ function autoSelectAnswer(a_col,a_data)
     return null;
 }
 
+/**
+ * @ignore
+ */
 function getVerbParams(a_ans)
 {
     var params = {};
@@ -999,7 +1011,10 @@ function getVerbParams(a_ans)
     params.query_mode = true;
     return params;
 }
-    
+
+/**
+ * @ignore
+ */
 function getArticleParams(a_ans)
 {
     return { group1: 'case',
@@ -1007,6 +1022,9 @@ function getArticleParams(a_ans)
              group5: 'num'};     
 }
 
+/**
+ * @ignore
+ */
 function getNounParams(a_ans)
 {
     var params = { group1: 'case',
@@ -1020,6 +1038,9 @@ function getNounParams(a_ans)
     return params;
 }
 
+/**
+ * @ignore
+ */
 function getAdjParams(a_ans)
 {
     var params = { group1: 'case',
@@ -1033,12 +1054,18 @@ function getAdjParams(a_ans)
     return params;
 }
 
+/**
+ * @ignore
+ */
 function missing_decl(a_ans)
 {
     var declension = a_ans.attributes['alph-decl'];
     return (typeof declension == 'undefined' || declension == ''); 
 }
 
+/**
+ * @ignore
+ */
 function hideEmptyCols(a_tbl)
 {
     var data_rows = $("tr.data-row",a_tbl).length;
@@ -1124,6 +1151,9 @@ function hideEmptyCols(a_tbl)
     
 }
 
+/**
+ * @ignore
+ */
 function convertForm(a_data,a_text)
 {
     if (a_text.match(/^[-_]$/))

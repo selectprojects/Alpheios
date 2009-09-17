@@ -33,14 +33,11 @@
 Alph.LanguageToolFactory.addLang('greek','LanguageTool_Greek');
 
 /**
- * @class  Alph.LanguageTool_Greek extends {@link Alph.LanguageTool} to define
- * Greek-specific functionality for the alpheios extension.
- *
- * @constructor
+ * @class  Greek implementation of {@link Alph.LanguageTool}
+ * @extends Alph.LanguageTool
  * @param {String} a_language  the source language for this instance
  * @param {Properties} a_properties additional properties to set as private members of
  *                                  the object (accessor methods will be dynamically created)
- * @see Alph.LanguageTool
  */
 Alph.LanguageTool_Greek = function(a_lang, props)
 {
@@ -168,6 +165,8 @@ Alph.LanguageTool_Greek.prototype.loadStripper = function()
  *  Format is:
  *      pofs or mood: { keys: [array of inflectable table keys]
  *                      links: [array of other links] }
+ * @static
+ * @private
  */
 Alph.LanguageTool_Greek.INFLECTION_MAP =
 {     noun: { keys: ['noun'], links: [] },
@@ -195,6 +194,8 @@ Alph.LanguageTool_Greek.IRREG_VERBS =
  *       (matches suffix on the inflection table xml file alph-infl-pronoun-<type>.xml)
  * [1] = Array of possible lemmas for this pronoun type
  * [2] = Optional morpheus stemtype value restriction (when lemma alone isn't enough)
+ * @static
+ * @private
  */
 Alph.LanguageTool_Greek.PRONOUNS =
 [
@@ -217,7 +218,7 @@ Alph.LanguageTool_Greek.PRONOUNS =
  * Greek-specific implementation of {@link Alph.LanguageTool#getInflectionTable}.
  * @param {Node} a_node the node containing the target word
  * @param {String} a_params optional requested parameters
- * @return the parameters object for the inflection window
+ * @returns the parameters object for the inflection window
  */
 Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params)
 {
@@ -552,7 +553,7 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
 /**
  * Greek specific inflection table display code
  * @param {Element} a_tbl the inflection table element
- * @param {Elemen} a_str the strings for the table display
+ * @param {Element} a_str the strings for the table display
  * @param {Object} a_params the inflection window parameters
  */
 Alph.LanguageTool_Greek.prototype.handleInflectionDisplay = function(a_tbl,a_str,a_params)
@@ -680,6 +681,7 @@ Alph.LanguageTool_Greek.prototype.handleInflectionDisplay = function(a_tbl,a_str
 /**
  * Greek-specific implementation of {@link Alph.LanguageTool#postTransform}.
  * Looks up the lemma in the file of LSJ short meanings
+ * @param {Node} a_node the node containing the lookup results
  */
 Alph.LanguageTool_Greek.prototype.postTransform = function(a_node)
 {
@@ -761,6 +763,7 @@ Alph.LanguageTool_Greek.prototype.postTransform = function(a_node)
 
 /**
  * Removes the previous/next block from the Harvard LSJ output
+ * @ignore
  */
 Alph.LanguageTool_Greek.prototype.fixHarvardLSJ = function(a_html)
 {
@@ -796,7 +799,7 @@ Alph.LanguageTool_Greek.prototype.observePrefChange = function(a_name,a_value)
  * Greek-specific implementation of {@link Alph.LanguageTool#getLemmaId}.
  *
  * @param {String} a_lemmaKey the lemma key
- * @return {Array} (lemma id, lexicon code) or (null, null) if not found
+ * @returns {Array} (lemma id, lexicon code) or (null, null) if not found
  * @type Array
  */
 Alph.LanguageTool_Greek.prototype.getLemmaId = function(a_lemmaKey)
@@ -829,7 +832,7 @@ Alph.LanguageTool_Greek.prototype.getLemmaId = function(a_lemmaKey)
  * @param {String} a_key key to look up or null
  * @param {Alph.Datafile} a_datafile datafile to search with key
  * @param a_stripper transform to remove diacritics, etc.
- * @return {Array} (key, data)
+ * @returns {Array} (key, data)
  * @type String
  */
 Alph.LanguageTool_Greek.lookupLemma =
@@ -926,12 +929,15 @@ function(a_lemma, a_key, a_datafile, a_stripper)
     return Array(key, null);
 }
 
-  /**
-     * greek ascii transliteration (unicode to betacode)
-     * @param {String} a_str the string to convert
-     * @return the converted string
-     * @type {String}
-     */
+ /**
+  * greek ascii transliteration (unicode to betacode)
+  * @name greekToAscii
+  * @function
+  * @memberOf Convert
+  * @param {String} a_str the string to convert
+  * @returns the converted string
+  * @type {String}
+  */
 Alph.Convert.bind('greekToAscii',
     function(a_str)
     {
@@ -966,7 +972,7 @@ Alph.Convert.bind('greekToAscii',
  * @param {Boolean} a_partial whether this is partial word
  *   (if true, ending sigma is treated as medial not final)
  *   (default = false)
- * @return the normalized string
+ * @returns the normalized string
  * @type {String}
  */
 Alph.Convert.bind('normalizeGreek',
