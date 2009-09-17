@@ -1005,11 +1005,11 @@ function autoSelectAnswer(a_col,a_data)
 function getVerbParams(a_ans)
 {
     var params = {};
-    params.selected_endings = [ $(".alph-entry",a_ans.src_node).get(0) ];
-    params.form = a_ans.form;
-    params.fragment = 1;
-    params.match_pofs = 'verb'
-    params.query_mode = true;
+    params.e_selectedEndings = [ $(".alph-entry",a_ans.src_node).get(0) ];
+    params.e_form = a_ans.form;
+    params.e_fragment = 1;
+    params.e_matchPofs = 'verb'
+    params.e_queryMode = true;
     return params;
 }
 
@@ -1018,9 +1018,9 @@ function getVerbParams(a_ans)
  */
 function getArticleParams(a_ans)
 {
-    return { group1: 'case',
-             group4: 'gend',
-             group5: 'num'};     
+    return { e_group1: 'case',
+             e_group4: 'gend',
+             e_group5: 'num'};     
 }
 
 /**
@@ -1028,13 +1028,13 @@ function getArticleParams(a_ans)
  */
 function getNounParams(a_ans)
 {
-    var params = { group1: 'case',
-                   group4: 'num',
-                   group5: 'gend'};
+    var params = { e_group1: 'case',
+                   e_group4: 'num',
+                   e_group5: 'gend'};
     var declension = a_ans.attributes['alph-decl'];
     if (declension)
     {
-        params.decl = declension;
+        params.e_decl = declension;
     }
     return params;
 }
@@ -1044,13 +1044,13 @@ function getNounParams(a_ans)
  */
 function getAdjParams(a_ans)
 {
-    var params = { group1: 'case',
-                   group4: 'num',
-                   group5: 'gend'};
+    var params = { e_group1: 'case',
+                   e_group4: 'num',
+                   e_group5: 'gend'};
     var declension = a_ans.attributes['alph-decl'];
     if (declension)
     {
-        params.decl = declension.replace(/_adjective/,'');
+        params.e_decl = declension.replace(/_adjective/,'');
     }
     return params;
 }
