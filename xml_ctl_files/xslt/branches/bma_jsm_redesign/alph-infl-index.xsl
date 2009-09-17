@@ -58,7 +58,7 @@
       </xsl:choose>
       <xsl:if test="tei:list">
         <xsl:call-template name="toc-section">
-          <xsl:with-param name="list" select="tei:list"/>
+          <xsl:with-param name="a_list" select="tei:list"/>
         </xsl:call-template>
       </xsl:if>
     </xsl:element>
