@@ -7,7 +7,7 @@ pref("extensions.alpheios.spanish.url.lexicon", 'http://repos.alpheios.net:8080/
 pref("extensions.alpheios.spanish.url.lexicon.request", "?w=<WORD>");
 pref("extensions.alpheios.spanish.url.lexicon.timeout",5000);
 pref("extensions.alpheios.spanish.grammar.hotlinks","");
-pref("extensions.alpheios.spanish.popuptrigger",'doubleclick');
+pref("extensions.alpheios.spanish.popuptrigger",'dblclick');
 pref("extensions.alpheios.spanish.features.alpheios-inflect",false);
 pref("extensions.alpheios.spanish.features.alpheios-grammar",false);
 pref("extensions.alpheios.spanish.panels.use.defaults",true);
