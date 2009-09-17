@@ -21,8 +21,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @class Latin Grammar window functionality
+ */
 Alph.Grammar = {
     
+   
     BASE_URL: Alph.BrowserUtils.getContentUrl('latin') + '/grammar/',
 
     /**

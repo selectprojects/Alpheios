@@ -27,14 +27,11 @@
 Alph.LanguageToolFactory.addLang('latin','LanguageTool_Latin');
 
 /**
- * @class  Alph.LanguageTool_Latin extends {@link Alph.LanguageTool} to define
- * Latin-specific functionality for the alpheios extension.
- *
- * @constructor
+ * @class  Latin implementation of {@link Alph.LanguageTool} 
+ * @extends Alph.LanguageTool
  * @param {String} a_language  the source language for this instance
  * @param {Properties} a_properties additional properties to set as private members of
  *                                  the object (accessor methods will be dynamically created)
- * @see Alph.LanguageTool
  */
 Alph.LanguageTool_Latin = function(a_lang, props)
 {
@@ -52,6 +49,8 @@ Alph.LanguageTool_Latin.prototype = new Alph.LanguageTool();
  *  Format is:
  *      pofs or mood: { keys: [array of inflectable table keys]
  *                      links: [array of other links] }
+ * @static
+ * @private
  */
 Alph.LanguageTool_Latin.INFLECTION_MAP =
 {     noun: { keys: ['noun'], links: [] },
@@ -66,6 +65,10 @@ Alph.LanguageTool_Latin.INFLECTION_MAP =
       verb: { keys: ['verb'], links: [] }
 };
 
+/**
+ * @static
+ * @private
+ */
 Alph.LanguageTool_Latin.IRREG_VERBS =
 [
     // irregular verbs (Whitaker hdwd)
@@ -82,7 +85,7 @@ Alph.LanguageTool_Latin.IRREG_VERBS =
  * Latin-specific implementation of {@link Alph.LanguageTool#getInflectionTable}.
  * @param {Node} a_node the node containing the target word
  * @param {String} a_params optional requested parameters
- * @return the parameters object for the inflection window
+ * @returns the parameters object for the inflection window
  */
 Alph.LanguageTool_Latin.prototype.getInflectionTable = function(a_node, a_params)
 {
@@ -472,7 +475,7 @@ Alph.LanguageTool_Latin.prototype.postTransform = function(a_node)
  * Latin-specific implementation of {@link Alph.LanguageTool#getLemmaId}.
  *
  * @param {String} a_lemmaKey the lemma key
- * @return {Array} (lemma id, lexicon code) or (null, null) if not found
+ * @returns {Array} (lemma id, lexicon code) or (null, null) if not found
  * @type Array
  */
 Alph.LanguageTool_Latin.prototype.getLemmaId = function(a_lemmaKey)
@@ -496,7 +499,7 @@ Alph.LanguageTool_Latin.prototype.getLemmaId = function(a_lemmaKey)
  *
  * @param {String} a_lemma lemma to look up
  * @param {Alph.Datafile} a_datafile datafile to search with key
- * @return {Array} (key, data)
+ * @returns {Array} (key, data)
  * @type Array
  */
 Alph.LanguageTool_Latin.lookupLemma = function(a_lemma, a_datafile)
@@ -587,9 +590,12 @@ Alph.LanguageTool_Latin.lookupLemma = function(a_lemma, a_datafile)
 
 
 /**
- * latin ascii transliteration 
+ * latin ascii transliteration
+ * @name latinToAscii
+ * @function
+ * @memberOf Convert
  * @param {String} a_str the string to convert
- * @return the converted string
+ * @returns the converted string
  * @type {String}
  */
 Alph.Convert.bind('latinToAscii',
