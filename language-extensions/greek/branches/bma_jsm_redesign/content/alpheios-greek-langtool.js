@@ -1,4 +1,4 @@
-/*
+/**
  * @fileoverview Greek extension of Alph.LanguageTool class
  * @version $Id$
  *

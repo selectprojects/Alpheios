@@ -860,6 +860,7 @@ function toggleCellHover(a_event)
 
 
 /** 
+ * @ignore
  * hover the corresponding table header when hovering over a radio choice
  * @param {Event} a_event the hover event
  */
