@@ -111,7 +111,9 @@ declare function magme:get-entry(
         $a_form
       },
       (: for each distinct lemma/part-of-speech combination :)
-      for $lemma in local:distinct-items($formEntries/l, ())
+      (: Note: $formEntries/l does not work reliably in eXist :)
+      for $lemma in
+            local:distinct-items(for $e in $formEntries return $e/l, ())
       let $lemmaEntries := $formEntries[l eq $lemma]
       let $meaning :=
         let $lemmaDefs := $a_meanings/wds/w[l eq $lemma]
@@ -123,7 +125,9 @@ declare function magme:get-entry(
               $lemmaDefs/d/text()
             }
           else ()
-      for $pofs in local:distinct-items($lemmaEntries/m/@p, ())
+      (: Note: $lemmaEntries/m/@p does not work reliably in eXist :)
+      for $pofs in
+            local:distinct-items(for $e in $lemmaEntries return $e/m/@p, ())
       let $entries := $lemmaEntries[m/@p eq $pofs]
       return
       element entry
