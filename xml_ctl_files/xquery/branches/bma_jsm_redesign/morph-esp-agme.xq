@@ -36,9 +36,19 @@ declare option exist:serialize "method=xml media-type=text/xml";
 
 let $form := request:get-parameter("w", ())[1]
 
+let $base := "/db/lexica/esp"
+let $morphology := collection(concat($base, "/agme"))
+let $meanings := doc(concat($base, "/defs/esp-eng.xml"))
+
 return
-  if (not($form))
+  if (not($morphology))
+  then
+    element error { "Morphology unavailable" }
+  else if (not($meanings))
+  then
+    element error { "Meanings unavailable" }
+  else if (not($form))
   then
     element error { "Word not specified" }
   else
-    magme:get-entry($form)
+    magme:get-entry($form, $morphology, $meanings)

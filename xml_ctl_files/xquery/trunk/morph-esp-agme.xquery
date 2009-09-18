@@ -37,8 +37,8 @@ module namespace magme="http://alpheios.net/namespaces/morph-esp-agme";
   Called initially with distinct-items(items, ()) 
  :)
 declare function local:distinct-items(
-  $a_todo as item()*,
-  $a_found as item()*) as item()*
+  $a_todo as xdt:anyAtomicType*,
+  $a_found as xdt:anyAtomicType*) as xdt:anyAtomicType*
 {
   (: if nothing left to do, return what's been found :)
   if (count($a_todo) eq 0)
@@ -58,23 +58,45 @@ declare function local:distinct-items(
   Function to get morphology for given form
 
   Parameters:
-    $a_form        form to get
+    $a_form         form to get
+    $a_morphology   form-to-morphology entries
+    $a_meanings     lemma-to-meaning entries
 
   Return value:
     element conforming to Alpheios lexicon schema if form is found
     else unknown element
  :)
-declare function magme:get-entry($a_form as xs:string) as element()?
+declare function magme:get-entry(
+  $a_form as xs:string,
+  $a_morphology as node()*,
+  $a_meanings as node()*) as element()?
 {
   let $langAttr := attribute xml:lang { "esp" }
 
   (:
-    get all wordlist entries with specified form and
-    definitions for all lemmas in those entries
+    get all wordlist entries with specified form
    :)
-  let $base := "/db/lexica/esp"
-  let $formEntries := collection(concat($base, "/agme"))/wds/w[f eq $a_form]
-  let $defs := doc(concat($base, "/defs/esp-eng.xml"))
+  let $formEntries := $a_morphology/wds/w[f eq $a_form]
+  let $altForm :=
+    (: if nothing found with original form :)
+    if (not($formEntries))
+    then
+      (: try lower case or, if already lower, initial capital :)
+      if (lower-case($a_form) != $a_form)
+      then
+        lower-case($a_form)
+      else
+        concat(upper-case(substring($a_form, 1, 1)),
+               substring($a_form, 2))
+    else
+      $a_form
+  let $formEntries :=
+    (: if alternate form needed, try it :)
+    if ($altForm != $a_form)
+    then
+      $a_morphology/wds/w[f eq lower-case($a_form)]
+    else
+      $formEntries
 
   return
   if (count($formEntries) > 0)
@@ -92,7 +114,7 @@ declare function magme:get-entry($a_form as xs:string) as element()?
       for $lemma in local:distinct-items($formEntries/l, ())
       let $lemmaEntries := $formEntries[l eq $lemma]
       let $meaning :=
-        let $lemmaDefs := $defs/wds/w[l eq $lemma]
+        let $lemmaDefs := $a_meanings/wds/w[l eq $lemma]
         return
           if ($lemmaDefs)
           then
