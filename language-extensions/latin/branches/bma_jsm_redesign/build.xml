@@ -101,6 +101,7 @@
 				<include name="chrome.manifest" />
 				<include name="install.rdf" />
 				<include name="mhttpd.conf" />
+				<include name="modules/**" />
 				<include name="defaults/**" />
 				<include name="**/platform/**" />
 				<exclude name="**/.*" />

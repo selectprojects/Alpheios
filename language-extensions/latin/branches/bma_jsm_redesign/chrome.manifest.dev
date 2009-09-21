@@ -5,3 +5,5 @@ skin	alpheios-latin	classic/1.0	chrome/skin/
 
 overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-latin/content/alpheios-latin.xul
 style	chrome://global/content/customizeToolbar.xul	chrome://alpheios-latin/skin/alpheios-latin.css
+
+resource alpheios-latin modules/

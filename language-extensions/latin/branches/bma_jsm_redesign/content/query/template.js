@@ -77,7 +77,8 @@ var TEMPLATE =
             ],
           }
 };
-
+Components.utils.import("resource://alpheios-latin/alpheios-convert-latin.jsm",TEMPLATE);
+TEMPLATE.d_converter = new TEMPLATE.ConvertLatin();
 
 /**
  * @ignore
@@ -241,7 +242,7 @@ function activateTable(a_elem,a_ans,a_template,a_callback,a_xslt_param)
     var xslt_proc;
     if (typeof a_template.xslt_proc == "undefined" || a_template.xslt_proc == null)
     {
-        xslt_proc = Alph.Util.getXsltProcessor(a_template.xslt_file);
+        xslt_proc = Alph.BrowserUtils.getXsltProcessor(a_template.xslt_file);
     }
     else
     {
@@ -1172,6 +1173,6 @@ function convertForm(a_data,a_text)
     }
     else
     {
-        return Alph.Convert.latinToAscii(a_text);
+        return TEMPLATE.d_converter.latinToAscii(a_text);
     } 
 }

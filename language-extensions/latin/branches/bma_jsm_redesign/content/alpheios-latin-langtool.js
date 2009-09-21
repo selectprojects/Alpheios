@@ -23,6 +23,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+Components.utils.import("resource://alpheios-latin/alpheios-convert-latin.jsm",Alph);
 
 Alph.LanguageToolFactory.addLang('latin','LanguageTool_Latin');
 
@@ -42,6 +43,15 @@ Alph.LanguageTool_Latin = function(a_lang, props)
  * @ignore
  */
 Alph.LanguageTool_Latin.prototype = new Alph.LanguageTool();
+
+/**
+ * loads the Lagin-specific converter object
+ * @see Alph.LanguageTool#loadConverter
+ */
+Alph.LanguageTool_Greek.prototype.loadConverter = function()
+{
+    this.d_converter = new Alph.ConvertLatin();  
+};
 
 /**
  *  Mapping table which maps the part of speech or mood
@@ -262,7 +272,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
     {
         a_params.html_url = html_url + 'alph-infl-verb.html';
         a_params.xml_url = xml_url + 'alph-verb-conj-irreg.xml';
-        a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-verb-conj-irreg.xsl');
+        a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-verb-conj-irreg.xsl');
         a_params.xslt_params.e_hdwd = a_params.hdwd;
         // too much work to support query for irregular verbs in the alpha
          if (a_params.mode == 'query')
@@ -275,7 +285,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
     {
         a_params.html_url = html_url + "alph-infl-substantive.html";
         a_params.xml_url = xml_url + 'alph-verb-conj-supp.xml';
-        a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-filtered.xsl');
+        a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-filtered.xsl');
 
         // we use verb_participle as a mood in morphology popup, so keep that, otherwise
         // strip the verb_prefix
@@ -295,7 +305,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
          */
         if (a_params.mode == 'query')
         {
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-filtered-query.xsl');
+            a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-filtered-query.xsl');
          
         }
 
@@ -304,7 +314,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
     {
         a_params.html_url = html_url + "alph-infl-verb.html";
         a_params.xml_url = xml_url + 'alph-verb-conj.xml';
-        a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-verb-conj-group.xsl');
+        a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-verb-conj-group.xsl');
         a_params.xslt_params.e_group1 = 'tense';
         a_params.xslt_params.e_group2 = 'num';
         a_params.xslt_params.e_group3 = 'pers';
@@ -329,7 +339,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
          */
         if (a_params.mode == 'query')
         {
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-filtered-query.xsl');
+            a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-filtered-query.xsl');
             a_params.xslt_params.e_filterKey = 'conj';
             a_params.xslt_params.e_filterValue = 
                 Alph.$('.alph-conj',a_params.xslt_params.e_selectedEndings).attr('context');
@@ -344,7 +354,7 @@ Alph.LanguageTool_Latin.setInflectionXSL = function(a_params,a_infl_type,a_form)
         a_params.html_url = html_url + "alph-infl-substantive.html";
         a_params.xml_url =
             xml_url + 'alph-infl-' + a_infl_type + '.xml';
-        a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
+        a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-substantive.xsl');
 
         a_params.xslt_params.e_matchPofs = a_infl_type;
 
@@ -587,74 +597,3 @@ Alph.LanguageTool_Latin.lookupLemma = function(a_lemma, a_datafile)
     // nothing found
     return Array(keys, null);
 }
-
-
-/**
- * latin ascii transliteration
- * @name latinToAscii
- * @function
- * @memberOf Convert
- * @param {String} a_str the string to convert
- * @returns the converted string
- * @type {String}
- */
-Alph.Convert.bind('latinToAscii',
-    function(a_str)
-    {
-        // upper case A
-        a_str = a_str.replace(/[\u00c0-\u00c5\u0100\u0102\u0104]/g, 'A');
-        
-        // lower case a
-        a_str = a_str.replace(/[\u00e0-\u00e5\u0101\u0103\u0105]/g, 'a');
-        
-        // upper case AE
-        a_str = a_str.replace(/\u00c6/g,'AE');
-        
-        // lowercase ae
-        a_str = a_str.replace(/\u00e6/g,'AE');
-        
-        // upper case E
-        a_str = a_str.replace(/[\u00c8-\u00cb\u0112\u0114\u0116\u0118\u011a]/g, 'E');
-        
-        // lower case e
-        a_str = a_str.replace(/[\u00e8-\u00eb\u0113\u0115\u0117\u0119\u011b]/g, 'e');
-        
-        // upper case I
-        a_str = a_str.replace(/[\u00cc-\u00cf\u0128\u012a\u012c\u012e\u0130]/g, 'I');
-        
-        // lower case i
-        a_str = a_str.replace(/[\u00ec-\u00ef\u0129\u012b\u012d\u012f\u0131]/g, 'i');
-        
-        // upper case O
-        a_str = a_str.replace(/[\u00d2-\u00d6\u014c\u014e\u0150]/g, 'O');
-        
-        // lower case o
-        a_str = a_str.replace(/[\u00f2-\u00f6\u014d\u014f\u0151]/g, 'o');
-        
-        // upper case OE
-        a_str = a_str.replace(/\u0152/g,'OE');
-        
-        // lower case oe
-        a_str = a_str.replace(/\u0153/g,'oe');
-        
-        // upper case U
-        a_str = a_str.replace(
-            /[\u00d9-\u00dc\u0168\u016a\u016c\u016e\u0170\u0172]/g, 
-            'U');
-        
-        // lower case u
-        a_str = a_str.replace(
-            /[\u00f9-\u00fc\u0169\u016b\u016d\u016f\u0171\u0173]/g, 
-            'u');
-                   
-        // for now, just remove anyting else that's not ASCII  
-        // TODO - implement full transliteration
-        this.d_uConverter.charset = 'US-ASCII';
-        a_str = this.d_uConverter.ConvertFromUnicode(a_str);
-        
-        // just delete the '?' in the resulting conversion
-        a_str.replace(/\?/,'');
-        
-        return a_str;
-    }
-);
