@@ -48,7 +48,7 @@ Alph.LanguageTool_Latin.prototype = new Alph.LanguageTool();
  * loads the Lagin-specific converter object
  * @see Alph.LanguageTool#loadConverter
  */
-Alph.LanguageTool_Greek.prototype.loadConverter = function()
+Alph.LanguageTool_Latin.prototype.loadConverter = function()
 {
     this.d_converter = new Alph.ConvertLatin();  
 };
