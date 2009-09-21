@@ -102,6 +102,7 @@
 				<include name="install.rdf" />
 				<include name="mhttpd.conf" />
 				<include name="defaults/**" />
+				<include name="modules/**" />
 				<include name="**/platform/**" />
 				<include name="**/morpheus/**" />
 				<exclude name="**/.*" />

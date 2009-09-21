@@ -96,7 +96,8 @@ var TEMPLATE =
      */
 
 };
-
+Components.utils.import("resource://alpheios-greek/alpheios-convert-greek.jsm",TEMPLATE);
+TEMPLATE.d_converter = new TEMPLATE.ConvertGreek();
 
 /**
  * @ignore
@@ -248,7 +249,7 @@ function resetTable(a_event)
  */
 function activateTable(a_elem,a_ans,a_template,a_callback,a_xslt_param)
 {
-    var xslt_proc = Alph.Util.getXsltProcessor(a_template.xslt_file);
+    var xslt_proc = Alph.BrowserUtils.getXsltProcessor(a_template.xslt_file);
     var data_file_url = Alph.BrowserUtils.getContentUrl(a_ans.lang_tool.getLanguage()) + '/inflections/'
         + a_template.data_file;
     var decl_table = loadForms(data_file_url, xslt_proc, a_xslt_param);
@@ -1163,6 +1164,6 @@ function convertForm(a_data,a_text)
     }
     else
     {
-        return Alph.Convert.normalizeGreek(a_text,true,'\/^_=');
+        return TEMPLATE.d_converter.normalizeGreek(a_text,true,'\/^_=');
     } 
 }

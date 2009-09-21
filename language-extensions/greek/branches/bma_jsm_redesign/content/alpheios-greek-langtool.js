@@ -29,6 +29,8 @@
  * They are licensed under Creative Commons NonCommercial ShareAlike 3.0
  * License http://creativecommons.org/licenses/by-nc-sa/3.0/us
  */
+ 
+Components.utils.import("resource://alpheios-greek/alpheios-convert-greek.jsm",Alph);
 
 Alph.LanguageToolFactory.addLang('greek','LanguageTool_Greek');
 
@@ -148,7 +150,7 @@ Alph.LanguageTool_Greek.prototype.loadStripper = function()
 {
     try
     {
-        this.d_stripper = Alph.Util.getXsltProcessor('alpheios-unistrip.xsl');
+        this.d_stripper = Alph.BrowserUtils.getXsltProcessor('alpheios-unistrip.xsl');
     }
     catch (ex)
     {
@@ -158,6 +160,16 @@ Alph.LanguageTool_Greek.prototype.loadStripper = function()
 
     return true;
 }
+
+/**
+ * loads the Greek-specific converter object
+ * @see Alph.LanguageTool#loadConverter
+ */
+Alph.LanguageTool_Greek.prototype.loadConverter = function()
+{
+    this.d_converter = new Alph.ConvertGreek();  
+};
+
 
 /**
  *  Mapping table which maps the part of speech or mood
@@ -423,7 +435,7 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
     if (a_infl_type.match(/^verb/))
     {
         a_params.xml_url = xml_url + 'alph-infl-verb-paradigms.xml';
-        a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-paradigm.xsl');
+        a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-paradigm.xsl');
         if (a_infl_type.match(/_all$/))
         {
             a_params.xslt_params.e_paradigmId = 'all';
@@ -442,7 +454,7 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
     else if (a_infl_type == 'article')
     {
         a_params.xml_url = xml_url + 'alph-infl-' + a_infl_type + '.xml';
-        a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-single-grouping.xsl');
+        a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-single-grouping.xsl');
         a_params.xslt_params.e_group4 = 'gend';
         a_params.xslt_params.e_matchForm = true;
     }
@@ -461,12 +473,12 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
         
         if (a_params.type == 'dem')
         {
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
+            a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-substantive.xsl');
             a_params.xslt_params.e_group4 = 'hdwd';
         }
         else if (a_params.type == 'refl' || a_params.type.match(/^pos/))
         {
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
+            a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-substantive.xsl');
             a_params.xslt_params.e_group4 = 'pers';
             if (a_params.type.match(/^pos/))
             {
@@ -475,7 +487,7 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
         }
         else if (a_params.type != '')
         {
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-single-grouping.xsl');
+            a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-single-grouping.xsl');
             if (a_params.type == 'pers')
             {
                 a_params.xslt_params.e_group4 = 'pers';
@@ -492,7 +504,7 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
             a_params.xml_url = null;
             a_params.xml_obj =
                 (new DOMParser()).parseFromString("<infl-data/>","text/xml");
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
+            a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-substantive.xsl');
             a_params.xslt_params.e_linkContent="grammar:smyth:s325|See Smyth Sections 325-340 Pronouns"
         }
     }
@@ -508,14 +520,14 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
              */
             a_infl_type = is_simple[1];
             a_params.xml_url = xml_url + 'alph-infl-' + a_infl_type + '-simpl.xml';
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-single-grouping.xsl');
+            a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-single-grouping.xsl');
             a_params.xslt_params.e_group4 = 'gend';
             a_params.title = 'alph-infl-title-'+a_infl_type;
         }
         else
         {
             a_params.xml_url = xml_url + 'alph-infl-' + a_infl_type + '.xml';
-            a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
+            a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-substantive.xsl');
 
             if (a_params.order )
             {
@@ -540,7 +552,7 @@ Alph.LanguageTool_Greek.setInflectionXSL = function(a_params,a_infl_type,a_form)
         a_params.xml_url = null;
         a_params.xml_obj =
             (new DOMParser()).parseFromString("<infl-data/>","text/xml");
-        a_params.xslt_processor = Alph.Util.getXsltProcessor('alph-infl-substantive.xsl');
+        a_params.xslt_processor = Alph.BrowserUtils.getXsltProcessor('alph-infl-substantive.xsl');
         a_params.xslt_params.e_linkContent="grammar:smyth:s341|See Smyth Sections 341-346 Adverbs"
 
     }
@@ -929,87 +941,3 @@ function(a_lemma, a_key, a_datafile, a_stripper)
     return Array(key, null);
 }
 
- /**
-  * greek ascii transliteration (unicode to betacode)
-  * @name greekToAscii
-  * @function
-  * @memberOf Convert
-  * @param {String} a_str the string to convert
-  * @returns the converted string
-  * @type {String}
-  */
-Alph.Convert.bind('greekToAscii',
-    function(a_str)
-    {
-        /* initialize the XSLT converter if we haven't done so already */
-        if (this.u2bConverter == null)
-        {
-            this.d_u2bConverter = Alph.Util.getXsltProcessor('alpheios-uni2betacode.xsl');
-        }
-        var betaText = '';
-        try
-        {
-            this.d_u2bConverter.setParameter(null, "e_in", a_str);
-            var dummy = (new DOMParser()).parseFromString("<root/>","text/xml");
-            betaText = this.d_u2bConverter.transformToDocument(dummy).documentElement.textContent;
-        }
-        catch (e)
-        {
-            this.s_logger.error(e);
-        }
-        return betaText;
-    }
-);
-
-/**
- * greek normalization (precomposed/decomposed Unicode)
- * @param {String} a_str the string to normalize
- * @param {Boolean} a_precomposed whether to output precomposed Unicode
- *   (default = true)
- * @param {String} a_strip characters/attributes to remove
- *   (specified as betacode characters - e.g. "/\\=" to remove accents)
- *   (default = no stripping)
- * @param {Boolean} a_partial whether this is partial word
- *   (if true, ending sigma is treated as medial not final)
- *   (default = false)
- * @returns the normalized string
- * @type {String}
- */
-Alph.Convert.bind('normalizeGreek',
-    function(a_str, a_precomposed, a_strip, a_partial)
-    {
-        /* initialize the XSLT converter if we haven't done so already */
-        if (this.d_uNormalizer == null)
-        {
-            this.d_uNormalizer = Alph.Util.getXsltProcessor('alpheios-normalize-greek.xsl');
-        }
-
-        // set defaults for missing params
-        if (typeof a_precomposed == "undefined")
-            a_precomposed = true;
-        if (typeof a_strip == "undefined")
-            a_strip = "";
-        if (typeof a_partial == "undefined")
-            a_partial = false;
-
-        var normText = '';
-        try
-        {
-            this.d_uNormalizer.setParameter(null, "e_in", a_str);
-            this.d_uNormalizer.setParameter(null,
-                                            "e_precomposed",
-                                            (a_precomposed ? 1 : 0));
-            this.d_uNormalizer.setParameter(null, "e_strip", a_strip);
-            this.d_uNormalizer.setParameter(null,
-                                            "e_partial",
-                                            (a_partial ? 1 : 0));
-            var dummy = (new DOMParser()).parseFromString("<root/>","text/xml");
-            normText = this.d_uNormalizer.transformToDocument(dummy).documentElement.textContent;
-        }
-        catch (e)
-        {
-            this.s_logger.error(e);
-        }
-        return normText;
-    }
-);
