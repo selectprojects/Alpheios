@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<infl-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/work/schemas/inflected_forms.xsd"
+    xml:lang="greek">
+    <!--- sort order for the principal parts -->
+    <order-table>
+        <order-item attname="tense" order="1">present</order-item>
+        <order-item attname="tense" order="2">future</order-item>
+        <order-item attname="tense" order="3">aorist</order-item>
+        <order-item attname="tense" order="4">perfect</order-item>
+        <order-item attname="voice" order="1">active</order-item>
+        <order-item attname="voice" order="2">middle</order-item>
+        <order-item attname="voice" order="3">mediopassive</order-item>
+        <order-item attname="voice" order="4">passive</order-item>
+    </order-table>
+  <inflection type="conjugation">
+        <hdwd-set>
+            <hdwd source="morpheus">λύω</hdwd>
+        </hdwd-set>
+        <infl-form-set
+            tense="present"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">λύω</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="future"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">λύσω</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="aorist"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἔλυσα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="perfect"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">λέλυκα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="perfect"
+            mood="indicative"
+            voice="mediopassive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">λέλυμαι</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="aorist"
+            mood="indicative"
+            voice="passive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἐλύθην</infl-form>
+        </infl-form-set>
+  </inflection>
+    <inflection type="conjugation">
+        <hdwd-set>
+            <hdwd source="morpheus">πείθω</hdwd>
+        </hdwd-set>
+        <infl-form-set
+            tense="present"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">πέπαικα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="future"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">πείσω</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="future"
+            mood="indicative"
+            voice="passive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">πεισθήσομαι</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="aorist"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἔπεισα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="perfect"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">πέποιθα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="perfect"
+            mood="indicative"
+            voice="mediopassive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">πέπεισμαι</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="aorist"
+            mood="indicative"
+            voice="passive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἐπείσθην</infl-form>
+        </infl-form-set>
+    </inflection>
+    <inflection type="conjugation">
+        <hdwd-set>
+            <hdwd source="morpheus">γράφω</hdwd>
+        </hdwd-set>
+        <infl-form-set
+            tense="present"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">γράψω</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="future"
+            mood="indicative"
+            voice="passive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">γραφήσομαι</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="aorist"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἔγραψα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="perfect"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">γέγραφα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="perfect"
+            mood="indicative"
+            voice="mediopassive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">γέγραμμαι</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="aorist"
+            mood="indicative"
+            voice="passive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἐγράφην</infl-form>
+        </infl-form-set>
+    </inflection>
+    <inflection type="conjugation">
+        <hdwd-set>
+            <hdwd source="morpheus">πράσσω</hdwd>
+        </hdwd-set>
+        <infl-form-set
+            tense="present"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">πράσσω</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="future"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">πράξω</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="future"
+            mood="indicative"
+            voice="passive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">πραχθήσομαι</infl-form>
+            <infl-form type="regular">πραγήσομαι</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="aorist"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἔπραξα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="perfect"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">πέπραχα</infl-form>
+            <infl-form type="regular">πέπραγα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="perfect"
+            mood="indicative"
+            voice="mediopassive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">πέπραγμαι</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="aorist"
+            mood="indicative"
+            voice="passive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἐπράχθην</infl-form>
+            <infl-form type="regular">ἐπράγην</infl-form>
+        </infl-form-set>
+    </inflection>
+    <inflection type="conjugation">
+        <hdwd-set>
+            <hdwd source="morpheus">ἀγγέλλω</hdwd>
+        </hdwd-set>
+        <infl-form-set
+            tense="present"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἀγγέλλω</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="future"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἀγγελῶ</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="future"
+            mood="indicative"
+            voice="passive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἀγγελθήσομαι</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="aorist"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἤγγειλα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="perfect"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἤγγελκα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="perfect"
+            mood="indicative"
+            voice="mediopassive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἤγγελμαι</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="aorist"
+            mood="indicative"
+            voice="passive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἠγγέλθην</infl-form>
+        </infl-form-set>
+    </inflection>
+    <inflection type="conjugation">
+        <hdwd-set>
+            <hdwd source="morpheus">φαίνω</hdwd>
+        </hdwd-set>
+        <infl-form-set
+            tense="present"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">φαίνω</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="future"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">φανῶ</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="future"
+            mood="indicative"
+            voice="passive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">φανήσομαι</infl-form>
+            <infl-form type="regular">φανοῦμαι</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="aorist"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἔφηνα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="perfect"
+            mood="indicative"
+            voice="active"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">πέφαγκα</infl-form>
+            <infl-form type="regular">πέφηνα</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="perfect"
+            mood="indicative"
+            voice="mediopassive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">πέφασμαι</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            tense="aorist"
+            mood="indicative"
+            voice="passive"
+            pers="1st"
+            num="singular">
+            <infl-form type="regular">ἐφάνθην</infl-form>
+            <infl-form type="regular"> ἐφάνην</infl-form>
+        </infl-form-set>
+    </inflection>
+</infl-data>
