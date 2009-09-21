@@ -1,0 +1,64 @@
+@import url("chrome://alpheios-greek/skin/alpheios-greek-os.css");
+
+#infl-links #verb-appx-link {
+    float: right;
+}
+
+#principal_parts {
+    display: inline;
+    float: left;
+    color: #0E2233;
+    padding: 2px;
+    font-weight: normal;
+    border: 1px outset #B8B7B5 !important;
+    white-space: normal;
+    background-color: white;
+    z-index:100;
+    max-height: 300px;
+    overflow: scroll;
+}
+
+#principal_parts .lemma {
+    margin: .5em;
+    clear:both;
+}
+
+#principal_parts .lemma .label {
+    text-decoration: underline;
+    font-weight: bold;
+    font-size: larger;
+}
+
+#principal_parts .lemma .derivlabel {
+    display: none;
+}
+
+#principal_parts .tense {
+    float: left;
+}
+
+#principal_parts .voice {
+    float:left;
+    margin-right: 1em;
+}
+
+#principal_parts .voice .label {
+    font-weight: normal;
+    font-style: italic;
+    padding-right: .25em;
+    text-decoration: none;
+    font-family:  Arial, sans-serif;
+    color: #4E6476;
+    font-size: 95%;
+}
+
+#principal_parts .infl-form {
+    margin-right: .5em;
+    font-size: larger;
+}
+
+#principal_parts .form-properties {
+    font-family:  Arial, sans-serif;
+    font-size: small;
+}
+

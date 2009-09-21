@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM "chrome://alpheios-greek/locale/alpheios-greek.dtd">
+
+<overlay id="alpheios-greek-overlay" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="chrome://alpheios-greek/content/alpheios-greek-langtool.js" />
+    
+    <stringbundleset id="stringbundleset">
+        <stringbundle id="alpheios-strings-greek" 
+                      src="chrome://alpheios-greek/locale/alpheios-greek-prefs.properties"/>
+    </stringbundleset>
+
+    <broadcasterset id="mainBroadcasterSet">
+        <!-- broadcaster which hides greek-specific menu elements -->
+        <broadcaster id="alph-lang-greek-hide"
+                     hidden="true"
+                     disabled="true"
+                     class="alpheios-language-disabled-notifier"/>
+    </broadcasterset>
+
+    <menupopup id="alpheios-lang-popup-cm">
+        <menuitem id="alpheios-cm-lang-greek"
+                  label="&alpheios.lang.greek;"
+                  value="greek"
+                  type="checkbox"
+                  hidden="false"/>
+    </menupopup>
+    <menupopup id="alpheios-lang-popup-tm">
+        <menuitem id="alpheios-tm-lang-greek"
+                  label="&alpheios.lang.greek;"
+                  value="greek"
+                  type="checkbox"
+                  hidden="false"/>
+    </menupopup>
+    <menupopup
+        id = "alph-dict-menu-popup">      
+        <menuitem id="alpheios-dict-lsj" 
+            label="&alpheios.panel.dict.lsj;"
+            name="alpheios-dict-current"
+            command="alpheios-dict-switch-cmd"
+            type="radio"
+            class="menuitem-iconic"
+            observes="alph-lang-greek-hide"/>
+        <menuitem id="alpheios-dict-aut" 
+            label="&alpheios.panel.dict.aut;"
+            name="alpheios-dict-current"
+            command="alpheios-dict-switch-cmd"
+            type="radio"
+            class="menuitem-iconic"
+            observes="alph-lang-greek-hide"/>
+        <menuitem id="alpheios-dict-lsjharvard" 
+            label="&alpheios.panel.dict.lsjharvard;"
+            name="alpheios-dict-current"
+            command="alpheios-dict-switch-cmd"
+            type="radio"
+            class="menuitem-iconic"
+            observes="alph-lang-greek-hide"/>
+
+    </menupopup>
+  
+</overlay>

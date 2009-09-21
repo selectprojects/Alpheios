@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!-- $Revision: 356 $-->
+<!-- $BuildId: 178+$-->
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+
+	<Description about="urn:mozilla:install-manifest">
+		<em:name>Alpheios Greek Tools</em:name>
+		<em:version>1.0alpha3.2031.20090915</em:version>
+		<em:description></em:description>
+		<em:creator>Cantus Foundation</em:creator>
+		<em:id>{0f1d7e06-6ce8-40b0-83f0-9783ee65ab9b}</em:id>
+		
+		<em:targetApplication>
+			<!-- Firefox -->
+			<Description>
+				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+				<em:minVersion>3.0</em:minVersion>
+				<em:maxVersion>3.5.*</em:maxVersion>				
+			</Description>
+		</em:targetApplication>
+		
+		<em:iconURL>chrome://alpheios/skin/icons/alpheios_32.ico</em:iconURL>
+		<em:homepageURL>http://alpheios.net</em:homepageURL>
+		<em:optionsURL>chrome://alpheios/content/alpheios-prefs.xul</em:optionsURL>
+		<em:updateURL>http://alpheios.net/xpi-updates/update.rdf</em:updateURL>
+		<em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDOd5Mjthp4ZkEF0g6sF6fHbUb92PJTSSPxjjdsuDOXG9dUTVwIDjW183lTZawP7+4E8PmUeqVl5GCjKRCAhAXmSV+X/IYgSuiTOTjuXUJ/ylA9EGSo2dHVeGJ834XIKe5NK7NL08EFxst58vCASTViuMv5GpeIYtPvbj7PyXJ82QIDAQAB</em:updateKey>
+        <em:requires>
+            <Description>
+                <!-- Alpheios -->
+                <em:id>{4816253c-3208-49d8-9557-0745a5508299}</em:id>
+            	<em:minVersion>1.0alpha1</em:minVersion>
+                <em:maxVersion>1.0alpha*.*</em:maxVersion>
+            </Description>
+        </em:requires>
+	</Description>
+</RDF>
