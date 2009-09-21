@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE overlay SYSTEM "chrome://alpheios/locale/alpheios.dtd">
+
+<overlay xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    
+    <script type="application/x-javascript" src="chrome://alpheios/content/alpheios-morph.js" />
+
+    <broadcasterset id="mainBroadcasterSet">
+        <broadcaster id="alph-morph-status"
+                     checked="false"
+                     disabled="true" 
+                     class="alpheios-enabled-notifier"/>
+    </broadcasterset>
+
+    <commandset id="mainCommandSet">
+        <command id="alpheios-morph-toggle-cmd" 
+             oncommand="Alph.main.toggle_panel(event,'alph-morph-panel');"
+             observes="alph-morph-status" />
+        <command
+            id="alpheios-morph-inflect-cmd" 
+            oncommand="Alph.Panel.execute_lang_command(event,'alph-morph-panel');" 
+            observes="alpheios-inflect"/>
+    </commandset>
+             
+    <menuitem
+            id="alpheios-morph-button"
+            type="checkbox"
+            label="&alpheios-tools-morph-label;"
+            command="alpheios-morph-toggle-cmd"
+            tooltiptext="&alpheios-tools-morph-tooltip;"
+            class="menuitem-iconic" />
+    <hbox id="alph-morph-box">
+        <alpheiosPanel 
+            flex="1" 
+            id="alph-morph-panel" 
+            notifier="alph-morph-status"
+            paneltype="Morph"
+            panelorient="horizontal">
+            <toolbaritem id="alpheios-morph-panel-label">
+                <label id="alph-morph-label" 
+                       value="&alpheios-morph-toolbar-label;"/>
+            </toolbaritem>
+            <browser
+                id="alph-morph-body"
+                flex="1"
+                type="content"
+                src="chrome://alpheios/content/alph-morph.html"
+                class="alph-lexicon-output"/>
+        </alpheiosPanel>
+    </hbox>
+</overlay>
