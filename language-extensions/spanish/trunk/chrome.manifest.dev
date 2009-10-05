@@ -4,9 +4,4 @@ locale	alpheios-spanish	en-US		chrome/locale/en-US/
 skin	alpheios-spanish	classic/1.0	chrome/skin/
 
 overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-spanish/content/alpheios-spanish.xul
-overlay chrome://alpheios/content/alpheios-prefs.xul    chrome://alpheios-spanish/content/alpheios-spanish-prefs.xul
-overlay chrome://alpheios/content/alpheios-svc-prefs.xul    chrome://alpheios-spanish/content/alpheios-spanish-prefs.xul
-overlay chrome://alpheios/content/alpheios-dict-prefs-adv.xul    chrome://alpheios-spanish/content/alpheios-spanish-prefs.xul
-overlay chrome://alpheios/content/alpheios-panel-prefs.xul    chrome://alpheios-spanish/content/alpheios-spanish-prefs.xul
-overlay chrome://alpheios/content/alpheios-site-prefs.xul    chrome://alpheios-spanish/content/alpheios-spanish-prefs.xul
 style	chrome://global/content/customizeToolbar.xul	chrome://alpheios-spanish/skin/alpheios-spanish.css
