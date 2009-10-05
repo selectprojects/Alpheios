@@ -22,7 +22,7 @@
   <xsl:strip-space elements="*"/>
 
   <!-- whether to use uppercase letters in betacode -->
-  <xsl:variable name="upper" select="false()"/>
+  <xsl:variable name="e_upper" select="false()"/>
 
   <xsl:template match="/">
     <xsl:apply-templates select="pml:aldt_treebank"/>
@@ -47,8 +47,8 @@
       <xsl:for-each select="pml:aldt_trees/pml:LM">
         <xsl:sort select="./@id" data-type="number"/>
         <xsl:call-template name="LM-sentence">
-          <xsl:with-param name="lm" select="."/>
-          <xsl:with-param name="language" select="$language"/>
+          <xsl:with-param name="a_lm" select="."/>
+          <xsl:with-param name="a_language" select="$language"/>
         </xsl:call-template>
       </xsl:for-each>
     </xsl:element>
@@ -60,18 +60,18 @@
         Sort all word-level list members in id order
   -->
   <xsl:template name="LM-sentence">
-    <xsl:param name="lm"/>
-    <xsl:param name="language"/>
+    <xsl:param name="a_lm"/>
+    <xsl:param name="a_language"/>
 
     <xsl:element name="sentence" namespace="">
       <xsl:choose>
         <!-- if this is Greek data -->
-        <xsl:when test="$language = 'grc'">
+        <xsl:when test="$a_language = 'grc'">
           <!-- Convert span from unicode to betacode -->
           <xsl:attribute name="span" namespace="">
             <xsl:call-template name="uni-to-beta">
-              <xsl:with-param name="input" select="$lm/@span"/>
-              <xsl:with-param name="upper" select="$upper"/>
+              <xsl:with-param name="a_in" select="$a_lm/@span"/>
+              <xsl:with-param name="a_upper" select="$e_upper"/>
             </xsl:call-template>
           </xsl:attribute>
         </xsl:when>
@@ -79,11 +79,11 @@
         <!-- if not Greek -->
         <xsl:otherwise>
           <!-- just copy span -->
-          <xsl:apply-templates select="$lm/@span"/>
+          <xsl:apply-templates select="$a_lm/@span"/>
         </xsl:otherwise>
       </xsl:choose>
 
-      <xsl:apply-templates select="$lm/@id|$lm/@document_id|$lm/@subdoc"/>
+      <xsl:apply-templates select="$a_lm/@id|$a_lm/@document_id|$a_lm/@subdoc"/>
 
       <xsl:if test="@primary1">
         <xsl:element name="primary">
@@ -104,8 +104,8 @@
       <xsl:for-each select=".//pml:LM">
         <xsl:sort select="./@id" data-type="number"/>
         <xsl:call-template name="LM-word">
-          <xsl:with-param name="lm" select="."/>
-          <xsl:with-param name="language" select="$language"/>
+          <xsl:with-param name="a_lm" select="."/>
+          <xsl:with-param name="a_language" select="$a_language"/>
         </xsl:call-template>
       </xsl:for-each>
     </xsl:element>
@@ -120,24 +120,24 @@
           else id of parent word
   -->
   <xsl:template name="LM-word">
-    <xsl:param name="lm"/>
-    <xsl:param name="language"/>
+    <xsl:param name="a_lm"/>
+    <xsl:param name="a_language"/>
 
     <xsl:element name="word" namespace="">
       <xsl:choose>
         <!-- if this is Greek data -->
-        <xsl:when test="$language = 'grc'">
+        <xsl:when test="$a_language = 'grc'">
           <!-- Convert lemma and form from unicode to betacode -->
           <xsl:attribute name="form" namespace="">
             <xsl:call-template name="uni-to-beta">
-              <xsl:with-param name="input" select="$lm/@form"/>
-              <xsl:with-param name="upper" select="$upper"/>
+              <xsl:with-param name="a_in" select="$a_lm/@form"/>
+              <xsl:with-param name="a_upper" select="$e_upper"/>
             </xsl:call-template>
           </xsl:attribute>
           <xsl:attribute name="lemma" namespace="">
             <xsl:call-template name="uni-to-beta">
-              <xsl:with-param name="input" select="$lm/@lemma"/>
-              <xsl:with-param name="upper" select="$upper"/>
+              <xsl:with-param name="a_in" select="$a_lm/@lemma"/>
+              <xsl:with-param name="a_upper" select="$e_upper"/>
             </xsl:call-template>
           </xsl:attribute>
         </xsl:when>
@@ -145,19 +145,19 @@
         <!-- if not Greek -->
         <xsl:otherwise>
           <!-- just copy form and lemma -->
-          <xsl:apply-templates select="$lm/@form|$lm/@lemma"/>
+          <xsl:apply-templates select="$a_lm/@form|$a_lm/@lemma"/>
         </xsl:otherwise>
       </xsl:choose>
 
       <!-- Copy over some of attributes -->
-      <xsl:apply-templates select="$lm/@id|$lm/@relation"/>
+      <xsl:apply-templates select="$a_lm/@id|$a_lm/@relation"/>
 
       <!-- Calculate head from parent's id or 0 if this is root word -->
       <xsl:attribute name="head">
-        <xsl:if test="local-name($lm/../..) = 'LM'">
-          <xsl:value-of select="$lm/../@id"/>
+        <xsl:if test="local-name($a_lm/../..) = 'LM'">
+          <xsl:value-of select="$a_lm/../@id"/>
         </xsl:if>
-        <xsl:if test="local-name($lm/../..) != 'LM'">0</xsl:if>
+        <xsl:if test="local-name($a_lm/../..) != 'LM'">0</xsl:if>
       </xsl:attribute>
 
       <!--
@@ -166,41 +166,41 @@
         positions in postag
       -->
       <xsl:attribute name="postag">
-        <xsl:apply-templates select="$aldt-morphology-table" mode="long2short">
-          <xsl:with-param name="category">pos</xsl:with-param>
-          <xsl:with-param name="key" select="@pos"/>
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="long2short">
+          <xsl:with-param name="a_category">pos</xsl:with-param>
+          <xsl:with-param name="a_key" select="@pos"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="long2short">
-          <xsl:with-param name="category">person</xsl:with-param>
-          <xsl:with-param name="key" select="@person"/>
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="long2short">
+          <xsl:with-param name="a_category">person</xsl:with-param>
+          <xsl:with-param name="a_key" select="@person"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="long2short">
-          <xsl:with-param name="category">number</xsl:with-param>
-          <xsl:with-param name="key" select="@number"/>
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="long2short">
+          <xsl:with-param name="a_category">number</xsl:with-param>
+          <xsl:with-param name="a_key" select="@number"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="long2short">
-          <xsl:with-param name="category">tense</xsl:with-param>
-          <xsl:with-param name="key" select="@tense"/>
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="long2short">
+          <xsl:with-param name="a_category">tense</xsl:with-param>
+          <xsl:with-param name="a_key" select="@tense"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="long2short">
-          <xsl:with-param name="category">mood</xsl:with-param>
-          <xsl:with-param name="key" select="@mood"/>
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="long2short">
+          <xsl:with-param name="a_category">mood</xsl:with-param>
+          <xsl:with-param name="a_key" select="@mood"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="long2short">
-          <xsl:with-param name="category">voice</xsl:with-param>
-          <xsl:with-param name="key" select="@voice"/>
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="long2short">
+          <xsl:with-param name="a_category">voice</xsl:with-param>
+          <xsl:with-param name="a_key" select="@voice"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="long2short">
-          <xsl:with-param name="category">gender</xsl:with-param>
-          <xsl:with-param name="key" select="@gender"/>
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="long2short">
+          <xsl:with-param name="a_category">gender</xsl:with-param>
+          <xsl:with-param name="a_key" select="@gender"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="long2short">
-          <xsl:with-param name="category">case</xsl:with-param>
-          <xsl:with-param name="key" select="@case"/>
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="long2short">
+          <xsl:with-param name="a_category">case</xsl:with-param>
+          <xsl:with-param name="a_key" select="@case"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="long2short">
-          <xsl:with-param name="category">degree</xsl:with-param>
-          <xsl:with-param name="key" select="@degree"/>
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="long2short">
+          <xsl:with-param name="a_category">degree</xsl:with-param>
+          <xsl:with-param name="a_key" select="@degree"/>
         </xsl:apply-templates>
       </xsl:attribute>
     </xsl:element>

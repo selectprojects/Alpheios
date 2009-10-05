@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+S?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:dc="http://purl.org/dc/elements/1.1/"
   xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
   xmlns:alph="http://alpheios.net/namespaces/tei"
@@ -13,36 +13,36 @@
   <xsl:preserve-space elements="*"/>
   <xsl:output method="html" encoding="utf-8"/>
 
-  <xsl:param name="linenumber" select="4"/>
-  <xsl:param name="document_id">Perseus%3Atext%3A1999.04.0062"</xsl:param>
+  <xsl:param name="e_linenumber" select="4"/>
+  <xsl:param name="e_documentId">Perseus%3Atext%3A1999.04.0062"</xsl:param>
 
   <!--
     This parameter contains the authority name of an entity to highlight; it's
     used when the user has followed a link to the text page from within the
     named-entity browser.
   -->
-  <xsl:param name="highlight_authname" select="''"/>
+  <xsl:param name="e_highlightAuthname" select="''"/>
 
 
   <!--
     The primary language of the document we're rendering. Used to
     render Greek fonts if we need to.
   -->
-  <xsl:param name="lang" select="'en'"/>
+  <xsl:param name="e_lang" select="'en'"/>
 
 
   <!--
-    For lexicon entries, "sourcework" represents the document containing the
-    word that we're looking up, in ABO format, "sourcesub" the subquery.
+    For lexicon entries, "e_sourcework" represents the document containing the
+    word that we're looking up, in ABO format, "e_sourcesub" the subquery.
     This allows us to give special treatment to lexicon citations that point
     back to the work we came from, and perhaps even more special treatment
     to citations that point to the specific passage we came from.
   -->
-  <xsl:param name="sourcework" select="''"/>
-  <xsl:param name="sourcesub" select="0"/>
+  <xsl:param name="e_sourcework" select="''"/>
+  <xsl:param name="e_sourcesub" select="0"/>
 
   <xsl:template match="/">
-    <div class="text_container {$lang}">
+    <div class="text_container {$e_lang}">
       <xsl:apply-templates
         select="/alph:error|/alph:output/alph:entry|/alph:output/alph:error|/TEI.2/text/front|/tei.2/text/front|/TEI.2/text/body|/tei.2/text/back|/TEI.2/text/back|/TEI.2/text/group/text"/>
       <xsl:text> </xsl:text>
@@ -162,7 +162,7 @@
   </xsl:template>
 
   <xsl:template name="correct-sense">
-    <xsl:if test="descendant::bibl[@n=concat($sourcework,':',$sourcesub)]">
+    <xsl:if test="descendant::bibl[@n=concat($e_sourcework,':',$e_sourcesub)]">
       <span style="font-weight: bold; color: red; font-size: large;">*</span>
     </xsl:if>
   </xsl:template>
@@ -335,43 +335,43 @@
   </xsl:template>
 
   <xsl:template name="getFigureID">
-    <xsl:param name="fID"/>
+    <xsl:param name="a_fID"/>
     <xsl:choose>
-      <xsl:when test="contains($fID,'.')">
+      <xsl:when test="contains($a_fID,'.')">
         <xsl:choose>
-          <xsl:when test="string-length(substring-before($fID, '.')) = 4">
+          <xsl:when test="string-length(substring-before($a_fID, '.')) = 4">
             <xsl:text>0</xsl:text>
           </xsl:when>
-          <xsl:when test="string-length(substring-before($fID, '.')) = 3">
+          <xsl:when test="string-length(substring-before($a_fID, '.')) = 3">
             <xsl:text>00</xsl:text>
           </xsl:when>
-          <xsl:when test="string-length(substring-before($fID, '.')) = 2">
+          <xsl:when test="string-length(substring-before($a_fID, '.')) = 2">
             <xsl:text>000</xsl:text>
           </xsl:when>
-          <xsl:when test="string-length(substring-before($fID, '.')) = 1">
+          <xsl:when test="string-length(substring-before($a_fID, '.')) = 1">
             <xsl:text>0000</xsl:text>
           </xsl:when>
         </xsl:choose>
-        <xsl:value-of select="substring-before($fID,'.')"/>
+        <xsl:value-of select="substring-before($a_fID,'.')"/>
         <xsl:text>_</xsl:text>
-        <xsl:value-of select="substring-after($fID, '.')"/>
+        <xsl:value-of select="substring-after($a_fID, '.')"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:choose>
-          <xsl:when test="string-length($fID) = 4">
+          <xsl:when test="string-length($a_fID) = 4">
             <xsl:text>0</xsl:text>
           </xsl:when>
-          <xsl:when test="string-length($fID) = 3">
+          <xsl:when test="string-length($a_fID) = 3">
             <xsl:text>00</xsl:text>
           </xsl:when>
-          <xsl:when test="string-length($fID) = 2">
+          <xsl:when test="string-length($a_fID) = 2">
             <xsl:text>000</xsl:text>
           </xsl:when>
-          <xsl:when test="string-length($fID) = 1">
+          <xsl:when test="string-length($a_fID) = 1">
             <xsl:text>0000</xsl:text>
           </xsl:when>
         </xsl:choose>
-        <xsl:value-of select="$fID"/>
+        <xsl:value-of select="$a_fID"/>
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
@@ -517,14 +517,14 @@
         <p style="font-size: small; margin: 10px 5%;">
 
           <xsl:call-template name="permalink">
-            <xsl:with-param name="smythp"
+            <xsl:with-param name="a_smythp"
               select="(preceding::milestone[@unit='smythp'])[last()]/@n"/>
 
             <!-- Pass a nonempty parameter for the subsection iff
                  we're currently in a subsection (i.e., we haven't seen
                  any new sections since we last saw a subsection). -->
 
-            <xsl:with-param name="smythsub">
+            <xsl:with-param name="a_smythsub">
               <xsl:if
                 test="(preceding::milestone[@unit='smythp' or @unit='smythsub'])[last()]/@unit='smythsub'">
                 <xsl:value-of
@@ -532,7 +532,7 @@
               </xsl:if>
             </xsl:with-param>
 
-            <xsl:with-param name="current_note" select="@n"/>
+            <xsl:with-param name="a_currentNote" select="@n"/>
           </xsl:call-template>
 
           <xsl:text> </xsl:text>
@@ -572,31 +572,31 @@
   <xsl:template match="pb">
     <xsl:variable name="figID">
       <xsl:call-template name="getFigureID">
-        <xsl:with-param name="fID">
+        <xsl:with-param name="a_fID">
           <xsl:value-of select="./@n"/>
         </xsl:with-param>
       </xsl:call-template>
     </xsl:variable>
     <xsl:variable name="imID">
-      <xsl:value-of select="$document_id"/>
+      <xsl:value-of select="$e_documentId"/>
       <xsl:text>.</xsl:text>
       <xsl:value-of select="$figID"/>
     </xsl:variable>
     <xsl:choose>
       <!-- Want to include page images for the American Collection-->
       <xsl:when
-        test="@id and starts-with($document_id, 'Perseus:text:2001.05.0007')">
+        test="@id and starts-with($e_documentId, 'Perseus:text:2001.05.0007')">
           [<a target="figure"
           href="http://repository01.lib.tufts.edu:8080/fedora/get/tufts:perseus.image.2001.05.0007.{$figID}/bdef:TuftsImage/getMediumRes/">
           <xsl:value-of select="./@n"/>
         </a>] </xsl:when>
       <xsl:when
-        test="@id and starts-with($document_id, 'Perseus:text:2001.05.0044')">
+        test="@id and starts-with($e_documentId, 'Perseus:text:2001.05.0044')">
           [<a target="figure"
           href="http://repository01.lib.tufts.edu:8080/fedora/get/tufts:perseus.image.2001.05.0044.{$figID}/bdef:TuftsImage/getMediumRes/">
           <xsl:value-of select="./@n"/>
         </a>] </xsl:when>
-      <xsl:when test="@id and starts-with($document_id, 'Perseus:text:2001.05')"
+      <xsl:when test="@id and starts-with($e_documentId, 'Perseus:text:2001.05')"
         > [<a target="figure"
           href="http://www.perseus.tufts.edu/cgi-bin/image?lookup={$imID}">
           <xsl:value-of select="./@n"/>
@@ -715,7 +715,7 @@
           </xsl:call-template>
         </i>
       </xsl:when>
-      <xsl:when test="@n=concat($sourcework,':',$sourcesub)">
+      <xsl:when test="@n=concat($e_sourcework,':',$e_sourcesub)">
         <span style="font-size: x-large;">
           <a href="text.jsp?doc={@n}&amp;lang=original" target="_new">
             <xsl:call-template name="language-filter">
@@ -726,7 +726,7 @@
         </span>
       </xsl:when>
       <xsl:when
-        test="@n and $sourcework != 'none' and starts-with(@n, $sourcework)">
+        test="@n and $e_sourcework != 'none' and starts-with(@n, $e_sourcework)">
         <b>
           <a href="text.jsp?doc={@n}&amp;lang=original" target="_new">
             <xsl:call-template name="language-filter">
@@ -760,7 +760,7 @@
   </xsl:template>
 
   <xsl:template match="ref[@target!='']">
-    <a href="text.jsp?doc={$document_id}:id={@target}">
+    <a href="text.jsp?doc={$e_documentId}:id={@target}">
       <xsl:call-template name="language-filter">
         <xsl:with-param name="lang" select="@lang"/>
       </xsl:call-template>
@@ -942,9 +942,9 @@
   <xsl:template match="milestone[@unit='smythp']">
 
     <xsl:call-template name="permalink">
-      <xsl:with-param name="smythp" select="@n"/>
-      <xsl:with-param name="smythsub" select="''"/>
-      <xsl:with-param name="current_note" select="''"/>
+      <xsl:with-param name="a_smythp" select="@n"/>
+      <xsl:with-param name="a_smythsub" select="''"/>
+      <xsl:with-param name="a_currentNote" select="''"/>
     </xsl:call-template>
 
     <xsl:text> </xsl:text>
@@ -954,13 +954,13 @@
   </xsl:template>
 
   <xsl:template match="milestone[@unit='smythsub']">
-    <xsl:variable name="current_smythsub" select="@n"/>
+    <xsl:variable name="currentSmythsub" select="@n"/>
 
     <xsl:call-template name="permalink">
-      <xsl:with-param name="smythp"
+      <xsl:with-param name="a_smythp"
         select="(preceding::milestone[@unit='smythp'])[last()]/@n"/>
-      <xsl:with-param name="smythsub" select="@n"/>
-      <xsl:with-param name="current_note" select="''"/>
+      <xsl:with-param name="a_smythsub" select="@n"/>
+      <xsl:with-param name="a_currentNote" select="''"/>
     </xsl:call-template>
 
     <xsl:text> </xsl:text>
@@ -972,17 +972,17 @@
   </xsl:template>
 
   <xsl:template name="permalink">
-    <xsl:param name="smythp"/>
-    <xsl:param name="smythsub"/>
-    <xsl:param name="current_note"/>
+    <xsl:param name="a_smythp"/>
+    <xsl:param name="a_smythsub"/>
+    <xsl:param name="a_currentNote"/>
 
     <xsl:variable name="link">
       <xsl:text>chapter</xsl:text>
-      <xsl:value-of select="$smythp"/>
-      <xsl:value-of select="$smythsub"/>
-      <xsl:if test="$current_note != ''">
+      <xsl:value-of select="$a_smythp"/>
+      <xsl:value-of select="$a_smythsub"/>
+      <xsl:if test="$a_currentNote != ''">
         <xsl:text>.note</xsl:text>
-        <xsl:value-of select="$current_note"/>
+        <xsl:value-of select="$a_currentNote"/>
       </xsl:if>
     </xsl:variable>
 
@@ -1115,19 +1115,19 @@
   </xsl:template>
 
   <xsl:template name="render-entity">
-    <xsl:param name="class" select="'entity'"/>
+    <xsl:param name="a_class" select="'entity'"/>
     <xsl:element name="span">
       <xsl:attribute name="class">
-        <xsl:if test="@authname=$highlight_authname">
+        <xsl:if test="@authname=$e_highlightAuthname">
           <xsl:text>search_result </xsl:text>
         </xsl:if>
-        <xsl:value-of select="$class"/>
+        <xsl:value-of select="$a_class"/>
       </xsl:attribute>
-      <xsl:if test="@authname=$highlight_authname">
+      <xsl:if test="@authname=$e_highlightAuthname">
         <xsl:attribute name="id">
           <xsl:text>match</xsl:text>
           <xsl:value-of
-            select="count(preceding::*[@authname=$highlight_authname]) + 1"/>
+            select="count(preceding::*[@authname=$e_highlightAuthname]) + 1"/>
         </xsl:attribute>
       </xsl:if>
       <xsl:apply-templates/>
@@ -1212,51 +1212,51 @@
   </xsl:template>
 
   <xsl:template name="language-filter">
-    <xsl:param name="lang"/>
-    <xsl:param name="default" select="''"/>
+    <xsl:param name="a_lang"/>
+    <xsl:param name="a_default" select="''"/>
 
     <xsl:choose>
-      <xsl:when test="$lang='la'">
+      <xsl:when test="$a_lang='la'">
         <span class="la">
           <xsl:apply-templates/>
         </span>
       </xsl:when>
-      <xsl:when test="$lang='lat'">
+      <xsl:when test="$a_lang='lat'">
         <span class="la">
           <xsl:apply-templates/>
         </span>
       </xsl:when>
-      <xsl:when test="$lang='latin'">
+      <xsl:when test="$a_lang='latin'">
         <span class="la">
           <xsl:apply-templates/>
         </span>
       </xsl:when>
-      <xsl:when test="$lang='gk'">
+      <xsl:when test="$a_lang='gk'">
         <span class="greek">
           <xsl:apply-templates/>
         </span>
       </xsl:when>
-      <xsl:when test="$lang='greek'">
+      <xsl:when test="$a_lang='greek'">
         <span class="greek">
           <xsl:apply-templates/>
         </span>
       </xsl:when>
-      <xsl:when test="$lang='el'">
+      <xsl:when test="$a_lang='el'">
         <span class="greek">
           <xsl:apply-templates/>
         </span>
       </xsl:when>
-      <xsl:when test="$lang='it'">
+      <xsl:when test="$a_lang='it'">
         <span class="it">
           <xsl:apply-templates/>
         </span>
       </xsl:when>
-      <xsl:when test="$lang='ar'">
+      <xsl:when test="$a_lang='ar'">
         <span class="ar">
           <xsl:apply-templates/>
         </span>
       </xsl:when>
-      <xsl:when test="$lang='en'">
+      <xsl:when test="$a_lang='en'">
         <span class="en">
           <xsl:apply-templates/>
         </span>

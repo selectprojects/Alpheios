@@ -24,10 +24,10 @@
         Normalize Greek Unicode to precomposed/decomposed characters
         
         Parameters:
-        $input        text to normalize
-        $precomposed  whether to produce precomposed output (default=true)
-        $strip        betacode characters to strip (e.g. "/\=" to remove accents)
-        $partial      whether this is a partial word (default=false)
+        $a_in           text to normalize
+        $a_precomposed  whether to produce precomposed output (default=true)
+        $a_strip        betacode characters to strip (e.g. "/\=" to remove accents)
+        $a_partial      whether this is a partial word (default=false)
         (If true, do not use final sigma for last letter)
     -->
   <xsl:include href="uni2betacode.xsl"/>
@@ -37,29 +37,29 @@
 
 
   <xsl:template name="normalize-greek">
-    <xsl:param name="input"/>
-    <xsl:param name="precomposed" select="true()"/>
-    <xsl:param name="strip" select="''"/>
-    <xsl:param name="partial" select="false()"/>
+    <xsl:param name="a_in"/>
+    <xsl:param name="a_precomposed" select="true()"/>
+    <xsl:param name="a_strip" select="''"/>
+    <xsl:param name="a_partial" select="false()"/>
 
     <!-- convert to betacode -->
     <xsl:variable name="temp1">
       <xsl:call-template name="uni-to-beta">
-        <xsl:with-param name="input" select="$input"/>
-        <xsl:with-param name="upper" select="false()"/>
+        <xsl:with-param name="a_in" select="$a_in"/>
+        <xsl:with-param name="a_upper" select="false()"/>
       </xsl:call-template>
     </xsl:variable>
 
     <!-- remove any requested characters -->
     <xsl:variable name="temp2">
       <xsl:choose>
-        <xsl:when test="string-length($strip) > 0">
+        <xsl:when test="string-length($a_strip) > 0">
           <xsl:call-template name="beta-strip">
-            <xsl:with-param name="input" select="$temp1"/>
-            <xsl:with-param name="strip-string" select="$strip"/>
-            <xsl:with-param name="strip-vowels" select="false()"/>
-            <xsl:with-param name="strip-diaereses" select="false()"/>
-            <xsl:with-param name="strip-caps" select="false()"/>
+            <xsl:with-param name="a_in" select="$temp1"/>
+            <xsl:with-param name="a_stripString" select="$a_strip"/>
+            <xsl:with-param name="a_stripVowels" select="false()"/>
+            <xsl:with-param name="a_stripDiaereses" select="false()"/>
+            <xsl:with-param name="a_stripCaps" select="false()"/>
             
           </xsl:call-template>
         </xsl:when>
@@ -71,9 +71,9 @@
 
     <!-- convert back to unicode -->
     <xsl:call-template name="beta-to-uni">
-      <xsl:with-param name="input" select="$temp2"/>
-      <xsl:with-param name="precomposed" select="$precomposed"/>
-      <xsl:with-param name="partial" select="$partial"/>
+      <xsl:with-param name="a_in" select="$temp2"/>
+      <xsl:with-param name="a_precomposed" select="$a_precomposed"/>
+      <xsl:with-param name="a_partial" select="$a_partial"/>
     </xsl:call-template>
   </xsl:template>
 

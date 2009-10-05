@@ -17,7 +17,7 @@
   <xsl:include href="aldt-util.xsl"/>
 
   <xsl:strip-space elements="*"/>
-  <xsl:variable name="pml-namespace" select="'http://ufal.mff.cuni.cz/pdt/pml/'"/>
+  <xsl:variable name="s_pmlNamespace" select="'http://ufal.mff.cuni.cz/pdt/pml/'"/>
 
   <!-- whether to convert to precomposed or decomposed Unicode -->
   <xsl:variable name="precomposed" select="true()"/>
@@ -63,7 +63,7 @@
   <xsl:template match="sentence">
     <xsl:param name="language"/>
 
-    <xsl:element name="LM" namespace="{$pml-namespace}">
+    <xsl:element name="LM" namespace="{$s_pmlNamespace}">
       <!--
             Convert annotator names to attributes
             (Haven't figured out how to make elements work in tred)
@@ -90,7 +90,7 @@
           <!-- convert span from betacode to unicode -->
           <xsl:attribute name="span">
             <xsl:call-template name="beta-to-uni">
-              <xsl:with-param name="input" select="@span"/>
+              <xsl:with-param name="a_in" select="@span"/>
                   <xsl:with-param name="precomposed" select="$precomposed"/>
             </xsl:call-template>
           </xsl:attribute>
@@ -108,8 +108,8 @@
 
       <!-- transform root words in sentence -->
       <xsl:call-template name="word-set">
-        <xsl:with-param name="words" select="./word[@head='0']"/>
-        <xsl:with-param name="language" select="$language"/>
+        <xsl:with-param name="a_words" select="./word[@head='0']"/>
+        <xsl:with-param name="a_language" select="$language"/>
       </xsl:call-template>
     </xsl:element>
   </xsl:template>
@@ -120,10 +120,10 @@
         (those whose head attribute equals the word's id)
   -->
   <xsl:template name="word-set">
-    <xsl:param name="words"/>
-    <xsl:param name="language"/>
+    <xsl:param name="a_words"/>
+    <xsl:param name="a_language"/>
 
-    <xsl:for-each select="$words">
+    <xsl:for-each select="$a_words">
       <!--
             Copy over some of attributes
             Note that head attribute is not copied.
@@ -134,18 +134,18 @@
 
         <xsl:choose>
           <!-- if this is Greek data -->
-          <xsl:when test="$language = 'grc'">
+          <xsl:when test="$a_language = 'grc'">
             <!-- convert lemma and form from betacode to unicode -->
             <xsl:attribute name="form">
               <xsl:call-template name="beta-to-uni">
-                <xsl:with-param name="input" select="@form"/>
-                <xsl:with-param name="precomposed" select="$precomposed"/>
+                <xsl:with-param name="a_in" select="@form"/>
+                <xsl:with-param name="a_precomposed" select="$precomposed"/>
               </xsl:call-template>
             </xsl:attribute>
             <xsl:attribute name="lemma">
               <xsl:call-template name="beta-to-uni">
-                <xsl:with-param name="input" select="@lemma"/>
-                <xsl:with-param name="precomposed" select="$precomposed"/>
+                <xsl:with-param name="a_in" select="@lemma"/>
+                <xsl:with-param name="a_precomposed" select="$precomposed"/>
               </xsl:call-template>
             </xsl:attribute>
           </xsl:when>
@@ -158,39 +158,39 @@
         </xsl:choose>
 
         <!-- Break postag into separate morphological attributes -->
-        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="short2long">
           <xsl:with-param name="category">pos</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,1,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="short2long">
           <xsl:with-param name="category">person</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,2,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="short2long">
           <xsl:with-param name="category">number</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,3,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="short2long">
           <xsl:with-param name="category">tense</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,4,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="short2long">
           <xsl:with-param name="category">mood</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,5,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="short2long">
           <xsl:with-param name="category">voice</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,6,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="short2long">
           <xsl:with-param name="category">gender</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,7,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="short2long">
           <xsl:with-param name="category">case</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,8,1)"/>
         </xsl:apply-templates>
-        <xsl:apply-templates select="$aldt-morphology-table" mode="short2long">
+        <xsl:apply-templates select="$s_aldtMorphologyTable" mode="short2long">
           <xsl:with-param name="category">degree</xsl:with-param>
           <xsl:with-param name="key" select="substring(@postag,9,1)"/>
         </xsl:apply-templates>
@@ -198,8 +198,8 @@
         <!-- Recursively build children from this word's dependents -->
         <xsl:variable name="id" select="@id"/>
         <xsl:call-template name="word-set">
-          <xsl:with-param name="words" select="../word[@head=$id]"/>
-          <xsl:with-param name="language" select="$language"/>
+          <xsl:with-param name="a_words" select="../word[@head=$id]"/>
+          <xsl:with-param name="a_language" select="$a_language"/>
         </xsl:call-template>
       </xsl:element>
     </xsl:for-each>
@@ -207,7 +207,7 @@
 
   <!-- Generic template to copy content to new namespace -->
   <xsl:template match="*">
-    <xsl:element name="aldt_{name(.)}" namespace="{$pml-namespace}">
+    <xsl:element name="aldt_{name(.)}" namespace="{$s_pmlNamespace}">
       <xsl:value-of select="./text()"/>
       <xsl:apply-templates select="@*"/>
       <xsl:apply-templates select="*"/>
@@ -216,7 +216,7 @@
 
   <!-- Generic template to copy attributes to new namespace -->
   <xsl:template match="@*">
-    <xsl:attribute name="{name(.)}" namespace="{$pml-namespace}">
+    <xsl:attribute name="{name(.)}" namespace="{$s_pmlNamespace}">
       <xsl:value-of select="."/>
     </xsl:attribute>
   </xsl:template>

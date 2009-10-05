@@ -23,46 +23,46 @@
  -->
 
   <!-- Upper/lower tables.  Note: J is not a valid betacode base character. -->
-  <xsl:variable name="beta-uppers">ABCDEFGHIKLMNOPQRSTUVWXYZ</xsl:variable>
-  <xsl:variable name="beta-lowers">abcdefghiklmnopqrstuvwxyz</xsl:variable>
+  <xsl:variable name="s_betaUppers">ABCDEFGHIKLMNOPQRSTUVWXYZ</xsl:variable>
+  <xsl:variable name="s_betaLowers">abcdefghiklmnopqrstuvwxyz</xsl:variable>
 
   <!-- diacritics in betacode and combining unicode -->
-  <xsl:variable name="beta-diacritics">()+/\=|_^&apos;</xsl:variable>
-  <xsl:variable name="uni-diacritics"
+  <xsl:variable name="s_betaDiacritics">()+/\=|_^&apos;</xsl:variable>
+  <xsl:variable name="s_uniDiacritics"
     >&#x0314;&#x0313;&#x0308;&#x0301;&#x0300;&#x0342;&#x0345;&#x0304;&#x0306;&#x1FBD;</xsl:variable>
 
   <!-- characters with and without length diacritics -->
-  <xsl:variable name="beta-with-length">_^</xsl:variable>
-  <xsl:variable name="beta-without-length"/>
-  <xsl:variable name="beta-with-diaeresis">+</xsl:variable>
-  <xsl:variable name="beta-without-diaeresis"/>
-  <xsl:variable name="beta-with-caps">*</xsl:variable>
-  <xsl:variable name="beta-without-caps"/>
-  <xsl:variable name="uni-with-length"
+  <xsl:variable name="s_betaWithLength">_^</xsl:variable>
+  <xsl:variable name="s_betaWithoutLength"/>
+  <xsl:variable name="s_betaWithDiaeresis">+</xsl:variable>
+  <xsl:variable name="s_betaWithoutDiaeresis"/>
+  <xsl:variable name="s_betaWithCaps">*</xsl:variable>
+  <xsl:variable name="s_betaWithoutCaps"/>
+  <xsl:variable name="s_uniWithLength"
     >&#x1FB0;&#x1FB1;&#x1FB8;&#x1FB9;&#x1FD0;&#x1FD1;&#x1FD8;&#x1FD9;&#x1FE0;&#x1FE1;&#x1FE8;&#x1FE9;&#x00AF;&#x0304;&#x0306;</xsl:variable>
-  <xsl:variable name="uni-without-length"
+  <xsl:variable name="s_uniWithoutLength"
     >&#x03B1;&#x03B1;&#x0391;&#x0391;&#x03B9;&#x03B9;&#x0399;&#x0399;&#x03C5;&#x03C5;&#x03A5;&#x03A5;</xsl:variable>
-  <xsl:variable name="uni-with-diaeresis"
+  <xsl:variable name="s_uniWithDiaeresis"
     >&#x0390;&#x03AA;&#x03AB;&#x03B0;&#x03CA;&#x03CB;&#x1FD2;&#x1FD3;&#x1FD7;&#x1FE2;&#x1FE3;&#x1FE7;&#x1FC1;&#x1FED;&#x1FEE;&#x00A8;&#x0308;</xsl:variable>
-  <xsl:variable name="uni-without-diaeresis"
+  <xsl:variable name="s_uniWithoutDiaeresis"
     >&#x03AF;&#x0399;&#x03A5;&#x03CD;&#x03B9;&#x03C5;&#x1F76;&#x1F77;&#x1FD6;&#x1F7A;&#x1F7B;&#x1FE6;&#x1FC0;&#x1FEF;&#x1FFD;</xsl:variable>
-  <xsl:variable name="uni-with-caps"
+  <xsl:variable name="s_uniWithCaps"
     >&#x1F8D;&#x1F0D;&#x1F8B;&#x1F0B;&#x1F8F;&#x1F0F;&#x1F89;&#x1F09;&#x1F8C;&#x1F0C;&#x1F8A;&#x1F0A;&#x1F8E;&#x1F0E;&#x1F88;&#x1F08;&#x0386;&#x1FBA;&#x1FBC;&#x1FB9;&#x1FB8;&#x0391;&#x0392;&#x039E;&#x0394;&#x1F1D;&#x1F1B;&#x1F19;&#x1F1C;&#x1F1A;&#x1F18;&#x0388;&#x1FC8;&#x0395;&#x03A6;&#x0393;&#x1F9D;&#x1F2D;&#x1F9B;&#x1F2B;&#x1F9F;&#x1F2F;&#x1F99;&#x1F29;&#x1F9C;&#x1F2C;&#x1F9A;&#x1F2A;&#x1F9E;&#x1F2E;&#x1F98;&#x1F28;&#x0389;&#x1FCA;&#x1FCC;&#x0397;&#x1F3D;&#x1F3B;&#x1F3F;&#x1F39;&#x1F3C;&#x1F3A;&#x1F3E;&#x1F38;&#x03AA;&#x038A;&#x1FDA;&#x1FD9;&#x1FD8;&#x0399;&#x039A;&#x039B;&#x039C;&#x039D;&#x1F4D;&#x1F4B;&#x1F49;&#x1F4C;&#x1F4A;&#x1F48;&#x038C;&#x1FF8;&#x039F;&#x03A0;&#x0398;&#x1FEC;&#x03A1;&#x03A3;&#x03A4;&#x1F5D;&#x1F5B;&#x1F5F;&#x1F59;&#x03AB;&#x038E;&#x1FEA;&#x1FE9;&#x1FE8;&#x03A5;&#x03DC;&#x1FAD;&#x1F6D;&#x1FAB;&#x1F6B;&#x1FAF;&#x1F6F;&#x1FA9;&#x1F69;&#x1FAC;&#x1F6C;&#x1FAA;&#x1F6A;&#x1FAE;&#x1F6E;&#x1FA8;&#x1F68;&#x038F;&#x1FFA;&#x1FFC;&#x03A9;&#x03A7;&#x03A8;&#x0396;&#x1FBB;&#x1FC9;&#x1FCB;&#x1FDB;&#x1FF9;&#x1FEB;&#x1FFB;</xsl:variable>
-  <xsl:variable name="uni-without-caps"
+  <xsl:variable name="s_uniWithoutCaps"
     >&#x1F85;&#x1F05;&#x1F83;&#x1F03;&#x1F87;&#x1F07;&#x1F81;&#x1F01;&#x1F84;&#x1F04;&#x1F82;&#x1F02;&#x1F86;&#x1F06;&#x1F80;&#x1F00;&#x03AC;&#x1F70;&#x1FB3;&#x1FB1;&#x1FB0;&#x03B1;&#x03B2;&#x03BE;&#x03B4;&#x1F15;&#x1F13;&#x1F11;&#x1F14;&#x1F12;&#x1F10;&#x03AD;&#x1F72;&#x03B5;&#x03C6;&#x03B3;&#x1F95;&#x1F25;&#x1F93;&#x1F23;&#x1F97;&#x1F27;&#x1F91;&#x1F21;&#x1F94;&#x1F24;&#x1F92;&#x1F22;&#x1F96;&#x1F26;&#x1F90;&#x1F20;&#x03AE;&#x1F74;&#x1FC3;&#x03B7;&#x1F35;&#x1F33;&#x1F37;&#x1F31;&#x1F34;&#x1F32;&#x1F36;&#x1F30;&#x03CA;&#x03AF;&#x1F76;&#x1FD1;&#x1FD0;&#x03B9;&#x03BA;&#x03BB;&#x03BC;&#x03BD;&#x1F45;&#x1F43;&#x1F41;&#x1F44;&#x1F42;&#x1F40;&#x03CC;&#x1F78;&#x03BF;&#x03C0;&#x03B8;&#x1FE5;&#x03C1;&#x03C3;&#x03C4;&#x1F55;&#x1F53;&#x1F57;&#x1F51;&#x03CB;&#x03CD;&#x1F7A;&#x1FE1;&#x1FE0;&#x03C5;&#x03DD;&#x1FA5;&#x1F65;&#x1FA3;&#x1F63;&#x1FA7;&#x1F67;&#x1FA1;&#x1F61;&#x1FA4;&#x1F64;&#x1FA2;&#x1F62;&#x1FA6;&#x1F66;&#x1FA0;&#x1F60;&#x03CE;&#x1F7C;&#x1FF3;&#x03C9;&#x03C7;&#x03C8;&#x03B6;&#x1F71;&#x1F73;&#x1F75;&#x1F77;&#x1F79;&#x1F7B;&#x1F7D;</xsl:variable>
 
   <!-- characters denoting a word separation: punctuation plus whitespace -->
-  <xsl:variable name="beta-separators">
+  <xsl:variable name="s_betaSeparators">
     .,:;_&#x0009;&#x000A;&#x000D;&#x0020;&#x0085;&#x00A0;&#x1680;&#x180E;
     &#x2000;&#x2001;&#x2002;&#x2003;&#x2004;&#x2005;&#x2006;&#x2007;&#x2008;&#x2009;&#x200A;
     &#x2028;&#x2029;&#x202F;&#x205F;&#x3000; </xsl:variable>
 
   <!-- more characters denoting the end of a word -->
-  <xsl:variable name="beta-separators2">0123456789[]{}</xsl:variable>
+  <xsl:variable name="s_betaSeparators2">0123456789[]{}</xsl:variable>
 
   <!-- keys for lookup table -->
-  <xsl:key name="beta-uni-lookup" match="beta-uni-table/entry" use="beta"/>
-  <xsl:key name="unic-beta-lookup" match="beta-uni-table/entry" use="unic"/>
+  <xsl:key name="s_betaUniLookup" match="beta-uni-table/entry" use="beta"/>
+  <xsl:key name="s_unicBetaLookup" match="beta-uni-table/entry" use="unic"/>
 
   <!--
     Table mapping betacode sequences to Unicode
@@ -93,7 +93,7 @@
     To get around tree fragment restrictions in XSLT 1.0, the actual variable
     uses exsl:node-set().
   -->
-  <xsl:variable name="raw-table">
+  <xsl:variable name="s_rawTable">
     <beta-uni-table>
       <entry>
         <beta>a*(/|</beta>
@@ -1716,39 +1716,39 @@
       </entry>
     </beta-uni-table>
   </xsl:variable>
-  <xsl:variable name="beta-uni-table"
-    select="exsl:node-set($raw-table)/beta-uni-table"/>
+  <xsl:variable name="s_betaUniTable"
+    select="exsl:node-set($s_rawTable)/beta-uni-table"/>
 
   <!--
     Insert betacode diacritic character in sorted order in string
     Parameters:
-      $string       existing string
-      $char         character to be inserted
+      $a_string       existing string
+      $a_char         character to be inserted
 
     Output:
       updated string with character inserted in canonical order
   -->
   <xsl:template name="insert-diacritic">
-    <xsl:param name="string"/>
-    <xsl:param name="char"/>
+    <xsl:param name="a_string"/>
+    <xsl:param name="a_char"/>
 
     <xsl:choose>
       <!-- if empty string, use char -->
-      <xsl:when test="string-length($string) = 0">
-        <xsl:value-of select="$char"/>
+      <xsl:when test="string-length($a_string) = 0">
+        <xsl:value-of select="$a_char"/>
       </xsl:when>
 
       <xsl:otherwise>
         <!-- find order of char and head of string -->
-        <xsl:variable name="head" select="substring($string, 1, 1)"/>
+        <xsl:variable name="head" select="substring($a_string, 1, 1)"/>
         <xsl:variable name="charOrder">
           <xsl:call-template name="beta-order">
-            <xsl:with-param name="beta" select="$char"/>
+            <xsl:with-param name="a_beta" select="$a_char"/>
           </xsl:call-template>
         </xsl:variable>
         <xsl:variable name="headOrder">
           <xsl:call-template name="beta-order">
-            <xsl:with-param name="beta" select="$head"/>
+            <xsl:with-param name="a_beta" select="$head"/>
           </xsl:call-template>
         </xsl:variable>
 
@@ -1757,8 +1757,8 @@
           <xsl:when test="number($charOrder) > number($headOrder)">
             <xsl:variable name="tail">
               <xsl:call-template name="insert-diacritic">
-                <xsl:with-param name="string" select="substring($string, 2)"/>
-                <xsl:with-param name="char" select="$char"/>
+                <xsl:with-param name="a_string" select="substring($a_string, 2)"/>
+                <xsl:with-param name="a_char" select="$a_char"/>
               </xsl:call-template>
             </xsl:variable>
             <xsl:value-of select="concat($head, $tail)"/>
@@ -1766,12 +1766,12 @@
 
           <!-- if same as head, discard it (don't want duplicates) -->
           <xsl:when test="number($charOrder) = number($headOrder)">
-            <xsl:value-of select="$string"/>
+            <xsl:value-of select="$a_string"/>
           </xsl:when>
 
           <!-- if new char comes before head -->
           <xsl:otherwise>
-            <xsl:value-of select="concat($char, $string)"/>
+            <xsl:value-of select="concat($a_char, $a_string)"/>
           </xsl:otherwise>
         </xsl:choose>
       </xsl:otherwise>
@@ -1781,67 +1781,67 @@
   <!--
     Define canonical order of betacode diacritics
     Parameter:
-      $beta        betacode diacritic character
+      $a_beta        betacode diacritic character
 
     Output:
       numerical order of character in canonical ordering
   -->
   <xsl:template name="beta-order">
-    <xsl:param name="beta"/>
+    <xsl:param name="a_beta"/>
     <xsl:choose>
       <!-- capitalization -->
-      <xsl:when test="$beta = '*'">0</xsl:when>
+      <xsl:when test="$a_beta = '*'">0</xsl:when>
       <!-- dasia -->
-      <xsl:when test="$beta = '('">1</xsl:when>
+      <xsl:when test="$a_beta = '('">1</xsl:when>
       <!-- psili -->
-      <xsl:when test="$beta = ')'">2</xsl:when>
+      <xsl:when test="$a_beta = ')'">2</xsl:when>
       <!-- diaeresis -->
-      <xsl:when test="$beta = '+'">3</xsl:when>
+      <xsl:when test="$a_beta = '+'">3</xsl:when>
       <!-- acute -->
-      <xsl:when test="$beta = '/'">4</xsl:when>
+      <xsl:when test="$a_beta = '/'">4</xsl:when>
       <!-- grave -->
-      <xsl:when test="$beta = '\'">5</xsl:when>
+      <xsl:when test="$a_beta = '\'">5</xsl:when>
       <!-- perispomeni -->
-      <xsl:when test="$beta = '='">6</xsl:when>
+      <xsl:when test="$a_beta = '='">6</xsl:when>
       <!-- ypogegrammeni -->
-      <xsl:when test="$beta = '|'">7</xsl:when>
+      <xsl:when test="$a_beta = '|'">7</xsl:when>
       <!-- macron -->
-      <xsl:when test="$beta = '_'">8</xsl:when>
+      <xsl:when test="$a_beta = '_'">8</xsl:when>
       <!-- breve -->
-      <xsl:when test="$beta = '^'">9</xsl:when>
+      <xsl:when test="$a_beta = '^'">9</xsl:when>
       <!-- koronis -->
-      <xsl:when test="$beta = &quot;&apos;&quot;">10</xsl:when>
+      <xsl:when test="$a_beta = &quot;&apos;&quot;">10</xsl:when>
     </xsl:choose>
   </xsl:template>
 
   <!--
     Strip vowel length diacritics and/or capitalization from betacode
     Parameters:
-      $input            string to strip
-      $strip-vowels     whether to strip vowel length diacritics
-      $strip-diaereses  whether to strip diaeresis diacritics
-      $strip-caps       whether to strip capitalization
-      $strip-string     betacode characters to remove
+      $a_in               	string to strip
+      $a_stripVowels     	whether to strip vowel length diacritics
+      $a_stripDiaereses  	whether to strip diaeresis diacritics
+      $a_stripCaps       	whether to strip capitalization
+      $a_stripString     	betacode characters to remove
   -->
   <xsl:template name="beta-strip">
-    <xsl:param name="input"/>
-    <xsl:param name="strip-vowels" select="true()"/>
-    <xsl:param name="strip-diaereses" select="true()"/>
-    <xsl:param name="strip-caps" select="true()"/>
-    <xsl:param name="strip-string" select="''"/>
+    <xsl:param name="a_in"/>
+    <xsl:param name="a_stripVowels" select="true()"/>
+    <xsl:param name="a_stripDiaereses" select="true()"/>
+    <xsl:param name="a_stripCaps" select="true()"/>
+    <xsl:param name="a_stripString" select="''"/>
 
     <!-- strip vowels if requested -->
     <xsl:variable name="temp1">
       <xsl:choose>
-        <xsl:when test="$strip-vowels">
+        <xsl:when test="$a_stripVowels">
           <xsl:value-of
-            select="translate($input,
-                              $beta-with-length,
-                              $beta-without-length)"
+            select="translate($a_in,
+                              $s_betaWithLength,
+                              $s_betaWithoutLength)"
           />
         </xsl:when>
         <xsl:otherwise>
-          <xsl:value-of select="$input"/>
+          <xsl:value-of select="$a_in"/>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
@@ -1849,11 +1849,11 @@
     <!-- strip diaereses if requested -->
     <xsl:variable name="temp2">
       <xsl:choose>
-        <xsl:when test="$strip-diaereses">
+        <xsl:when test="$a_stripDiaereses">
           <xsl:value-of
             select="translate($temp1,
-                              $beta-with-diaeresis,
-                              $beta-without-diaeresis)"
+                              $s_betaWithDiaeresis,
+                              $s_betaWithoutDiaeresis)"
           />
         </xsl:when>
         <xsl:otherwise>
@@ -1865,11 +1865,11 @@
     <!-- strip capitalization if requested -->
     <xsl:variable name="temp3">
       <xsl:choose>
-        <xsl:when test="$strip-caps">
+        <xsl:when test="$a_stripCaps">
           <xsl:value-of
             select="translate($temp2,
-                              $beta-with-caps,
-                              $beta-without-caps)"
+                              $s_betaWithCaps,
+                              $s_betaWithoutCaps)"
           />
         </xsl:when>
         <xsl:otherwise>
@@ -1880,8 +1880,8 @@
 
     <!-- strip characters if requested -->
     <xsl:choose>
-      <xsl:when test="string-length($strip-string) > 0">
-        <xsl:value-of select="translate($temp3, $strip-string, '')"/>
+      <xsl:when test="string-length($a_stripString) > 0">
+        <xsl:value-of select="translate($temp3, $a_stripString, '')"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="$temp3"/>
@@ -1893,29 +1893,29 @@
   <!--
     Strip vowel length diacritics and/or capitalization from unicode
     Parameters:
-    $input            string to strip
-    $strip-vowels     whether to strip vowel length diacritics
-    $strip-diaereses  whether to strip diaeresis diacritics
-    $strip-caps       whether to strip capitalization
+    $a_in	          	string to strip
+    $a_stripVowels     	whether to strip vowel length diacritics
+    $a_stripDiaereses  	whether to strip diaeresis diacritics
+    $a_stripCaps       	whether to strip capitalization
   -->
   <xsl:template name="uni-strip">
-    <xsl:param name="input"/>
-    <xsl:param name="strip-vowels" select="true()"/>
-    <xsl:param name="strip-diaereses" select="true()"/>
-    <xsl:param name="strip-caps" select="true()"/>
+    <xsl:param name="a_in"/>
+    <xsl:param name="a_stripVowels" select="true()"/>
+    <xsl:param name="a_stripDiaereses" select="true()"/>
+    <xsl:param name="a_stripCaps" select="true()"/>
 
     <!-- strip vowels if requested -->
     <xsl:variable name="temp1">
       <xsl:choose>
-        <xsl:when test="$strip-vowels">
+        <xsl:when test="$a_stripVowels">
           <xsl:value-of
-            select="translate($input,
-                              $uni-with-length,
-                              $uni-without-length)"
+            select="translate($a_in,
+                              $s_uniWithLength,
+                              $s_uniWithoutLength)"
           />
         </xsl:when>
         <xsl:otherwise>
-          <xsl:value-of select="$input"/>
+          <xsl:value-of select="$a_in"/>
         </xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
@@ -1923,11 +1923,11 @@
     <!-- strip diaereses if requested -->
     <xsl:variable name="temp2">
       <xsl:choose>
-        <xsl:when test="$strip-diaereses">
+        <xsl:when test="$a_stripDiaereses">
           <xsl:value-of
             select="translate($temp1,
-                              $uni-with-diaeresis,
-                              $uni-without-diaeresis)"
+                              $s_uniWithDiaeresis,
+                              $s_uniWithoutDiaeresis)"
           />
         </xsl:when>
         <xsl:otherwise>
@@ -1938,9 +1938,9 @@
 
     <!-- strip capitalization if requested -->
     <xsl:choose>
-      <xsl:when test="$strip-caps">
+      <xsl:when test="$a_stripCaps">
         <xsl:value-of
-          select="translate($temp2, $uni-with-caps, $uni-without-caps)"/>
+          select="translate($temp2, $s_uniWithCaps, $s_uniWithoutCaps)"/>
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="$temp2"/>
@@ -1951,26 +1951,26 @@
   <!--
     Convert betacode to unicode
     Parameters:
-      $key          combined character plus diacritics
-      $precomposed  whether to put out precomposed or decomposed Unicode
+      $a_key          combined character plus diacritics
+      $a_precomposed  whether to put out precomposed or decomposed Unicode
   -->
   <xsl:template match="beta-uni-table" mode="b2u">
-    <xsl:param name="key"/>
-    <xsl:param name="precomposed"/>
+    <xsl:param name="a_key"/>
+    <xsl:param name="a_precomposed"/>
 
-    <xsl:variable name="keylen" select="string-length($key)"/>
+    <xsl:variable name="keylen" select="string-length($a_key)"/>
 
     <!-- if key exists -->
     <xsl:if test="$keylen > 0">
       <!-- try to find key in table -->
       <xsl:variable name="value">
         <xsl:choose>
-          <xsl:when test="$precomposed">
-            <xsl:value-of select="(key('beta-uni-lookup', $key)/unic)[1]/text()"
+          <xsl:when test="$a_precomposed">
+            <xsl:value-of select="(key('s_betaUniLookup', $a_key)/unic)[1]/text()"
             />
           </xsl:when>
           <xsl:otherwise>
-            <xsl:value-of select="(key('beta-uni-lookup', $key)/unid)[1]/text()"
+            <xsl:value-of select="(key('s_betaUniLookup', $a_key)/unid)[1]/text()"
             />
           </xsl:otherwise>
         </xsl:choose>
@@ -1985,15 +1985,15 @@
         <!-- if key not found and contains multiple chars -->
         <xsl:when test="$keylen > 1">
           <!-- lookup key with last char removed -->
-          <xsl:apply-templates select="$beta-uni-table" mode="b2u">
-            <xsl:with-param name="key" select="substring($key, 1, $keylen - 1)"/>
-            <xsl:with-param name="precomposed" select="$precomposed"/>
+          <xsl:apply-templates select="$s_betaUniTable" mode="b2u">
+            <xsl:with-param name="a_key" select="substring($a_key, 1, $keylen - 1)"/>
+            <xsl:with-param name="a_precomposed" select="$a_precomposed"/>
           </xsl:apply-templates>
           <!-- convert last char -->
-          <!-- precomposed=false means make sure it's a combining form -->
-          <xsl:apply-templates select="$beta-uni-table" mode="b2u">
-            <xsl:with-param name="key" select="substring($key, $keylen)"/>
-            <xsl:with-param name="precomposed" select="false()"/>
+          <!-- a_precomposed=false means make sure it's a combining form -->
+          <xsl:apply-templates select="$s_betaUniTable" mode="b2u">
+            <xsl:with-param name="a_key" select="substring($a_key, $keylen)"/>
+            <xsl:with-param name="a_precomposed" select="false()"/>
           </xsl:apply-templates>
         </xsl:when>
       </xsl:choose>
@@ -2005,11 +2005,11 @@
   <!--
     Convert unicode to betacode
     Parameters:
-      $key          Unicode character to look up
+      $a_key          Unicode character to look up
   -->
   <xsl:template match="beta-uni-table" mode="u2b">
-    <xsl:param name="key"/>
-    <xsl:value-of select="(key('unic-beta-lookup', $key)/beta)[1]/text()"/>
+    <xsl:param name="a_key"/>
+    <xsl:value-of select="(key('s_unicBetaLookup', $a_key)/beta)[1]/text()"/>
   </xsl:template>
 
 </xsl:stylesheet>

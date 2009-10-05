@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
 <!--
-  Copyright 2008 Cantus Foundation
+  Copyright 2008-2009 Cantus Foundation
   http://alpheios.net
  
   This file is part of Alpheios.
@@ -24,15 +24,15 @@
   <xsl:output method="text"/>
   <xsl:include href="beta-uni-util.xsl"/>
 
-  <xsl:param name="input"/>
-  <xsl:param name="strip-vowels" select="true()"/>
-  <xsl:param name="strip-caps" select="true()"/>
+  <xsl:param name="e_in"/>
+  <xsl:param name="e_stripVowels" select="true()"/>
+  <xsl:param name="e_stripCaps" select="true()"/>
 
   <xsl:template match="/">
     <xsl:call-template name="uni-strip">
-      <xsl:with-param name="input" select="$input"/>
-      <xsl:with-param name="strip-vowels" select="$strip-vowels"/>
-      <xsl:with-param name="strip-caps" select="$strip-caps"/>
+      <xsl:with-param name="a_in" select="$e_in"/>
+      <xsl:with-param name="a_stripVowels" select="$e_stripVowels"/>
+      <xsl:with-param name="a_stripCaps" select="$e_stripCaps"/>
     </xsl:call-template>
   </xsl:template>
 

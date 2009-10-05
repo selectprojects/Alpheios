@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
 <!--
-  Copyright 2008 Cantus Foundation
+  Copyright 2008-2009 Cantus Foundation
   http://alpheios.net
  
   This file is part of Alpheios.
@@ -24,15 +24,15 @@
   <xsl:output method="text"/>
   <xsl:include href="beta2unicode.xsl"/>
 
-  <xsl:param name="input"/>
-  <xsl:param name="precomposed" select="true()"/>
-  <xsl:param name="partial" select="false()"/>
+  <xsl:param name="e_in"/>
+  <xsl:param name="e_precomposed" select="true()"/>
+  <xsl:param name="e_partial" select="false()"/>
 
   <xsl:template match="/">
     <xsl:call-template name="beta-to-uni">
-      <xsl:with-param name="input" select="$input"/>
-      <xsl:with-param name="precomposed" select="$precomposed"/>
-      <xsl:with-param name="partial" select="$partial"/>
+      <xsl:with-param name="a_in" select="$e_in"/>
+      <xsl:with-param name="a_precomposed" select="$e_precomposed"/>
+      <xsl:with-param name="a_partial" select="$e_partial"/>
     </xsl:call-template>
   </xsl:template>
 

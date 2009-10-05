@@ -3,22 +3,22 @@
   xmlns:exsl="http://exslt.org/common">
 
   <!-- keys for lookup table -->
-  <xsl:key name="unic-ascii-lookup" match="uni-ascii-table/entry" use="unic"/>
+  <xsl:key name="s_unicAsciiLookup" match="uni-ascii-table/entry" use="unic"/>
 
   <!--
     Table mapping Unicode to Transliterated Ascii
-    
-    Each entry in the table contains a precombined Unicode sequence 
+
+    Each entry in the table contains a precombined Unicode sequence
     (<unic> element) and the corresponding Ascii transliteration for
     that sequence.
 
     This is only partially implemented at the moment. It contains
     transliterations for precombined Latin-1 and Latin-2 vowels only
-    
+
     To get around tree fragment restrictions in XSLT 1.0, the actual variable
     uses exsl:node-set().
   -->
-  <xsl:variable name="raw-ascii-table">
+  <xsl:variable name="s_rawAsciiTable">
     <uni-ascii-table>
       <entry>
         <ascii>A</ascii>
@@ -490,32 +490,33 @@
         <unic>&#x0173;</unic>
         <unid></unid>
       </entry>
-      
+
     </uni-ascii-table>
-    
+
   </xsl:variable>
-  <xsl:variable name="uni-ascii-table"
-    select="exsl:node-set($raw-ascii-table)/uni-ascii-table"/>
+  <xsl:variable name="s_uniAsciiTable"
+    select="exsl:node-set($s_rawAsciiTable)/uni-ascii-table"/>
 
   <!--
     Convert unicode to transliterated ascii
     Parameters:
-    $key          unicode character 
+    $a_key          unicode character
   -->
   <xsl:template match="uni-ascii-table" mode="u2a">
-    <xsl:param name="key"/>
-    
-    <xsl:variable name="keylen" select="string-length($key)"/>
+    <xsl:param name="a_key"/>
+
+    <xsl:variable name="keylen" select="string-length($a_key)"/>
 
     <!-- if key exists -->
     <xsl:if test="$keylen > 0">
       <!-- try to find key in table -->
       <xsl:variable name="value">
-        <xsl:value-of select="(key('unic-ascii-lookup', $key)/ascii)[1]/text()"/>
+        <xsl:value-of
+             select="(key('s_unicAsciiLookup', $a_key)/ascii)[1]/text()"/>
       </xsl:variable>
 
       <xsl:if test="string-length($value) > 0">
-          <xsl:value-of select="$value"/>
+        <xsl:value-of select="$value"/>
       </xsl:if>
 
       <!-- otherwise, ignore it -->

@@ -33,7 +33,7 @@
 
   <!-- handle nodes -->
   <xsl:template match="node()">
-    <xsl:param name="is-greek" select="false()"/>
+    <xsl:param name="a_isGreek" select="false()"/>
 
     <xsl:choose>
       <!-- if it has a name, it's an element -->
@@ -42,7 +42,7 @@
         <xsl:copy>
           <!-- call recursively, specifying whether contains betacode -->
           <xsl:apply-templates select="@*|node()">
-            <xsl:with-param name="is-greek" select="local-name() = 'wd'"/>
+            <xsl:with-param name="a_isGreek" select="local-name() = 'wd'"/>
           </xsl:apply-templates>
         </xsl:copy>
       </xsl:when>
@@ -56,9 +56,9 @@
       <xsl:otherwise>
         <xsl:choose>
           <!-- if it's betacode, convert it -->
-          <xsl:when test="$is-greek">
+          <xsl:when test="$a_isGreek">
             <xsl:call-template name="beta-to-uni">
-              <xsl:with-param name="input" select="."/>
+              <xsl:with-param name="a_in" select="."/>
             </xsl:call-template>
           </xsl:when>
           <!-- otherwise, leave it alone -->
