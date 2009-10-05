@@ -1,6 +1,6 @@
 /**
  * @fileoverview Arabic extension of Alph.LanguageTool class
- * @version $Id: alpheios-arabic-langtool.js 439 2008-03-27 00:26:41Z BridgetAlmas $
+ * @version $Id$
  *
  * Copyright 2008-2009 Cantus Foundation
  * http://alpheios.net
