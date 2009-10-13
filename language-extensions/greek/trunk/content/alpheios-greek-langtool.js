@@ -230,9 +230,10 @@ Alph.LanguageTool_Greek.PRONOUNS =
  * Greek-specific implementation of {@link Alph.LanguageTool#getInflectionTable}.
  * @param {Node} a_node the node containing the target word
  * @param {String} a_params optional requested parameters
+ * @param {Boolean} a_checkonly flag to indicate xslt load should be skipped
  * @returns the parameters object for the inflection window
  */
-Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params)
+Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params, a_checkonly)
 {
     var langObj = this;
     
@@ -395,7 +396,7 @@ Alph.LanguageTool_Greek.prototype.getInflectionTable = function(a_node, a_params
         }
     );
     // identify the correct xslt parameters for the requested inflection type
-    if (params.showpofs)
+    if (params.showpofs && ! a_checkonly)
     {
         params.content_url = Alph.BrowserUtils.getContentUrl(langObj.getLanguage());
         params.html_url = 
