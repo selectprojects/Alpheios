@@ -347,7 +347,7 @@
               <xsl:with-param name="a_selected" select="$selected"/>
               <xsl:with-param name="a_selectedEndings"
                               select="$e_selectedEndings"/>
-              <xsl:with-param name="a_textForMmatch" select="$textForMatch"/>
+              <xsl:with-param name="a_textForMatch" select="$textForMatch"/>
               <xsl:with-param name="a_translitEndingTableMatch"
                               select="$e_translitEndingTableMatch"/>
               <xsl:with-param name="a_dedupeBy" select="$e_dedupeBy"/>
