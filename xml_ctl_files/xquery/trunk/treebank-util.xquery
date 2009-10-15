@@ -23,435 +23,76 @@
  :)
 
 module namespace tbu = "http://alpheios.net/namespaces/treebank-util";
+declare namespace tbd = "http://alpheios.net/namespaces/treebank-desc";
 
 (:
-  Table of morphology categories and values
+  Function to get format name
 
-  <category> = morphology category
-    @id = name of category (pos [part of speech], person, number, tense,
-          mood, voice, gender, case, degree)
-    @n = position of category in treebank postag attribute
-    <entry> = entry in category
-      <short> = single-letter value in postag
-      <long> = equivalent human-readable name
-      <lex> = equivalent name in lexicon schema, if different from <long>
+  Parameters:
+    $a_doc          treebank document (or empty if format supplied)
+    $a_defaultTb    default treebank format
+
+  Return value:
+    format name or empty if not found
  :)
-declare variable $tbu:s_tables :=
-(
-  (: part of speech :)
-  <category id="pos" n="1"
-            xmlns="http://alpheios.net/namespaces/treebank-util">
-    <entry>
-      <short>n</short>
-      <long>noun</long>
-    </entry>
-    <entry>
-      <short>v</short>
-      <long>verb</long>
-    </entry>
-    <entry>
-      <short>t</short>
-      <long>participle</long>
-      <lex>verb participle</lex>
-    </entry>
-    <entry>
-      <short>a</short>
-      <long>adjective</long>
-    </entry>
-    <entry>
-      <short>d</short>
-      <long>adverb</long>
-    </entry>
-    <entry>
-      <short>c</short>
-      <long>conjunction</long>
-    </entry>
-    <entry>
-      <short>l</short>
-      <long>article</long>
-    </entry>
-    <entry>
-      <short>g</short>
-      <long>particle</long>
-    </entry>
-    <entry>
-      <short>r</short>
-      <long>preposition</long>
-    </entry>
-    <entry>
-      <short>p</short>
-      <long>pronoun</long>
-    </entry>
-    <entry>
-      <short>m</short>
-      <long>numeral</long>
-    </entry>
-    <entry>
-      <short>i</short>
-      <long>interjection</long>
-    </entry>
-    <entry>
-      <short>e</short>
-      <long>exclamation</long>
-    </entry>
-    <entry>
-      <short>x</short>
-      <long>irregular</long>
-    </entry>
-    <entry>
-      <short>u</short>
-      <long>punctuation</long>
-    </entry>
-  </category>,
+declare function tbu:get-format-name(
+  $a_doc as node()?,
+  $a_defaultTb as xs:string?) as xs:string?
+{
+  (: if not found in data, use default :)
+  let $tb := $a_doc/*:treebank/@format
+  return if ($tb) then $tb else $a_defaultTb
+};
 
-  (: person :)
-  <category id="person" n="2"
-            xmlns="http://alpheios.net/namespaces/treebank-util">
-    <entry>
-      <short>1</short>
-      <long>first_person</long>
-      <lex>1st</lex>
-    </entry>
-    <entry>
-      <short>2</short>
-      <long>second_person</long>
-      <lex>2nd</lex>
-    </entry>
-    <entry>
-      <short>3</short>
-      <long>third_person</long>
-      <lex>3rd</lex>
-    </entry>
-  </category>,
+(:
+  Function to get format description
 
-  (: number :)
-  <category id="number" n="3"
-            xmlns="http://alpheios.net/namespaces/treebank-util">
-    <entry>
-      <short>s</short>
-      <long>singular</long>
-    </entry>
-    <entry>
-      <short>p</short>
-      <long>plural</long>
-    </entry>
-    <entry>
-      <short>d</short>
-      <long>dual</long>
-    </entry>
-  </category>,
+  Parameters:
+    $a_tb           treebank format
+    $a_configDir    directory containing configuration files
 
-  (: tense :)
-  <category id="tense" n="4"
-            xmlns="http://alpheios.net/namespaces/treebank-util">
-    <entry>
-      <short>p</short>
-      <long>present</long>
-    </entry>
-    <entry>
-      <short>i</short>
-      <long>imperfect</long>
-    </entry>
-    <entry>
-      <short>r</short>
-      <long>perfect</long>
-    </entry>
-    <entry>
-      <short>l</short>
-      <long>pluperfect</long>
-    </entry>
-    <entry>
-      <short>t</short>
-      <long>future_perfect</long>
-      <lex>future perfect</lex>
-    </entry>
-    <entry>
-      <short>f</short>
-      <long>future</long>
-    </entry>
-    <entry>
-      <short>a</short>
-      <long>aorist</long>
-    </entry>
-  </category>,
-
-  (: mood :)
-  <category id="mood" n="5"
-            xmlns="http://alpheios.net/namespaces/treebank-util">
-    <entry>
-      <short>i</short>
-      <long>indicative</long>
-    </entry>
-    <entry>
-      <short>s</short>
-      <long>subjunctive</long>
-    </entry>
-    <entry>
-      <short>o</short>
-      <long>optative</long>
-    </entry>
-    <entry>
-      <short>n</short>
-      <long>infinitive</long>
-    </entry>
-    <entry>
-      <short>m</short>
-      <long>imperative</long>
-    </entry>
-    <entry>
-      <short>g</short>
-      <long>gerundive</long>
-    </entry>
-    <entry>
-      <short>p</short>
-      <long>participial</long>
-      <lex>participle</lex>
-    </entry>
-  </category>,
-
-  (: voice :)
-  <category id="voice" n="6"
-            xmlns="http://alpheios.net/namespaces/treebank-util">
-    <entry>
-      <short>m</short>
-      <long>middle</long>
-    </entry>
-    <entry>
-      <short>a</short>
-      <long>active</long>
-    </entry>
-    <entry>
-      <short>p</short>
-      <long>passive</long>
-    </entry>
-    <entry>
-      <short>d</short>
-      <long>deponent</long>
-    </entry>
-    <entry>
-      <short>e</short>
-      <long>medio_passive</long>
-      <lex>mediopassive</lex>
-    </entry>
-  </category>,
-
-  (: gender :)
-  <category id="gender" n="7"
-            xmlns="http://alpheios.net/namespaces/treebank-util">
-    <entry>
-      <short>m</short>
-      <long>masculine</long>
-    </entry>
-    <entry>
-      <short>f</short>
-      <long>feminine</long>
-    </entry>
-    <entry>
-      <short>n</short>
-      <long>neuter</long>
-    </entry>
-  </category>,
-
-  (: case :)
-  <category id="case" n="8"
-            xmlns="http://alpheios.net/namespaces/treebank-util">
-    <entry>
-      <short>n</short>
-      <long>nominative</long>
-    </entry>
-    <entry>
-      <short>g</short>
-      <long>genitive</long>
-    </entry>
-    <entry>
-      <short>d</short>
-      <long>dative</long>
-    </entry>
-    <entry>
-      <short>a</short>
-      <long>accusative</long>
-    </entry>
-    <entry>
-      <short>b</short>
-      <long>ablative</long>
-    </entry>
-    <entry>
-      <short>v</short>
-      <long>vocative</long>
-    </entry>
-    <entry>
-      <short>i</short>
-      <long>instrumental</long>
-    </entry>
-    <entry>
-      <short>l</short>
-      <long>locative</long>
-    </entry>
-  </category>,
-
-  (: degree :)
-  <category id="degree" n="9"
-            xmlns="http://alpheios.net/namespaces/treebank-util">
-    <entry>
-      <short>p</short>
-      <long>positive</long>
-    </entry>
-    <entry>
-      <short>c</short>
-      <long>comparative</long>
-    </entry>
-    <entry>
-      <short>s</short>
-      <long>superlative</long>
-    </entry>
-  </category>
-);
-
-declare variable $tbu:s_relations :=
-(
-  <category id="rel" n="1"
-            xmlns="http://alpheios.net/namespaces/treebank-util">
-    <entry>
-      <aldt>ADV</aldt>
-      <help dir="up">modified word</help>
-      <help dir="dn">adverbial</help>
-    </entry>
-    <entry>
-      <aldt>APOS</aldt>
-      <disp>APPOS</disp>
-      <help dir="dn">apposing element</help>
-    </entry>
-    <entry>
-      <aldt>ATR</aldt>
-      <disp>ATTR</disp>
-      <help dir="up">modified word</help>
-      <help dir="dn">attribute</help>
-    </entry>
-    <entry>
-      <aldt>ATV</aldt>
-      <disp>COMP</disp>
-      <help dir="dn">complement</help>
-    </entry>
-    <entry>
-      <aldt>AtvV</aldt>
-      <disp>COMP</disp>
-      <help dir="dn">complement</help>
-    </entry>
-    <entry>
-      <aldt>AuxC</aldt>
-      <disp>CONJ</disp>
-      <help dir="dn">conjunction</help>
-    </entry>
-    <entry>
-      <aldt>AuxG</aldt>
-      <disp>BRCKT</disp>
-      <help dir="up">head of phrase</help>
-      <help dir="dn">bracketing punctuation</help>
-    </entry>
-    <entry>
-      <aldt>AuxK</aldt>
-      <disp>TERM</disp>
-      <help dir="up">root</help>
-      <help dir="dn">terminal punctuation</help>
-    </entry>
-    <entry>
-      <aldt>AuxP</aldt>
-      <disp>PREP</disp>
-      <help dir="dn">preposition</help>
-    </entry>
-    <entry>
-      <aldt>AuxR</aldt>
-      <disp>RFLX</disp>
-      <help dir="dn">reflexive passive</help>
-    </entry>
-    <entry>
-      <aldt>AuxV</aldt>
-      <disp>AUXV</disp>
-      <help dir="up">tensed verb</help>
-      <help dir="dn">auxiliary verb</help>
-    </entry>
-    <entry>
-      <aldt>AuxX</aldt>
-      <disp>COMMA</disp>
-      <help dir="up">head of clause</help>
-      <help dir="dn">comma</help>
-    </entry>
-    <entry>
-      <aldt>AuxY</aldt>
-      <disp>SADV</disp>
-      <help dir="dn">sentence adverbial</help>
-    </entry>
-    <entry>
-      <aldt>AuxZ</aldt>
-      <disp>EMPH</disp>
-      <help dir="dn">emphasizing particle</help>
-    </entry>
-    <entry>
-      <aldt>COORD</aldt>
-      <help dir="dn">coordinator</help>
-    </entry>
-    <entry>
-      <aldt>ExD</aldt>
-      <disp>ELLIP</disp>
-      <help dir="dn">ellipsis</help>
-    </entry>
-    <entry>
-      <aldt>OCOMP</aldt>
-      <help dir="up">verb</help>
-      <help dir="dn">object complement</help>
-    </entry>
-    <entry>
-      <aldt>OBJ</aldt>
-      <help dir="up">verb</help>
-      <help dir="dn">object</help>
-    </entry>
-    <entry>
-      <aldt>PNOM</aldt>
-      <help dir="up">verb</help>
-      <help dir="dn">predicate nominal</help>
-    </entry>
-    <entry>
-      <aldt>PRED</aldt>
-      <help dir="up">root</help>
-      <help dir="dn">predicate</help>
-    </entry>
-    <entry>
-      <aldt>SBJ</aldt>
-      <disp>SUBJ</disp>
-      <help dir="up">verb</help>
-      <help dir="dn">subject</help>
-    </entry>
-  </category>
-);
+  Return value:
+    description element or empty if not found
+ :)
+declare function tbu:get-format-description(
+  $a_tb as xs:string?,
+  $a_configDir as xs:string) as element(tbd:desc)?
+{
+  doc(concat($a_configDir, "/treebank-desc-", $a_tb, ".xml"))/tbd:desc
+};
 
 (:
   Function to convert morphology postag to full name
-  
+
   Parameters:
-    $a_category      morphological category
-    $a_tag           postag
+    $a_tbd            treebank format description
+    $a_category       morphological category
+    $a_tag            postag
 
   Return value:
     equivalent long name if found, else empty
  :)
 declare function tbu:postag-to-name(
+  $a_tbd as element(tbd:desc),
   $a_category as xs:string,
   $a_tag as xs:string?) as xs:string?
 {
   if ($a_tag)
   then
-    let $table := $tbu:s_tables[@id = $a_category]
-    let $entry := $table/tbu:entry[tbu:short = substring($a_tag, $table/@n, 1)]
-    return string($entry/tbu:long)
+    let $table := $a_tbd/tbd:table[@type eq "morphology"]
+                        /tbd:category[@id eq $a_category]
+    let $entry := $table/tbd:entry[tbd:short eq substring($a_tag, $table/@n, 1)]
+    return string($entry/tbd:long)
   else ()
 };
 
 (:
   Function to convert morphology postag to lexicon schema value
-  
+
   Parameters:
-    $a_category      morphological category
-    $a_tag           postag
+    $a_tbd            treebank format description
+    $a_category       morphological category
+    $a_tag            postag
 
   Return value:
     equivalent name if found, else empty
@@ -459,71 +100,78 @@ declare function tbu:postag-to-name(
   If a lexicon value is not present, the long name is used.
  :)
 declare function tbu:postag-to-lexicon(
+  $a_tbd as element(tbd:desc),
   $a_category as xs:string,
   $a_tag as xs:string?) as xs:string?
 {
   if ($a_tag)
   then
-    let $table := $tbu:s_tables[@id = $a_category]
-    let $entry := $table/tbu:entry[tbu:short = substring($a_tag, $table/@n, 1)]
+    let $table := $a_tbd/tbd:table[@type eq "morphology"]
+                        /tbd:category[@id eq $a_category]
+    let $entry := $table/tbd:entry[tbd:short eq substring($a_tag, $table/@n, 1)]
     return
-      if (exists($entry/tbu:lex))
+      if (exists($entry/tbd:lex))
       then
-        string($entry/tbu:lex)
+        string($entry/tbd:lex)
       else
-        string($entry/tbu:long)
+        string($entry/tbd:long)
   else ()
 };
 
 (:
   Function to convert morphology code to full name
-  
+
   Parameters:
-    $a_category      morphological category
-    $a_code          short code
+    $a_tbd            treebank format description
+    $a_category       morphological category
+    $a_code           short code
 
   Return value:
     equivalent long name if found, else empty
  :)
 declare function tbu:code-to-name(
+  $a_tbd as element(tbd:desc),
   $a_category as xs:string,
   $a_code as xs:string?) as xs:string?
 {
   if ($a_code)
   then
-    string($tbu:s_tables[@id = $a_category]
-              /tbu:entry[tbu:short = $a_code]
-              /tbu:long)
+    let $table := $a_tbd/tbd:table[@type eq "morphology"]
+                        /tbd:category[@id eq $a_category]
+    return string($table/tbd:entry[tbd:short eq $a_code]/tbd:long)
   else ()
 };
 
 (:
   Function to convert morphology full name to code
-  
+
   Parameters:
-    $a_category      morphological category
-    $a_name          full name
+    $a_tbd            treebank format description
+    $a_category       morphological category
+    $a_name           full name
 
   Return value:
     equivalent code if found, else empty
  :)
 declare function tbu:name-to-code(
+  $a_tbd as element(tbd:desc),
   $a_category as xs:string,
   $a_name as xs:string?) as xs:string?
 {
   if ($a_name)
   then
-    string($tbu:s_tables[@id = $a_category]
-              /tbu:entry[tbu:long = $a_name]
-              /tbu:short)
+    let $table := $a_tbd/tbd:table[@type eq "morphology"]
+                        /tbd:category[@id eq $a_category]
+    return string($table/tbd:entry[tbd:long eq $a_name]/tbd:short)
   else ()
 };
 
 (:
-  Functions to convert ALDT relation name to display form/help
-  
+  Functions to convert dependency relation name to display form/help
+
   Parameters:
-    $a_rel           relation
+    $a_tbd            treebank format description
+    $a_rel            relation
 
   Return value:
     empty if no input specified, else
@@ -531,24 +179,42 @@ declare function tbu:name-to-code(
     2) help text
  :)
 declare function tbu:relation-to-display(
+  $a_tbd as element(tbd:desc),
   $a_rel as xs:string?) as xs:string
 {
   if ($a_rel)
   then
-    let $entry := $tbu:s_relations/tbu:entry[tbu:aldt = $a_rel]
-    let $display := string($entry/tbu:disp)
+    let $table := $a_tbd/tbd:table[@type eq "relation"]
+    let $entry := $table/tbd:entry[tbd:tb eq $a_rel]
+    let $display := string($entry/tbd:disp)
     return
-      if ($entry/tbu:disp) then string($entry/tbu:disp) else $a_rel
+      if ($entry/tbd:disp) then string($entry/tbd:disp) else $a_rel
   else ()
 };
 
 declare function tbu:relation-to-help(
+  $a_tbd as element(tbd:desc),
   $a_rel as xs:string?) as element()*
 {
   if ($a_rel)
   then
-    let $entry := $tbu:s_relations/tbu:entry[tbu:aldt = $a_rel]
-    return
-      $entry/tbu:help
+    $a_tbd/tbd:table[@type eq "relation"]/tbd:entry[tbd:tb = $a_rel]/tbd:help
   else ()
+};
+
+(:
+  Function to get entries
+
+  Parameters:
+    $a_tbd          treebank format description
+    $a_type         type of entries to get
+
+  Return value:
+    list of entries for or empty if none exists
+ :)
+declare function tbu:get-entries(
+  $a_tbd as element(tbd:desc),
+  $a_type as xs:string) as element(tbd:entry)*
+{
+  $a_tbd/tbd:table[@type eq $a_type]/tbd:entry
 };

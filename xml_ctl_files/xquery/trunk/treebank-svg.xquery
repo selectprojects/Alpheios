@@ -99,6 +99,7 @@ declare function tbs:fix-words(
   Function to process set of words
 
   Parameters:
+    $a_tbd        treebank format description
     $a_sentence   sentence containing words
     $a_words      words to process
     $a_nopunc     whether to suppress display of terminal punctuation
@@ -107,6 +108,7 @@ declare function tbs:fix-words(
     SVG equivalent of words
  :)
 declare function tbs:word-set(
+  $a_tbd as element(),
   $a_sentence as element(),
   $a_words as element()*,
   $a_nopunc as xs:boolean) as element()*
@@ -135,7 +137,7 @@ declare function tbs:word-set(
     element text
     {
       attribute class { "node-label" },
-      let $pos := tbu:postag-to-name("pos", $word/@postag)
+      let $pos := tbu:postag-to-name($a_tbd, "pos", $word/@postag)
       return
       if (string-length($pos) > 0)
       then
@@ -162,10 +164,10 @@ declare function tbs:word-set(
         {
           attribute class { "arc-label-text" },
           attribute idref { concat($a_sentence/@id, "-", $child/@id) },
-          text { tbu:relation-to-display($relation) }
+          text { tbu:relation-to-display($a_tbd, $relation) }
         },
 
-        let $helps := tbu:relation-to-help($relation)
+        let $helps := tbu:relation-to-help($a_tbd, $relation)
         for $help in $helps
         return
         element text
@@ -187,7 +189,7 @@ declare function tbs:word-set(
     ),
 
     (: groups for children :)
-    tbs:word-set($a_sentence, $children, $a_nopunc)
+    tbs:word-set($a_tbd, $a_sentence, $children, $a_nopunc)
   }
 };
 
@@ -238,6 +240,10 @@ declare function tbs:get-svg(
       attribute form { if ($a_usespan) then $sentence/@span else "" }
     }
 
+  (: get treebank format :)
+  let $tb := tbu:get-format-name($doc, "aldt")
+  let $tbDesc := tbu:get-format-description($tb, "/db/xq/config")
+
   return
   <svg xmlns="http://www.w3.org/2000/svg"
        xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -251,7 +257,7 @@ declare function tbs:get-svg(
       {
         attribute class { "tree" },
         $sentence/@id,
-        tbs:word-set($sentence, $rootword, $a_nopunc)
+        tbs:word-set($tbDesc, $sentence, $rootword, $a_nopunc)
       },
 
       (: text of sentence :)

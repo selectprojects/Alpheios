@@ -30,20 +30,22 @@ import module namespace tbu="http://alpheios.net/namespaces/treebank-util"
   Function to create element for single morphology category
 
   Parameters:
-    $a_name        name of element to create
-    $a_category    name of category to use
-    $a_tag         postag attribute from treebank
+    $a_tbd          treebank format description
+    $a_name         name of element to create
+    $a_category     name of category to use
+    $a_tag          postag attribute from treebank
 
   Return value:
     element with specified name if value from postag is non-empty
     else empty
  :)
 declare function tbm:morph-element(
+  $a_tbd as element(),
   $a_name as xs:string,
   $a_category as xs:string,
   $a_tag as xs:string) as element()?
 {
-  let $value := tbu:postag-to-lexicon($a_category, $a_tag)
+  let $value := tbu:postag-to-lexicon($a_tbd, $a_category, $a_tag)
   return
   if ($value)
   then
@@ -82,6 +84,10 @@ declare function tbm:get-morphology(
     else
       element error { concat("Word ", $id, " not found") }
 
+  (: get treebank format :)
+  let $tb := tbu:get-format-name($a_doc, "aldt")
+  let $tbDesc := tbu:get-format-description($tb, "/db/xq/config")
+
   return
   element words
   {
@@ -108,19 +114,19 @@ declare function tbm:get-morphology(
               $word/../@xml:lang,
               text { $word/@lemma }
             },
-            tbm:morph-element("pofs", "pos", $word/@postag)
+            tbm:morph-element($tbDesc, "pofs", "pos", $word/@postag)
           },
           element infl
           {
-            tbm:morph-element("pofs", "pos", $word/@postag),
-            tbm:morph-element("pers", "person", $word/@postag),
-            tbm:morph-element("num", "number", $word/@postag),
-            tbm:morph-element("tense", "tense", $word/@postag),
-            tbm:morph-element("mood", "mood", $word/@postag),
-            tbm:morph-element("voice", "voice", $word/@postag),
-            tbm:morph-element("gend", "gender", $word/@postag),
-            tbm:morph-element("case", "case", $word/@postag),
-            tbm:morph-element("comp", "degree", $word/@postag)
+            tbm:morph-element($tbDesc, "pofs", "pos", $word/@postag),
+            tbm:morph-element($tbDesc, "pers", "person", $word/@postag),
+            tbm:morph-element($tbDesc, "num", "number", $word/@postag),
+            tbm:morph-element($tbDesc, "tense", "tense", $word/@postag),
+            tbm:morph-element($tbDesc, "mood", "mood", $word/@postag),
+            tbm:morph-element($tbDesc, "voice", "voice", $word/@postag),
+            tbm:morph-element($tbDesc, "gend", "gender", $word/@postag),
+            tbm:morph-element($tbDesc, "case", "case", $word/@postag),
+            tbm:morph-element($tbDesc, "comp", "degree", $word/@postag)
           }
         }
       }
