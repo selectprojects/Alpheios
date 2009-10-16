@@ -124,23 +124,23 @@ declare function alut:xml-to-svg(
         then
           attribute xlink:title { $word/*:mark/text() }
         else (),
-        if ($word/*:comment[@*:class = "mark"])
+        if ($word/*:comment[@*:class eq "mark"])
         then
-          attribute xlink:title { $word/*:comment[@*:class = "mark"]/text() }
+          attribute xlink:title { $word/*:comment[@*:class eq "mark"]/text() }
         else (),
 
         (: preserve any word-level comments that aren't marks :)
-        if ($word/*:comment[not(@*:class = "mark")])
+        if ($word/*:comment[@*:class ne "mark"])
         then
           <desc xmlns="http://alpheios.net/namespaces/aligned-text">
           {
-            $word/*:comment[not(@*:class = "mark")]
+            $word/*:comment[@*:class ne "mark"]
           }
           </desc>
         else (),
 
         (: highlighting rectangle :)
-        element rect { attribute class { "headwd-bg" } }, 
+        element rect { attribute class { "headwd-bg" } },
 
         (: the word itself :)
         element text

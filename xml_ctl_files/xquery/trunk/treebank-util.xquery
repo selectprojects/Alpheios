@@ -58,7 +58,10 @@ declare function tbu:get-format-description(
   $a_tb as xs:string?,
   $a_configDir as xs:string) as element(tbd:desc)?
 {
-  doc(concat($a_configDir, "/treebank-desc-", $a_tb, ".xml"))/tbd:desc
+  doc(concat($a_configDir,
+             "/treebank-desc-",
+             lower-case($a_tb),
+             ".xml"))/tbd:desc
 };
 
 (:
