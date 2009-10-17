@@ -35,9 +35,6 @@ let $tb := request:get-parameter("tb", ())
 let $mode := request:get-parameter("mode", "expert")
 let $docName := concat("/db/repository/treebank/", $docStem, ".tb.xml")
 let $sentId := request:get-parameter("s", ())
-let $saveURL := "./treebank-savesentence.xq"
-let $listURL := "./treebank-getlist.xq"
-let $editURL := "./treebank-editsentence.xq"
 let $base := request:get-url()
 let $base := substring($base,
                        1,
@@ -72,7 +69,10 @@ return
                      "aldt",
                      number($sentId),
                      ($mode eq "novice"),
-                     $saveURL,
-                     $listURL,
-                     $editURL,
+                     (
+                        "./treebank-savesentence.xq",
+                        "./treebank-getlist.xq",
+                        "./treebank-editsentence.xq",
+                        "./treebank-entertext.xq"
+                      ),
                      "s")

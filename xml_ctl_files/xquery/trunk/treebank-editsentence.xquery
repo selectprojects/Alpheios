@@ -41,9 +41,7 @@ declare namespace tbd = "http://alpheios.net/namespaces/treebank-desc";
     $a_defaultTb    default treebank format
     $a_sentId       id of sentence to edit
     $a_mapRelations whether to map relation names to more friendly form 
-    $a_saveURL      query to invoked to save sentence
-    $a_listURL      query to invoked to list sentences
-    $a_editURL      query to invoke to edit new sentence
+    $a_URLs         URLs for actions (1=save, 2=list, 3=edit, 4=enter text)
     $a_editParam    sentence number parameter
 
   Return value:
@@ -57,9 +55,7 @@ declare function tbed:get-edit-page(
   $a_defaultTb as xs:string,
   $a_sentId as xs:integer,
   $a_mapRelations as xs:boolean,
-  $a_saveURL as xs:string,
-  $a_listURL as xs:string,
-  $a_editURL as xs:string,
+  $a_URLs as xs:string*,
   $a_editParam as xs:string) as element()?
 {
   let $doc := doc($a_docName)
@@ -177,7 +173,7 @@ declare function tbed:get-edit-page(
         element form
         {
           attribute onsubmit { "return FormSubmit(this)" },
-          attribute action { $a_editURL },
+          attribute action { $a_URLs[3] },
           attribute name { "sent-navigation-goto" },
 
           <input type="hidden" name="doc" value="{ $a_docStem }"/>,
@@ -198,7 +194,7 @@ declare function tbed:get-edit-page(
         element form
         {
           attribute onsubmit { "return FormSubmit(this)" },
-          attribute action { $a_editURL },
+          attribute action { $a_URLs[3] },
           attribute name { "sent-navigation-buttons" },
 
           <input type="hidden" name="doc" value="{ $a_docStem }"/>,
@@ -267,7 +263,7 @@ declare function tbed:get-edit-page(
         element form
         {
           attribute onsubmit { "return FormSubmit(this)" },
-          attribute action { $a_listURL },
+          attribute action { $a_URLs[2] },
           attribute name { "sent-navigation-list" },
 
           <input type="hidden" name="doc" value="{ $a_docStem }"/>,
@@ -276,6 +272,16 @@ declare function tbed:get-edit-page(
           {
             attribute type { "submit" },
             "Go to list of sentences"
+          }
+        },
+
+        element form
+        {
+          attribute action { $a_URLs[4] },
+          element button
+          {
+            attribute type { "submit" },
+            "Enter text"
           }
         },
 
@@ -345,7 +351,7 @@ declare function tbed:get-edit-page(
         attribute id { "dependency-tree" },
         attribute alph-doc { $a_docStem },
         attribute alph-sentid { $a_sentId },
-        attribute alph-saveurl { $a_saveURL },
+        attribute alph-saveurl { $a_URLs[1] },
         attribute onload { "Init(evt)" }
       ))
   }
