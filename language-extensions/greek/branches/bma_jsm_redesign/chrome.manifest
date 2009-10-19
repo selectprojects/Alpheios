@@ -1,9 +1,0 @@
-content alpheios-greek jar:chrome/alpheios-greek.jar!/content/
-content alpheios-greek jar:chrome/alpheios-greek.jar!/content/ contentaccessible=yes
-locale	alpheios-greek	en-US		jar:chrome/alpheios-greek.jar!/locale/en-US/
-skin	alpheios-greek	classic/1.0	jar:chrome/alpheios-greek.jar!/skin/
-
-overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-greek/content/alpheios-greek.xul
-style   chrome://global/content/customizeToolbar.xul    chrome://alpheios-greek/skin/alpheios-greek.css
-
-resource alpheios-greek modules/
