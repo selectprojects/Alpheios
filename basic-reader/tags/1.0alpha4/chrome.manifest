@@ -1,0 +1,10 @@
+content alpheios jar:chrome/alpheios-basic.jar!/content/
+content alpheios jar:chrome/alpheios-basic.jar!/content/ contentaccessible=yes
+locale	alpheios	en-US		jar:chrome/alpheios-basic.jar!/locale/en-US/
+skin	alpheios	classic/1.0	jar:chrome/alpheios-basic.jar!/skin/
+
+overlay	chrome://browser/content/browser.xul	chrome://alpheios/content/alpheios-overlay.xul
+overlay chrome://alpheios/content/alpheios-prefs.xul    chrome://alpheios/content/prefs/alpheios-dict-prefs.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://alpheios/skin/alpheios.css
+
+resource alpheios modules/
