@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <xs:annotation>
+        <xs:documentation>
+            Base Alpheios schema for Inflection data.
+            Extends the Alpheios lexicon.xsd schema.
+        </xs:documentation>
+    </xs:annotation>
+    
+    <xs:include schemaLocation="lexicon.xsd"></xs:include>
+        
+    <xs:complexType name="StemTableType">
+        <xs:annotation>
+            <xs:documentation>
+                Lookup table for stem data (by conjugation or declension)
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="stem" type="StemType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="StemType">
+        <xs:annotation>
+            <xs:documentation>Stem for an inflection</xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="conj" type="OrdinalEnumeration"/>
+                <xs:attribute name="decl" type="OrdinalEnumeration"/>
+            </xs:extension>    
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:complexType name="OrderTableType">
+        <xs:annotation>
+            <xs:documentation>
+                Lookup table to define the sort order of the inflection data 
+                attributes.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+                <xs:element name="order-item" type="OrderType" maxOccurs="unbounded"/>
+            </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="OrderType">
+        <xs:annotation>
+            <xs:documentation>
+                OrderType is used to identify the default sort order sequence for each 
+                verb-ending-set attribute type.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="order" type="xs:int"/>
+                <xs:attribute name="attname" type="xs:string"/>
+                <xs:attribute name="footnote" type="xs:string"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+    
+    <xs:complexType name="HdwdSetType" mixed="false">
+        <xs:annotation>
+            <xs:documentation>
+                Holds the set of hdwds to which the set of conjugations applies.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="hdwd" type="InflHdwdType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="InflHdwdType">
+        <xs:annotation>
+            <xs:documentation>
+                Holds a hdwd entry for a set of inflection data.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexContent>
+            <xs:extension base="HeadwordType">
+                <xs:attribute name="source" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>Identify the lexicon source for this hdwd entry</xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="footnote" type="xs:string"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
+    
+    <xs:complexType name="InflectionSetType" mixed="false">
+        <xs:annotation>
+            <xs:documentation>
+                Holds a set of inflection endings or inflection forms with the
+                same attributes.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:choice>
+            <xs:element 
+                name="infl-ending" 
+                type="InflectionFormType" 
+                minOccurs="0" 
+                maxOccurs="unbounded"/>
+            <xs:element 
+                name="infl-form" 
+                type="InflectionFormType" 
+                minOccurs="0" 
+                maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="voice" type="VoiceEnumeration"/>
+        <xs:attribute name="conj" type="OrdinalEnumeration"/>
+        <xs:attribute name="tense" type="TenseEnumeration"/>
+        <xs:attribute name="mood" type="MoodEnumeration"/>
+        <xs:attribute name="pers" type="OrdinalEnumeration"/>
+        <xs:attribute name="num" type="NumberEnumeration"/>
+        <xs:attribute name="case" type="CaseEnumeration"/>
+        <xs:attribute name="gend" type="GenderEnumeration"/>
+        <xs:attribute name="decl" type="OrdinalEnumeration"/>
+    </xs:complexType>
+    
+    <xs:complexType name="InflectionFormType">
+        <xs:annotation>
+            <xs:documentation>
+                InflectionFormType holds a single inflection ending or form.
+            </xs:documentation>
+        </xs:annotation>
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="type" use="required">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Identifies the Inflection as regular or irregular
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="regular"/>
+                            <xs:enumeration value="irregular"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:attribute>
+                <xs:attribute name="dialects" use="optional" type="xs:string">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Identifies the dialect(s) to which this ending belongs.
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute>
+                <xs:attribute name="alt" type="xs:string" use="optional">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Alternate (unaccented) version of the form
+                        </xs:documentation>
+                    </xs:annotation>
+                </xs:attribute> 
+                <xs:attribute name="footnote" type="xs:string" use="optional"/>               
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="FootnoteTableType">
+        <xs:annotation>
+            <xs:documentation>Element to hold footnote data.</xs:documentation>
+        </xs:annotation>
+        <xs:sequence>
+            <xs:element name="footnote" type="FootnoteType" maxOccurs="unbounded"/>                
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="FootnoteType" mixed="true">
+        <xs:annotation>
+            <xs:documentation>
+                FootnoteType is used to hold a footnote for inflection data.
+            </xs:documentation>
+        </xs:annotation>
+
+        <xs:sequence>
+            <xs:element name="reflink" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:ID" use="required"/>
+    </xs:complexType>
+</xs:schema>
