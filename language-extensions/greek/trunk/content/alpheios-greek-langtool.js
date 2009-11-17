@@ -942,3 +942,15 @@ function(a_lemma, a_key, a_datafile, a_stripper)
     return Array(key, null);
 }
 
+/**
+ * Greek-specific implementation of {@link Alph.LanguageTool#normalizeWord}.
+ * Converts the word to precomposed unicode.
+ * @param {String} a_word the word 
+ * @returns the normalized version of the word
+ * @type String
+ */
+Alph.LanguageTool_Greek.prototype.normalizeWord = function(a_word)
+{
+    var normalized = this.d_converter.normalizeGreek(a_word);
+    return normalized;
+}
