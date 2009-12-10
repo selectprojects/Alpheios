@@ -25,15 +25,55 @@
 module namespace tblst="http://alpheios.net/namespaces/treebank-list";
 
 (:
+  Function to extract forms
+
+  Parameters:
+    $a_words      sequence of words
+    $a_numLeft    number of words left to find
+
+  Return value:
+    sequence of strings with @form attributes from words,
+    excluding those with @postag="0"
+ :)
+declare function local:get-forms(
+  $a_words as element()*,
+  $a_numLeft as xs:integer) as xs:string*
+{
+  (: if still need more words :)
+  if ($a_numLeft > 0)
+  then
+    (: if there are more words, process them :)
+    if ($a_words)
+    then
+      let $form := string($a_words[1]/@form)
+      return
+      (
+        if ((substring($form, 1, 1) ne "[") or
+            (substring($form, 3, 1) ne "]"))
+        then
+          $form
+        else (),
+        local:get-forms(subsequence($a_words, 2), $a_numLeft - 1)
+      )
+    (: if there are no more words, forget it :)
+    else ()
+  (: if found all the words we need :)
+  else
+    (: if we truncated, add ellipsis indication :)
+    if ($a_words) then "..." else ()
+};
+
+(:
   Function to create an HTML page with a list of sentences
   from an treebank document
 
   Parameters:
     $a_docName     name of aligned text document
-    $a_docStem     document stem 
+    $a_docStem     document stem
     $a_queryBase   query to invoke when sentence is selected
-    $a_maxWords    maximum number of words to use from sentence
-    $a_maxSents    maximum number of sentences to use from document
+    $a_numWords    number of words to use from each sentence
+    $a_startSent   starting sentence number
+    $a_numSents    number of sentences to use from document
 
   Return value:
     HTML page with a list of initial sentence fragments
@@ -42,12 +82,13 @@ declare function tblst:get-list-page(
   $a_docName as xs:string,
   $a_docStem as xs:string,
   $a_queryBase as xs:string,
-  $a_maxWords as xs:integer,
-  $a_maxSents as xs:integer) as element()?
+  $a_numWords as xs:integer,
+  $a_startSent as xs:integer,
+  $a_numSents as xs:integer) as element()?
 {
   let $doc := doc($a_docName)
-  let $sents := subsequence($doc//*:sentence, 1, $a_maxSents)
-  let $docId := substring-before($doc//sentence[1]/@document_id, ":")
+  let $sents := subsequence($doc//sentence, $a_startSent, $a_numSents)
+  let $docId := substring-before(($doc//sentence)[1]/@document_id, ":")
 
   return
   <html xmlns="http://www.w3.org/1999/xhtml">{
@@ -63,7 +104,7 @@ declare function tblst:get-list-page(
     element meta
     {
       attribute name { "L1:lang" },
-      attribute content { $doc//*:treebank/@xml:lang }
+      attribute content { $doc//treebank/@xml:lang }
     },
 
     element link
@@ -105,13 +146,12 @@ declare function tblst:get-list-page(
     {
       (: for each sentence :)
       for $sent at $i in $sents
-      let $queryURL := concat($a_queryBase, $i)
-      let $words := $sent/*:word/@form
+      let $sentNum := $i + $a_startSent - 1
+      let $queryURL := concat($a_queryBase, $sentNum)
       return
-      (
         element li
         {
-          attribute value { $i },
+          attribute value { $sentNum },
           element a
           {
             attribute href { $queryURL },
@@ -124,15 +164,11 @@ declare function tblst:get-list-page(
 
               element div
               {
-                (: concatenated words :)
-                string-join((subsequence($words, 1, $a_maxWords),
-                             if (count($words) > $a_maxWords) then "..." else ""),
-                            ' ')
+                text { local:get-forms($sent/*:word, $a_numWords) }
               }
             }
           }
         }
-      )
     }
   }
   }</html>

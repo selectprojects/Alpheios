@@ -31,9 +31,12 @@ declare option exist:serialize
         doctype-system=http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd";
 
 let $docStem := request:get-parameter("doc", ())
-let $collName := "/db/repository/treebank/"
+let $startSent := request:get-parameter("i", 1)
+let $numSents := request:get-parameter("ns", 100)
+let $numWords := request:get-parameter("nw", 25)
+let $collName := "/db/repository/treebank.edit/"
 let $docName := concat($collName, $docStem, ".tb.xml")
-let $editBase := concat("./treebank-editsentence.xq",
+let $editBase := concat("../app/treebank-editsentence.xhtml",
                         "?doc=",
                         encode-for-uri($docStem),
                         "&amp;s=")
@@ -58,4 +61,9 @@ let $doRestore :=
 :)
 
 (: now go get actual list :)
-return tblst:get-list-page($docName, $docStem, $editBase, 25, 200)
+return tblst:get-list-page($docName,
+                           $docStem,
+                           $editBase,
+                           number($numWords),
+                           number($startSent),
+                           number($numSents))
