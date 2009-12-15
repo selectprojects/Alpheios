@@ -58,7 +58,7 @@
                     <xsl:attribute name="checked">checked</xsl:attribute>    
                 </xsl:if>                    
             </xsl:element>            
-            <span lang="@lang"><xsl:value-of select="tei:form[@type='lemma']"/></span>
+            <span lang="{@lang}"><xsl:value-of select="tei:form[@type='lemma']"/></span>
             </div>
             <div class="forms">
                 <xsl:for-each select="tei:form[@type='inflection']">
@@ -69,7 +69,7 @@
                                 <xsl:attribute name="checked">checked</xsl:attribute>    
                             </xsl:if>                    
                         </xsl:element>
-                        <span lang="@lang"><xsl:value-of select="."/></span>
+                        <span lang="{@lang}"><xsl:value-of select="."/></span>
                     </div>          
                 </xsl:for-each>
             </div>
