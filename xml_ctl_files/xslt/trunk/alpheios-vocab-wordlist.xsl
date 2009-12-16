@@ -26,7 +26,7 @@
 <xsl:stylesheet 
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0">
-
+    <xsl:param name="e_sort"/>
     <xsl:template match="/">
         <html>
             <head></head>
@@ -35,21 +35,27 @@
                     <div class="header">
                         <div class="lemma">Lemmas</div>
                         <div class="forms">Forms</div>                        
-                     </div>
-                    <xsl:for-each select="//tei:entry">
-                        <xsl:sort select="." data-type="text"/>
-                        <xsl:apply-templates select="."/>
-                    </xsl:for-each>
-                    
+                    </div>
+                    <xsl:choose>
+                        <xsl:when test="$e_sort='alpha'">
+                            <xsl:for-each select="//tei:entry">
+                                <xsl:sort select="." data-type="text"/>
+                                <xsl:apply-templates select="."/>
+                            </xsl:for-each>        
+                        </xsl:when>
+                        <xsl:otherwise>
+                            <xsl:for-each select="//tei:entry">                                
+                                <xsl:apply-templates select="."/>
+                            </xsl:for-each>
+                        </xsl:otherwise>
+                    </xsl:choose>
                 </div>
             </body>
         </html>
     </xsl:template>
     
     <xsl:template match="tei:entry">
-        <xsl:variable name="checked">
-            
-        </xsl:variable>
+        <xsl:variable name="lang" select="@lang"/>                    
         <div class="entry">
             <div class="lemma">
             <xsl:element name="input">
@@ -58,7 +64,7 @@
                     <xsl:attribute name="checked">checked</xsl:attribute>    
                 </xsl:if>                    
             </xsl:element>            
-            <span lang="{@lang}"><xsl:value-of select="tei:form[@type='lemma']"/></span>
+            <span lang="{$lang}"><xsl:value-of select="tei:form[@type='lemma']"/></span>
             </div>
             <div class="forms">
                 <xsl:for-each select="tei:form[@type='inflection']">
@@ -69,7 +75,7 @@
                                 <xsl:attribute name="checked">checked</xsl:attribute>    
                             </xsl:if>                    
                         </xsl:element>
-                        <span lang="{@lang}"><xsl:value-of select="."/></span>
+                        <span lang="{$lang}"><xsl:value-of select="."/></span>
                     </div>          
                 </xsl:for-each>
             </div>
