@@ -27,7 +27,7 @@
         <pathelement location="${java.lib.dir}/log4j-1.2.15.jar"/>
     </path>
     
-    <target name="prepare">
+    <target name="prepare" depends="clean">
         <mkdir dir="${dist.dir}" />  
         <mkdir dir="${java.class.dir}" />
     </target>
@@ -42,5 +42,10 @@
     <target name="package" depends="compile">
         <jar jarfile="${dist.dir}/${jar.filename}" basedir="${java.class.dir}"
             includes="**/*.class"/>
+    </target>
+    
+    <target name="clean">
+        <delete file="${dist.dir}/${jar.filename}"/>
+        <delete dir="${java.class.dir}"/>
     </target>
 </project>
