@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="smtptrigger" default="package" basedir=".">
+    
+    
+    <!-- The directory where java source files are stored. -->
+    <property name="java.source.dir" value="src/"/>
+    
+    <!-- The directory where java libraries stored. -->
+    <property name="java.lib.dir" value="lib/"/>
+    
+    <!-- distribution directory -->
+    <property name="dist.dir" value="dist"/>
+    
+    <!-- Destination for generated jar files -->
+    <property name="jar.dest" value="${dist.dir}"/>
+    
+    <!-- Destination for generated class files -->
+    <property name="java.class.dir" value="classes"/>
+    
+    <!-- The jar file that the jar task will generate -->
+    <property name="jar.filename" value="alpheios-log4j-spi.jar"/>
+    
+    <!-- Construct compile classpath -->
+    <path id="compile.classpath">
+        <pathelement location="${build.home}/classes"/>
+        <pathelement location="${java.lib.dir}/log4j-1.2.15.jar"/>
+    </path>
+    
+    <target name="prepare">
+        <mkdir dir="${dist.dir}" />  
+        <mkdir dir="${java.class.dir}" />
+    </target>
+    
+    <target name="compile" depends="prepare">
+        <javac srcdir="${java.source.dir}"
+            destdir="${java.class.dir}">
+            <classpath refid="compile.classpath"/>
+        </javac>               
+    </target>
+    
+    <target name="package" depends="compile">
+        <jar jarfile="${dist.dir}/${jar.filename}" basedir="${java.class.dir}"
+            includes="**/*.class"/>
+    </target>
+</project>
