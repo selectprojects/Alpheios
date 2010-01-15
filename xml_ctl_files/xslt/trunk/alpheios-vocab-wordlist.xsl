@@ -32,6 +32,9 @@
             <head></head>
             <body>
                 <div id="alpheios-wordlist">
+                    <div class="navigation">
+                        <xsl:apply-templates select="//tei:ptr[starts-with(@type,'paging')]"/>
+                    </div>
                     <div class="header">
                         <div class="lemma">Lemmas</div>
                         <div class="forms">Forms</div>                        
@@ -49,7 +52,7 @@
                             </xsl:for-each>
                         </xsl:otherwise>
                     </xsl:choose>
-                </div>
+                </div>                                
             </body>
         </html>
     </xsl:template>
@@ -81,4 +84,10 @@
             </div>
         </div>
     </xsl:template>
+    
+    <xsl:template match="tei:ptr[starts-with(@type,'paging')]">
+        <xsl:variable name="type_text" select="substring-after(@type,':')"/>
+        <a href="{@target}" class="{@type}" title="{$type_text}"><xsl:value-of select="$type_text"/></a>
+    </xsl:template>
+    
 </xsl:stylesheet>
