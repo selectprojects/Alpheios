@@ -329,7 +329,7 @@
         look for item in morpheus-paradigm-match which has the same attributes
         if multiple take one which most matched attributes?
     -->
-    <xsl:for-each select="$e_selectedEndings//div[@class='alph-infl']">
+    <xsl:for-each select="$e_selectedEndings//*[@class='alph-infl']">
       <xsl:variable name="infl" select="current()"/>
       <xsl:variable name="matchElems">
         <xsl:for-each select="$a_matchTable/match">
@@ -364,12 +364,12 @@
         <!-- special handling for lemma -->
         <xsl:when test="$attName = 'alph-lemma'">
           <xsl:if
-            test="$a_infl/ancestor::div[@class='alph-infl-set']
+            test="$a_infl/ancestor::*[@class='alph-infl-set']
               /preceding-sibling::*[@class='alph-dict']/@lemma-key
                 = $a_matchElem/constraint[$a_num]/text()">1
           </xsl:if>
             <xsl:if 
-                test="substring-before($a_infl/ancestor::div[@class='alph-infl-set']
+                test="substring-before($a_infl/ancestor::*[@class='alph-infl-set']
                     /preceding-sibling::*[@class='alph-dict']/@lemma-key,'1')
                     = $a_matchElem/constraint[$a_num]/text()">1
             </xsl:if>
@@ -380,7 +380,7 @@
             select="translate($a_matchElem/constraint[$a_num]/text(),
             'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/>
           <xsl:if test="
-            ($a_infl/ancestor::div[@class='alph-infl-set']
+            ($a_infl/ancestor::*[@class='alph-infl-set']
               /preceding-sibling::*[contains(@class,'alph-dict')]//*
                 [contains(@class,'alph-pofs')
                  and
@@ -391,7 +391,7 @@
                 ]
              )
              or
-             ($a_infl/ancestor::div[@class='alph-infl-set']//*
+             ($a_infl/ancestor::*[@class='alph-infl-set']//*
                [contains(@class,'alph-pofs')
                and
                contains(
@@ -410,7 +410,7 @@
           <xsl:variable name="matchTextLower"
             select="translate($a_matchElem/constraint[$a_num]/text(),
             'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/>
-          <xsl:if test="$a_infl/ancestor::div[@class='alph-infl-set']//*[contains(@class,$attName)
+          <xsl:if test="$a_infl/ancestor::*[@class='alph-infl-set']//*[contains(@class,$attName)
             and
             ((translate(text(),
             'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')= $matchTextLower)

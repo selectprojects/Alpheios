@@ -131,9 +131,9 @@
     <xsl:param name="a_hasData"/>
     <div class="alph-infl-form">
       <xsl:value-of select="$a_form"/>
-      <xsl:if test="$a_selectedEndings//span[@class='alph-term']">
+      <xsl:if test="$a_selectedEndings//*[@class='alph-term']">
         (
-        <xsl:for-each select="$a_selectedEndings//span[@class='alph-term']">
+        <xsl:for-each select="$a_selectedEndings//*[@class='alph-term']">
           <xsl:if test="position() &gt; 1">
             ,
           </xsl:if>
@@ -153,12 +153,12 @@
     <xsl:param name="a_selectedEndings"/>
     <xsl:param name="a_normalizeGreek"/>
     <xsl:param name="a_matchForm"/>
-    <xsl:for-each select="$a_selectedEndings//span[contains(@class,'alph-term')]">
+    <xsl:for-each select="$a_selectedEndings//*[contains(@class,'alph-term')]">
       <xsl:variable name="toStrip">
         <xsl:choose>
           <xsl:when test="$a_matchForm != ''"><xsl:value-of select="$a_matchForm"/></xsl:when>
-           <xsl:when test="span[contains(@class,'alph-suff')]/text() != ''">
-             <xsl:value-of select="span[contains(@class,'alph-suff')]/text()"/>
+           <xsl:when test="*[contains(@class,'alph-suff')]/text() != ''">
+             <xsl:value-of select="*[contains(@class,'alph-suff')]/text()"/>
            </xsl:when>
            <xsl:otherwise>_</xsl:otherwise>
         </xsl:choose>

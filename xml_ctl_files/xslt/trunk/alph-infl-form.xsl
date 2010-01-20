@@ -55,7 +55,7 @@
               <xsl:choose>
                 <xsl:when test="$a_stripGreekVowelLength = true()
                         and count
-                        ($a_selectedEndings//span
+                        ($a_selectedEndings//*
                         [@class='alph-suff' and
                         translate(text(),
                         $s_uniWithLength,
@@ -64,7 +64,7 @@
                         ) &gt; 0">matched</xsl:when>
                 <xsl:when test="$a_stripGreekVowelLength = false()
                         and count
-                        ($a_selectedEndings//span
+                        ($a_selectedEndings//*
                         [@class='alph-suff' and
                         text() = $strippedEnding]
                         ) &gt; 0">matched</xsl:when>

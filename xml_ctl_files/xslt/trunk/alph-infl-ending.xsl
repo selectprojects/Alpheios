@@ -148,7 +148,7 @@
           b) the template params didn't identify the ending
           then add a 'selected' class to the data element -->
         <xsl:when test="contains($a_selected,concat(',',$endingMatch,','))
-          or ($a_selected != '' and not($a_selectedEndings//span[@class='alph-term']))">selected</xsl:when>
+          or ($a_selected != '' and not($a_selectedEndings//*[@class='alph-term']))">selected</xsl:when>
         <!-- otherwise add the class 'matched' to indicate that the ending matches but
           the form attributes don't -->
         <xsl:otherwise>

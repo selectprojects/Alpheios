@@ -82,7 +82,7 @@
     <xsl:param name="a_endings" />
     <table id="alph-infl-table"> <!-- start table -->
       <caption>
-        <xsl:for-each select="$e_selectedEndings//span[@class='alph-term']">
+        <xsl:for-each select="$e_selectedEndings//*[@class='alph-term']">
           <xsl:if test="position() &gt; 1">
             ,
           </xsl:if>

@@ -12,10 +12,10 @@
     <xsl:param name="a_matchForm"/>
     <xsl:param name="a_inflConstraint"/>
     <xsl:variable name="matches">
-      <xsl:for-each select="$a_selectedEndings//div[@class='alph-infl-set' and
-        (../div[contains(@class,'alph-dict')]//span[(contains(@class,'alph-pofs')) and (@context = $a_matchPofs)])
+      <xsl:for-each select="$a_selectedEndings//*[@class='alph-infl-set' and
+        (../*[contains(@class,'alph-dict')]//*[(contains(@class,'alph-pofs')) and (@context = $a_matchPofs)])
         or
-        (span[(contains(@class,'alph-pofs') and @context = $a_matchPofs)])
+        (*[(contains(@class,'alph-pofs') and @context = $a_matchPofs)])
         ]
         ">
         <xsl:variable name="matchText">
@@ -29,9 +29,9 @@
               <xsl:value-of select="$a_matchForm"/>
             </xsl:when>
             <!-- empty suffixes are matched with _ -->
-            <xsl:when test="span[contains(@class,'alph-term')]/span[contains(@class,'alph-suff') and not(text())]">_</xsl:when>
+            <xsl:when test="*[contains(@class,'alph-term')]/*[contains(@class,'alph-suff') and not(text())]">_</xsl:when>
             <xsl:otherwise><!-- match the ending -->
-              <xsl:value-of select="span[contains(@class,'alph-term')]/span[contains(@class,'alph-suff')]"/>
+              <xsl:value-of select="*[contains(@class,'alph-term')]/*[contains(@class,'alph-suff')]"/>
             </xsl:otherwise>
           </xsl:choose>
         </xsl:variable>
@@ -49,7 +49,7 @@
           </xsl:choose>
         </xsl:variable>
         <xsl:variable name="possible">
-          <xsl:for-each select="div[@class='alph-infl']">
+          <xsl:for-each select="*[@class='alph-infl']">
             <xsl:variable name="failInflConstraint">
               <xsl:call-template name="check-infl-constraint">
                 <xsl:with-param name="a_infl" select="."/>
@@ -152,7 +152,7 @@
         </xsl:variable>
         <xsl:choose>
           <xsl:when test="not($a_currentData/@decl) or
-              ($a_filteredData/../..//span[contains(@class,'alph-decl')
+              ($a_filteredData/../..//*[contains(@class,'alph-decl')
               and (contains($matchDecl,
                  concat('|',substring-before(@context,'_'),'|'))
                  or
@@ -160,22 +160,22 @@
                  concat('|',@context,'|'))
               )])
               or
-              ($a_filteredData//span[contains(@class,'alph-decl')
+              ($a_filteredData//*[contains(@class,'alph-decl')
               and (contains($matchDecl,
               concat('|',substring-before(@context,'_'),'|'))
               or
               contains($matchDecl,
               concat('|',@context,'|')))])">
-            <xsl:value-of select="count($a_filteredData//span[contains(@class,'alph-case')
+            <xsl:value-of select="count($a_filteredData//*[contains(@class,'alph-case')
               and ($matchCase = '' or contains($matchCase,concat('|',substring-before(@context,'-'),'|')))
               and (@alph-pofs = $a_matchPofs)
               and ($matchGend = '' or
                 contains($matchGend,concat('|',@alph-gend,'|'))
                 or @alph-gend = 'all')
               and ($matchNum = '' or contains($matchNum,concat('|',@alph-num,'|')))
-              and ($matchVoice = '' or (preceding-sibling::span[contains(@class,'alph-voice') and
+              and ($matchVoice = '' or (preceding-sibling::*[contains(@class,'alph-voice') and
               contains($matchVoice,concat('|',text(),'|'))]))
-              and ($matchTense = '' or (preceding-sibling::span[contains(@class,'alph-tense')and
+              and ($matchTense = '' or (preceding-sibling::*[contains(@class,'alph-tense')and
               contains($matchTense,concat('|',@context,'|'))]))
               ])"/>
           </xsl:when>
@@ -227,8 +227,8 @@
                   a single conj for a given form, but that inflection data
                   attribute may be multi-valued -->
                 <xsl:variable name="latestData"
-                  select="$a_filteredData[ancestor::div[@class='alph-entry']//
-                      span[contains(@class,$className) and
+                  select="$a_filteredData[ancestor::*[@class='alph-entry']//
+                      *[contains(@class,$className) and
                       contains(concat('|',$attValue,'|'),concat('|',@context,'|'))]]"/>
                 <xsl:call-template name="find-infl-match">
                   <xsl:with-param name="a_currentData" select="$a_currentData"/>
@@ -244,7 +244,7 @@
                    a single stemtype for a given form, but that inflection data
                    stemtype attribute may be multi-valued -->
                 <xsl:variable name="latestData"
-                  select="$a_filteredData[ancestor::div[@class='alph-infl-set']//span
+                  select="$a_filteredData[ancestor::*[@class='alph-infl-set']//*
                     [contains(@class,$className) and
                       contains(concat('|',$attValue,'|'),concat('|',@context,'|'))
 
@@ -259,9 +259,9 @@
               <xsl:otherwise>
                 <xsl:variable name="latestData"
                   select="$a_filteredData[(
-                  (contains($attValue,concat('|',span[contains(@class,$className)]/text(),'|')))
+                  (contains($attValue,concat('|',*[contains(@class,$className)]/text(),'|')))
                   or
-                  (contains($attValue,concat('|',span[contains(@class,$className)]/@context,'|')))
+                  (contains($attValue,concat('|',*[contains(@class,$className)]/@context,'|')))
                   )]"/>
                 <xsl:call-template name="find-infl-match">
                   <xsl:with-param name="a_currentData" select="$a_currentData"/>

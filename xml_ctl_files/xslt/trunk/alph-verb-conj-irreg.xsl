@@ -391,7 +391,7 @@
     <xsl:param name="a_colspan"/>
     <td>
       <xsl:for-each select="$a_verbEndings">
-        <xsl:variable name="entries" select="count($e_selectedEndings/div[@class='alph-entry'])"/>
+        <xsl:variable name="entries" select="count($e_selectedEndings/*[@class='alph-entry'])"/>
         <xsl:variable name="selectedClass">
           <!-- if this ending matches the one supplied in the template params
             then add a 'selected' class to the data element -->
@@ -500,8 +500,8 @@
   <xsl:template name="check-infl-sets">
     <xsl:param name="a_currentData"/>
     <xsl:variable name="matches">
-      <xsl:for-each select="$e_selectedEndings//div[@class='alph-infl-set']">
-        <xsl:for-each select="div[@class='alph-infl']">
+      <xsl:for-each select="$e_selectedEndings//*[@class='alph-infl-set']">
+        <xsl:for-each select="*[@class='alph-infl']">
           <xsl:call-template name="find-infl-match">
             <xsl:with-param name="a_currentData" select="$a_currentData"/>
             <xsl:with-param name="a_filteredData" select="(.)"/>
@@ -544,9 +544,9 @@
             <!-- TODO - this is incorrect when multiple infl elements with combination of match (e.g. see feram) -->
             <xsl:variable name="latestData"
               select="$a_filteredData[
-              ((span[@class=$className]/text() = $a_currentData/@*[local-name(.)=$attName])
+              ((*[@class=$className]/text() = $a_currentData/@*[local-name(.)=$attName])
               or
-               (span[@class=$className]/@context = $a_currentData/@*[local-name(.)=$attName])
+               (*[@class=$className]/@context = $a_currentData/@*[local-name(.)=$attName])
               )
               ]"/>
 
