@@ -1,0 +1,91 @@
+<!ENTITY alpheios.inline.enable.cm "Toggle Alpheios On">
+<!ENTITY alpheios.inline.disable.cm "Toggle Alpheios Off">
+<!ENTITY alpheios.inline.cm.key "m">
+<!ENTITY alpheios.inline.enable.tm "Toggle Alpheios On">
+<!ENTITY alpheios.inline.disable.tm "Toggle Alpheios Off">
+<!ENTITY alpheios.inline.tm.key "m">
+<!ENTITY alpheios.decl.table.title "Declension Table">
+<!ENTITY alpheios.infl.window.title "Inflections">
+<!ENTITY alpheios.lang.menu "Alpheios Language">
+<!ENTITY alpheios.lang.none "(none supported)">
+<!ENTITY alpheios.menu "Alpheios">
+<!ENTITY alpheios.menu.options "Options">
+<!ENTITY alpheios.menu.options.tooltip "Configure Alpheios Preferences">
+<!ENTITY alpheios.menu.feedback "Send Feedback">
+<!ENTITY alpheios.menu.feedback.tooltip "Email Feedback on Alpheios">
+<!ENTITY alpheios.menu.about "About">
+<!ENTITY alpheios.menu.about.tooltip "About Alpheios">
+<!ENTITY alpheios.menu.site "Alpheios Site">
+<!ENTITY alpheios.menu.site.tooltip "Open the alpheios.net site">
+<!ENTITY alpheios.menu.lang "Language">
+<!ENTITY alpheios.menu.lang.tooltip "Select Language for Alpheios">
+<!ENTITY alpheios.menu.level.reader "Reading Mode">
+<!ENTITY alpheios.menu.level.reader.tooltip "Alpheios Reading Mode">
+<!ENTITY alpheios.menu.level.learner "Quiz Mode">
+<!ENTITY alpheios.menu.level.learner.tooltip "Alpheios Quiz Mode">
+<!ENTITY alpheios.menu.backup "Backup User Data">
+<!ENTITY alpheios.menu.backup.tooltip "Backup User Data Now">
+<!ENTITY alpheios.menu.restore "Restore User Data">
+<!ENTITY alpheios.menu.restore.tooltip "Restore User Data Now">
+<!ENTITY alpheios.menu.clear "Clear User Data">
+<!ENTITY alpheios.menu.clear.tooltip "Clear User Data Now">
+<!ENTITY alpheios.menu.wordlist "Word List">
+<!ENTITY alpheios.menu.wordlist.tooltip "See My Word List">
+<!ENTITY alpheios.menu.user.diagram "My Diagrams">
+<!ENTITY alpheios.menu.user.diagram.tooltip "Add and Edit Sentence Diagrams">
+<!ENTITY alpheios-tools-status-disabled "[Off]">
+<!ENTITY alpheios-view-label "View">
+<!ENTITY alpheios-view-tooltip "Alpheios Browser Panels">
+<!ENTITY alpheios-tools-label "Tools">
+<!ENTITY alpheios-tools-tooltip "Alpheios Tools">
+<!ENTITY alpheios-tools-morph-label "Morphology Panel">
+<!ENTITY alpheios-tools-morph-tooltip "Show/Hide Morphology Panel">
+<!ENTITY alpheios-tools-inflect-label "Inflection Tables">
+<!ENTITY alpheios-tools-inflect-tooltip "View Inflection Table">
+<!ENTITY alpheios-tools-grammar-label "Grammar">
+<!ENTITY alpheios-tools-grammar-tooltip "View Grammar">
+<!ENTITY alpheios-morph-toolbar-label "Morphology">
+<!ENTITY alpheios-morph-lookup-tooltip "Enter a word or words.">
+<!ENTITY alpheios-toolbar-grippy-tooltip "Alpheios Toolbar">
+<!ENTITY alpheios-toolbar-name "Alpheios Toolbar">
+<!ENTITY alpheios.toolbar.disable "Hide Toolbar">
+<!ENTITY alpheios.panel.detach "Detach">
+<!ENTITY alpheios.panel.close "Close">
+<!ENTITY alpheios.panel.options "Options">
+<!ENTITY alpheios-tools-trans-label "Translation Panel">
+<!ENTITY alpheios-tools-trans-tooltip "Show/Hide Translation Panel">
+<!ENTITY alpheios.panel.trans.label "Translation">
+<!ENTITY alpheios.panel.trans.tab.external "Internet">
+<!ENTITY alpheios.panel.trans.tab.ped.primary "Alpheios Pedagogical">
+<!ENTITY alpheios.panel.trans.tab.external.url "Enter URL of Translation">
+<!ENTITY alpheios.panel.trans.opt.inter "Interlinear Translation">
+<!ENTITY alpheios.panel.trans.opt.inter.src "In Source Text">
+<!ENTITY alpheios.panel.trans.opt.inter.trans "Show Interlinear Text">
+<!ENTITY alpheios.help "Help">
+<!ENTITY alpheios.help.tooltip "Open Alpheios User Guide">
+<!ENTITY alpheios.version.string "Beta Version">
+<!ENTITY alpheios.menu.userdata "User Data">
+<!ENTITY alpheios.menu.userdata.tooltip "User Data Functions"> 
+<!ENTITY alpheios-tools-vocab-label "Vocabulary">
+<!ENTITY alpheios-tools-vocab-tooltip "Show/Hide Vocabulary">
+<!ENTITY alpheios-vocab-toolbar-label "Alpheios: Vocabulary">
+<!ENTITY alpheios.diagram.user "Alpheios: User Diagram">
+<!ENTITY alpheios.diagram.input "Input text:">
+<!ENTITY alpheios.diagram.lang "Language:">
+<!ENTITY alpheios.diagram.lang.grc "Greek">
+<!ENTITY alpheios.diagram.lang.la "Latin">
+<!ENTITY alpheios.diagram.lang.ar "Arabic">
+<!ENTITY alpheios.diagram.lang.got "Gothic">
+<!ENTITY alpheios.diagram.lang.chu "Old Church Slavonic">
+<!ENTITY alpheios.diagram.lang.en "English">
+<!ENTITY alpheios.diagram.fmt "Format:">
+<!ENTITY alpheios.diagram.fmt.aldt "Ancient Language Dependency Treebank">
+<!ENTITY alpheios.diagram.fmt.catib "Columbia Arabic Treebank">
+<!ENTITY alpheios.diagram.fmt.proiel "PROIEL">
+<!ENTITY alpheios.diagram.add "Add">
+<!ENTITY alpheios.diagram.edit "Edit">
+<!ENTITY alpheios.diagram.select "Or select a previously saved sentence to edit:">
+<!ENTITY alpheios.diagram.sequential "Show words sequentially:">
+<!ENTITY alpheios.diagram.direction "Text Direction">
+<!ENTITY alpheios.diagram.direction.ltr "Left to Right">
+<!ENTITY alpheios.diagram.direction.rtl "Right to Left">

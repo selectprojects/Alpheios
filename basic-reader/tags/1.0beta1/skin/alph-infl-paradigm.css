@@ -1,0 +1,45 @@
+#alph-inflect-title {
+    visibility: hidden;
+}
+
+.alph-infl-caption {
+    margin-bottom: 1.5em;
+}
+
+.paradigm-links {
+}
+
+table {
+    border-collapse: collapse;
+    border: 2px solid;
+    width: auto;
+    table-layout: fixed;
+}
+
+table.sub {
+    width: auto;
+    margin-top: 1em;
+}
+
+th, td {
+    display: table-cell;
+}
+
+th.next-empty, th.next-label {
+    border-right: none;
+}
+
+th.prev-label {
+    border-left: none;
+}
+
+th.empty-cell {
+    border-left: none;
+    border-right: none;
+}
+
+td.selected {
+    background-color: #FFEE77;
+    font-weight: bold;
+}
+

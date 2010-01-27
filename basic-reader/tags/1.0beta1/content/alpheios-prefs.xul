@@ -1,0 +1,181 @@
+<?xml version="1.0"?>
+<!DOCTYPE window SYSTEM "chrome://alpheios/locale/alpheios-prefs.dtd">
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://mozapps/content/preferences/preferences.css" type="text/css"?>
+<?xml-stylesheet href="chrome://browser/skin/preferences/preferences.css" type="text/css"?>
+<?xml-stylesheet href="chrome://alpheios/skin/prefs/alpheios-prefs.css" type="text/css"?>
+<?xml-stylesheet href="chrome://alpheios/skin/alpheios-os.css" type="text/css"?>
+<prefwindow id="alpheios-prefs" title="&alpheios.prefs.preferences;"
+        xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+        buttons="accept,cancel"
+        type="prefwindow">
+    <script type="application/x-javascript" src="chrome://alpheios/content/alpheios-utils.js" />
+    <script type="application/x-javascript" src="chrome://alpheios/content/prefs/alpheios-prefs.js" />
+
+    <stringbundleset id="alpheios-prefs-stringbundleset">
+      <stringbundle id="alpheios-prefs-strings" 
+                      src="chrome://alpheios/locale/alpheios-prefs.properties"/>
+      <stringbundle id="alpheios-strings" 
+                      src="chrome://alpheios/locale/alpheios.properties"/>
+    </stringbundleset>
+    
+    <prefpane id="alpheios-prefs-features" 
+          label="&alpheios.prefs.features;" 
+          image="chrome://alpheios/skin/icons/alpheios_32.ico"
+          onpaneload="Alph.Prefs.initFeaturePrefs();">
+        <preferences>
+            <preference id="pref-enabletoolbar" name="extensions.alpheios.enable.toolbar" type="bool"/>
+            <preference id="pref-tblookup" name="extensions.alpheios.toolbar.lookup" type="bool"/>
+            <preference id="pref-smallicons" name="extensions.alpheios.smallicons" type="bool"/>
+            <preference id="pref-interlinear" 
+                        name="extensions.alpheios.features.alpheios-interlinear" 
+                        type="bool"/>
+        </preferences>
+        <tabbox>
+            <tabs id="alpheios-prefs-feature-tabs">
+                <tab label="&alpheios.prefs.toolbar;"/>
+                <tab label="&alpheios.prefs.lookup;"/>
+                <tab label="&alpheios.prefs.interlinear;"/>
+            </tabs>
+            <tabpanels>
+                <tabpanel id="alpheios-prefs-toolbar">
+                    <vbox flex="1">
+                        <checkbox id="enabletoolbar"
+                            label="&alpheios.prefs.toolbar.enable;"
+                            preference="pref-enabletoolbar"
+                            onsynctopreference="return Alph.Prefs.checkAlpheiosToolbar();"/>                                                    
+                    </vbox>
+                </tabpanel>
+                <tabpanel id="alpheios-prefs-lookup">
+                    <vbox id="alpheios-prefs-lookup-set" flex="1">
+                        <groupbox id="alpheios-mouse-group">
+                            <caption label="&alpheios.prefs.popuptrigger;" />    
+                        </groupbox>                
+                        <checkbox id="tblookup" 
+                              label="&alpheios.prefs.toolbar.lookup;" 
+                              preference="pref-tblookup"/>
+                        <checkbox id="smallicons" 
+                                  label="&alpheios.prefs.smallicons;" 
+                                  preference="pref-smallicons"/>
+
+                        <hbox>
+                        <button id="alpheios-prefs-svc-button"
+                            label="&alpheios.prefs.advanced.label;"
+                            accesskey="&advanced.accesskey;"
+                            oncommand="document.documentElement.openSubDialog('chrome://alpheios/content/alpheios-svc-prefs.xul',
+                                               '', null);"/>
+                        </hbox>
+                    </vbox>  
+                </tabpanel>
+                <tabpanel id="alpheios-prefs-interlinear" align="top">
+                    <checkbox id="enable_interlinear" 
+                              label="&alpheios.prefs.interlinear.enable;" 
+                              preference="pref-interlinear"/>
+                </tabpanel>
+            </tabpanels>
+        </tabbox>
+    </prefpane>
+        <prefpane id="alpheios-prefs-userdata" 
+          label="&alpheios.prefs.userdata;" 
+          image="chrome://alpheios/skin/icons/userdata_32.png"
+          onpaneload=""
+          insertafter="alpheios-prefs-features">
+        <preferences id="prefs-userdata">
+            <preference id="pref-user-model" name="extensions.alpheios.user.model" type="string"/>
+        </preferences>
+        <groupbox flex="1">
+            <caption label="&alpheios.prefs.userdata.model;"/>
+            <radiogroup preference="pref-user-model" 
+                        onsyncfrompreference="Alph.Prefs.checkUserDataModel();" 
+                        onsynctopreference="return Alph.Prefs.updateDataServiceSettings();">
+                                    
+                <radio label="&alpheios.prefs.userdata.model.ffprofileplus;" value="ffprofileplus"/>
+                <radio label="&alpheios.prefs.userdata.model.custom;" value="custom"/>
+                <label id="alpheios-prefs-userdata-customize-info"
+                             class="alpheios-info"
+                             value="&alpheios.prefs.userdata.model.custom.info;"
+                             collapsed="true"/>
+                <radio label="&alpheios.prefs.userdata.model.disable;" value="disable"/>
+            </radiogroup>
+        </groupbox>
+        <vbox id="alpheios-prefs-userdata-advanced" collapsed="true" flex="1">
+        </vbox>
+    </prefpane>
+    <prefpane id="alpheios-prefs-advanced" 
+          label="&alpheios.prefs.advanced;" 
+          image="chrome://alpheios/skin/prefs/emblem-system.png">
+        <preferences>
+            <preference id="pref-log-level" name="extensions.alpheios.log.logger.level" type="string"/>
+            <preference id="pref-trigger" name="extensions.alpheios.popuptrigger" type="string"/>
+            <preference id="pref-dictionaries-full-timeout" 
+                        name="extensions.alpheios.methods.dictionary.full.default.timeout" 
+                        type="int"/>
+            <preference id="pref-default-language" 
+                        name="extensions.alpheios.default_language"
+                        type="string"/>
+            <preference id="pref-mhttpd-host"
+                        name="extensions.alpheios.mhttpd.host"
+                        type="string"/> 
+            <preference id="pref-mhttpd-port"
+                        name="extensions.alpheios.mhttpd.port"
+                        type="int"/> 
+        </preferences>
+        <vbox id="alpheios-prefs-adv-set" flex="1">
+            <groupbox>
+                <caption label="&alpheios.prefs.log.level;"/>
+                <menulist id="log-levels" 
+                         label="&alpheios.prefs.log.level;" 
+                         preference="pref-log-level">
+                    <menupopup>
+                    <menuitem value="Fatal" label="&alpheios.prefs.log.level.fatal;"/>
+                    <menuitem value="Error" label="&alpheios.prefs.log.level.error;"/>
+                    <menuitem value="Warn" label="&alpheios.prefs.log.level.warn;"/>
+                    <menuitem value="Info" label="&alpheios.prefs.log.level.info;"/>
+                    <menuitem value="Config" label="&alpheios.prefs.log.level.config;"/>
+                    <menuitem value="Debug" label="&alpheios.prefs.log.level.debug;"/>                    
+                    <menuitem value="Trace" label="&alpheios.prefs.log.level.trace;"/>
+                    <menuitem value="All" label="&alpheios.prefs.log.level.all;"/>
+                    </menupopup>
+                </menulist>
+            </groupbox>
+            <groupbox>
+                <caption label="&alpheios.prefs.popuptrigger.default;" />
+                    <radiogroup preference="pref-trigger">
+                        <radio label="&alpheios.prefs.popuptrigger.mousemove;" value="mousemove"/>    
+                        <radio label="&alpheios.prefs.popuptrigger.dblclick;" value="dblclick"/>
+                    </radiogroup>
+            </groupbox>
+            <groupbox>
+                <caption label="&alpheios.prefs.defaults.misc;" />
+                 <label value="&alpheios.prefs.default.language;" 
+                        control="default-language"/>
+                 <textbox id="default-language" 
+                         preference="pref-default-language"/>      
+                 <label value="&alpheios.prefs.dict.full.timeout;" 
+                        control="dictionaries-full-timeout"/>
+                <textbox id="dictionaries-full-timeout" 
+                         preference="pref-dictionaries-full-timeout"/>
+                <label value="&alpheios.prefs.mhttpd.host;" 
+                        control="mhttpd-host"/>
+                <textbox id="mhttpd-host" class="url"
+                         preference="pref-mhttpd-host"/>
+                <label value="&alpheios.prefs.mhttpd.port;" 
+                        control="mhttpd-port"/>
+                <textbox id="mhttpd-port" 
+                         preference="pref-mhttpd-port"/>      
+      
+            </groupbox>                
+                
+            <hbox>
+                <button id="alpheios-prefs-panels-button"
+                    label="&alpheios.prefs.windows.label;"
+                    accesskey="&advanced.accesskey;"
+                    oncommand="document.documentElement.openSubDialog('chrome://alpheios/content/alpheios-panel-prefs.xul','',null)"/>
+                <button id="alpheios-prefs-sites-button"
+                    label="&alpheios.prefs.sites.label;"
+                    accesskey="&sites.accesskey;"
+                    oncommand="document.documentElement.openSubDialog('chrome://alpheios/content/alpheios-site-prefs.xul','',null)"/>
+            </hbox>
+        </vbox>
+    </prefpane>
+</prefwindow>
