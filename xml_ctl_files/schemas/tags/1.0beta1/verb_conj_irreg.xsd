@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema 
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    xmlns:xml="http://www.w3.org/XML/1998/namespace">
+    <xs:annotation>
+        <xs:documentation>
+            Alpheios Schema for Irregular Verb Conjugation Data.
+            Extends inflections.xsd.
+            Contains conjugated forms identified by headword set.
+        </xs:documentation>
+    </xs:annotation>
+    
+    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
+        schemaLocation="xml-1998.xsd"/>
+    
+    <xs:include schemaLocation="inflections.xsd"></xs:include>
+    <xs:element name="infl-data">
+        <xs:annotation>
+            <xs:documentation>
+                Root element to hold all conjugation data
+            </xs:documentation>
+        </xs:annotation>
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="order-table" maxOccurs="1" type="OrderTableType"/>
+                <xs:element name="conjugation" maxOccurs="unbounded">
+                    <xs:annotation>
+                        <xs:documentation>
+                            Element to hold all verb conjugation data for a given set of hdwds
+                        </xs:documentation>
+                    </xs:annotation>
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="hdwd-set" type="HdwdSetType" minOccurs="1" maxOccurs="1"/>                           
+                            <xs:element name="infl-form-set" type="InflectionSetType" maxOccurs="unbounded"/>                
+                        </xs:sequence>  
+                        <xs:attribute name="footnote" type="xs:IDREF" use="optional"/>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="footnotes" maxOccurs="1" minOccurs="0" type="FootnoteTableType"/>
+            </xs:sequence>
+            <xs:attribute ref="xml:lang"/>
+        </xs:complexType>
+    </xs:element>    
+</xs:schema>
