@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM "chrome://alpheios-arabic/locale/alpheios-arabic.dtd">
+
+<overlay id="alpheios-arabic-overlay" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="chrome://alpheios-arabic/content/alpheios-arabic-langtool.js" />
+</overlay>
