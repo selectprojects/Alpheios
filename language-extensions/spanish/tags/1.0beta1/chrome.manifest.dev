@@ -1,0 +1,7 @@
+content alpheios-spanish chrome/content/
+content alpheios-spanish chrome/content/ contentaccessible=yes
+locale	alpheios-spanish	en-US		chrome/locale/en-US/
+skin	alpheios-spanish	classic/1.0	chrome/skin/
+
+overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-spanish/content/alpheios-spanish.xul
+style	chrome://global/content/customizeToolbar.xul	chrome://alpheios-spanish/skin/alpheios-spanish.css

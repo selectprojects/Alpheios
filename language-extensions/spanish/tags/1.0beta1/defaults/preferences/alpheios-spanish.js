@@ -1,0 +1,13 @@
+pref("extensions.alpheios.spanish.usemhttpd", false);
+pref("extensions.alpheios.spanish.chromepkg","alpheios-spanish");
+pref("extensions.alpheios.spanish.languagecode","es");
+pref("extensions.alpheios.spanish.base_unit","word");
+pref("extensions.alpheios.spanish.methods.lexicon",'webservice');
+pref("extensions.alpheios.spanish.url.lexicon", 'http://repos.alpheios.net:8080/exist/rest/db/xq/morph-esp-agme.xq');
+pref("extensions.alpheios.spanish.url.lexicon.request", "?w=<WORD>");
+pref("extensions.alpheios.spanish.url.lexicon.timeout",5000);
+pref("extensions.alpheios.spanish.grammar.hotlinks","");
+pref("extensions.alpheios.spanish.popuptrigger",'dblclick');
+pref("extensions.alpheios.spanish.features.alpheios-inflect",false);
+pref("extensions.alpheios.spanish.features.alpheios-grammar",false);
+pref("extensions.alpheios.spanish.panels.use.defaults",true);

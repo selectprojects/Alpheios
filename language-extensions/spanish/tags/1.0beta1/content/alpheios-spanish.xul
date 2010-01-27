@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM "chrome://alpheios-spanish/locale/alpheios-spanish.dtd">
+
+<overlay id="alpheios-spanish-overlay" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="chrome://alpheios-spanish/content/alpheios-spanish-langtool.js" />
+</overlay>
