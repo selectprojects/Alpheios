@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<infl-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="file:/C:/work/schemas/verb_conj_irreg.xsd"
+    xml:lang="greek">
+    <order-table>
+        <order-item attname="case" order="1">nominative</order-item>
+        <order-item attname="case" order="2">genitive</order-item>
+        <order-item attname="case" order="3">dative</order-item>
+        <order-item attname="case" order="4">accusative</order-item>
+        <order-item attname="case" order="5">vocative</order-item>
+        <order-item attname="gend" order="1">masculine</order-item>        
+        <order-item attname="gend" order="2">feminine</order-item>
+        <order-item attname="gend" order="3">neuter</order-item>
+        <order-item attname="type" order="1">regular</order-item>
+        <order-item attname="type" order="2">irregular</order-item>
+        <order-item attname="num" order="1">singular</order-item>
+        <order-item attname="num" order="2">dual</order-item>
+        <order-item attname="num" order="3">plural</order-item>
+    </order-table>
+    <inflection type="declension">
+        <hdwd-set>
+            <hdwd source="morpheus">στρατηγός</hdwd>
+        </hdwd-set>
+        <infl-form-set
+            decl="2nd"
+            case="nominative"
+            num="singular"
+            gend="masculine">
+            <infl-form type="regular">στρατηγος</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="genitive"
+            num="singular"
+            gend="masculine">
+            <infl-form type="regular">στρατηγου</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="dative"
+            num="singular"
+            gend="masculine">
+            <infl-form type="regular">στρατηγῳ</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="accusative"
+            num="singular"
+            gend="masculine">
+            <infl-form type="regular">στρατηγόν</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="vocative"
+            num="singular"
+            gend="masculine">
+            <infl-form type="regular">στρατηγε</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="nominative"
+            num="dual"
+            gend="masculine">
+            <infl-form type="regular">στρατηγώ</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="genitive"
+            num="dual"
+            gend="masculine">
+            <infl-form type="regular">στρατηγοιν</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="dative"
+            num="dual"
+            gend="masculine">
+            <infl-form type="regular">στρατηγοιν</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="accusative"
+            num="dual"
+            gend="masculine">
+            <infl-form type="regular">στρατηγω</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="vocative"
+            num="dual"
+            gend="masculine">
+            <infl-form type="regular">στρατηγω</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="nominative"
+            num="plural"
+            gend="masculine">
+            <infl-form type="regular">στρατηγοι</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="genitive"
+            num="plural"
+            gend="masculine">
+            <infl-form type="regular">στρατηγων</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="dative"
+            num="plural"
+            gend="masculine">
+            <infl-form type="regular">στρατηγοις</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="accusative"
+            num="plural"
+            gend="masculine">
+            <infl-form type="regular">στρατηγους</infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="vocative"
+            num="plural"
+            gend="masculine">
+            <infl-form type="regular">στρατηγοι</infl-form>
+        </infl-form-set>        
+        <infl-form-set
+            decl="2nd"
+            case="nominative"
+            num="singular"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="genitive"
+            num="singular"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="dative"
+            num="singular"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="accusative"
+            num="singular"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="vocative"
+            num="singular"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="nominative"
+            num="dual"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="genitive"
+            num="dual"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="dative"
+            num="dual"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="accusative"
+            num="dual"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="vocative"
+            num="dual"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="nominative"
+            num="plural"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="genitive"
+            num="plural"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="dative"
+            num="plural"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="accusative"
+            num="plural"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="vocative"
+            num="plural"
+            gend="neuter">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="nominative"
+            num="singular"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="genitive"
+            num="singular"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="dative"
+            num="singular"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="accusative"
+            num="singular"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="vocative"
+            num="singular"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="nominative"
+            num="dual"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="genitive"
+            num="dual"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="dative"
+            num="dual"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="accusative"
+            num="dual"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="vocative"
+            num="dual"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="nominative"
+            num="plural"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="genitive"
+            num="plural"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="dative"
+            num="plural"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="accusative"
+            num="plural"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>
+        <infl-form-set
+            decl="2nd"
+            case="vocative"
+            num="plural"
+            gend="feminine">
+            <infl-form type="regular"></infl-form>
+        </infl-form-set>        
+    </inflection>
+</infl-data>
+        
+    
