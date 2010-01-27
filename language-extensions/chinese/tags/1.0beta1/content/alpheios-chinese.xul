@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM "chrome://alpheios-chinese/locale/alpheios-chinese.dtd">
+
+<overlay id="alpheios-chinese-overlay" 
+         xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+    <script type="application/x-javascript" src="chrome://alpheios-chinese/content/alpheios-chinese-langtool.js" />
+    <script type="application/x-javascript" src="chrome://alpheios-chinese/content/alpheios-chinese-dict.js" />
+</overlay>
