@@ -1,0 +1,28 @@
+@import url("chrome://alpheios-greek/skin/alpheios-greek-os.css");
+
+.ending {
+    line-height: 1em;
+}
+
+.notfirst:before {
+    content: "";
+
+}
+
+.notfirst {
+    padding-left: .5em;
+}
+
+     
+table.simplified td {
+    border-left: none; 
+    border-right: none;
+}
+
+table.simplified td.newgroup.ending-group {
+    /**border-left: 1px solid gray; */
+}
+
+.duplicate {
+    display: none;
+}
