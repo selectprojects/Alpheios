@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2008-2009 Cantus Foundation
+  http://alpheios.net
+
+  This file is part of Alpheios.
+
+  Alpheios is free software: you can redistribute it and/or modify
+  it under the terms of the GNU General Public License as published by
+  the Free Software Foundation, either version 3 of the License, or
+  (at your option) any later version.
+
+  Alpheios is distributed in the hope that it will be useful,
+  but WITHOUT ANY WARRANTY; without even the implied warranty of
+  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+  GNU General Public License for more details.
+
+  You should have received a copy of the GNU General Public License
+  along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+  xmlns:svg="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <head>
+    <title>Alpheios:Edit Treebank Sentence</title>
+    <meta id="alpheios-pedagogical-text" name="alpheios-pedagogical-text"
+      content="true"/>
+    <meta name="alpheios-editTransformURL"
+      content="../xslt/treebank-svg-edit.xsl"/>
+    <link rel="stylesheet" type="text/css" href="../css/alph-treebank-edit.css"/>
+    <script language="javascript" type="text/javascript" src="../script/alph-treebank-edit.js"/>
+    <script language="javascript" type="text/javascript" src="../script/alph-edit-utils.js"/>
+    <script language="javascript" type="text/javascript" src="../script/jquery-1.2.6-alph.js"/>
+
+    <!-- A URL can be supplied that can be used to retrieve information about
+         the document and treebank or else the following information should be
+         supplied directly in metadata parameters or URL call parameters:
+            numSentences (if sentence navigation is desired), lang, direction
+         (See below for descriptions of parameters.)
+         If the URL is present then it will take precedence over the parameter
+         values, so if the parameters are to be used then the URL should be
+         commented out.
+    -->
+    <!-- <meta name="alpheios-getInfoURL" content="../xq/treebank-getinfo.xq"/> -->
+
+    <!-- Parameters controlling behavior of the editor
+         All names are prefixed in the <meta> tags with "alpheios-param-".
+         All can be overridden by parameters supplied at invocation time to
+         the url, using the names below without the "alpheios-param-" prefix.
+            app: [editor|viewer]
+              Whether we're editing or just viewing the tree.
+              If set to "viewer", other parameters controlling editing
+              behavior will be ignored.
+            numSentences: integer > 0
+              Number of sentences in the document.  Only needed if sentence
+              navigation is enabled (sentenceNavigation = "yes").
+            lang:
+              Language of the sentence.
+            direction: [ltr|rtl]
+              Direction of text flow.
+            arcEditing: [yes|no]
+              If "yes", allow arc label editing
+              and div#label-menus > div#arc-label-menus should be defined
+              either explicitly or built from the format description.
+            nodeEditing: [yes|no]
+              If "yes", allow node label editing
+              and div#label-menus > div#node-label-menus should be defined
+              either explicitly or built from the format description.
+            buildContent:
+              What content to build from treebank description.
+              This can only be done if the URL to retrieve treebank info
+              is supplied above.
+              Contains a comma-separated list of possible values:
+                menus = menus for arc and/or node label editing
+                style = style sheet controlling display of values
+                key = key describing values
+              If not enabled, the content must be supplied directly in this
+              file.  Search for "buildContent" to find the locations.
+            sentenceNavigation: [yes|no]
+              If "yes", include controls to allow navigation between sentences
+              within the editor.  For this to work, the sentence ids must be
+              integers running from 1 to maxSentId, where maxSentId is obtained
+              either from invoking the alpheios-getInfoURL or from the
+              numSentences parameter.
+            sequential: [yes|no]
+              If "yes", initially only show first word in sentence and enable
+              button to reveal next word.
+    -->
+    <meta name="alpheios-param-app" content="editor"/>
+    <meta name="alpheios-param-numSentences" content="1"/>
+    <meta name="alpheios-param-lang" content="la"/>
+    <meta name="alpheios-param-direction" content="ltr"/>
+    <meta name="alpheios-param-arcEditing" content="yes"/>
+    <meta name="alpheios-param-nodeEditing" content="no"/>
+    <meta name="alpheios-param-buildContent" content=""/>
+    <meta name="alpheios-param-sentenceNavigation" content="no"/>
+    <meta name="alpheios-param-sequential" content="no"/>
+
+    <!-- URLs to get and put a single sentence in treebank XML -->
+    <meta name="alpheios-getSentenceURL"
+      content="http://nlp.perseus.tufts.edu/hopper/annotate/getTreebankSentence.jsp"/>
+    <meta name="alpheios-putSentenceURL"
+      content="http://nlp.perseus.tufts.edu/hopper/annotate/putTreebankSentence.jsp"/>
+
+    <!-- URL to call when exiting and label to use on exit button -->
+    <meta name="alpheios-exitURL"
+      content="http://nlp.perseus.tufts.edu/hopper/annotate/displaySentence.jsp"/>
+    <meta name="alpheios-exitLabel"
+          content="Return&#160;to&#160;table&#160;editor"/>
+
+    <!-- Provide style here if buildContent param does not contain "style".
+         Styles should be provided for
+            g text[pos=<pos>]     words in text and tree
+            td[pos=<pos>]         words in key
+         for each part of speech <pos>.
+    -->
+    <style type="text/css">
+      g text[pos=n] {
+        fill:black
+      }
+      td[pos=n] {
+        color:black
+      }
+      g text[pos=v] {
+        fill:red
+      }
+      td[pos=v] {
+        color:red
+      }
+      g text[pos=a] {
+        fill:blue
+      }
+      td[pos=a] {
+        color:blue
+      }
+      g text[pos=d] {
+        fill:darkorange
+      }
+      td[pos=d] {
+        color:darkorange
+      }
+      g text[pos=c] {
+        fill:deeppink
+      }
+      td[pos=c] {
+        color:deeppink
+      }
+      g text[pos=l] {
+        fill:skyblue
+      }
+      td[pos=l] {
+        color:skyblue
+      }
+      g text[pos=r] {
+        fill:green
+      }
+      td[pos=r] {
+        color:green
+      }
+      g text[pos=p] {
+        fill:purple
+      }
+      td[pos=p] {
+        color:purple
+      }
+      g text[pos=i] {
+        fill:gold
+      }
+      td[pos=i] {
+        color:gold
+      }
+      g text[pos=e] {
+        fill:gold
+      }
+      td[pos=e] {
+        color:gold
+      }</style>
+  </head>
+  <body onkeypress="Keypress(event)" onload="Init(event)" style="display:none">
+    <table style="border:none; padding:0; width:100%">
+      <tr>
+        <td>
+          <div class="controls alpheios-ignore" id="edit-controls">
+            <table style="border:none; padding:0">
+              <tr>
+                <td>
+                  <div id="sent-navigation">
+                    <table style="border:1px solid black; padding:0">
+                      <tr>
+                        <td>
+                          <button id="first-button" onclick="ClickOnGoTo(event)"
+                            >&#160;</button>
+                        </td>
+                        <td>
+                          <button id="prev-button" onclick="ClickOnGoTo(event)"
+                            >&#160;</button>
+                        </td>
+                        <td>
+                          <label id="current-label">&#160;</label>
+                        </td>
+                        <td>
+                          <button id="next-button" onclick="ClickOnGoTo(event)"
+                            >&#160;</button>
+                        </td>
+                        <td>
+                          <button id="last-button" onclick="ClickOnGoTo(event)"
+                            >&#160;</button>
+                        </td>
+                        <td>
+                          <form onsubmit="return SubmitGoTo(this)"
+                            name="sent-navigation-goto">
+                            <label>&#160;&#160;Go&#160;to&#160;sentence&#160;number</label>
+                            <input type="text" name="s" size="5"/>
+                          </form>
+                        </td>
+                      </tr>
+                    </table>
+                  </div>
+                </td>
+                <td>
+                  <form onsubmit="return SubmitExit(this)"
+                    name="sent-navigation-exit">
+                    <input type="hidden" name="doc"/>
+                    <input type="hidden" name="s"/>
+                    <button type="submit">Exit</button>
+                  </form>
+                </td>
+              </tr>
+            </table>
+            <table style="border:none; padding:0">
+              <tr>
+                <td>
+                  <table style="border:none; padding:0">
+                    <tr>
+                      <button id="tree-button" class="icon mode-button"
+                        value="tree" checked="checked"
+                        onclick="ClickOnMode(event)" title="Tree tool">
+                        <img src="../image/edit-tool-tree.png" alt="⽊"/>
+                      </button>
+                      <button id="label-button" class="icon mode-button"
+                        value="label" onclick="ClickOnMode(event)"
+                        title="Label tool">
+                        <img src="../image/edit-tool-label.png" alt="✍"/>
+                      </button>
+                      <button id="ellipsis-button" class="icon mode-button"
+                        value="ellipsis" onclick="ClickOnMode(event)"
+                        title="Ellipsis tool">
+                        <img src="../image/edit-tool-ellipsis.png" alt="…"/>
+                      </button>
+                    </tr>
+                  </table>
+                </td>
+                <td>
+                  <button id="expansion-checkbox" class="icon" checked="checked"
+                    onclick="ShowExpansionControls(event)"
+                    title="Show expansion controls">
+                    <img src="../image/edit-expansion-controls.png" alt="⇅"/>
+                  </button>
+                </td>
+                <td>
+                  <table style="border:none; padding:0">
+                    <tr>
+                      <button id="undo-button" disabled="disabled" class="icon"
+                        onclick="ClickOnUndo(event)" title="Undo"
+                        base="../image/edit-undo">
+                        <img src="../image/edit-undo-disabled.png" alt="⟲"/>
+                      </button>
+                      <button id="redo-button" disabled="disabled" class="icon"
+                        onclick="ClickOnRedo(event)" title="Redo"
+                        base="../image/edit-redo">
+                        <img src="../image/edit-redo-disabled.png" alt="⟳"/>
+                      </button>
+                    </tr>
+                  </table>
+                </td>
+                <td>
+                  <button id="save-button" disabled="disabled" class="icon"
+                    onclick="ClickOnSave(event)" title="Save sentence"
+                    base="../image/document-save">
+                    <img src="../image/document-save-disabled.png" alt="✇"/>
+                  </button>
+                </td>
+                <td>
+                  <button id="nextword-button" class="icon mode-button"
+                    value="nextword" onclick="ClickOnNextWord(event)"
+                    base="../image/list-add" title="Show next word">
+                    <img src="../image/list-add.png" alt="+"/>
+                  </button>
+                </td>
+              </tr>
+            </table>
+            <!-- Provide menus here if buildContent param does not contain "menus" -->
+            <div id="label-menus">
+              <div id="arc-label-menus" class="cmenu" style="display: none">
+                <form name="menus">
+                  <div>Dependency Relation: </div>
+                  <select name="arcrel1">
+                    <option value="PRED">PRED</option>
+                    <option value="SBJ">SBJ</option>
+                    <option value="OBJ">OBJ</option>
+                    <option value="ATR">ATR</option>
+                    <option value="ADV">ADV</option>
+                    <option value="ATV">ATV</option>
+                    <option value="AtvV">AtvV</option>
+                    <option value="PNOM">PNOM</option>
+                    <option value="OCOMP">OCOMP</option>
+                    <option value="APOS">APOS</option>
+                    <option value="COORD">COORD</option>
+                    <option value="AuxP">AuxP (prep)</option>
+                    <option value="AuxC">AuxC (conj)</option>
+                    <option value="AuxR">AuxR (refl passive)</option>
+                    <option value="AuxY">AuxY (sent adv)</option>
+                    <option value="AuxX">AuxX (comma)</option>
+                    <option value="AuxG">AuxG (bracketing)</option>
+                    <option value="AuxK">AuxK (terminal)</option>
+                    <option value="AuxV">AuxV (aux verb)</option>
+                    <option value="AuxZ">AuxZ (emph)</option>
+                    <option value="ExD">ExD</option>
+                  </select>
+                  <select name="arcrel2">
+                    <option value="">- -</option>
+                    <option value="_AP">_AP</option>
+                    <option value="_CO">_CO</option>
+                    <option value="_AP_CO">_AP_CO</option>
+                  </select>
+                </form>
+                <button id="arc-label-ok" onclick="ClickOnLabelButton(event)"
+                  >OK</button>
+                <button id="arc-label-cancel"
+                  onclick="ClickOnLabelButton(event)">Cancel</button>
+              </div>
+            </div>
+          </div>
+        </td>
+        <td style="vertical-align:top; text-align:right">
+          <div class="alpheios-ignore" id="alph-page-header">
+            <img src="../image/alpheios.png" alt="Alpheios"/>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <div id="tree-error"/>
+    <div id="tree-hint" class="alpheios-hint"/>
+    <svg xmlns="http://www.w3.org/2000/svg" id="dependency-tree"/>
+    <!-- Provide key here if buildContent param does not contain "key" -->
+    <div id="key">
+      <table>
+        <thead>
+          <tr>
+            <th>Key to Background Colors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td showme="focus">Focus word</td>
+          </tr>
+          <tr>
+            <td showme="focus-parent">Word that focus word depends on</td>
+          </tr>
+          <tr>
+            <td showme="focus-child">Words that immediately depend on focus
+              word</td>
+          </tr>
+          <tr>
+            <td showme="focus-descendant">Other words that depend on focus
+              word</td>
+          </tr>
+        </tbody>
+        <br/>
+        <thead>
+          <tr>
+            <th>Key to Text Colors</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td pos="a">Adjective</td>
+          </tr>
+          <tr>
+            <td pos="d">Adverb</td>
+          </tr>
+          <tr>
+            <td pos="l">Article</td>
+          </tr>
+          <tr>
+            <td pos="c">Conjunction</td>
+          </tr>
+          <tr>
+            <td pos="e">Exclamation</td>
+          </tr>
+          <tr>
+            <td pos="i">Interjection</td>
+          </tr>
+          <tr>
+            <td pos="n">Noun</td>
+          </tr>
+          <tr>
+            <td pos="r">Preposition</td>
+          </tr>
+          <tr>
+            <td pos="p">Pronoun</td>
+          </tr>
+          <tr>
+            <td pos="v">Verb</td>
+          </tr>
+          <tr>
+            <td pos="other">Other parts of speech</td>
+          </tr>
+        </tbody>
+        <br/>
+        <tbody>
+          <tr>
+            <td>LABEL on arc = dependency relation</td>
+          </tr>
+          <tr>
+            <td>[0], [1], etc. = implied (elided) words</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
