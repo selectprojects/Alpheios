@@ -23,6 +23,7 @@
         <browser id="alph-grammar-content"
                  type="content-primary"
                  src="about:blank"
+                 disablehistory="true"
                  flex="10"
                  width="90%"/>
     </hbox>   
