@@ -642,6 +642,7 @@ SpecialType handleSpecial(const string& a_request, int a_socketFd)
     // attach
     else if (a_request == "attach")
     {
+        write(a_socketFd, f_startPlainText, strlen(f_startPlainText));
         logMessage(MT_INFO, "attaching", NULL, getpid());
         ++f_attachCount;
         return ST_CONTINUE;
@@ -649,6 +650,7 @@ SpecialType handleSpecial(const string& a_request, int a_socketFd)
     // detach
     else if (a_request == "detach")
     {
+        write(a_socketFd, f_startPlainText, strlen(f_startPlainText));
         logMessage(MT_INFO, "detaching", NULL, getpid());
         --f_attachCount;
 
@@ -672,6 +674,7 @@ SpecialType handleSpecial(const string& a_request, int a_socketFd)
     // kill self
     else if (a_request == "kill")
     {
+        write(a_socketFd, f_startPlainText, strlen(f_startPlainText));
         logMessage(MT_INFO, "killing", NULL, getpid());
         return ST_EXIT;
     }
