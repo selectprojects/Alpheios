@@ -1,5 +1,5 @@
 (:
-  Copyright 2009 Cantus Foundation
+  Copyright 2009-2010 Cantus Foundation
   http://alpheios.net
 
   This file is part of Alpheios.
@@ -47,7 +47,11 @@ declare function alst:get-list-page(
 {
   let $doc := doc($a_docName)
   let $sents := subsequence($doc//*:sentence, 1, $a_maxSents)
-  let $docId := substring-before($doc//sentence[1]/@document_id, ":")
+  let $docId := substring-before($sents[1]/@*:document_id, ":")
+  let $l1Lang := $doc//*:language[@*:lnum = "L1"]/@xml:lang
+  let $l2Lang := $doc//*:language[@*:lnum = "L2"]/@xml:lang
+  let $l1Dir := if ($l1Lang = ("ar", "ara")) then "rtl" else "ltr"
+  let $l2Dir := if ($l2Lang = ("ar", "ara")) then "rtl" else "ltr"
 
   return
   <html xmlns="http://www.w3.org/1999/xhtml">{
@@ -63,12 +67,12 @@ declare function alst:get-list-page(
     element meta
     {
       attribute name { "L1:lang" },
-      attribute content { $doc//*:language[@*:lnum = "L1"]/@xml:lang }
+      attribute content { $l1Lang }
     },
     element meta
     {
       attribute name { "L2:lang" },
-      attribute content { $doc//*:language[@*:lnum = "L2"]/@xml:lang }
+      attribute content { $l2Lang }
     },
 
     element link
@@ -150,19 +154,27 @@ declare function alst:get-list-page(
 
               element div
               {
+                attribute class { "words" },
+                attribute dir { $l1Dir },
+
                 (: concatenated words from L1 :)
-                string-join((for $j in 1 to $a_maxWords
-                             return $l1Words[$j]/*:text/text(),
-                             if (count($l1Words) > $a_maxWords) then "..." else ""),
-                            ' ')
+                for $word at $i in $l1Words
+                where $i < $a_maxWords
+                return
+                  ($word/*:text/text(), ' '),
+                if (count($l1Words) > $a_maxWords) then "..." else ""
               },
               element div
               {
+                attribute class { "words" },
+                attribute dir { $l2Dir },
+
                 (: concatenated words from L2 :)
-                string-join((for $j in 1 to $a_maxWords
-                             return $l2Words[$j]/*:text/text(),
-                             if (count($l1Words) > $a_maxWords) then "..." else ""),
-                            ' ')
+                for $word at $i in $l2Words
+                where $i < $a_maxWords
+                return
+                  ($word/*:text/text(), ' '),
+                if (count($l2Words) > $a_maxWords) then "..." else ""
               },
 
               if (count($marks) > 0)

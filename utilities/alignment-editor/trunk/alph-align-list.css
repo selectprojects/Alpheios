@@ -1,7 +1,7 @@
 /*
  * Style for alignment sentence list
- *  
- * Copyright 2009 Cantus Foundation
+ * 
+ * Copyright 2009-2010 Cantus Foundation
  * http://alpheios.net
  * 
  * This file is part of Alpheios.
@@ -73,6 +73,10 @@ a:hover {
 div.sentence:hover {
     border-width: 3px;
     border-color: black;
+}
+
+div.words {
+    text-align: center;
 }
 
 div.marked {

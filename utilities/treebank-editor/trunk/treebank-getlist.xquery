@@ -23,6 +23,7 @@
  :)
 
 module namespace tblst="http://alpheios.net/namespaces/treebank-list";
+declare namespace tb = "http://nlp.perseus.tufts.edu/syntax/treebank/1.5";
 
 (:
   Function to extract forms
@@ -87,8 +88,10 @@ declare function tblst:get-list-page(
   $a_numSents as xs:integer) as element()?
 {
   let $doc := doc($a_docName)
-  let $sents := subsequence($doc//sentence, $a_startSent, $a_numSents)
-  let $docId := substring-before(($doc//sentence)[1]/@document_id, ":")
+  let $sents :=
+    subsequence($doc//(tb:sentence|sentence), $a_startSent, $a_numSents)
+  let $docId :=
+    substring-before(($doc//(tb:sentence|sentence))[1]/@document_id, ":")
 
   return
   <html xmlns="http://www.w3.org/1999/xhtml">{
@@ -104,7 +107,7 @@ declare function tblst:get-list-page(
     element meta
     {
       attribute name { "L1:lang" },
-      attribute content { $doc//treebank/@xml:lang }
+      attribute content { $doc//(tb:treebank|treebank)/@xml:lang }
     },
 
     element link

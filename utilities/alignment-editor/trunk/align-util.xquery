@@ -77,6 +77,7 @@ declare function alut:xml-to-svg(
     element g
     {
       attribute class { "sentence", $lang },
+      attribute lnum { $lang },
       attribute xml:lang { $a_sent/../*:language[@*:lnum = $lang]/@xml:lang },
 
       (: preserve any wordset-level comments :)
@@ -223,7 +224,14 @@ declare function alut:svg-to-xml(
         attribute n { substring-after($word/@*:id, ':') },
 
         (: text of this word :)
-        element text { $word/*:text/text() },
+        element text
+        {
+          if ($word/*:text/@*:form)
+          then
+            string($word/*:text/@*:form)
+          else
+            $word/*:text/text()
+        },
 
         (: copy mark, if any :)
         if ($word/@xlink:title)

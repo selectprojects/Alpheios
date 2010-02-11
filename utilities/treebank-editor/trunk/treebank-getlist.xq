@@ -32,7 +32,7 @@ declare option exist:serialize
 
 let $docStem := request:get-parameter("doc", ())
 let $startSent := request:get-parameter("i", 1)
-let $numSents := request:get-parameter("ns", 100)
+let $numSents := request:get-parameter("ns", 5000)
 let $numWords := request:get-parameter("nw", 25)
 let $collName := "/db/repository/treebank.edit/"
 let $docName := concat($collName, $docStem, ".tb.xml")

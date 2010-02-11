@@ -1,5 +1,5 @@
 (:
-  Copyright 2009 Cantus Foundation
+  Copyright 2009-2010 Cantus Foundation
   http://alpheios.net
 
   This file is part of Alpheios.
@@ -23,6 +23,7 @@
  :)
 
 module namespace aled="http://alpheios.net/namespaces/align-edit";
+declare namespace align = "http://alpheios.net/namespaces/aligned-text";
 import module namespace alut="http://alpheios.net/namespaces/align-util"
               at "align-util.xquery";
 
@@ -77,13 +78,23 @@ declare function aled:get-edit-page(
     (: metadata :)
     element meta
     {
-      attribute name { "L1:lang" },
+      attribute name { "alpheios-param-L1:lang" },
       attribute content { $l1Lang }
     },
     element meta
     {
-      attribute name { "L2:lang" },
+      attribute name { "alpheios-param-L2:lang" },
       attribute content { $l2Lang }
+    },
+    element meta
+    {
+      attribute name { "alpheios-param-L1:direction" },
+      attribute content { if ($l1Lang = ("ara", "ar")) then "rtl" else "ltr" }
+    },
+    element meta
+    {
+      attribute name { "alpheios-param-L2:direction" },
+      attribute content { if ($l2Lang = ("ara", "ar")) then "rtl" else "ltr" }
     },
     element meta
     {
@@ -135,6 +146,18 @@ declare function aled:get-edit-page(
       attribute language { "javascript" },
       attribute type { "text/javascript" },
       attribute src { "../script/alph-align-edit.js" }
+    },
+    element script
+    {
+      attribute language { "javascript" },
+      attribute type { "text/javascript" },
+      attribute src { "../script/alph-edit-utils.js" }
+    },
+    element script
+    {
+      attribute language { "javascript" },
+      attribute type { "text/javascript" },
+      attribute src { "../script/jquery-1.2.6-alph.js" }
     }
   },
 
