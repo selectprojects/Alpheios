@@ -42,7 +42,7 @@
                     <xsl:choose>
                         <xsl:when test="$e_sort='alpha'">
                             <xsl:for-each select="//tei:entry">
-                                <xsl:sort select="." data-type="text"/>
+                                <xsl:sort select="tei:form[@type='lemma']/text()" data-type="text" order="ascending"/>
                                 <xsl:apply-templates select="."/>
                             </xsl:for-each>        
                         </xsl:when>
