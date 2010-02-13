@@ -31,6 +31,8 @@
                 <em:id>{4816253c-3208-49d8-9557-0745a5508299}</em:id>
             	<em:minVersion>1.0alpha4a</em:minVersion>
                 <em:maxVersion>1.0beta*.*</em:maxVersion>
+            	<em:updateURL>http://alpheios.net/xpi-updates/update.rdf</em:updateURL>     
+            	<em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDOd5Mjthp4ZkEF0g6sF6fHbUb92PJTSSPxjjdsuDOXG9dUTVwIDjW183lTZawP7+4E8PmUeqVl5GCjKRCAhAXmSV+X/IYgSuiTOTjuXUJ/ylA9EGSo2dHVeGJ834XIKe5NK7NL08EFxst58vCASTViuMv5GpeIYtPvbj7PyXJ82QIDAQAB</em:updateKey>
             </Description>
         </em:requires>
 	</Description>
