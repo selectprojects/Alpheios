@@ -1,0 +1,111 @@
+<!--
+    Copyright 2010 Cantus Foundation
+    http://alpheios.net
+    
+    This file is part of Alpheios.
+    
+    Alpheios is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+    
+    Alpheios is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+    
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.    
+-->
+
+<!-- styles for vocabulary list  -->
+body {
+    margin: 1em 2em 1em 2em;
+    background-color: white;
+}
+
+*:lang(greek),*[lang=greek],*:lang(grc),*[lang=grc] {
+      font-family: Georgia, "New Athena Unicode", Gentium, "Palatino Linotype", "Lucida Grande", Galilee, "Arial Unicode MS", sans-serif;
+}
+
+#alpheios-vocablist {
+    clear: both;
+}
+.nav a {
+    color: #3E8D9C;
+    font-weight: bold;
+    text-decoration: none;    
+    padding: 0 .5em;
+}
+
+.alpheios-toolbar {
+    margin: 2em 0;
+}
+.alpheios-toolbar-scanwords {
+  padding-left: 16px;
+  color: white;
+  font-weight: bold;
+  background: #4e6476 url("chrome://alpheios/skin/icons/vocablist_16.png") no-repeat;
+  cursor: pointer;
+}
+
+.alpheios-loading {
+    padding-left: 18px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 2px;
+    background: transparent url(chrome://alpheios/skin/loading.gif) no-repeat;
+    cursor: progress;
+    white-space: nowrap;
+}
+
+#alpheios-wordlist-header {
+    font-weight: bold;
+    border-bottom: 1px solid black;
+}
+
+.header {
+    clear: both;
+    font-weight: bold;
+}
+ .entry {
+    clear: both;
+    margin-bottom: .5em;
+}
+
+.lemma {
+    float: left;
+    width: 50%;
+}
+
+.forms {    
+    margin-left: 50%;
+}
+
+.count {
+    padding-left: 2em;
+    font-size: small;
+}
+
+.alpheios-word {
+    padding-left: 16px; 
+}
+
+.alpheios-known-word  {    
+    background: transparent url(chrome://alpheios/skin/icons/checkmark.png) no-repeat;
+}
+
+.alpheios-hint {
+    font-weight: normal;
+    color: #4E6476;
+    font-style: italic;
+    margin-bottom: 1em;
+    padding-left: 18px;
+    font-family:  Arial, sans-serif;
+    background: url(../image/information-16-g.png) 0 0 no-repeat;
+}
+
+.alpheios-trigger-hint {
+    float: right;
+    width: 50%;
+}
