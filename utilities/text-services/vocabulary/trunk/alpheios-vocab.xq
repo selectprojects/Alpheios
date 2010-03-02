@@ -25,9 +25,10 @@ declare namespace tbd = "http://alpheios.net/namespaces/treebank-desc";
   Query to retrieve a frequency-ranked vocabulary list for a given treebank document
 
   Form of request is:
-    alpheios-vocab.xq?doc=<docname>&start=<starting index>&count=<number of lemmas to display>&format=<format>&pofs=<pofs>
+    alpheios-vocab.xq?doc=<docname>&subdoc=<filter>&start=<starting index>&count=<number of lemmas to display>&format=<format>&pofs=<pofs>
   where
     doc is the stem of document file name (without path or extensions)
+    subdoc is a filter for the subdoc attribute 
     pofs is the part of speech to limit the search to
     format is the treebank format for the document (defaults to 'aldt' if not supplied)
     start is the starting index # for paging (defaults to 1 if not supplied)
@@ -101,12 +102,15 @@ import module namespace request="http://exist-db.org/xquery/request";
 import module namespace tbu="http://alpheios.net/namespaces/treebank-util"
               at "treebank-util.xquery";
     declare option exist:serialize "method=xml media-type=text/xml";
+(: TODO - switching to CTS urns for our file names will enable us to specify the document and part in a single parameter :)
 let $e_doc := request:get-parameter("doc", ())
+let $e_subdoc := request:get-parameter('subdoc',())
 let $e_start := xs:int(request:get-parameter("start", 1))
 let $e_count := xs:int(request:get-parameter("count", 10))
 let $e_fmt := request:get-parameter("format",'aldt')
 let $e_pofs := request:get-parameter("pofs",())
-let $docname := concat("/db/repository/treebank/" , $e_doc , ".tb.xml")
+let $docname := concat("/db/repository/treebank/" , $e_doc, ".tb.xml")
+
 return 
 if (not(doc-available($docname)))
 then
@@ -123,7 +127,7 @@ let $form_sorted := <words>{
 (: create a set of lemma elements for each distinct lemma identified by the wd elements in the document, 
     sorted by lemma, then within each lemma by form 
 :)  
-for $i in $doc//*:word[attribute::postag and starts-with(attribute::postag,$p_abbrev)] 
+for $i in $doc/treebank/sentence[starts-with(@subdoc,$e_subdoc)]/word[attribute::postag and starts-with(attribute::postag,$p_abbrev)] 
   let $sense := replace($i/@lemma,"^(.*?)(\d+)$","$2")
   let $lemma:= if (matches($i/@lemma,"\d+$")) then replace($i/@lemma,"^(.*?)(\d+)$","$1") else $i/@lemma
   order by $i/@lemma, $i/@form

@@ -175,8 +175,8 @@
         </div>
         <xsl:variable name="sort_heading">
             <xsl:choose>
-                <xsl:when test="$e_sort='ending'">Ending</xsl:when>
-                <xsl:otherwise>Inflection</xsl:otherwise>
+                <xsl:when test="$e_sort='ending'">Inflection</xsl:when>
+                <xsl:otherwise>Ending</xsl:otherwise>
             </xsl:choose>
             
         </xsl:variable>
