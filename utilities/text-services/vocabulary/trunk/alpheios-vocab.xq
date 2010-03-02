@@ -25,7 +25,7 @@ declare namespace tbd = "http://alpheios.net/namespaces/treebank-desc";
   Query to retrieve a frequency-ranked vocabulary list for a given treebank document
 
   Form of request is:
-    vocab_freq.xquery?doc=<docname>&start=<starting index>&count=<number of lemmas to display>&format=<format>&pofs=<pofs>
+    alpheios-vocab.xq?doc=<docname>&start=<starting index>&count=<number of lemmas to display>&format=<format>&pofs=<pofs>
   where
     doc is the stem of document file name (without path or extensions)
     pofs is the part of speech to limit the search to
