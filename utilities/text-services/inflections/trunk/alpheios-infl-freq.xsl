@@ -67,14 +67,19 @@
                             <xsl:attribute name="type">radio</xsl:attribute>
                             <xsl:attribute name="name">sort</xsl:attribute>
                             <xsl:attribute name="value">ending</xsl:attribute>
-                            <xsl:attribute name="checked">checked</xsl:attribute>                        
+                            <xsl:if test="$e_sort = 'ending'">
+                                <xsl:attribute name="checked">checked</xsl:attribute>
+                            </xsl:if>
                         </xsl:element>Ending
                         </label>
                         <label>
                         <xsl:element name="input">
                             <xsl:attribute name="type">radio</xsl:attribute>
-                            <xsl:attribute name="name">sort</xsl:attribute>
-                            <xsl:attribute name="value">inflection</xsl:attribute>                        
+                            <xsl:attribute name="name">sort</xsl:attribute>                            
+                            <xsl:attribute name="value">inflection</xsl:attribute>
+                            <xsl:if test="$e_sort = 'inflection'">
+                                <xsl:attribute name="checked">checked</xsl:attribute>
+                            </xsl:if>
                         </xsl:element>Inflection
                         </label>
                             
