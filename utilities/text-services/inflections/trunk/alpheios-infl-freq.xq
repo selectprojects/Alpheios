@@ -24,10 +24,9 @@ declare default element namespace  "http://alpheios.net/namespaces/forms";
 (:
   Query to retrieve a frequency-ranked inflection list for a given treebank document
   Form of request is:
-    alpheios-infl-freq.xq?doc=<docname>&count=<starting index>&count=<number of lemmas to display>&format=<format>&pofs=<pofs>
+    alpheios-infl-freq.xq?doc=<cts urn for the document>&pofs=<pofs>&sort=<inflection|ending>
   where
-    doc is the stem of document file name (without path or extensions)
-    lang is the language code for the document
+    doc is the cts urn of the document
     pofs is the part of speech to which to limit the analysis
     sort is the sort key, either 'ending' or 'inflection'
     
@@ -43,14 +42,13 @@ declare default element namespace  "http://alpheios.net/namespaces/forms";
 (: function wich does a deep copy of an inflection instance element, replacing the urn elements
    with a ptr element with the url to retrieve and display the reference in the href attribute
 :)
-declare function infl:copy_inst($a_id,$a_lang,$a_elem as element()*) as element()*
+declare function infl:copy_inst($a_id,$a_elem as element()*) as element()*
 {
     let $inst :=
         element instance {
-        (for $u in ($a_elem/descendant::*:urn)
-            let $wd_num := replace($u/text(),"^.*:(\d+)","$1")
+        (for $u in ($a_elem/descendant::*:urn)            
             return element ptr {
-                attribute href { concat("alpheios-get-ref.xq?doc=", $a_id, "&amp;w=", $wd_num, "&amp;lang=", $a_lang) },
+                attribute href { concat("alpheios-get-ref.xq?urn=", $u) },
                 $u
             }
         ),
@@ -164,15 +162,15 @@ declare function infl:count_infls($a_sort,$a_elem as element()*,$a_count as xs:i
 };
 
 import module namespace request="http://exist-db.org/xquery/request";
+import module namespace tan="http://alpheios.net/namespaces/text-analysis"
+              at "textanalysis-utils.xquery";
 declare option exist:serialize "method=xml media-type=text/xml";
 
 let $e_doc := request:get-parameter("doc", ())
-let $e_lang := request:get-parameter("lang",())
 let $e_pofs := request:get-parameter('pofs',())
 let $e_sort := request:get-parameter('sort',())
 
-let $docname := concat("/db/repository/morphology/" , $e_doc , ".morph.xml")
-let $doc := doc($docname) 
+let $infl_all := tan:getInflections($e_doc,$e_pofs)
 
 (: sort by ending :)
 let $inst := 
@@ -182,29 +180,29 @@ let $inst :=
          then
              if ($e_sort = 'ending')
              then 
-                 for $e in $doc//*:inflection//*:instance[descendant::*:pofs/text() = $e_pofs]                                     
+                 for $e in $infl_all//*:instance[descendant::*:pofs/text() = $e_pofs]                                     
                  order by 
                       xs:string($e/descendant::*:suff),
                       xs:string($e/descendant::*:case),
                       xs:string($e/descendant::*:num),
                       xs:string($e/descendant::*:gend)    
                   return 
-                      infl:copy_inst($e_doc,$e_lang,$e)
+                      infl:copy_inst($e_doc,$e)
              else            
-                 for $e in $doc//*:inflection//*:instance[descendant::*:pofs/text() = $e_pofs]
+                 for $e in $infl_all//*:instance[descendant::*:pofs/text() = $e_pofs]
                  order by                 
                       xs:string($e/descendant::*:case),
                       xs:string($e/descendant::*:num),
                       xs:string($e/descendant::*:gend),
                       xs:string($e/descendant::*:suff)
                   return 
-                      infl:copy_inst($e_doc,$e_lang,$e)
+                      infl:copy_inst($e_doc,$e)
          else
              if ($e_pofs = 'verb')
              then 
                  if ($e_sort = 'ending')
                 then
-                     for $e in $doc//*:inflection//*:instance[descendant::*:pofs/text() = $e_pofs]
+                     for $e in $infl_all//*:instance[descendant::*:pofs/text() = $e_pofs]
                      order by 
                           xs:string($e/descendant::*:suff),
                           xs:string($e/descendant::*:voice),
@@ -212,9 +210,9 @@ let $inst :=
                           xs:string($e/descendant::*:tense),
                           xs:string($e/descendant::*:pers),
                           xs:string($e/descendant::*:num)
-                      return infl:copy_inst($e_doc,$e_lang,$e)
+                      return infl:copy_inst($e_doc,$e)
                  else
-                     for $e in $doc//*:inflection//*:instance[descendant::*:pofs/text() = $e_pofs]
+                     for $e in $infl_all//*:instance[descendant::*:pofs/text() = $e_pofs]
                      order by                 
                           xs:string($e/descendant::*:voice),
                           xs:string($e/descendant::*:mood),
@@ -222,7 +220,7 @@ let $inst :=
                           xs:string($e/descendant::*:pers),
                           xs:string($e/descendant::*:num),
                            xs:string($e/descendant::*:suff)
-                      return infl:copy_inst($e_doc,$e_lang,$e)
+                      return infl:copy_inst($e_doc,$e)
             else     
              ()
 }             
@@ -232,7 +230,7 @@ return(
     processing-instruction xml-stylesheet {
      attribute xml {'type="text/xsl" href="../xslt/alpheios-infl-freq.xsl"'}
     },
-  <endings lang="{$e_lang}" docid="{$e_doc}" pofs="{$e_pofs}">
+  <endings lang="{xs:string($infl_all/*:inflection[1]/@xml:lang)}" docid="{$e_doc}" pofs="{$e_pofs}">
        <order-table>
            <order-item attname="pofs" order="1">noun</order-item>
            <order-item attname="pofs" order="2">verb</order-item>

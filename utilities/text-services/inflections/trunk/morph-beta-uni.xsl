@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     <xsl:output method="xml" indent="yes"/>
-    <xsl:include href="xslt\beta2unicode.xsl"/>
+    <xsl:include href="/work/xml_ctl_files/xslt/trunk/beta2unicode.xsl"/>
     <xsl:strip-space elements="*"/>
     <xsl:template match="@*[not((local-name(.) = 'lang') and ((.) = 'grc-x-beta'))]|node()">
         <xsl:copy>

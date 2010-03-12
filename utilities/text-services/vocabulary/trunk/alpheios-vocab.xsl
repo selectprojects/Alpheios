@@ -63,7 +63,7 @@
         </xsl:variable>
         <div class="entry">
             <div class="lemma">
-                <span class="alpheios-word" lang="@lang"><xsl:value-of select="tei:form[@type='lemma']"/></span>
+                <span class="alpheios-word" lang="{tei:form[@type='lemma']/@lang}"><xsl:value-of select="tei:form[@type='lemma']"/></span>
                 <span class="count">(<xsl:value-of select="tei:form[@type='lemma']/@count"/>)</span>
             </div>
             <div class="forms">
