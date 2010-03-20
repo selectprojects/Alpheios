@@ -21,6 +21,8 @@
 (: Beginnings of the CTS Repository Interface Implementation :)
 
 module namespace cts = "http://alpheios.net/namespaces/cts";
+declare namespace ti = "http://chs.harvard.edu/xmlns/cts3/ti";
+declare namespace  util="http://exist-db.org/xquery/util";
 
 (: 
     function to parse a CTS Urn down to its individual parts
@@ -30,7 +32,9 @@ module namespace cts = "http://alpheios.net/namespaces/cts";
         An element adhering to the following 
         <ctsUrn>
             <namespace></namespace>
-            <work></work>            
+            <textgroup></textgroup>            
+            <work></work>
+            <edition></edition>
             <passageParts>
                 <part></part>
                 <part><part>
@@ -50,8 +54,11 @@ declare function cts:parseUrn($a_urn as xs:string)
     let $namespace := $components[3]
     let $workId := $components[4]
     let $workComponents := tokenize($workId,"\.")
+    (: TODO do we need to handle the possibility of a work without a text group? :)
+    let $textgroup := $workComponents[1]
+    let $work := $workComponents[2]
     let $edition := 
-        if (count($workComponents) > 1)
+        if (count($workComponents) > 2)
         then $workComponents[last()]
         else xs:string("")
     
@@ -59,8 +66,14 @@ declare function cts:parseUrn($a_urn as xs:string)
     let $subref := $components[6]               
     return
         element ctsURN {
+            element urn { $a_urn },
+            (: urn without any passage specifics:)
+            element workUrn { concat("urn:cts:",$namespace,':',$textgroup,".",$work,".",$edition) },            
             element namespace{ $namespace },
-            element work {$workId },                                   
+            (: TODO is it possible for components of the work id to be in different namespaces?? :)
+            element textgroup {concat($namespace,':',$textgroup)},            
+            element work {concat($namespace,':',$work)},
+            element edition {concat($namespace,':',$edition)},
             element passageParts {
                 for $p in tokenize($passage,"\.") 
                 return element part { $p }
@@ -103,4 +116,52 @@ declare function cts:findSubRef($a_urn)
     let $cts := cts:parseUrn($a_urn)
     let $doc := doc($cts/fileInfo/fullPath)
     return $doc//div1[@n = $cts/passageParts/part[1]]//l[@n=$cts/passageParts/part[2]]/wd[text() = $cts/subRef][$cts/subRef/@position]    
+};
+
+declare function cts:getPassage($a_inv,$a_urn)
+{
+    let $cts := cts:parseUrn($a_urn)
+    return 
+    if ($cts/subRef)
+    then 
+        cts:findSubRef($a_urn)         
+    else
+        let $doc := doc($cts/fileInfo/fullPath)
+        let $level := count($cts/passageParts/part)
+        let $entry := cts:getCatalog($a_inv,$a_urn)
+        let $cites := for $i in $entry//ti:online//ti:citation return $i
+        let $xpath := cts:replaceBindVariables($cts/passageParts/part,concat($cites[$level]/@scope, $cites[$level]/@xpath))
+        return util:eval(concat("$doc",$xpath))        
+};
+
+declare function cts:replaceBindVariables($a_parts,$a_path)
+{    
+        if (count($a_parts) > xs:int(0))
+        then             
+            let $path := replace($a_path,"^(.*?)\?(.*)$",concat("$1",xs:string($a_parts[1]),"$2"))
+            return cts:replaceBindVariables($a_parts[position() > 1],$path)
+        else $a_path            
+};
+
+declare function cts:getCatalog($a_inv,$a_urn)
+{
+    let $inv := doc(concat("/db/repository/inventory/",$a_inv,".xml"))
+    let $cts := cts:parseUrn($a_urn)
+    return $inv//ti:textgroup[@projid=$cts/textgroup]/ti:work[@projid=$cts/work]/ti:*[@projid=$cts/edition]        
+};
+
+declare function cts:getCitationXpaths($a_inv,$a_urn)
+{
+   let $entry := cts:getCatalog($a_inv,$a_urn)
+   let $levels :=
+       for $i in $entry//ti:online//ti:citation
+       return xs:string($i/@xpath)
+    return $levels       
+};       
+
+declare function cts:getValidReff($a_inv,$a_urn,$a_level)
+{        
+    let $entry := cts:getCatalog($a_inv,$a_urn)
+    let $level := if ($a_level) then $a_level else xs:int(1)
+    return ()
 };

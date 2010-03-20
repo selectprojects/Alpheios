@@ -37,39 +37,35 @@ import module namespace tan="http://alpheios.net/namespaces/text-analysis"
 declare option exist:serialize "method=xhtml media-type=text/html";
 
 let $e_urn :=  request:get-parameter("urn",())
-let $cts := cts:parseUrn($e_urn)
-let $doc := doc($cts/fileInfo/fullPath)
-let $doc_urn := concat('urn:cts:',$cts/namespace,':',$cts/work)
-let $wd := cts:findSubRef($e_urn)
-let $wd_id := xs:string($wd/@n) 
-let $sentence := $wd/ancestor::*[1]
-let $treebankDUrl := concat('version=1.0;http://repos.alpheios.net:8080/exist/rest/db/app/treebank-editsentence.xhtml?doc=',$doc_urn,'&amp;id=SENTENCE&amp;w=WORD&amp;app=viewer')
-let $treebankMUrl := concat('http://repos.alpheios.net:8080/exist/rest/xq/treebank-getmorph.xq?f=',$doc_urn,'&amp;w=WORD')
-let $doclang :=  
-    if ($doc/TEI.2/text/@*:lang)
-    then xs:string($doc/TEI.2/text/@*:lang)
-    else ()
+let $node := cts:getPassage("alpheios-cts-inventory",$e_urn)
+let $passage := if ($node[1]/name() = 'wd') then (<p>...</p>,  $node[1]/ancestor::*[1], <p>...</p>) else $node[1]                           
+let $wd_id := if ($node[1]/name() = 'wd')  then xs:string($node[1]/@n) else ""
+let $docinfo := tan:findDocs(cts:parseUrn($e_urn))
+(: TODO check availability of treebank files and fixup doc urn :)
+let $treebankDUrl := concat('version=1.0;http://repos.alpheios.net:8080/exist/rest/db/app/treebank-editsentence.xhtml?doc=',$e_urn,'&amp;id=SENTENCE&amp;w=WORD&amp;app=viewer')
+let $treebankMUrl := concat('http://repos.alpheios.net:8080/exist/rest/xq/treebank-getmorph.xq?f=',$e_urn,'&amp;w=WORD')
+(: TODO drop subref off urn but leave top most passage :)
+let $vocabUrl := if ($docinfo/morph) then concat("http://dev.alpheios.net:8800/exist/rest/xq/alpheios-vocab.xq?&amp;start=1&amp;count=10&amp;pofs=POFS&amp;doc=",$e_urn) else ""
 let $xsl := doc('/db/xslt/alpheios-enhanced.xsl')
 let $params := 
     <parameters>     
         <param name="alpheiosPedagogicalText" value="true"/>
         <param name="alpheiosSiteBaseUrl" value="http://alpheios.net/alpheios-texts"/>
-        <param name="alpheiosTreebankDiagramUrl"  value="{ $treebankDUrl }"/>
-        <param name="alpheiosTreebankUrl"  value="{ $treebankMUrl }"/>
+        <param name="alpheiosVocabUrl" value="{$vocabUrl}"/>
         <param name="cssFile" value ="http://alpheios.net/alpheios-texts/css/alpheios-text.css"/>
         <param name="highlightWord" value="{ $wd_id }"/>
-        <param name="doclang" value="{$doclang}"/>
      </parameters>
+let $xmllang := $node[1]/ancestor::*[@xml:lang][1]/@xml:lang
+let $lang := $node[1]/ancestor::*[@lang][1]/@lang
  let $xml :=
     element TEI.2 {
-        $doc/TEI.2/@*,
-        $doc/TEI.2/teiHeader,
+        $passage/..//TEI.2/@*,
+        $passage/..//TEI.2/teiHeader,
         element text {
-            $doc/TEI.2/text/@*,
-            element body {
-                <p>...</p>,                
-                $sentence,
-                <p>...</p>
+            if ($xmllang) then attribute xml:lang { $xmllang} else (),
+            if ($lang) then attribute lang { $lang } else (),
+            element body {                
+                $passage
             }
          }
     }

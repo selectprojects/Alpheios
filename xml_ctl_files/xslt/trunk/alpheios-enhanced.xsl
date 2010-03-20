@@ -33,13 +33,13 @@
      <xsl:param name="alpheiosSiteBaseUrl" select="'http://alpheios.net/alpheios-texts'"/>
      <xsl:param name="alpheiosTreebankDiagramUrl"/>
      <xsl:param name="alpheiosTreebankUrl"/>
+    <xsl:param name="alpheiosVocabUrl"/>
       <xsl:param name="htmlTitlePrefix" select="'Alpheios:'"/>
      <xsl:param name="cssFile" select="'http://alpheios.net/alpheios-texts/css/alpheios-text.css'"/>
      <xsl:param name="highlightWord"/>
     
     <xsl:template match="/">
-        <html xml:lang="{$doclang}">
-            
+        <html xml:lang="{//text/@lang}">            
             <head>
                 <xsl:call-template name="cssHook"/>
                 <xsl:call-template name="javascriptHook"/>
@@ -168,7 +168,7 @@
          </xsl:call-template>
      </xsl:variable>
      <xsl:variable name="highlight">
-         <xsl:if test="$first = $highlightId">
+         <xsl:if test="$highlightWord  and ($first = $highlightId)">
              alpheios-highlighted-word
          </xsl:if>
      </xsl:variable>
@@ -232,6 +232,10 @@
             <xsl:if test="$alpheiosTreebankDiagramUrl != ''">
                 <meta name="alpheios-treebank-diagram-url"  
                             content="{$alpheiosTreebankDiagramUrl}"/>
+            </xsl:if>
+            <xsl:if test="$alpheiosVocabUrl != ''">
+                <meta name="alpheios-vocabulary-url"  
+                    content="{$alpheiosVocabUrl}"/>
             </xsl:if>
         </xsl:if>
     </xsl:template>

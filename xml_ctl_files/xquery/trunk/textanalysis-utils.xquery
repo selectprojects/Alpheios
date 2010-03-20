@@ -183,8 +183,7 @@ declare function tan:getWords($a_docid as xs:string, $a_pofs as xs:string*)
 declare function tan:getInflections($a_docid as xs:string, $a_pofs as xs:string*)
 {
     let $cts := cts:parseUrn($a_docid)
-    let $docinfo := tan:findDocs($cts)
-    
+    let $docinfo := tan:findDocs($cts)         
     return
         if ($docinfo/morph)
         then 
@@ -194,12 +193,13 @@ declare function tan:getInflections($a_docid as xs:string, $a_pofs as xs:string*
             return                         
                 <forms>
                 {
-                    for $i in ($doc/forms:forms/forms:inflection[forms:words and  count(forms:urn) >= xs:int(2)])            
+                    (: TODO support ranges in the cts urn :)
+                    for $i in ($doc/forms:forms/forms:inflection[forms:words and  matches(forms:urn,$a_docid) and count(forms:urn) >= xs:int(2)])            
                     return element inflection {
                         $doc/forms:forms/@xml:lang,
                         $i/@form,
                         <instances> {
-                            for $u in $i/*:urn                      
+                            for $u in $i/*:urn[matches(.,$a_docid)]                      
                             return
                                 (: if we we can disambiguate the morphology using a treebank, do so :) 
                                 if (exists($docinfo/treebank) and exists($docinfo/text))
