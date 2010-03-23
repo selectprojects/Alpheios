@@ -49,7 +49,7 @@ foreach my $form (keys %forms)
 	}
 	else 
 	{
-	    warn("Unknown or no output for $form\n");
+	    warn("Unknown or no output for $forms{$form}{clean}\n");
 	}
 }
 

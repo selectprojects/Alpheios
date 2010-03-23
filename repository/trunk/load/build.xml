@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="alpheios repository" default="" basedir=".">
+<!-- Build file for loading TEI Text into eXist repository -->
+<project name="alpheios repository" default="build-all" basedir=".">
     
 	<property file="build.properties"/>
     <property name="svnant.lib.dir" value="/svnant-1.0.0"/>
     <property name="lib.dir" value="../libs"/>
-    <property name="build.dir" value="build"/>
+    <property name="build.dir" value="build"/>	
 	<property name="xquery.dir" value="xquery"/>
 	<property name="xslt.dir" value="xslt"/>
+	<property name="extras.dir" value="extras"/>
     <property name="repository.db" value="eXist-1.4.0"/>
     <property name="server.dir" value="${lib.dir}/${repository.db}"/>
 	<property name="perl" value="/perl/bin/perl"/>
 	<property name="scripts.dir" value="scripts"/>
+	
+	<!-- build up the urn and file names -->
+	<property name="text.urn" value="${text.base.urn}.alpheios-text-${text.edition}"/>
+	<property name="text.file" value="alpheios-text-${text.edition}.xml"/>
+	<property name="morph.file" value="alpheios-morph-${text.edition}.xml"/>
+	<property name="morph.words.file" value="alpheios-morph-words-${text.edition}.xml"/>
     
     <taskdef resource="net/sf/antcontrib/antlib.xml"/>
 
@@ -34,25 +42,72 @@
         <classpath refid="classpath.core"/>  
     </typedef>
     
-    <taskdef resource="svntask.properties" classpathref="project.classpath"/>
-    
-    <!-- timestamp for this build -->
-	<tstamp>
-	   <format property="build.time" pattern="yyyyMMddHHmmss"/>
-	   <format property="build.date" pattern="yyyyMMdd"/>
-	</tstamp>
-   
-
-	<!-- clean the local build directories -->
-	<target name="clean">
-		<echo>Deleting directory ${build.dir}</echo>
-	   <delete dir="${build.dir}"/>
+    <taskdef resource="svntask.properties" classpathref="project.classpath"/>    
+	
+	<target name="build-all" depends="prepare,load-source-doc,mark-words,fix-words,fix-misc,build-morph">
+		<!-- add and commit the text and morph files to subversion -->
+		<svn>
+		    <add>
+		        <fileset dir="${build.dir}">                 
+		            <include name="${text.file}"/>
+	                <include name="${morph.file}"/>
+		        </fileset>
+			</add>                               
+		</svn>
+		<svn>
+		    <commit message="text repository load of ${source.collection} ${text.edition}">
+    			<fileset dir="${build.dir}">                 
+    			    <include name="${text.file}"/>
+    				<include name="${morph.file}"/>
+    		    </fileset>
+            </commit>			                    
+		</svn>
 	</target>
 	
-	<!-- store the files to the repositories -->
-	<target name="store" xmlns:xdb="http://exist-db.org/ant">
+	<!-- prepare for the build -->
+	<target name="prepare" depends="clean" xmlns:xdb="http://exist-db.org/ant">
+		<!-- create the build directory -->
+		<mkdir dir="${build.dir}"/>
+        <!-- create the extras directory -->
+	    <mkdir dir="${extras.dir}"/>
+		<!-- create the temp load collection -->
+		<xdb:create xmlns:xdb="http://exist-db.org/ant"
+			 user="${xmldb.user}" password="${xmldb.passwd}"
+	         uri="${xmldb.url}" collection="${xmldb.collection.temp}"/>
+        <!-- export supporting xslt libraries from subversion-->
+        <svn>
+            <export 
+        	   srcUrl="${xslt.repository.full}" 
+        	   revision="HEAD"
+        	   destPath="${extras.dir}/xslt"
+        	   force="true"/>
+        </svn>        
+
+		<!-- checkout the text source from subversion-->
+		<svn>
+			<checkout 
+				url="${source.repository.base}${source.collection}/${source.branch}" 
+				destPath="${build.dir}"/>
+	    </svn>
+    
+	</target>
+
+	<!-- clean the local build directories and temp load collection -->
+	<target name="clean" xmlns:xdb="http://exist-db.org/ant">
+	    <echo>Deleting directory ${build.dir}</echo>
+	    <delete dir="${build.dir}"/>	    	    	        
+        <echo>Deleting directory ${extras.dir}</echo>
+        <delete dir="${extras.dir}"/>                            	    	
+		<echo>Deleting colletion ${xmldb.collection.temp}</echo>
+		<xdb:remove xmlns:xdb="http://exist-db.org/ant"
+			  user="${xmldb.user}" password="${xmldb.passwd}"   
+			  uri="${xmldb.url}" collection="${xmldb.collection.temp}"/>
+	</target>
+	
+	<!-- store a file or fileset in the eXist temp load collection in the eXist repository -->
+	<target name="store-temp" xmlns:xdb="http://exist-db.org/ant">
 	    <xdb:store 
-	    	uri="${xmldb.url}${xmldb.repos}${xmldb.collection.temp}"
+	    	uri="${xmldb.url}${xmldb.collection.temp}"
 	    	user="${xmldb.user}" password="${xmldb.passwd}"	    	
 	    	createcollection="true">
 	    	<fileset dir="${a_sourceDir}">
@@ -60,93 +115,101 @@
 	        </fileset>
 		</xdb:store>
 	</target>
-    	    
+    
+	<!-- load the original TEI document into the eXist repository -->
 	<target name="load-source-doc">
-		<antcall target="store">
-			<param name="a_sourceDir" value="${source.dir}"/>
-	    	<param name="a_sourceFile" value="*.xml"/>	    	        	
+		<antcall target="store-temp">
+			<param name="a_sourceDir" value="${build.dir}/${source.dir}"/>
+	    	<param name="a_sourceFile" value="${source.file}"/>	    	        	
 		</antcall>
 	</target>
 	
-	<target name="mark-words" depends="load-source-doc">
+	<!-- wrap words with <w></w> tags -->
+	<target name="mark-words">
 		<loadfile property="xquery" srcFile="${xquery.dir}/text-markwords.xquery"/>		
 		<xdb:xquery  xmlns:xdb="http://exist-db.org/ant"
-		    uri="${xmldb.url}/db" destdir="${build.dir}/${dest.file}.p1.xml">
-			<xdb:variable name="e_docname" value="${xmldb.repos}${xmldb.collection.temp}/${source.file}"/>
+		    uri="${xmldb.url}" destdir="${build.dir}/t1.${text.file}">
+			<xdb:variable name="e_docname" value="${xmldb.collection.temp}/${source.file}"/>
 		    <xdb:variable name="e_lang" value="${source.lang}"/>
 			<xdb:variable name="e_encoding" value="${source.encoding}"/>
 			${xquery}
 		</xdb:xquery>		 
-	    <antcall target="store">
+	    <antcall target="store-temp">
 	    	  <param name="a_sourceDir" value="${build.dir}"/>
-	    	  <param name="a_sourceFile" value="${dest.file}.p1.xml"/>
+	    	  <param name="a_sourceFile" value="t1.${text.file}"/>
 	    </antcall>	    	
 	</target>
 	
+	<!-- insert treebank and alignment references -->
 	<target name="fix-words">	   	    
        <xdb:xquery  xmlns:xdb="http://exist-db.org/ant"             	    
-            uri="${xmldb.url}/db" destdir="${build.dir}/${dest.file}.p2.xml"
+            uri="${xmldb.url}" destdir="${build.dir}/t2.${text.file}"
        	    queryfile="${xquery.dir}/text-fixwords.xquery">
-            <xdb:variable name="e_urn" value="${dest.urn}"/>
-       	    <xdb:variable name="e_source" value="${xmldb.repos}${xmldb.collection.temp}/${dest.file}.p1.xml"/>
+            <xdb:variable name="e_urn" value="${text.urn}"/>
+       	    <xdb:variable name="e_source" value="${xmldb.collection.temp}/t1.${text.file}"/>
        	    <xdb:variable name="e_lang" value="${source.lang}"/>
        	    <xdb:variable name="e_alignEdition" value="${source.align.edition}"/>              
        </xdb:xquery>		
 	</target>
 
-    <target name="fix-lines">
+    <!-- Execute miscellaneous fixes to the TEI text -->    	
+    <target name="fix-misc">
     	   <exec executable="${perl}">
-	            <arg value="${scripts.dir}/fix-lines.pl"/>
-	            <arg value="${build.dir}/${dest.file}.p2.xml"/>
-    	        <arg value="${build.dir}/${dest.file}.xml"/>
+	            <arg value="${scripts.dir}/fix-misc.pl"/>
+	            <arg value="${build.dir}/t2.${text.file}"/>
+    	        <arg value="${build.dir}/${text.file}"/>
 	            <arg value="${source.lang}"/>
     	    </exec>         
-    	   <antcall target="store">
+    	   <antcall target="store-temp">
     	        <param name="a_sourceDir" value="${build.dir}"/>
-    	        <param name="a_sourceFile" value="${dest.file}.xml"/>
+    	        <param name="a_sourceFile" value="${text.file}"/>
     	   </antcall>    
 	    </target>   
     	
-
+    <!-- extract the words from the TEI document for morphological analysis -->
 	<target name="extract-words">
 		<xdb:xquery  xmlns:xdb="http://exist-db.org/ant"                  
-			  uri="${xmldb.url}/db" destdir="${build.dir}/${morph.words.file}.txt"
+			  uri="${xmldb.url}" destdir="${build.dir}/${morph.words.file}"
 		      queryfile="${xquery.dir}/text-extract-words.xquery">
-			  <xdb:variable name="e_urn" value="${dest.urn}"/>
-			  <xdb:variable name="e_inv" value="${dest.inventory}"/>
-			  <xdb:variable name="e_source" value="${xmldb.repos}${xmldb.collection.prod}${dest.file}.xml"/>
+			  <xdb:variable name="e_urn" value="${text.urn}"/>
+			  <xdb:variable name="e_inv" value="${text.inventory}"/>
+			  <xdb:variable name="e_source" value="${xmldb.collection.temp}/${text.file}"/>
 		</xdb:xquery>
 	</target>
 	
-	<target name="get-morph" depends="">
+	<!-- call morphology service to proces words extracted from TEI document -->
+	<target name="build-morph" depends="">
+		<if>
+		  <equals arg1="${source.encoding}" arg2="beta"/>
+		  <then>
+		    <property name="morph.output" value="${build.dir}/${source.encoding}.${morph.file}"/>
+		  </then>
+		  <else>
+		    <property name="morph.output" value="${build.dir}/${morph.file}"/>
+		  </else>
+		</if>
 		<exec executable="${perl}">
 		    <arg value="${scripts.dir}/get-morph.pl"/>
             <arg value="${services.morph}"/>
-			<arg value="${build.dir}/${morph.words.file}.txt"/>
-		    <if>
-		    	<equals arg1="${source.encoding" arg2="beta"/>
-		    	<then>
-		            <arg value="${build.dir}/${morph.file}.${source.encoding}.xml"/>
-		    	</then>
-		    	<else>
-		    		<arg value="${build.dir}/${morph.file}.xml"/>
-		    	</else>
-		    </if>
-		</exec>
+			<arg value="${build.dir}/${morph.words.file}"/>
+			<arg value="${morph.output}"/>		    
+		</exec>	
+	    <antcall target="transform-morph"/>		                
 	</target>
 	
+	<!-- post processing transformations on morphology service output -->
     <target name="transform-morph">
        <if>
+       	<!-- transform beta code to unicode -->
        	<equals arg1="${source.encoding}" arg2="beta"/>
        	<then>
-            <echo message="Transforming ${build.dir}/${morph.file}.${source.encoding}.xml" />       		
-            <xslt in="${build.dir}/${morph.file}.${source.encoding}.xml" 
-            	out="${build.dir}/${morph.file}.xml"           
+            <echo message="Transforming ${build.dir}/${source.encoding}.${morph.file}" />       		
+            <xslt in="${build.dir}/${source.encoding}.${morph.file}" 
+            	out="${build.dir}/${morph.file}"           
                 style="${xslt.dir}/morph-beta-uni.xsl" classpathref="xalan.class.path"/>                         
         </then>
        	<else>
        	</else>
       </if>
-    </target>
-		
+    </target>		
 </project>

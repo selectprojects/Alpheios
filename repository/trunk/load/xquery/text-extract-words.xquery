@@ -18,14 +18,14 @@
   along with this program.  If not, see <http://www.gnu.org/licenses/>.
  :)
 
-import module namespace cts="http://alpheios.net/namespaces/cts"
-              at "file:///c://work/xml_ctl_files/xquery/trunk/cts.xquery";
+import module namespace cts="http://alpheios.net/namespaces/cts" 
+    at "xmldb:exist://localhost:8080/exist/xmlrpc/db/xq/cts.xquery";
 declare namespace  util="http://exist-db.org/xquery/util";
+
 
 declare variable $e_inv external;
 declare variable $e_urn external;
 declare variable $e_source external;
-
 
 
 let $passage_xpaths := cts:getCitationXpaths($e_inv,$e_urn)

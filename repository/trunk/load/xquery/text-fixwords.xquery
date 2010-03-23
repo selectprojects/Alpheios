@@ -19,10 +19,10 @@
  :)
 
 import module namespace almt="http://alpheios.net/namespaces/alignment-match"
-              at "file:///c://work/xml_ctl_files/xquery/trunk/alignment-match.xquery";
+              at "xmldb:exist://localhost:8080/exist/xmlrpc/db/xq/alignment-match.xquery";
 
 import module namespace cts="http://alpheios.net/namespaces/cts"
-              at "file:///c://work/xml_ctl_files/xquery/trunk/cts.xquery";
+              at "xmldb:exist://localhost:8080/exist/xmlrpc/db/xq/cts.xquery";
 
 
 (:
