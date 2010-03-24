@@ -37,9 +37,14 @@ import module namespace tan="http://alpheios.net/namespaces/text-analysis"
 declare option exist:serialize "method=xhtml media-type=text/html";
 
 let $e_urn :=  request:get-parameter("urn",())
-let $node := cts:getPassage("alpheios-cts-inventory",$e_urn)
-let $passage := if ($node[1]/name() = 'wd') then (<p>...</p>,  $node[1]/ancestor::*[1], <p>...</p>) else $node[1]                           
-let $wd_id := if ($node[1]/name() = 'wd')  then xs:string($node[1]/@n) else ""
+let $reply := cts:getPassagePlus("alpheios-cts-inventory",$e_urn)
+let $prevUrn := xs:string($reply/prevnext/prev)
+let $nextUrn := xs:string($reply/prevnext/next)
+let $nodes := $reply/TEI/*
+let $wd_ref := count($nodes) =xs:int(1) and $nodes[1]/name() = 'wd'
+let $wd_id := if ($wd_ref)  then xs:string($nodes[1]/@id) else ""
+let $parent := if ($wd_ref) then cts:getPassagePlus("alpheios-cts-inventory",replace($e_urn,":[^:]+$",""))/TEI/* else ()
+let $passage := if ($parent) then $parent else $nodes                          
 let $docinfo := tan:findDocs(cts:parseUrn($e_urn))
 (: TODO check availability of treebank files and fixup doc urn :)
 let $treebankDUrl := concat('version=1.0;http://repos.alpheios.net:8080/exist/rest/db/app/treebank-editsentence.xhtml?doc=',$e_urn,'&amp;id=SENTENCE&amp;w=WORD&amp;app=viewer')
@@ -55,16 +60,26 @@ let $params :=
         <param name="cssFile" value ="http://alpheios.net/alpheios-texts/css/alpheios-text.css"/>
         <param name="highlightWord" value="{ $wd_id }"/>
      </parameters>
-let $xmllang := $node[1]/ancestor::*[@xml:lang][1]/@xml:lang
-let $lang := $node[1]/ancestor::*[@lang][1]/@lang
+let $uri := concat(request:get-url(),'?')
  let $xml :=
     element TEI.2 {
         $passage/..//TEI.2/@*,
         $passage/..//TEI.2/teiHeader,
         element text {
-            if ($xmllang) then attribute xml:lang { $xmllang} else (),
-            if ($lang) then attribute lang { $lang } else (),
-            element body {                
+            $reply/TEI/@xml:lang,            
+            element body {
+                if ($prevUrn) then 
+                    element ptr {
+                       attribute type { 'paging:prev' },
+                       attribute target { concat($uri,"&amp;urn=",$prevUrn)}
+                   }               
+                else (),
+                if ($nextUrn) then 
+                    element ptr {
+                       attribute type { 'paging:next' },
+                       attribute target { concat($uri,"&amp;urn=",$nextUrn)}
+                   }               
+                else (),
                 $passage
             }
          }

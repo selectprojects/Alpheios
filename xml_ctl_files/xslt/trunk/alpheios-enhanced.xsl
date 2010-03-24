@@ -39,7 +39,7 @@
      <xsl:param name="highlightWord"/>
     
     <xsl:template match="/">
-        <html xml:lang="{//text/@lang}">            
+        <html xml:lang="{//text/@xml:lang}">            
             <head>
                 <xsl:call-template name="cssHook"/>
                 <xsl:call-template name="javascriptHook"/>
@@ -48,7 +48,17 @@
             </head>
             <body>
                 <xsl:call-template name="bodyHook"/>
+                <div class="alpheios-ignore alpheios-next-prev">
+                    <p class="right">
+                        <xsl:apply-templates select="//ptr[starts-with(@type,'paging')]" mode="navigation"/>
+                    </p>
+                </div>                        
                 <xsl:apply-templates select="TEI.2/text/body/*"/>
+                <div class="alpheios-ignore alpheios-next-prev">
+                    <p class="right">
+                        <xsl:apply-templates select="//ptr[starts-with(@type,'paging')]" mode="navigation"/>
+                    </p>
+                </div>                        
                 <xsl:call-template name="perseus_footer"/>
                 <xsl:call-template name="copyrightStatement"/>
             </body>
@@ -141,6 +151,7 @@
         </xsl:call-template>
     </xsl:variable>
     <xsl:call-template name="separate_words">
+        <xsl:with-param name="real_id" select="@id"/>
         <xsl:with-param name="id_list" select="$wordId"/>
         <xsl:with-param name="nrefs" select="$nrefList"/>
         <xsl:with-param name="tbrefs" select="@tbrefs"/>
@@ -149,6 +160,7 @@
 </xsl:template>
     
  <xsl:template name="separate_words">
+     <xsl:param name="real_id"/>
      <xsl:param name="id_list"/>
      <xsl:param name="nrefs"/>
      <xsl:param name="tbrefs"/>
@@ -168,7 +180,7 @@
          </xsl:call-template>
      </xsl:variable>
      <xsl:variable name="highlight">
-         <xsl:if test="$highlightWord  and ($first = $highlightId)">
+         <xsl:if test="$highlightWord  and (($first = $highlightId) or ($highlightWord = $real_id)) ">
              alpheios-highlighted-word
          </xsl:if>
      </xsl:variable>
@@ -394,6 +406,11 @@
         <xsl:if test="string-length(normalize-space($sourceText)) &gt; 0">
             <span class="source-desc"><xsl:value-of select="$sourceText" /></span>
         </xsl:if>        
+    </xsl:template>
+    
+    <xsl:template match="ptr[starts-with(@type,'paging')]" mode="navigation">
+        <xsl:variable name="type_text" select="substring-after(@type,':')"/>
+        <a href="{@target}" class="navigation {@type}" title="{$type_text}"><img src="{concat($alpheiosSiteBaseUrl,'/img/', $type_text, '.gif')}"/></a>
     </xsl:template>
     
     <xsl:template match="*"/>

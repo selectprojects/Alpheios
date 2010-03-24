@@ -19,6 +19,14 @@
  :)
 
 (: Beginnings of the CTS Repository Interface Implementation :)
+(: TODO LIST
+            support ranges subreferences
+            namespacing on cts responses 
+            getPassage
+            getValidReff
+            typecheck the function parameters and return values
+            make getNextPrev recursive so that it can point to first/last in next/previous book, etc.
+:)
 
 module namespace cts = "http://alpheios.net/namespaces/cts";
 declare namespace ti = "http://chs.harvard.edu/xmlns/cts3/ti";
@@ -32,12 +40,15 @@ declare namespace  util="http://exist-db.org/xquery/util";
         An element adhering to the following 
         <ctsUrn>
             <namespace></namespace>
+            <workUrn></workUrn>
             <textgroup></textgroup>            
             <work></work>
             <edition></edition>
             <passageParts>
-                <part></part>
-                <part><part>
+                <rangePart>
+                    <part></part>
+                    <part><part>
+                </rangePart>
             </passageParts>
             <subref position="">
             </subref>
@@ -46,7 +57,7 @@ declare namespace  util="http://exist-db.org/xquery/util";
                 <alpheiosEditionId></alpheiosEditionId>
                 <alpheiosDoctype></alpheiosDocType>
             </fileInfo>
-        <ctsUrn>
+        <ctsUrn>        
 :)
 declare function cts:parseUrn($a_urn as xs:string)
 {
@@ -75,8 +86,12 @@ declare function cts:parseUrn($a_urn as xs:string)
             element work {concat($namespace,':',$work)},
             element edition {concat($namespace,':',$edition)},
             element passageParts {
-                for $p in tokenize($passage,"\.") 
-                return element part { $p }
+                for $r in tokenize($passage,"-")                
+                return 
+                    element rangePart {
+                        for $p in tokenize($r,"\.") 
+                            return element part { $p }
+                    }
             },            
             (if ($subref)
             then 
@@ -109,16 +124,128 @@ declare function cts:parseUrn($a_urn as xs:string)
     Parameters:
         $a_urn: the CTS URN
     Return Value:
-        the referenced element or the empty sequence if not found
+        <reply>
+            <TEI>
+                [the referenced element] 
+            </TEI>
+          </reply>        
 :)
-declare function cts:findSubRef($a_urn)
+declare function cts:findSubRef($a_urn as xs:string)
 {               
     let $cts := cts:parseUrn($a_urn)
     let $doc := doc($cts/fileInfo/fullPath)
-    return $doc//div1[@n = $cts/passageParts/part[1]]//l[@n=$cts/passageParts/part[2]]/wd[text() = $cts/subRef][$cts/subRef/@position]    
+    let $ref :=   $doc//div1[@n = $cts/passageParts/rangePart[1]/part[1]]//l[
+                            @n=$cts/passageParts/rangePart[1]/part[2]]/wd[text() = $cts/subRef][$cts/subRef/@position][1]
+    let $lang := $ref/ancestor::*[@lang][1]/@lang
+    let $xmllang := $ref/ancestor::*[@xml:lang][1]/@xml:lang
+    return
+        element reply {
+            element TEI {
+                attribute xml:lang { if ($xmllang) then $xmllang else $lang },
+                $ref
+            }   
+        }            
 };
 
-declare function cts:getPassage($a_inv,$a_urn)
+(:
+    get a passage from a text
+    Parameters:
+        $a_inv the inventory name
+        $a_urn the passage urn
+    Return Value:
+        getPassage reply
+:)
+declare function cts:getPassage($a_inv as xs:string,$a_urn as xs:string)
+{
+    (: TODO :)
+    ()
+};
+
+(:
+    CTS getValidReff request
+:)
+declare function cts:getValidReff($a_inv,$a_urn,$a_level)
+{   
+    (:TO DO:)
+    ()
+};
+
+(:
+    find the next/previous urns
+    Parameters:
+        $a_dir direction ('p' for previous, 'n' for next)
+        $a_node the node from which to start
+        $a_path the xpath template for the referenced passage
+        $a_count the number of nodes in the referenced passage
+        $a_urn the work urn
+        $a_passageParts the passageParts elementes from the parsed urn (see cts:parseUrn)
+    Return Value:
+        the urn of the the next or previous reference
+        if the referenced passage was a range, the urn will be a range of no more than the number of nodes
+        in the referenced range
+:)
+declare function cts:findNextPrev($a_dir as xs:string,
+                                                    $a_node as node(),
+                                                    $a_path as xs:string ,
+                                                    $a_count as xs:int ,
+                                                    $a_urn as xs:string,
+                                                    $a_passageParts as node()*) as xs:string
+{
+    let $kind := xs:string(node-name($a_node))    
+    let $name := replace($a_path,"^/(.*?)\[.*$","$1")
+    let $pred := replace($a_path,"^.*?\[(.*?)\].*$","$1")
+    (: remove the identifier bind variable from the path :)
+    let $path := replace($pred,"^@[^=]+=.\?.$","")
+    (: get the identifier bind variable :)
+    let $id := replace($pred,"^.*?@([^=]+)=.\?.+$","$1")          
+    let $next :=                   
+        if ($path) 
+        then
+            (: apply additional non-id predicates in xpath :)
+            (: TODO check the context of the util:eval($path) here :)
+            if ($a_dir = xs:string('p'))
+            then 
+                $a_node/preceding-sibling::*[name() = $kind and util:eval($path)][1]
+            else                 
+                $a_node/following-sibling::*[name() = $kind and util:eval($path)][1]
+        else
+            if ($a_dir = xs:string('p'))
+            then
+                $a_node/preceding-sibling::*[name() = $kind]
+            else                 
+                $a_node/following-sibling::*[name() = $kind]
+    return 
+        if ($next) 
+        then
+            let $end := if (count($next) > $a_count) then $a_count else count($next)
+            let $passagePrefix := string-join($a_passageParts[position() != last()],".") 
+            let $rangeStart := concat($passagePrefix,".",xs:string($next[1]/@*[name() = $id]))
+            let $rangeEnd := 
+                if ($end > xs:int("1")) 
+                then concat("-",$passagePrefix,".",xs:string($next[position() = $end]/@*[name() = $id]))
+                else ""
+            return concat($a_urn,":",$rangeStart,$rangeEnd)
+        (:TODO recurse up the path to find the next node of this kind in the next parent node :)
+        else ""               
+};
+
+(:
+    CTS getPassagePlus request, returns the requested passage plus previous/next references
+    Parameters:
+        $a_inv the inventory name
+        $a_urn the passage urn
+    Return Value:
+        <reply>
+            <TEI>
+               [ passage elements ]
+            </TEI>
+        </reply>
+        <prevnext>
+            <prev>[previous urn]</prev>
+            <next>[next urn]</next>
+        </prevnext>
+:)
+declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
 {
     let $cts := cts:parseUrn($a_urn)
     return 
@@ -127,30 +254,77 @@ declare function cts:getPassage($a_inv,$a_urn)
         cts:findSubRef($a_urn)         
     else
         let $doc := doc($cts/fileInfo/fullPath)
-        let $level := count($cts/passageParts/part)
+        let $level := count($cts/passageParts/rangePart[1]/part)
         let $entry := cts:getCatalog($a_inv,$a_urn)
-        let $cites := for $i in $entry//ti:online//ti:citation return $i
-        let $xpath := cts:replaceBindVariables($cts/passageParts/part,concat($cites[$level]/@scope, $cites[$level]/@xpath))
-        return util:eval(concat("$doc",$xpath))        
+        let $cites := for $i in $entry//ti:online//ti:citation return $i        
+        let $xpath := cts:replaceBindVariables($cts/passageParts/rangePart[1]/part,$cts/passageParts/rangePart[2]/part,concat($cites[$level]/@scope, $cites[$level]/@xpath))
+        let $passage := util:eval(concat("$doc",$xpath))
+        let $xmllang := $passage[1]/ancestor::*[@xml:lang][1]/@xml:lang
+        let $lang := $passage[1]/ancestor::*[@lang][1]/@lang
+        let $count := count($passage)
+        let $name := xs:string(node-name($passage[1]))
+        let $thisPath := xs:string($cites[position() = last()]/@xpath)
+        return
+            <reply>
+                <TEI xml:lang="{if ($xmllang) then $xmllang else $lang}">
+                    {$passage}
+                </TEI>
+                <prevnext>
+                    <prev>{ cts:findNextPrev("p",$passage[1],$thisPath,$count,$cts/workUrn,$cts/passageParts/rangePart[1]/part) }</prev>                    
+                    <next>{ cts:findNextPrev("n",$passage[position() = last()],$thisPath,$count,$cts/workUrn,$cts/passageParts/rangePart[position()=last()]/part) }</next>
+                </prevnext>
+            </reply>                    
 };
 
-declare function cts:replaceBindVariables($a_parts,$a_path)
+(:
+    replace bind variables in the template xpath from the TextInvetory with the requested values
+    Parameters
+        $a_startParts the passage parts identifiers of the start of the range
+        $a_endParts the passage part identifiers of the end of the range
+        $a_path the template xpath containing the bind variables 
+    Return Value
+        the path with the bind variables replaced
+:)
+declare function cts:replaceBindVariables($a_startParts,$a_endParts,$a_path) as xs:string
 {    
-        if (count($a_parts) > xs:int(0))
-        then             
-            let $path := replace($a_path,"^(.*?)\?(.*)$",concat("$1",xs:string($a_parts[1]),"$2"))
-            return cts:replaceBindVariables($a_parts[position() > 1],$path)
+        
+        if (count($a_startParts) > xs:int(0))
+        then
+            if (count($a_endParts) > xs:int(0)) then
+                let $startRange := concat(" >= ",$a_startParts[1])
+                let $endRange := concat(" <= ", $a_endParts[1])
+                let $path := replace($a_path,"^(.*?)(@[\w\d\._:\s])=[""']\?[""'](.*)$",concat("$1","$2",$startRange," and ", "$2", $endRange, "$3"))                
+                return cts:replaceBindVariables($a_startParts[position() > 1],$a_endParts[position() >1],$path)
+            else 
+                let $path := replace($a_path,"^(.*?)\?(.*)$",concat("$1",xs:string($a_startParts[1]),"$2"))
+                return cts:replaceBindVariables($a_startParts[position() > 1],(),$path)
         else $a_path            
 };
 
-declare function cts:getCatalog($a_inv,$a_urn)
+(:
+    get a catalog entry for an edition 
+    Parameters:
+        $a_inv the inventory 
+        $a_urn the document/passage urn
+    Return Value
+        the catalog entry for the requested edition
+:)
+declare function cts:getCatalog($a_inv as xs:string,$a_urn as xs:string) as node()*
 {
     let $inv := doc(concat("/db/repository/inventory/",$a_inv,".xml"))
     let $cts := cts:parseUrn($a_urn)
     return $inv//ti:textgroup[@projid=$cts/textgroup]/ti:work[@projid=$cts/work]/ti:*[@projid=$cts/edition]        
 };
 
-declare function cts:getCitationXpaths($a_inv,$a_urn)
+(:
+    get the citation xpaths for a urn
+    Parameters:
+        $a_inv the inventory 
+        $a_urn the document/passage urn
+     Return Value
+         a sequence of strings containing the citation xpaths
+:)
+declare function cts:getCitationXpaths($a_inv as xs:string,$a_urn as xs:string)
 {
    let $entry := cts:getCatalog($a_inv,$a_urn)
    let $levels :=
@@ -159,9 +333,3 @@ declare function cts:getCitationXpaths($a_inv,$a_urn)
     return $levels       
 };       
 
-declare function cts:getValidReff($a_inv,$a_urn,$a_level)
-{        
-    let $entry := cts:getCatalog($a_inv,$a_urn)
-    let $level := if ($a_level) then $a_level else xs:int(1)
-    return ()
-};
