@@ -44,18 +44,28 @@ let $nodes := $reply/TEI/*
 let $wd_ref := count($nodes) =xs:int(1) and $nodes[1]/name() = 'wd'
 let $wd_id := if ($wd_ref)  then xs:string($nodes[1]/@id) else ""
 let $parent := if ($wd_ref) then cts:getPassagePlus("alpheios-cts-inventory",replace($e_urn,":[^:]+$",""))/TEI/* else ()
-let $passage := if ($parent) then $parent else $nodes                          
-let $docinfo := tan:findDocs(cts:parseUrn($e_urn))
-(: TODO check availability of treebank files and fixup doc urn :)
-let $treebankDUrl := concat('version=1.0;http://repos.alpheios.net:8080/exist/rest/db/app/treebank-editsentence.xhtml?doc=',$e_urn,'&amp;id=SENTENCE&amp;w=WORD&amp;app=viewer')
-let $treebankMUrl := concat('http://repos.alpheios.net:8080/exist/rest/xq/treebank-getmorph.xq?f=',$e_urn,'&amp;w=WORD')
-(: TODO drop subref off urn but leave top most passage :)
-let $vocabUrl := if ($docinfo/morph) then concat("http://dev.alpheios.net:8800/exist/rest/xq/alpheios-vocab.xq?&amp;start=1&amp;count=10&amp;pofs=POFS&amp;doc=",$e_urn) else ""
+let $passage := if ($parent) then $parent else $nodes
+let $parsed := cts:parseUrn($e_urn)
+let $docinfo := tan:findDocs($parsed)
+(: TODO fixup doc urn  for treebank?:)
+let $treebankDUrl := 
+    if ($docinfo/treebank)
+    then concat('version=1.0;http://repos.alpheios.net:8080/exist/rest/db/app/treebank-editsentence.xhtml?doc=',$parsed/workUrn,'&amp;id=SENTENCE&amp;w=WORD&amp;app=viewer')
+    else ""     
+let $treebankMUrl :=
+    if ($docinfo/treebank)
+    then concat('http://repos.alpheios.net:8080/exist/rest/xq/treebank-getmorph.xq?f=',$parsed/workUrn,'&amp;w=WORD')
+    else ""
+(: TODO performance improvements needed for vocab to reference entire book ... or else limit it to a range :) 
+(:let $vocabUrl := if ($docinfo/morph) then concat("http://dev.alpheios.net:8800/exist/rest/xq/alpheios-vocab.xq?&amp;start=1&amp;count=10&amp;pofs=POFS&amp;doc=",$parsed/workUrn) else "":)
+let $vocabUrl := ""
 let $xsl := doc('/db/xslt/alpheios-enhanced.xsl')
 let $params := 
     <parameters>     
         <param name="alpheiosPedagogicalText" value="true"/>
         <param name="alpheiosSiteBaseUrl" value="http://alpheios.net/alpheios-texts"/>
+        <param name="alpheiosTreebankUrl" value="{$treebankMUrl}"/>
+         <param name="alpheiosTreebankDiagramUrl" value="{$treebankDUrl}"/>
         <param name="alpheiosVocabUrl" value="{$vocabUrl}"/>
         <param name="cssFile" value ="http://alpheios.net/alpheios-texts/css/alpheios-text.css"/>
         <param name="highlightWord" value="{ $wd_id }"/>
