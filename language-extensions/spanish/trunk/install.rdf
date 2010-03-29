@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!-- $Revision: 1785 $-->
-<!-- $BuildId: 195$-->
+<!-- $BuildId: 195+$-->
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 		xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
 	<Description about="urn:mozilla:install-manifest">
 		<em:name>Alpheios Spanish Tools</em:name>
-		<em:version>0.1.2741.20100329</em:version>
+		<em:version>0.1.2748.20100329</em:version>
 		<em:description></em:description>
 		<em:creator>Cantus Foundation</em:creator>
 		<em:id>spanish@alpheios.net</em:id>
