@@ -6,11 +6,13 @@ Files are organized under <root>/lexica/<lang>/<code>
 Language codes:
   grc = Ancient Greek
   lat = Latin
+  ara = Arabic
 The combinations of <lang>/<code> in use:
   grc/lsj = A Greek-English Lexicon (LSJ)
   grc/ml = An Intermediate Greek-English Lexicon (Middle Liddell)
   grc/aut = A Homeric Dictionary (Autenrieth)
   lat/ls = A Latin Dictionary (Lewis & Short, 1897)
+  ara/sal = An Advanced Learner's Arabic-English Dictionary (Salmoné, 1889)
 
 The src directories contains source files containing actual lexicon content,
 either original or derivative.
@@ -24,6 +26,8 @@ General xml_prod_files:
 -----------------------
 <lang>-beta2uni.xsl:
   Transform to change from betacode to Unicode encoding of Greek.
+ara-trans2uni.xsl:
+  Change betacode and Buckwalter encodings to Unicode in Salmoné.
 <lang>-addkeys.xsl
   Transform to add key values to short definitions file
     key1 = lemma with aggressive removal
@@ -87,6 +91,7 @@ Production processes:
 Conversion from betacode to Unicode
 - Apply <lang>-beta2uni.xsl to each individual lexicon xml file, saving
   the output to same file name with 'u' prepended.
+  (For Arabic, ara-trans2uni.xsl)
 
 Creation of short definitions files
 - Execute <lang>-<code>-lex2meanings.xquery, saving the output to
@@ -97,6 +102,7 @@ Creation of short definitions files
     docname=<lang>-<code>-meanings.xml
     output=index
   saving output to <lang>-<code>-index.xml
+  (For Arabic, ara-sal-meanings2data.xquery)
 - Execute lexi-meanings2data.xquery with params
     docname=<lang>-<code>-meanings.xml
     output=ids
