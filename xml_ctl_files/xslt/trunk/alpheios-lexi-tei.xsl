@@ -43,6 +43,7 @@
 
   <xsl:template match="/">
     <div class="text_container {$e_lang}">
+      <xsl:apply-templates select="/alph:output/alph:source"/>
       <xsl:apply-templates
         select="/alph:error|/alph:output/alph:entry|/alph:output/alph:error|/TEI.2/text/front|/tei.2/text/front|/TEI.2/text/body|/tei.2/text/back|/TEI.2/text/back|/TEI.2/text/group/text"/>
       <xsl:text> </xsl:text>
@@ -1256,13 +1257,18 @@
           <xsl:apply-templates/>
         </span>
       </xsl:when>
+      <xsl:when test="$a_lang='ara'">
+        <span class="ar">
+          <xsl:apply-templates/>
+        </span>
+      </xsl:when>
       <xsl:when test="$a_lang='en'">
         <span class="en">
           <xsl:apply-templates/>
         </span>
       </xsl:when>
-      <xsl:when test="$default != ''">
-        <span class="{$default}">
+      <xsl:when test="$a_default != ''">
+        <span class="{$a_default}">
           <xsl:apply-templates/>
         </span>
       </xsl:when>

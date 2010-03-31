@@ -1,5 +1,5 @@
 (:
-  Copyright 2009 Cantus Foundation
+  Copyright 2009-2010 Cantus Foundation
   http://alpheios.net
 
   This file is part of Alpheios.
@@ -46,16 +46,16 @@ declare function lxget:get-entry-by-id(
 };
 
 (:
-  Function to retrieve a lexicon entry by id
+  Function to retrieve a lexicon entry by lemma
 
   Parameters:
     $a_lexicon    lexicon to use
     $a_index      index file to use
-    $a_lemma      id to look up
+    $a_lemma      lemma to look up
     $a_lang       language of lexicon
 
   Return value:
-    lexicon entry if found
+    lexicon entries if found
 
   The lexicon may have either entryFree or entry elements.
  :)
@@ -63,70 +63,89 @@ declare function lxget:get-entry-by-lemma(
   $a_lexicon as node()*,
   $a_index as node()?,
   $a_lemma as xs:string,
-  $a_lang as xs:string) as element()?
+  $a_lang as xs:string) as element()*
 {
   (: see if we can find it directly :)
-  let $dict-entry := $a_lexicon//(entryFree|entry)[@key eq $a_lemma]
+  let $dict-entries := $a_lexicon//(entryFree|entry)[@key eq $a_lemma]
   return
-    if (exists($dict-entry))
+    if (exists($dict-entries))
     then
-      $dict-entry
+      $dict-entries
     else
-      (:
-        transform lemma to unicode
-        Note: In order to ensure precomposed unicode,
-        we first convert to betacode (which will leave
-        betacode input unchanged), then convert to unicode
-       :)
+      (: transform lemma to unicode :)
       let $uni-lemma :=
         if ($a_lang eq "grc")
         then
+          (:
+            Note: In order to ensure precomposed Greek unicode,
+            we first convert to betacode (which will leave
+            betacode input unchanged), then convert to unicode
+           :)
           let $beta-lemma :=
             transform:transform(
               <dummy/>,
               doc("/db/xslt/alpheios-uni2betacode.xsl"),
               <parameters>
-                <param name="input" value="{ $a_lemma }"/>
+                <param name="e_in" value="{ $a_lemma }"/>
               </parameters>)
           return
             transform:transform(
               <dummy/>,
               doc("/db/xslt/alpheios-beta2unicode.xsl"),
               <parameters>
-                <param name="input" value="{ $beta-lemma }"/>
+                <param name="e_in" value="{ $beta-lemma }"/>
+              </parameters>)
+        else if ($a_lang eq "ara")
+        then
+          (:
+            We first convert to Buckwalter (which will leave
+            Buckwalter input unchanged), then convert to unicode
+           :)
+          let $buck-lemma :=
+            transform:transform(
+              <dummy/>,
+              doc("/db/xslt/alpheios-uni2buck.xsl"),
+              <parameters>
+                <param name="e_in" value="{ $a_lemma }"/>
+              </parameters>)
+          return
+            transform:transform(
+              <dummy/>,
+              doc("/db/xslt/alpheios-buck2uni.xsl"),
+              <parameters>
+                <param name="e_in" value="{ $buck-lemma }"/>
               </parameters>)
         else
           $a_lemma
       (: see if unicode lemma can be found directly :)
-      let $dict-entry :=
+      let $dict-entries :=
         if ($uni-lemma ne $a_lemma)
         then
           $a_lexicon//(entryFree|entry)[@key eq $uni-lemma]
         else ()
       return
-        if (exists($dict-entry))
+        if (exists($dict-entries))
         then
-          $dict-entry
+          $dict-entries
         else
           (:
-            find entry in index
+            find entries in index
             Note: Lemma attribute in index corresponds to
             entryFree/@key or entry/@key in lexicon.
-            Key attribute in index is lemma with vowel length
-            and diaeresis stripped and capitalization removed.
+            Key attribute in index is normalized lemma, likely with
+            diacritics removed and other transformations performed.
+            There may be multiple entries matching the key if
+            the transformations map multiple lemmas into one key.
            :)
-          let $index-entry :=
+          let $index-ids :=
             if ($a_index)
             then
-              $a_index//entry[@key eq $uni-lemma]
+              distinct-values($a_index//entry[@key eq $uni-lemma]/@id)
             else ()
 
-          (: get dictionary entry :)
+          (: get dictionary entries :)
           return
-            if ($index-entry)
-            then
-              $a_lexicon//(entryFree|entry)[@id eq string($index-entry/@id)]
-            else ()
+            $a_lexicon//(entryFree|entry)[@id = $index-ids]
 };
 
 (:

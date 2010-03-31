@@ -53,7 +53,9 @@ declare variable $f_defaultLexicon :=
 (
   <lx lg="grc">lsj</lx>,    (: default lexicon for ancient Greek is LSJ :)
   <lx lg="lat">ls</lx>,     (: default lexicon for Latin is Lewis & Short :)
-  <lx lg="la">ls</lx>
+  <lx lg="la">ls</lx>,
+  <lx lg="ara">sal</lx>,    (: default lexicon for Arabic is Salmoné :)
+  <lx lg="ar">sal</lx>
 );
 
 (: parse parameters :)
@@ -141,12 +143,12 @@ let $xml-output :=
 
   (: wrap output in <alph:output> element :)
   <alph:output xmlns:alph="http://alpheios.net/namespaces/tei">{
+    lxget:get-source($lexicon),
     for $entry in $entries
     return
       element alph:entry
       {
         attribute lemma-id { $entry/@id },
-        lxget:get-source($lexicon),
         $entry
       }
   }</alph:output>
