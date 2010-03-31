@@ -2,7 +2,7 @@
  * @fileoverview Greek extension of Alph.LanguageTool class
  * @version $Id$
  *
- * Copyright 2008-2009 Cantus Foundation
+ * Copyright 2008-2010 Cantus Foundation
  * http://alpheios.net
  *
  * This file is part of Alpheios.
@@ -96,51 +96,6 @@ Alph.LanguageTool_Greek.prototype.loadShortDefs = function()
 
 /**
  * Greek-specific startup method in the derived instance which
- * loads the lemma id lookup file. Called by the derived instance
- * keyed by the preference setting 'extensions.alpheios.greek.methods.startup'.
- * @returns true if successful, otherwise false
- * @type boolean
- */
-Alph.LanguageTool_Greek.prototype.loadLexIds = function()
-{
-    this.d_idsFile = Array();
-    this.d_fullLexCode = Alph.BrowserUtils.getPref("dictionaries.full",
-                                      this.d_sourceLanguage).split(',');
-
-    for (var i = 0; i < this.d_fullLexCode.length; ++i)
-    {
-        try
-        {
-           this.d_idsFile[i] =
-                new Alph.Datafile(
-                        Alph.BrowserUtils.getContentUrl(this.d_sourceLanguage) + '/dictionaries/' +
-                        this.d_fullLexCode[i] +
-                        "/grc-" +
-                        this.d_fullLexCode[i] +
-                        "-ids.dat",
-                        "UTF-8");
-            this.s_logger.info(
-                "Loaded Greek ids for " +
-                this.d_fullLexCode[i] +
-                "[" +
-                this.d_idsFile[i].getData().length +
-                " bytes]");
-        }
-        catch (ex)
-        {
-            // the ids file might not exist, in particular for remote, non-alpheios
-            // provided dictionaries
-            // so just quietly log the error in this case
-            // later code must take a null ids file into account
-            this.s_logger.error("error loading ids: " + ex);
-            return false;
-        }
-    }
-    return true;
-}
-
-/**
- * Greek-specific startup method in the derived instance which
  * xslt for stripping the unicode. Called by the derived instance
  * keyed by the preference setting 'extensions.alpheios.greek.methods.startup'.
  * @returns true if successful, otherwise false
@@ -154,7 +109,7 @@ Alph.LanguageTool_Greek.prototype.loadStripper = function()
     }
     catch (ex)
     {
-        alert("error loading xslt: " + ex);
+        alert("error loading xslt alpheios-unistrip.xsl: " + ex);
         return false;
     }
 
@@ -823,9 +778,9 @@ Alph.LanguageTool_Greek.prototype.getLemmaId = function(a_lemmaKey)
         // get data from ids file
         var lemma_id =
             Alph.LanguageTool_Greek.lookupLemma(a_lemmaKey,
-                                                   a_lemmaKey,
-                                                   this.d_idsFile[i],
-                                                   this.d_stripper)[1];
+                                                a_lemmaKey,
+                                                this.d_idsFile[i],
+                                                this.d_stripper)[1];
         if (lemma_id)
             return Array(lemma_id, this.d_fullLexCode[i]);
     }
