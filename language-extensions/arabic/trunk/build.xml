@@ -12,7 +12,7 @@
 	<property name="release.id" value="0.2" />
 	<property name="svnant.lib.dir" value="/svnant-1.0.0"/>
 	<property name="package" value="${app.name}-latest.xpi"/>
-	<property name="extras" value=""/>
+	<property name="extras" value="sal"/>
 	
 	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
 	
@@ -111,11 +111,11 @@
 	<!-- chrome creates the jar file containing the chrome files --> 
     <target name="chrome" depends="get-build-id">
         <mkdir dir="${dist.dir}" />
-    	<!--copy todir="${src.dir}/content/dictionaries">
+    	<copy todir="${src.dir}/content/dictionaries">
     	   <fileset dir="${src.dir}/dicttmp">
                <include name="**/*.dat/"/>
     	   </fileset>
-    	</copy-->
+    	</copy>
 	    <zip destfile="${dist.dir}/${app.name}.jar">
 	        <fileset dir="${src.dir}">
 	        	<include name="content/**" />
