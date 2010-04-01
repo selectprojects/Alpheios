@@ -162,12 +162,105 @@ declare function cts:getPassage($a_inv as xs:string,$a_urn as xs:string)
 };
 
 (:
-    CTS getValidReff request
+    CTS getCapabilities request
+    Parameters:
+        $a_inv the inventory         
+    Return Value
+        the catalog entry for the requested edition
 :)
-declare function cts:getValidReff($a_inv,$a_urn,$a_level)
-{   
-    (:TO DO:)
-    ()
+declare function cts:getCapabilities($a_inv)
+{    
+    let $inv := doc(concat("/db/repository/inventory/",$a_inv,".xml"))
+    return 
+        <reply>{$inv}</reply>
+};
+
+(:
+    CTS getValidReff request (unspecified level)
+    Parameters:
+        $a_inv the inventory name
+        $a_urn the passage urn        
+    Returns 
+        the list of valid urns
+:)
+declare function cts:getValidReff($a_inv,$a_urn)
+{    
+    let $cts := cts:parseUrn($a_urn)
+    let $doc := doc($cts/fileInfo/fullPath)
+    let $entry := cts:getCatalog($a_inv,$a_urn)
+    let $parts := count($cts/passageParts/rangePart[1]/part)
+    (: if one or more parts of the passage component are specified, the level is implicitly
+       the next level after the one supplied, otherwise retrieve all levels 
+    :)   
+    let $level := 
+        if ($parts) then $parts+1 else count($entry//ti:online//ti:citation)
+    return cts:getValidReff($a_inv,$a_urn,$level)                
+};
+
+(:
+    CTS getValidReff request (with level)
+    Parameters:
+        $a_inv the inventory name
+        $a_urn the passage urn
+        $a_level citation level
+    Returns 
+        the list of valid urns
+:)
+declare function cts:getValidReff($a_inv as xs:string,$a_urn as xs:string,$a_level as xs:int)
+{    
+        let $cts := cts:parseUrn($a_urn)
+        let $doc := doc($cts/fileInfo/fullPath)
+        let $entry := cts:getCatalog($a_inv,$a_urn)                
+        let $cites := for $i in ($entry//ti:online//ti:citation)[position() <= $a_level] return $i
+        let $startParts :=
+            for $l in (xs:int("1") to $a_level)
+            return 
+                if ($cts/passageParts/rangePart[1]/part[$l]) 
+                then $cts/passageParts/rangePart[1]/part[$l] else <part></part>
+        let $endParts :=
+            if ($cts/passageParts/rangePart[2]) then
+                for $l in (xs:int("1") to $a_level)
+                return 
+                    if ($cts/passageParts/rangePart[2]/part[$l]) 
+                    then $cts/passageParts/rangePart[2]/part[$l] else <part></part>
+            else ()
+        
+        return cts:getUrns($startParts,$endParts,$cites,$doc,concat($cts/workUrn,":"))        
+};    
+
+(:
+    Recursive function to get the list of valid urns for a getValidReff request
+    Parameters:   
+        $a_startParts the parts of the starting passage range
+        $a_endParts the parents of the ending passage range
+        $a_cites the citation elements to retrieve
+        $a_doc the target document
+        $a_urn the base urn
+    (: TODO does not support range requests properly :)        
+:)
+declare function cts:getUrns($a_startParts,$a_endParts,$a_cites,$a_doc,$a_urn)
+{    
+    let $cite := $a_cites[1]
+    let $xpath := cts:replaceBindVariables(
+        $a_startParts,
+        $a_endParts,
+        concat($cite/@scope, $cite/@xpath))                
+    
+    let $passage := util:eval(concat("$a_doc",$xpath))
+    let $pred := replace($cite/@xpath,"^.*?\[(.*?)\].*$","$1")
+    (: get the identifier bind variable :)    
+    let $id := replace($pred,"^.*?@([^=]+)=.\?.+$","$1")              
+    for $p in $passage
+        let $id_value := xs:string($p/@*[name() = $id])
+        let $urn := concat($a_urn,".",$id_value)        
+        return        
+            if(count($a_cites) > xs:int(1))
+            then
+                let $next_cites := $a_cites[position() > xs:int(1)]
+                return cts:getUrns(
+                    $a_startParts,$a_endParts,$next_cites,$a_doc,$urn)
+            else        
+                $urn   
 };
 
 (:
@@ -257,14 +350,17 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
         let $level := count($cts/passageParts/rangePart[1]/part)
         let $entry := cts:getCatalog($a_inv,$a_urn)
         let $cites := for $i in $entry//ti:online//ti:citation return $i        
-        let $xpath := cts:replaceBindVariables($cts/passageParts/rangePart[1]/part,$cts/passageParts/rangePart[2]/part,concat($cites[$level]/@scope, $cites[$level]/@xpath))
+        let $xpath := cts:replaceBindVariables(
+            $cts/passageParts/rangePart[1]/part,
+            $cts/passageParts/rangePart[2]/part,
+            concat($cites[$level]/@scope, $cites[$level]/@xpath))
         let $passage := util:eval(concat("$doc",$xpath))
         let $xmllang := $passage[1]/ancestor::*[@xml:lang][1]/@xml:lang
         let $lang := $passage[1]/ancestor::*[@lang][1]/@lang
         let $count := count($passage)
         let $name := xs:string(node-name($passage[1]))
         let $thisPath := xs:string($cites[position() = last()]/@xpath)
-        return
+        return   
             <reply>
                 <TEI xml:lang="{if ($xmllang) then $xmllang else $lang}">
                     {$passage}
@@ -291,12 +387,17 @@ declare function cts:replaceBindVariables($a_startParts,$a_endParts,$a_path) as 
         if (count($a_startParts) > xs:int(0))
         then
             if (count($a_endParts) > xs:int(0)) then
-                let $startRange := concat(" >= ",$a_startParts[1])
-                let $endRange := concat(" <= ", $a_endParts[1])
+                let $startRange := if ($a_startParts[1]/text()) then concat(" >= ",$a_startParts[1]) else ""
+                let $endRange := if ($a_endParts[1]/text()) then concat(" <= ", $a_endParts[1]) else ""
                 let $path := replace($a_path,"^(.*?)(@[\w\d\._:\s])=[""']\?[""'](.*)$",concat("$1","$2",$startRange," and ", "$2", $endRange, "$3"))                
                 return cts:replaceBindVariables($a_startParts[position() > 1],$a_endParts[position() >1],$path)
-            else 
-                let $path := replace($a_path,"^(.*?)\?(.*)$",concat("$1",xs:string($a_startParts[1]),"$2"))
+            else          
+                let $path := 
+                    if ($a_startParts[1]/text()) 
+                    then 
+                        replace($a_path,"^(.*?)\?(.*)$",concat("$1",xs:string($a_startParts[1]),"$2"))
+                    else 
+                        replace($a_path,"^(.*?)(@[\w\d\._:\s])=[""']\?[""'](.*)$",concat("$1","$2","$3"))
                 return cts:replaceBindVariables($a_startParts[position() > 1],(),$path)
         else $a_path            
 };
