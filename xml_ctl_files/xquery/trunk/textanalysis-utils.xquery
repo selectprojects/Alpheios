@@ -233,3 +233,30 @@ declare function tan:getInflections($a_docid as xs:string, $a_pofs as xs:string*
                 </forms>
             else ()
 };
+
+(: Recursively change the namespace for all the elements in supplied parent node
+    Based upon the Functx library method by the same name
+    Parameters:
+        $a_nodes the nodes to be changed
+        $a_newns the new namespace
+        $a_prefix the namespace prefix    
+:)
+declare function tan:change-element-ns-deep ( $a_nodes as node()* , $a_newns as xs:string , $a_prefix as xs:string )  as node()* {
+       
+  for $node in $a_nodes
+  return if ($node instance of element())
+         then (element
+               {QName ($a_newns,
+                          concat($a_prefix,
+                                    if ($a_prefix = '')
+                                    then ''
+                                    else ':',
+                                    local-name($node)))}
+               {$node/@*,
+                tan:change-element-ns-deep($node/node(),
+                                           $a_newns, $a_prefix)})
+         else if ($node instance of document-node())
+         then tan:change-element-ns-deep($node/node(),
+                                           $a_newns, $a_prefix)
+         else $node
+ } ;

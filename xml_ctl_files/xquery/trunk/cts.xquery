@@ -30,7 +30,13 @@
 
 module namespace cts = "http://alpheios.net/namespaces/cts";
 declare namespace ti = "http://chs.harvard.edu/xmlns/cts3/ti";
-declare namespace  util="http://exist-db.org/xquery/util";
+declare namespace  util="http://exist-db.org/xquery/util";              
+
+declare variable $cts:tocChunking :=
+( 
+    <tocCunk type="Book" size="1"/>,
+    <tocChunk type="Line" size="100"/>  
+);
 
 (: 
     function to parse a CTS Urn down to its individual parts
@@ -225,8 +231,78 @@ declare function cts:getValidReff($a_inv as xs:string,$a_urn as xs:string,$a_lev
                     then $cts/passageParts/rangePart[2]/part[$l] else <part></part>
             else ()
         
-        return cts:getUrns($startParts,$endParts,$cites,$doc,concat($cts/workUrn,":"))        
+        let $urns := cts:getUrns($startParts,$endParts,$cites,$doc,concat($cts/workUrn,":"))
+        return 
+        <reply>
+            <reff>
+                    { for $u in $urns return <urn>{$u}</urn> }
+            </reff>
+        </reply>
 };    
+
+(:
+        Recursive function to expands the urns returned by getValidReff into a TEI-compliant list, 
+        starting at the supplied level, with the node containing the supplied urn expanded to the level
+        of the requested urn
+        Parameters:
+            $a_inv the inventory name
+            $a_urn the requested urn
+            $a_level the starting level
+         Returns the hierarchy of references as a TEI-compliant <list/>
+:)
+declare function cts:expandValidReffs($a_inv as xs:string,$a_urn as xs:string,$a_level as xs:int)
+{
+    (: TODO address situation where lines are missing ? e.g. line 9.458 Iliad :)
+    let $entry := cts:getCatalog($a_inv,$a_urn)    
+    let $workUrn := if ($a_level = xs:int("1")) then cts:parseUrn($a_urn)/workUrn else $a_urn
+    let $urns := cts:getValidReff($a_inv,$workUrn,$a_level)
+    let $numLevels := count($entry//ti:online//ti:citation)
+    let $numUrns := count($urns//urn) 
+    let $tocName := ($entry//ti:online//ti:citation)[position() = $a_level]/@label
+    let $chunkSize := xs:int($cts:tocChunking[@type=$tocName]/@size) 
+    return
+                <list> {
+                for $i in (xs:int("1") to $numUrns)
+                    return
+                    if (($i + $chunkSize - 1) mod $chunkSize != xs:int("0")) 
+                    then ()
+                    else 
+                        let $u := $urns//urn[$i] 
+                        let $focus := $u eq $a_urn
+                        let $last := 
+                            if ($chunkSize > xs:int("1") )
+                            then 
+                                if ($urns//urn[($i + $chunkSize - 1)]) then $urns//urn[($i + $chunkSize - 1)] else $urns//urn[last()]
+                            else()
+                        let $parsed :=  cts:parseUrn($u)
+                        let $endParsed := if ($last) then cts:parseUrn($last) else ()
+                        let $startPart := $parsed/passageParts/rangePart[1]/part[last()]
+                        let $endPart := if ($endParsed) then concat("-",$endParsed/passageParts/rangePart[1]/part[last()]) else ""
+                        let $urn := 
+                            if ($last) 
+                            then 
+                                concat(
+                                    $parsed/workUrn,":",
+                                    string-join($parsed/passageParts/rangePart[1]/part,"."),"-", 
+                                    string-join($endParsed/passageParts/rangePart[1]/part,"."))
+                            else
+                                $u
+                        let $href := 
+                            if ($a_level = $numLevels) 
+                            then
+                                concat("alpheios-get-ref.xq?urn=",$urn)
+                            else
+                                 concat("alpheios-get-toc.xq?urn=",$urn,"&amp;level=",$a_level+1)                        
+                        let $ptrType := if ($a_level = $numLevels) then 'text' else 'toc'                                
+                        return                
+                            <item>
+                                {concat($tocName," ",$startPart,$endPart)}                                                         
+                                <tei:ptr target="{$href}" xmlns:tei="http://www.tei-c.org/ns/1.0" rend="{$ptrType}"/>                          
+                              {if (not($focus) and contains($a_urn,$u)) then cts:expandValidReffs($a_inv,$u,$a_level + 1)  else ()}
+                            </item>
+                }</list>                        
+                                       
+};
 
 (:
     Recursive function to get the list of valid urns for a getValidReff request
@@ -252,13 +328,13 @@ declare function cts:getUrns($a_startParts,$a_endParts,$a_cites,$a_doc,$a_urn)
     let $id := replace($pred,"^.*?@([^=]+)=.\?.+$","$1")              
     for $p in $passage
         let $id_value := xs:string($p/@*[name() = $id])
-        let $urn := concat($a_urn,".",$id_value)        
+        let $urn := concat($a_urn,$id_value)        
         return        
             if(count($a_cites) > xs:int(1))
             then
                 let $next_cites := $a_cites[position() > xs:int(1)]
                 return cts:getUrns(
-                    $a_startParts,$a_endParts,$next_cites,$a_doc,$urn)
+                    $a_startParts,$a_endParts,$next_cites,$a_doc,concat($urn,"."))
             else        
                 $urn   
 };
@@ -362,8 +438,13 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
         let $thisPath := xs:string($cites[position() = last()]/@xpath)
         return   
             <reply>
-                <TEI xml:lang="{if ($xmllang) then $xmllang else $lang}">
-                    {$passage}
+                <TEI>
+                    {$doc//teiHeader},
+                    <text xml:lang="{if ($xmllang) then $xmllang else $lang}">
+                    <body>
+                        {$passage}
+                     </body>
+                  </text>
                 </TEI>
                 <prevnext>
                     <prev>{ cts:findNextPrev("p",$passage[1],$thisPath,$count,$cts/workUrn,$cts/passageParts/rangePart[1]/part) }</prev>                    
@@ -434,3 +515,29 @@ declare function cts:getCitationXpaths($a_inv as xs:string,$a_urn as xs:string)
     return $levels       
 };       
 
+(:
+    Get the document for the supplied urn
+    Parameters
+        $a_urn the urn
+    Return Value
+        the document
+:)
+declare function cts:getDoc($a_urn as xs:string)
+{
+    let $cts := cts:parseUrn($a_urn)
+    return doc($cts/fileInfo/fullPath)
+};
+
+(:
+    Get the title of the edition represented by the supplied urn
+    Parameters
+        $a_inv the text inventory
+        $a_urn the urn
+    Return Value
+        the title
+:)
+declare function cts:getEditionTitle($a_inv as xs:string,$a_urn as xs:string)
+{
+    let $entry := cts:getCatalog($a_inv,$a_urn)
+    return xs:string($entry//ti:edition/ti:label)
+};
