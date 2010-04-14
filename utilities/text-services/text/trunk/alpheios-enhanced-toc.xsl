@@ -33,19 +33,21 @@
             doctype-public="-//W3C//DTD XHTML 1.0 Strict//EN"
             doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"
             indent="yes"/>
-        
+            
         <xsl:template match="/tei:TEI">
             <xsl:variable name="title">
-                <xsl:call-template name="generateAlpheiosTitle"></xsl:call-template>
+                <xsl:call-template name="generateAlpheiosTitle">
+                     <xsl:with-param name="htmlTitlePrefix"/>   
+                </xsl:call-template>
             </xsl:variable>
             <html>
                 <head>
-                    <title></title>                    
+                    <title><xsl:value-of select="$title"/></title>                    
                     <xsl:call-template name="cssHook"/>
                     <xsl:call-template name="javascriptHook"/>                    
                 </head>
                 <body>
-                    <h1><xsl:value-of select="$title"/></h1>
+                    <xsl:call-template name="generateAlpheiosTitleHtml"/>
                     <div id="toc" class="alpheios-ignore">
                         <xsl:call-template name="toc">
                             <xsl:with-param name="a_tocBody" select="tei:TEI/tei:text/tei:front/tei:div[@type='contents']"></xsl:with-param>

@@ -30,7 +30,13 @@
              return false;
          }
      );
-    $('.tochead').click(function() {           e 
+     $('.tochead').each(function() {
+         if ($(this).children("ul").length > 0)
+         {
+             $(this).addClass("openmenu");
+         }
+     });
+    $('.tochead').click(function() {            
             $(this).toggleClass("openmenu");
             var children = $(this).children();
             if (children.length > 0)
@@ -49,7 +55,14 @@
                     success:
                         function(a_data,a_status,a_req)
                         {
-                            $("ul",a_data).appendTo(tocHead);
+                            var list = document.importNode($("ul",a_data).get(0),true)
+                            $(list).appendTo(tocHead);
+                            $('.tocitem a',list).click(function(a_e)
+                                 {    
+                                     $(window.frameElement).siblings().get(0).contentDocument.location=$(this).attr("href");                                     
+                                     return false;
+                                 }
+                             );
                         },        
                     error:
                         function(a_req,a_status,a_err)

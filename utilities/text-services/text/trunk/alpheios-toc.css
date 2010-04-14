@@ -1,0 +1,29 @@
+/**
+ * General TEI Elements
+ */ 
+body {
+    font-family: Arial,sans-serif;
+}
+
+.title {
+    font-size: smaller;
+    font-weight: bold;
+}
+
+a#alph-citation-links {
+    display: none;
+}
+
+.tocitem {
+    list-style: none;
+}
+
+.tochead {
+    list-style-image: url(../image/arrow-rit-sharp.gif);
+    cursor: pointer;
+}
+
+.tochead.openmenu {
+    list-style-image: url(../image/arrow-dn-sharp.gif);
+}
+
