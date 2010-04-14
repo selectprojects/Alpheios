@@ -5,3 +5,5 @@ skin	alpheios-arabic	classic/1.0	chrome/skin/
 
 overlay chrome://alpheios/content/alpheios-overlay.xul    chrome://alpheios-arabic/content/alpheios-arabic.xul
 style	chrome://global/content/customizeToolbar.xul	chrome://alpheios-arabic/skin/alpheios-arabic.css
+
+resource alpheios-arabic modules/

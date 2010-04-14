@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!--
-  Copyright 2008-2009 Cantus Foundation
+  Copyright 2008-2010 Cantus Foundation
   http://alpheios.net
 
   This file is part of Alpheios.
@@ -32,6 +32,7 @@
   exclude-result-prefixes="xs">
 
   <xsl:import href="beta2unicode.xsl"/>
+  <xsl:import href="arabic-uni-util.xsl"/>
 
   <xsl:template match="/">
     <html>
@@ -1006,6 +1007,26 @@
               <xsl:value-of select="$a_item"/>
             </xsl:otherwise>
           </xsl:choose>
+        </xsl:when>
+
+        <!-- Arabic -->
+        <xsl:when test="starts-with($a_item/ancestor-or-self::*/@xml:lang, 'ara')">
+          <xsl:variable name="itemText">
+            <xsl:choose>
+              <xsl:when test="$a_item/*">
+                <xsl:for-each select="$a_item/*">
+                  <xsl:value-of select="./text()"/>
+                </xsl:for-each>
+              </xsl:when>
+              <xsl:otherwise>
+                <xsl:value-of select="$a_item/text()"/>
+              </xsl:otherwise>
+            </xsl:choose>
+          </xsl:variable>
+          <!-- convert it to unicode -->
+          <xsl:call-template name="ara-buckwalter-to-uni">
+            <xsl:with-param name="a_in" select="$itemText"/>
+          </xsl:call-template>
         </xsl:when>
 
         <!-- other language, do nothing -->

@@ -1,11 +1,12 @@
-pref("extensions.alpheios.arabic.usemhttpd", false);
+pref("extensions.alpheios.arabic.usemhttpd", true);
 pref("extensions.alpheios.arabic.chromepkg","alpheios-arabic");
 pref("extensions.alpheios.arabic.languagecode","ara,ar");
 pref("extensions.alpheios.arabic.base_unit","word");
-pref("extensions.alpheios.arabic.methods.lexicon",'webservice');
 pref("extensions.alpheios.arabic.methods.startup",'loadLexIds,loadStripper');
-pref("extensions.alpheios.arabic.url.lexicon", 'http://dev.alpheios.net:8020/hopper/alpheios/xmlmorph-alph.jsp');
-pref("extensions.alpheios.arabic.url.lexicon.request", "?lang=ar&word=<WORD>");
+pref("extensions.alpheios.arabic.methods.convert", 'unicodeToBuckwalter');
+pref("extensions.alpheios.arabic.methods.lexicon",'webservice');
+pref("extensions.alpheios.arabic.url.lexicon", 'http://localhost:8200');
+pref("extensions.alpheios.arabic.url.lexicon.request", "/arabic?word=<WORD>");
 pref("extensions.alpheios.arabic.url.lexicon.timeout",5000);
 pref("extensions.alpheios.arabic.grammar.hotlinks","");
 pref("extensions.alpheios.arabic.popuptrigger",'mousemove');

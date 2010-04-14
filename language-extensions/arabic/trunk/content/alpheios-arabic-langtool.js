@@ -21,6 +21,8 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+Components.utils.import("resource://alpheios-arabic/alpheios-convert-arabic.jsm",Alph);
+
 Alph.LanguageToolFactory.addLang('arabic','LanguageTool_Arabic');
 
 /**
@@ -78,6 +80,15 @@ Alph.LanguageTool_Arabic.prototype.loadStripper = function()
 
     return true;
 }
+
+/**
+ * loads the Arabic-specific converter object
+ * @see Alph.LanguageTool#loadConverter
+ */
+Alph.LanguageTool_Arabic.prototype.loadConverter = function()
+{
+    this.d_converter = new Alph.ConvertArabic();  
+};
 
 /**
  * Arabic-specific implementation of {@link Alph.LanguageTool#getLemmaId}.

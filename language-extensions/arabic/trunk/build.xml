@@ -12,7 +12,7 @@
 	<property name="release.id" value="0.2" />
 	<property name="svnant.lib.dir" value="/svnant-1.0.0"/>
 	<property name="package" value="${app.name}-latest.xpi"/>
-	<property name="extras" value="sal"/>
+	<property name="extras" value="alph-aramorph,sal"/>
 	
 	<taskdef resource="net/sf/antcontrib/antlib.xml"/>
 	
@@ -25,9 +25,38 @@
 	   <format property="build.time" pattern="yyyyMMddHHmmss"/>
        <format property="build.date" pattern="yyyyMMdd"/>
     </tstamp>
-	
+
     <!-- svnAnt library -->
 	<taskdef resource="svntask.properties" classpathref="project.classpath"/>
+
+	<!-- append 'dev' to package name for dev distribution -->
+    <condition property="package" value="${app.name}-latest-dev.xpi">
+        <isset property="devdist" />
+    </condition>
+    
+    <!-- append 'amo' to package name for amo distribution -->
+    <condition property="package" value="${app.name}-latest-amo.xpi">
+           <isset property="amodist" />
+    </condition>
+
+    <!-- regular release distribution -->
+    <condition property="package" value="${app.name}-latest.xpi">
+        <and>
+            <not><isset property="amodist"/></not>
+            <not><isset property="devdist" /></not>
+        </and>
+    </condition>
+
+    <!-- tweak release id per distribution type -->
+    <condition property="dist.release.id" value="${release.id}d">
+            <isset property="devdist"/>
+    </condition>
+    
+    <condition property="dist.release.id" value="${release.id}">
+        <not>
+           <isset property="devdist"/>
+        </not>
+    </condition>
 
 	<condition property="ff.present">
 		<and>
@@ -101,8 +130,10 @@
 				<include name="chrome.manifest" />
 				<include name="install.rdf" />
 				<include name="mhttpd.conf" />
+				<include name="modules/**" />
 				<include name="defaults/**" />
 				<include name="**/platform/**" />
+				<include name="**/alph-aramorph/**" />
 				<exclude name="**/.*" />
 			</fileset>
 		</zip>
@@ -213,6 +244,29 @@
 	    </replaceregexp>
 	</target>
 
+	<!-- tweaks for dev build -->
+    <target name="check-dev-build" if="devdist">
+    	<echo>Executing Dev Build substitutions</echo>
+        <!-- separate update url for dev distribution -->
+        <replaceregexp file="${src.dir}/install.rdf">
+              <regexp pattern='(\u003cem:updateURL\u003e).*?(\u003c\/em:updateURL\u003e)'/>
+              <substitution expression="\1http://alpheios.net/xpi-updates/dev/update.rdf\2"/>
+        </replaceregexp>
+    </target>
+    
+    <!-- for the amo build, clear the update url and key -->
+    <target name="check-amo-build" if="amodist">
+       <echo>Executing AMO Build substitutions</echo>
+       <replaceregexp file="${src.dir}/install.rdf">
+            <regexp pattern='\u003cem:updateKey\u003e.*?\u003c\/em:updateKey\u003e'/>
+            <substitution expression=""/>
+        </replaceregexp>
+        <replaceregexp file="${src.dir}/install.rdf">
+           <regexp pattern='\u003cem:updateURL\u003e.*?\u003c\/em:updateURL\u003e'/>
+           <substitution expression=""/>
+       </replaceregexp>
+    </target>
+	
     <!-- clean deletes the package files from the distribution directory -->
 	<target name="clean" depends="clean.extras">
 		<delete file="${dist.dir}/${app.name}.jar"/>
