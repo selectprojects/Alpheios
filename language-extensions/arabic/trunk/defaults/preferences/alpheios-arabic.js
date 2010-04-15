@@ -9,7 +9,7 @@ pref("extensions.alpheios.arabic.url.lexicon", 'http://localhost:8200');
 pref("extensions.alpheios.arabic.url.lexicon.request", "/arabic?word=<WORD>");
 pref("extensions.alpheios.arabic.url.lexicon.timeout",5000);
 pref("extensions.alpheios.arabic.grammar.hotlinks","");
-pref("extensions.alpheios.arabic.popuptrigger",'mousemove');
+pref("extensions.alpheios.arabic.popuptrigger",'dblclick');
 pref("extensions.alpheios.arabic.features.alpheios-inflect",false);
 pref("extensions.alpheios.arabic.features.alpheios-grammar",false);
 pref("extensions.alpheios.arabic.panels.use.defaults",true);
