@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <!-- $Revision: 1785 $-->
-<!-- $BuildId: 206+$-->
+<!-- $BuildId: 216$-->
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 		xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 
 	<Description about="urn:mozilla:install-manifest">
 		<em:name>Alpheios Arabic Tools</em:name>
-		<em:version>0.2.2966.20100414</em:version>
+		<em:version>1.0alpha1.2973.20100414</em:version>
 		<em:description></em:description>
 		<em:creator>Cantus Foundation</em:creator>
 		<em:id>arabic@alpheios.net</em:id>
@@ -33,7 +33,7 @@
             <Description>
                 <!-- Alpheios -->
                 <em:id>{4816253c-3208-49d8-9557-0745a5508299}</em:id>
-            	<em:minVersion>1.0alpha4a</em:minVersion>
+            	<em:minVersion>1.0beta2.2970</em:minVersion>
                 <em:maxVersion>1.0beta*.*</em:maxVersion>
             </Description>
         </em:requires>
