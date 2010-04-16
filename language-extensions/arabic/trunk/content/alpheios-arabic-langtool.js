@@ -2,7 +2,7 @@
  * @fileoverview Arabic extension of Alph.LanguageTool class
  * @version $Id$
  *
- * Copyright 2008-2009 Cantus Foundation
+ * Copyright 2008-2010 Cantus Foundation
  * http://alpheios.net
  *
  * This file is part of Alpheios.
@@ -137,7 +137,9 @@ function(a_lemma, a_key, a_datafile, a_stripper)
         return Array(null, null);
 
     // try key or lemma first
-    var key = (a_key ? a_key : a_lemma);
+    // strip trailing underscore and digits from lemma
+    var lemma = a_lemma.replace(/[_\u0640][0-9]+$/,"");
+    var key = (a_key ? a_key : lemma);
     var data = a_datafile.findData(key);
     var x = null;
 
@@ -181,5 +183,5 @@ function(a_lemma, a_key, a_datafile, a_stripper)
     }
 
     // nothing found
-    return Array(a_lemma, null);
+    return Array(lemma, null);
 }

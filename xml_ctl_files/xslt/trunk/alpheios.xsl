@@ -969,48 +969,46 @@
     <xsl:param name="a_partial" select="false()"/>
     <xsl:param name="a_stripSense" select="false()"/>
 
+    <xsl:choose>
+      <!-- ancient Greek -->
+      <xsl:when test="starts-with($a_item/ancestor-or-self::*/@xml:lang, 'grc')">
+        <xsl:call-template name="convert-text-grc">
+          <xsl:with-param name="a_item" select="$a_item"/>
+          <xsl:with-param name="a_partial" select="$a_partial"/>
+          <xsl:with-param name="a_stripSense" select="$a_stripSense"/>
+        </xsl:call-template>
+      </xsl:when>
+      <!-- Arabic -->
+      <xsl:when test="starts-with($a_item/ancestor-or-self::*/@xml:lang, 'ara')">
+        <xsl:call-template name="convert-text-ara">
+          <xsl:with-param name="a_item" select="$a_item"/>
+          <xsl:with-param name="a_stripSense" select="$a_stripSense"/>
+        </xsl:call-template>
+      </xsl:when>
+      <xsl:otherwise>
+        <xsl:value-of select="$a_item"/>
+      </xsl:otherwise>
+    </xsl:choose>
+  </xsl:template>
+
+  <!-- convert Greek text -->
+  <xsl:template name="convert-text-grc">
+    <xsl:param name="a_item"/>
+    <xsl:param name="a_partial" select="false()"/>
+    <xsl:param name="a_stripSense" select="false()"/>
+
+    <!-- is this betacode? -->
+    <xsl:variable name="isbeta">
+      <xsl:call-template name="is-beta">
+        <xsl:with-param name="a_in" select="$a_item"/>
+      </xsl:call-template>
+    </xsl:variable>
+
+    <!-- get text in Unicode -->
     <xsl:variable name="text">
-      <!-- switch on language -->
       <xsl:choose>
-        <!-- ancient Greek -->
-        <xsl:when test="starts-with($a_item/ancestor-or-self::*/@xml:lang, 'grc')">
-          <!-- is this betacode? -->
-          <xsl:variable name="isbeta">
-            <xsl:call-template name="is-beta">
-              <xsl:with-param name="a_in" select="$a_item"/>
-            </xsl:call-template>
-          </xsl:variable>
-
-          <!-- get text in Unicode -->
-          <xsl:choose>
-            <!-- if betacode -->
-            <xsl:when test="$isbeta > 0">
-              <xsl:variable name="itemText">
-                <xsl:choose>
-                  <xsl:when test="$a_item/*">
-                    <xsl:for-each select="$a_item/*">
-                      <xsl:value-of select="./text()"/>
-                    </xsl:for-each>
-                  </xsl:when>
-                  <xsl:otherwise>
-                    <xsl:value-of select="$a_item/text()"/>
-                  </xsl:otherwise>
-                </xsl:choose>
-              </xsl:variable>
-              <!-- convert it to unicode -->
-              <xsl:call-template name="beta-to-uni">
-                <xsl:with-param name="a_in" select="$itemText"/>
-                <xsl:with-param name="a_partial" select="$a_partial"/>
-              </xsl:call-template>
-            </xsl:when>
-            <xsl:otherwise>
-              <xsl:value-of select="$a_item"/>
-            </xsl:otherwise>
-          </xsl:choose>
-        </xsl:when>
-
-        <!-- Arabic -->
-        <xsl:when test="starts-with($a_item/ancestor-or-self::*/@xml:lang, 'ara')">
+        <!-- if betacode -->
+        <xsl:when test="$isbeta > 0">
           <xsl:variable name="itemText">
             <xsl:choose>
               <xsl:when test="$a_item/*">
@@ -1024,12 +1022,11 @@
             </xsl:choose>
           </xsl:variable>
           <!-- convert it to unicode -->
-          <xsl:call-template name="ara-buckwalter-to-uni">
+          <xsl:call-template name="beta-to-uni">
             <xsl:with-param name="a_in" select="$itemText"/>
+            <xsl:with-param name="a_partial" select="$a_partial"/>
           </xsl:call-template>
         </xsl:when>
-
-        <!-- other language, do nothing -->
         <xsl:otherwise>
           <xsl:value-of select="$a_item"/>
         </xsl:otherwise>
@@ -1041,12 +1038,52 @@
       <xsl:when test="$a_stripSense">
         <xsl:call-template name="strip-trailing">
           <xsl:with-param name="a_in" select="$text"/>
+          <xsl:with-param name="a_toStrip" select="'0123456789'"/>
         </xsl:call-template>
       </xsl:when>
       <xsl:otherwise>
         <xsl:value-of select="$text"/>
       </xsl:otherwise>
     </xsl:choose>
+  </xsl:template>
+
+  <!-- convert Arabic text -->
+  <xsl:template name="convert-text-ara">
+    <xsl:param name="a_item"/>
+    <xsl:param name="a_stripSense" select="false()"/>
+
+    <xsl:variable name="itemText">
+      <xsl:choose>
+        <xsl:when test="$a_item/*">
+          <xsl:for-each select="$a_item/*">
+            <xsl:value-of select="./text()"/>
+          </xsl:for-each>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$a_item/text()"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <!-- strip sense indication if requested -->
+    <xsl:variable name="text">
+      <xsl:choose>
+        <xsl:when test="$a_stripSense">
+          <xsl:call-template name="strip-trailing">
+            <xsl:with-param name="a_in" select="$itemText"/>
+            <xsl:with-param name="a_toStrip" select="'0123456789_'"/>
+          </xsl:call-template>
+        </xsl:when>
+        <xsl:otherwise>
+          <xsl:value-of select="$itemText"/>
+        </xsl:otherwise>
+      </xsl:choose>
+    </xsl:variable>
+
+    <!-- convert it to unicode -->
+    <xsl:call-template name="ara-buckwalter-to-uni">
+      <xsl:with-param name="a_in" select="$text"/>
+    </xsl:call-template>
   </xsl:template>
 
   <!-- strip trailing characters from input -->
