@@ -135,7 +135,14 @@ declare function local:process-text(
                 let $dummy := <dummy/>
                 let $temp := transform:transform($dummy, $xsl, $params)
                 return $temp
-                else $t
+            else if ($e_encoding = "ara")
+            then
+                let $xsl := doc('/db/xslt/alpheios-buck2uni.xsl')
+                let $params := <parameters><param name="e_in" value="{$t}"/></parameters>
+                let $dummy := <dummy/>
+                let $temp := transform:transform($dummy, $xsl, $params)
+                return $temp
+            else $t
         return element wd
             {
               (: assign unique id to word :)

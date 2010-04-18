@@ -180,7 +180,9 @@
 	<!-- call morphology service to proces words extracted from TEI document -->
 	<target name="build-morph" depends="">
 		<if>
-		  <equals arg1="${source.encoding}" arg2="beta"/>
+		  <not>
+		  	<equals arg1="${source.encoding}" arg2="uni"/>
+		  </not>
 		  <then>
 		    <property name="morph.output" value="${build.dir}/${source.encoding}.${morph.file}"/>
 		  </then>
@@ -208,6 +210,15 @@
             	out="${build.dir}/${morph.file}"           
                 style="${xslt.dir}/morph-beta-uni.xsl" classpathref="xalan.class.path"/>                         
         </then>
+       	<elsif>
+       		<equals arg1="${source.encoding}" art2="ara"/>
+       		<then>
+       			<echo message="Transforming ${build.dir}/${source.encoding}.${morph.file}" />             
+       			<xslt in="${build.dir}/${source.encoding}.${morph.file}" 
+       			  out="${build.dir}/${morph.file}"           
+       			  style="${xslt.dir}/morph-ara-uni.xsl" classpathref="xalan.class.path"/>
+       		</then>
+       	</elsif>
        	<else>
        	</else>
       </if>
