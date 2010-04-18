@@ -84,4 +84,36 @@
             </edition>
         </work>
     </textgroup>
+    <textgroup
+        projid="arabicLit:perseus200202">
+        <groupname
+            xml:lang="eng">Religious Texts</groupname>
+        <work
+            projid="arabicLit:00006"
+            xml:lang="eng">
+            <title
+                xml:lang="eng">Quran</title>
+            <edition
+                projid="arabicLit:alpheios-text-ara1">
+                <label
+                    xml:lang="eng">Alpheios Enhanced Quran</label>
+                <online
+                    docname="/db/repository/arabicLit/perseus200202/00006/alpheios-text-ara1.xml">
+                    <validate
+                        schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Sura"
+                            xpath="/div1[@n='?']"
+                            scope="/TEI.2/text/body">                                                                              
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+      </textgroup>
+        
 </TextInventory>
