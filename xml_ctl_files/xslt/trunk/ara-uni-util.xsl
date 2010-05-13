@@ -32,11 +32,12 @@
      U+0625 (ALEF WITH HAMZA BELOW) = I
    are used for transliteration.
    Both alternatives (OWI or >&<) are recognized for Unicode production.
+   U+06E1 (SMALL HIGH DOTLESS HEAD OF KHAH) is treated as sukun (U+0652).
   -->
   <xsl:variable name="s_araBuckwalter"
-    >'|O&gt;W&amp;I&lt;}AbptvjHxd*rzs$SDTZEg_fqklmnhwYyFNKaui~o`{PJVG</xsl:variable>
+    >'|O&gt;W&amp;I&lt;}AbptvjHxd*rzs$SDTZEg_fqklmnhwYyFNKaui~oo`{PJVG</xsl:variable>
   <xsl:variable name="s_araUnicode"
-    >&#x0621;&#x0622;&#x0623;&#x0623;&#x0624;&#x0624;&#x0625;&#x0625;&#x0626;&#x0627;&#x0628;&#x0629;&#x062A;&#x062B;&#x062C;&#x062D;&#x062E;&#x062F;&#x0630;&#x0631;&#x0632;&#x0633;&#x0634;&#x0635;&#x0636;&#x0637;&#x0638;&#x0639;&#x063A;&#x0640;&#x0641;&#x0642;&#x0643;&#x0644;&#x0645;&#x0646;&#x0647;&#x0648;&#x0649;&#x064A;&#x064B;&#x064C;&#x064D;&#x064E;&#x064F;&#x0650;&#x0651;&#x0652;&#x0670;&#x0671;&#x067E;&#x0686;&#x06A4;&#x06AF;</xsl:variable>
+    >&#x0621;&#x0622;&#x0623;&#x0623;&#x0624;&#x0624;&#x0625;&#x0625;&#x0626;&#x0627;&#x0628;&#x0629;&#x062A;&#x062B;&#x062C;&#x062D;&#x062E;&#x062F;&#x0630;&#x0631;&#x0632;&#x0633;&#x0634;&#x0635;&#x0636;&#x0637;&#x0638;&#x0639;&#x063A;&#x0640;&#x0641;&#x0642;&#x0643;&#x0644;&#x0645;&#x0646;&#x0647;&#x0648;&#x0649;&#x064A;&#x064B;&#x064C;&#x064D;&#x064E;&#x064F;&#x0650;&#x0651;&#x0652;&#x06E1;&#x0670;&#x0671;&#x067E;&#x0686;&#x06A4;&#x06AF;</xsl:variable>
 
   <!--
     Definitions of sets of diacritics
@@ -47,8 +48,9 @@
   -->
   <xsl:variable name="s_rawAraDiacritics">
     <drop-table>
-      <drop name="tanwin" in="&#x064B;&#x064C;&#x064D;" out=""
-        >Drop nunation/tanwin (FATHATAN, DAMMATAN, KASRATAN)</drop>
+      <drop name="tanwin" in="&#x064B;&#x064C;&#x064D;&#x0640;" out=""
+        >Drop nunation/tanwin & tatweel
+        (FATHATAN, DAMMATAN, KASRATAN, TATWEEL)</drop>
       <drop name="hamza" in="&#x0622;&#x0623;&#x0625;"
         out="&#x0627;&#x0627;&#x0627;"
         >Drop hamzas (replace ALEF WITH MADDA ABOVE,
