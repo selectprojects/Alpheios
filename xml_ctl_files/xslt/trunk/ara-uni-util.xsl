@@ -49,7 +49,7 @@
   <xsl:variable name="s_rawAraDiacritics">
     <drop-table>
       <drop name="tanwin" in="&#x064B;&#x064C;&#x064D;&#x0640;" out=""
-        >Drop nunation/tanwin & tatweel
+        >Drop nunation/tanwin &amp; tatweel
         (FATHATAN, DAMMATAN, KASRATAN, TATWEEL)</drop>
       <drop name="hamza" in="&#x0622;&#x0623;&#x0625;"
         out="&#x0627;&#x0627;&#x0627;"
