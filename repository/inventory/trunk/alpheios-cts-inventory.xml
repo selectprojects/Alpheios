@@ -89,7 +89,7 @@
         <groupname
             xml:lang="eng">Religious Texts</groupname>
         <work
-            projid="arabicLit:0006"
+            projid="arabicLit:perseus0006"
             xml:lang="eng">
             <title
                 xml:lang="eng">Quran</title>
@@ -98,7 +98,7 @@
                 <label
                     xml:lang="eng">Alpheios Enhanced Quran</label>
                 <online
-                    docname="/db/repository/arabicLit/perseus200202/0006/alpheios-text-ara1.xml">
+                    docname="/db/repository/arabicLit/perseus200202/perseus0006/alpheios-text-ara1.xml">
                     <validate
                         schema="documentschema.rng"/>
                     <namespaceMapping
@@ -108,12 +108,36 @@
                         <citation
                             label="Sura"
                             xpath="/div1[@n='?']"
-                            scope="/TEI.2/text/body">                                                                              
+                            scope="/TEI.2/text/body">
+                                <citation
+                                    label="Verse"
+                                    xpath="/l[@n='?']"
+                                    scope="/TEI.2/text/body/div1[@n='?']/p/"/>                                                    
                         </citation>
                     </citationMapping>
                 </online>
             </edition>
         </work>
       </textgroup>
-        
+    <textgroup
+        projid="arabicLit:alk">
+        <groupname
+            xml:lang="eng">Arabic Vocabulary List</groupname>
+        <work
+            projid="arabicLit:alk001"
+            xml:lang="eng">
+            <title
+                xml:lang="eng">Quran</title>
+            <edition
+                projid="arabicLit:alpheios-text-ara1">
+                <label
+                    xml:lang="eng">Alpheios Enhanced Quran</label>
+                <online
+                    docname="/db/repository/arabicLit/alk/alk001/alpheios-vocab-ara1.xml">
+                    <validate
+                        schema="documentschema.rng"/>                    
+                </online>
+            </edition>
+        </work>
+    </textgroup>        
 </TextInventory>
