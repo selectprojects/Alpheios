@@ -35,7 +35,8 @@ declare namespace  util="http://exist-db.org/xquery/util";
 declare variable $cts:tocChunking :=
 ( 
     <tocCunk type="Book" size="1"/>,
-    <tocChunk type="Line" size="100"/>  
+    <tocChunk type="Line" size="100"/>,
+    <tocChunk type="Verse" size="100"/>
 );
 
 (: 
@@ -120,8 +121,14 @@ declare function cts:parseUrn($a_urn as xs:string)
                         },
                         element alpheiosDocType { $parts[2] },
                         for $i in $parts[position() > 2] return element alpheiosEditionId {$i}
-                    )                            
-                else ( (: TODO lookup from TextInventory :) )                     
+                    )   
+                else 
+                    if (not($edition))
+                    then 
+                        element basePath { 
+                            concat("/db/repository/", $namespace, "/", string-join($workComponents,"/"))
+                        }                      
+                    else ( (: TODO lookup from TextInventory :) )                     
             }
         }
 };
