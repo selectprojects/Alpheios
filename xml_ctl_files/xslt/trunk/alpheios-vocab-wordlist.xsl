@@ -58,7 +58,12 @@
     </xsl:template>
     
     <xsl:template match="tei:entry">
-        <xsl:variable name="lang" select="@lang"/>                    
+        <xsl:variable name="lang">
+            <xsl:choose>
+                <xsl:when test="attribute::xml:lang"><xsl:value-of select="attribute::xml:lang"/></xsl:when>            
+                <xsl:otherwise><xsl:value-of select="@lang"/></xsl:otherwise>
+            </xsl:choose>
+        </xsl:variable>                   
         <div class="entry">
             <div class="lemma">
             <xsl:element name="input">
