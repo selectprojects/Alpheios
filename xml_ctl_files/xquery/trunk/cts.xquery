@@ -39,6 +39,8 @@ declare variable $cts:tocChunking :=
     <tocChunk type="Verse" size="100"/>
 );
 
+declare variable $cts:maxPassageNodes := 100;
+
 (: 
     function to parse a CTS Urn down to its individual parts
     Parameters: 
@@ -423,24 +425,33 @@ declare function cts:findNextPrev($a_dir as xs:string,
 :)
 declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
 {
-    let $cts := cts:parseUrn($a_urn)
+    let $cts := cts:parseUrn($a_urn)    
     return 
     if ($cts/subRef)
     then 
         cts:findSubRef($a_urn)         
-    else
+    else 
         let $doc := doc($cts/fileInfo/fullPath)
         let $level := count($cts/passageParts/rangePart[1]/part)
         let $entry := cts:getCatalog($a_inv,$a_urn)
+        let $tocName := ($entry//ti:online//ti:citation)[position() = $level]/@label
+        let $chunkSize := xs:int($cts:tocChunking[@type=$tocName]/@size)
+        
+        
         let $cites := for $i in $entry//ti:online//ti:citation return $i        
         let $xpath := cts:replaceBindVariables(
             $cts/passageParts/rangePart[1]/part,
             $cts/passageParts/rangePart[2]/part,
             concat($cites[$level]/@scope, $cites[$level]/@xpath))
-        let $passage := util:eval(concat("$doc",$xpath))
+        let $passage := 
+            (: return error if we can't determine the chunk size :)
+           if (not($chunkSize)) then (<l rend="error">Invalid Request</l>)
+           else util:eval(concat("$doc",$xpath))
         let $xmllang := $passage[1]/ancestor::*[@xml:lang][1]/@xml:lang
         let $lang := $passage[1]/ancestor::*[@lang][1]/@lang
-        let $count := count($passage)
+        let $countAll := count($passage)
+        (: enforce limit on # of nodes returned to avoid crashing the server or browser :)
+        let $count := if ($countAll > $cts:maxPassageNodes) then $cts:maxPassageNodes else $countAll        
         let $name := xs:string(node-name($passage[1]))
         let $thisPath := xs:string($cites[position() = last()]/@xpath)
         return   
@@ -449,14 +460,17 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
                     {$doc//teiHeader},
                     <text xml:lang="{if ($xmllang) then $xmllang else $lang}">
                     <body>
-                        {$passage}
+                        {$passage[position() < $count+ 1]}
                      </body>
                   </text>
                 </TEI>
-                <prevnext>
-                    <prev>{ cts:findNextPrev("p",$passage[1],$thisPath,$count,$cts/workUrn,$cts/passageParts/rangePart[1]/part) }</prev>                    
-                    <next>{ cts:findNextPrev("n",$passage[position() = last()],$thisPath,$count,$cts/workUrn,$cts/passageParts/rangePart[position()=last()]/part) }</next>
-                </prevnext>
+                { if ($chunkSize) then
+                    <prevnext>                     
+                        <prev>{ cts:findNextPrev("p",$passage[1],$thisPath,$count,$cts/workUrn,$cts/passageParts/rangePart[1]/part) }</prev>                    
+                        <next>{ cts:findNextPrev("n",$passage[position() = last()],$thisPath,$count,$cts/workUrn,$cts/passageParts/rangePart[position()=last()]/part) }</next>                                            
+                    </prevnext>
+                    else ()
+                }
             </reply>                    
 };
 

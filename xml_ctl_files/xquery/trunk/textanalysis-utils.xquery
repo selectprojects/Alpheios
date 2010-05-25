@@ -25,8 +25,9 @@
 module namespace tan  = "http://alpheios.net/namespaces/text-analysis";
 declare namespace forms = "http://alpheios.net/namespaces/forms";
 declare namespace tbd = "http://alpheios.net/namespaces/treebank-desc";
+declare namespace tei="http://www.tei-c.org/ns/1.0";
 import module namespace tbu="http://alpheios.net/namespaces/treebank-util"
-              at "treebank-util.xquery";
+              at "treebank-util.xquery";              
 import module namespace tbm="http://alpheios.net/namespaces/treebank-morph" 
             at "treebank-morph.xquery";
 import module namespace cts="http://alpheios.net/namespaces/cts" 
@@ -133,11 +134,22 @@ declare function tan:getWords($a_docid as xs:string, $a_pofs as xs:string*)
             let $doc := doc($docinfo/treebank)            
             let $tbFormat := tbu:get-format-name($doc,'aldt')
             let $tbDesc := tbu:get-format-description($tbFormat, "/db/xq/config")
-            let $p_abbrev := xs:string($tbDesc/tbd:table[@type eq "morphology"]/tbd:category[@id eq 'pos']/tbd:entry[tbd:long/text() = $a_pofs]/tbd:short)
+            let $p_abbrev :=
+                if ($a_pofs)
+                then xs:string($tbDesc/tbd:table[@type eq "morphology"]/tbd:category[@id eq 'pos']/tbd:entry[tbd:long/text() = $a_pofs]/tbd:short)
+                else "*"
             let $lang := xs:string($doc/treebank/attribute::xml:lang)
+            let $lemmas := 
+                if ($p_abbrev != "*")
+                then
+                    $doc/treebank/sentence[matches(@subdoc,$partMatch)]/
+                    word[attribute::postag and starts-with(attribute::postag,$p_abbrev)]
+                else
+                    $doc/treebank/sentence[matches(@subdoc,$partMatch)]/
+                        word                
             return 
             (
-                for $i in $doc/treebank/sentence[matches(@subdoc,$partMatch)]/word[attribute::postag and starts-with(attribute::postag,$p_abbrev)] 
+                for $i in $lemmas 
                     let $sense := replace($i/@lemma,"^(.*?)(\d+)$","$2")
                     let $lemma:= if (matches($i/@lemma,"\d+$")) then replace($i/@lemma,"^(.*?)(\d+)$","$1") else $i/@lemma
                     order by $i/@lemma, $i/@form
@@ -150,11 +162,17 @@ declare function tan:getWords($a_docid as xs:string, $a_pofs as xs:string*)
             :)
             then
                 let $doc := doc($docinfo/morph)
-                let $lang := xs:string($doc/forms:forms/attribute::xml:lang)                
+                let $lang := xs:string($doc/forms:forms/attribute::xml:lang)
+                let $lemmas := 
+                    if ($a_pofs)
+                    then $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$a_docid)]/
+                        forms:words/forms:word/forms:entry/forms:dict[forms:pofs/text()=$a_pofs] 
+                      else $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$a_docid)]/
+                          forms:words/forms:word/forms:entry/forms:dict
                 return
                 (
-                    for $i in $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$a_docid)]/forms:words/forms:word/forms:entry/forms:dict[forms:pofs/text()=$a_pofs]
-                        let $hdwd := $i/forms:hdwd/text()
+                    for $i in $lemmas
+                        let $hdwd := if $i/$i/forms:hdwd/text()
                         let $sense := if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
                         let $lemma:= if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
                         let $form := $i/ancestor::forms:inflection/@form
@@ -260,3 +278,32 @@ declare function tan:change-element-ns-deep ( $a_nodes as node()* , $a_newns as 
                                            $a_newns, $a_prefix)
          else $node
  } ;
+
+declare function tan:tokenizeWords( $a_str as xs:string) as node()* {
+    ()
+};
+
+declare function tan:matchLemmas( $a_words as node()*, $a_vocab as node()*) as node()*
+{
+        for $i in $a_words
+            let $match :=
+                    $a_vocab/tei:form[@type="lemma" and text() = $i/text()]
+            let $matchSense := if ($match and $match/../tei:sense/@n = $i/@sense) then "true" else "false"
+            let $matchForm := if ($match and $match/../tei:form[@type="inflection"]/text() = $i/@form) then "true" else "false"
+            return                 
+                element lemma {
+                          $i/@*,
+                          attribute matchLemma { if ($match) then "true" else "false" },
+                          attribute matchSense {$matchSense},
+                          attribute matchForm {$matchForm}
+                }                       
+};
+
+declare function tan:matchVocab( $a_vocab as node()*, $a_words as node()*) as node()*
+{
+        for $i in $a_vocab
+            let $match :=
+                    $a_words[text() = $i/tei:form[@type="lemma"]/text()]
+            return
+                $match                                        
+};
