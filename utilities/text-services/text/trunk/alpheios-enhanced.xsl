@@ -37,6 +37,7 @@
      <xsl:param name="alpheiosTreebankUrl"/>
     <xsl:param name="alpheiosVocabUrl"/>    
      <xsl:param name="cssFile" select="'http://alpheios.net/alpheios-texts/css/alpheios-text.css'"/>
+    
      <xsl:param name="highlightWord"/>
     
     <xsl:template match="/">
@@ -319,6 +320,8 @@
         <xsl:if test="$cssFile">
             <link rel="stylesheet" type="text/css" href="{$cssFile}"/>
         </xsl:if>
+        <xsl:variable name="langCss" select="concat('alpheios-text-',//tei:text/@xml:lang,'.css')"/>
+        <link rel="stylesheet" type="text/css" href="{concat('../css/',$langCss)}"/>
         <xsl:if test="$alpheiosPedagogicalText='true'">
             <link rel="stylesheet" type="text/css" href="{concat($alpheiosSiteBaseUrl,'/site_menus/css/superfish.css')}"/>
             <link rel="shortcut icon" type="image/x-icon" href="{concat($alpheiosSiteBaseUrl,'/img/alpheios_16.png')}" />

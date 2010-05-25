@@ -37,7 +37,10 @@
     <!-- generates the title for display within the page from the teiHeader elements -->
     <xsl:template name="generateAlpheiosTitleHtml">        
         <h1>
-            <span class="author"><xsl:value-of select="//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author"/>, </span>
+            <xsl:variable name="author" select="//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author"/>
+            <xsl:if test="$author">
+                <span class="author"><xsl:value-of select="$author"/>, </span>
+            </xsl:if>
             <xsl:variable name="myName">
                 <xsl:value-of select="local-name(.)"/>
             </xsl:variable>

@@ -23,7 +23,7 @@
     Transforms an Alpheios Vocabulary List from TEI5 XML to HTML     
 -->
 
-<xsl:stylesheet 
+<xsl:stylesheet     
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0">
 
