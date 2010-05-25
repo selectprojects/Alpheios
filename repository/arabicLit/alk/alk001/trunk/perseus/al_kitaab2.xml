@@ -1,0 +1,2595 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.perseus.org/meta/perseus.rdfs#"
+         xmlns:dc="http://purl.org/dc/elements/1.1/"
+         xmlns:dcterms="http://purl.org/dc/terms/"
+         xmlns:dctype="http://purl.org/dc/dcmitype/"
+         xmlns:perseus="http://www.perseus.org/meta/perseus.rdfs#"
+         xmlns:persq="http://www.perseus.org/meta/persq.rdfs#"
+         xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:tufts="http://www.tufts.edu/"
+>
+<metadata>
+	<TextbookVocab id="al_kitaab2"/>
+	<dc:title>Al-Kitaab Part 2</dc:title>
+	<dcterms:alternative>Al-Kitaab 2</dcterms:alternative>
+	<dc:creator>Kristen Brustad, Abbas Al-Tonsi and Mahmoud Al-Batal</dc:creator>
+	<dc:date>2004</dc:date>
+	<dc:language>ar</dc:language>
+</metadata>
+<section n="Chapter 1">
+	<entry>
+		<orth>Al ilAfap</orth>
+		<lemma>xilAfap1</lemma>
+	</entry>
+	<entry>
+		<orth>qaron </orth>
+		<lemma>qaron1</lemma>
+	</entry>
+	<entry>
+		<orth>AlSiyn </orth>
+		<lemma>Siyn1</lemma>
+	</entry>
+	<entry>
+		<orth>kAmil </orth>
+		<lemma>kAmil1</lemma>
+	</entry>
+	<entry>
+		<orth>HAl </orth>
+		<lemma>HAl1</lemma>
+	</entry>
+	<entry>
+		<orth>waSof </orth>
+		<lemma>waSof1</lemma>
+	</entry>
+	<entry>
+		<orth> ilAli </orth>
+		<lemma>xilAla1</lemma>
+	</entry>
+	<entry>
+		<orth>muHiyT </orth>
+		<lemma>muHiyT2</lemma>
+	</entry>
+	<entry>
+		<orth>EaSor </orth>
+		<lemma>EaSor1</lemma>
+	</entry>
+	<entry>
+		<orth>Oahol </orth>
+		<lemma>Oahol1</lemma>
+	</entry>
+	<entry>
+		<orth>OawA}il </orth>
+		<lemma>OawA}il2</lemma>
+	</entry>
+	<entry>
+		<orth>EaZiym </orth>
+		<lemma>EaZiym1</lemma>
+	</entry>
+	<entry>
+		<orth>raH~Alap </orth>
+		<lemma>raH~Alap1</lemma>
+	</entry>
+	<entry>
+		<orth>maEoluwmAt </orth>
+		<lemma>maEoluwmap1</lemma>
+	</entry>
+	<entry>
+		<orth>yuEotabar </orth>
+		<lemma>{iEotabar1</lemma>
+	</entry>
+	<entry>
+		<orth>OawA ir </orth>
+		<lemma>|xir1</lemma>
+	</entry>
+	<entry>
+		<orth>EAlim </orth>
+		<lemma>EAlim1</lemma>
+	</entry>
+	<entry>
+		<orth>Tuwl </orth>
+		<lemma>Tuwl1</lemma>
+	</entry>
+	<entry>
+		<orth>suwq </orth>
+		<lemma>suwq1</lemma>
+	</entry>
+	<entry>
+		<orth>musota$oriq </orth>
+		<lemma>musota$oriq1</lemma>
+	</entry>
+	<entry>
+		<orth>$aEob </orth>
+		<lemma>$aEob1</lemma>
+	</entry>
+	<entry>
+		<orth>TaboEap </orth>
+		<lemma>TaboEap1</lemma>
+	</entry>
+	<entry>
+		<orth>AlEilom </orth>
+		<lemma>Eilom1</lemma>
+	</entry>
+	<entry>
+		<orth>balodap </orth>
+		<lemma>balodap1</lemma>
+	</entry>
+	<entry>
+		<orth>Alzaman </orth>
+		<lemma>zamAn1</lemma>
+	</entry>
+	<entry>
+		<orth>{i$otahara b </orth>
+		<lemma>{i$otahar1</lemma>
+	</entry>
+	<entry>
+		<orth>{ihotama~ b </orth>
+		<lemma>{ihotam~1</lemma>
+	</entry>
+	<entry>
+		<orth>qaTaEa </orth>
+		<lemma>qATaE1</lemma>
+	</entry>
+	<entry>
+		<orth>{isotako$afa </orth>
+		<lemma>{isotako$af1</lemma>
+	</entry>
+	<entry>
+		<orth>{imotada~ </orth>
+		<lemma>{imotad~1</lemma>
+	</entry>
+	<entry>
+		<orth>tanaqa~la </orth>
+		<lemma>tanaq~al1</lemma>
+	</entry>
+	<entry>
+		<orth>qada~ma </orth>
+		<lemma>qad~am1</lemma>
+	</entry>
+	<entry>
+		<orth>balaga </orth>
+		<lemma>balAg1</lemma>
+	</entry>
+	<entry>
+		<orth>saja~la </orth>
+		<lemma>saj~al1</lemma>
+	</entry>
+	<entry>
+		<orth>Haqiyqap </orth>
+		<lemma>Haqiyqap1</lemma>
+	</entry>
+	<entry>
+		<orth>manoZar </orth>
+		<lemma>manoZar1</lemma>
+	</entry>
+	<entry>
+		<orth>riHolap </orth>
+		<lemma>riHolap1</lemma>
+	</entry>
+</section>
+<section n="Chapter 2">
+	<entry>
+		<orth>jamiyE </orth>
+		<lemma>jamiyE1</lemma>
+	</entry>
+	<entry>
+		<orth>fan~ </orth>
+		<lemma>fan~1</lemma>
+	</entry>
+	<entry>
+		<orth>maToluwb </orth>
+		<lemma>maToluwb1</lemma>
+	</entry>
+	<entry>
+		<orth>OamowAl </orth>
+		<lemma>mAl1</lemma>
+	</entry>
+	<entry>
+		<orth>OasAsiy~ </orth>
+		<lemma>OasAsiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>maTobuw  </orth>
+		<lemma>maTobuwx1</lemma>
+	</entry>
+	<entry>
+		<orth>EAdap </orth>
+		<lemma>EAdap1</lemma>
+	</entry>
+	<entry>
+		<orth>Al$Am </orth>
+		<lemma>$Am1</lemma>
+	</entry>
+	<entry>
+		<orth>ma$oruwbAt </orth>
+		<lemma>ma$oruwb1</lemma>
+	</entry>
+	<entry>
+		<orth>Tabolap </orth>
+		<lemma>Tabolap1</lemma>
+	</entry>
+	<entry>
+		<orth>wAjib </orth>
+		<lemma>wAjib1</lemma>
+	</entry>
+	<entry>
+		<orth>OaroD </orth>
+		<lemma>OaroD1</lemma>
+	</entry>
+	<entry>
+		<orth>maOokuwlAt </orth>
+		<lemma>maOokuwl1</lemma>
+	</entry>
+	<entry>
+		<orth>vaqiyl </orth>
+		<lemma>vaqiyl1</lemma>
+	</entry>
+	<entry>
+		<orth>Eiyd </orth>
+		<lemma>Eiyd1</lemma>
+	</entry>
+	<entry>
+		<orth>{isotiEodAdAF l </orth>
+		<lemma>{isotiEodAd1</lemma>
+	</entry>
+	<entry>
+		<orth> afiyf </orth>
+		<lemma>xafiyf1</lemma>
+	</entry>
+	<entry>
+		<orth>rizoq </orth>
+		<lemma>rizoq1</lemma>
+	</entry>
+	<entry>
+		<orth>wajobap </orth>
+		<lemma>wajobap1</lemma>
+	</entry>
+	<entry>
+		<orth>*ikoraY </orth>
+		<lemma>*ikoraY1</lemma>
+	</entry>
+	<entry>
+		<orth>mAl </orth>
+		<lemma>mAl1</lemma>
+	</entry>
+	<entry>
+		<orth>Hafolap </orth>
+		<lemma>Hafolap1</lemma>
+	</entry>
+	<entry>
+		<orth>faqiyr </orth>
+		<lemma>faqiyr1</lemma>
+	</entry>
+	<entry>
+		<orth>AlSinAEap </orth>
+		<lemma>SinAEap1</lemma>
+	</entry>
+	<entry>
+		<orth>Hay~ </orth>
+		<lemma>Hay~3</lemma>
+	</entry>
+	<entry>
+		<orth>ganiy~ </orth>
+		<lemma>ganiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>Tariyq </orth>
+		<lemma>Tariyq1</lemma>
+	</entry>
+	<entry>
+		<orth>Hadiyv </orth>
+		<lemma>Hadiyv3</lemma>
+	</entry>
+	<entry>
+		<orth>duk~An </orth>
+		<lemma>duk~An1</lemma>
+	</entry>
+	<entry>
+		<orth>$arAb </orth>
+		<lemma>$arAb1</lemma>
+	</entry>
+	<entry>
+		<orth>OafoTara </orth>
+		<lemma>OafoTar1</lemma>
+	</entry>
+	<entry>
+		<orth>nAdaY </orth>
+		<lemma>nAdaY1</lemma>
+	</entry>
+	<entry>
+		<orth>{iHotafala b </orth>
+		<lemma>{iHotafal1</lemma>
+	</entry>
+	<entry>
+		<orth>zaya~na </orth>
+		<lemma>zay~an1</lemma>
+	</entry>
+	<entry>
+		<orth>tabiEa </orth>
+		<lemma>TAbiE2</lemma>
+	</entry>
+	<entry>
+		<orth>tajama~Ea </orth>
+		<lemma>tajam~aE1</lemma>
+	</entry>
+	<entry>
+		<orth>jamaEa </orth>
+		<lemma>jAmaE1</lemma>
+	</entry>
+	<entry>
+		<orth>Daraba </orth>
+		<lemma>Darab1</lemma>
+	</entry>
+	<entry>
+		<orth>SanaEa </orth>
+		<lemma>SanAE1</lemma>
+	</entry>
+	<entry>
+		<orth>naqala </orth>
+		<lemma>nAqal1</lemma>
+	</entry>
+	<entry>
+		<orth>maDaY </orth>
+		<lemma>mAdaY1</lemma>
+	</entry>
+	<entry>
+		<orth>Sala~Y </orth>
+		<lemma>Sal~aY1</lemma>
+	</entry>
+	<entry>
+		<orth>HaDa~ra </orth>
+		<lemma>HaD~ar1</lemma>
+	</entry>
+	<entry>
+		<orth>waDaEa </orth>
+		<lemma>waDaE1</lemma>
+	</entry>
+	<entry>
+		<orth>{inoTalaqa </orth>
+		<lemma>{inoTalaq1</lemma>
+	</entry>
+	<entry>
+		<orth>{inotaZara </orth>
+		<lemma>{inotaZar1</lemma>
+	</entry>
+	<entry>
+		<orth>nawoE </orth>
+		<lemma>nawoE1</lemma>
+	</entry>
+	<entry>
+		<orth>mutanawi~E </orth>
+		<lemma>mutanaw~iE1</lemma>
+	</entry>
+	<entry>
+		<orth>Tariyqap </orth>
+		<lemma>Tariyqap1</lemma>
+	</entry>
+</section>
+<section n="Chapter 3">
+	<entry>
+		<orth>wAl </orth>
+		<lemma>wAliy1</lemma>
+	</entry>
+	<entry>
+		<orth>zirAEap </orth>
+		<lemma>zirAEap1</lemma>
+	</entry>
+	<entry>
+		<orth>maZohar </orth>
+		<lemma>maZohar1</lemma>
+	</entry>
+	<entry>
+		<orth>bidAyap </orth>
+		<lemma>bidAyap1</lemma>
+	</entry>
+	<entry>
+		<orth>EibArap </orth>
+		<lemma>EibArap1</lemma>
+	</entry>
+	<entry>
+		<orth>muWasa~sap</orth>
+		<lemma>muWas~asap1</lemma>
+	</entry>
+	<entry>
+		<orth>hadaf </orth>
+		<lemma>hadaf1</lemma>
+	</entry>
+	<entry>
+		<orth>OahodAf </orth>
+		<lemma>hadaf1</lemma>
+	</entry>
+	<entry>
+		<orth>Hukuwmap </orth>
+		<lemma>Hukuwmap1</lemma>
+	</entry>
+	<entry>
+		<orth>AlyuwnAn </orth>
+		<lemma>yuwnAn1</lemma>
+	</entry>
+	<entry>
+		<orth>yahodif l </orth>
+		<lemma>hadaf1</lemma>
+	</entry>
+	<entry>
+		<orth>yaZohar </orth>
+		<lemma>ZAhar1</lemma>
+	</entry>
+	<entry>
+		<orth>yaTobaE </orth>
+		<lemma>tabaE1</lemma>
+	</entry>
+	<entry>
+		<orth>ya odim </orth>
+		<lemma>xadam1</lemma>
+	</entry>
+	<entry>
+		<orth>biSuwrap </orth>
+		<lemma>Suwrap2</lemma>
+	</entry>
+	<entry>
+		<orth>dawoliy~ </orth>
+		<lemma>dawoliy~1</lemma>
+	</entry>
+	<entry>
+		<orth>Ouno$i}at </orth>
+		<lemma>Oano$aO1</lemma>
+	</entry>
+	<entry>
+		<orth>maZAhir </orth>
+		<lemma>maZohar1</lemma>
+	</entry>
+	<entry>
+		<orth>Easokariy~ </orth>
+		<lemma>Easokariy~1</lemma>
+	</entry>
+	<entry>
+		<orth>EaSoriy~ </orth>
+		<lemma>EaSoriy~1</lemma>
+	</entry>
+	<entry>
+		<orth>mutawADiE </orth>
+		<lemma>mutawADiE1</lemma>
+	</entry>
+	<entry>
+		<orth>dawolap </orth>
+		<lemma>dawolap1</lemma>
+	</entry>
+	<entry>
+		<orth>duwal </orth>
+		<lemma>dawolap1</lemma>
+	</entry>
+	<entry>
+		<orth>TabiyEiy~ </orth>
+		<lemma>TabiyEiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>TabiyEap </orth>
+		<lemma>TabiyEap1</lemma>
+	</entry>
+	<entry>
+		<orth>rasomiy~ </orth>
+		<lemma>rasomiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>$aEobiy~ </orth>
+		<lemma>$aEobiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>suloTap </orth>
+		<lemma>suloTap1</lemma>
+	</entry>
+	<entry>
+		<orth>suluTAt </orth>
+		<lemma>suloTap1</lemma>
+	</entry>
+	<entry>
+		<orth>gAlib</orth>
+		<lemma>gAlib2</lemma>
+	</entry>
+	<entry>
+		<orth>sAbiq </orth>
+		<lemma>sAbiq1</lemma>
+	</entry>
+	<entry>
+		<orth>maTobaEap </orth>
+		<lemma>maTobaE1</lemma>
+	</entry>
+	<entry>
+		<orth>ma$oruwE </orth>
+		<lemma>ma$oruwE1</lemma>
+	</entry>
+	<entry>
+		<orth>{inotiZAm </orth>
+		<lemma>{inotiZAm1</lemma>
+	</entry>
+	<entry>
+		<orth>wulAap </orth>
+		<lemma>wAliy1</lemma>
+	</entry>
+	<entry>
+		<orth>niZAm </orth>
+		<lemma>niZAm2</lemma>
+	</entry>
+	<entry>
+		<orth>naZom </orth>
+		<lemma>naZom1</lemma>
+	</entry>
+	<entry>
+		<orth>OanoZimap </orth>
+		<lemma>niZAm2</lemma>
+	</entry>
+	<entry>
+		<orth>AlZuhuwr </orth>
+		<lemma>Zuhuwr1</lemma>
+	</entry>
+	<entry>
+		<orth>AlIitoyAn </orth>
+		<lemma>IitoyAn1</lemma>
+	</entry>
+	<entry>
+		<orth>AltAliy </orth>
+		<lemma>tAliy1</lemma>
+	</entry>
+	<entry>
+		<orth>AlTibAEap </orth>
+		<lemma>TibAEap1</lemma>
+	</entry>
+	<entry>
+		<orth>AlwAliy </orth>
+		<lemma>wAliy1</lemma>
+	</entry>
+	<entry>
+		<orth>Al idomap </orth>
+		<lemma>xidomap1</lemma>
+	</entry>
+	<entry>
+		<orth>taqada~ma </orth>
+		<lemma>taqad~am1</lemma>
+	</entry>
+	<entry>
+		<orth>hadafa l </orth>
+		<lemma>hadaf1</lemma>
+	</entry>
+	<entry>
+		<orth>Zahara </orth>
+		<lemma>ZAhar1</lemma>
+	</entry>
+	<entry>
+		<orth>jA'a b</orth>
+		<lemma>jA'1</lemma>
+	</entry>
+	<entry>
+		<orth>Oa oraja </orth>
+		<lemma>Oaxoraj1</lemma>
+	</entry>
+	<entry>
+		<orth>Sadara </orth>
+		<lemma>SAdar1</lemma>
+	</entry>
+	<entry>
+		<orth>{isotamara~ </orth>
+		<lemma>{isotamar~1</lemma>
+	</entry>
+	<entry>
+		<orth>taTawa~ra </orth>
+		<lemma>taTaw~ar1</lemma>
+	</entry>
+	<entry>
+		<orth>Tawa~ra </orth>
+		<lemma>Taw~ar1</lemma>
+	</entry>
+	<entry>
+		<orth>Oasa~sa </orth>
+		<lemma>Oas~as1</lemma>
+	</entry>
+	<entry>
+		<orth>Oano$aOa </orth>
+		<lemma>Oano$aO1</lemma>
+	</entry>
+	<entry>
+		<orth>sama~Y </orth>
+		<lemma>sam~aY1</lemma>
+	</entry>
+	<entry>
+		<orth>{iHotala~ </orth>
+		<lemma>{iHotal~1</lemma>
+	</entry>
+	<entry>
+		<orth>galaba </orth>
+		<lemma>gAlab1</lemma>
+	</entry>
+	<entry>
+		<orth>TabaEa </orth>
+		<lemma>tabaE1</lemma>
+	</entry>
+	<entry>
+		<orth> adama </orth>
+		<lemma>xadam1</lemma>
+	</entry>
+	<entry>
+		<orth>{inota$ara </orth>
+		<lemma>{inota$ar1</lemma>
+	</entry>
+	<entry>
+		<orth>{isota odama </orth>
+		<lemma>{isotaxodam1</lemma>
+	</entry>
+</section>
+<section n="Chapter 4">
+	<entry>
+		<orth>jawAnib </orth>
+		<lemma>jAnib1</lemma>
+	</entry>
+	<entry>
+		<orth> alofiya~p</orth>
+		<lemma>xalofiy~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>jamAl </orth>
+		<lemma>jamAl2</lemma>
+	</entry>
+	<entry>
+		<orth>HAmil </orth>
+		<lemma>HAmil2</lemma>
+	</entry>
+	<entry>
+		<orth>marokaz </orth>
+		<lemma>marokaz1</lemma>
+	</entry>
+	<entry>
+		<orth>HaDArap </orth>
+		<lemma>HaDArap1</lemma>
+	</entry>
+	<entry>
+		<orth>Silap </orth>
+		<lemma>Silap1</lemma>
+	</entry>
+	<entry>
+		<orth>Hawo$ </orth>
+		<lemma>Hawo$1</lemma>
+	</entry>
+	<entry>
+		<orth> aTir </orth>
+		<lemma>xaTir1</lemma>
+	</entry>
+	<entry>
+		<orth> aTiyr </orth>
+		<lemma>xaTiyr1</lemma>
+	</entry>
+	<entry>
+		<orth>wafod </orth>
+		<lemma>wafod1</lemma>
+	</entry>
+	<entry>
+		<orth>wufuwd </orth>
+		<lemma>wafod1</lemma>
+	</entry>
+	<entry>
+		<orth>$ahAdap </orth>
+		<lemma>$ahAdap2</lemma>
+	</entry>
+	<entry>
+		<orth>munAqa$ap </orth>
+		<lemma>munAqa$ap1</lemma>
+	</entry>
+	<entry>
+		<orth>mawosuwEap </orth>
+		<lemma>mawosuwEap1</lemma>
+	</entry>
+	<entry>
+		<orth>kAfK </orth>
+		<lemma>kAfiy1</lemma>
+	</entry>
+	<entry>
+		<orth>AlkAfiy </orth>
+		<lemma>kAfiy1</lemma>
+	</entry>
+	<entry>
+		<orth>mavalAF </orth>
+		<lemma>maval1</lemma>
+	</entry>
+	<entry>
+		<orth>Eaboqariy~ </orth>
+		<lemma>Eaboqariy~1</lemma>
+	</entry>
+	<entry>
+		<orth>EabAqirap </orth>
+		<lemma>Eaboqariy~1</lemma>
+	</entry>
+	<entry>
+		<orth>nubuwg </orth>
+		<lemma>nubuwg1</lemma>
+	</entry>
+	<entry>
+		<orth>yuWomin b </orth>
+		<lemma>|man1</lemma>
+	</entry>
+	<entry>
+		<orth>yaquwd </orth>
+		<lemma>qad1</lemma>
+	</entry>
+	<entry>
+		<orth>yaraY </orth>
+		<lemma>rAwanod1</lemma>
+	</entry>
+	<entry>
+		<orth>ya*ohab b </orth>
+		<lemma>*ahAb1</lemma>
+	</entry>
+	<entry>
+		<orth>yamo$iy </orth>
+		<lemma>mA$aY1</lemma>
+	</entry>
+	<entry>
+		<orth>Oay~AmhA </orth>
+		<lemma>yawom2</lemma>
+	</entry>
+	<entry>
+		<orth>taOoviyr </orth>
+		<lemma>taOoviyr1</lemma>
+	</entry>
+	<entry>
+		<orth>yakofiy </orth>
+		<lemma>kAfaY1</lemma>
+	</entry>
+	<entry>
+		<orth>qA}id </orth>
+		<lemma>qA}id1</lemma>
+	</entry>
+	<entry>
+		<orth>qAdap </orth>
+		<lemma>qA}id1</lemma>
+	</entry>
+	<entry>
+		<orth>mahama~p </orth>
+		<lemma>maham~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>baEovap </orth>
+		<lemma>baEovap1</lemma>
+	</entry>
+	<entry>
+		<orth>mahAm~ </orth>
+		<lemma>maham~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>Hadiyv </orth>
+		<lemma>Hadiyv1</lemma>
+	</entry>
+	<entry>
+		<orth>Harakap </orth>
+		<lemma>Harakap1</lemma>
+	</entry>
+	<entry>
+		<orth>EAdiy~ </orth>
+		<lemma>EAdiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>qaSor </orth>
+		<lemma>qaSor3</lemma>
+	</entry>
+	<entry>
+		<orth>quSuwr </orth>
+		<lemma>qaSor3</lemma>
+	</entry>
+	<entry>
+		<orth>AlsiyAsap </orth>
+		<lemma>siyAsap1</lemma>
+	</entry>
+	<entry>
+		<orth>tilomiy* </orth>
+		<lemma>tilomiy*1</lemma>
+	</entry>
+	<entry>
+		<orth>talAmiy* </orth>
+		<lemma>tilomiy*1</lemma>
+	</entry>
+	<entry>
+		<orth>nahoDap </orth>
+		<lemma>nahoDap2</lemma>
+	</entry>
+	<entry>
+		<orth>marojiE </orth>
+		<lemma>marojiE2</lemma>
+	</entry>
+	<entry>
+		<orth>marAjiE </orth>
+		<lemma>marojiE2</lemma>
+	</entry>
+	<entry>
+		<orth>OaboHAv </orth>
+		<lemma>baHov2</lemma>
+	</entry>
+	<entry>
+		<orth>vaworap </orth>
+		<lemma>vaworap1</lemma>
+	</entry>
+	<entry>
+		<orth>maqoEad </orth>
+		<lemma>maqoEad1</lemma>
+	</entry>
+	<entry>
+		<orth>maqAEid </orth>
+		<lemma>maqoEad1</lemma>
+	</entry>
+	<entry>
+		<orth>nadowap </orth>
+		<lemma>nadowap1</lemma>
+	</entry>
+	<entry>
+		<orth>nadawAt </orth>
+		<lemma>nadowap1</lemma>
+	</entry>
+	<entry>
+		<orth>mujotamaE </orth>
+		<lemma>mujotamaE1</lemma>
+	</entry>
+	<entry>
+		<orth>ruwH </orth>
+		<lemma>ruwH1</lemma>
+	</entry>
+	<entry>
+		<orth>OarowAH </orth>
+		<lemma>ruwH1</lemma>
+	</entry>
+	<entry>
+		<orth>ruwHiy~ </orth>
+		<lemma>ruwHiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>AlkifAyap </orth>
+		<lemma>kifAyap1</lemma>
+	</entry>
+	<entry>
+		<orth>AlIiymAn b </orth>
+		<lemma>IiymAn1</lemma>
+	</entry>
+	<entry>
+		<orth>AlqiyAdap </orth>
+		<lemma>qiyAdap1</lemma>
+	</entry>
+	<entry>
+		<orth>AlruWoyap </orth>
+		<lemma>ruWoyap1</lemma>
+	</entry>
+	<entry>
+		<orth>Alfikor </orth>
+		<lemma>fikor1</lemma>
+	</entry>
+	<entry>
+		<orth>Alma$oy </orth>
+		<lemma>ma$oy1</lemma>
+	</entry>
+	<entry>
+		<orth>naZariya~p </orth>
+		<lemma>naZariy~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>{ita~saEa l </orth>
+		<lemma>{it~asaE1</lemma>
+	</entry>
+	<entry>
+		<orth>|mana b </orth>
+		<lemma>|man1</lemma>
+	</entry>
+	<entry>
+		<orth>{ikota$afa </orth>
+		<lemma>{ikota$af1</lemma>
+	</entry>
+	<entry>
+		<orth>nAqa$a </orth>
+		<lemma>nAqa$1</lemma>
+	</entry>
+	<entry>
+		<orth>Oawofada </orth>
+		<lemma>Oawofad1</lemma>
+	</entry>
+	<entry>
+		<orth>waza~Ea </orth>
+		<lemma>waz~aE1</lemma>
+	</entry>
+	<entry>
+		<orth> ara~ja </orth>
+		<lemma>xar~aj1</lemma>
+	</entry>
+	<entry>
+		<orth>{i otaraEa </orth>
+		<lemma>{ixotaraE1</lemma>
+	</entry>
+	<entry>
+		<orth>qAda </orth>
+		<lemma>qad1</lemma>
+	</entry>
+	<entry>
+		<orth>jaEala </orth>
+		<lemma>jAEal1</lemma>
+	</entry>
+	<entry>
+		<orth>naZa~ma </orth>
+		<lemma>naZ~am1</lemma>
+	</entry>
+	<entry>
+		<orth>{ibotakara </orth>
+		<lemma>{ibotakar1</lemma>
+	</entry>
+	<entry>
+		<orth>raOaY </orth>
+		<lemma>rAwanod1</lemma>
+	</entry>
+	<entry>
+		<orth>kafaY </orth>
+		<lemma>kAfaY1</lemma>
+	</entry>
+	<entry>
+		<orth>tanAwala</orth>
+		<lemma>tanAwal1</lemma>
+	</entry>
+	<entry>
+		<orth>ma$aY </orth>
+		<lemma>mA$aY1</lemma>
+	</entry>
+</section>
+<section n="Chapter 5">
+	<entry>
+		<orth>taqoriybAF </orth>
+		<lemma>taqoriybAF1</lemma>
+	</entry>
+	<entry>
+		<orth>EAzib </orth>
+		<lemma>EAzib1</lemma>
+	</entry>
+	<entry>
+		<orth>mayosuwr </orth>
+		<lemma>mayosuwr1</lemma>
+	</entry>
+	<entry>
+		<orth>muEASir </orth>
+		<lemma>muEASir1</lemma>
+	</entry>
+	<entry>
+		<orth>riyf </orth>
+		<lemma>riyf1</lemma>
+	</entry>
+	<entry>
+		<orth>HiwAr </orth>
+		<lemma>HiwAr1</lemma>
+	</entry>
+	<entry>
+		<orth>OaEodA' </orth>
+		<lemma>Eaduw~1</lemma>
+	</entry>
+	<entry>
+		<orth>Eaduw~ </orth>
+		<lemma>Eaduw~1</lemma>
+	</entry>
+	<entry>
+		<orth>$uhorap </orth>
+		<lemma>$uhorap1</lemma>
+	</entry>
+	<entry>
+		<orth>yaEud~ </orth>
+		<lemma>Ead~1</lemma>
+	</entry>
+	<entry>
+		<orth>yanoqud </orth>
+		<lemma>nAqaD1</lemma>
+	</entry>
+	<entry>
+		<orth>yu Af </orth>
+		<lemma>OaxAf1</lemma>
+	</entry>
+	<entry>
+		<orth>yaqotul </orth>
+		<lemma>qAtal1</lemma>
+	</entry>
+	<entry>
+		<orth>tuwufi~ya </orth>
+		<lemma>tawaf~aY1</lemma>
+	</entry>
+	<entry>
+		<orth>faworiy~ </orth>
+		<lemma>faworiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>{inoTibAE </orth>
+		<lemma>{inoTibAE1</lemma>
+	</entry>
+	<entry>
+		<orth>faworAF </orth>
+		<lemma>fawor1</lemma>
+	</entry>
+	<entry>
+		<orth>niya~p </orth>
+		<lemma>niy~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>qaDiya~p </orth>
+		<lemma>qaDiy~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>qaDAyA </orth>
+		<lemma>qaDiy~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>manoSib </orth>
+		<lemma>manoSib1</lemma>
+	</entry>
+	<entry>
+		<orth>manASib </orth>
+		<lemma>manoSib1</lemma>
+	</entry>
+	<entry>
+		<orth>qAnuwn </orth>
+		<lemma>qAnuwn1</lemma>
+	</entry>
+	<entry>
+		<orth>qawAniyn </orth>
+		<lemma>qAnuwn1</lemma>
+	</entry>
+	<entry>
+		<orth>musotawaY </orth>
+		<lemma>musotawaY1</lemma>
+	</entry>
+	<entry>
+		<orth>musotawayAt </orth>
+		<lemma>musotawaY1</lemma>
+	</entry>
+	<entry>
+		<orth>Oadiyb </orth>
+		<lemma>Oadiyb1</lemma>
+	</entry>
+	<entry>
+		<orth>Haniyn </orth>
+		<lemma>Haniyn1</lemma>
+	</entry>
+	<entry>
+		<orth>badiyE </orth>
+		<lemma>badiyE2</lemma>
+	</entry>
+	<entry>
+		<orth>mu*aki~rAt </orth>
+		<lemma>mu*ak~irAt1</lemma>
+	</entry>
+	<entry>
+		<orth>|vAr </orth>
+		<lemma>|vAr1</lemma>
+	</entry>
+	<entry>
+		<orth>laqab </orth>
+		<lemma>laqab1</lemma>
+	</entry>
+	<entry>
+		<orth>Daja~p </orth>
+		<lemma>Daj~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>riwAyap </orth>
+		<lemma>riwAyap1</lemma>
+	</entry>
+	<entry>
+		<orth>riwA}iy~ </orth>
+		<lemma>riwA}iy~1</lemma>
+	</entry>
+	<entry>
+		<orth>faqorap </orth>
+		<lemma>faqorap1</lemma>
+	</entry>
+	<entry>
+		<orth>laEala~ </orth>
+		<lemma>laEal~a1</lemma>
+	</entry>
+	<entry>
+		<orth>muda~p </orth>
+		<lemma>mud~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>$a oSiya~p </orth>
+		<lemma>$axoSiy~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>rA}id </orth>
+		<lemma>rA}id1</lemma>
+	</entry>
+	<entry>
+		<orth>ruw~Ad </orth>
+		<lemma>rA}id1</lemma>
+	</entry>
+	<entry>
+		<orth>masoraHiya~p </orth>
+		<lemma>masoraHiy~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>makAnap </orth>
+		<lemma>makAnap1</lemma>
+	</entry>
+	<entry>
+		<orth>jA}izap </orth>
+		<lemma>jA}izap1</lemma>
+	</entry>
+	<entry>
+		<orth>bAriz </orth>
+		<lemma>bAriz1</lemma>
+	</entry>
+	<entry>
+		<orth>Iiqoliym </orth>
+		<lemma>Iiqoliym1</lemma>
+	</entry>
+	<entry>
+		<orth>qAri} </orth>
+		<lemma>qAri}1</lemma>
+	</entry>
+	<entry>
+		<orth>qur~A' </orth>
+		<lemma>qAri}1</lemma>
+	</entry>
+	<entry>
+		<orth>dawor </orth>
+		<lemma>dawor1</lemma>
+	</entry>
+	<entry>
+		<orth>OadowAr </orth>
+		<lemma>dawor1</lemma>
+	</entry>
+	<entry>
+		<orth>OaroyAf </orth>
+		<lemma>riyf1</lemma>
+	</entry>
+	<entry>
+		<orth>*At </orth>
+		<lemma>*At1</lemma>
+	</entry>
+	<entry>
+		<orth>jAnib </orth>
+		<lemma>jAnib1</lemma>
+	</entry>
+	<entry>
+		<orth>barAEap </orth>
+		<lemma>barAEap1</lemma>
+	</entry>
+	<entry>
+		<orth>maroHalap </orth>
+		<lemma>maroHalap1</lemma>
+	</entry>
+	<entry>
+		<orth>SirAE </orth>
+		<lemma>SirAE1</lemma>
+	</entry>
+	<entry>
+		<orth>siyrap </orth>
+		<lemma>siyrap1</lemma>
+	</entry>
+	<entry>
+		<orth>siyar </orth>
+		<lemma>siyrap1</lemma>
+	</entry>
+	<entry>
+		<orth>HanAn </orth>
+		<lemma>HanAn1</lemma>
+	</entry>
+	<entry>
+		<orth>Alnaqod </orth>
+		<lemma>naqod1</lemma>
+	</entry>
+	<entry>
+		<orth>Alqatol </orth>
+		<lemma>qatol1</lemma>
+	</entry>
+	<entry>
+		<orth>Alfaqod </orth>
+		<lemma>faqod1</lemma>
+	</entry>
+	<entry>
+		<orth>hAjama </orth>
+		<lemma>hAjam1</lemma>
+	</entry>
+	<entry>
+		<orth>{isotahowaY </orth>
+		<lemma>{isotahowaY1</lemma>
+	</entry>
+	<entry>
+		<orth>OaEojaba b </orth>
+		<lemma>OaEojab3</lemma>
+	</entry>
+	<entry>
+		<orth>OaEoqaba </orth>
+		<lemma>OaEoqab1</lemma>
+	</entry>
+	<entry>
+		<orth>{ita~Sala b</orth>
+		<lemma>{it~aSal1</lemma>
+	</entry>
+	<entry>
+		<orth>wASala </orth>
+		<lemma>wASal1</lemma>
+	</entry>
+	<entry>
+		<orth>Eada~ </orth>
+		<lemma>Ead~1</lemma>
+	</entry>
+	<entry>
+		<orth>naqod </orth>
+		<lemma>naqod1</lemma>
+	</entry>
+	<entry>
+		<orth>Sawa~ra </orth>
+		<lemma>Saw~ar2</lemma>
+	</entry>
+	<entry>
+		<orth>qatala </orth>
+		<lemma>qAtal1</lemma>
+	</entry>
+	<entry>
+		<orth>OaEojaba </orth>
+		<lemma>OaEojab1</lemma>
+	</entry>
+	<entry>
+		<orth>Oanotaja </orth>
+		<lemma>Oanotaj1</lemma>
+	</entry>
+	<entry>
+		<orth>Haqa~qa </orth>
+		<lemma>Haq~aq1</lemma>
+	</entry>
+	<entry>
+		<orth>{iHotarama </orth>
+		<lemma>{iHotaram1</lemma>
+	</entry>
+	<entry>
+		<orth>OaZohara </orth>
+		<lemma>OaZohar1</lemma>
+	</entry>
+	<entry>
+		<orth>taSAEada </orth>
+		<lemma>taSAEad1</lemma>
+	</entry>
+	<entry>
+		<orth> aSa~Sa </orth>
+		<lemma>xaS~aS1</lemma>
+	</entry>
+	<entry>
+		<orth>OavAra </orth>
+		<lemma>Oavar1</lemma>
+	</entry>
+	<entry>
+		<orth>Oaya~da </orth>
+		<lemma>Oay~ad1</lemma>
+	</entry>
+	<entry>
+		<orth>EAlaja </orth>
+		<lemma>EAlaj1</lemma>
+	</entry>
+	<entry>
+		<orth>HAwala </orth>
+		<lemma>HAwal1</lemma>
+	</entry>
+	<entry>
+		<orth>fariyd </orth>
+		<lemma>fariyd3</lemma>
+	</entry>
+	<entry>
+		<orth>Eunof </orth>
+		<lemma>Eunof1</lemma>
+	</entry>
+	<entry>
+		<orth>Eaniyf </orth>
+		<lemma>Eaniyf1</lemma>
+	</entry>
+</section>
+<section n="Chapter 6">
+	<entry>
+		<orth>na$AT</orth>
+		<lemma>na$AT1</lemma>
+	</entry>
+	<entry>
+		<orth>Did~</orth>
+		<lemma>Did~1</lemma>
+	</entry>
+	<entry>
+		<orth>taEodiyl</orth>
+		<lemma>taEodiyl1</lemma>
+	</entry>
+	<entry>
+		<orth>majolis</orth>
+		<lemma>majolis1</lemma>
+	</entry>
+	<entry>
+		<orth>muwATin</orth>
+		<lemma>muwATin1</lemma>
+	</entry>
+	<entry>
+		<orth>wADiH</orth>
+		<lemma>wADiH1</lemma>
+	</entry>
+	<entry>
+		<orth>muWotamar</orth>
+		<lemma>muWotamar1</lemma>
+	</entry>
+	<entry>
+		<orth>maTAlib</orth>
+		<lemma>maTolab1</lemma>
+	</entry>
+	<entry>
+		<orth>muvaqa~f</orth>
+		<lemma>muvaq~af1</lemma>
+	</entry>
+	<entry>
+		<orth>faE~Al</orth>
+		<lemma>faE~Al1</lemma>
+	</entry>
+	<entry>
+		<orth>AltasAwiy</orth>
+		<lemma>tasAwiy1</lemma>
+	</entry>
+	<entry>
+		<orth>Hadav</orth>
+		<lemma>Hadav1</lemma>
+	</entry>
+	<entry>
+		<orth> siwaY</orth>
+		<lemma>siwaY1</lemma>
+	</entry>
+	<entry>
+		<orth>majAl</orth>
+		<lemma>majAl1</lemma>
+	</entry>
+	<entry>
+		<orth>tadoriyjiy~AF</orth>
+		<lemma>tadoriyjiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>SAlap</orth>
+		<lemma>SAlap1</lemma>
+	</entry>
+	<entry>
+		<orth>yasomaE</orth>
+		<lemma>sAmiE1</lemma>
+	</entry>
+	<entry>
+		<orth>yatasAwaY</orth>
+		<lemma>tasAwaY1</lemma>
+	</entry>
+	<entry>
+		<orth>Da om</orth>
+		<lemma>Daxom1</lemma>
+	</entry>
+	<entry>
+		<orth>jahol</orth>
+		<lemma>jahol1</lemma>
+	</entry>
+	<entry>
+		<orth>Oahami~ya~p</orth>
+		<lemma>Oaham~iy~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>yahuwdiy~</orth>
+		<lemma>yahuwdiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>yahuwd</orth>
+		<lemma>yahuwdiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>EuDow</orth>
+		<lemma>EuDow1</lemma>
+	</entry>
+	<entry>
+		<orth>OaEoDA'</orth>
+		<lemma>EuDow1</lemma>
+	</entry>
+	<entry>
+		<orth>qawomiya~p</orth>
+		<lemma>qawomiy~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>Eadam</orth>
+		<lemma>Eadam1</lemma>
+	</entry>
+	<entry>
+		<orth>$AEir</orth>
+		<lemma>$AEir1</lemma>
+	</entry>
+	<entry>
+		<orth>$uEarA'</orth>
+		<lemma>$AEir1</lemma>
+	</entry>
+	<entry>
+		<orth>mawoqif</orth>
+		<lemma>mawoqif1</lemma>
+	</entry>
+	<entry>
+		<orth>Haq~</orth>
+		<lemma>HAq~1</lemma>
+	</entry>
+	<entry>
+		<orth>Huzon</orth>
+		<lemma>Huzon1</lemma>
+	</entry>
+	<entry>
+		<orth>jinos</orth>
+		<lemma>jinos1</lemma>
+	</entry>
+	<entry>
+		<orth>Sadomap</orth>
+		<lemma>Sadomap1</lemma>
+	</entry>
+	<entry>
+		<orth>jamoEiya~p</orth>
+		<lemma>jamoEiy~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>maHaTa~p</orth>
+		<lemma>maHaT~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>$adiyd</orth>
+		<lemma>$adiyd1</lemma>
+	</entry>
+	<entry>
+		<orth>Aldaho$ap</orth>
+		<lemma>daho$ap1</lemma>
+	</entry>
+	<entry>
+		<orth>AlsamAE</orth>
+		<lemma>samAE1</lemma>
+	</entry>
+	<entry>
+		<orth>mava~la</orth>
+		<lemma>mav~al1</lemma>
+	</entry>
+	<entry>
+		<orth>wAfaqa</orth>
+		<lemma>wAfaq1</lemma>
+	</entry>
+	<entry>
+		<orth>dahi$a</orth>
+		<lemma>dahi$1</lemma>
+	</entry>
+	<entry>
+		<orth>OaqotaniE b_</orth>
+		<lemma>{iqotanaE1</lemma>
+	</entry>
+	<entry>
+		<orth>tasAwaY</orth>
+		<lemma>tasAwaY1</lemma>
+	</entry>
+	<entry>
+		<orth>nAdaY b_</orth>
+		<lemma>nAdaY1</lemma>
+	</entry>
+	<entry>
+		<orth>OawoDaHa</orth>
+		<lemma>OawoDaH1</lemma>
+	</entry>
+	<entry>
+		<orth>TAlaba b_</orth>
+		<lemma>Talab2</lemma>
+	</entry>
+	<entry>
+		<orth>Tala~qa</orth>
+		<lemma>Tal~aq1</lemma>
+	</entry>
+	<entry>
+		<orth>kAfaHa</orth>
+		<lemma>kAfaH1</lemma>
+	</entry>
+	<entry>
+		<orth>Hara~ma</orth>
+		<lemma>Har~am1</lemma>
+	</entry>
+	<entry>
+		<orth>OamotaEa</orth>
+		<lemma>OamotaE2</lemma>
+	</entry>
+	<entry>
+		<orth>samiEa</orth>
+		<lemma>sAmiE1</lemma>
+	</entry>
+	<entry>
+		<orth>{ifotataHa</orth>
+		<lemma>{ifotataH1</lemma>
+	</entry>
+	<entry>
+		<orth>EAraDa</orth>
+		<lemma>EAraD1</lemma>
+	</entry>
+	<entry>
+		<orth>naZa~ma</orth>
+		<lemma>naZ~am1</lemma>
+	</entry>
+	<entry>
+		<orth>rafaEa</orth>
+		<lemma>rAfaE1</lemma>
+	</entry>
+	<entry>
+		<orth>tamara~da</orth>
+		<lemma>tamar~ad1</lemma>
+	</entry>
+	<entry>
+		<orth>jAhada</orth>
+		<lemma>jAhad1</lemma>
+	</entry>
+	<entry>
+		<orth>{iqotaraHa</orth>
+		<lemma>{iqotaraH1</lemma>
+	</entry>
+	<entry>
+		<orth>Eala~ma</orth>
+		<lemma>Eal~am1</lemma>
+	</entry>
+	<entry>
+		<orth>EAmala</orth>
+		<lemma>EAmal1</lemma>
+	</entry>
+	<entry>
+		<orth>taqoliyd</orth>
+		<lemma>taqoliyd2</lemma>
+	</entry>
+	<entry>
+		<orth>taqoliydiy~</orth>
+		<lemma>taqoliydiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>{iti~HAd</orth>
+		<lemma>{it~iHAd1</lemma>
+	</entry>
+	<entry>
+		<orth>Sawot</orth>
+		<lemma>Sawot2</lemma>
+	</entry>
+	<entry>
+		<orth>fatAap</orth>
+		<lemma>fatAp1</lemma>
+	</entry>
+	<entry>
+		<orth>fatayAt</orth>
+		<lemma>fatAp1</lemma>
+	</entry>
+</section>
+<section n="Chapter 7">
+	<entry>
+		<orth>firA$</orth>
+		<lemma>firA$1</lemma>
+	</entry>
+	<entry>
+		<orth>Earuws</orth>
+		<lemma>Earuws1</lemma>
+	</entry>
+	<entry>
+		<orth>jaz~Ar</orth>
+		<lemma>jaz~Ar1</lemma>
+	</entry>
+	<entry>
+		<orth>la*iy*</orth>
+		<lemma>la*iy*1</lemma>
+	</entry>
+	<entry>
+		<orth>kalob</orth>
+		<lemma>kalob1</lemma>
+	</entry>
+	<entry>
+		<orth>musal~</orth>
+		<lemma>musal~iy1</lemma>
+	</entry>
+	<entry>
+		<orth>jini~y</orth>
+		<lemma>jin~1</lemma>
+	</entry>
+	<entry>
+		<orth>Aljin~</orth>
+		<lemma>jin~1</lemma>
+	</entry>
+	<entry>
+		<orth>Ou oruj</orth>
+		<lemma>xarAj1</lemma>
+	</entry>
+	<entry>
+		<orth>hibap</orth>
+		<lemma>hibap1</lemma>
+	</entry>
+	<entry>
+		<orth>balaganiy</orth>
+		<lemma>balAg1</lemma>
+	</entry>
+	<entry>
+		<orth> ayAliy~</orth>
+		<lemma>xayAliy~1</lemma>
+	</entry>
+	<entry>
+		<orth>muqadi~map</orth>
+		<lemma>muqad~imap1</lemma>
+	</entry>
+	<entry>
+		<orth>qubolap</orth>
+		<lemma>qubolap1</lemma>
+	</entry>
+	<entry>
+		<orth>siHor</orth>
+		<lemma>siHor1</lemma>
+	</entry>
+	<entry>
+		<orth>tAjir</orth>
+		<lemma>tAjir1</lemma>
+	</entry>
+	<entry>
+		<orth>bagol</orth>
+		<lemma>bagol1</lemma>
+	</entry>
+	<entry>
+		<orth>rAwK</orth>
+		<lemma>rAwiy1</lemma>
+	</entry>
+	<entry>
+		<orth>Ouma~p</orth>
+		<lemma>Oum~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>muqobil</orth>
+		<lemma>muqobil1</lemma>
+	</entry>
+	<entry>
+		<orth>Oamor</orth>
+		<lemma>Oamor2</lemma>
+	</entry>
+	<entry>
+		<orth>HAliy~</orth>
+		<lemma>HAliy~1</lemma>
+	</entry>
+	<entry>
+		<orth>karAmap</orth>
+		<lemma>karAmap1</lemma>
+	</entry>
+	<entry>
+		<orth>Eabod</orth>
+		<lemma>Eabod2</lemma>
+	</entry>
+	<entry>
+		<orth>nA}im</orth>
+		<lemma>nA}im1</lemma>
+	</entry>
+	<entry>
+		<orth>maSodar</orth>
+		<lemma>maSodar1</lemma>
+	</entry>
+	<entry>
+		<orth>HikAyap</orth>
+		<lemma>HikAyap1</lemma>
+	</entry>
+	<entry>
+		<orth>siyrap</orth>
+		<lemma>siyrap1</lemma>
+	</entry>
+	<entry>
+		<orth>OaDAfa</orth>
+		<lemma>OaDAf1</lemma>
+	</entry>
+	<entry>
+		<orth>qadara ElY</orth>
+		<lemma>qadar1</lemma>
+	</entry>
+	<entry>
+		<orth>OuEojiba b_</orth>
+		<lemma>OaEojab3</lemma>
+	</entry>
+	<entry>
+		<orth>taEara~Da l_</orth>
+		<lemma>taEar~aD1</lemma>
+	</entry>
+	<entry>
+		<orth>faraga min</orth>
+		<lemma>farAg2</lemma>
+	</entry>
+	<entry>
+		<orth>SAra</orth>
+		<lemma>SAr1</lemma>
+	</entry>
+	<entry>
+		<orth> Ana</orth>
+		<lemma>xAn2</lemma>
+	</entry>
+	<entry>
+		<orth>jamaEa</orth>
+		<lemma>jAmaE1</lemma>
+	</entry>
+	<entry>
+		<orth>Oakomala</orth>
+		<lemma>Oakomal2</lemma>
+	</entry>
+	<entry>
+		<orth>Oatama~</orth>
+		<lemma>Oatam~2</lemma>
+	</entry>
+	<entry>
+		<orth>gaTa~Y(null)</orth>
+		<lemma>gaT~aY1</lemma>
+	</entry>
+	<entry>
+		<orth>Tarada</orth>
+		<lemma>TArad1</lemma>
+	</entry>
+	<entry>
+		<orth>sala~Y(null)</orth>
+		<lemma>sal~aY1</lemma>
+	</entry>
+	<entry>
+		<orth>OaEoTaY(null)</orth>
+		<lemma>OaEoTaY1</lemma>
+	</entry>
+	<entry>
+		<orth>tarada~da</orth>
+		<lemma>tarad~ad1</lemma>
+	</entry>
+	<entry>
+		<orth>qaba~la</orth>
+		<lemma>qab~al1</lemma>
+	</entry>
+	<entry>
+		<orth>DaHika</orth>
+		<lemma>DAHik1</lemma>
+	</entry>
+	<entry>
+		<orth>naqala</orth>
+		<lemma>nAqal1</lemma>
+	</entry>
+	<entry>
+		<orth>Oamara b_</orth>
+		<lemma>OamAr1</lemma>
+	</entry>
+	<entry>
+		<orth>saHara</orth>
+		<lemma>SAhar1</lemma>
+	</entry>
+	<entry>
+		<orth>OaboqaY(null)</orth>
+		<lemma>OaboqaY1</lemma>
+	</entry>
+	<entry>
+		<orth>Eajila</orth>
+		<lemma>EAjil1</lemma>
+	</entry>
+	<entry>
+		<orth> ala~Sa</orth>
+		<lemma>xal~aS1</lemma>
+	</entry>
+	<entry>
+		<orth>{inotaqama</orth>
+		<lemma>{inotaqam1</lemma>
+	</entry>
+	<entry>
+		<orth>HakaY(null)</orth>
+		<lemma>HAkaY1</lemma>
+	</entry>
+	<entry>
+		<orth>sAra</orth>
+		<lemma>SAr1</lemma>
+	</entry>
+</section>
+<section n="Chapter 8">
+	<entry>
+		<orth>Tabaqap</orth>
+		<lemma>Tabaqap1</lemma>
+	</entry>
+	<entry>
+		<orth>wafiyr</orth>
+		<lemma>wafiyr1</lemma>
+	</entry>
+	<entry>
+		<orth>Eabora</orth>
+		<lemma>Eabora1</lemma>
+	</entry>
+	<entry>
+		<orth>IiEolAn</orth>
+		<lemma>IiEolAn1</lemma>
+	</entry>
+	<entry>
+		<orth>AlEimArap</orth>
+		<lemma>EimArap1</lemma>
+	</entry>
+	<entry>
+		<orth>Einoda}i*K</orth>
+		<lemma>Einoda}i*K1</lemma>
+	</entry>
+	<entry>
+		<orth>Alkawon</orth>
+		<lemma>kawon1</lemma>
+	</entry>
+	<entry>
+		<orth>Eariys</orth>
+		<lemma>Eariys1</lemma>
+	</entry>
+	<entry>
+		<orth>mabonaY</orth>
+		<lemma>mabonaY1</lemma>
+	</entry>
+	<entry>
+		<orth>En Tariyq</orth>
+		<lemma>Tariyq1</lemma>
+	</entry>
+	<entry>
+		<orth>TAbiE</orth>
+		<lemma>TAbiE1</lemma>
+	</entry>
+	<entry>
+		<orth> ayoriy~</orth>
+		<lemma>xayoriy~1</lemma>
+	</entry>
+	<entry>
+		<orth>naZiyf</orth>
+		<lemma>naZiyf1</lemma>
+	</entry>
+	<entry>
+		<orth>naZAfap</orth>
+		<lemma>naZAfap1</lemma>
+	</entry>
+	<entry>
+		<orth>viyAb</orth>
+		<lemma>vawob1</lemma>
+	</entry>
+	<entry>
+		<orth>mila~p</orth>
+		<lemma>mil~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>rukon</orth>
+		<lemma>rukon1</lemma>
+	</entry>
+	<entry>
+		<orth>muno$aOap</orth>
+		<lemma>muno$aOap1</lemma>
+	</entry>
+	<entry>
+		<orth>EAmil</orth>
+		<lemma>EAmil3</lemma>
+	</entry>
+	<entry>
+		<orth>OaqoSaY</orth>
+		<lemma>OaqoSaY3</lemma>
+	</entry>
+	<entry>
+		<orth>vAbit</orth>
+		<lemma>vAbit1</lemma>
+	</entry>
+	<entry>
+		<orth>jAliyap</orth>
+		<lemma>jAliyap1</lemma>
+	</entry>
+	<entry>
+		<orth>wAjihap</orth>
+		<lemma>wAjihap1</lemma>
+	</entry>
+	<entry>
+		<orth>Aljuwdap</orth>
+		<lemma>juwdap1</lemma>
+	</entry>
+	<entry>
+		<orth>biDAEap</orth>
+		<lemma>biDAEap1</lemma>
+	</entry>
+	<entry>
+		<orth>SiHa~p</orth>
+		<lemma>SiH~ap1</lemma>
+	</entry>
+	<entry>
+		<orth>manozil</orth>
+		<lemma>manozil1</lemma>
+	</entry>
+	<entry>
+		<orth>hAm~</orth>
+		<lemma>hAm~1</lemma>
+	</entry>
+	<entry>
+		<orth>fA ir</orth>
+		<lemma>fAxir2</lemma>
+	</entry>
+	<entry>
+		<orth>Oavar</orth>
+		<lemma>Oavar1</lemma>
+	</entry>
+	<entry>
+		<orth>nADij</orth>
+		<lemma>nADij1</lemma>
+	</entry>
+	<entry>
+		<orth>Eajab</orth>
+		<lemma>Eajab1</lemma>
+	</entry>
+	<entry>
+		<orth>maloHuwZ</orth>
+		<lemma>maloHuwZ1</lemma>
+	</entry>
+	<entry>
+		<orth>fy Tariyqhu IlY</orth>
+		<lemma>Tariyq1</lemma>
+	</entry>
+	<entry>
+		<orth>sabiyl</orth>
+		<lemma>sabiyl1</lemma>
+	</entry>
+	<entry>
+		<orth>ZAhirap</orth>
+		<lemma>ZAhirap1</lemma>
+	</entry>
+	<entry>
+		<orth>vawAb</orth>
+		<lemma>vawAb1</lemma>
+	</entry>
+	<entry>
+		<orth>qAEidap</orth>
+		<lemma>qAEidap3</lemma>
+	</entry>
+	<entry>
+		<orth>namuw*aj</orth>
+		<lemma>namuw*aj1</lemma>
+	</entry>
+	<entry>
+		<orth>EiTor</orth>
+		<lemma>EiTor1</lemma>
+	</entry>
+	<entry>
+		<orth>SAbuwn</orth>
+		<lemma>SAbuwn1</lemma>
+	</entry>
+	<entry>
+		<orth>min warA'</orth>
+		<lemma>warA'1</lemma>
+	</entry>
+	<entry>
+		<orth>OaEolana</orth>
+		<lemma>OaEolan1</lemma>
+	</entry>
+	<entry>
+		<orth>{isotaHama~</orth>
+		<lemma>{isotaHam~1</lemma>
+	</entry>
+	<entry>
+		<orth>hama~</orth>
+		<lemma>ham~1</lemma>
+	</entry>
+	<entry>
+		<orth>{iqotaSara ElY</orth>
+		<lemma>{iqotaSar1</lemma>
+	</entry>
+	<entry>
+		<orth>Oaka~da</orth>
+		<lemma>Oak~ad1</lemma>
+	</entry>
+	<entry>
+		<orth>Oakovara mn</orth>
+		<lemma>Oakovar2</lemma>
+	</entry>
+	<entry>
+		<orth>Oaqobala</orth>
+		<lemma>Oaqobal1</lemma>
+	</entry>
+	<entry>
+		<orth>{izodahara</orth>
+		<lemma>{izodahar1</lemma>
+	</entry>
+	<entry>
+		<orth>{ita~jaha IlY</orth>
+		<lemma>{it~ajah1</lemma>
+	</entry>
+	<entry>
+		<orth>Dama~</orth>
+		<lemma>dam~1</lemma>
+	</entry>
+	<entry>
+		<orth>nazala</orth>
+		<lemma>nAzal1</lemma>
+	</entry>
+	<entry>
+		<orth>naDija</orth>
+		<lemma>nADij1</lemma>
+	</entry>
+	<entry>
+		<orth>tadA ala</orth>
+		<lemma>tadAxal1</lemma>
+	</entry>
+	<entry>
+		<orth>tanAqala</orth>
+		<lemma>tanAqal1</lemma>
+	</entry>
+	<entry>
+		<orth>{ita~Safa b_</orth>
+		<lemma>{it~aSaf1</lemma>
+	</entry>
+	<entry>
+		<orth>wafa~ra</orth>
+		<lemma>waf~ar1</lemma>
+	</entry>
+	<entry>
+		<orth>{isotarAHa</orth>
+		<lemma>{isotarAH1</lemma>
+	</entry>
+	<entry>
+		<orth>{isotahodafa</orth>
+		<lemma>{isotahodaf1</lemma>
+	</entry>
+	<entry>
+		<orth>{ita~ a*a</orth>
+		<lemma>{it~axa*1</lemma>
+	</entry>
+	<entry>
+		<orth>gasa~la</orth>
+		<lemma>gas~al1</lemma>
+	</entry>
+	<entry>
+		<orth>zifAf</orth>
+		<lemma>zifAf1</lemma>
+	</entry>
+	<entry>
+		<orth> amor</orth>
+		<lemma>xamor1</lemma>
+	</entry>
+	<entry>
+		<orth>rA}iE</orth>
+		<lemma>rA}iE1</lemma>
+	</entry>
+</section>
+<section n="Chapter 9">
+	<entry>
+		<orth>OasAs</orth>
+		<lemma>OasAs1</lemma>
+	</entry>
+	<entry>
+		<orth>Huduwd</orth>
+		<lemma>HAd~1</lemma>
+	</entry>
+	<entry>
+		<orth>AldArijap</orth>
+		<lemma>dArij2</lemma>
+	</entry>
+	<entry>
+		<orth>muEaqa~d</orth>
+		<lemma>muEaq~ad1</lemma>
+	</entry>
+	<entry>
+		<orth>OaqoTAr</orth>
+		<lemma>quTor1</lemma>
+	</entry>
+	<entry>
+		<orth>quTor</orth>
+		<lemma>quTor1</lemma>
+	</entry>
+	<entry>
+		<orth>jadal</orth>
+		<lemma>jadal1</lemma>
+	</entry>
+	<entry>
+		<orth>Eamiyq</orth>
+		<lemma>Eamiyq1</lemma>
+	</entry>
+	<entry>
+		<orth>tafoSiyl</orth>
+		<lemma>tafoSiyl1</lemma>
+	</entry>
+	<entry>
+		<orth>lahojap</orth>
+		<lemma>lahojap1</lemma>
+	</entry>
+	<entry>
+		<orth>faroq</orth>
+		<lemma>faroq1</lemma>
+	</entry>
+	<entry>
+		<orth>Al iTAb</orth>
+		<lemma>xiTAb1</lemma>
+	</entry>
+	<entry>
+		<orth>miyzap</orth>
+		<lemma>miyzap1</lemma>
+	</entry>
+	<entry>
+		<orth>faSAHap</orth>
+		<lemma>faSAHap1</lemma>
+	</entry>
+	<entry>
+		<orth>biy}ap</orth>
+		<lemma>biy}ap1</lemma>
+	</entry>
+	<entry>
+		<orth>TA}ifap</orth>
+		<lemma>TA}ifap1</lemma>
+	</entry>
+	<entry>
+		<orth>mayodAn</orth>
+		<lemma>mayodAn2</lemma>
+	</entry>
+	<entry>
+		<orth>faSiyH</orth>
+		<lemma>faSiyH1</lemma>
+	</entry>
+	<entry>
+		<orth>taEomiym</orth>
+		<lemma>taEomiym1</lemma>
+	</entry>
+	<entry>
+		<orth>jamAEap</orth>
+		<lemma>jamAEap1</lemma>
+	</entry>
+	<entry>
+		<orth>dAfiE</orth>
+		<lemma>dAfiE1</lemma>
+	</entry>
+	<entry>
+		<orth>Had~</orth>
+		<lemma>HaD~1</lemma>
+	</entry>
+	<entry>
+		<orth>maHoduwd</orth>
+		<lemma>maHoduwd1</lemma>
+	</entry>
+	<entry>
+		<orth>maHali~y~</orth>
+		<lemma>maHal~iy~1</lemma>
+	</entry>
+	<entry>
+		<orth>manoTiq</orth>
+		<lemma>manoTiq1</lemma>
+	</entry>
+	<entry>
+		<orth>Oamor</orth>
+		<lemma>Oamor1</lemma>
+	</entry>
+	<entry>
+		<orth>Oumuwr</orth>
+		<lemma>Oamor1</lemma>
+	</entry>
+	<entry>
+		<orth>muEotadil</orth>
+		<lemma>muEotadil1</lemma>
+	</entry>
+	<entry>
+		<orth>dawAfiE</orth>
+		<lemma>dAfiE1</lemma>
+	</entry>
+	<entry>
+		<orth>HAjap</orth>
+		<lemma>HAjap1</lemma>
+	</entry>
+	<entry>
+		<orth>Eamaliy~</orth>
+		<lemma>Eamaliy~1</lemma>
+	</entry>
+	<entry>
+		<orth>masoOalap</orth>
+		<lemma>masoOalap1</lemma>
+	</entry>
+	<entry>
+		<orth>sariyE</orth>
+		<lemma>SariyE1</lemma>
+	</entry>
+	<entry>
+		<orth>basiyT</orth>
+		<lemma>basiyT1</lemma>
+	</entry>
+	<entry>
+		<orth>waDoE</orth>
+		<lemma>waDoE2</lemma>
+	</entry>
+	<entry>
+		<orth>HAlap</orth>
+		<lemma>HAlap1</lemma>
+	</entry>
+	<entry>
+		<orth>OawoDAE</orth>
+		<lemma>waDoE2</lemma>
+	</entry>
+	<entry>
+		<orth>saliym</orth>
+		<lemma>saliym3</lemma>
+	</entry>
+	<entry>
+		<orth>SiHa~p</orth>
+		<lemma>SiH~ap1</lemma>
+	</entry>
+	<entry>
+		<orth> aSA}iS</orth>
+		<lemma>xaSiySap1</lemma>
+	</entry>
+	<entry>
+		<orth>qawiy~</orth>
+		<lemma>qawiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>OaqowiyA'</orth>
+		<lemma>qawiy~1</lemma>
+	</entry>
+	<entry>
+		<orth>tarokiyb</orth>
+		<lemma>tarokiyb2</lemma>
+	</entry>
+	<entry>
+		<orth>Ousoluwb</orth>
+		<lemma>Ousoluwb1</lemma>
+	</entry>
+	<entry>
+		<orth>muWaqa~t</orth>
+		<lemma>muWaq~at1</lemma>
+	</entry>
+	<entry>
+		<orth>AlnAs</orth>
+		<lemma>nAs1</lemma>
+	</entry>
+	<entry>
+		<orth>AlHADir</orth>
+		<lemma>HADir1</lemma>
+	</entry>
+	<entry>
+		<orth>lilbayAn</orth>
+		<lemma>bayAn1</lemma>
+	</entry>
+	<entry>
+		<orth>{i otaSara</orth>
+		<lemma>{ixotaSar1</lemma>
+	</entry>
+	<entry>
+		<orth>OajAba Ean</orth>
+		<lemma>OajAb1</lemma>
+	</entry>
+	<entry>
+		<orth>Eara~ba</orth>
+		<lemma>Ear~ab1</lemma>
+	</entry>
+	<entry>
+		<orth>tasA'ala</orth>
+		<lemma>tasA'al1</lemma>
+	</entry>
+	<entry>
+		<orth>tamAsaka</orth>
+		<lemma>tamAsak1</lemma>
+	</entry>
+	<entry>
+		<orth>jAza</orth>
+		<lemma>jAz1</lemma>
+	</entry>
+	<entry>
+		<orth>{isotafAda min</orth>
+		<lemma>{isotafAd1</lemma>
+	</entry>
+	<entry>
+		<orth>tawASala maEa</orth>
+		<lemma>tawASal1</lemma>
+	</entry>
+	<entry>
+		<orth>maya~za Ean</orth>
+		<lemma>may~az1</lemma>
+	</entry>
+	<entry>
+		<orth>Eama~ma</orth>
+		<lemma>Eam~am1</lemma>
+	</entry>
+	<entry>
+		<orth>Damina</orth>
+		<lemma>DAmin1</lemma>
+	</entry>
+	<entry>
+		<orth>tamasa~ka b_</orth>
+		<lemma>tamas~ak1</lemma>
+	</entry>
+	<entry>
+		<orth>{izodAda</orth>
+		<lemma>{izodAd1</lemma>
+	</entry>
+	<entry>
+		<orth>zAda</orth>
+		<lemma>zAd1</lemma>
+	</entry>
+	<entry>
+		<orth>dala~ EalaY</orth>
+		<lemma>dAl~1</lemma>
+	</entry>
+	<entry>
+		<orth>TaEa~ma</orth>
+		<lemma>TaE~am1</lemma>
+	</entry>
+	<entry>
+		<orth>{ifotaqara IilaY</orth>
+		<lemma>{ifotaqar1</lemma>
+	</entry>
+	<entry>
+		<orth>Oada~Y(null) IilaY</orth>
+		<lemma>Oad~aY1</lemma>
+	</entry>
+	<entry>
+		<orth>Oava~ra fiy/EalaY</orth>
+		<lemma>Oav~ar1</lemma>
+	</entry>
+	<entry>
+		<orth>HaSara fiy</orth>
+		<lemma>HASar1</lemma>
+	</entry>
+	<entry>
+		<orth>baya~na</orth>
+		<lemma>bay~an1</lemma>
+	</entry>
+	<entry>
+		<orth>taEama~qa fiy</orth>
+		<lemma>taEam~aq1</lemma>
+	</entry>
+	<entry>
+		<orth>taTala~ba</orth>
+		<lemma>taTal~ab1</lemma>
+	</entry>
+	<entry>
+		<orth>tajAwaba maEa</orth>
+		<lemma>tajAwab1</lemma>
+	</entry>
+	<entry>
+		<orth> ATaba</orth>
+		<lemma>xATab1</lemma>
+	</entry>
+	<entry>
+		<orth>OawoSala IilaY</orth>
+		<lemma>OawoSal1</lemma>
+	</entry>
+	<entry>
+		<orth>taHawa~la IilaY</orth>
+		<lemma>taHaw~al1</lemma>
+	</entry>
+	<entry>
+		<orth>tawaja~ha IilaY</orth>
+		<lemma>tawaj~ah1</lemma>
+	</entry>
+	<entry>
+		<orth> Alafa</orth>
+		<lemma>xAlaf1</lemma>
+	</entry>
+	<entry>
+		<orth>dawa~na</orth>
+		<lemma>daw~an1</lemma>
+	</entry>
+	<entry>
+		<orth>naHowa</orth>
+		<lemma>naHowa1</lemma>
+	</entry>
+	<entry>
+		<orth>qaroyap</orth>
+		<lemma>qaroyap1</lemma>
+	</entry>
+	<entry>
+		<orth>quraY</orth>
+		<lemma>qaroyap1</lemma>
+	</entry>
+	<entry>
+		<orth>min gayor</orth>
+		<lemma>gayor1</lemma>
+	</entry>
+</section>
+<section n="Chapter 10">
+	<entry>
+		<orth>fiEoliy~</orth>
+		<lemma>fiEoliy~1</lemma>
+	</entry>
+	<entry>
+		<orth>ma$uwrap</orth>
+		<lemma>ma$uwrap1</lemma>
+	</entry>
+	<entry>
+		<orth>jadowal</orth>
+		<lemma>jadowal2</lemma>
+	</entry>
+	<entry>
+		<orth>wasoTa</orth>
+		<lemma>wasoTa1</lemma>
+	</entry>
+	<entry>
+		<orth>sayi~'</orth>
+		<lemma>say~i'1</lemma>
+	</entry>
+	<entry>
+		<orth>maEorakap</orth>
+		<lemma>maEorakap1</lemma>
+	</entry>
+	<entry>
+		<orth>muWahi~lAt</orth>
+		<lemma>muWah~il1</lemma>
+	</entry>
+	<entry>
+		<orth>Alsuhuwlap</orth>
+		<lemma>suhuwlap1</lemma>
+	</entry>
+	<entry>
+		<orth>TAri}</orth>
+		<lemma>TAri}1</lemma>
+	</entry>
+	<entry>
+		<orth> uTuwbap</orth>
+		<lemma>xuTuwbap1</lemma>
+	</entry>
+	<entry>
+		<orth> aTaO</orth>
+		<lemma>xaTaO1</lemma>
+	</entry>
+	<entry>
+		<orth>Eayob</orth>
+		<lemma>Eayob1</lemma>
+	</entry>
+	<entry>
+		<orth>mujAmalap</orth>
+		<lemma>mujAmalap1</lemma>
+	</entry>
+	<entry>
+		<orth>jiyl</orth>
+		<lemma>jiyl1</lemma>
+	</entry>
+	<entry>
+		<orth>Hafiyd</orth>
+		<lemma>Hafiyd1</lemma>
+	</entry>
+	<entry>
+		<orth>Dayof</orth>
+		<lemma>Dayof1</lemma>
+	</entry>
+	<entry>
+		<orth>faroHap</orth>
+		<lemma>faroHap1</lemma>
+	</entry>
+	<entry>
+		<orth>$araf</orth>
+		<lemma>$araf1</lemma>
+	</entry>
+	<entry>
+		<orth>AlDiyAfap</orth>
+		<lemma>DiyAfap1</lemma>
+	</entry>
+	<entry>
+		<orth>da ol</orth>
+		<lemma>daxol1</lemma>
+	</entry>
+	<entry>
+		<orth>HaZ~</orth>
+		<lemma>HaZ~1</lemma>
+	</entry>
+	<entry>
+		<orth>HamAap</orth>
+		<lemma>HamAp1</lemma>
+	</entry>
+	<entry>
+		<orth> AS~ b_</orth>
+		<lemma>xAS~1</lemma>
+	</entry>
+	<entry>
+		<orth>Eakos</orth>
+		<lemma>Eakos1</lemma>
+	</entry>
+	<entry>
+		<orth>Taraf</orth>
+		<lemma>Taraf1</lemma>
+	</entry>
+	<entry>
+		<orth>su oriya~p</orth>
+		<lemma>suxoriy~1</lemma>
+	</entry>
+	<entry>
+		<orth>sA ir</orth>
+		<lemma>sAxir1</lemma>
+	</entry>
+	<entry>
+		<orth>jadowal</orth>
+		<lemma>jadowal2</lemma>
+	</entry>
+	<entry>
+		<orth>HAd~</orth>
+		<lemma>HAd~2</lemma>
+	</entry>
+	<entry>
+		<orth>AlSigar</orth>
+		<lemma>Sigar1</lemma>
+	</entry>
+	<entry>
+		<orth>du ~An</orth>
+		<lemma>duxAn1</lemma>
+	</entry>
+	<entry>
+		<orth>Hal~</orth>
+		<lemma>Hal~1</lemma>
+	</entry>
+	<entry>
+		<orth>EASifap</orth>
+		<lemma>EASifap1</lemma>
+	</entry>
+	<entry>
+		<orth>mayol</orth>
+		<lemma>mayol1</lemma>
+	</entry>
+	<entry>
+		<orth>{ita~hama b_</orth>
+		<lemma>{it~aham1</lemma>
+	</entry>
+	<entry>
+		<orth>lA yakAd</orth>
+		<lemma>kAd1</lemma>
+	</entry>
+	<entry>
+		<orth>kAda</orth>
+		<lemma>kAd1</lemma>
+	</entry>
+	<entry>
+		<orth>qATaEa</orth>
+		<lemma>qATaE1</lemma>
+	</entry>
+	<entry>
+		<orth>{iEotamada EalaY</orth>
+		<lemma>{iEotamad1</lemma>
+	</entry>
+	<entry>
+		<orth>OaHosana</orth>
+		<lemma>OaHosan1</lemma>
+	</entry>
+	<entry>
+		<orth>ta$aja~Ea</orth>
+		<lemma>ta$aj~aE1</lemma>
+	</entry>
+	<entry>
+		<orth>OasA'a IilaY</orth>
+		<lemma>OasA'1</lemma>
+	</entry>
+	<entry>
+		<orth>faraDa EalaY</orth>
+		<lemma>faraD1</lemma>
+	</entry>
+	<entry>
+		<orth>Oabolaga b_</orth>
+		<lemma>Oabolag1</lemma>
+	</entry>
+	<entry>
+		<orth>OaSara~EalaY</orth>
+		<lemma>OaSar~1</lemma>
+	</entry>
+	<entry>
+		<orth>gAdara</orth>
+		<lemma>gAdar1</lemma>
+	</entry>
+	<entry>
+		<orth>{isotaTolaEa</orth>
+		<lemma>{isotaTolaE1</lemma>
+	</entry>
+	<entry>
+		<orth>OaTolaqa</orth>
+		<lemma>OaTolaq1</lemma>
+	</entry>
+	<entry>
+		<orth>Zala~</orth>
+		<lemma>Zal~a1</lemma>
+	</entry>
+	<entry>
+		<orth>kara~ra</orth>
+		<lemma>kar~ar1</lemma>
+	</entry>
+	<entry>
+		<orth>Oanoqa*a</orth>
+		<lemma>Oanoqa*1</lemma>
+	</entry>
+	<entry>
+		<orth>OafoSaHa Ean</orth>
+		<lemma>OafoSaH1</lemma>
+	</entry>
+	<entry>
+		<orth>{isotasolama</orth>
+		<lemma>{isotasolam1</lemma>
+	</entry>
+	<entry>
+		<orth>qada~ra</orth>
+		<lemma>qad~ar1</lemma>
+	</entry>
+	<entry>
+		<orth>hamasa</orth>
+		<lemma>hAmas1</lemma>
+	</entry>
+	<entry>
+		<orth>filos</orth>
+		<lemma>filos1</lemma>
+	</entry>
+	<entry>
+		<orth>jadowaY</orth>
+		<lemma>jadA'1</lemma>
+	</entry>
+	<entry>
+		<orth>sinuwna/siniyna</orth>
+		<lemma>sanap1</lemma>
+	</entry>
+	<entry>
+		<orth>fataY</orth>
+		<lemma>fataY1</lemma>
+	</entry>
+</section>
+</rdf:RDF>

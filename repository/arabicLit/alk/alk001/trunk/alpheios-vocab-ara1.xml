@@ -1,0 +1,773 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prdf="http://www.perseus.org/meta/perseus.rdfs#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dctype="http://purl.org/dc/dcmitype/" xmlns:perseus="http://www.perseus.org/meta/perseus.rdfs#" xmlns:persq="http://www.perseus.org/meta/persq.rdfs#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:tufts="http://www.tufts.edu/" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_dictionaries.xsd">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Alif Baa</title>
+         </titleStmt>
+         <publicationStmt>
+            <date>2004</date>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Kristen Brustad, Abbas Al-Tonsi and Mahmoud Al-Batal</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text xml:lang="ar">
+      <body>
+         <entry xml:lang="ar" n="alif_baa_Chapter 2_2">
+		
+            <form type="inflection" xml:lang="ar">باب</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">باب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 2_4">
+		
+            <form type="inflection" xml:lang="ar">واجِب</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">واجِب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 2_6">
+		
+            <form type="inflection" xml:lang="ar">بَيْت</form>
+		
+            <sense n="4"/>
+            <form type="lemma" xml:lang="ar">بَيْت</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 2_8">
+		
+            <form type="inflection" xml:lang="ar">حَبِيبِي</form>
+		
+            <sense n="2"/>
+            <form type="lemma" xml:lang="ar">حَبِيب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 2_10">
+		
+            <form type="inflection" xml:lang="ar">حَبِيبَتِي</form>
+		
+            <sense n="2"/>
+            <form type="lemma" xml:lang="ar">حَبِيب</form>
+	
+         </entry>
+
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 3_2">
+		
+            <form type="inflection" xml:lang="ar"> ُبْز</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">خُبْز</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 3_4">
+		
+            <form type="inflection" xml:lang="ar">أَ </form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">أَخ</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 3_6">
+		
+            <form type="inflection" xml:lang="ar">دَجاج</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">دَجاج</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 3_8">
+		
+            <form type="inflection" xml:lang="ar">جار</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">جار</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 3_10">
+		
+            <form type="inflection" xml:lang="ar">جَدِيد</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">جَدِيد</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 3_12">
+		
+            <form type="inflection" xml:lang="ar">أَ ْبار</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">خَبَر</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 3_14">
+		
+            <form type="inflection" xml:lang="ar">واحِد</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">واحِد</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 3_16">
+		
+            <form type="inflection" xml:lang="ar">عَرَبِيّ</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">عَرَبِيّ</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 3_18">
+		
+            <form type="inflection" xml:lang="ar">أُ ْت</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">أُخْت</form>
+	
+         </entry>
+
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 4_2">
+		
+            <form type="inflection" xml:lang="ar">أُوتُوبِيس</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">أُوتُوبِيس</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 4_4">
+		
+            <form type="inflection" xml:lang="ar">شَباب</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">شابّ</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 4_6">
+		
+            <form type="inflection" xml:lang="ar">شابّات</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">شابَّة</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 4_8">
+		
+            <form type="inflection" xml:lang="ar">جَيِّد</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">جَيِّد</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 4_10">
+		
+            <form type="inflection" xml:lang="ar">دَرْس</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">دَرْس</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 4_12">
+		
+            <form type="inflection" xml:lang="ar">صَباح</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">صَباح</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 4_14">
+		
+            <form type="inflection" xml:lang="ar">شاي</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">شاي</form>
+	
+         </entry>
+
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_2">
+		
+            <form type="inflection" xml:lang="ar">عَرَبِيّ</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">عَرَبِيّ</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_4">
+		
+            <form type="inflection" xml:lang="ar">عَجِيب</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">عَجِيب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_6">
+		
+            <form type="inflection" xml:lang="ar">سَيّارَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">سَيّارَة</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_8">
+		
+            <form type="inflection" xml:lang="ar">صَعْب</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">صَعْب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_10">
+		
+            <form type="inflection" xml:lang="ar">صاحِب</form>
+		
+            <sense n="2"/>
+            <form type="lemma" xml:lang="ar">صاحِب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_12">
+		
+            <form type="inflection" xml:lang="ar">صاحِبَة</form>
+		
+            <sense n="2"/>
+            <form type="lemma" xml:lang="ar">صاحِب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_14">
+		
+            <form type="inflection" xml:lang="ar">أَصْحاب</form>
+		
+            <sense n="2"/>
+            <form type="lemma" xml:lang="ar">صاحِب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_16">
+		
+            <form type="inflection" xml:lang="ar">طَيِّب</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">طَيِّب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_18">
+		
+            <form type="inflection" xml:lang="ar">سَعِيد</form>
+		
+            <sense n="2"/>
+            <form type="lemma" xml:lang="ar">سَعِيد</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_20">
+		
+            <form type="inflection" xml:lang="ar">ساعَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">ساعَة</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_22">
+		
+            <form type="inflection" xml:lang="ar">سَيِّدَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">سَيِّدَة</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_24">
+		
+            <form type="inflection" xml:lang="ar">أُسْتاذ</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">أُسْتاذ</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_26">
+		
+            <form type="inflection" xml:lang="ar">أُسْتاذَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">أُسْتاذ</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_28">
+		
+            <form type="inflection" xml:lang="ar">سَيِّد</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">سَيِّد</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_30">
+		
+            <form type="inflection" xml:lang="ar">غَرِيب</form>
+		
+            <sense n="2"/>
+            <form type="lemma" xml:lang="ar">غَرِيب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_32">
+		
+            <form type="inflection" xml:lang="ar">شارِع</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">شارِع</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 5_34">
+		
+            <form type="inflection" xml:lang="ar">واسِع</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">واسِع</form>
+	
+         </entry>
+
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_2">
+		
+            <form type="inflection" xml:lang="ar">كَبِير</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">كَبِير</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_4">
+		
+            <form type="inflection" xml:lang="ar">كِتاب</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">كِتاب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_6">
+		
+            <form type="inflection" xml:lang="ar">كُرْسِيّ</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">كُرْسِيّ</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_8">
+		
+            <form type="inflection" xml:lang="ar">صَفّ</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">صَفّ</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_10">
+		
+            <form type="inflection" xml:lang="ar">فَصْل</form>
+		
+            <sense n="2"/>
+            <form type="lemma" xml:lang="ar">فَصْل</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_12">
+		
+            <form type="inflection" xml:lang="ar">بَعِيد</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">بَعِيد</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_14">
+		
+            <form type="inflection" xml:lang="ar">كُوَيِّس</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">كُوَيِّس</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_16">
+		
+            <form type="inflection" xml:lang="ar">طَوِيل</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">طَوِيل</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_18">
+		
+            <form type="inflection" xml:lang="ar">حَلِيب</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">حَلِيب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_20">
+		
+            <form type="inflection" xml:lang="ar">فُلُوس</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">فِلْس</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_22">
+		
+            <form type="inflection" xml:lang="ar">قَرِيب</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">قَرِيب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_24">
+		
+            <form type="inflection" xml:lang="ar">لَطِيف</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">لَطِيف</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_26">
+		
+            <form type="inflection" xml:lang="ar">دَفْتَر</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">دَفْتَر</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_28">
+		
+            <form type="inflection" xml:lang="ar">صَفْحَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">صَفْحَة</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_30">
+		
+            <form type="inflection" xml:lang="ar">غُرْفَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">غُرْفَة</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_32">
+		
+            <form type="inflection" xml:lang="ar">وَرَقَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">وَرَق</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_34">
+		
+            <form type="inflection" xml:lang="ar">قَصِير</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">قَصِير</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_36">
+		
+            <form type="inflection" xml:lang="ar">صَغِير</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">صَغِير</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_38">
+		
+            <form type="inflection" xml:lang="ar">قِصَّة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">قِصَّة</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_40">
+		
+            <form type="inflection" xml:lang="ar">طالِب</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">طالِب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_42">
+		
+            <form type="inflection" xml:lang="ar">طالِبَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">طالِب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_44">
+		
+            <form type="inflection" xml:lang="ar">سُكَّر</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">سُكَّر</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_46">
+		
+            <form type="inflection" xml:lang="ar">طاوِلَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">طاوِلَة</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 6_48">
+		
+            <form type="inflection" xml:lang="ar">شُبّاك</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">شُبّاك</form>
+	
+         </entry>
+
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_2">
+		
+            <form type="inflection" xml:lang="ar">أَمْرِيكِيَّة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">أَمْرِيكِيّ</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_4">
+		
+            <form type="inflection" xml:lang="ar">عَرَبِيَّة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">عَرَبِيّ</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_6">
+		
+            <form type="inflection" xml:lang="ar">وَلَد</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">وَلَد</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_8">
+		
+            <form type="inflection" xml:lang="ar">بِنايَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">بِنايَة</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_10">
+		
+            <form type="inflection" xml:lang="ar">تَمْرِين</form>
+		
+            <sense n="2"/>
+            <form type="lemma" xml:lang="ar">تَمْرِين</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_12">
+		
+            <form type="inflection" xml:lang="ar">بِنْت</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">بِنْت</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_14">
+		
+            <form type="inflection" xml:lang="ar">مَكْتَبَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">مَكْتَبَة</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_16">
+		
+            <form type="inflection" xml:lang="ar">رَجُل</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">رَجُل</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_18">
+		
+            <form type="inflection" xml:lang="ar">مَكْتَب</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">مَكْتَب</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_20">
+		
+            <form type="inflection" xml:lang="ar">قَلَم</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">قَلَم</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_22">
+		
+            <form type="inflection" xml:lang="ar">جَمِيلَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">جَمِيل</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_24">
+		
+            <form type="inflection" xml:lang="ar">ٱِمْتِحان</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">ٱِمْتِحان</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_26">
+		
+            <form type="inflection" xml:lang="ar">ماء</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">ماء</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_28">
+		
+            <form type="inflection" xml:lang="ar">ٱِمْرَأَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">ٱِمْرَأَة</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 7_30">
+		
+            <form type="inflection" xml:lang="ar">كَلِمَة</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">كَلِمَة</form>
+	
+         </entry>
+
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 8_2">
+		
+            <form type="inflection" xml:lang="ar">بارِد</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">بارِد</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 8_4">
+		
+            <form type="inflection" xml:lang="ar">جَوْعان</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">جَوْعان</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 8_6">
+		
+            <form type="inflection" xml:lang="ar">مَرِيض</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">مَرِيض</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 8_8">
+		
+            <form type="inflection" xml:lang="ar">عَطْشان</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">عَطْشان</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 8_10">
+		
+            <form type="inflection" xml:lang="ar">تَعْبان</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">تَعْبان</form>
+	
+         </entry>
+	
+         <entry xml:lang="ar" n="alif_baa_Chapter 8_12">
+		
+            <form type="inflection" xml:lang="ar">زَعْلان</form>
+		
+            <sense n="1"/>
+            <form type="lemma" xml:lang="ar">زَعْلان</form>
+	
+         </entry>
+
+      </body>
+   </text>
+</TEI>
