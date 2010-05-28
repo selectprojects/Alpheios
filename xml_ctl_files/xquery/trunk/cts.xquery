@@ -156,8 +156,12 @@ declare function cts:findSubRef($a_urn as xs:string)
     return
         element reply {
             element TEI {
-                attribute xml:lang { if ($xmllang) then $xmllang else $lang },
-                $ref
+                    $doc//teiHeader,
+                    <text xml:lang="{if ($xmllang) then $xmllang else $lang}">
+                        <body>
+                                {$ref}
+                        </body>
+                    </text>                    
             }   
         }            
 };

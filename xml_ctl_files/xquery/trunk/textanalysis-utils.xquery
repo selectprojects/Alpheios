@@ -107,7 +107,8 @@ declare function tan:filterInflections($a_docinfo,$a_inflSet)
     Function which retrieves the individual words from a document edition
     Parameters:
         $a_docid the cts urn for the document edition
-        $a_pofs the part of speech 
+        $a_excludePofs flag to indicate pofs list is an exclude rather than an include list
+        $a_pofs the parts of speech to include or exclude         
     Returns:
         A sequence of <lemma> elements for each word in the document. The text of the element is the lemma of the word
         and the element has the following required attributes:
@@ -119,11 +120,11 @@ declare function tan:filterInflections($a_docinfo,$a_inflSet)
         If the document has treebank data in the repository, the lemmas and forms will be drawn from the treebank, otherwise they
         wil be drawn from the morphology data document, which may have multiple possible lemmas for each form             
 :)
-declare function tan:getWords($a_docid as xs:string, $a_pofs as xs:string*)
+declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolean, $a_pofs as xs:string*)
 {
     let $cts := cts:parseUrn($a_docid)
     let $docinfo := tan:findDocs($cts)
-    let $part := $cts/passageParts/part[1]
+    let $part := $cts/passageParts/rangePart[1]/part[1]
     let $partMatch := if ($part) then concat("^\w+=",$part,":|^")  else "*"
     return element words{(
         (: create a set of lemma elements for each distinct lemma identified by the word elements in the document, 
@@ -134,19 +135,21 @@ declare function tan:getWords($a_docid as xs:string, $a_pofs as xs:string*)
             let $doc := doc($docinfo/treebank)            
             let $tbFormat := tbu:get-format-name($doc,'aldt')
             let $tbDesc := tbu:get-format-description($tbFormat, "/db/xq/config")
-            let $p_abbrev :=
-                if ($a_pofs)
-                then xs:string($tbDesc/tbd:table[@type eq "morphology"]/tbd:category[@id eq 'pos']/tbd:entry[tbd:long/text() = $a_pofs]/tbd:short)
-                else "*"
+            let $p_match :=
+                if (count($a_pofs) > 0)  
+                then string-join(
+                    (for $p in $a_pofs return 
+                      xs:string($tbDesc/tbd:table[@type eq "morphology"]/tbd:category[@id eq 'pos']/tbd:entry[tbd:long/text() = $p]/tbd:short)
+                    ),"|")
+                else "."                                                  
             let $lang := xs:string($doc/treebank/attribute::xml:lang)
             let $lemmas := 
-                if ($p_abbrev != "*")
+                if ($a_excludePofs)
                 then
                     $doc/treebank/sentence[matches(@subdoc,$partMatch)]/
-                    word[attribute::postag and starts-with(attribute::postag,$p_abbrev)]
-                else
-                    $doc/treebank/sentence[matches(@subdoc,$partMatch)]/
-                        word                
+                        word[attribute::postag and not(matches(attribute::postag,$p_match))]
+                else $doc/treebank/sentence[matches(@subdoc,$partMatch)]/
+                        word[attribute::postag and matches(attribute::postag,$p_match)]                                                                                                                
             return 
             (
                 for $i in $lemmas 
@@ -163,22 +166,29 @@ declare function tan:getWords($a_docid as xs:string, $a_pofs as xs:string*)
             then
                 let $doc := doc($docinfo/morph)
                 let $lang := xs:string($doc/forms:forms/attribute::xml:lang)
+                let $p_match := 
+                    if (count($a_pofs) > 0)
+                    then concat('^',string-join($a_pofs,'|'),'$')
+                    else "."
                 let $lemmas := 
-                    if ($a_pofs)
+                    if ($a_excludePofs)
                     then $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$a_docid)]/
-                        forms:words/forms:word/forms:entry/forms:dict[forms:pofs/text()=$a_pofs] 
+                        forms:words/forms:word/forms:entry/forms:dict[not(matches(forms:pofs/text(),$p_match))] 
                       else $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$a_docid)]/
-                          forms:words/forms:word/forms:entry/forms:dict
+                          forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs/text(),$p_match)]
                 return
                 (
                     for $i in $lemmas
-                        let $hdwd := if $i/$i/forms:hdwd/text()
+                        let $hdwd := $i/forms:hdwd/text()
                         let $sense := if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
                         let $lemma:= if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
                         let $form := $i/ancestor::forms:inflection/@form
                         let $count := count($i/ancestor::forms:inflection/forms:urn)
                         order by $i/forms:hdwd, $i/ancestor::forms:inflection/@form
-                        return <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}">{$lemma}</lemma>
+                    return 
+                    <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}">{
+                        $i/ancestor::forms:inflection/forms:urn                                            
+                    }</lemma>
                 )
         else ()                
     )}
@@ -222,7 +232,7 @@ declare function tan:getInflections($a_docid as xs:string, $a_pofs as xs:string*
                                 (: if we we can disambiguate the morphology using a treebank, do so :) 
                                 if (exists($docinfo/treebank) and exists($docinfo/text))
                                 then                                                                                                
-                                    let $aref := cts:findSubRef($u/text())                                                                        
+                                    let $aref := cts:findSubRef($u/text())//wd                                                                         
                                     let $tbref :=                                    
                                         if ($aref[1])
                                         then
