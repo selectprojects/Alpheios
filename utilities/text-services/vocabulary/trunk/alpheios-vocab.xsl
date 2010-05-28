@@ -31,7 +31,9 @@
         <xsl:variable name="vocab_lang" select="//tei:text/@xml:lang"/>
         <html>
             <head>
-                <link rel="stylesheet" type="text/css" href="../css/alpheios-vocab.css"/>                
+                <link rel="stylesheet" type="text/css" href="../css/alpheios-vocab.css"/>  
+                <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+                <script type="text/javascript" src="../script/alpheios-vocab.js"></script>                
             </head>
             <body>
                 <div>
@@ -68,12 +70,22 @@
             </div>
             <div class="forms">
                 <xsl:for-each select="tei:form[@type='inflection']">
-                    <div class="form">         
-                        <span class="alpheios-word" lang="{@lang}"><xsl:value-of select="."/></span><span class="count">(<xsl:value-of select="@count"/>)</span>
+                    <xsl:variable name="ptrs">
+                        
+                    </xsl:variable>
+                    <div class="form">                        
+                        <span class="alpheios-word" lang="{@lang}"><xsl:value-of select="text()"/></span><span class="count">(<xsl:value-of select="@count"/>)</span>
+                        <div class="toggle collapsed"><span class="toggle-text collapsed">Hide</span><span class="toggle-text">Show...</span>
+                            <xsl:apply-templates select="tei:ptr"/>
+                        </div>
                     </div>          
                 </xsl:for-each>
             </div>
         </div>
+    </xsl:template>
+    
+    <xsl:template match="tei:ptr[not(starts-with(@type,'paging'))]">
+        <div class="urn"><a href="{@target}" target="_blank"><xsl:value-of select="."/></a></div>
     </xsl:template>
     
     <xsl:template match="tei:ptr[starts-with(@type,'paging')]">

@@ -28,7 +28,8 @@ declare namespace tbd = "http://alpheios.net/namespaces/treebank-desc";
     alpheios-vocab.xq?doc=<cts urn for the document>&start=<starting index>&count=<number of lemmas to display>&format=<format>&pofs=<pofs>
   where
     doc is the cts urn for the document     
-    pofs is the part of speech to limit the search to
+    pofs is a part of speech to limit the search to
+    excludepofs is a flag to indicate the pofs listed in the pofs parameter are to be excluded rather than included 
     format is the treebank format for the document (defaults to 'aldt' if not supplied)
     start is the starting index # for paging (defaults to 1 if not supplied)
     count is the number of terms to display (defaults to 10 if not supplied)
@@ -54,11 +55,11 @@ declare function vocab:group_lemmas(
 {
     if ($a_remaining)
         then
-            let $group:= vocab:count_forms($a_remaining[1],xs:integer(1))
+            let $group:= vocab:count_forms($a_remaining[1],xs:integer(1),())
             let $new_set := ($a_set, $group[1])
             let $next := $group[2]           
             return             
-            if ($next and $next/text() = $a_grpText)
+            if ($next and $next/@lemma = $a_grpText)
                 then
                     (: there are still forms remaining to be counted so recurse to count the next form :)
                     vocab:group_lemmas($a_grpText,$new_set,$next)
@@ -77,12 +78,13 @@ declare function vocab:group_lemmas(
    Return Value:
       A <form/> element with the count specified in @count and the form text as the text of the element
 :)
-declare function vocab:count_forms($a_elem as element()*,$a_count as xs:integer) as element()*
+declare function vocab:count_forms($a_elem as element()*,$a_count as xs:integer,$a_urns as item()*) as element()*
 {
     let $next := $a_elem/following-sibling::*:lemma[1]
+    let $urns := ($a_urns,$a_elem/*:urn)
     return
      if (not($next) or
-         $next/text() != $a_elem/text() or
+         $next/@lemma != $a_elem/@lemma or
          $next/@form != $a_elem/@form                  
        )
         then (
@@ -93,11 +95,12 @@ declare function vocab:count_forms($a_elem as element()*,$a_count as xs:integer)
                          then $a_elem/@count
                          else $a_count 
                      },
-                     xs:string($a_elem/@form)
+                     $a_elem/@form,
+                     $urns                     
                  },
                  $next
          )           
-        else vocab:count_forms($next,$a_count+1)   
+        else vocab:count_forms($next,$a_count+1,$urns)   
     
 };
 
@@ -106,32 +109,34 @@ import module namespace tan="http://alpheios.net/namespaces/text-analysis"
               at "textanalysis-utils.xquery";
     declare option exist:serialize "method=xml media-type=text/xml";
 
-let $e_doc := request:get-parameter("doc", ())
+let $e_doc := request:get-parameter("urn", ())
 let $e_start := xs:int(request:get-parameter("start", 1))
 let $e_count := xs:int(request:get-parameter("count", 10))
-let $e_pofs := request:get-parameter("pofs",())
+let $e_pofs := distinct-values(request:get-parameter("pofs",()))
+let $e_excludePofs := xs:boolean(request:get-parameter("excludepofs","false"))
 
-let $all_words  := tan:getWords($e_doc,$e_pofs)
+let $all_words  := tan:getWords($e_doc,$e_excludePofs,$e_pofs)
 (: sort the lemma elements by frequency of the lemma, with the individual forms for each lemma
     grouped and sorted by frequency as well 
 :)
 let $words_counted := 
 for $l in  (
-    for $j in $all_words/*:lemma[following-sibling::*:lemma[1]/text() != text()]
-           let $lemmas := $all_words/*:lemma[text() = $j/text()]
-           let $forms := vocab:group_lemmas($j/text(),(),$lemmas)
+    for $j in $all_words/*:lemma[following-sibling::*:lemma[1]/@lemma != @lemma]
+           let $lemmas := $all_words/*:lemma[@lemma = $j/@lemma]
+           let $forms := vocab:group_lemmas($j/@lemma,(),$lemmas)
             return element lemma {
                 $j/@lang,
                  attribute count {sum($forms/@count)},
-                 $forms,            
-                 $j/text()
+                 $j/@lemma,
+                 $forms,
+                 $lemmas/*:urn
              })
     order by xs:int($l/@count) descending
     return $l
 
 (: return the sorted lemmas as  a TEI compliant document :)
 return (
- processing-instruction xml-stylesheet {
+processing-instruction xml-stylesheet {
  attribute xml {
 	'type="text/xsl" href="../xslt/alpheios-vocab.xsl"'
 }
@@ -194,10 +199,16 @@ return (
   for $k in ($words_counted[position() >= $e_start and position() < ($e_start+$e_count)])       
         return( 
         <entry lang="{xs:string($k/@lang)}">
-           <form type="lemma" lang="{xs:string($k/@lang)}" count="{$k/@count}">{$k/text()}</form>
+           <form type="lemma" lang="{xs:string($k/@lang)}" count="{$k/@count}">{xs:string($k/@lemma)}</form>
            { for $j in $k/*:form 
               order by xs:int($j/@count) descending
-             return <form type="inflection"  lang="{xs:string($k/@lang)}" count="{$j/@count}">{$j/text()}</form> }
+             return 
+                 <form type="inflection"  lang="{xs:string($k/@lang)}" count="{$j/@count}">{xs:string($j/@form)}
+                     { for $u in $k/*:urn 
+                       return element ptr {attribute target { concat("alpheios-text.xq?urn=", $u/text()) },$u/text()}
+                     }
+                 </form> 
+            }
         </entry>
         )
       
@@ -207,3 +218,4 @@ return (
  </TEI>
 
  )
+ 

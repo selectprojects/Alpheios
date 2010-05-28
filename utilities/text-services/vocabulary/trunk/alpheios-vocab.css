@@ -109,3 +109,25 @@ body {
     float: right;
     width: 50%;
 }
+.toggle{
+    background: transparent url(arrow-dn-sharp.gif) no-repeat  0 6px;    
+    color: blue;    
+    cursor: pointer;
+    padding-left: 12px;
+}
+
+.collapsed .toggle {
+    background: transparent url(arrow-rit-sharp.gif) no-repeat 0 6px;    
+}
+
+.collapsed .toggle {
+    background: transparent url(arrow-rit-sharp.gif) no-repeat 0 6px;    
+}
+
+.collapsed.toggle-text  {
+    display: none;
+}
+
+.collapsed .urn {
+    display: none;
+}

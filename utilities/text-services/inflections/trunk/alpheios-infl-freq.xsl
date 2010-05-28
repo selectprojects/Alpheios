@@ -150,7 +150,7 @@
                         <div class="column ending-urn-set collapsed">    
                             <div class="toggle"><span class="toggle-text collapsed">Hide</span><span class="toggle-text">Show...</span></div>                         
                             <xsl:for-each select="forms:refs/forms:ptr">
-                                <div class="urn"><a href="{@href}"><xsl:value-of select="forms:urn"/></a></div>
+                                <div class="urn"><a href="{@href}" target="_blank"><xsl:value-of select="forms:urn"/></a></div>
                             </xsl:for-each>
                         </div>
                     </div>
