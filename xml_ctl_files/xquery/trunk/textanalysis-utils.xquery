@@ -33,6 +33,9 @@ import module namespace tbm="http://alpheios.net/namespaces/treebank-morph"
 import module namespace cts="http://alpheios.net/namespaces/cts" 
             at "cts.xquery";
 
+declare variable $tan:MAX_FORMS := 2500;
+declare variable $tan:MAX_LEMMAS := 2500;
+
 (:
     Function which identifies the paths of the various Alpheios document types available for a specific
     Alpheios edition
@@ -125,8 +128,8 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
     let $cts := cts:parseUrn($a_docid)
     let $docinfo := tan:findDocs($cts)
     let $part := $cts/passageParts/rangePart[1]/part[1]
-    let $partMatch := if ($part) then concat("^\w+=",$part,":|^")  else "*"
-    return element words{(
+    let $partMatch := if ($part) then concat("^\w+=",$part,":|$")  else ".*"
+    let $words :=                   
         (: create a set of lemma elements for each distinct lemma identified by the word elements in the document, 
         sorted by lemma, then within each lemma by form 
         :)          
@@ -137,10 +140,10 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
             let $tbDesc := tbu:get-format-description($tbFormat, "/db/xq/config")
             let $p_match :=
                 if (count($a_pofs) > 0)  
-                then string-join(
+                then concat("^(",string-join(
                     (for $p in $a_pofs return 
                       xs:string($tbDesc/tbd:table[@type eq "morphology"]/tbd:category[@id eq 'pos']/tbd:entry[tbd:long/text() = $p]/tbd:short)
-                    ),"|")
+                    ),"|"),")")
                 else "."                                                  
             let $lang := xs:string($doc/treebank/attribute::xml:lang)
             let $lemmas := 
@@ -149,15 +152,11 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                     $doc/treebank/sentence[matches(@subdoc,$partMatch)]/
                         word[attribute::postag and not(matches(attribute::postag,$p_match))]
                 else $doc/treebank/sentence[matches(@subdoc,$partMatch)]/
-                        word[attribute::postag and matches(attribute::postag,$p_match)]                                                                                                                
-            return 
-            (
-                for $i in $lemmas 
-                    let $sense := replace($i/@lemma,"^(.*?)(\d+)$","$2")
-                    let $lemma:= if (matches($i/@lemma,"\d+$")) then replace($i/@lemma,"^(.*?)(\d+)$","$1") else $i/@lemma
-                    order by $i/@lemma, $i/@form
-                    return <lemma lang="{$lang}" form="{xs:string($i/@form)}" sense="{$sense}">{$lemma}</lemma>           
-            )
+                        word[attribute::postag and matches(attribute::postag,$p_match)]
+            for $i in $lemmas 
+                let $sense := replace($i/@lemma,"^(.*?)(\d+)$","$2")
+                let $lemma:= if (matches($i/@lemma,"\d+$")) then replace($i/@lemma,"^(.*?)(\d+)$","$1") else $i/@lemma                        
+                return <lemma lang="{$lang}" form="{xs:string($i/@form)}" sense="{$sense}" lemma="{$lemma}"/>           
         else if ($docinfo/morph)
             (:
                 just take all lemma possibilities found for each form for now, but   
@@ -175,23 +174,28 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                     then $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$a_docid)]/
                         forms:words/forms:word/forms:entry/forms:dict[not(matches(forms:pofs/text(),$p_match))] 
                       else $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$a_docid)]/
-                          forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs/text(),$p_match)]
-                return
-                (
-                    for $i in $lemmas
-                        let $hdwd := $i/forms:hdwd/text()
-                        let $sense := if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
-                        let $lemma:= if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
-                        let $form := $i/ancestor::forms:inflection/@form
-                        let $count := count($i/ancestor::forms:inflection/forms:urn)
-                        order by $i/forms:hdwd, $i/ancestor::forms:inflection/@form
-                    return 
-                    <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}">{
-                        $i/ancestor::forms:inflection/forms:urn                                            
-                    }</lemma>
-                )
-        else ()                
-    )}
+                          forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs/text(),$p_match)]                                
+                    return
+                        for $i in $lemmas
+                            let $hdwd := $i/forms:hdwd/text()
+                            let $sense := if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
+                            let $lemma:= if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
+                            let $form := $i/ancestor::forms:inflection/@form
+                            let $count := count($i/ancestor::forms:inflection/forms:urn)
+                            return 
+                                <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}">{
+                                    $i/ancestor::forms:inflection/forms:urn                                            
+                                }</lemma>
+                                             
+        else ()
+        let $total := count($words)
+        let $returned := if ($total > $tan:MAX_LEMMAS) then $tan:MAX_LEMMAS else $total
+        let $truncated  := for $i in $words[position() <= $tan:MAX_LEMMAS] return $i                     
+        return
+            <result count="{$returned}" total="{$total}" truncated="{$total - $returned}" 
+                treebank="{exists($docinfo/treebank)}">
+                <words>{for $i in $truncated order by $i/@lemma, $i/@form return $i}</words>
+            </result>
 };
 
 (:
@@ -211,17 +215,15 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
 declare function tan:getInflections($a_docid as xs:string, $a_pofs as xs:string*)
 {
     let $cts := cts:parseUrn($a_docid)
-    let $docinfo := tan:findDocs($cts)         
-    return
+    let $docinfo := tan:findDocs($cts)
+    let $part := $cts/passageParts/rangePart[1]/part[1]    
+    let $forms := 
         if ($docinfo/morph)
         then 
             let $doc := doc($docinfo/morph)        
             let $refdoc := doc($docinfo/text)
             let $tbdoc := doc($docinfo/treebank)
-            return                         
-                <forms>
-                {
-                    (: TODO support ranges in the cts urn :)
+            (: TODO support ranges in the cts urn :)
                     for $i in ($doc/forms:forms/forms:inflection[forms:words and  matches(forms:urn,$a_docid) and count(forms:urn) >= xs:int(2)])            
                     return element inflection {
                         $doc/forms:forms/@xml:lang,
@@ -256,10 +258,16 @@ declare function tan:getInflections($a_docid as xs:string, $a_pofs as xs:string*
                                             $infl                                                                     
                                        }</instance>
                          }</instances>
-                    }
-                }
-                </forms>
+                    }            
             else ()
+        let $total := count($forms)
+        let $returned := if ($total > $tan:MAX_FORMS) then $tan:MAX_FORMS else $total
+        return
+                <result count="{$returned}" total="{$total}" truncated="{$total - $returned}" treebank="{exists($docinfo/treebank)}">
+                    <forms>
+                    {$forms[position() <= $tan:MAX_FORMS ]}
+                   </forms>
+                </result>                    
 };
 
 (: Recursively change the namespace for all the elements in supplied parent node
