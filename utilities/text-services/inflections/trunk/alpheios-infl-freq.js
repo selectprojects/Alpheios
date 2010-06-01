@@ -31,9 +31,7 @@ $(function()
 
 function get_url() 
 {
-    return "alpheios-infl-freq.xq?doc=" + 
-        $("meta[name=alpheios-docid]").attr("content") +
-        "&lang=" +                      
-        $("meta[name=alpheios-lang]").attr("content") +
+    return "alpheios-infl-freq.xq?urn=" + 
+        $("meta[name=alpheios-docid]").attr("content") +                              
         "&pofs=<POFS>&sort=<SORT>";
 }
