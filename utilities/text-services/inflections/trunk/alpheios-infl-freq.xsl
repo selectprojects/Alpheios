@@ -171,7 +171,13 @@
             <div class="column infl-ending header">
                 <xsl:value-of select="
                     translate(substring(/forms:endings/@pofs,1,1),'abcdefghijklmnopqrstuvwxyz','ABCDEFGHIJKLMNOPQRSTUVWXYZ')"
-                /><xsl:value-of select="substring(/forms:endings/@pofs,2)"/> Ending</div>          
+                /><xsl:value-of select="substring(/forms:endings/@pofs,2)"/> Ending
+                <xsl:if test="/forms:endings/@truncated != 0">
+                    <xsl:variable name="qualifier"><xsl:if test="not(forms:endings/@treebank = 'true')"> possible</xsl:if></xsl:variable>
+                    <span class="truncation"> [Results truncated: only the first <xsl:value-of select="/forms:endings/@count"/> of  
+                        <xsl:value-of select="/forms:endings/@total"/><xsl:value-of select="$qualifier"/> forms analyzed]</span>
+                </xsl:if>                        
+            </div>          
         </div>
         <xsl:variable name="sort_heading">
             <xsl:choose>
@@ -181,7 +187,8 @@
             
         </xsl:variable>
         <div class="row header-row header2 forms-all">
-            <div class="column infl-att-set header"><xsl:value-of select="$sort_heading"/></div>
+            <div class="column infl-att-set header"><xsl:value-of select="$sort_heading"/>
+            </div>            
             <div class="column infl-set-count header">Frequency</div>
             <div class="column infl-urn-set header">Sources</div>
         </div>   

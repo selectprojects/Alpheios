@@ -110,12 +110,18 @@ import module namespace tan="http://alpheios.net/namespaces/text-analysis"
     declare option exist:serialize "method=xml media-type=text/xml";
 
 let $e_doc := request:get-parameter("urn", ())
-let $e_start := xs:int(request:get-parameter("start", 1))
-let $e_count := xs:int(request:get-parameter("count", 10))
+let $e_start := xs:int(request:get-parameter("start", xs:int("1")))
+let $e_count := xs:int(request:get-parameter("count", xs:int("10")))
 let $e_pofs := distinct-values(request:get-parameter("pofs",()))
 let $e_excludePofs := xs:boolean(request:get-parameter("excludepofs","false"))
 
-let $all_words  := tan:getWords($e_doc,$e_excludePofs,$e_pofs)
+let $results  := tan:getWords($e_doc,$e_excludePofs,$e_pofs)
+let $all_words := $results/*:words
+let $note := 
+    if ($results/@truncated > 0) 
+    then concat("Results truncated: only the first ",$results/@count," of ", 
+        if ($results/@treebank) then "" else  "possible ", $results/@total, " lemmas analyzed")
+    else ""
 (: sort the lemma elements by frequency of the lemma, with the individual forms for each lemma
     grouped and sorted by frequency as well 
 :)
@@ -141,7 +147,7 @@ processing-instruction xml-stylesheet {
 	'type="text/xsl" href="../xslt/alpheios-vocab.xsl"'
 }
 },
- <TEI xmlns="http://www.tei-c.org/ns/1.0"
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_dictionaries.xsd">
         <teiHeader>
@@ -149,10 +155,13 @@ processing-instruction xml-stylesheet {
                 <titleStmt><title></title></titleStmt>
                 <publicationStmt><date></date></publicationStmt>
                 <sourceDesc><p>Alpheios</p></sourceDesc>
+                <notesStmt>
+                     <note>{$note}</note>
+                </notesStmt> 
             </fileDesc>
          </teiHeader> 
          <text pofs="{$e_pofs}" xml:lang="{$words_counted[1]/@lang}">
-         <body>
+         <body>         
   { 
     let $total := count($words_counted)
     let $start_less_count := $e_start - $e_count
@@ -194,7 +203,7 @@ processing-instruction xml-stylesheet {
 
            else ()
      return ($first,$prev,$next,$last)
-  },
+  }
   {  
   for $k in ($words_counted[position() >= $e_start and position() < ($e_start+$e_count)])       
         return( 

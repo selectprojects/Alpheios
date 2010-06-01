@@ -36,7 +36,8 @@
                 <script type="text/javascript" src="../script/alpheios-vocab.js"></script>                
             </head>
             <body>
-                <div>
+                <div>                
+                    <xsl:if test="//tei:fileDesc/tei:notesStmt"><div class="notes"><xsl:value-of select="//tei:fileDesc/tei:notesStmt"/></div></xsl:if>
                 <div class="alpheios-toolbar"><button class="alpheios-toolbar-scanwords">Check Wordlist</button></div>
                 <div class="alpheios-trigger-hint alpheios-hint"></div>
                   <div class="nav">
@@ -75,9 +76,11 @@
                     </xsl:variable>
                     <div class="form">                        
                         <span class="alpheios-word" lang="{@lang}"><xsl:value-of select="text()"/></span><span class="count">(<xsl:value-of select="@count"/>)</span>
-                        <div class="toggle collapsed"><span class="toggle-text collapsed">Hide</span><span class="toggle-text">Show...</span>
-                            <xsl:apply-templates select="tei:ptr"/>
-                        </div>
+                        <xsl:if test="tei:ptr[not(starts-with(@type,'paging'))]">
+                            <div class="toggle collapsed"><span class="toggle-text collapsed">Hide</span><span class="toggle-text">Show...</span>
+                                <xsl:apply-templates select="tei:ptr"/>
+                            </div>
+                        </xsl:if>
                     </div>          
                 </xsl:for-each>
             </div>

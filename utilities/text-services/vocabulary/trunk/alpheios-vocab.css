@@ -131,3 +131,8 @@ body {
 .collapsed .urn {
     display: none;
 }
+
+.notes {
+    font-size: smaller;
+    color: red;
+}

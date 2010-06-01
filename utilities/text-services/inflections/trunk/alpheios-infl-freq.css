@@ -96,4 +96,8 @@ body {
     float: right;
 }
 
-
+.truncation {
+    font-size: smaller;
+    color: red;
+    padding-left: 2em;
+}

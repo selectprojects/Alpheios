@@ -170,7 +170,8 @@ let $e_urn := request:get-parameter("urn", ())
 let $e_pofs := request:get-parameter('pofs',())
 let $e_sort := request:get-parameter('sort',())
 
-let $infl_all := tan:getInflections($e_urn,$e_pofs)
+let $results := tan:getInflections($e_urn,$e_pofs)
+let $infl_all := $results/*:forms
 
 (: sort by ending :)
 let $inst := 
@@ -187,7 +188,7 @@ let $inst :=
                       xs:string($e/descendant::*:num),
                       xs:string($e/descendant::*:gend)    
                   return 
-                      infl:($e_urn,$e)
+                      infl:copy_inst($e_urn,$e)
              else            
                  for $e in $infl_all//*:instance[descendant::*:pofs/text() = $e_pofs]
                  order by                 
@@ -230,13 +231,14 @@ return(
     processing-instruction xml-stylesheet {
      attribute xml {'type="text/xsl" href="../xslt/alpheios-infl-freq.xsl"'}
     },
-  <endings lang="{xs:string($infl_all/*:inflection[1]/@xml:lang)}" docid="{$e_urn}" pofs="{$e_pofs}">
-       <order-table>
+  <endings lang="{xs:string($infl_all/*:inflection[1]/@xml:lang)}" docid="{$e_urn}" pofs="{$e_pofs}" count="{$results/@count}"
+      total="{$results/@total}" truncated="{$results/@truncated}" treebank="{$results/@treebank}">
+      <order-table>
            <order-item attname="pofs" order="1">noun</order-item>
            <order-item attname="pofs" order="2">verb</order-item>
            <order-item attname="pofs" order="3">adjective</order-item>  
-       </order-table>
-  {                  
+       </order-table>      
+  {                            
       for $i in $inst/*:instance[
           ($e_sort = 'ending' and 
                 ((following-sibling::*:instance[1]/descendant::*:suff/text() != descendant::*:suff/text())
