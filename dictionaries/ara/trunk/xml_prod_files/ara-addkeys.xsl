@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="2.0">
+<xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
   <!--
   Copyright 2008-2010 Cantus Foundation
@@ -42,7 +42,9 @@
           <xsl:if test="local-name() = 'lemma'">
             <!-- key1 = original lemma -->
             <xsl:variable name="key1" select="."/>
-            <xsl:attribute name="key1" select="$key1"/>
+            <xsl:attribute name="key1">
+              <xsl:value-of select="$key1"/>
+            </xsl:attribute>
 
             <!-- key2 = key1 with tanwin removed -->
             <xsl:variable name="key2">
@@ -52,7 +54,9 @@
               </xsl:call-template>
             </xsl:variable>
             <xsl:if test="$key2 != $key1">
-              <xsl:attribute name="key2" select="$key2"/>
+              <xsl:attribute name="key2">
+                <xsl:value-of select="$key2"/>
+              </xsl:attribute>
             </xsl:if>
 
             <!-- key3 = key2 with hamzas removed -->
@@ -63,7 +67,9 @@
               </xsl:call-template>
             </xsl:variable>
             <xsl:if test="$key3 != $key2">
-              <xsl:attribute name="key3" select="$key3"/>
+              <xsl:attribute name="key3">
+                <xsl:value-of select="$key3"/>
+              </xsl:attribute>
             </xsl:if>
 
             <!-- key4 = key3 with harakat removed -->
@@ -74,7 +80,9 @@
               </xsl:call-template>
             </xsl:variable>
             <xsl:if test="$key4 != $key3">
-              <xsl:attribute name="key4" select="$key4"/>
+              <xsl:attribute name="key4">
+                <xsl:value-of select="$key4"/>
+              </xsl:attribute>
             </xsl:if>
 
             <!-- key5 = key4 with shadda removed -->
@@ -85,7 +93,9 @@
               </xsl:call-template>
             </xsl:variable>
             <xsl:if test="$key5 != $key4">
-              <xsl:attribute name="key5" select="$key5"/>
+              <xsl:attribute name="key5">
+                <xsl:value-of select="$key5"/>
+              </xsl:attribute>
             </xsl:if>
           </xsl:if>
           <!-- call recursively -->

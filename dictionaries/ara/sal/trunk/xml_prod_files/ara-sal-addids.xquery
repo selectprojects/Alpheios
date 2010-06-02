@@ -1,5 +1,5 @@
 (:
-  Copyright 2008-2009 Cantus Foundation
+  Copyright 2008-2010 Cantus Foundation
   http://alpheios.net
 
   This file is part of Alpheios.
@@ -24,36 +24,35 @@
 
 (: file global variables :)
 declare variable $f_doc := doc("/sgml/lexica/ara/sal/salmone.xml");
-declare variable $f_keys :=
-    for $entry in $f_doc//entryFree
-    return
-      concat($entry/@key, "???",
-             $entry/../@n, "???",
-             normalize-space($entry/sense[1]), "???",
-             count($entry/../entryFree), "???",
-             $entry/preceding-sibling::entryFree[1]/@key, "???",
-             $entry/following-sibling::entryFree[1]/@key);
+
+declare function local:count(
+  $a_element as element()) as xs:integer
+{
+  if (string(node-name($a_element)) = "entryFree")
+  then
+    1
+  else
+    sum(
+      for $child at $i in $a_element/node()
+      return
+        if ($child instance of element())
+        then
+          local:count($child)
+        else 0
+    )
+};
 
 declare function local:copy(
-  $a_element as element()) as element()
+  $a_element as element(),
+  $a_count as xs:integer) as element()
 {
   element {node-name($a_element)}
   {
     (: if this is an entry, add id attribute :)
     if (string(node-name($a_element)) = "entryFree")
     then
-      attribute id
-      {
-        let $key :=
-              concat($a_element/@key, "???",
-                     $a_element/../@n, "???",
-                     normalize-space($a_element/sense[1]), "???",
-                     count($a_element/../entryFree), "???",
-                     $a_element/preceding-sibling::entryFree[1]/@key, "???",
-                     $a_element/following-sibling::entryFree[1]/@key)
-        return concat('n', index-of($f_keys, $key) - 1)
-      }
-     else (),
+      attribute id { concat('n', $a_count) }
+    else (),
 
     (: copy attributes, but not TEI additions :)
     for $attr in $a_element/@*
@@ -65,14 +64,21 @@ declare function local:copy(
       else (),
 
     (: recurse :)
+    let $counts :=
+      for $child in $a_element/node()
+      return
+        if ($child instance of element())
+        then
+          local:count($child)
+        else 0
     for $child at $i in $a_element/node()
     return
       if ($child instance of element())
       then
-        local:copy($child)
+        local:copy($child, $a_count + sum(subsequence($counts, 1, $i - 1)))
       else
         $child
   }
 };
 
-local:copy($f_doc/*)
+local:copy($f_doc/*, 0)

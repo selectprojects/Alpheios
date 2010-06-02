@@ -46,12 +46,18 @@ element entrylist
 
   (: for each entry in file :)
   for $entry in $f_entries
-
+  (: for each orth in entry :)
+  let $keys :=
+    distinct-values(
+      for $key in $entry//orth[@lang eq "ar"]
+      return normalize-space($key/text())
+    )
+  for $key in $keys
   (: put out entry :)
   return
     element entry
     {
       $entry/@id,
-      element lemma { data($entry/@key) }
+      element lemma { $key }
     }
 }
