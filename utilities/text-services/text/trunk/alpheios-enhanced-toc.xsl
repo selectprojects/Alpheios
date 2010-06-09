@@ -74,7 +74,7 @@
                         <xsl:variable name="url">
                             <xsl:value-of select="tei:ptr[@rend='text']/@target"/>
                         </xsl:variable>
-                        <a class="alpheios-toc-link" href="{$url}" target="_parent">
+                        <a class="alpheios-toc-link" href="{$url}">
                             <xsl:value-of select="normalize-space(text())"/></a>
                     </xsl:when>
                     <xsl:otherwise>
@@ -94,7 +94,7 @@
         </xsl:template>
     
     <xsl:template name="javascriptHook">
-            <script type="text/javascript" src="../script/jquery-1.2.6.min.js"></script>
+            <script type="text/javascript" src="../script/jquery-1.2.6-alph.js"></script>
             <script type="text/javascript" src="../script/alpheios-toc.js"></script>
             <script type="text/javascript">
                 // document ready function
