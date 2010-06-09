@@ -303,7 +303,7 @@ declare function cts:expandValidReffs($a_inv as xs:string,$a_urn as xs:string,$a
                         let $href := 
                             if ($a_level = $numLevels) 
                             then
-                                concat("alpheios-text.xq?urn=",$urn)
+                                concat("alpheios-get-ref.xq?urn=",$urn)
                             else
                                  concat("alpheios-get-toc.xq?urn=",$urn,"&amp;level=",$a_level+1)                        
                         let $ptrType := if ($a_level = $numLevels) then 'text' else 'toc'                                
