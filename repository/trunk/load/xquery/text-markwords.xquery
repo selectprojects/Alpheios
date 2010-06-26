@@ -38,6 +38,11 @@ declare variable $s_nontext :=
   },
   element nontext
   {
+    attribute lang { "ara" },
+    " “”—&quot;‘’,.:;?!\[\]{}\-"
+  },
+  element nontext
+  {
     attribute lang { "*" },
     " “”—&quot;‘’,.:;&#x0387;&#x00B7;?!\[\](){}\-"
   }
@@ -48,6 +53,16 @@ declare variable $s_breaktext :=
   element breaktext
   {
     attribute lang { "grc" },
+    "᾽"
+  },
+   element breaktext
+  {
+    attribute lang { "ara" },
+    "᾽"
+  },
+  element breaktext
+  {
+    attribute lang { "*" },
     "᾽"
   }
 );
@@ -138,16 +153,19 @@ declare function local:process-text(
             else if ($e_encoding = "ara")
             then
                 let $xsl := doc('/db/xslt/alpheios-buck2uni.xsl')
-                let $params := <parameters><param name="e_in" value="{$t}"/></parameters>
+                let $params := 
+                    <parameters><param name="e_in" value="{$t}"/><param name="e_depersify" value="1"/></parameters>
                 let $dummy := <dummy/>
-                let $temp := transform:transform($dummy, $xsl, $params)
+                let $temp := (:transform:transform($dummy, $xsl, $params):)$t
                 return $temp
             else $t
         return element wd
             {
               (: assign unique id to word :)
               attribute id { concat($a_id, "-", $a_i) },
-              if ($e_encoding = "beta") then attribute beta{$t} else (), 
+              if ($e_encoding = "beta") then attribute beta{$t} 
+              else if ($e_encoding = "ara") then attribute ara{$t} 
+              else (), 
               $transformed
             }
         else

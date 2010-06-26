@@ -19,11 +19,13 @@
  :)
 
 import module namespace almt="http://alpheios.net/namespaces/alignment-match"
-              at "xmldb:exist://localhost:8080/exist/xmlrpc/db/xq/alignment-match.xquery";
+              at "file:///c:/work/xml_ctl_files/xquery/trunk/alignment-match.xquery";
 
-import module namespace cts="http://alpheios.net/namespaces/cts"
-              at "xmldb:exist://localhost:8080/exist/xmlrpc/db/xq/cts.xquery";
+(:import module namespace cts="http://alpheios.net/namespaces/cts"
+              at "file:///c:/work/xml_ctl_files/xquery/trunk/cts.xquery";:)
 
+(:import module namespace tan="http://alpheios.net/namespaces/text-analysis"
+              at "file:///c:/work/xml_ctl_files/xquery/trunk/textanalysis-utils.xquery";:)
 
 (:
   Fix word elements in text
@@ -42,10 +44,10 @@ import module namespace cts="http://alpheios.net/namespaces/cts"
   Static variables:
     $s_nontext         Regex matching non-textual characters
  :)
-declare variable $e_urn external;
 declare variable $e_source external;
 declare variable $e_lang external;
-declare variable $e_alignEdition external;
+declare variable $e_treebank external;
+declare variable $e_align external;
 
 
 
@@ -113,7 +115,7 @@ declare function local:process-nodes(
 declare function local:fix-words(
   $a_textWords as element(wrap)*,
   $a_dataWords as element(wd)*,
-  $a_matches as element(match)*,
+  $a_matches as element()*,
   $a_treebank as xs:boolean) as element(wrap)*
 {
   (: nothing to do if no text words left :)
@@ -121,6 +123,7 @@ declare function local:fix-words(
 
   (: if no matches left, copy text words :)
   if (count($a_matches) eq 0) then $a_textWords else
+  if ($a_matches/oops) then $a_textWords else 
 
   (: create words for this match :)
   let $match := $a_matches[1]
@@ -220,9 +223,10 @@ declare function local:fix-word(
   }
 };
 
-let $cts := cts:parseUrn($e_urn)
-let $alignDoc := concat($cts/fileInfo/basePath, "alpheios-align-",$cts/fileInfo/alpheiosEditionId,".xml")
-let $tbDoc := concat($cts/fileInfo/basePath, "alpheios-treebank-",$cts/fileInfo/alpheiosEditionId,".xml")
+(:let $cts := cts:parseUrn($e_urn):)
+(:let $docinfo := tan:findDocs($cts) :)
+let $alignDoc := $e_align
+let $tbDoc := $e_treebank
 
 (: get words from original text :)
 let $textDoc := doc($e_source)
@@ -281,21 +285,22 @@ then
 
     (: create fixed words to replace original :)
     let $fix1 :=
-      local:fix-words($textWords,
+       local:fix-words($textWords,
                       $alignWords,
                       almt:match(data($textWords/wd), data($alignWords), true()),
-                      false())
+                      false())                              
     let $fix2 :=
       if (doc-available($tbDoc))
       then
         local:fix-words($fix1,
                         $tbWords,
                         almt:match(data($textWords/wd), data($tbWords), true()),
-                        true())
+                        true())                                        
       else $fix1
 
     return
         (: create copy of original text with fixed words :)
         local:process-nodes($textDoc/node(), $fix2)
+        
         
 else $textDoc

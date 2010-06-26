@@ -45,7 +45,8 @@ return element words {
                     if ($parent) then xs:string($parent/@*[name() = $id]) else $path
         let $word := $i/text()
         let $position := count($i/preceding-sibling::wd[text() = $word]) + 1
+        let $clean := if ($i/@beta) then $i/@beta else if ($i/@ara) then $i/@ara else $word
         return concat(
-            concat($e_urn,":",string-join($passage,"."),":",$word,"[",$position,"]"),",",$word,",",$i/@beta)
+            concat($e_urn,":",string-join($passage,"."),":",$word,"[",$position,"]"),",",$word,",",$clean)
 }            
 

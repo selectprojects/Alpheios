@@ -8,9 +8,10 @@ my %forms;
 my $e_morph = $ARGV[0];
 my $e_infile = $ARGV[1];
 my $e_outfile = $ARGV[2];
-unless ($e_morph && $e_infile && $e_outfile)
+my $e_lang = $ARGV[3];
+unless ($e_morph && $e_infile && $e_outfile && $e_lang)
 {
-	die "Usage: $0 <morph service> <input file> <output file>\n"
+	die "Usage: $0 <morph service> <input file> <output file> <language>\n"
 }
 
 open FILE, "<$e_infile" or die "$!\n";
@@ -22,6 +23,7 @@ while (<FILE>)
     foreach my $line (@lines)
     { 
         my ($urn,$form,$clean) = split /,/, $line;
+        $clean ||= $form;
         $form =~ s/<//;
         $form =~ s/>//;
         $clean =~ s/<//;
@@ -37,19 +39,29 @@ while (<FILE>)
 }
 close FILE;
 
+my %seen;
+my $missed;
 foreach my $form (keys %forms)
 {
 	my $url = $e_morph;
         $url =~ s/<WORD>/uri_escape($forms{$form}{clean})/e;
+    $seen{$forms{$form}{clean}}++;        
 	my $morph = get($url);
-
-	if ($morph && $morph !~ /<unknown/)
+	
+	# skip the unknown results
+	
+    $morph =~ s/<unknown\s*.*?>.*?<\/unknown>//mg;
+	if ($morph && $morph !~ /^\s*$/)
 	{
-	    $forms{$form}{morph} = $morph;
+	    $forms{$form}{morph} = $morph;	 
 	}
 	else 
 	{
-	    warn("Unknown or no output for $forms{$form}{clean}\n");
+	   unless ($seen{$forms{$form}{clean}} > 1) 
+	   {
+	       warn("Unknown or no output for $forms{$form}{clean}\nUrl:$url\nOutput:$morph\n");
+	       $missed++;	       
+	   }
 	}
 }
 
@@ -61,8 +73,7 @@ print FILE <<'EOS';
     xmlns="http://alpheios.net/namespaces/forms"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:treebank="http://nlp.perseus.tufts.edu/syntax/treebank/1.5" 
-    version="1.0"  
-    xml:lang="grc">
+    version="1.0">
 EOS
 
 foreach my $form (keys %forms)
@@ -77,3 +88,5 @@ foreach my $form (keys %forms)
 }
 print FILE "</forms>\n";
 close FILE;
+warn("Total forms: " + (scalar keys %seen) + "\n");
+warn("Missed forms: " + $missed + "\n");

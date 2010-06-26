@@ -17,6 +17,7 @@
 	<!-- build up the urn and file names -->
 	<property name="text.urn" value="${text.base.urn}.alpheios-text-${text.edition}"/>
 	<property name="text.file" value="alpheios-text-${text.edition}.xml"/>
+	<property name="treebank.file" value="alpheios-treebank-${text.edition}.xml"/>
 	<property name="morph.file" value="alpheios-morph-${text.edition}.xml"/>
 	<property name="morph.words.file" value="alpheios-morph-words-${text.edition}.xml"/>
     
@@ -44,7 +45,7 @@
     
     <taskdef resource="svntask.properties" classpathref="project.classpath"/>    
 	
-	<target name="build-all" depends="prepare,load-source-doc,mark-words,fix-words,fix-misc,build-morph">
+	<target name="build-all" depends="prepare,load-source-doc,mark-words,fix-words,fix-misc,extract-words,build-morph">
 		<!-- add and commit the text and morph files to subversion -->
 		<svn>
 		    <add>
@@ -81,7 +82,7 @@
         	   revision="HEAD"
         	   destPath="${extras.dir}/xslt"
         	   force="true"/>
-        </svn>        
+        </svn>
 
 		<!-- checkout the text source from subversion-->
 		<svn>
@@ -124,12 +125,29 @@
 		</antcall>
 	</target>
 	
+	<target name="fix-milestones" if="source.fixmilestones">
+		<loadfile property="xquery" srcFile="${xquery.dir}/text-fixmilestones.xquery"/>       
+	        <xdb:xquery  xmlns:xdb="http://exist-db.org/ant"
+	            uri="${xmldb.url}" destdir="${build.dir}/fixed.${source.file}">
+	            <xdb:variable name="e_docname" value="${xmldb.collection.temp}/${source.file}"/>
+	            <xdb:variable name="e_elem" value="l"/>	            
+	            ${xquery}
+	        </xdb:xquery>
+	        <antcall target="store-temp">
+	        	  <param name="a_sourceDir" value="${build.dir}"/>
+		          <param name="a_sourceFile" value="fixed.${source.file}"/>
+		    </antcall>          
+	</target>
+	
 	<!-- wrap words with <w></w> tags -->
 	<target name="mark-words">
+    	<condition property="inputFile" value="fixed.${source.file}" else="${source.file}" >
+    		<available file="${build.dir}/fixed.${source.file}"/>
+		</condition>
 		<loadfile property="xquery" srcFile="${xquery.dir}/text-markwords.xquery"/>		
 		<xdb:xquery  xmlns:xdb="http://exist-db.org/ant"
 		    uri="${xmldb.url}" destdir="${build.dir}/t1.${text.file}">
-			<xdb:variable name="e_docname" value="${xmldb.collection.temp}/${source.file}"/>
+			<xdb:variable name="e_docname" value="${xmldb.collection.temp}/${inputFile}"/>
 		    <xdb:variable name="e_lang" value="${source.lang}"/>
 			<xdb:variable name="e_encoding" value="${source.encoding}"/>
 			${xquery}
@@ -138,6 +156,29 @@
 	    	  <param name="a_sourceDir" value="${build.dir}"/>
 	    	  <param name="a_sourceFile" value="t1.${text.file}"/>
 	    </antcall>	    	
+	</target>
+
+	<!-- extract the treebank sentences for the specific document from a larger treebank file -->
+	<!-- TODO: add transform of treebank file -->
+	<target name="treebank-load">
+		<get src="${treebank.source.url}" dest="${build.dir}/${treebank.source.file}"
+			skipexisting="${treebank.source.skipexisting}"/>
+		<echo message="Root dir: ${basedir}"/>
+		<xdb:xquery  xmlns:xdb="http://exist-db.org/ant"                  
+            uri="${xmldb.url}" destdir="${build.dir}/${treebank.file}"
+            queryfile="${xquery.dir}/treebank-extract-doc.xquery">		
+			<xdb:variable name="e_source" value="file:///${basedir}/${build.dir}/${treebank.source.file}"/>
+			<xdb:variable name="e_docid" value="${treebank.source.document_id}"/>
+		</xdb:xquery>
+	</target>
+	
+	<!-- add sentence milestones -->
+	<target name="treebank-fix-text">
+		<xdb:xquery  xmlns:xdb="http://exist-db.org/ant"                  
+		    uri="${xmldb.url}" destdir="${build.dir}/${text.file}"
+		    queryfile="${xquery.dir}/treebank-fix.xquery">
+		    <xdb:variable name="e_urn" value="${text.urn}"/>		    		                 
+		</xdb:xquery>        
 	</target>
 	
 	<!-- insert treebank and alignment references -->
@@ -181,7 +222,7 @@
 	<target name="build-morph" depends="">
 		<if>
 		  <not>
-		  	<equals arg1="${source.encoding}" arg2="uni"/>
+		  	<equals arg1="${source.encoding}" arg2="utf-8"/>
 		  </not>
 		  <then>
 		    <property name="morph.output" value="${build.dir}/${source.encoding}.${morph.file}"/>
@@ -194,7 +235,8 @@
 		    <arg value="${scripts.dir}/get-morph.pl"/>
             <arg value="${services.morph}"/>
 			<arg value="${build.dir}/${morph.words.file}"/>
-			<arg value="${morph.output}"/>		    
+			<arg value="${morph.output}"/>
+			<arg value="${source.lang}"/>
 		</exec>	
 	    <antcall target="transform-morph"/>		                
 	</target>
@@ -210,15 +252,15 @@
             	out="${build.dir}/${morph.file}"           
                 style="${xslt.dir}/morph-beta-uni.xsl" classpathref="xalan.class.path"/>                         
         </then>
-       	<elsif>
-       		<equals arg1="${source.encoding}" art2="ara"/>
+       	<elseif>
+       		<equals arg1="${source.encoding}" arg2="ara"/>
        		<then>
        			<echo message="Transforming ${build.dir}/${source.encoding}.${morph.file}" />             
        			<xslt in="${build.dir}/${source.encoding}.${morph.file}" 
        			  out="${build.dir}/${morph.file}"           
        			  style="${xslt.dir}/morph-ara-uni.xsl" classpathref="xalan.class.path"/>
        		</then>
-       	</elsif>
+       	</elseif>
        	<else>
        	</else>
       </if>

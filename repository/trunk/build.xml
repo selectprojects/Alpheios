@@ -74,15 +74,25 @@
 	                                      </fileset>
 	                                </xmldb:store>
 		                    </then>
-		                    <else>
-		                        <echo>No repository collection set for svn.projects.@{type}</echo>
+		                	<!-- if a collection wasn't defined, use the filetype defaults -->
+		                    <else>		                    	
+		                    	<for list="${repository.collection.filetype}" param="filetype">
+		                    		<sequential>
+		                    			<echo>Storing ${repository.collection.@{filetype}.filelist}</echo>
+                                        <xmldb:store 
+                                            uri="xmldb:exist://${host.@{host}.url}/exist/xmlrpc/db/@{filetype}"
+    		                    		    user="${host.@{host}.user}" password="${host.@{host}.passwd}"
+                                            createcollection="true">
+                                        	<fileset dir="${build.dir}/@{type}" includes="${repository.collection.@{filetype}.filelist}"/>                                        	                                            	
+                                        </xmldb:store>
+		                    		</sequential>
+		                    	</for>		                        
 		                    </else>
 		                </if>
 		            </sequential>
 		        </for>
 	        </sequential>
-	    </for>
-		
+	    </for>		
 	</target>
     
 	<!-- get repository files from svn -->
@@ -96,12 +106,17 @@
                     <isset property="${svn.projects.@{type}.branch}" />
                     <then><property name="branch" value="${svn.projects.@{type}.branch}"/></then>
                     <else><property name="branch" value="${svn.branch}"/></else>
-                </if>
+                </if>            	
             	<if>
             	   <isset property="svn.projects.@{type}.dir"/>
+            	   <then><property name="svndir.@{type}" value="${svn.projects.@{type}.dir}"/></then>
+            	   <else><property name="svndir.@{type}" value="${svn.projects.@{type}.repository.collection}"/></else>
+            	</if>            	
+            	<if>
+            	   <isset property="svndir.@{type}"/>
             		<then>
             			<echo>Export for @{type}</echo>
-                		<for list="${svn.projects.@{type}.dir}" param="dir">
+                		<for list="${svndir.@{type}}" param="dir">
                 		    <sequential>
                 			    <svn>
                     	            <export 
