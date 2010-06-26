@@ -45,6 +45,28 @@
                     <input type="submit" value="submit"/>                    
                     </form>                                                    
                 </li>
+                <li>Greek Dictionaries
+                    <form method="get" action="http://localhost.alpheios.net:8080/exist/rest/db/xq/lexi-get.xq?">
+                           <input type="hidden" name="lg" value="grc"/>
+                           <input type="hidden" name="out" value="xml"/>
+                           <select name="lx">
+                               <option value="aut">Autenrieth</option>
+                               <option value="ml">Middle Liddell</option>
+                               <option value="lsj">LSG</option>
+                           </select>
+                            <label>Lemma:<input type="text" name="l"></input></label><input type="submit" value="submit"/>                        
+                     </form>                                               
+                </li>
+                <li>Latin Dictionaries
+                    <form method="get" action="http://localhost.alpheios.net:8080/exist/rest/db/xq/lexi-get.xq?">
+                        <input type="hidden" name="lg" value="lat"/>
+                        <input type="hidden" name="out" value="xml"/>
+                        <select name="lx">
+                            <option value="ls">Lewis &amp; Short</option>                            
+                        </select>
+                        <label>Lemma:<input type="text" name="l"></input></label><input type="submit" value="submit"/>                        
+                    </form>                                               
+                </li>
             </ul>                        
         </div>
     </body>
