@@ -271,12 +271,16 @@
             <div id="alph-toolbar" class="alpheios-toolbar">
                 <div id="alph-toolbar-main">
                     <ul class="sf-menu">
-                        <li class="current alpheios-toolbar-level-label"><a href="#">Mode</a></li>
-                        <li class="current alpheios-toolbar-level learner" alpheios-value="learner"><a href="#"><img src="{$alpheiosSiteBaseUrl}/img/readinglearning_centerline.gif"/></a></li>
-                        <li class="current alpheios-toolbar-level reader"  alpheios-value="reader"><a href="#">&#160;</a></li>
-                        <li class="current alpheios-toolbar-translation"><a href="#">Translation</a></li>
-                        <li class="current alpheios-toolbar-inflect"><a href="#">Inflection<br/>Tables</a></li>
-                        <li class="current alpheios-toolbar-grammar"><a href="#">Grammar</a></li>
+                        <xsl:if test="$alpheiosTreebankUrl">
+                            <li class="current alpheios-toolbar-level-label"><a href="#">Mode</a></li>
+                            <li class="current alpheios-toolbar-level learner" alpheios-value="learner"><a href="#"><img src="{$alpheiosSiteBaseUrl}/img/readinglearning_centerline.gif"/></a></li>
+                            <li class="current alpheios-toolbar-level reader"  alpheios-value="reader"><a href="#">&#160;</a></li>
+                            <li class="current alpheios-toolbar-translation"><a href="#">Translation</a></li>
+                        </xsl:if>
+                        <xsl:if test="//tei:text/@xml:lang != 'ara'">
+                            <li class="current alpheios-toolbar-inflect"><a href="#">Inflection<br/>Tables</a></li>
+                            <li class="current alpheios-toolbar-grammar"><a href="#">Grammar</a></li>
+                         </xsl:if>
                         <li class="current alpheios-toolbar-usertools"><a href="#">User Tools</a><ul>
                             <li class="current alpheios-toolbar-user-diagram"><a  href="#">My Diagrams</a></li>
                             <li class="current alpheios-toolbar-vocab"><a  href="#">My Vocabulary</a></li>                            

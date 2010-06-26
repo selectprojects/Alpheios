@@ -93,8 +93,8 @@
             <link type="text/css" rel="stylesheet" href="../css/alpheios-toc.css"/>        
         </xsl:template>
     
-    <xsl:template name="javascriptHook">
-            <script type="text/javascript" src="../script/jquery-1.2.6-alph.js"></script>
+    <xsl:template name="javascriptHook">            
+            <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
             <script type="text/javascript" src="../script/alpheios-toc.js"></script>
             <script type="text/javascript">
                 // document ready function
