@@ -171,15 +171,28 @@ function(a_lemma, a_key, a_datafile, a_stripper)
     // if data found
     if (data)
     {
-        // find start and end of definition
-        var startText = data.indexOf(a_datafile.getSeparator(), 0) + 1;
-        var endText = data.indexOf('\n', startText);
-        if (data.charAt(endText - 1) == '\r')
-            endText--;
+        var ids = "";
+        var startPos = 0;
+
+        // while more data to look at
+        while (startPos < data.length)
+        {
+            // find start and end of definition
+            var startText = data.indexOf(a_datafile.getSeparator(),
+                                         startPos) + 1;
+            var endText = data.indexOf('\n', startText);
+            startPos = endText + 1;
+            if (data.charAt(endText - 1) == '\r')
+                endText--;
+
+            // add to list of ids
+            if (ids.length > 0)
+                ids += ",";
+            ids += data.substr(startText, endText - startText);
+        }
 
         // real data found
-        if (data)
-            return Array(key, data.substr(startText, endText - startText));
+        return Array(key, ids);
     }
 
     // nothing found
