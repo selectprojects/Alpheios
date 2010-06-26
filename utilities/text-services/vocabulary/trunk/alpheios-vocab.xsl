@@ -28,7 +28,7 @@
     xmlns:tei="http://www.tei-c.org/ns/1.0">
 
     <xsl:template match="/">
-        <xsl:variable name="vocab_lang" select="//tei:text/@xml:lang"/>
+        <xsl:variable name="vocab_lang" select="//tei:text/@*[local-name(.) = 'lang']"/>
         <html>
             <head>
                 <link rel="stylesheet" type="text/css" href="../css/alpheios-vocab.css"/>  
@@ -67,7 +67,7 @@
         <div class="entry">
             <div class="lemma">
                 <span class="alpheios-word" lang="{tei:form[@type='lemma']/@lang}"><xsl:value-of select="tei:form[@type='lemma']"/></span>
-                <span class="count">(<xsl:value-of select="tei:form[@type='lemma']/@count"/>)</span>
+                <span dir="rtl" class="count">(<xsl:value-of select="tei:form[@type='lemma']/@count"/>)</span>
             </div>
             <div class="forms">
                 <xsl:for-each select="tei:form[@type='inflection']">
@@ -75,11 +75,12 @@
                         
                     </xsl:variable>
                     <div class="form">                        
-                        <span class="alpheios-word" lang="{@lang}"><xsl:value-of select="text()"/></span><span class="count">(<xsl:value-of select="@count"/>)</span>
+                        <span class="alpheios-word" lang="{@lang}"><xsl:value-of select="text()"/></span><span dir="rtl" class="count">(<xsl:value-of select="@count"/>)</span>
                         <xsl:if test="tei:ptr[not(starts-with(@type,'paging'))]">
-                            <div class="toggle collapsed"><span class="toggle-text collapsed">Hide</span><span class="toggle-text">Show...</span>
+                            <!-- this hangs the javascript ... need to optimize -->
+                            <!--div class="toggle collapsed alpheios-ignore"><span lang="en" class="toggle-text collapsed">Hide</span><span lang="en" class="toggle-text">Show...</span>
                                 <xsl:apply-templates select="tei:ptr"/>
-                            </div>
+                            </div-->
                         </xsl:if>
                     </div>          
                 </xsl:for-each>
