@@ -50,7 +50,7 @@ declare function tan:findDocs($a_cts)
         element docinfo {
             if ($a_cts/fileInfo/alpheiosEditionId)
             then
-                for $i in ('treebank','morph','text')
+                for $i in ('treebank','morph','text','align','vocab')
                 let $docname := concat($a_cts/fileInfo/basePath, "/alpheios-", $i, "-",$a_cts/fileInfo/alpheiosEditionId,".xml")
                     return
                         if (doc-available($docname))
@@ -145,7 +145,7 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                       xs:string($tbDesc/tbd:table[@type eq "morphology"]/tbd:category[@id eq 'pos']/tbd:entry[tbd:long/text() = $p]/tbd:short)
                     ),"|"),")")
                 else "."                                                  
-            let $lang := xs:string($doc/treebank/attribute::xml:lang)
+            let $lang := xs:string($doc/treebank/@*[local-name(.) = 'lang'])
             let $lemmas := 
                 if ($a_excludePofs)
                 then
@@ -164,7 +164,7 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
             :)
             then
                 let $doc := doc($docinfo/morph)
-                let $lang := xs:string($doc/forms:forms/attribute::xml:lang)
+                let $lang := xs:string($doc/forms:forms/@*[local-name(.) = 'lang'])
                 let $p_match := 
                     if (count($a_pofs) > 0)
                     then concat('^',string-join($a_pofs,'|'),'$')
@@ -174,7 +174,8 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                     then $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$a_docid)]/
                         forms:words/forms:word/forms:entry/forms:dict[not(matches(forms:pofs/text(),$p_match))] 
                       else $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$a_docid)]/
-                          forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs/text(),$p_match)]                                
+                          forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs/text(),$p_match) 
+                          or matches(../forms:infl/forms:pofs/text(),$p_match)]                                
                     return
                         for $i in $lemmas
                             let $hdwd := $i/forms:hdwd/text()
@@ -187,10 +188,15 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                                     $i/ancestor::forms:inflection/forms:urn                                            
                                 }</lemma>
                                              
-        else ()
-        let $total := count($words)
+        else ()        
+        let $deduped_words := 
+            for $seq in (1 to count($words))
+                return $words[$seq][not(
+                    $words[position() < $seq and 
+                        @lemma= $words[$seq]/@lemma and @form=$words[$seq]/@form and @sense=$words[$seq]/@sense])]	 
+        let $total := count($deduped_words)
         let $returned := if ($total > $tan:MAX_LEMMAS) then $tan:MAX_LEMMAS else $total
-        let $truncated  := for $i in $words[position() <= $tan:MAX_LEMMAS] return $i                     
+        let $truncated  := for $i in $deduped_words[position() <= $tan:MAX_LEMMAS] return $i                     
         return
             <result count="{$returned}" total="{$total}" truncated="{$total - $returned}" 
                 treebank="{exists($docinfo/treebank)}">
@@ -305,23 +311,27 @@ declare function tan:matchLemmas( $a_words as node()*, $a_vocab as node()*) as n
 {
         for $i in $a_words
             let $match :=
-                    $a_vocab/tei:form[@type="lemma" and text() = $i/text()]
-            let $matchSense := if ($match and $match/../tei:sense/@n = $i/@sense) then "true" else "false"
-            let $matchForm := if ($match and $match/../tei:form[@type="inflection"]/text() = $i/@form) then "true" else "false"
-            return                 
-                element lemma {
-                          $i/@*,
-                          attribute matchLemma { if ($match) then "true" else "false" },
-                          attribute matchSense {$matchSense},
-                          attribute matchForm {$matchForm}
-                }                       
+                    $a_vocab/tei:form[@type="lemma" and text() = $i/@lemma]
+            return 
+                if ($match)
+                then 
+                     let $matchSense := $match/../tei:sense/@n = $i/@sense
+                     let $matchForm := $match/../tei:form[@type="inflection"]/text() = $i/@form
+                     return                 
+                          element lemma {
+                              $i/@*,                              
+                              attribute matchSense {$matchSense},
+                              attribute matchForm {$matchForm},
+                              $i/forms:urn
+                          }
+                  else ()                                                
 };
 
 declare function tan:matchVocab( $a_vocab as node()*, $a_words as node()*) as node()*
 {
         for $i in $a_vocab
             let $match :=
-                    $a_words[text() = $i/tei:form[@type="lemma"]/text()]
+                    $a_words[@lemma = $i/tei:form[@type="lemma"]/text()]
             return
                 $match                                        
 };

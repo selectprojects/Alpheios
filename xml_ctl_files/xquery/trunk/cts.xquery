@@ -36,7 +36,8 @@ declare variable $cts:tocChunking :=
 ( 
     <tocCunk type="Book" size="1"/>,
     <tocChunk type="Line" size="100"/>,
-    <tocChunk type="Verse" size="100"/>
+    <tocChunk type="Verse" size="100"/>,
+    <tocChunk type="Page" size="1"/>
 );
 
 declare variable $cts:maxPassageNodes := 100;
