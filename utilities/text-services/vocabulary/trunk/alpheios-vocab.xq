@@ -20,6 +20,7 @@
 
 declare namespace vocab = "http://alpheios.net/namespaces/vocab-freq";
 declare namespace tbd = "http://alpheios.net/namespaces/treebank-desc";
+import module namespace transform="http://exist-db.org/xquery/transform";
 
 (:
   Query to retrieve a frequency-ranked vocabulary list for a given treebank document
@@ -91,9 +92,7 @@ declare function vocab:count_forms($a_elem as element()*,$a_count as xs:integer,
                  (: no more instances of this combination of lemma and form so return the form with the accumulated count :)
                  element form {
                      attribute count {
-                         if ($a_elem/@count)
-                         then $a_elem/@count
-                         else $a_count 
+                         count($urns) 
                      },
                      $a_elem/@form,
                      $urns                     
@@ -107,15 +106,19 @@ declare function vocab:count_forms($a_elem as element()*,$a_count as xs:integer,
 import module namespace request="http://exist-db.org/xquery/request";
 import module namespace tan="http://alpheios.net/namespaces/text-analysis"
               at "textanalysis-utils.xquery";
-    declare option exist:serialize "method=xml media-type=text/xml";
+declare option exist:serialize "method=xml media-type=text/xml";
+
 
 let $e_doc := request:get-parameter("urn", ())
 let $e_start := xs:int(request:get-parameter("start", xs:int("1")))
 let $e_count := xs:int(request:get-parameter("count", xs:int("10")))
 let $e_pofs := distinct-values(request:get-parameter("pofs",()))
 let $e_excludePofs := xs:boolean(request:get-parameter("excludepofs","false"))
+let $e_format := request:get-parameter("format", ())
+ 
 
-let $results  := tan:getWords($e_doc,$e_excludePofs,$e_pofs)
+let $pofs_set := if ($e_pofs = "") then () else $e_pofs
+let $results  := tan:getWords($e_doc,$e_excludePofs,$pofs_set)
 let $all_words := $results/*:words
 let $note := 
     if ($results/@truncated > 0) 
@@ -127,7 +130,7 @@ let $note :=
 :)
 let $words_counted := 
 for $l in  (
-    for $j in $all_words/*:lemma[following-sibling::*:lemma[1]/@lemma != @lemma]
+    for $j in $all_words/*:lemma[(following-sibling::*:lemma[1]/@lemma != @lemma) or last()]
            let $lemmas := $all_words/*:lemma[@lemma = $j/@lemma]
            let $forms := vocab:group_lemmas($j/@lemma,(),$lemmas)
             return element lemma {
@@ -141,12 +144,28 @@ for $l in  (
     return $l
 
 (: return the sorted lemmas as  a TEI compliant document :)
-return (
+(:return (
 processing-instruction xml-stylesheet {
  attribute xml {
 	'type="text/xsl" href="../xslt/alpheios-vocab.xsl"'
 }
-},
+},:)
+let $xsl := doc('/db/xslt/alpheios-vocab.xsl')
+let $pi := 
+    if ($e_format = 'xml' or $e_format = "") 
+    then 
+         ()    
+     (: default to html :)
+    else 
+        processing-instruction xml-stylesheet {
+             attribute xml { 'type="text/xsl" href="../xslt/alpheios-vocab.xsl"'}
+        }
+ 
+ let $total := count($words_counted)
+ let $display_count := if ($e_count >0) then $e_count else $total
+ 
+let $xml :=
+($pi,
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_dictionaries.xsd">
@@ -156,17 +175,17 @@ processing-instruction xml-stylesheet {
                 <publicationStmt><date></date></publicationStmt>
                 <sourceDesc><p>Alpheios</p></sourceDesc>
                 <notesStmt>
-                     <note>{$note}</note>
+                     <note>{$note}</note>                     
                 </notesStmt> 
             </fileDesc>
          </teiHeader> 
-         <text pofs="{$e_pofs}" xml:lang="{$words_counted[1]/@lang}">
+         <text pofs="{$pofs_set}" xml:lang="{$words_counted[1]/@lang}" treebank="{$results/@treebank}">
          <body>         
   { 
-    let $total := count($words_counted)
-    let $start_less_count := $e_start - $e_count
-    let $start_for_last := $total -$e_count+1
-    let $start_for_next := $e_start+$e_count
+   
+    let $start_less_count := $e_start - $display_count 
+    let $start_for_last := $total -$display_count+1
+    let $start_for_next := $e_start+$display_count
     let $uri := concat(request:get-url(),'?')
     let $qs := replace(request:get-query-string(),'&amp;start=\d+','')
     let $first :=
@@ -178,7 +197,7 @@ processing-instruction xml-stylesheet {
                }                             
             else ()
        let $prev :=
-           if ($start_less_count > $e_count)
+           if ($start_less_count > $display_count)
            then
                element ptr {
                    attribute type { 'paging:prev' },
@@ -205,7 +224,7 @@ processing-instruction xml-stylesheet {
      return ($first,$prev,$next,$last)
   }
   {  
-  for $k in ($words_counted[position() >= $e_start and position() < ($e_start+$e_count)])       
+  for $k in ($words_counted[position() >= $e_start and position() < ($e_start+$display_count)])       
         return( 
         <entry lang="{xs:string($k/@lang)}">
            <form type="lemma" lang="{xs:string($k/@lang)}" count="{$k/@count}">{xs:string($k/@lemma)}</form>
@@ -213,7 +232,7 @@ processing-instruction xml-stylesheet {
               order by xs:int($j/@count) descending
              return 
                  <form type="inflection"  lang="{xs:string($k/@lang)}" count="{$j/@count}">{xs:string($j/@form)}
-                     { for $u in $k/*:urn 
+                     { for $u in $j/*:urn 
                        return element ptr {attribute target { concat("alpheios-text.xq?urn=", $u/text()) },$u/text()}
                      }
                  </form> 
@@ -224,7 +243,6 @@ processing-instruction xml-stylesheet {
     }         
          </body>
       </text>
- </TEI>
+ </TEI>)
 
- )
- 
+return $xml

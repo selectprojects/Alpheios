@@ -77,10 +77,9 @@
                     <div class="form">                        
                         <span class="alpheios-word" lang="{@lang}"><xsl:value-of select="text()"/></span><span dir="rtl" class="count">(<xsl:value-of select="@count"/>)</span>
                         <xsl:if test="tei:ptr[not(starts-with(@type,'paging'))]">
-                            <!-- this hangs the javascript ... need to optimize -->
-                            <!--div class="toggle collapsed alpheios-ignore"><span lang="en" class="toggle-text collapsed">Hide</span><span lang="en" class="toggle-text">Show...</span>
+                          <div class="toggle collapsed alpheios-ignore"><span lang="en" class="toggle-text collapsed">Hide</span><span lang="en" class="toggle-text">Show...</span>
                                 <xsl:apply-templates select="tei:ptr"/>
-                            </div-->
+                            </div>
                         </xsl:if>
                     </div>          
                 </xsl:for-each>

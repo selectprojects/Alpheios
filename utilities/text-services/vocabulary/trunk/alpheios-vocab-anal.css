@@ -1,0 +1,40 @@
+body {
+    font-family: arial, verdana, sans-serif;
+    font-size: 100%;
+}
+h1 {
+    font-size: 110%;
+    font-weight: bold;    
+}
+
+.label {
+    font-weight: bold;
+    float: left;
+    width: 33%;        
+    padding-right: 1em;
+}
+
+.result {
+    clear: both;
+    vertical-align: bottom;
+    border-top: 1px solid black;
+}
+
+.results {
+    border-bottom: 1px solid black;
+    margin-bottom: 2em;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;    
+}
+
+th {
+   text-align:left;     
+}
+
+th, td {
+   border: 1px solid black;
+   padding: .5em;
+}

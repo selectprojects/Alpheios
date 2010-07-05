@@ -28,55 +28,88 @@ import module namespace tan="http://alpheios.net/namespaces/text-analysis"
               at "textanalysis-utils.xquery";
 import module namespace cts="http://alpheios.net/namespaces/cts"
               at "cts.xquery";              
-
+import module namespace httpclient = "http://exist-db.org/xquery/httpclient";
+declare namespace forms = "http://alpheios.net/namespaces/forms";
 
 let $e_docUrn := request:get-parameter("docUrn", ())
 let $e_doc := request:get-parameter("doc",())
 let $e_vocabUrn := request:get-parameter("vocabUrn", ())
 let $e_vocabDoc := request:get-parameter("vocabDoc", ())
-let $all_words  :=
-    if ($e_docUrn) 
-    then  tan:getWords($e_docUrn,false(),"noun")
-    (: returns ungrouped sequence of                         
+let $e_pofs := distinct-values(request:get-parameter("pofs",()))
+let $e_excludePofs := xs:boolean(request:get-parameter("excludepofs","false"))
+let $e_format := request:get-parameter("format","html")
+
+let $sourceWords  :=
+    if ($e_docUrn) then
+    tan:getWords($e_docUrn,$e_excludePofs,$e_pofs)
+    (: returns ungrouped sequence of                          
        <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}"/>       
     :)
     else if ($e_doc)
+    (: TODO tokenize and parse supplied text :)
     then (:tan:tokenizeWords($e_doc):)()   
-    else (<lemma sense="1" form="باب" count="1" xml:lang="ar" lemma="باب"/>)
+    else ()
+
+let $all_words := $sourceWords//lemma
+
 let $vocab_doc := 
     if ($e_vocabUrn)
     then 
         let $cts := cts:parseUrn($e_vocabUrn)        
         return
-        (: if a specific edition was specified, return only the vocabulary file for that edition :)
-        if ($cts/fileInfo/alpheiosEditionId)        
+        (: stored vocabulary document? :)
+        if (matches($e_vocabUrn,"alpheios-vocab"))
         then 
-            doc(concat($cts/fileInfo/basePath, "/alpheios-vocab-",$cts/fileInfo/alpheiosEditionId,".xml"))
-        (: otherwise return the entire set of vocab files for the work :)
-        else        
-            collection($cts/fileInfo/basePath)
-    else 
+            (: if a specific edition was specified, return only the vocabulary file for that edition :)            
+            if ($cts/fileInfo/alpheiosEditionId)        
+            then 
+                doc(concat($cts/fileInfo/basePath, "/alpheios-vocab-",$cts/fileInfo/alpheiosEditionId,".xml"))
+            (: otherwise return the entire set of vocab files for the work :)
+            else        
+                collection($cts/fileInfo/basePath)
+        else 
+            (: stored alpheios-enabled text :)
+            let $url := concat(replace(request:get-url(),'alpheios-vocab-anal.xq','alpheios-vocab.xq?'),"urn=",$e_vocabUrn,"&amp;format=xml&amp;count=-1&amp;excludepofs=",$e_excludePofs,"&amp;pofs=",
+                string-join($e_pofs,"&amp;pofs="))
+            return httpclient:get(xs:anyURI($url),false(),())//tei:TEI                                    
+    else (: tei vocab list from Alpheios tools:) 
         util:parse($e_vocabDoc)
-        (: tei list :)
-let $vocab_entries := $vocab_doc//tei:entry[tei:form[@type="lemma"]]    
 
+(: for now, only consider the lemmas .. TODO configurable to include forms and senses :)
+let $vocab_entries := $vocab_doc//tei:entry[tei:form[@type="lemma"]]    
+   
 (: if treebanked text, then lemma count is precise; otherwise it's the total possible lemmas as identified by the morphology service :)
 let $doc_lemma_count := count($all_words//lemma)
+let $docType := if ($sourceWords/@treebank = "true") then "treebank" else if ($e_docUrn) then "morphology" else "user"
+let $vocabType := 
+    if (matches($e_vocabUrn,"alpheios-vocab")) then "vocablist" 
+    else if ($e_vocabUrn) then 
+        if ($vocab_doc//tei:text[@treebank]) then "treebank" else "morphology"
+    else ("user")        
 
-let $vocab_lemma_count := count($vocab_entries/node() )
+let $vocab_lemma_count := count($vocab_entries )
 
 let $results := tan:matchLemmas($all_words//lemma, $vocab_entries)
-let $vresults := tan:matchVocab($vocab_entries,$all_words//lemma)
+let $pi := 
+    if ($e_format = 'html') 
+    then 
+       processing-instruction xml-stylesheet {
+             attribute xml { 'type="text/xsl" href="../xslt/alpheios-vocab-anal.xsl"'}
+        }
+    else ()        
 return
-<results>
-    <count type="doc">{$doc_lemma_count}</count>
-    <count type="vocab">{$vocab_lemma_count}</count> 
-    <count type="lemmasFound">{count($results)}</count>
-    <count type="vocabFound">{count($vresults)}</count>
-    <vocabFound>
-        {$vresults}
-    </vocabFound>    
-    <lemmasFound>
-        { $results } 
-    </lemmasFound>    
-</results>
+($pi,
+<results docType="{$docType}" vocabType="{$vocabType}" docUrn="{$e_docUrn}" vocabUrn="{$e_vocabUrn}">    
+    <count type="docForms">{$doc_lemma_count}</count>
+    <count type="vocabLemmas">{$vocab_lemma_count}</count> 
+    <count type="formLemmaFound">{count($results)}</count>
+    <formsFound>
+        { for $r in $results
+            return
+                element match {
+                    $r/@*,
+                    for $u in $r/*:urn return element tei:ptr {attribute target { concat("alpheios-text.xq?urn=", $u/text()) },$u/text()}
+               }
+        }              
+    </formsFound>
+</results>)
