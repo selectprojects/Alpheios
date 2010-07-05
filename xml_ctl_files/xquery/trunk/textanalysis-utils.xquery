@@ -127,17 +127,38 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
 {
     let $cts := cts:parseUrn($a_docid)
     let $docinfo := tan:findDocs($cts)
-    let $part := $cts/passageParts/rangePart[1]/part[1]
-    let $partMatch := if ($part) then concat("^\w+=",$part,":|$")  else ".*"
+        
     let $words :=                   
         (: create a set of lemma elements for each distinct lemma identified by the word elements in the document, 
         sorted by lemma, then within each lemma by form 
         :)          
         if ($docinfo/treebank)
-        then 
+        then         
             let $doc := doc($docinfo/treebank)            
             let $tbFormat := tbu:get-format-name($doc,'aldt')
             let $tbDesc := tbu:get-format-description($tbFormat, "/db/xq/config")
+            (: TODO this should be removed when treebank data uses cts urns --- incorrect when crossing book boundaries :)
+            let $bookMatch : =
+                if ($cts/passageParts/rangePart[1]) then   
+                    let $bookStart:= $cts/passageParts/rangePart[1]/part[1]
+                    let $bookEnd := if ($cts/passageParts/rangePart[2]) then concat("|",$cts/passageParts/rangePart[2]/part[1]) else ""
+                    return concat("^\w+=(",$bookStart,$bookEnd,"):|$")
+                else ".*"
+            let $sentenceMatch :=
+                if ($cts/passageParts/rangePart[1]/part[2]) 
+                then   
+                    let $lines := 
+                        if (exists($cts/passageParts/rangePart[2]/part[1]) and exists($cts/passageParts/rangePart[2]/part[2])
+                            and $cts/passageParts/rangePart[1]/part[1] = $cts/passageParts/rangePart[2]/part[1] )
+                        then
+                            for $n in (xs:int($cts/passageParts/rangePart[2]/part[1])to xs:int($cts/passageParts/rangePart[2]/part[2]))
+                            return xs:string($n)
+                        else if ($cts/passageParts/rangePart[1]/part[2]) 
+                        then $cts/passageParts/rangePart[1]/part[2]
+                        else ".*"
+                    return concat("^(",string-join($lines,"|"),")$")                
+                else ".*"
+                
             let $p_match :=
                 if (count($a_pofs) > 0)  
                 then concat("^(",string-join(
@@ -148,15 +169,19 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
             let $lang := xs:string($doc/treebank/@*[local-name(.) = 'lang'])
             let $lemmas := 
                 if ($a_excludePofs)
-                then
-                    $doc/treebank/sentence[matches(@subdoc,$partMatch)]/
-                        word[attribute::postag and not(matches(attribute::postag,$p_match))]
-                else $doc/treebank/sentence[matches(@subdoc,$partMatch)]/
-                        word[attribute::postag and matches(attribute::postag,$p_match)]
+                then                    
+                    $doc/treebank/sentence[matches(@subdoc,$bookMatch) and matches(@id,$sentenceMatch)]/
+                        word[attribute::postag and not(matches(attribute::postag,$p_match)) and not(matches(attribute::postag,"^-"))]
+                else $doc/treebank/sentence[matches(@subdoc,$bookMatch) and matches(@id,$sentenceMatch)]/
+                        word[attribute::postag and matches(attribute::postag,$p_match) and not(matches(attribute::postag,"^-"))]
             for $i in $lemmas 
                 let $sense := replace($i/@lemma,"^(.*?)(\d+)$","$2")
-                let $lemma:= if (matches($i/@lemma,"\d+$")) then replace($i/@lemma,"^(.*?)(\d+)$","$1") else $i/@lemma                        
-                return <lemma lang="{$lang}" form="{xs:string($i/@form)}" sense="{$sense}" lemma="{$lemma}"/>           
+                let $lemma:= if (matches($i/@lemma,"\d+$")) then replace($i/@lemma,"^(.*?)(\d+)$","$1") else $i/@lemma
+                let $book := substring-after(substring-before($i/parent::sentence/@subdoc,":"),"book=")
+                let $position := count($i/preceding-sibling::word[@form="$i/@form" and @lemma="$i/@lemma"]) + 1 
+                return <lemma lang="{$lang}" form="{xs:string($i/@form)}" sense="{$sense}" lemma="{$lemma}">
+                                <forms:urn>{concat($cts/workUrn,":",$book,".",$i/parent::sentence/@id,":",$i/@form,"[",$position,"]")}</forms:urn>
+                          </lemma>
         else if ($docinfo/morph)
             (:
                 just take all lemma possibilities found for each form for now, but   
@@ -168,12 +193,14 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                 let $p_match := 
                     if (count($a_pofs) > 0)
                     then concat('^',string-join($a_pofs,'|'),'$')
-                    else "."
+                    else "."                 
+                let $u_match := cts:getUrnMatchString('alpheios-cts-inventory',$a_docid)
+                
                 let $lemmas := 
                     if ($a_excludePofs)
-                    then $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$a_docid)]/
+                    then $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$u_match)]/
                         forms:words/forms:word/forms:entry/forms:dict[not(matches(forms:pofs/text(),$p_match))] 
-                      else $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$a_docid)]/
+                      else $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$u_match)]/
                           forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs/text(),$p_match) 
                           or matches(../forms:infl/forms:pofs/text(),$p_match)]                                
                     return
@@ -182,18 +209,20 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                             let $sense := if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
                             let $lemma:= if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
                             let $form := $i/ancestor::forms:inflection/@form
-                            let $count := count($i/ancestor::forms:inflection/forms:urn)
+                            let $urns := $i/ancestor::forms:inflection/forms:urn[matches(text(),$u_match)]
+                            let $count := count($urns)
                             return 
                                 <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}">{
-                                    $i/ancestor::forms:inflection/forms:urn                                            
+                                    $urns                                            
                                 }</lemma>
                                              
         else ()        
-        let $deduped_words := 
+        let $deduped_words :=  
             for $seq in (1 to count($words))
                 return $words[$seq][not(
                     $words[position() < $seq and 
-                        @lemma= $words[$seq]/@lemma and @form=$words[$seq]/@form and @sense=$words[$seq]/@sense])]	 
+                        @lemma= $words[$seq]/@lemma and @form=$words[$seq]/@form and @sense=$words[$seq]/@sense] and forms:urn = $words[$seq]/forms:urn)]
+                                
         let $total := count($deduped_words)
         let $returned := if ($total > $tan:MAX_LEMMAS) then $tan:MAX_LEMMAS else $total
         let $truncated  := for $i in $deduped_words[position() <= $tan:MAX_LEMMAS] return $i                     

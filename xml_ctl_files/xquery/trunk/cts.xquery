@@ -30,7 +30,8 @@
 
 module namespace cts = "http://alpheios.net/namespaces/cts";
 declare namespace ti = "http://chs.harvard.edu/xmlns/cts3/ti";
-declare namespace  util="http://exist-db.org/xquery/util";              
+declare namespace  util="http://exist-db.org/xquery/util";
+ 
 
 declare variable $cts:tocChunking :=
 ( 
@@ -252,7 +253,29 @@ declare function cts:getValidReff($a_inv as xs:string,$a_urn as xs:string,$a_lev
                     { for $u in $urns return <urn>{$u}</urn> }
             </reff>
         </reply>
-};    
+};
+
+(:
+    CTS getUrnMatchString
+    Parameters:
+        $a_inv the inventory name
+        $a_urn the passage urn        
+    Returns 
+        a regex to match on
+:)
+declare function cts:getUrnMatchString($a_inv,$a_urn)
+{    
+    let $cts := cts:parseUrn($a_urn)
+    let $doc := doc($cts/fileInfo/fullPath)
+    let $entry := cts:getCatalog($a_inv,$a_urn)
+    let $parts := count($cts/passageParts/rangePart[1]/part)
+    (: get the level from the range specified :)   
+    let $level := 
+        if ($parts) then $parts else count($entry//ti:online//ti:citation)
+    let $refs := cts:getValidReff($a_inv,$a_urn,$level)
+    let $urns := for $u in $refs//urn return concat('(',replace($u,"\.","\\."),'(:|\.))')
+    return string-join($urns,"|")    
+};
 
 (:
         Recursive function to expands the urns returned by getValidReff into a TEI-compliant list, 
