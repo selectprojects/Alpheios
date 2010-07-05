@@ -84,7 +84,7 @@ let $docType := if ($sourceWords/@treebank = "true") then "treebank" else if ($e
 let $vocabType := 
     if (matches($e_vocabUrn,"alpheios-vocab")) then "vocablist" 
     else if ($e_vocabUrn) then 
-        if ($vocab_doc//tei:text[@treebank]) then "treebank" else "morphology"
+        if ($vocab_doc//tei:text[@treebank = "true"]) then "treebank" else "morphology"
     else ("user")        
 
 let $vocab_lemma_count := count($vocab_entries )
