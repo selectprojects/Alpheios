@@ -41,10 +41,8 @@ let $reply := cts:getPassagePlus("alpheios-cts-inventory",$e_urn)
 let $prevUrn := xs:string($reply/prevnext/prev)
 let $nextUrn := xs:string($reply/prevnext/next)
 let $nodes := $reply/TEI/text/body/*
-let $wd_ref := count($nodes) =xs:int(1) and $nodes[1]/name() = 'wd'
-let $wd_id := if ($wd_ref)  then xs:string($nodes[1]/@id) else ""
-let $parent := if ($wd_ref) then cts:getPassagePlus("alpheios-cts-inventory",replace($e_urn,":[^:]+$",""))/TEI/* else ()
-let $passage := if ($parent) then $parent else $nodes
+let $wd_id := if ($reply/subref/wd/@n) then ($reply/subref/wd/@n) else if ($reply/subref/wd/@id) then $reply/subref/wd/@id else "" 
+let $passage := $nodes
 let $parsed := cts:parseUrn($e_urn)
 let $docinfo := tan:findDocs($parsed)
 (: TODO fixup doc urn  for treebank?:)

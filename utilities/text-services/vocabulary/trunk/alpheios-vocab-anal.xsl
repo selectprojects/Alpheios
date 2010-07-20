@@ -6,6 +6,12 @@
             <xsl:variable name="docCount"><xsl:value-of select="results/count[@type='docForms']"/></xsl:variable>
             <xsl:variable name="vocabCount"><xsl:value-of select="results/count[@type='vocabLemmas']"/></xsl:variable>
             <xsl:variable name="formLemmaFoundCount"><xsl:value-of select="results/count[@type='formLemmaFound']"/></xsl:variable>
+            <xsl:variable name="analysis_string">
+                <xsl:choose>
+                        <xsl:when test="//lemmas/@found = 'true'">Coverage Of </xsl:when>
+                        <xsl:otherwise>Not Found In</xsl:otherwise>                
+                </xsl:choose>
+            </xsl:variable>
             <html>
                 <head>
                     <link rel="stylesheet" type="text/css" href="../css/alpheios-vocab-anal.css"/>  
@@ -15,20 +21,34 @@
                 <body>
                     <h1>Alpheios Learned Vocabulary Analysis Results</h1>
                     <div class="results">
-                        <div class="result"><span class="label">Target Text:</span><span><xsl:value-of select="results/@docUrn"/></span></div>
-                        <div class="result"><span class="label">Vocabulary Source:</span><span><xsl:value-of select="results/@vocabUrn"/></span></div>
+                        <div class="result">
+                            <div class="label">Target Text:</div>
+                            <ul>                                
+                                <xsl:for-each select="results/docUrns/urn">
+                                    <li><xsl:value-of select="@label"/></li>    
+                                </xsl:for-each>                                            
+                              </ul>                                                           
+                        </div>
+                        <div class="result">
+                            <div class="label">Vocabulary Source:</div>
+                            <ul>                                                         
+                                    <xsl:for-each select="results/vocabUrns/urn">
+                                        <li><xsl:value-of select="@label"/></li>    
+                                    </xsl:for-each>                                                                            
+                            </ul>
+                        </div>                        
                         <div class="result"><span class="label">Number of <xsl:if test="results/@docType !='treebank'">possible </xsl:if> words in target text:</span><span><xsl:value-of select="$docCount"/></span></div>
-                        <div class="result"><span class="label">Number of <xsl:if test="results/@vocabType='morphology'">possible </xsl:if> lemmas in target vocabulary:</span><span><xsl:value-of select="$vocabCount"/></span></div>
-                        <div class="result"><span class="label">Vocabulary Coverage of Target Text:</span><span><xsl:value-of select="format-number($formLemmaFoundCount div $docCount,'##.##%')"/></span></div>
+                        <div class="result"><span class="label">Number of <xsl:if test="results/@vocabType='morphology'">possible </xsl:if> lemmas in vocabulary:</span><span><xsl:value-of select="$vocabCount"/></span></div>
+                        <div class="result"><span class="label">Vocabulary <xsl:value-of select="$analysis_string"/> Target Text:</span><span><xsl:value-of select="format-number($formLemmaFoundCount div $docCount,'##.##%')"/></span></div>
                     </div>
                     <div class="detail">
-                        <xsl:apply-templates select="results/formsFound"/>
+                        <xsl:apply-templates select="results/lemmas"/>
                     </div>
                 </body>
             </html>
         </xsl:template>
     
-        <xsl:template match="formsFound">
+        <xsl:template match="lemmas">
             <table>
                 <tr><th>Form</th><th>Lemma</th><th>Matched Form</th><th>Matched Sense</th><th>Refs</th></tr>
                     <xsl:for-each select="match">

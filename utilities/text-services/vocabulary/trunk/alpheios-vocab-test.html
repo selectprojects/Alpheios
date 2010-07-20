@@ -2,39 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
     <head><title>Alpheios Vocabulary Analysis</title>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
-        <script type="text/javascript">
-            $(function() {                
-                $("select#vocabUrnSelect").change( 
-                    function()
-                    {
-                        $("#vocabUrn").val($(this).val());
-                    }
-                );
-                $("select#docUrnSelect").change( 
-                function()
-                {
-                $("#docUrn").val($(this).val());
-                }
-                );
-                $("form").submit(
-                    function()
-                    {                            
-                        if ($("input.xmlFormat:checked",this).length >0) 
-                        {
-                            $("input[name=format]",this).val("xml");
-                        } 
-                        else
-                        {
-                            $("input[name=format]",this).val("html");
-                        }                            
-                        this.submit();
-                        return false;
-                    }
-                );
-                $("input[name=excludepofs]:checked").each(
-                    function() { $(this).val("1") });
-            });                            
-        </script>
+        <script type="text/javascript" src="alpheios-vocab-test.js"></script>
         <style type="text/css">
             td label { text-align: right; }            
         </style>
@@ -42,48 +10,96 @@
     <body>
         <div>
             <h1>Learned Vocabulary Analyses</h1>
-            <form method="get" action="http://dev.alpheios.net:8800/exist/rest/db/xq/alpheios-vocab-anal.xq?">
+            <form method="get" action="http://dev.alpheios.net:8810/exist/rest/db/xq/alpheios-vocab-anal.xq?">
              <input type="hidden" name="format" value="xml"/>
              <input type="hidden" name="excludepofs" value="1"/>
              <input type="hidden" name="pofs" value="punctuation"/>
             <table>
                 <tr>
                     <td><label for="vocabUrnSelect">Vocabulary Source</label></td>    
-                    <td><select name="vocabUrnSelect" id="vocabUrnSelect">
-                        <option value="">Enter:</option>
-                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1">Al-Kitaab (1-4)</option>
+                    <td><select name="vocabUrn" id="vocabUrnSelect" class="inventory" multiple="multiple" size="5">
+                        <option value="" selected>-</option>
+                        <option value="urn:cts:arabicLit:alk.alk00a.alpheios-vocab-ara1:2">Al Kitaab Alif Baa Chapter 2</option>
+                        <option value="urn:cts:arabicLit:alk.alk00a.alpheios-vocab-ara1:3">Al Kitaab Alif Baa Chapter 3</option>
+                        <option value="urn:cts:arabicLit:alk.alk00a.alpheios-vocab-ara1:4">Al Kitaab Alif Baa Chapter 4</option>
+                        <option value="urn:cts:arabicLit:alk.alk00a.alpheios-vocab-ara1:5">Al Kitaab Alif Baa Chapter 5</option>
+                        <option value="urn:cts:arabicLit:alk.alk00a.alpheios-vocab-ara1:6">Al Kitaab Alif Baa Chapter 6</option>
+                        <option value="urn:cts:arabicLit:alk.alk00a.alpheios-vocab-ara1:7">Al Kitaab Alif Baa Chapter 7</option>
+                        <option value="urn:cts:arabicLit:alk.alk00a.alpheios-vocab-ara1:8">Al Kitaab Alif Baa Chapter 8</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:1">Al-Kitaab Part 1 Chapter 1</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:2">Al-Kitaab Part 1 Chapter 2</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:3">Al-Kitaab Part 1 Chapter 3</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:4">Al-Kitaab Part 1 Chapter 4</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:5">Al-Kitaab Part 1 Chapter 5</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:6">Al-Kitaab Part 1 Chapter 6</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:7">Al-Kitaab Part 1 Chapter 7</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:8">Al-Kitaab Part 1 Chapter 8</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:9">Al-Kitaab Part 1 Chapter 9</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:10">Al-Kitaab Part 1 Chapter 10</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:11">Al-Kitaab Part 1 Chapter 11</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:12">Al-Kitaab Part 1 Chapter 12</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:13">Al-Kitaab Part 1 Chapter 13</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:14">Al-Kitaab Part 1 Chapter 14</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:15">Al-Kitaab Part 1 Chapter 15</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:16">Al-Kitaab Part 1 Chapter 16</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:17">Al-Kitaab Part 1 Chapter 17</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:18">Al-Kitaab Part 1 Chapter 18</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:19">Al-Kitaab Part 1 Chapter 19</option>
+                        <option value="urn:cts:arabicLit:alk.alk001.alpheios-vocab-ara1:20">Al-Kitaab Part 1 Chapter 20</option>
+                        <option value="urn:cts:arabicLit:alk.alk002.alpheios-vocab-ara1:1">Al-Kitaab Part 2 Chapter 1</option>
+                        <option value="urn:cts:arabicLit:alk.alk002.alpheios-vocab-ara1:2">Al-Kitaab Part 2 Chapter 2</option>
+                        <option value="urn:cts:arabicLit:alk.alk002.alpheios-vocab-ara1:3">Al-Kitaab Part 2 Chapter 3</option>
+                        <option value="urn:cts:arabicLit:alk.alk002.alpheios-vocab-ara1:4">Al-Kitaab Part 2 Chapter 4</option>
+                        <option value="urn:cts:arabicLit:alk.alk002.alpheios-vocab-ara1:5">Al-Kitaab Part 2 Chapter 5</option>
+                        <option value="urn:cts:arabicLit:alk.alk002.alpheios-vocab-ara1:6">Al-Kitaab Part 2 Chapter 6</option>
+                        <option value="urn:cts:arabicLit:alk.alk002.alpheios-vocab-ara1:7">Al-Kitaab Part 2 Chapter 7</option>
+                        <option value="urn:cts:arabicLit:alk.alk002.alpheios-vocab-ara1:8">Al-Kitaab Part 2 Chapter 8</option>
+                        <option value="urn:cts:arabicLit:alk.alk002.alpheios-vocab-ara1:9">Al-Kitaab Part 2 Chapter 9</option>
+                        <option value="urn:cts:arabicLit:alk.alk002.alpheios-vocab-ara1:10">Al-Kitaab Part 2 Chapter 10</option>
+                        <option value="urn:cts:arabicLit:alk.alk003.alpheios-vocab-ara1:1">Al-Kitaab Part 3 Chapter 1</option>
+                        <option value="urn:cts:arabicLit:alk.alk003.alpheios-vocab-ara1:2">Al-Kitaab Part 3 Chapter 2</option>
+                        <option value="urn:cts:arabicLit:alk.alk003.alpheios-vocab-ara1:3">Al-Kitaab Part 3 Chapter 3</option>
+                        <option value="urn:cts:arabicLit:alk.alk003.alpheios-vocab-ara1:4">Al-Kitaab Part 3 Chapter 4</option>
+                        <option value="urn:cts:arabicLit:alk.alk003.alpheios-vocab-ara1:5">Al-Kitaab Part 3 Chapter 5</option>                                               
                         <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:1">Quran Sura 1</option>
-                        <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.1-2.10">Quran Sura 2 (1-10)</option>
-                        <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.11-2.20">Quran Sura 2 (11-20)</option>
-                        <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.21-2.30">Quran Sura 2 (21-30)</option>
-                        <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1.1-1.30">Iliad Book1 (1-30)</option>
-                        <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1.31-1.50">Iliad Book1 (31-50)</option>
-                        <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1.227-1.276">Odyssey Book1 (1-50)</option>
-                        <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1.276-1.326">Odyssey Book1 (51-100)</option>               
+                        <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.1-2.100">Quran Sura 2 (1-100)</option>
+                        <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.101-2.200">Quran Sura 2 (101-200)</option>
+                        <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.201-2.300">Quran Sura 2 (201-301)</option>                        
+                        <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1">Iliad Book1</option>
+                        <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1">Odyssey Book1</option>                                      
                     </select></td>
-                    <td><input name="vocabUrn" id="vocabUrn" size="100"></input></td>
+                    <td><label>Or Enter Urn:<input name="vocabUrn" id="vocabUrnText" size="100"/></label></td>                    
                 </tr>
                 <tr>
                     <td><label for="docUrnSelect">Target Text</label></td>
                     <td>
-                        <select name="docUrnSelect" id="docUrnSelect">
-                            <option value="">Enter:</option>
+                        <select name="docUrn" id="docUrnSelect" class="inventory">
+                            <option value="" selected>-</option>
+                            <option value="urn:cts:arabicLit:perseus201001.perseus0001.alpheios-text-ara1:1">1,001 Nights (Volume 1 Pages 2-5)</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:1">Quran Sura 1</option>
-                            <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.1-2.10">Quran Sura 2 (1-10)</option>
-                            <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.11-2.20">Quran Sura 2 (11-20)</option>
-                            <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.21-2.30">Quran Sura 2 (21-30)</option>
-                            <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1.1-1.30">Iliad Book1 (1-30)</option>
-                            <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1.31-1.50">Iliad Book1 (31-50)</option>
-                            <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1.227-1.276">Odyssey Book1 (1-50)</option>
-                            <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1.276-1.326">Odyssey Book1 (51-100)</option>                                         
+                            <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.1-2.100">Quran Sura 2 (1-100)</option>
+                            <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.101-2.200">Quran Sura 2 (101-200)</option>
+                            <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.201-2.300">Quran Sura 2 (201-301)</option>
+                            <option value="urn=urn:cts:arabicLit:aljaz.aljaz20100711.alpheios-text-ara1:1">Al-Jazeera Article (الإعلام يرشح إسبانيا للفوز بالمونديال)</option>
+                            <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1">Iliad Book1</option>
+                            <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1">Odyssey Book1</option>                                                                     
                         </select>
                     </td>
-                    <td><input id="docUrn" name="docUrn" size="100"></input><br/></td>
+                    <td><label>Or Enter Urn:<input id="docUrnText" name="docUrn" size="100"></input></label><br/></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
                     <td colspan="2"><label class="checkbox"><input type="checkbox" class="xmlFormat"></input>XML Output</label></td>
-                </tr>     
+                    
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>                    
+                    <td><label class="checkbox"><input type="checkbox" name="details"></input>Show Words</label></td>
+                </tr>
+                <tr>
+                    <td>&nbsp;</td>                    
+                    <td><label class="checkbox"><input type="checkbox" name="missed"></input>Reverse (Not Found)</label></td>
+                </tr>
               </table>
             <input type="submit" value="submit"/>
             </form>            
@@ -91,19 +107,18 @@
         <hr/>
         <div>
         <h1>Vocabulary Frequency Analyses</h1>
-            <form method="get" action="http://dev.alpheios.net:8800/exist/rest/db/xq/alpheios-vocab.xq?">
+            <form method="get" action="http://dev.alpheios.net:8810/exist/rest/db/xq/alpheios-vocab.xq?">
                 <table>
                     <tr>
                         <td><label for="urn">Vocabulary Source</label></td>
                         <td><select name="urn" id="urn">
+                            <option value="urn:cts:arabicLit:perseus201001.perseus0001.alpheios-text-ara1:1">1,001 Nights (Volume 1 Pages 2-5)</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:1">Quran Sura 1</option>
-                            <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.1-2.10">Quran Sura 2 (1-10)</option>
-                            <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.11-2.20">Quran Sura 2 (11-20)</option>
-                            <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.21-2.30">Quran Sura 2 (21-30)</option>
-                            <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1.1-1.30">Iliad Book1 (1-30)</option>
-                            <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1.31-1.50">Iliad Book1 (31-50)</option>
-                            <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1.227-1.276">Odyssey Book1 (1-50)</option>
-                            <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1.276-1.326">Odyssey Book1 (51-100)</option>                   
+                            <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2">Quran Sura 2</option>
+                            <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:3">Quran Sura 3</option>
+                            <option value="urn=urn:cts:arabicLit:aljaz.aljaz20100711.alpheios-text-ara1:1">Al-Jazeera Article (الإعلام يرشح إسبانيا للفوز بالمونديال)</option>
+                            <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1">Iliad Book1</option>                            
+                            <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1">Odyssey Book1</option>                                               
                         </select></td>
                     </tr>
                     <tr>
@@ -122,7 +137,7 @@
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
-                        <td><label>Exclude selected parts of speech?<input type="checkbox" name="excludepofs"></input></label></td>
+                        <td><label>Exclude selected parts of speech?<input type="checkbox" name="excludepofs"/></label></td>
                     </tr>
                 </table>                                                
                 <input type="hidden" name="format" value="xml"/>                

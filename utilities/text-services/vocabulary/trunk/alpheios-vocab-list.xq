@@ -57,14 +57,9 @@ let $pi :=
              attribute xml { 'type="text/xsl" href="../xslt/alpheios-vocab-list.xsl"'}
         }      
     else ()
-let $uri := concat(request:get-url(),'?')        
-let $cts := cts:parseUrn($e_urn)
-let $entries := 
-    if ($cts/fileInfo/alpheiosEditionId) 
-    then 
-        doc(concat($cts/fileInfo/basePath, "/alpheios-vocab-",$cts/fileInfo/alpheiosEditionId,".xml"))//tei:entry 
-    else
-        collection($cts/fileInfo/basePath)//tei:entry[matches(util:document-name(.),"^alpheios-vocab-")]
+let $uri := concat(request:get-url(),'?')
+let $reply := cts:getPassagePlus("alpheios-cts-inventory",$e_urn)
+let $entries := $reply/TEI/text/body//tei:entry
 let $total := count($entries)
 let $start_less_count := $e_start - $e_count
 let $start_for_last := $total -$e_count+1

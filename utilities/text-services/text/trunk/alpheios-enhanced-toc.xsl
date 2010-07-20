@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <!--
     Copyright 2010 Cantus Foundation
     http://alpheios.net
@@ -36,8 +35,7 @@
             
         <xsl:template match="/tei:TEI">
             <xsl:variable name="title">
-                <xsl:call-template name="generateAlpheiosTitle">
-                     <xsl:with-param name="htmlTitlePrefix"/>   
+                <xsl:call-template name="generateAlpheiosTitle">                   
                 </xsl:call-template>
             </xsl:variable>
             <html>
@@ -52,7 +50,7 @@
                         <xsl:call-template name="toc">
                             <xsl:with-param name="a_tocBody" select="tei:TEI/tei:text/tei:front/tei:div[@type='contents']"></xsl:with-param>
                         </xsl:call-template>
-                    </div>
+                    </div>                    
                 </body>
             </html>
         </xsl:template>
@@ -78,7 +76,7 @@
                             <xsl:value-of select="normalize-space(text())"/></a>
                     </xsl:when>
                     <xsl:otherwise>
-                        <xsl:attribute name="class">tochead</xsl:attribute>
+                        <xsl:attribute name="class">tochead</xsl:attribute>                        
                         <xsl:attribute name="href"><xsl:value-of select="tei:ptr[@rend='toc']/@target"/></xsl:attribute>
                         <xsl:value-of select="normalize-space(text())"/>
                     </xsl:otherwise>
