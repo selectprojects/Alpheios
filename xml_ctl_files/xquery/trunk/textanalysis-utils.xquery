@@ -33,8 +33,8 @@ import module namespace tbm="http://alpheios.net/namespaces/treebank-morph"
 import module namespace cts="http://alpheios.net/namespaces/cts" 
             at "cts.xquery";
 
-declare variable $tan:MAX_FORMS := 2500;
-declare variable $tan:MAX_LEMMAS := 2500;
+declare variable $tan:MAX_FORMS := 10000;
+declare variable $tan:MAX_LEMMAS := 10000;
 
 (:
     Function which identifies the paths of the various Alpheios document types available for a specific
@@ -178,7 +178,7 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                 let $sense := replace($i/@lemma,"^(.*?)(\d+)$","$2")
                 let $lemma:= if (matches($i/@lemma,"\d+$")) then replace($i/@lemma,"^(.*?)(\d+)$","$1") else $i/@lemma
                 let $book := substring-after(substring-before($i/parent::sentence/@subdoc,":"),"book=")
-                let $position := count($i/preceding-sibling::word[@form="$i/@form" and @lemma="$i/@lemma"]) + 1 
+                let $position:= count($i/preceding-sibling::word[@form="$i/@form" and @lemma="$i/@lemma"]) + 1
                 return <lemma lang="{$lang}" form="{xs:string($i/@form)}" sense="{$sense}" lemma="{$lemma}">
                                 <forms:urn>{concat($cts/workUrn,":",$book,".",$i/parent::sentence/@id,":",$i/@form,"[",$position,"]")}</forms:urn>
                           </lemma>
@@ -203,7 +203,7 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                       else $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$u_match)]/
                           forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs/text(),$p_match) 
                           or matches(../forms:infl/forms:pofs/text(),$p_match)]                                
-                    return
+                  let $all :=
                         for $i in $lemmas
                             let $hdwd := $i/forms:hdwd/text()
                             let $sense := if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
@@ -215,17 +215,16 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                                 <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}">{
                                     $urns                                            
                                 }</lemma>
-                                             
+                    return                           
+                        for $seq in (1 to count($all))
+                        return $all[$seq][not(
+                            $all[position() < $seq and 
+                                @lemma= $all[$seq]/@lemma and @form=$all[$seq]/@form and @sense=$all[$seq]/@sense] and forms:urn = $all[$seq]/forms:urn)]                                             
         else ()        
-        let $deduped_words :=  
-            for $seq in (1 to count($words))
-                return $words[$seq][not(
-                    $words[position() < $seq and 
-                        @lemma= $words[$seq]/@lemma and @form=$words[$seq]/@form and @sense=$words[$seq]/@sense] and forms:urn = $words[$seq]/forms:urn)]
                                 
-        let $total := count($deduped_words)
+        let $total := count($words)
         let $returned := if ($total > $tan:MAX_LEMMAS) then $tan:MAX_LEMMAS else $total
-        let $truncated  := for $i in $deduped_words[position() <= $tan:MAX_LEMMAS] return $i                     
+        let $truncated  := for $i in $words[position() <= $tan:MAX_LEMMAS] return $i                     
         return
             <result count="{$returned}" total="{$total}" truncated="{$total - $returned}" 
                 treebank="{exists($docinfo/treebank)}">
@@ -268,8 +267,9 @@ declare function tan:getInflections($a_docid as xs:string, $a_pofs as xs:string*
                             return
                                 (: if we we can disambiguate the morphology using a treebank, do so :) 
                                 if (exists($docinfo/treebank) and exists($docinfo/text))
-                                then                                                                                                
-                                    let $aref := cts:findSubRef($u/text())//wd                                                                         
+                                then                      
+                                    let $passage := cts:getPassagePlus("alpheios-cts-inventory",$u)
+                                    let $aref := $passage/reply/subref/wd                                                                         
                                     let $tbref :=                                    
                                         if ($aref[1])
                                         then
@@ -354,6 +354,25 @@ declare function tan:matchLemmas( $a_words as node()*, $a_vocab as node()*) as n
                               $i/forms:urn
                           }
                   else ()                                                
+};
+
+(: Alternate version of matchLemmas which returns the lemmas missed instead of found :)
+declare function tan:matchLemmas( $a_missed as xs:boolean, $a_words as node()*, $a_vocab as node()*) as node()*
+{ 
+            if ($a_missed)
+            then 
+                for $i in $a_words
+                let $match :=
+                        $a_vocab/tei:form[@type="lemma" and text() = $i/@lemma]
+                return 
+                    if (not($match))
+                    then                                          
+                              element lemma {
+                                  $i/@*,                              
+                                  $i/forms:urn
+                              }
+                      else ()
+            else tan:matchLemmas( $a_words, $a_vocab)                                                         
 };
 
 declare function tan:matchVocab( $a_vocab as node()*, $a_words as node()*) as node()*

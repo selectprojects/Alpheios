@@ -31,11 +31,14 @@
 module namespace cts = "http://alpheios.net/namespaces/cts";
 declare namespace ti = "http://chs.harvard.edu/xmlns/cts3/ti";
 declare namespace  util="http://exist-db.org/xquery/util";
+declare namespace tei="http://www.tei-c.org/ns/1.0";
  
 
 declare variable $cts:tocChunking :=
 ( 
     <tocCunk type="Book" size="1"/>,
+    <tocChunk type="Chapter" size="1"/>,
+    <tocChunk type="Article" size="1"/>,    
     <tocChunk type="Line" size="100"/>,
     <tocChunk type="Verse" size="100"/>,
     <tocChunk type="Page" size="1"/>
@@ -147,25 +150,9 @@ declare function cts:parseUrn($a_urn as xs:string)
             </TEI>
           </reply>        
 :)
-declare function cts:findSubRef($a_urn as xs:string)
-{               
-    let $cts := cts:parseUrn($a_urn)
-    let $doc := doc($cts/fileInfo/fullPath)
-    let $ref :=   $doc//div1[@n = $cts/passageParts/rangePart[1]/part[1]]//l[
-                            @n=$cts/passageParts/rangePart[1]/part[2]]/wd[text() = $cts/subRef][$cts/subRef/@position][1]
-    let $lang := $ref/ancestor::*[@lang][1]/@lang
-    let $xmllang := $ref/ancestor::*[@xml:lang][1]/@xml:lang
-    return
-        element reply {
-            element TEI {
-                    $doc//teiHeader,
-                    <text xml:lang="{if ($xmllang) then $xmllang else $lang}">
-                        <body>
-                                {$ref}
-                        </body>
-                    </text>                    
-            }   
-        }            
+declare function cts:findSubRef($a_passage,$a_subref)
+{           
+    $a_passage//wd[text() = $a_subref][$a_subref/@position][1]                
 };
 
 (:
@@ -249,7 +236,7 @@ declare function cts:getValidReff($a_inv as xs:string,$a_urn as xs:string,$a_lev
         let $urns := cts:getUrns($startParts,$endParts,$cites,$doc,concat($cts/workUrn,":"))
         return 
         <reply>
-            <reff>
+            <reff>            
                     { for $u in $urns return <urn>{$u}</urn> }
             </reff>
         </reply>
@@ -401,7 +388,7 @@ declare function cts:findNextPrev($a_dir as xs:string,
     let $name := replace($a_path,"^/(.*?)\[.*$","$1")
     let $pred := replace($a_path,"^.*?\[(.*?)\].*$","$1")
     (: remove the identifier bind variable from the path :)
-    let $path := replace($pred,"^@[^=]+=.\?.$","")
+    let $path := replace($pred,"@[^=]+=.\?.(\s+(and)|(or))?","")
     (: get the identifier bind variable :)
     let $id := replace($pred,"^.*?@([^=]+)=.\?.+$","$1")          
     let $next :=                   
@@ -411,9 +398,9 @@ declare function cts:findNextPrev($a_dir as xs:string,
             (: TODO check the context of the util:eval($path) here :)
             if ($a_dir = xs:string('p'))
             then 
-                $a_node/preceding-sibling::*[name() = $kind and util:eval($path)][1]
+                util:eval(concat("$a_node/preceding-sibling::*[name() = $kind and ",$path,"][1]"))
             else                 
-                $a_node/following-sibling::*[name() = $kind and util:eval($path)][1]
+                util:eval(concat("$a_node/following-sibling::*[name() = $kind and ",$path,"][1]"))                
         else
             if ($a_dir = xs:string('p'))
             then
@@ -454,11 +441,7 @@ declare function cts:findNextPrev($a_dir as xs:string,
 declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
 {
     let $cts := cts:parseUrn($a_urn)    
-    return 
-    if ($cts/subRef)
-    then 
-        cts:findSubRef($a_urn)         
-    else 
+    return                   
         let $doc := doc($cts/fileInfo/fullPath)
         let $level := count($cts/passageParts/rangePart[1]/part)
         let $entry := cts:getCatalog($a_inv,$a_urn)
@@ -471,10 +454,27 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
             $cts/passageParts/rangePart[1]/part,
             $cts/passageParts/rangePart[2]/part,
             concat($cites[$level]/@scope, $cites[$level]/@xpath))
-        let $passage := 
+        let $passage_orig := 
             (: return error if we can't determine the chunk size :)
            if (not($chunkSize)) then (<l rend="error">Invalid Request</l>)
            else util:eval(concat("$doc",$xpath))
+        let $subref_orig := 
+            if ($cts/subRef)
+            then
+                cts:findSubRef($passage_orig,$cts/subRef)
+            else ()                
+        let $passage := if ($passage_orig and (not($cts/subRef) or ($cts/subRef and $subref_orig) )) 
+            then $passage_orig
+        else            
+            let $parent_match := concat("^",$cts/passageParts/rangePart[1]/part[2],"-")
+            let $passage_alt  := $doc//div1[@n = $cts/passageParts/rangePart[1]/part[1]]//wd[matches(@tbrefs,$parent_match) or matches(@tbref,$parent_match)][1]/..
+            return if ($passage_alt) then $passage_alt else $passage_orig
+        (: try again to get the subref :)
+        let $subref :=
+            if ($subref_orig) then $subref_orig
+            else if ($passage and $cts/subRef and not ($subref_orig))
+            then cts:findSubRef($passage,$cts/subRef)
+            else ()                     
         let $xmllang := $passage[1]/ancestor::*[@xml:lang][1]/@xml:lang
         let $lang := $passage[1]/ancestor::*[@lang][1]/@lang
         let $countAll := count($passage)
@@ -492,13 +492,14 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
                      </body>
                   </text>
                 </TEI>
-                { if ($chunkSize) then
+                { if ($chunkSize and $passage) then
                     <prevnext>                     
                         <prev>{ cts:findNextPrev("p",$passage[1],$thisPath,$count,$cts/workUrn,$cts/passageParts/rangePart[1]/part) }</prev>                    
                         <next>{ cts:findNextPrev("n",$passage[position() = last()],$thisPath,$count,$cts/workUrn,$cts/passageParts/rangePart[position()=last()]/part) }</next>                                            
                     </prevnext>
                     else ()
-                }
+                },
+                <subref>{$subref}</subref>
             </reply>                    
 };
 
@@ -590,3 +591,22 @@ declare function cts:getEditionTitle($a_inv as xs:string,$a_urn as xs:string)
     let $entry := cts:getCatalog($a_inv,$a_urn)
     return xs:string($entry//ti:edition/ti:label)
 };
+
+(:
+    Get the full title of the supplied urn
+    Parameters
+        $a_inv the text inventory
+        $a_urn the urn
+    Return Value
+        the title
+:)
+declare function cts:getExpandedTitle($a_inv as xs:string,$a_urn as xs:string) as xs:string
+{
+    let $entry := cts:getCatalog($a_inv,$a_urn)
+    let $cts := cts:parseUrn($a_urn)
+    let $parts := 
+        for $seq in (1 to count($cts/passageParts/rangePart[1]/part))
+         return concat(($entry//ti:online//ti:citation)[position() = $seq]/@label, " ", $cts/passageParts/rangePart[1]/part[$seq])    
+    return string-join(($entry//ti:edition/ti:label,$parts), " ")
+};
+
