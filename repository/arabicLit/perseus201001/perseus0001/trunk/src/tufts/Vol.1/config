@@ -1,0 +1,1510 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<configuration xmlns="http://kebrt.cz/word-to-latex" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <variousOptions>
+        <option name="ONLY_IMAGES" value="no" />
+        <option name="PRINTER_NAME" value="Microsoft XPS Document Writer" />
+        <option name="IMAGE_FORMAT" value="eps" />
+        <option name="TDL_FILENAME" value="LaTeX.tdl" />
+        <option name="EQUATIONS" value="toimages" />
+        <option name="MATHTYPE_VERSION" value="6" />
+        <option name="CREATE_COMMANDS_FOR_STYLES" value="yes" />
+        <option name="OUTPUT_FORMAT" value="xml" />
+        <option name="DOC_CLASS" value="book" />
+        <option name="PAGE_SIZE" value="a4paper" />
+        <option name="PAGE_SIZE_PROCESSING" value="complete" />
+        <option name="FONT_SIZE1" value="8" />
+        <option name="FONT_SIZE2" value="9" />
+        <option name="FONT_SIZE3" value="10" />
+        <option name="FONT_SIZE4" value="11" />
+        <option name="FONT_SIZE5" value="12" />
+        <option name="FONT_SIZE6" value="14" />
+        <option name="FONT_SIZE7" value="16" />
+        <option name="FONT_SIZE8" value="18" />
+        <option name="FONT_SIZE9" value="20" />
+        <option name="FONT_SIZE10" value="26" />
+        <option name="DEFAULT_FONT_SIZE" value="12" />
+        <option name="AUTO_DETECT_DEFAULT_FONT_SIZE" value="no" />
+        <option name="WRAP_PARAGRAPHS" value="70" />
+        <option name="NEW_LINE" value="crlf" />
+        <option name="MULTICOLUMN" value="no" />
+        <option name="SANS_SERIF" value="yes" />
+        <option name="AUTO_RECOGNIZE_MATH" value="yes" />
+        <option name="IGNORE_EMPTY_PAR" value="no" />
+        <option name="RECOGNIZE_NUMBERED_EQ_REF" value="yes" />
+        <option name="ENDNOTES_TO_BIBLIO" value="yes" />
+        <option name="RECOGNIZE_BIBLIO_REF" value="yes" />
+        <option name="PARAGRAPH_ALIGNMENTS" value="yes" />
+        <option name="PARAGRAPH_INDENTATION" value="yes" />
+        <option name="COLOR_TEXT" value="no" />
+        <option name="COLOR_BG" value="yes" />
+        <option name="COLOR_TABLE" value="no" />
+    </variousOptions>
+    <translationTable>
+        <docElement name="PREAMBLE" start="\documentclass[@WL-DEFAULT_FONT_SIZEpt]{@WL-DOC_CLASS}@WL-NL\usepackage{makeidx}@WL-NL\usepackage{multirow}@WL-NL\usepackage{multicol}@WL-NL\usepackage[dvipsnames,svgnames,table]{xcolor}@WL-NL\usepackage[dvips]{graphicx}@WL-NL\usepackage{ulem}@WL-NL\usepackage{hyperref}@WL-NL\author{@WL-DOC_AUTHOR}@WL-NL\title{@WL-DOC_TITLE}@WL-NL@WL-PAGE_SIZE@WL-NL@WL-NL\makeatletter@WL-NL@WL-TAB\newenvironment{indentation}[3]%@WL-NL@WL-TAB{\par\setlength{\parindent}{#3}@WL-NL@WL-TAB\setlength{\leftmargin}{#1}       \setlength{\rightmargin}{#2}%@WL-NL@WL-TAB\advance\linewidth -\leftmargin       \advance\linewidth -\rightmargin%@WL-NL@WL-TAB\advance\@totalleftmargin\leftmargin  \@setpar{{\@@par}}%@WL-NL@WL-TAB\parshape 1\@totalleftmargin \linewidth\ignorespaces}{\par}%@WL-NL\makeatother @WL-NL@WL-NL% new LaTeX commands@WL-NL@WL-STYLE_COMMANDS@WL-NL@WL-NL" />
+        <docElement name="FONT_BOLD" start="\textbf{" end="}" />
+        <docElement name="FONT_ITALIC" start="\textit{" end="}" />
+        <docElement name="FONT_SUPERSCRIPT" start="$^{" end="}$" />
+        <docElement name="FONT_SUBSCRIPT" start="$_{" end="}$" />
+        <docElement name="FONT_SMALLCAPS" start="\textsc{" end="}" />
+        <docElement name="FONT_HIDDEN" start="@WL-NL%" end="@WL-NL" />
+        <docElement name="FONT_COURIER" start="\texttt{" end="}" />
+        <docElement name="FONT_UNDERLINE" start="\uline{" end="}" />
+        <docElement name="FONT_DOUBLE_UNDERLINE" start="\uuline{" end="}" />
+        <docElement name="FONT_WAVE_UNDERLINE" start="\uwave{" end="}" />
+        <docElement name="FONT_UPPERCASE" start="\uppercase{" end="}" />
+        <docElement name="FONT_STRIKE" start="\sout{" end="}" />
+        <docElement name="FONT_SANS_SERIF" start="\textsf{" end="}" />
+        <docElement name="FONT_SIZE1" start="{\tiny " end="}" />
+        <docElement name="FONT_SIZE2" start="{\scriptsize " end="}" />
+        <docElement name="FONT_SIZE3" start="{\footnotesize " end="}" />
+        <docElement name="FONT_SIZE4" start="{\small " end="}" />
+        <docElement name="FONT_SIZE5" start="{\normalsize " end="}" />
+        <docElement name="FONT_SIZE6" start="{\large " end="}" />
+        <docElement name="FONT_SIZE7" start="{\Large " end="}" />
+        <docElement name="FONT_SIZE8" start="{\LARGE " end="}" />
+        <docElement name="FONT_SIZE9" start="{\huge " end="}" />
+        <docElement name="FONT_SIZE10" start="{\Huge " end="}" />
+        <docElement name="HEADING1" start="\section{" end="}" />
+        <docElement name="HEADING2" start="\subsection{" end="}" />
+        <docElement name="HEADING3" start="\subsubsection{" end="}" />
+        <docElement name="HEADING4" start="" end="" />
+        <docElement name="HEADING5" start="" end="" />
+        <docElement name="HEADING6" start="" end="" />
+        <docElement name="HEADING7" start="" end="" />
+        <docElement name="HEADING8" start="" end="" />
+        <docElement name="HEADING9" start="" end="" />
+        <docElement name="ALIGN_CENTER" start="\begin{center}@WL-NL" end="@WL-NL\end{center}" />
+        <docElement name="ALIGN_LEFT" start="{\raggedright@WL-NL" end="@WL-NL}" />
+        <docElement name="ALIGN_RIGHT" start="{\raggedleft@WL-NL" end="@WL-NL}" />
+        <docElement name="TABLE_ALIGN_CENTER" start="\parbox{#WIDTHpt}{\centering " end="}" />
+        <docElement name="TABLE_ALIGN_LEFT" start="\parbox{#WIDTHpt}{\raggedright " end="}" />
+        <docElement name="TABLE_ALIGN_RIGHT" start="\parbox{#WIDTHpt}{\raggedleft " end="}" />
+        <docElement name="FOOTNOTE" start="\footnote{" end="}" />
+        <docElement name="PAGE_BREAK" start="\pagebreak{}@WL-NL@WL-NL" end="" />
+        <docElement name="EQUATION_NUMBERED" start="\begin{equation}" end="@WL-NL%#ORIG_LABEL@WL-NL\end{equation}" />
+        <docElement name="EQUATION_LABEL" start="\label{#NAME}" end="" />
+        <docElement name="EQUATION_INLINE" start="\begin{math}" end="\end{math}" />
+        <docElement name="EQUATION_OUTLINE" start="\begin{displaymath}" end="\end{displaymath}" />
+        <docElement name="INDEX" start="%add this command to the preamble: \\makeindex@WL-NL\printindex" end="" />
+        <docElement name="INDEX_ENTRY" start="\index{" end="}" />
+        <docElement name="HYPERLINK" start="\href{#HREF}{" end="}" />
+        <docElement name="TOC" start="\tableofcontents" end="" />
+        <docElement name="SPECIAL_COMMAND" start="" end="" />
+        <docElement name="BOOKMARK_LABEL" start="\label{#NAME}" end="" />
+        <docElement name="REFERENCE" start="\ref{#NAME}" end="" />
+        <docElement name="PAGE_REFERENCE" start="\pageref{#NAME}" end="" />
+        <docElement name="MATH_REFERENCE" start="(\ref{#NAME})@WL-NL%" end="@WL-NL" />
+        <docElement name="NOTE_REFERENCE" start="\cite{ref#NAME}" end="" />
+        <docElement name="BIBLIO_REFERENCE" start="\cite{ref#NAME}@WL-NL%" end="@WL-NL" />
+        <docElement name="STYLE" start="\#NAME{" end="}" />
+        <docElement name="STYLE_DEFINITION" start="\newcommand{\#NAME}[1]{" end="}" />
+        <docElement name="DOCUMENT_BODY" start="\begin{document}@WL-NL" end="\end{document}" />
+        <docElement name="PARAGRAPH" start="" end="@WL-NL@WL-NL" />
+        <docElement name="LIST_ENUMERATE" start="\begin{enumerate}@WL-NL" end="\end{enumerate}@WL-NL@WL-NL" />
+        <docElement name="LIST_ITEMIZE" start="\begin{itemize}@WL-NL" end="\end{itemize}@WL-NL@WL-NL" />
+        <docElement name="LIST_ITEM" start="@WL-TAB\item " end="" />
+        <docElement name="LIST_PARAGRAPH" start="" end="@WL-NL" />
+        <docElement name="TABLE" start="@WL-NL\vspace{3pt} \noindent@WL-NL\begin{tabular}" end="\end{tabular}@WL-NL\vspace{2pt}@WL-NL" />
+        <docElement name="TABLE_ROW" start="" end=" \\@WL-NL" />
+        <docElement name="TABLE_CELL" start=" &amp; " end="" />
+        <docElement name="TABLE_CELL_COLOR" start="&gt;{\columncolor[HTML]{#COLOR}}" end="" />
+        <docElement name="TABLE_CONTAINER" start="@WL-NL\begin{table}[h]" end="\end{table}@WL-NL" />
+        <docElement name="TABLE_MULTICOLUMN" start="\multicolumn{#COLS}{#LEFT_BORDER#COLOR#ALIGN#RIGHT_BORDER}{" end="}" />
+        <docElement name="TABLE_MULTIROW" start="\multirow{#ROWS}{*}{" end="}" />
+        <docElement name="TABLE_TITLE" start="\caption{#TITLE}" end="" />
+        <docElement name="TABLE_PARAGRAPH" start="@WL-NL" end="@WL-NL" />
+        <docElement name="LINE_BREAK" start="@WL-NL\\@WL-NL" end="" />
+        <docElement name="IMAGE_COMMAND" start="\includegraphics[width=#WIDTHpt]{#FILENAME}@WL-NL" end="" />
+        <docElement name="IMAGE_TITLE" start="\caption{#TITLE}" end="" />
+        <docElement name="IMAGE_CONTAINER" start="\begin{figure}[h]@WL-NL" end="\end{figure}" />
+        <docElement name="PAR_INDENT" start="\begin{indentation}{#LEFT_INDENTpt}{#RIGHT_INDENTpt}{#FIRST_LINE_INDENTpt}@WL-NL" end="@WL-NL\end{indentation}" />
+        <docElement name="MULTICOLUMN" start="\begin{multicols}{#COLS}" end="\end{multicols}" />
+        <docElement name="COLOR_TEXT" start="\textcolor[HTML]{#COLOR}{" end="}" />
+        <docElement name="COLOR_BG" start="\colorbox[HTML]{#COLOR}{" end="}" />
+        <docElement name="ENDNOTES_SECTION" start="\begin{thebibliography}{99}@WL-NL" end="\end{thebibliography}@WL-NL" />
+        <docElement name="ENDNOTE" start="@WL-TAB\bibitem[#NUMBER]{ref#NUMBER}" end="@WL-NL" />
+        <docElement name="ENDNOTE_REFERENCE" start=" \cite{ref#NUMBER}" end="" />
+        <docElement name="COLOR_BG_AND_BORDER" start="\fcolorbox[HTML]{#BORDER_COLOR}[HTML]{#COLOR}{" end="}" />
+        <docElement name="COLOR_BORDER" start="\fcolorbox[HTML]{#BORDER_COLOR}[HTML]{FFFFFF}{" end="}" />
+        <docElement name="BORDER" start="\fbox{" end="}" />
+        <docElement name="TAB" start="\hspace{15pt}" end="" />
+    </translationTable>
+    <specialChars>
+        <latexChar char="\" convertTo="\textbackslash " />
+        <latexChar char="{" convertTo="\{" />
+        <latexChar char="}" convertTo="\}" />
+        <latexChar char="#" convertTo="\#" />
+        <latexChar char="$" convertTo="\$" />
+        <latexChar char="%" convertTo="\%" />
+        <latexChar char="&amp;" convertTo="\&amp;" />
+        <latexChar char="~" convertTo="\textasciitilde{}" />
+        <latexChar char="_" convertTo="\_" />
+        <latexChar char="^" convertTo="\textasciicircum{}" />
+        <char code="003C" mathConvertTo="&lt;" />
+        <char code="003E" mathConvertTo="&gt;" />
+        <char code="007C" mathConvertTo="\vert{}" />
+        <char code="00A0" convertTo="~" />
+        <char code="00A1" convertTo="\textexclamdown{}" />
+        <char code="00A2" convertTo="\textcent{}" mathConvertTo="\mbox{\textcent}" />
+        <char code="00A3" convertTo="\textsterling{}" mathConvertTo="\pounds{}" />
+        <char code="00A4" convertTo="\textcurrency{}" mathConvertTo="\mbox{\textcurrency}" />
+        <char code="00A5" convertTo="\textyen{}" mathConvertTo="\yen{}" />
+        <char code="00A6" convertTo="\textbrokenbar{}" />
+        <char code="00A7" convertTo="\textsection{}" mathConvertTo="\S{}" />
+        <char code="00A8" convertTo="\textasciidieresis{}" />
+        <char code="00A9" convertTo="\textcopyright{}" mathConvertTo="\copyright{}" />
+        <char code="00AA" convertTo="\textordfeminine{}" />
+        <char code="00AB" convertTo="\guillemotleft{}" mathConvertTo="\mbox{\guillemotleft}" />
+        <char code="00AC" mathConvertTo="\lnot{}" />
+        <char code="00AD" convertTo="\-" mathConvertTo="\-" />
+        <char code="00AE" convertTo="\textregistered{}" mathConvertTo="\circledR{}" />
+        <char code="00AF" convertTo="\textasciimacron{}" />
+        <char code="00B0" convertTo="\textdegree{}" mathConvertTo="\mbox{\textdegree}" />
+        <char code="00B1" mathConvertTo="\pm{}" />
+        <char code="00B2" mathConvertTo="{^2}" />
+        <char code="00B3" mathConvertTo="{^3}" />
+        <char code="00B4" convertTo="\textasciiacute{}" />
+        <char code="00B5" mathConvertTo="\mathrm{\mu}" />
+        <char code="00B6" convertTo="\textparagraph{}" mathConvertTo="\P{}" />
+        <char code="00B7" mathConvertTo="\cdot{}" />
+        <char code="00B8" convertTo="\c{}" mathConvertTo="\mbox{\c{}}" />
+        <char code="00B9" mathConvertTo="{^1}" />
+        <char code="00BA" convertTo="\textordmasculine{}" />
+        <char code="00BB" convertTo="\guillemotright{}" mathConvertTo="\mbox{\guillemotright}" />
+        <char code="00BC" convertTo="\textonequarter{}" />
+        <char code="00BD" convertTo="\textonehalf{}" />
+        <char code="00BE" convertTo="\textthreequarters{}" />
+        <char code="00BF" convertTo="\textquestiondown{}" />
+        <char code="00C0" convertTo="\`{A}" mathConvertTo="\grave{A}" />
+        <char code="00C1" convertTo="\'{A}" mathConvertTo="\acute{A}" />
+        <char code="00C2" convertTo="\^{A}" mathConvertTo="\hat{A}" />
+        <char code="00C3" convertTo="\~{A}" mathConvertTo="\tilde{A}" />
+        <char code="00C4" convertTo="\&quot;{A}" mathConvertTo="\ddot{A}" />
+        <char code="00C5" convertTo="\AA{}" />
+        <char code="00C6" convertTo="\AE{}" />
+        <char code="00C7" convertTo="\c{C}" mathConvertTo="\mbox{\c{C}}" />
+        <char code="00C8" convertTo="\`{E}" mathConvertTo="\grave{E}" />
+        <char code="00C9" convertTo="\'{E}" mathConvertTo="\acute{E}" />
+        <char code="00CA" convertTo="\^{E}" mathConvertTo="\hat{E}" />
+        <char code="00CB" convertTo="\&quot;{E}" mathConvertTo="\ddot{E}" />
+        <char code="00CC" convertTo="\`{I}" mathConvertTo="\grave{I}" />
+        <char code="00CD" convertTo="\'{I}" mathConvertTo="\acute{I}" />
+        <char code="00CE" convertTo="\^{I}" mathConvertTo="\hat{I}" />
+        <char code="00CF" convertTo="\&quot;{I}" mathConvertTo="\ddot{I}" />
+        <char code="00D0" convertTo="\DH{}" />
+        <char code="00D1" convertTo="\~{N}" mathConvertTo="\tilde{N}" />
+        <char code="00D2" convertTo="\`{O}" mathConvertTo="\grave{O}" />
+        <char code="00D3" convertTo="\'{O}" mathConvertTo="\acute{O}" />
+        <char code="00D4" convertTo="\^{O}" mathConvertTo="\hat{O}" />
+        <char code="00D5" convertTo="\~{O}" mathConvertTo="\tilde{O}" />
+        <char code="00D6" convertTo="\&quot;{O}" mathConvertTo="\ddot{O}" />
+        <char code="00D7" mathConvertTo="\times{}" />
+        <char code="00D8" convertTo="\O{}" />
+        <char code="00D9" convertTo="\`{U}" mathConvertTo="\grave{U}" />
+        <char code="00DA" convertTo="\'{U}" mathConvertTo="\acute{U}" />
+        <char code="00DB" convertTo="\^{U}" mathConvertTo="\hat{U}" />
+        <char code="00DC" convertTo="\&quot;{U}" mathConvertTo="\ddot{U}" />
+        <char code="00DD" convertTo="\'{Y}" mathConvertTo="\acute{Y}" />
+        <char code="00DE" convertTo="\TH{}" />
+        <char code="00DF" convertTo="\ss{}" />
+        <char code="00E0" convertTo="\`{a}" mathConvertTo="\grave{a}" />
+        <char code="00E1" convertTo="\'{a}" mathConvertTo="\acute{a}" />
+        <char code="00E2" convertTo="\^{a}" mathConvertTo="\hat{a}" />
+        <char code="00E3" convertTo="\~{a}" mathConvertTo="\tilde{a}" />
+        <char code="00E4" convertTo="\&quot;{a}" mathConvertTo="\ddot{a}" />
+        <char code="00E5" convertTo="\aa{}" />
+        <char code="00E6" convertTo="\ae{}" />
+        <char code="00E7" convertTo="\c{c}" mathConvertTo="\mbox{\c{c}}" />
+        <char code="00E8" convertTo="\`{e}" mathConvertTo="\grave{e}" />
+        <char code="00E9" convertTo="\'{e}" mathConvertTo="\acute{e}" />
+        <char code="00EA" convertTo="\^{e}" mathConvertTo="\hat{e}" />
+        <char code="00EB" convertTo="\&quot;{e}" mathConvertTo="\ddot{e}" />
+        <char code="00EC" convertTo="\`{\i}" mathConvertTo="\grave{\imath}" />
+        <char code="00ED" convertTo="\'{\i}" mathConvertTo="\acute{\imath}" />
+        <char code="00EE" convertTo="\^{\i}" mathConvertTo="\hat{\imath}" />
+        <char code="00EF" convertTo="\&quot;{\i}" mathConvertTo="\ddot{\imath}" />
+        <char code="00F0" convertTo="\dh{}" />
+        <char code="00F1" convertTo="\~{n}" mathConvertTo="\tilde{n}" />
+        <char code="00F2" convertTo="\`{o}" mathConvertTo="\grave{o}" />
+        <char code="00F3" convertTo="\'{o}" mathConvertTo="\acute{o}" />
+        <char code="00F4" convertTo="\^{o}" mathConvertTo="\hat{o}" />
+        <char code="00F5" convertTo="\~{o}" mathConvertTo="\tilde{o}" />
+        <char code="00F6" convertTo="\&quot;{o}" mathConvertTo="\ddot{o}" />
+        <char code="00F7" mathConvertTo="\div{}" />
+        <char code="00F8" convertTo="\o{}" />
+        <char code="00F9" convertTo="\`{u}" mathConvertTo="\grave{u}" />
+        <char code="00FA" convertTo="\'{u}" mathConvertTo="\acute{u}" />
+        <char code="00FB" convertTo="\^{u}" mathConvertTo="\hat{u}" />
+        <char code="00FC" convertTo="\&quot;{u}" mathConvertTo="\ddot{u}" />
+        <char code="00FD" convertTo="\'{y}" mathConvertTo="\acute{y}" />
+        <char code="00FE" convertTo="\th{}" />
+        <char code="00FF" convertTo="\&quot;{y}" mathConvertTo="\ddot{y}" />
+        <char code="0100" convertTo="\={A}" mathConvertTo="\bar{A}" />
+        <char code="0101" convertTo="\={a}" mathConvertTo="\bar{a}" />
+        <char code="0102" convertTo="\u{A}" mathConvertTo="\breve{A}" />
+        <char code="0103" convertTo="\u{a}" mathConvertTo="\u{a}" />
+        <char code="0104" convertTo="\k{A}" />
+        <char code="0105" convertTo="\k{a}" />
+        <char code="0106" convertTo="\'{C}" mathConvertTo="\acute{C}" />
+        <char code="0107" convertTo="\'{c}" mathConvertTo="\acute{c}" />
+        <char code="0108" convertTo="\^{C}" mathConvertTo="\hat{C}" />
+        <char code="0109" convertTo="\^{c}" mathConvertTo="\hat{c}" />
+        <char code="010A" convertTo="\.{C}" mathConvertTo="\dot{C}" />
+        <char code="010B" convertTo="\.{c}" mathConvertTo="\dot{c}" />
+        <char code="010C" convertTo="\v{C}" mathConvertTo="\check{C}" />
+        <char code="010D" convertTo="\v{c}" mathConvertTo="\check{c}" />
+        <char code="010E" convertTo="\v{D}" mathConvertTo="\check{D}" />
+        <char code="010F" convertTo="\v{d}" mathConvertTo="\check{d}" />
+        <char code="0110" convertTo="\DJ{}" />
+        <char code="0111" convertTo="\dj{}" />
+        <char code="0112" convertTo="\={E}" mathConvertTo="\bar{E}" />
+        <char code="0113" convertTo="\={e}" mathConvertTo="\bar{e}" />
+        <char code="0114" convertTo="\u{E}" mathConvertTo="\breve{E}" />
+        <char code="0115" convertTo="\u{e}" mathConvertTo="\breve{e}" />
+        <char code="0116" convertTo="\.{E}" mathConvertTo="\dot{E}" />
+        <char code="0117" convertTo="\.{e}" mathConvertTo="\dot{e}" />
+        <char code="0118" convertTo="\k{E}" mathConvertTo="\k{E}" />
+        <char code="0119" convertTo="\k{e}" />
+        <char code="011A" convertTo="\v{E}" mathConvertTo="\check{E}" />
+        <char code="011B" convertTo="\v{e}" mathConvertTo="\check{e}" />
+        <char code="011C" convertTo="\^{G}" mathConvertTo="\hat{G}" />
+        <char code="011D" convertTo="\^{g}" mathConvertTo="\hat{g}" />
+        <char code="011E" convertTo="\u{G}" mathConvertTo="\breve{G}" />
+        <char code="011F" convertTo="\u{g}" mathConvertTo="\breve{g}" />
+        <char code="0120" convertTo="\.{G}" mathConvertTo="\dot{G}" />
+        <char code="0121" convertTo="\.{g}" mathConvertTo="\dot{g}" />
+        <char code="0122" convertTo="\c{G}" mathConvertTo="\mbox{\c{G}}" />
+        <char code="0123" convertTo="\c{g}" mathConvertTo="\mbox{\c{g}}" />
+        <char code="0124" convertTo="\^{H}" mathConvertTo="\hat{H}" />
+        <char code="0125" convertTo="\^{h}" mathConvertTo="\hat{h}" />
+        <char code="0126" convertTo="{\fontencoding{LELA}\selectfont\char40}" />
+        <char code="0127" mathConvertTo="\Elzxh{}" />
+        <char code="0128" convertTo="\~{I}" mathConvertTo="\tilde{I}" />
+        <char code="0129" convertTo="\~{\i}" mathConvertTo="\tilde{\imath}" />
+        <char code="012A" convertTo="\={I}" mathConvertTo="\bar{I}" />
+        <char code="012B" convertTo="\={\i}" mathConvertTo="\bar{\imath}" />
+        <char code="012C" convertTo="\u{I}" mathConvertTo="\breve{I}" />
+        <char code="012D" convertTo="\u{\i}" mathConvertTo="\breve{\imath}" />
+        <char code="012E" convertTo="\k{I}" />
+        <char code="012F" convertTo="\k{i}" />
+        <char code="0130" convertTo="\.{I}" mathConvertTo="\dot{I}" />
+        <char code="0131" convertTo="\i{}" mathConvertTo="\imath{}" />
+        <char code="0132" convertTo="IJ" />
+        <char code="0133" convertTo="ij" />
+        <char code="0134" convertTo="\^{J}" mathConvertTo="\hat{J}" />
+        <char code="0135" convertTo="\^{\j}" mathConvertTo="\hat{\jmath}" />
+        <char code="0136" convertTo="\c{K}" mathConvertTo="\mbox{\c{K}}" />
+        <char code="0137" convertTo="\c{k}" mathConvertTo="\mbox{\c{k}}" />
+        <char code="0138" convertTo="{\fontencoding{LELA}\selectfont\char91}" />
+        <char code="0139" convertTo="\'{L}" mathConvertTo="\acute{L}" />
+        <char code="013A" convertTo="\'{l}" mathConvertTo="\acute{l}" />
+        <char code="013B" convertTo="\c{L}" mathConvertTo="\mbox{\c{L}}" />
+        <char code="013C" convertTo="\c{l}" mathConvertTo="\mbox{\c{l}}" />
+        <char code="013D" convertTo="\v{L}" mathConvertTo="\check{L}" />
+        <char code="013E" convertTo="\v{l}" mathConvertTo="\check{l}" />
+        <char code="013F" convertTo="{\fontencoding{LELA}\selectfont\char201}" />
+        <char code="0140" convertTo="{\fontencoding{LELA}\selectfont\char202}" />
+        <char code="0141" convertTo="\L{}" />
+        <char code="0142" convertTo="\l{}" />
+        <char code="0143" convertTo="\'{N}" mathConvertTo="\acute{N}" />
+        <char code="0144" convertTo="\'{n}" mathConvertTo="\acute{n}" />
+        <char code="0145" convertTo="\c{N}" mathConvertTo="\mbox{\c{N}}" />
+        <char code="0146" convertTo="\c{n}" mathConvertTo="\mbox{\c{n}}" />
+        <char code="0147" convertTo="\v{N}" mathConvertTo="\check{N}" />
+        <char code="0148" convertTo="\v{n}" mathConvertTo="\check{n}" />
+        <char code="0149" convertTo="'n" />
+        <char code="014A" convertTo="\NG{}" />
+        <char code="014B" convertTo="\ng{}" />
+        <char code="014C" convertTo="\={O}" mathConvertTo="\bar{O}" />
+        <char code="014D" convertTo="\={o}" mathConvertTo="\bar{o}" />
+        <char code="014E" convertTo="\u{O}" mathConvertTo="\breve{O}" />
+        <char code="014F" convertTo="\u{o}" mathConvertTo="\breve{o}" />
+        <char code="0150" convertTo="\H{O}" mathConvertTo="\mbox{\H{O}}" />
+        <char code="0151" convertTo="\H{o}" mathConvertTo="\mbox{\H{o}}" />
+        <char code="0152" convertTo="\OE{}" />
+        <char code="0153" convertTo="\oe{}" />
+        <char code="0154" convertTo="\'{R}" mathConvertTo="\acute{R}" />
+        <char code="0155" convertTo="\'{r}" mathConvertTo="\acute{r}" />
+        <char code="0156" convertTo="\c{R}" mathConvertTo="\mbox{\c{R}}" />
+        <char code="0157" convertTo="\c{r}" mathConvertTo="\mbox{\c{r}}" />
+        <char code="0158" convertTo="\v{R}" mathConvertTo="\check{R}" />
+        <char code="0159" convertTo="\v{r}" mathConvertTo="\check{r}" />
+        <char code="015A" convertTo="\'{S}" mathConvertTo="\acute{S}" />
+        <char code="015B" convertTo="\'{s}" mathConvertTo="\acute{s}" />
+        <char code="015C" convertTo="\^{S}" mathConvertTo="\hat{S}" />
+        <char code="015D" convertTo="\^{s}" mathConvertTo="\hat{s}" />
+        <char code="015E" convertTo="\c{S}" mathConvertTo="\mbox{\c{S}}" />
+        <char code="015F" convertTo="\c{s}" mathConvertTo="\mbox{\c{s}}" />
+        <char code="0160" convertTo="\v{S}" mathConvertTo="\check{S}" />
+        <char code="0161" convertTo="\v{s}" mathConvertTo="\check{s}" />
+        <char code="0162" convertTo="\c{T}" mathConvertTo="\mbox{\c{T}}" />
+        <char code="0163" convertTo="\c{t}" mathConvertTo="\mbox{\c{t}}" />
+        <char code="0164" convertTo="\v{T}" mathConvertTo="\check{T}" />
+        <char code="0165" convertTo="\v{t}" mathConvertTo="\check{t}" />
+        <char code="0166" convertTo="{\fontencoding{LELA}\selectfont\char47}" />
+        <char code="0167" convertTo="{\fontencoding{LELA}\selectfont\char63}" />
+        <char code="0168" convertTo="\~{U}" mathConvertTo="\tilde{U}" />
+        <char code="0169" convertTo="\~{u}" mathConvertTo="\tilde{u}" />
+        <char code="016A" convertTo="\={U}" mathConvertTo="\bar{U}" />
+        <char code="016B" convertTo="\={u}" mathConvertTo="\bar{u}" />
+        <char code="016C" convertTo="\u{U}" mathConvertTo="\breve{U}" />
+        <char code="016D" convertTo="\u{u}" mathConvertTo="\breve{u}" />
+        <char code="016E" convertTo="\r{U}" mathConvertTo="\mathring{U}" />
+        <char code="016F" convertTo="\r{u}" mathConvertTo="\mathring{u}" />
+        <char code="0170" convertTo="\H{U}" mathConvertTo="\mbox{\H{U}}" />
+        <char code="0171" convertTo="\H{u}" mathConvertTo="\mbox{\H{u}}" />
+        <char code="0172" convertTo="\k{U}" mathConvertTo="\k{U}" />
+        <char code="0173" convertTo="\k{u}" />
+        <char code="0174" convertTo="\^{W}" mathConvertTo="\hat{W}" />
+        <char code="0175" convertTo="\^{w}" mathConvertTo="\hat{w}" />
+        <char code="0176" convertTo="\^{Y}" mathConvertTo="\hat{Y}" />
+        <char code="0177" convertTo="\^{y}" mathConvertTo="\hat{y}" />
+        <char code="0178" convertTo="\&quot;{Y}" mathConvertTo="\ddot{Y}" />
+        <char code="0179" convertTo="\'{Z}" mathConvertTo="\acute{Z}" />
+        <char code="017A" convertTo="\'{z}" mathConvertTo="\acute{z}" />
+        <char code="017B" convertTo="\.{Z}" mathConvertTo="\dot{Z}" />
+        <char code="017C" convertTo="\.{z}" mathConvertTo="\dot{z}" />
+        <char code="017D" convertTo="\v{Z}" mathConvertTo="\check{Z}" />
+        <char code="017E" convertTo="\v{z}" mathConvertTo="\check{z}" />
+        <char code="0192" mathConvertTo="f" />
+        <char code="0195" convertTo="\texthvlig{}" />
+        <char code="019E" convertTo="\textnrleg{}" />
+        <char code="01AA" mathConvertTo="\eth{}" />
+        <char code="01BA" convertTo="{\fontencoding{LELA}\selectfont\char195}" />
+        <char code="01C2" convertTo="\textdoublepipe{}" />
+        <char code="01F5" convertTo="\'{g}" mathConvertTo="\acute{g}" />
+        <char code="0250" mathConvertTo="\Elztrna{}" />
+        <char code="0252" mathConvertTo="\Elztrnsa{}" />
+        <char code="0254" mathConvertTo="\Elzopeno{}" />
+        <char code="0256" mathConvertTo="\Elzrtld{}" />
+        <char code="0258" convertTo="{\fontencoding{LEIP}\selectfont\char61}" />
+        <char code="0259" mathConvertTo="\Elzschwa{}" />
+        <char code="025B" mathConvertTo="\varepsilon{}" />
+        <char code="0261" convertTo="g" />
+        <char code="0263" mathConvertTo="\Elzpgamma{}" />
+        <char code="0264" mathConvertTo="\Elzpbgam{}" />
+        <char code="0265" mathConvertTo="\Elztrnh{}" />
+        <char code="026C" mathConvertTo="\Elzbtdl{}" />
+        <char code="026D" mathConvertTo="\Elzrtll{}" />
+        <char code="026F" mathConvertTo="\Elztrnm{}" />
+        <char code="0270" mathConvertTo="\Elztrnmlr{}" />
+        <char code="0271" mathConvertTo="\Elzltlmr{}" />
+        <char code="0272" convertTo="\Elzltln{}" />
+        <char code="0273" mathConvertTo="\Elzrtln{}" />
+        <char code="0277" mathConvertTo="\Elzclomeg{}" />
+        <char code="0278" convertTo="\textphi{}" />
+        <char code="0279" mathConvertTo="\Elztrnr{}" />
+        <char code="027A" mathConvertTo="\Elztrnrl{}" />
+        <char code="027B" mathConvertTo="\Elzrttrnr{}" />
+        <char code="027C" mathConvertTo="\Elzrl{}" />
+        <char code="027D" mathConvertTo="\Elzrtlr{}" />
+        <char code="027E" mathConvertTo="\Elzfhr{}" />
+        <char code="027F" convertTo="{\fontencoding{LEIP}\selectfont\char202}" />
+        <char code="0282" mathConvertTo="\Elzrtls{}" />
+        <char code="0283" mathConvertTo="\Elzesh{}" />
+        <char code="0287" mathConvertTo="\Elztrnt{}" />
+        <char code="0288" mathConvertTo="\Elzrtlt{}" />
+        <char code="028A" mathConvertTo="\Elzpupsil{}" />
+        <char code="028B" mathConvertTo="\Elzpscrv{}" />
+        <char code="028C" mathConvertTo="\Elzinvv{}" />
+        <char code="028D" mathConvertTo="\Elzinvw{}" />
+        <char code="028E" mathConvertTo="\Elztrny{}" />
+        <char code="0290" mathConvertTo="\Elzrtlz{}" />
+        <char code="0292" mathConvertTo="\Elzyogh{}" />
+        <char code="0294" mathConvertTo="\Elzglst{}" />
+        <char code="0295" mathConvertTo="\Elzreglst{}" />
+        <char code="0296" mathConvertTo="\Elzinglst{}" />
+        <char code="029E" convertTo="\textturnk{}" />
+        <char code="02A4" mathConvertTo="\Elzdyogh{}" />
+        <char code="02A7" mathConvertTo="\Elztesh{}" />
+        <char code="02BC" convertTo="'" />
+        <char code="02C7" convertTo="\textasciicaron{}" />
+        <char code="02C8" mathConvertTo="\Elzverts{}" />
+        <char code="02CC" mathConvertTo="\Elzverti{}" />
+        <char code="02D0" mathConvertTo="\Elzlmrk{}" />
+        <char code="02D1" mathConvertTo="\Elzhlmrk{}" />
+        <char code="02D2" mathConvertTo="\Elzsbrhr{}" />
+        <char code="02D3" mathConvertTo="\Elzsblhr{}" />
+        <char code="02D4" mathConvertTo="\Elzrais{}" />
+        <char code="02D5" mathConvertTo="\Elzlow{}" />
+        <char code="02D8" convertTo="\textasciibreve{}" mathConvertTo="\u{}" />
+        <char code="02D9" convertTo="\textperiodcentered{}" mathConvertTo="\dot{}" />
+        <char code="02DA" convertTo="\r{}" mathConvertTo="\mathring{}" />
+        <char code="02DB" convertTo="\k{}" mathConvertTo="\mbox{\k{}}" />
+        <char code="02DC" convertTo="\texttildelow{}" />
+        <char code="02DD" convertTo="\H{}" mathConvertTo="\mbox{\H{}}" />
+        <char code="02E5" convertTo="\tone{55}" />
+        <char code="02E6" convertTo="\tone{44}" />
+        <char code="02E7" convertTo="\tone{33}" />
+        <char code="02E8" convertTo="\tone{22}" />
+        <char code="02E9" convertTo="\tone{11}" />
+        <char code="0300" convertTo="\`" mathConvertTo="\grave{}" />
+        <char code="0301" convertTo="\'" mathConvertTo="\acute{}" />
+        <char code="0302" convertTo="\^" mathConvertTo="\hat{}" />
+        <char code="0303" convertTo="\~" mathConvertTo="\tilde{}" />
+        <char code="0304" convertTo="\=" mathConvertTo="\bar{}" />
+        <char code="0306" convertTo="\u{}" mathConvertTo="\breve{}" />
+        <char code="0307" convertTo="\." mathConvertTo="\dot{}" />
+        <char code="0308" convertTo="\&quot;" mathConvertTo="\ddot{}" />
+        <char code="030A" convertTo="\r{}" />
+        <char code="030B" convertTo="\H{}" />
+        <char code="030C" convertTo="\v{}" mathConvertTo="\check{}" />
+        <char code="030F" convertTo="\cyrchar\C{}" />
+        <char code="0311" convertTo="{\fontencoding{LECO}\selectfont\char177}" />
+        <char code="0318" convertTo="{\fontencoding{LECO}\selectfont\char184}" />
+        <char code="0319" convertTo="{\fontencoding{LECO}\selectfont\char185}" />
+        <char code="0321" mathConvertTo="\Elzpalh{}" />
+        <char code="0322" convertTo="\Elzrh{}" />
+        <char code="0327" convertTo="\c{}" />
+        <char code="0328" convertTo="\k{}" />
+        <char code="032A" mathConvertTo="\Elzsbbrg{}" />
+        <char code="032B" convertTo="{\fontencoding{LECO}\selectfont\char203}" />
+        <char code="032F" convertTo="{\fontencoding{LECO}\selectfont\char207}" />
+        <char code="0335" convertTo="\Elzxl{}" />
+        <char code="0336" convertTo="\Elzbar{}" />
+        <char code="0337" convertTo="{\fontencoding{LECO}\selectfont\char215}" />
+        <char code="0338" convertTo="{\fontencoding{LECO}\selectfont\char216}" />
+        <char code="033A" convertTo="{\fontencoding{LECO}\selectfont\char218}" />
+        <char code="033B" convertTo="{\fontencoding{LECO}\selectfont\char219}" />
+        <char code="033C" convertTo="{\fontencoding{LECO}\selectfont\char220}" />
+        <char code="033D" convertTo="{\fontencoding{LECO}\selectfont\char221}" />
+        <char code="0361" convertTo="{\fontencoding{LECO}\selectfont\char225}" />
+        <char code="0386" convertTo="\'{A}" mathConvertTo="\acute{A}" />
+        <char code="0388" convertTo="\'{E}" mathConvertTo="\acute{E}" />
+        <char code="0389" convertTo="\'{H}" mathConvertTo="\grave{H}" />
+        <char code="038A" convertTo="\'{}{I}" mathConvertTo="\mathrm{'I}" />
+        <char code="038C" convertTo="\'{}O{}" mathConvertTo="\mathrm{'O}" />
+        <char code="038E" mathConvertTo="\mathrm{'Y}" />
+        <char code="038F" mathConvertTo="\mathrm{'\Omega}" />
+        <char code="0390" mathConvertTo="\acute{\ddot{\iota}}" />
+        <char code="0391" mathConvertTo="\Alpha{}" />
+        <char code="0392" mathConvertTo="\Beta{}" />
+        <char code="0393" mathConvertTo="\Gamma{}" />
+        <char code="0394" mathConvertTo="\Delta{}" />
+        <char code="0395" mathConvertTo="\Epsilon{}" />
+        <char code="0396" mathConvertTo="\Zeta{}" />
+        <char code="0397" mathConvertTo="\Eta{}" />
+        <char code="0398" mathConvertTo="\Theta{}" />
+        <char code="0399" mathConvertTo="\Iota{}" />
+        <char code="039A" mathConvertTo="\Kappa{}" />
+        <char code="039B" mathConvertTo="\Lambda{}" />
+        <char code="039C" mathConvertTo="M" />
+        <char code="039D" mathConvertTo="N" />
+        <char code="039E" mathConvertTo="\Xi{}" />
+        <char code="039F" mathConvertTo="O" />
+        <char code="03A0" mathConvertTo="\Pi{}" />
+        <char code="03A1" mathConvertTo="\Rho{}" />
+        <char code="03A3" mathConvertTo="\Sigma{}" />
+        <char code="03A4" mathConvertTo="\Tau{}" />
+        <char code="03A5" mathConvertTo="\Upsilon{}" />
+        <char code="03A6" mathConvertTo="\Phi{}" />
+        <char code="03A7" mathConvertTo="\Chi{}" />
+        <char code="03A8" mathConvertTo="\Psi{}" />
+        <char code="03A9" mathConvertTo="\Omega{}" />
+        <char code="03AA" mathConvertTo="\mathrm{\ddot{I}}" />
+        <char code="03AB" mathConvertTo="\mathrm{\ddot{Y}}" />
+        <char code="03AC" convertTo="\'{$\alpha$}" mathConvertTo="\acute{\alpha}" />
+        <char code="03AD" mathConvertTo="\acute{\epsilon}" />
+        <char code="03AE" mathConvertTo="\acute{\eta}" />
+        <char code="03AF" mathConvertTo="\acute{\iota}" />
+        <char code="03B0" mathConvertTo="\acute{\ddot{\upsilon}}" />
+        <char code="03B1" mathConvertTo="\alpha{}" />
+        <char code="03B2" mathConvertTo="\beta{}" />
+        <char code="03B3" mathConvertTo="\gamma{}" />
+        <char code="03B4" mathConvertTo="\delta{}" />
+        <char code="03B5" mathConvertTo="\epsilon{}" />
+        <char code="03B6" mathConvertTo="\zeta{}" />
+        <char code="03B7" mathConvertTo="\eta{}" />
+        <char code="03B8" convertTo="\texttheta{}" mathConvertTo="\theta{}" />
+        <char code="03B9" mathConvertTo="\iota{}" />
+        <char code="03BA" mathConvertTo="\kappa{}" />
+        <char code="03BB" mathConvertTo="\lambda{}" />
+        <char code="03BC" mathConvertTo="\mu{}" />
+        <char code="03BD" mathConvertTo="\nu{}" />
+        <char code="03BE" mathConvertTo="\xi{}" />
+        <char code="03BF" mathConvertTo="o" />
+        <char code="03C0" mathConvertTo="\pi{}" />
+        <char code="03C1" mathConvertTo="\rho{}" />
+        <char code="03C2" mathConvertTo="\varsigma{}" />
+        <char code="03C3" mathConvertTo="\sigma{}" />
+        <char code="03C4" mathConvertTo="\tau{}" />
+        <char code="03C5" mathConvertTo="\upsilon{}" />
+        <char code="03C6" mathConvertTo="\varphi{}" />
+        <char code="03C7" mathConvertTo="\chi{}" />
+        <char code="03C8" mathConvertTo="\psi{}" />
+        <char code="03C9" mathConvertTo="\omega{}" />
+        <char code="03CA" mathConvertTo="\ddot{\iota}" />
+        <char code="03CB" mathConvertTo="\ddot{\upsilon}" />
+        <char code="03CC" convertTo="\'{o}" mathConvertTo="\acute{o}" />
+        <char code="03CD" mathConvertTo="\acute{\upsilon}" />
+        <char code="03CE" mathConvertTo="\acute{\omega}" />
+        <char code="03D0" convertTo="\Pisymbol{ppi022}{87}" />
+        <char code="03D1" convertTo="\textvartheta{}" mathConvertTo="\vartheta{}" />
+        <char code="03D2" mathConvertTo="\Upsilon{}" />
+        <char code="03D5" mathConvertTo="\phi{}" />
+        <char code="03D6" mathConvertTo="\varpi{}" />
+        <char code="03DA" mathConvertTo="\Stigma{}" />
+        <char code="03DC" mathConvertTo="\Digamma{}" />
+        <char code="03DD" mathConvertTo="\digamma{}" />
+        <char code="03DE" mathConvertTo="\Koppa{}" />
+        <char code="03E0" mathConvertTo="\Sampi{}" />
+        <char code="03F0" mathConvertTo="\varkappa{}" />
+        <char code="03F1" mathConvertTo="\varrho{}" />
+        <char code="03F4" convertTo="\textTheta{}" />
+        <char code="03F6" mathConvertTo="\backepsilon{}" />
+        <char code="0401" convertTo="\cyrchar\CYRYO{}" />
+        <char code="0402" convertTo="\cyrchar\CYRDJE{}" />
+        <char code="0403" convertTo="\cyrchar{\'\CYRG}" />
+        <char code="0404" convertTo="\cyrchar\CYRIE{}" />
+        <char code="0405" convertTo="\cyrchar\CYRDZE{}" />
+        <char code="0406" convertTo="\cyrchar\CYRII{}" />
+        <char code="0407" convertTo="\cyrchar\CYRYI{}" />
+        <char code="0408" convertTo="\cyrchar\CYRJE{}" />
+        <char code="0409" convertTo="\cyrchar\CYRLJE{}" />
+        <char code="040A" convertTo="\cyrchar\CYRNJE{}" />
+        <char code="040B" convertTo="\cyrchar\CYRTSHE{}" />
+        <char code="040C" convertTo="\cyrchar{\'\CYRK}" />
+        <char code="040E" convertTo="\cyrchar\CYRUSHRT{}" />
+        <char code="040F" convertTo="\cyrchar\CYRDZHE{}" />
+        <char code="0410" convertTo="\cyrchar\CYRA{}" />
+        <char code="0411" convertTo="\cyrchar\CYRB{}" />
+        <char code="0412" convertTo="\cyrchar\CYRV{}" />
+        <char code="0413" convertTo="\cyrchar\CYRG{}" />
+        <char code="0414" convertTo="\cyrchar\CYRD{}" />
+        <char code="0415" convertTo="\cyrchar\CYRE{}" />
+        <char code="0416" convertTo="\cyrchar\CYRZH{}" />
+        <char code="0417" convertTo="\cyrchar\CYRZ{}" />
+        <char code="0418" convertTo="\cyrchar\CYRI{}" />
+        <char code="0419" convertTo="\cyrchar\CYRISHRT{}" />
+        <char code="041A" convertTo="\cyrchar\CYRK{}" />
+        <char code="041B" convertTo="\cyrchar\CYRL{}" />
+        <char code="041C" convertTo="\cyrchar\CYRM{}" />
+        <char code="041D" convertTo="\cyrchar\CYRN{}" />
+        <char code="041E" convertTo="\cyrchar\CYRO{}" />
+        <char code="041F" convertTo="\cyrchar\CYRP{}" />
+        <char code="0420" convertTo="\cyrchar\CYRR{}" />
+        <char code="0421" convertTo="\cyrchar\CYRS{}" />
+        <char code="0422" convertTo="\cyrchar\CYRT{}" />
+        <char code="0423" convertTo="\cyrchar\CYRU{}" />
+        <char code="0424" convertTo="\cyrchar\CYRF{}" />
+        <char code="0425" convertTo="\cyrchar\CYRH{}" />
+        <char code="0426" convertTo="\cyrchar\CYRC{}" />
+        <char code="0427" convertTo="\cyrchar\CYRCH{}" />
+        <char code="0428" convertTo="\cyrchar\CYRSH{}" />
+        <char code="0429" convertTo="\cyrchar\CYRSHCH{}" />
+        <char code="042A" convertTo="\cyrchar\CYRHRDSN{}" />
+        <char code="042B" convertTo="\cyrchar\CYRERY{}" />
+        <char code="042C" convertTo="\cyrchar\CYRSFTSN{}" />
+        <char code="042D" convertTo="\cyrchar\CYREREV{}" />
+        <char code="042E" convertTo="\cyrchar\CYRYU{}" />
+        <char code="042F" convertTo="\cyrchar\CYRYA{}" />
+        <char code="0430" convertTo="\cyrchar\cyra{}" />
+        <char code="0431" convertTo="\cyrchar\cyrb{}" />
+        <char code="0432" convertTo="\cyrchar\cyrv{}" />
+        <char code="0433" convertTo="\cyrchar\cyrg{}" />
+        <char code="0434" convertTo="\cyrchar\cyrd{}" />
+        <char code="0435" convertTo="\cyrchar\cyre{}" />
+        <char code="0436" convertTo="\cyrchar\cyrzh{}" />
+        <char code="0437" convertTo="\cyrchar\cyrz{}" />
+        <char code="0438" convertTo="\cyrchar\cyri{}" />
+        <char code="0439" convertTo="\cyrchar\cyrishrt{}" />
+        <char code="043A" convertTo="\cyrchar\cyrk{}" />
+        <char code="043B" convertTo="\cyrchar\cyrl{}" />
+        <char code="043C" convertTo="\cyrchar\cyrm{}" />
+        <char code="043D" convertTo="\cyrchar\cyrn{}" />
+        <char code="043E" convertTo="\cyrchar\cyro{}" />
+        <char code="043F" convertTo="\cyrchar\cyrp{}" />
+        <char code="0440" convertTo="\cyrchar\cyrr{}" />
+        <char code="0441" convertTo="\cyrchar\cyrs{}" />
+        <char code="0442" convertTo="\cyrchar\cyrt{}" />
+        <char code="0443" convertTo="\cyrchar\cyru{}" />
+        <char code="0444" convertTo="\cyrchar\cyrf{}" />
+        <char code="0445" convertTo="\cyrchar\cyrh{}" />
+        <char code="0446" convertTo="\cyrchar\cyrc{}" />
+        <char code="0447" convertTo="\cyrchar\cyrch{}" />
+        <char code="0448" convertTo="\cyrchar\cyrsh{}" />
+        <char code="0449" convertTo="\cyrchar\cyrshch{}" />
+        <char code="044A" convertTo="\cyrchar\cyrhrdsn{}" />
+        <char code="044B" convertTo="\cyrchar\cyrery{}" />
+        <char code="044C" convertTo="\cyrchar\cyrsftsn{}" />
+        <char code="044D" convertTo="\cyrchar\cyrerev{}" />
+        <char code="044E" convertTo="\cyrchar\cyryu{}" />
+        <char code="044F" convertTo="\cyrchar\cyrya{}" />
+        <char code="0451" convertTo="\cyrchar\cyryo{}" />
+        <char code="0452" convertTo="\cyrchar\cyrdje{}" />
+        <char code="0453" convertTo="\cyrchar{\'\cyrg}" />
+        <char code="0454" convertTo="\cyrchar\cyrie{}" />
+        <char code="0455" convertTo="\cyrchar\cyrdze{}" />
+        <char code="0456" convertTo="\cyrchar\cyrii{}" />
+        <char code="0457" convertTo="\cyrchar\cyryi{}" />
+        <char code="0458" convertTo="\cyrchar\cyrje{}" />
+        <char code="0459" convertTo="\cyrchar\cyrlje{}" />
+        <char code="045A" convertTo="\cyrchar\cyrnje{}" />
+        <char code="045B" convertTo="\cyrchar\cyrtshe{}" />
+        <char code="045C" convertTo="\cyrchar{\'\cyrk}" />
+        <char code="045E" convertTo="\cyrchar\cyrushrt{}" />
+        <char code="045F" convertTo="\cyrchar\cyrdzhe{}" />
+        <char code="0460" convertTo="\cyrchar\CYROMEGA{}" />
+        <char code="0461" convertTo="\cyrchar\cyromega{}" />
+        <char code="0462" convertTo="\cyrchar\CYRYAT{}" />
+        <char code="0464" convertTo="\cyrchar\CYRIOTE{}" />
+        <char code="0465" convertTo="\cyrchar\cyriote{}" />
+        <char code="0466" convertTo="\cyrchar\CYRLYUS{}" />
+        <char code="0467" convertTo="\cyrchar\cyrlyus{}" />
+        <char code="0468" convertTo="\cyrchar\CYRIOTLYUS{}" />
+        <char code="0469" convertTo="\cyrchar\cyriotlyus{}" />
+        <char code="046A" convertTo="\cyrchar\CYRBYUS{}" />
+        <char code="046C" convertTo="\cyrchar\CYRIOTBYUS{}" />
+        <char code="046D" convertTo="\cyrchar\cyriotbyus{}" />
+        <char code="046E" convertTo="\cyrchar\CYRKSI{}" />
+        <char code="046F" convertTo="\cyrchar\cyrksi{}" />
+        <char code="0470" convertTo="\cyrchar\CYRPSI{}" />
+        <char code="0471" convertTo="\cyrchar\cyrpsi{}" />
+        <char code="0472" convertTo="\cyrchar\CYRFITA{}" />
+        <char code="0474" convertTo="\cyrchar\CYRIZH{}" />
+        <char code="0478" convertTo="\cyrchar\CYRUK{}" />
+        <char code="0479" convertTo="\cyrchar\cyruk{}" />
+        <char code="047A" convertTo="\cyrchar\CYROMEGARND{}" />
+        <char code="047B" convertTo="\cyrchar\cyromegarnd{}" />
+        <char code="047C" convertTo="\cyrchar\CYROMEGATITLO{}" />
+        <char code="047D" convertTo="\cyrchar\cyromegatitlo{}" />
+        <char code="047E" convertTo="\cyrchar\CYROT{}" />
+        <char code="047F" convertTo="\cyrchar\cyrot{}" />
+        <char code="0480" convertTo="\cyrchar\CYRKOPPA{}" />
+        <char code="0481" convertTo="\cyrchar\cyrkoppa{}" />
+        <char code="0482" convertTo="\cyrchar\cyrthousands{}" />
+        <char code="0488" convertTo="\cyrchar\cyrhundredthousands{}" />
+        <char code="0489" convertTo="\cyrchar\cyrmillions{}" />
+        <char code="048C" convertTo="\cyrchar\CYRSEMISFTSN{}" />
+        <char code="048D" convertTo="\cyrchar\cyrsemisftsn{}" />
+        <char code="048E" convertTo="\cyrchar\CYRRTICK{}" />
+        <char code="048F" convertTo="\cyrchar\cyrrtick{}" />
+        <char code="0490" convertTo="\cyrchar\CYRGUP{}" />
+        <char code="0491" convertTo="\cyrchar\cyrgup{}" />
+        <char code="0492" convertTo="\cyrchar\CYRGHCRS{}" />
+        <char code="0493" convertTo="\cyrchar\cyrghcrs{}" />
+        <char code="0494" convertTo="\cyrchar\CYRGHK{}" />
+        <char code="0495" convertTo="\cyrchar\cyrghk{}" />
+        <char code="0496" convertTo="\cyrchar\CYRZHDSC{}" />
+        <char code="0497" convertTo="\cyrchar\cyrzhdsc{}" />
+        <char code="0498" convertTo="\cyrchar\CYRZDSC{}" />
+        <char code="0499" convertTo="\cyrchar\cyrzdsc{}" />
+        <char code="049A" convertTo="\cyrchar\CYRKDSC{}" />
+        <char code="049B" convertTo="\cyrchar\cyrkdsc{}" />
+        <char code="049C" convertTo="\cyrchar\CYRKVCRS{}" />
+        <char code="049D" convertTo="\cyrchar\cyrkvcrs{}" />
+        <char code="049E" convertTo="\cyrchar\CYRKHCRS{}" />
+        <char code="049F" convertTo="\cyrchar\cyrkhcrs{}" />
+        <char code="04A0" convertTo="\cyrchar\CYRKBEAK{}" />
+        <char code="04A1" convertTo="\cyrchar\cyrkbeak{}" />
+        <char code="04A2" convertTo="\cyrchar\CYRNDSC{}" />
+        <char code="04A3" convertTo="\cyrchar\cyrndsc{}" />
+        <char code="04A4" convertTo="\cyrchar\CYRNG{}" />
+        <char code="04A5" convertTo="\cyrchar\cyrng{}" />
+        <char code="04A6" convertTo="\cyrchar\CYRPHK{}" />
+        <char code="04A7" convertTo="\cyrchar\cyrphk{}" />
+        <char code="04A8" convertTo="\cyrchar\CYRABHHA{}" />
+        <char code="04A9" convertTo="\cyrchar\cyrabhha{}" />
+        <char code="04AA" convertTo="\cyrchar\CYRSDSC{}" />
+        <char code="04AB" convertTo="\cyrchar\cyrsdsc{}" />
+        <char code="04AC" convertTo="\cyrchar\CYRTDSC{}" />
+        <char code="04AD" convertTo="\cyrchar\cyrtdsc{}" />
+        <char code="04AE" convertTo="\cyrchar\CYRY{}" />
+        <char code="04AF" convertTo="\cyrchar\cyry{}" />
+        <char code="04B0" convertTo="\cyrchar\CYRYHCRS{}" />
+        <char code="04B1" convertTo="\cyrchar\cyryhcrs{}" />
+        <char code="04B2" convertTo="\cyrchar\CYRHDSC{}" />
+        <char code="04B3" convertTo="\cyrchar\cyrhdsc{}" />
+        <char code="04B4" convertTo="\cyrchar\CYRTETSE{}" />
+        <char code="04B5" convertTo="\cyrchar\cyrtetse{}" />
+        <char code="04B6" convertTo="\cyrchar\CYRCHRDSC{}" />
+        <char code="04B7" convertTo="\cyrchar\cyrchrdsc{}" />
+        <char code="04B8" convertTo="\cyrchar\CYRCHVCRS{}" />
+        <char code="04B9" convertTo="\cyrchar\cyrchvcrs{}" />
+        <char code="04BA" convertTo="\cyrchar\CYRSHHA{}" />
+        <char code="04BB" convertTo="\cyrchar\cyrshha{}" />
+        <char code="04BC" convertTo="\cyrchar\CYRABHCH{}" />
+        <char code="04BD" convertTo="\cyrchar\cyrabhch{}" />
+        <char code="04BE" convertTo="\cyrchar\CYRABHCHDSC{}" />
+        <char code="04BF" convertTo="\cyrchar\cyrabhchdsc{}" />
+        <char code="04C0" convertTo="\cyrchar\CYRpalochka{}" />
+        <char code="04C3" convertTo="\cyrchar\CYRKHK{}" />
+        <char code="04C4" convertTo="\cyrchar\cyrkhk{}" />
+        <char code="04C7" convertTo="\cyrchar\CYRNHK{}" />
+        <char code="04C8" convertTo="\cyrchar\cyrnhk{}" />
+        <char code="04CB" convertTo="\cyrchar\CYRCHLDSC{}" />
+        <char code="04CC" convertTo="\cyrchar\cyrchldsc{}" />
+        <char code="04D4" convertTo="\cyrchar\CYRAE{}" />
+        <char code="04D5" convertTo="\cyrchar\cyrae{}" />
+        <char code="04D8" convertTo="\cyrchar\CYRSCHWA{}" />
+        <char code="04D9" convertTo="\cyrchar\cyrschwa{}" />
+        <char code="04E0" convertTo="\cyrchar\CYRABHDZE{}" />
+        <char code="04E1" convertTo="\cyrchar\cyrabhdze{}" />
+        <char code="04E8" convertTo="\cyrchar\CYROTLD{}" />
+        <char code="04E9" convertTo="\cyrchar\cyrotld{}" />
+        <char code="2002" convertTo="\hspace{0.6em}" />
+        <char code="2003" convertTo="\hspace{1em}" />
+        <char code="2004" convertTo="\hspace{0.33em}" />
+        <char code="2005" convertTo="\hspace{0.25em}" />
+        <char code="2006" convertTo="\hspace{0.166em}" />
+        <char code="2007" convertTo="\hphantom{0}" />
+        <char code="2008" convertTo="\hphantom{,}" />
+        <char code="2009" convertTo="\hspace{0.167em}" />
+        <char code="200A" mathConvertTo="\mkern1mu{}" />
+        <char code="2010" convertTo="-" />
+        <char code="2013" convertTo="\textendash{}" />
+        <char code="2014" convertTo="\textemdash{}" mathConvertTo="---" />
+        <char code="2015" convertTo="\rule{1em}{1pt}" />
+        <char code="2016" mathConvertTo="\Vert{}" />
+        <char code="2018" convertTo="`" />
+        <char code="2019" convertTo="'" />
+        <char code="201A" convertTo="," />
+        <char code="201B" mathConvertTo="\Elzreapos{}" />
+        <char code="201C" convertTo="\textquotedblleft{}" />
+        <char code="201D" convertTo="\textquotedblright{}" />
+        <char code="201E" convertTo=",," />
+        <char code="2020" convertTo="\textdagger{}" mathConvertTo="\dag{}" />
+        <char code="2021" convertTo="\textdaggerdbl{}" mathConvertTo="\ddag{}" />
+        <char code="2022" convertTo="\textbullet{}" mathConvertTo="\bullet{}" />
+        <char code="2024" convertTo="." />
+        <char code="2025" convertTo=".." />
+        <char code="2026" convertTo="\ldots{}" />
+        <char code="2030" convertTo="\textperthousand{}" />
+        <char code="2031" convertTo="\textpertenthousand{}" />
+        <char code="2032" mathConvertTo="{'}" />
+        <char code="2033" mathConvertTo="{''}" />
+        <char code="2034" mathConvertTo="{'''}" />
+        <char code="2035" mathConvertTo="\backprime{}" />
+        <char code="2039" convertTo="\guilsinglleft{}" />
+        <char code="203A" convertTo="\guilsinglright{}" />
+        <char code="2057" mathConvertTo="''''" />
+        <char code="205F" convertTo="\mkern4mu{}" />
+        <char code="2060" convertTo="\nolinebreak{}" />
+        <char code="20A7" convertTo="\ensuremath{\Elzpes}" mathConvertTo="\Elzpes{}" />
+        <char code="20AC" convertTo="\mbox{\texteuro}{}" />
+        <char code="20DB" mathConvertTo="\dddot{}" />
+        <char code="20DC" mathConvertTo="\ddddot{}" />
+        <char code="2102" mathConvertTo="\mathbb{C}" />
+        <char code="210A" convertTo="\mathscr{g}" />
+        <char code="210B" mathConvertTo="\mathscr{H}" />
+        <char code="210C" mathConvertTo="\mathfrak{H}" />
+        <char code="210D" mathConvertTo="\mathbb{H}" />
+        <char code="210F" mathConvertTo="\hslash{}" />
+        <char code="2110" mathConvertTo="\mathscr{I}" />
+        <char code="2111" mathConvertTo="\mathfrak{I}" />
+        <char code="2112" mathConvertTo="\mathscr{L}" />
+        <char code="2113" mathConvertTo="\mathscr{l}" />
+        <char code="2115" mathConvertTo="\mathbb{N}" />
+        <char code="2116" convertTo="\cyrchar\textnumero{}" />
+        <char code="2118" mathConvertTo="\wp{}" />
+        <char code="2119" mathConvertTo="\mathbb{P}" />
+        <char code="211A" mathConvertTo="\mathbb{Q}" />
+        <char code="211B" mathConvertTo="\mathscr{R}" />
+        <char code="211C" mathConvertTo="\mathfrak{R}" />
+        <char code="211D" mathConvertTo="\mathbb{R}" />
+        <char code="211E" mathConvertTo="\Elzxrat{}" />
+        <char code="2122" convertTo="\texttrademark{}" />
+        <char code="2124" mathConvertTo="\mathbb{Z}" />
+        <char code="2126" mathConvertTo="\Omega{}" />
+        <char code="2127" mathConvertTo="\mho{}" />
+        <char code="2128" mathConvertTo="\mathfrak{Z}" />
+        <char code="2129" mathConvertTo="\ElsevierGlyph{2129}" />
+        <char code="212B" convertTo="\AA{}" />
+        <char code="212C" mathConvertTo="\mathscr{B}" />
+        <char code="212D" mathConvertTo="\mathfrak{C}" />
+        <char code="212F" mathConvertTo="\mathscr{e}" />
+        <char code="2130" mathConvertTo="\mathscr{E}" />
+        <char code="2131" mathConvertTo="\mathscr{F}" />
+        <char code="2133" mathConvertTo="\mathscr{M}" />
+        <char code="2134" mathConvertTo="\mathscr{o}" />
+        <char code="2135" mathConvertTo="\aleph{}" />
+        <char code="2136" mathConvertTo="\beth{}" />
+        <char code="2137" mathConvertTo="\gimel{}" />
+        <char code="2138" mathConvertTo="\daleth{}" />
+        <char code="2153" mathConvertTo="\textfrac{1}{3}" />
+        <char code="2154" mathConvertTo="\textfrac{2}{3}" />
+        <char code="2155" mathConvertTo="\textfrac{1}{5}" />
+        <char code="2156" mathConvertTo="\textfrac{2}{5}" />
+        <char code="2157" mathConvertTo="\textfrac{3}{5}" />
+        <char code="2158" mathConvertTo="\textfrac{4}{5}" />
+        <char code="2159" mathConvertTo="\textfrac{1}{6}" />
+        <char code="215A" mathConvertTo="\textfrac{5}{6}" />
+        <char code="215B" mathConvertTo="\textfrac{1}{8}" />
+        <char code="215C" mathConvertTo="\textfrac{3}{8}" />
+        <char code="215D" mathConvertTo="\textfrac{5}{8}" />
+        <char code="215E" mathConvertTo="\textfrac{7}{8}" />
+        <char code="2190" mathConvertTo="\leftarrow{}" />
+        <char code="2191" mathConvertTo="\uparrow{}" />
+        <char code="2192" mathConvertTo="\rightarrow{}" />
+        <char code="2193" mathConvertTo="\downarrow{}" />
+        <char code="2194" mathConvertTo="\leftrightarrow{}" />
+        <char code="2195" mathConvertTo="\updownarrow{}" />
+        <char code="2196" mathConvertTo="\nwarrow{}" />
+        <char code="2197" mathConvertTo="\nearrow{}" />
+        <char code="2198" mathConvertTo="\searrow{}" />
+        <char code="2199" mathConvertTo="\swarrow{}" />
+        <char code="219A" mathConvertTo="\nleftarrow{}" />
+        <char code="219B" mathConvertTo="\nrightarrow{}" />
+        <char code="219C" mathConvertTo="\arrowwaveright{}" />
+        <char code="219D" mathConvertTo="\arrowwaveright{}" />
+        <char code="219E" mathConvertTo="\twoheadleftarrow{}" />
+        <char code="21A0" mathConvertTo="\twoheadrightarrow{}" />
+        <char code="21A2" mathConvertTo="\leftarrowtail{}" />
+        <char code="21A3" mathConvertTo="\rightarrowtail{}" />
+        <char code="21A6" mathConvertTo="\mapsto{}" />
+        <char code="21A9" mathConvertTo="\hookleftarrow{}" />
+        <char code="21AA" mathConvertTo="\hookrightarrow{}" />
+        <char code="21AB" mathConvertTo="\looparrowleft{}" />
+        <char code="21AC" mathConvertTo="\looparrowright{}" />
+        <char code="21AD" mathConvertTo="\leftrightsquigarrow{}" />
+        <char code="21AE" mathConvertTo="\nleftrightarrow{}" />
+        <char code="21B0" mathConvertTo="\Lsh{}" />
+        <char code="21B1" mathConvertTo="\Rsh{}" />
+        <char code="21B3" mathConvertTo="\ElsevierGlyph{21B3}" />
+        <char code="21B6" mathConvertTo="\curvearrowleft{}" />
+        <char code="21B7" mathConvertTo="\curvearrowright{}" />
+        <char code="21BA" mathConvertTo="\circlearrowleft{}" />
+        <char code="21BB" mathConvertTo="\circlearrowright{}" />
+        <char code="21BC" mathConvertTo="\leftharpoonup{}" />
+        <char code="21BD" mathConvertTo="\leftharpoondown{}" />
+        <char code="21BE" mathConvertTo="\upharpoonright{}" />
+        <char code="21BF" mathConvertTo="\upharpoonleft{}" />
+        <char code="21C0" mathConvertTo="\rightharpoonup{}" />
+        <char code="21C1" mathConvertTo="\rightharpoondown{}" />
+        <char code="21C2" mathConvertTo="\downharpoonright{}" />
+        <char code="21C3" mathConvertTo="\downharpoonleft{}" />
+        <char code="21C4" mathConvertTo="\rightleftarrows{}" />
+        <char code="21C5" mathConvertTo="\dblarrowupdown{}" />
+        <char code="21C6" mathConvertTo="\leftrightarrows{}" />
+        <char code="21C7" mathConvertTo="\leftleftarrows{}" />
+        <char code="21C8" mathConvertTo="\upuparrows{}" />
+        <char code="21C9" mathConvertTo="\rightrightarrows{}" />
+        <char code="21CA" mathConvertTo="\downdownarrows{}" />
+        <char code="21CB" mathConvertTo="\leftrightharpoons{}" />
+        <char code="21CC" mathConvertTo="\rightleftharpoons{}" />
+        <char code="21CD" mathConvertTo="\nLeftarrow{}" />
+        <char code="21CE" mathConvertTo="\nLeftrightarrow{}" />
+        <char code="21CF" mathConvertTo="\nRightarrow{}" />
+        <char code="21D0" mathConvertTo="\Leftarrow{}" />
+        <char code="21D1" mathConvertTo="\Uparrow{}" />
+        <char code="21D2" mathConvertTo="\Rightarrow{}" />
+        <char code="21D3" mathConvertTo="\Downarrow{}" />
+        <char code="21D4" mathConvertTo="\Leftrightarrow{}" />
+        <char code="21D5" mathConvertTo="\Updownarrow{}" />
+        <char code="21DA" mathConvertTo="\Lleftarrow{}" />
+        <char code="21DB" mathConvertTo="\Rrightarrow{}" />
+        <char code="21DD" mathConvertTo="\rightsquigarrow{}" />
+        <char code="21F5" mathConvertTo="\DownArrowUpArrow{}" />
+        <char code="2200" mathConvertTo="\forall{}" />
+        <char code="2201" mathConvertTo="\complement{}" />
+        <char code="2202" mathConvertTo="\partial{}" />
+        <char code="2203" mathConvertTo="\exists{}" />
+        <char code="2204" mathConvertTo="\nexists{}" />
+        <char code="2205" mathConvertTo="\varnothing{}" />
+        <char code="2207" mathConvertTo="\nabla{}" />
+        <char code="2208" mathConvertTo="\in{}" />
+        <char code="2209" mathConvertTo="\not\in{}" />
+        <char code="220B" mathConvertTo="\ni{}" />
+        <char code="220C" mathConvertTo="\not\ni{}" />
+        <char code="220F" mathConvertTo="\prod{}" />
+        <char code="2210" mathConvertTo="\coprod{}" />
+        <char code="2211" mathConvertTo="\sum{}" />
+        <char code="2212" convertTo="-" />
+        <char code="2213" mathConvertTo="\mp{}" />
+        <char code="2214" mathConvertTo="\dotplus{}" />
+        <char code="2216" mathConvertTo="\setminus{}" />
+        <char code="2217" mathConvertTo="{_\ast}" />
+        <char code="2218" mathConvertTo="\circ{}" />
+        <char code="2219" mathConvertTo="\bullet{}" />
+        <char code="221A" mathConvertTo="\surd{}" />
+        <char code="221D" mathConvertTo="\propto{}" />
+        <char code="221E" mathConvertTo="\infty{}" />
+        <char code="221F" mathConvertTo="\rightangle{}" />
+        <char code="2220" mathConvertTo="\angle{}" />
+        <char code="2221" mathConvertTo="\measuredangle{}" />
+        <char code="2222" mathConvertTo="\sphericalangle{}" />
+        <char code="2223" mathConvertTo="\mid{}" />
+        <char code="2224" mathConvertTo="\nmid{}" />
+        <char code="2225" mathConvertTo="\parallel{}" />
+        <char code="2226" mathConvertTo="\nparallel{}" />
+        <char code="2227" mathConvertTo="\wedge{}" />
+        <char code="2228" mathConvertTo="\vee{}" />
+        <char code="2229" mathConvertTo="\cap{}" />
+        <char code="222A" mathConvertTo="\cup{}" />
+        <char code="222B" mathConvertTo="\int{}" />
+        <char code="222C" mathConvertTo="\int\!\int{}" />
+        <char code="222D" mathConvertTo="\int\!\int\!\int{}" />
+        <char code="222E" mathConvertTo="\oint{}" />
+        <char code="222F" mathConvertTo="\surfintegral{}" />
+        <char code="2230" mathConvertTo="\volintegral{}" />
+        <char code="2231" mathConvertTo="\clwintegral{}" />
+        <char code="2232" mathConvertTo="\ElsevierGlyph{2232}" />
+        <char code="2233" mathConvertTo="\ElsevierGlyph{2233}" />
+        <char code="2234" mathConvertTo="\therefore{}" />
+        <char code="2235" mathConvertTo="\because{}" />
+        <char code="2237" mathConvertTo="\Colon{}" />
+        <char code="2238" mathConvertTo="\ElsevierGlyph{2238}" />
+        <char code="223A" mathConvertTo="\mathbin{{:}\!\!{-}\!\!{:}}" />
+        <char code="223B" mathConvertTo="\homothetic{}" />
+        <char code="223C" mathConvertTo="\sim{}" />
+        <char code="223D" mathConvertTo="\backsim{}" />
+        <char code="223E" mathConvertTo="\lazysinv{}" />
+        <char code="2240" mathConvertTo="\wr{}" />
+        <char code="2241" mathConvertTo="\not\sim{}" />
+        <char code="2242" mathConvertTo="\ElsevierGlyph{2242}" />
+        <char code="2243" mathConvertTo="\simeq{}" />
+        <char code="2244" mathConvertTo="\not\simeq{}" />
+        <char code="2245" mathConvertTo="\cong{}" />
+        <char code="2246" mathConvertTo="\approxnotequal{}" />
+        <char code="2247" mathConvertTo="\not\cong{}" />
+        <char code="2248" mathConvertTo="\approx{}" />
+        <char code="2249" mathConvertTo="\not\approx{}" />
+        <char code="224A" mathConvertTo="\approxeq{}" />
+        <char code="224B" mathConvertTo="\tildetrpl{}" />
+        <char code="224C" mathConvertTo="\allequal{}" />
+        <char code="224D" mathConvertTo="\asymp{}" />
+        <char code="224E" mathConvertTo="\Bumpeq{}" />
+        <char code="224F" mathConvertTo="\bumpeq{}" />
+        <char code="2250" mathConvertTo="\doteq{}" />
+        <char code="2251" mathConvertTo="\doteqdot{}" />
+        <char code="2252" mathConvertTo="\fallingdotseq{}" />
+        <char code="2253" mathConvertTo="\risingdotseq{}" />
+        <char code="2254" convertTo=":=" />
+        <char code="2255" mathConvertTo="=:" />
+        <char code="2256" mathConvertTo="\eqcirc{}" />
+        <char code="2257" mathConvertTo="\circeq{}" />
+        <char code="2259" mathConvertTo="\estimates{}" />
+        <char code="225A" mathConvertTo="\ElsevierGlyph{225A}" />
+        <char code="225B" mathConvertTo="\starequal{}" />
+        <char code="225C" mathConvertTo="\triangleq{}" />
+        <char code="225F" mathConvertTo="\ElsevierGlyph{225F}" />
+        <char code="2260" mathConvertTo="\not =" />
+        <char code="2261" mathConvertTo="\equiv{}" />
+        <char code="2262" mathConvertTo="\not\equiv{}" />
+        <char code="2264" mathConvertTo="\leq{}" />
+        <char code="2265" mathConvertTo="\geq{}" />
+        <char code="2266" mathConvertTo="\leqq{}" />
+        <char code="2267" mathConvertTo="\geqq{}" />
+        <char code="2268" mathConvertTo="\lneqq{}" />
+        <char code="2269" mathConvertTo="\gneqq{}" />
+        <char code="226A" mathConvertTo="\ll{}" />
+        <char code="226B" mathConvertTo="\gg{}" />
+        <char code="226C" mathConvertTo="\between{}" />
+        <char code="226D" mathConvertTo="\not\kern-0.3em\times{}" />
+        <char code="2270" mathConvertTo="\not\leq{}" />
+        <char code="2271" mathConvertTo="\not\geq{}" />
+        <char code="2272" mathConvertTo="\lessequivlnt{}" />
+        <char code="2273" mathConvertTo="\greaterequivlnt{}" />
+        <char code="2274" mathConvertTo="\ElsevierGlyph{2274}" />
+        <char code="2275" mathConvertTo="\ElsevierGlyph{2275}" />
+        <char code="2276" mathConvertTo="\lessgtr{}" />
+        <char code="2277" mathConvertTo="\gtrless{}" />
+        <char code="2278" mathConvertTo="\notlessgreater{}" />
+        <char code="2279" mathConvertTo="\notgreaterless{}" />
+        <char code="227A" mathConvertTo="\prec{}" />
+        <char code="227B" mathConvertTo="\succ{}" />
+        <char code="227C" mathConvertTo="\preccurlyeq{}" />
+        <char code="227D" mathConvertTo="\succcurlyeq{}" />
+        <char code="227E" mathConvertTo="\precapprox{}" />
+        <char code="227F" mathConvertTo="\succapprox{}" />
+        <char code="2280" mathConvertTo="\not\prec{}" />
+        <char code="2281" mathConvertTo="\not\succ{}" />
+        <char code="2282" mathConvertTo="\subset{}" />
+        <char code="2283" mathConvertTo="\supset{}" />
+        <char code="2284" mathConvertTo="\not\subset{}" />
+        <char code="2285" mathConvertTo="\not\supset{}" />
+        <char code="2286" mathConvertTo="\subseteq{}" />
+        <char code="2287" mathConvertTo="\supseteq{}" />
+        <char code="2288" mathConvertTo="\not\subseteq{}" />
+        <char code="2289" mathConvertTo="\not\supseteq{}" />
+        <char code="228A" mathConvertTo="\subsetneq{}" />
+        <char code="228B" mathConvertTo="\supsetneq{}" />
+        <char code="228E" mathConvertTo="\uplus{}" />
+        <char code="228F" mathConvertTo="\sqsubset{}" />
+        <char code="2290" mathConvertTo="\sqsupset{}" />
+        <char code="2291" mathConvertTo="\sqsubseteq{}" />
+        <char code="2292" mathConvertTo="\sqsupseteq{}" />
+        <char code="2293" mathConvertTo="\sqcap{}" />
+        <char code="2294" mathConvertTo="\sqcup{}" />
+        <char code="2295" mathConvertTo="\oplus{}" />
+        <char code="2296" mathConvertTo="\ominus{}" />
+        <char code="2297" mathConvertTo="\otimes{}" />
+        <char code="2298" mathConvertTo="\oslash{}" />
+        <char code="2299" mathConvertTo="\odot{}" />
+        <char code="229A" mathConvertTo="\circledcirc{}" />
+        <char code="229B" mathConvertTo="\circledast{}" />
+        <char code="229D" mathConvertTo="\circleddash{}" />
+        <char code="229E" mathConvertTo="\boxplus{}" />
+        <char code="229F" mathConvertTo="\boxminus{}" />
+        <char code="22A0" mathConvertTo="\boxtimes{}" />
+        <char code="22A1" mathConvertTo="\boxdot{}" />
+        <char code="22A2" mathConvertTo="\vdash{}" />
+        <char code="22A3" mathConvertTo="\dashv{}" />
+        <char code="22A4" mathConvertTo="\top{}" />
+        <char code="22A5" mathConvertTo="\perp{}" />
+        <char code="22A7" mathConvertTo="\truestate{}" />
+        <char code="22A8" mathConvertTo="\forcesextra{}" />
+        <char code="22A9" mathConvertTo="\Vdash{}" />
+        <char code="22AA" mathConvertTo="\Vvdash{}" />
+        <char code="22AB" mathConvertTo="\VDash{}" />
+        <char code="22AC" mathConvertTo="\nvdash{}" />
+        <char code="22AD" mathConvertTo="\nvDash{}" />
+        <char code="22AE" mathConvertTo="\nVdash{}" />
+        <char code="22AF" mathConvertTo="\nVDash{}" />
+        <char code="22B2" mathConvertTo="\vartriangleleft{}" />
+        <char code="22B3" mathConvertTo="\vartriangleright{}" />
+        <char code="22B4" mathConvertTo="\trianglelefteq{}" />
+        <char code="22B5" mathConvertTo="\trianglerighteq{}" />
+        <char code="22B6" mathConvertTo="\original{}" />
+        <char code="22B7" mathConvertTo="\image{}" />
+        <char code="22B8" mathConvertTo="\multimap{}" />
+        <char code="22B9" mathConvertTo="\hermitconjmatrix{}" />
+        <char code="22BA" mathConvertTo="\intercal{}" />
+        <char code="22BB" mathConvertTo="\veebar{}" />
+        <char code="22BE" mathConvertTo="\rightanglearc{}" />
+        <char code="22C0" mathConvertTo="\ElsevierGlyph{22C0}" />
+        <char code="22C1" mathConvertTo="\ElsevierGlyph{22C1}" />
+        <char code="22C2" mathConvertTo="\bigcap{}" />
+        <char code="22C3" mathConvertTo="\bigcup{}" />
+        <char code="22C4" mathConvertTo="\diamond{}" />
+        <char code="22C5" mathConvertTo="\cdot{}" />
+        <char code="22C6" mathConvertTo="\star{}" />
+        <char code="22C7" mathConvertTo="\divideontimes{}" />
+        <char code="22C8" mathConvertTo="\bowtie{}" />
+        <char code="22C9" mathConvertTo="\ltimes{}" />
+        <char code="22CA" mathConvertTo="\rtimes{}" />
+        <char code="22CB" mathConvertTo="\leftthreetimes{}" />
+        <char code="22CC" mathConvertTo="\rightthreetimes{}" />
+        <char code="22CD" mathConvertTo="\backsimeq{}" />
+        <char code="22CE" mathConvertTo="\curlyvee{}" />
+        <char code="22CF" mathConvertTo="\curlywedge{}" />
+        <char code="22D0" mathConvertTo="\Subset{}" />
+        <char code="22D1" mathConvertTo="\Supset{}" />
+        <char code="22D2" mathConvertTo="\Cap{}" />
+        <char code="22D3" mathConvertTo="\Cup{}" />
+        <char code="22D4" mathConvertTo="\pitchfork{}" />
+        <char code="22D6" mathConvertTo="\lessdot{}" />
+        <char code="22D7" mathConvertTo="\gtrdot{}" />
+        <char code="22D8" mathConvertTo="\verymuchless{}" />
+        <char code="22D9" mathConvertTo="\verymuchgreater{}" />
+        <char code="22DA" mathConvertTo="\lesseqgtr{}" />
+        <char code="22DB" mathConvertTo="\gtreqless{}" />
+        <char code="22DE" mathConvertTo="\curlyeqprec{}" />
+        <char code="22DF" mathConvertTo="\curlyeqsucc{}" />
+        <char code="22E2" mathConvertTo="\not\sqsubseteq{}" />
+        <char code="22E3" mathConvertTo="\not\sqsupseteq{}" />
+        <char code="22E5" mathConvertTo="\Elzsqspne{}" />
+        <char code="22E6" mathConvertTo="\lnsim{}" />
+        <char code="22E7" mathConvertTo="\gnsim{}" />
+        <char code="22E8" mathConvertTo="\precedesnotsimilar{}" />
+        <char code="22E9" mathConvertTo="\succnsim{}" />
+        <char code="22EA" mathConvertTo="\ntriangleleft{}" />
+        <char code="22EB" mathConvertTo="\ntriangleright{}" />
+        <char code="22EC" mathConvertTo="\ntrianglelefteq{}" />
+        <char code="22ED" mathConvertTo="\ntrianglerighteq{}" />
+        <char code="22EE" mathConvertTo="\vdots{}" />
+        <char code="22EF" mathConvertTo="\cdots{}" />
+        <char code="22F0" mathConvertTo="\upslopeellipsis{}" />
+        <char code="22F1" mathConvertTo="\downslopeellipsis{}" />
+        <char code="2305" convertTo="\barwedge{}" />
+        <char code="2306" mathConvertTo="\perspcorrespond{}" />
+        <char code="2308" mathConvertTo="\lceil{}" />
+        <char code="2309" mathConvertTo="\rceil{}" />
+        <char code="230A" mathConvertTo="\lfloor{}" />
+        <char code="230B" mathConvertTo="\rfloor{}" />
+        <char code="2315" mathConvertTo="\recorder{}" />
+        <char code="2316" mathConvertTo="\mathchar&quot;2208" />
+        <char code="231C" mathConvertTo="\ulcorner{}" />
+        <char code="231D" mathConvertTo="\urcorner{}" />
+        <char code="231E" mathConvertTo="\llcorner{}" />
+        <char code="231F" mathConvertTo="\lrcorner{}" />
+        <char code="2322" mathConvertTo="\frown{}" />
+        <char code="2323" mathConvertTo="\smile{}" />
+        <char code="2329" mathConvertTo="\langle{}" />
+        <char code="232A" mathConvertTo="\rangle{}" />
+        <char code="233D" mathConvertTo="\ElsevierGlyph{E838}" />
+        <char code="23A3" mathConvertTo="\Elzdlcorn{}" />
+        <char code="23B0" mathConvertTo="\lmoustache{}" />
+        <char code="23B1" mathConvertTo="\rmoustache{}" />
+        <char code="2423" convertTo="\textvisiblespace{}" />
+        <char code="2460" convertTo="\ding{172}" />
+        <char code="2461" convertTo="\ding{173}" />
+        <char code="2462" convertTo="\ding{174}" />
+        <char code="2463" convertTo="\ding{175}" />
+        <char code="2464" convertTo="\ding{176}" />
+        <char code="2465" convertTo="\ding{177}" />
+        <char code="2466" convertTo="\ding{178}" />
+        <char code="2467" convertTo="\ding{179}" />
+        <char code="2468" convertTo="\ding{180}" />
+        <char code="2469" convertTo="\ding{181}" />
+        <char code="24C8" mathConvertTo="\circledS{}" />
+        <char code="2506" mathConvertTo="\Elzdshfnc{}" />
+        <char code="2519" mathConvertTo="\Elzsqfnw{}" />
+        <char code="251C" mathConvertTo="\vdash{}" />
+        <char code="2571" mathConvertTo="\diagup{}" />
+        <char code="25A0" convertTo="\ding{110}" />
+        <char code="25A1" mathConvertTo="\square{}" />
+        <char code="25AA" mathConvertTo="\blacksquare{}" />
+        <char code="25AD" mathConvertTo="\fbox{~~}" />
+        <char code="25AF" mathConvertTo="\Elzvrecto{}" />
+        <char code="25B1" mathConvertTo="\ElsevierGlyph{E381}" />
+        <char code="25B2" convertTo="\ding{115}" />
+        <char code="25B3" mathConvertTo="\bigtriangleup{}" />
+        <char code="25B4" mathConvertTo="\blacktriangle{}" />
+        <char code="25B5" mathConvertTo="\vartriangle{}" />
+        <char code="25B8" mathConvertTo="\blacktriangleright{}" />
+        <char code="25B9" mathConvertTo="\triangleright{}" />
+        <char code="25BC" convertTo="\ding{116}" />
+        <char code="25BD" mathConvertTo="\bigtriangledown{}" />
+        <char code="25BE" mathConvertTo="\blacktriangledown{}" />
+        <char code="25BF" mathConvertTo="\triangledown{}" />
+        <char code="25C2" mathConvertTo="\blacktriangleleft{}" />
+        <char code="25C3" mathConvertTo="\triangleleft{}" />
+        <char code="25C6" convertTo="\ding{117}" />
+        <char code="25CA" mathConvertTo="\lozenge{}" />
+        <char code="25CB" mathConvertTo="\bigcirc{}" />
+        <char code="25CF" convertTo="\ding{108}" />
+        <char code="25D0" mathConvertTo="\Elzcirfl{}" />
+        <char code="25D1" mathConvertTo="\Elzcirfr{}" />
+        <char code="25D2" mathConvertTo="\Elzcirfb{}" />
+        <char code="25D7" convertTo="\ding{119}" />
+        <char code="25D8" mathConvertTo="\Elzrvbull{}" />
+        <char code="25E7" mathConvertTo="\Elzsqfl{}" />
+        <char code="25E8" mathConvertTo="\Elzsqfr{}" />
+        <char code="25EA" mathConvertTo="\Elzsqfse{}" />
+        <char code="25EF" mathConvertTo="\bigcirc{}" />
+        <char code="2605" convertTo="\ding{72}" />
+        <char code="2606" convertTo="\ding{73}" />
+        <char code="260E" convertTo="\ding{37}" />
+        <char code="261B" convertTo="\ding{42}" />
+        <char code="261E" convertTo="\ding{43}" />
+        <char code="263E" convertTo="\rightmoon{}" />
+        <char code="263F" convertTo="\mercury{}" />
+        <char code="2640" convertTo="\venus{}" />
+        <char code="2642" convertTo="\male{}" />
+        <char code="2643" convertTo="\jupiter{}" />
+        <char code="2644" convertTo="\saturn{}" />
+        <char code="2645" convertTo="\uranus{}" />
+        <char code="2646" convertTo="\neptune{}" />
+        <char code="2647" convertTo="\pluto{}" />
+        <char code="2648" convertTo="\aries{}" />
+        <char code="2649" convertTo="\taurus{}" />
+        <char code="264A" convertTo="\gemini{}" />
+        <char code="264B" convertTo="\cancer{}" />
+        <char code="264C" convertTo="\leo{}" />
+        <char code="264D" convertTo="\virgo{}" />
+        <char code="264E" convertTo="\libra{}" />
+        <char code="264F" convertTo="\scorpio{}" />
+        <char code="2650" convertTo="\sagittarius{}" />
+        <char code="2651" convertTo="\capricornus{}" />
+        <char code="2652" convertTo="\aquarius{}" />
+        <char code="2653" convertTo="\pisces{}" />
+        <char code="2660" convertTo="\ding{171}" />
+        <char code="2662" mathConvertTo="\diamond{}" />
+        <char code="2663" convertTo="\ding{168}" />
+        <char code="2665" convertTo="\ding{170}" />
+        <char code="2666" convertTo="\ding{169}" />
+        <char code="2669" convertTo="\quarternote{}" />
+        <char code="266A" convertTo="\eighthnote{}" />
+        <char code="266D" mathConvertTo="\flat{}" />
+        <char code="266E" mathConvertTo="\natural{}" />
+        <char code="266F" mathConvertTo="\sharp{}" />
+        <char code="2701" convertTo="\ding{33}" />
+        <char code="2702" convertTo="\ding{34}" />
+        <char code="2703" convertTo="\ding{35}" />
+        <char code="2704" convertTo="\ding{36}" />
+        <char code="2706" convertTo="\ding{38}" />
+        <char code="2707" convertTo="\ding{39}" />
+        <char code="2708" convertTo="\ding{40}" />
+        <char code="2709" convertTo="\ding{41}" />
+        <char code="270C" convertTo="\ding{44}" />
+        <char code="270D" convertTo="\ding{45}" />
+        <char code="270E" convertTo="\ding{46}" />
+        <char code="270F" convertTo="\ding{47}" />
+        <char code="2710" convertTo="\ding{48}" />
+        <char code="2711" convertTo="\ding{49}" />
+        <char code="2712" convertTo="\ding{50}" />
+        <char code="2713" convertTo="\ding{51}" />
+        <char code="2714" convertTo="\ding{52}" />
+        <char code="2715" convertTo="\ding{53}" />
+        <char code="2716" convertTo="\ding{54}" />
+        <char code="2717" convertTo="\ding{55}" />
+        <char code="2718" convertTo="\ding{56}" />
+        <char code="2719" convertTo="\ding{57}" />
+        <char code="271A" convertTo="\ding{58}" />
+        <char code="271B" convertTo="\ding{59}" />
+        <char code="271C" convertTo="\ding{60}" />
+        <char code="271D" convertTo="\ding{61}" />
+        <char code="271E" convertTo="\ding{62}" />
+        <char code="271F" convertTo="\ding{63}" />
+        <char code="2720" convertTo="\ding{64}" />
+        <char code="2721" convertTo="\ding{65}" />
+        <char code="2722" convertTo="\ding{66}" />
+        <char code="2723" convertTo="\ding{67}" />
+        <char code="2724" convertTo="\ding{68}" />
+        <char code="2725" convertTo="\ding{69}" />
+        <char code="2726" convertTo="\ding{70}" />
+        <char code="2727" convertTo="\ding{71}" />
+        <char code="2729" convertTo="\ding{73}" />
+        <char code="272A" convertTo="\ding{74}" />
+        <char code="272B" convertTo="\ding{75}" />
+        <char code="272C" convertTo="\ding{76}" />
+        <char code="272D" convertTo="\ding{77}" />
+        <char code="272E" convertTo="\ding{78}" />
+        <char code="272F" convertTo="\ding{79}" />
+        <char code="2730" convertTo="\ding{80}" />
+        <char code="2731" convertTo="\ding{81}" />
+        <char code="2732" convertTo="\ding{82}" />
+        <char code="2733" convertTo="\ding{83}" />
+        <char code="2734" convertTo="\ding{84}" />
+        <char code="2735" convertTo="\ding{85}" />
+        <char code="2736" convertTo="\ding{86}" />
+        <char code="2737" convertTo="\ding{87}" />
+        <char code="2738" convertTo="\ding{88}" />
+        <char code="2739" convertTo="\ding{89}" />
+        <char code="273A" convertTo="\ding{90}" />
+        <char code="273B" convertTo="\ding{91}" />
+        <char code="273C" convertTo="\ding{92}" />
+        <char code="273D" convertTo="\ding{93}" />
+        <char code="273E" convertTo="\ding{94}" />
+        <char code="273F" convertTo="\ding{95}" />
+        <char code="2740" convertTo="\ding{96}" />
+        <char code="2741" convertTo="\ding{97}" />
+        <char code="2742" convertTo="\ding{98}" />
+        <char code="2743" convertTo="\ding{99}" />
+        <char code="2744" convertTo="\ding{100}" />
+        <char code="2745" convertTo="\ding{101}" />
+        <char code="2746" convertTo="\ding{102}" />
+        <char code="2747" convertTo="\ding{103}" />
+        <char code="2748" convertTo="\ding{104}" />
+        <char code="2749" convertTo="\ding{105}" />
+        <char code="274A" convertTo="\ding{106}" />
+        <char code="274B" convertTo="\ding{107}" />
+        <char code="274D" convertTo="\ding{109}" />
+        <char code="274F" convertTo="\ding{111}" />
+        <char code="2750" convertTo="\ding{112}" />
+        <char code="2751" convertTo="\ding{113}" />
+        <char code="2752" convertTo="\ding{114}" />
+        <char code="2756" convertTo="\ding{118}" />
+        <char code="2758" convertTo="\ding{120}" />
+        <char code="2759" convertTo="\ding{121}" />
+        <char code="275A" convertTo="\ding{122}" />
+        <char code="275B" convertTo="\ding{123}" />
+        <char code="275C" convertTo="\ding{124}" />
+        <char code="275D" convertTo="\ding{125}" />
+        <char code="275E" convertTo="\ding{126}" />
+        <char code="2761" convertTo="\ding{161}" />
+        <char code="2762" convertTo="\ding{162}" />
+        <char code="2763" convertTo="\ding{163}" />
+        <char code="2764" convertTo="\ding{164}" />
+        <char code="2765" convertTo="\ding{165}" />
+        <char code="2766" convertTo="\ding{166}" />
+        <char code="2767" convertTo="\ding{167}" />
+        <char code="2776" convertTo="\ding{182}" />
+        <char code="2777" convertTo="\ding{183}" />
+        <char code="2778" convertTo="\ding{184}" />
+        <char code="2779" convertTo="\ding{185}" />
+        <char code="277A" convertTo="\ding{186}" />
+        <char code="277B" convertTo="\ding{187}" />
+        <char code="277C" convertTo="\ding{188}" />
+        <char code="277D" convertTo="\ding{189}" />
+        <char code="277E" convertTo="\ding{190}" />
+        <char code="277F" convertTo="\ding{191}" />
+        <char code="2780" convertTo="\ding{192}" />
+        <char code="2781" convertTo="\ding{193}" />
+        <char code="2782" convertTo="\ding{194}" />
+        <char code="2783" convertTo="\ding{195}" />
+        <char code="2784" convertTo="\ding{196}" />
+        <char code="2785" convertTo="\ding{197}" />
+        <char code="2786" convertTo="\ding{198}" />
+        <char code="2787" convertTo="\ding{199}" />
+        <char code="2788" convertTo="\ding{200}" />
+        <char code="2789" convertTo="\ding{201}" />
+        <char code="278A" convertTo="\ding{202}" />
+        <char code="278B" convertTo="\ding{203}" />
+        <char code="278C" convertTo="\ding{204}" />
+        <char code="278D" convertTo="\ding{205}" />
+        <char code="278E" convertTo="\ding{206}" />
+        <char code="278F" convertTo="\ding{207}" />
+        <char code="2790" convertTo="\ding{208}" />
+        <char code="2791" convertTo="\ding{209}" />
+        <char code="2792" convertTo="\ding{210}" />
+        <char code="2793" convertTo="\ding{211}" />
+        <char code="2794" convertTo="\ding{212}" />
+        <char code="2798" convertTo="\ding{216}" />
+        <char code="2799" convertTo="\ding{217}" />
+        <char code="279A" convertTo="\ding{218}" />
+        <char code="279B" convertTo="\ding{219}" />
+        <char code="279C" convertTo="\ding{220}" />
+        <char code="279D" convertTo="\ding{221}" />
+        <char code="279E" convertTo="\ding{222}" />
+        <char code="279F" convertTo="\ding{223}" />
+        <char code="27A0" convertTo="\ding{224}" />
+        <char code="27A1" convertTo="\ding{225}" />
+        <char code="27A2" convertTo="\ding{226}" />
+        <char code="27A3" convertTo="\ding{227}" />
+        <char code="27A4" convertTo="\ding{228}" />
+        <char code="27A5" convertTo="\ding{229}" />
+        <char code="27A6" convertTo="\ding{230}" />
+        <char code="27A7" convertTo="\ding{231}" />
+        <char code="27A8" convertTo="\ding{232}" />
+        <char code="27A9" convertTo="\ding{233}" />
+        <char code="27AA" convertTo="\ding{234}" />
+        <char code="27AB" convertTo="\ding{235}" />
+        <char code="27AC" convertTo="\ding{236}" />
+        <char code="27AD" convertTo="\ding{237}" />
+        <char code="27AE" convertTo="\ding{238}" />
+        <char code="27AF" convertTo="\ding{239}" />
+        <char code="27B1" convertTo="\ding{241}" />
+        <char code="27B2" convertTo="\ding{242}" />
+        <char code="27B3" convertTo="\ding{243}" />
+        <char code="27B4" convertTo="\ding{244}" />
+        <char code="27B5" convertTo="\ding{245}" />
+        <char code="27B6" convertTo="\ding{246}" />
+        <char code="27B7" convertTo="\ding{247}" />
+        <char code="27B8" convertTo="\ding{248}" />
+        <char code="27B9" convertTo="\ding{249}" />
+        <char code="27BA" convertTo="\ding{250}" />
+        <char code="27BB" convertTo="\ding{251}" />
+        <char code="27BC" convertTo="\ding{252}" />
+        <char code="27BD" convertTo="\ding{253}" />
+        <char code="27BE" convertTo="\ding{254}" />
+        <char code="27F5" mathConvertTo="\longleftarrow{}" />
+        <char code="27F6" mathConvertTo="\longrightarrow{}" />
+        <char code="27F7" mathConvertTo="\longleftrightarrow{}" />
+        <char code="27F8" mathConvertTo="\Longleftarrow{}" />
+        <char code="27F9" mathConvertTo="\Longrightarrow{}" />
+        <char code="27FA" mathConvertTo="\Longleftrightarrow{}" />
+        <char code="27FC" mathConvertTo="\longmapsto{}" />
+        <char code="27FF" mathConvertTo="\sim\joinrel\leadsto{}" />
+        <char code="2905" mathConvertTo="\ElsevierGlyph{E212}" />
+        <char code="2912" mathConvertTo="\UpArrowBar{}" />
+        <char code="2913" mathConvertTo="\DownArrowBar{}" />
+        <char code="2923" mathConvertTo="\ElsevierGlyph{E20C}" />
+        <char code="2924" mathConvertTo="\ElsevierGlyph{E20D}" />
+        <char code="2925" mathConvertTo="\ElsevierGlyph{E20B}" />
+        <char code="2926" mathConvertTo="\ElsevierGlyph{E20A}" />
+        <char code="2927" mathConvertTo="\ElsevierGlyph{E211}" />
+        <char code="2928" mathConvertTo="\ElsevierGlyph{E20E}" />
+        <char code="2929" mathConvertTo="\ElsevierGlyph{E20F}" />
+        <char code="292A" mathConvertTo="\ElsevierGlyph{E210}" />
+        <char code="2933" mathConvertTo="\ElsevierGlyph{E21C}" />
+        <char code="2936" mathConvertTo="\ElsevierGlyph{E21A}" />
+        <char code="2937" mathConvertTo="\ElsevierGlyph{E219}" />
+        <char code="2940" mathConvertTo="\Elolarr{}" />
+        <char code="2941" mathConvertTo="\Elorarr{}" />
+        <char code="2942" mathConvertTo="\ElzRlarr{}" />
+        <char code="2944" mathConvertTo="\ElzrLarr{}" />
+        <char code="2947" mathConvertTo="\Elzrarrx{}" />
+        <char code="294E" mathConvertTo="\LeftRightVector{}" />
+        <char code="294F" mathConvertTo="\RightUpDownVector{}" />
+        <char code="2950" mathConvertTo="\DownLeftRightVector{}" />
+        <char code="2951" mathConvertTo="\LeftUpDownVector{}" />
+        <char code="2952" mathConvertTo="\LeftVectorBar{}" />
+        <char code="2953" mathConvertTo="\RightVectorBar{}" />
+        <char code="2954" mathConvertTo="\RightUpVectorBar{}" />
+        <char code="2955" mathConvertTo="\RightDownVectorBar{}" />
+        <char code="2956" mathConvertTo="\DownLeftVectorBar{}" />
+        <char code="2957" mathConvertTo="\DownRightVectorBar{}" />
+        <char code="2958" mathConvertTo="\LeftUpVectorBar{}" />
+        <char code="2959" mathConvertTo="\LeftDownVectorBar{}" />
+        <char code="295A" mathConvertTo="\LeftTeeVector{}" />
+        <char code="295B" mathConvertTo="\RightTeeVector{}" />
+        <char code="295C" mathConvertTo="\RightUpTeeVector{}" />
+        <char code="295D" mathConvertTo="\RightDownTeeVector{}" />
+        <char code="295E" mathConvertTo="\DownLeftTeeVector{}" />
+        <char code="295F" mathConvertTo="\DownRightTeeVector{}" />
+        <char code="2960" mathConvertTo="\LeftUpTeeVector{}" />
+        <char code="2961" mathConvertTo="\LeftDownTeeVector{}" />
+        <char code="296E" mathConvertTo="\UpEquilibrium{}" />
+        <char code="296F" mathConvertTo="\ReverseUpEquilibrium{}" />
+        <char code="2970" mathConvertTo="\RoundImplies{}" />
+        <char code="297C" mathConvertTo="\ElsevierGlyph{E214}" />
+        <char code="297D" mathConvertTo="\ElsevierGlyph{E215}" />
+        <char code="2980" mathConvertTo="\Elztfnc{}" />
+        <char code="2985" mathConvertTo="\ElsevierGlyph{3018}" />
+        <char code="2986" mathConvertTo="\Elroang{}" />
+        <char code="2994" mathConvertTo="\ElsevierGlyph{E291}" />
+        <char code="2999" mathConvertTo="\Elzddfnc{}" />
+        <char code="299C" mathConvertTo="\Angle{}" />
+        <char code="29A0" mathConvertTo="\Elzlpargt{}" />
+        <char code="29B5" mathConvertTo="\ElsevierGlyph{E260}" />
+        <char code="29B6" mathConvertTo="\ElsevierGlyph{E61B}" />
+        <char code="29CA" mathConvertTo="\ElzLap{}" />
+        <char code="29CB" mathConvertTo="\Elzdefas{}" />
+        <char code="29CF" mathConvertTo="\LeftTriangleBar{}" />
+        <char code="29D0" mathConvertTo="\RightTriangleBar{}" />
+        <char code="29DC" mathConvertTo="\ElsevierGlyph{E372}" />
+        <char code="29EB" mathConvertTo="\blacklozenge{}" />
+        <char code="29F4" mathConvertTo="\RuleDelayed{}" />
+        <char code="2A04" mathConvertTo="\Elxuplus{}" />
+        <char code="2A05" mathConvertTo="\ElzThr{}" />
+        <char code="2A06" mathConvertTo="\Elxsqcup{}" />
+        <char code="2A07" mathConvertTo="\ElzInf{}" />
+        <char code="2A08" mathConvertTo="\ElzSup{}" />
+        <char code="2A0D" mathConvertTo="\ElzCint{}" />
+        <char code="2A0F" mathConvertTo="\clockoint{}" />
+        <char code="2A10" mathConvertTo="\ElsevierGlyph{E395}" />
+        <char code="2A16" mathConvertTo="\sqrint{}" />
+        <char code="2A25" mathConvertTo="\ElsevierGlyph{E25A}" />
+        <char code="2A2A" mathConvertTo="\ElsevierGlyph{E25B}" />
+        <char code="2A2D" mathConvertTo="\ElsevierGlyph{E25C}" />
+        <char code="2A2E" mathConvertTo="\ElsevierGlyph{E25D}" />
+        <char code="2A2F" mathConvertTo="\ElzTimes{}" />
+        <char code="2A34" mathConvertTo="\ElsevierGlyph{E25E}" />
+        <char code="2A35" mathConvertTo="\ElsevierGlyph{E25E}" />
+        <char code="2A3C" mathConvertTo="\ElsevierGlyph{E259}" />
+        <char code="2A3F" mathConvertTo="\amalg{}" />
+        <char code="2A53" mathConvertTo="\ElzAnd{}" />
+        <char code="2A54" mathConvertTo="\ElzOr{}" />
+        <char code="2A55" mathConvertTo="\ElsevierGlyph{E36E}" />
+        <char code="2A56" mathConvertTo="\ElOr{}" />
+        <char code="2A5E" mathConvertTo="\perspcorrespond{}" />
+        <char code="2A5F" mathConvertTo="\Elzminhat{}" />
+        <char code="2A63" mathConvertTo="\ElsevierGlyph{225A}" />
+        <char code="2A6E" mathConvertTo="\stackrel{*}{=}" />
+        <char code="2A75" mathConvertTo="\Equal{}" />
+        <char code="2A7D" mathConvertTo="\leqslant{}" />
+        <char code="2A7E" mathConvertTo="\geqslant{}" />
+        <char code="2A85" mathConvertTo="\lessapprox{}" />
+        <char code="2A86" mathConvertTo="\gtrapprox{}" />
+        <char code="2A87" mathConvertTo="\lneq{}" />
+        <char code="2A88" mathConvertTo="\gneq{}" />
+        <char code="2A89" mathConvertTo="\lnapprox{}" />
+        <char code="2A8A" mathConvertTo="\gnapprox{}" />
+        <char code="2A8B" mathConvertTo="\lesseqqgtr{}" />
+        <char code="2A8C" mathConvertTo="\gtreqqless{}" />
+        <char code="2A95" mathConvertTo="\eqslantless{}" />
+        <char code="2A96" mathConvertTo="\eqslantgtr{}" />
+        <char code="2A9D" mathConvertTo="\Pisymbol{ppi020}{117}" />
+        <char code="2A9E" mathConvertTo="\Pisymbol{ppi020}{105}" />
+        <char code="2AA1" mathConvertTo="\NestedLessLess{}" />
+        <char code="2AA2" mathConvertTo="\NestedGreaterGreater{}" />
+        <char code="2AAF" mathConvertTo="\preceq{}" />
+        <char code="2AB0" mathConvertTo="\succeq{}" />
+        <char code="2AB5" mathConvertTo="\precneqq{}" />
+        <char code="2AB6" mathConvertTo="\succneqq{}" />
+        <char code="2AB7" mathConvertTo="\precapprox{}" />
+        <char code="2AB8" mathConvertTo="\succapprox{}" />
+        <char code="2AB9" mathConvertTo="\precnapprox{}" />
+        <char code="2ABA" mathConvertTo="\succnapprox{}" />
+        <char code="2AC5" mathConvertTo="\subseteqq{}" />
+        <char code="2AC6" mathConvertTo="\supseteqq{}" />
+        <char code="2ACB" mathConvertTo="\subsetneqq{}" />
+        <char code="2ACC" mathConvertTo="\supsetneqq{}" />
+        <char code="2AEB" mathConvertTo="\ElsevierGlyph{E30D}" />
+        <char code="2AF6" mathConvertTo="\Elztdcol{}" />
+        <char code="2AFD" mathConvertTo="{{/}\!\!{/}}" />
+        <char code="300A" mathConvertTo="\ElsevierGlyph{300A}" />
+        <char code="300B" mathConvertTo="\ElsevierGlyph{300B}" />
+        <char code="3018" mathConvertTo="\ElsevierGlyph{3018}" />
+        <char code="3019" mathConvertTo="\ElsevierGlyph{3019}" />
+        <char code="301A" mathConvertTo="\openbracketleft{}" />
+        <char code="301B" mathConvertTo="\openbracketright{}" />
+        <char code="FB00" convertTo="ff" />
+        <char code="FB01" convertTo="fi" />
+        <char code="FB02" convertTo="fl" />
+        <char code="FB03" convertTo="ffi" />
+        <char code="FB04" convertTo="ffl" />
+    </specialChars>
+</configuration>
