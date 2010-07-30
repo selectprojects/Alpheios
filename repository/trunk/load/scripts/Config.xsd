@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<xsd:schema id="Config" targetNamespace="http://kebrt.cz/word-to-latex" elementFormDefault="qualified"
+    xmlns:mstns="http://kebrt.cz/word-to-latex"
+	xmlns:ns="http://kebrt.cz/word-to-latex" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+	
+	<!-- root element -->
+	<xsd:element name="configuration" type="ns:ConfigurationType" />
+	
+	<!-- content of the root element -->
+	<xsd:complexType name="ConfigurationType">
+		<xsd:all>
+			<xsd:element name="variousOptions" type="ns:VariousOptionsType" />
+			<xsd:element name="translationTable" type="ns:TranslationTableType" />
+			<xsd:element name="specialChars" type="ns:CharsType" />
+		</xsd:all>
+	</xsd:complexType>
+	
+	<!-- various options -->
+	<xsd:complexType name="VariousOptionsType">
+		<xsd:sequence>
+			<xsd:element name="option" type="ns:OptionType" maxOccurs="unbounded" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<!-- option type -->
+	<xsd:complexType name="OptionType">
+		<xsd:complexContent>
+			<xsd:restriction base="xsd:anyType">
+				<xsd:attribute name="name" type="ns:OptionsEnum" />
+				<xsd:attribute name="value" type="xsd:string" />
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+	<!-- option enum -->
+	<xsd:simpleType name="OptionsEnum">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="TDL_FILENAME" />
+			<xsd:enumeration value="PAGE_SIZE" />
+			<xsd:enumeration value="PAGE_SIZE_PROCESSING" />
+			<xsd:enumeration value="DOC_CLASS" />
+			<xsd:enumeration value="IMAGE_FORMAT" />
+			<xsd:enumeration value="PRINTER_NAME" />
+			<xsd:enumeration value="DEFAULT_FONT_SIZE" />
+			<xsd:enumeration value="FONT_SIZE1" />
+			<xsd:enumeration value="FONT_SIZE2" />
+			<xsd:enumeration value="FONT_SIZE3" />
+			<xsd:enumeration value="FONT_SIZE4" />
+			<xsd:enumeration value="FONT_SIZE5" />
+			<xsd:enumeration value="FONT_SIZE6" />
+			<xsd:enumeration value="FONT_SIZE7" />
+			<xsd:enumeration value="FONT_SIZE8" />
+			<xsd:enumeration value="FONT_SIZE9" />
+			<xsd:enumeration value="FONT_SIZE10" />
+			<xsd:enumeration value="CREATE_COMMANDS_FOR_STYLES"/>
+			<xsd:enumeration value="OUTPUT_FORMAT"/>
+			<xsd:enumeration value="EQUATIONS"/>
+			<xsd:enumeration value="ONLY_IMAGES"/>
+			<xsd:enumeration value="WRAP_PARAGRAPHS"/>
+			<xsd:enumeration value="NEW_LINE" />
+			<xsd:enumeration value="PARAGRAPH_ALIGNMENTS" />
+			<xsd:enumeration value="PARAGRAPH_INDENTATION" />
+			<xsd:enumeration value="AUTO_DETECT_DEFAULT_FONT_SIZE" />
+			<xsd:enumeration value="COLOR_TEXT" />
+			<xsd:enumeration value="COLOR_BG" />
+			<xsd:enumeration value="COLOR_TABLE" />
+			<xsd:enumeration value="MULTICOLUMN" />
+			<xsd:enumeration value="SANS_SERIF" />
+			<xsd:enumeration value="AUTO_RECOGNIZE_MATH" />
+			<xsd:enumeration value="RECOGNIZE_NUMBERED_EQ_REF" />
+			<xsd:enumeration value="IGNORE_EMPTY_PAR" />
+			<xsd:enumeration value="ENDNOTES_TO_BIBLIO" />
+			<xsd:enumeration value="RECOGNIZE_BIBLIO_REF" />
+			<xsd:enumeration value="MATHTYPE_VERSION" />
+		</xsd:restriction>
+	</xsd:simpleType>
+				
+	<!-- translation table -->
+	<xsd:complexType name="TranslationTableType">
+		<xsd:sequence>
+			<xsd:element name="docElement" type="ns:ElementType" maxOccurs="unbounded" />
+			<xsd:element name="style" type="ns:StyleTranslationType" maxOccurs="unbounded" minOccurs="0" />
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<!-- document's element types -->
+	<xsd:complexType name="ElementType">
+		<xsd:complexContent>
+			<xsd:restriction base="xsd:anyType">
+				<xsd:attribute name="name" type="ns:ElementTypeEnum" />
+				<xsd:attribute name="start" type="xsd:string" />
+				<xsd:attribute name="end" type="xsd:string" default="" use="optional" />
+				<!--    <xsd:attribute name='num' use='optional' default='0' type='xsd:integer' /> -->
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+	<!-- document's element type enum -->
+	<xsd:simpleType name="ElementTypeEnum">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="PREAMBLE" />
+			
+			<xsd:enumeration value="FONT_BOLD" />
+			<xsd:enumeration value="FONT_ITALIC" />
+			<xsd:enumeration value="FONT_SUPERSCRIPT" />
+			<xsd:enumeration value="FONT_SUBSCRIPT" />
+			<xsd:enumeration value="FONT_SMALLCAPS" />
+			<xsd:enumeration value="FONT_HIDDEN" />
+			<xsd:enumeration value="FONT_COURIER" />
+			<xsd:enumeration value="FONT_UNDERLINE" />
+			<xsd:enumeration value="FONT_DOUBLE_UNDERLINE" />
+			<xsd:enumeration value="FONT_WAVE_UNDERLINE" />
+			<xsd:enumeration value="FONT_UPPERCASE" />
+			<xsd:enumeration value="FONT_STRIKE" />
+			<xsd:enumeration value="FONT_SANS_SERIF" />
+			<xsd:enumeration value="FONT_SIZE1" />
+			<xsd:enumeration value="FONT_SIZE2" />
+			<xsd:enumeration value="FONT_SIZE3" />
+			<xsd:enumeration value="FONT_SIZE4" />
+			<xsd:enumeration value="FONT_SIZE5" />
+			<xsd:enumeration value="FONT_SIZE6" />
+			<xsd:enumeration value="FONT_SIZE7" />
+			<xsd:enumeration value="FONT_SIZE8" />
+			<xsd:enumeration value="FONT_SIZE9" />
+			<xsd:enumeration value="FONT_SIZE10" />
+			
+			<xsd:enumeration value="HEADING1" />
+			<xsd:enumeration value="HEADING2" />
+			<xsd:enumeration value="HEADING3" />
+			<xsd:enumeration value="HEADING4" />
+			<xsd:enumeration value="HEADING5" />
+			<xsd:enumeration value="HEADING6" />
+			<xsd:enumeration value="HEADING7" />
+			<xsd:enumeration value="HEADING8" />
+			<xsd:enumeration value="HEADING9" />
+			
+			<xsd:enumeration value="ALIGN_CENTER" />
+			<xsd:enumeration value="ALIGN_LEFT" />
+			<xsd:enumeration value="ALIGN_RIGHT" />
+			<xsd:enumeration value="TABLE_ALIGN_CENTER" />
+			<xsd:enumeration value="TABLE_ALIGN_LEFT" />
+			<xsd:enumeration value="TABLE_ALIGN_RIGHT" />			
+			
+			<xsd:enumeration value="FOOTNOTE" />
+			<xsd:enumeration value="PAGE_BREAK" />
+			<xsd:enumeration value="EQUATION_NUMBERED" />
+			<xsd:enumeration value="EQUATION_LABEL" />
+			<xsd:enumeration value="EQUATION_INLINE" />
+			<xsd:enumeration value="EQUATION_OUTLINE" />
+			<xsd:enumeration value="INDEX" />
+			<xsd:enumeration value="INDEX_ENTRY" />	
+			<xsd:enumeration value="HYPERLINK" />
+			<xsd:enumeration value="TOC" />
+			<xsd:enumeration value="SPECIAL_COMMAND" />
+			<xsd:enumeration value="BOOKMARK_LABEL" />
+			<xsd:enumeration value="REFERENCE" />
+			<xsd:enumeration value="PAGE_REFERENCE" />
+			<xsd:enumeration value="MATH_REFERENCE" />
+			<xsd:enumeration value="NOTE_REFERENCE" />
+			<xsd:enumeration value="BIBLIO_REFERENCE" />
+			<xsd:enumeration value="STYLE" />
+			<xsd:enumeration value="STYLE_DEFINITION" />
+			<xsd:enumeration value="DOCUMENT_BODY" />
+			<xsd:enumeration value="PARAGRAPH" />
+			<xsd:enumeration value="LIST_ENUMERATE" />
+			<xsd:enumeration value="LIST_ITEMIZE" />
+			<xsd:enumeration value="LIST_ITEM" />
+			<xsd:enumeration value="LIST_PARAGRAPH" />
+			<xsd:enumeration value="TABLE" />
+			<xsd:enumeration value="TABLE_ROW" />
+			<xsd:enumeration value="TABLE_CELL" />
+			<xsd:enumeration value="TABLE_CONTAINER" />
+			<xsd:enumeration value="TABLE_MULTICOLUMN" />
+			<xsd:enumeration value="TABLE_CELL_COLOR" />
+			<xsd:enumeration value="TABLE_MULTIROW" />
+			<xsd:enumeration value="TABLE_TITLE" />
+			<xsd:enumeration value="TABLE_PARAGRAPH" />
+			<xsd:enumeration value="LINE_BREAK" />			
+						
+			<xsd:enumeration value="IMAGE_COMMAND" />	
+			<xsd:enumeration value="IMAGE_TITLE" />	
+			<xsd:enumeration value="IMAGE_CONTAINER" />
+			
+			<xsd:enumeration value="PAR_INDENT" />
+			<xsd:enumeration value="MULTICOLUMN" />
+			
+			<xsd:enumeration value="COLOR_TEXT" />
+			<xsd:enumeration value="COLOR_BG" />
+			
+			<xsd:enumeration value="ENDNOTES_SECTION" />
+			<xsd:enumeration value="ENDNOTE" />
+			<xsd:enumeration value="ENDNOTE_REFERENCE" />
+			
+			<xsd:enumeration value="COLOR_BG_AND_BORDER" />
+			<xsd:enumeration value="COLOR_BORDER" />
+			<xsd:enumeration value="BORDER" />
+			
+			<xsd:enumeration value="TAB" />
+
+		</xsd:restriction>
+	</xsd:simpleType>
+	
+	<!-- document's element types -->
+	<xsd:complexType name="StyleTranslationType">
+		<xsd:complexContent>
+			<xsd:restriction base="xsd:anyType">
+				<xsd:attribute name="name" type="xsd:string" />
+				<xsd:attribute name="start" type="xsd:string" />
+				<xsd:attribute name="end" type="xsd:string" default="" use="optional" />
+				<xsd:attribute name="leaveAsIs" type="xsd:string" default="" use="optional" />
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>	
+	
+	<!-- character entities -->
+	<xsd:complexType name="CharsType">
+		<xsd:sequence>
+			<xsd:element name="latexChar" type="ns:LatexCharConversionType" minOccurs="0" maxOccurs="unbounded" />
+			<xsd:element name="char" type="ns:CharConversionType" minOccurs="0" maxOccurs="unbounded" />
+			<!-- <xsd:element name="mathChar" type="ns:CharConversionType" maxOccurs="unbounded" /> -->
+		</xsd:sequence>
+	</xsd:complexType>
+	
+	<!-- character entities -->
+	<xsd:complexType name="CharConversionType">
+		<xsd:complexContent>
+			<xsd:restriction base="xsd:anyType">
+				<xsd:attribute name="code" type="xsd:string" />
+				<xsd:attribute name="convertTo" use='optional' default='' type="xsd:string" />
+				<xsd:attribute name='mathConvertTo' use='optional' default='' type='xsd:string' />
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>
+	
+	<xsd:complexType name="LatexCharConversionType">
+		<xsd:complexContent>
+			<xsd:restriction base="xsd:anyType">
+				<xsd:attribute name="char" type="xsd:string" />
+				<xsd:attribute name="convertTo" type="xsd:string" />
+			</xsd:restriction>
+		</xsd:complexContent>
+	</xsd:complexType>	
+	
+
+	
+</xsd:schema>
