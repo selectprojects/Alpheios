@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Build file for loading TEI Text into eXist repository -->
+<project name="alpheios transform" default="transform-all" basedir=".">
+    
+
+    <property name="antcontrib.dir" value="c://ant-contrib"/>
+    <property name="src.dir" value="/work/Tufts_DeptEd_Texts/elfleila_out"/>    
+    <property name="out.dir" value="/work/Tufts_DeptEd_Texts/elfleila_tei"/>
+    <property name="xslt.dir" value="xslt"/>
+    <property name="xmldb.url" value="http://dev.alpheios.net:8810/exist/xmlrpc/db"/>
+    <property name="xmldb.user" value="admin"/>
+    <property name="xmldb.passwd" value="ar3thus@"/>
+    <property name="xmldb.collection.temp" value="/repository/load_temp"/>
+    <property name="xquery.dir" value="xquery"/>
+    <property name="lib.dir" value="../libs"/>
+    <property name="repository.db" value="eXist-1.4.0"/>
+    <property name="server.dir" value="${lib.dir}/${repository.db}"/>
+    
+    <path id="xalan.class.path">
+        <fileset dir="${xslt.dir}/lib/saxon" includes="**/saxon9.jar"/>
+    </path>
+    
+    <taskdef resource="net/sf/antcontrib/antlib.xml">
+        <classpath>
+            <fileset dir="${antcontrib.dir}">
+                <include name="**/*.jar" />
+            </fileset>
+        </classpath>
+    </taskdef>
+    
+    <path id="classpath.core">
+        <fileset dir="${server.dir}/lib/core">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement path="${server.dir}/exist.jar"/>
+        <pathelement path="${server.dir}/exist-optional.jar"/>      
+    </path>
+        
+    <typedef resource="org/exist/ant/antlib.xml" uri="http://exist-db.org/ant">  
+        <classpath refid="classpath.core"/>  
+    </typedef>
+    
+    <target name="transform-file">
+        <echo message="${file.path}"/>
+        <propertyregex property="bookId"
+               input="${file.path}"
+               regexp="\\(\d+)_\d+\.xml$"
+               select="\1"
+        />
+        <propertyregex property="pageId"
+            input="${file.path}"
+            regexp="\\(\d+)_([0]+)?(\d+)\.xml$"
+            select="\3"
+        />
+                
+        <xslt in="${file.path}" 
+            out="${out.dir}/${bookId}_${pageId}.xml"           
+            style="${xslt.dir}/doc2tei.xsl" classpathref="xalan.class.path">            
+            <param name="bookId" expression="${bookId}"/>
+            <param name="pageId" expression="${pageId}"/>
+        </xslt>
+        
+    </target>
+    
+    
+    <target name="transform-all">
+        <mkdir dir="${out.dir}"/>
+        <foreach target="transform-file" param="file.path">
+            <path>
+                <fileset id="fs" dir="${src.dir}" includes="**/*.xml"/>
+            </path>            
+        </foreach>        
+    </target>
+    
+    <target name="merge">
+        <xdb:xquery  xmlns:xdb="http://exist-db.org/ant"
+            uri="${xmldb.url}" destdir="${out.dir}/merged.xml"
+            queryfile="${xquery.dir}/merge-docs.xquery">
+            <xdb:variable name="e_collection" value="${xmldb.collection.temp}"/>
+            <xdb:variable name="e_lang" value="ara"/>                         
+        </xdb:xquery>        
+    </target>
+         
+</project>    

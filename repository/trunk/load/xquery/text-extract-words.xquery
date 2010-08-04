@@ -20,32 +20,49 @@
 
 import module namespace cts="http://alpheios.net/namespaces/cts" 
     at "xmldb:exist://localhost:8080/exist/xmlrpc/db/xq/cts.xquery";
+import module namespace transform="http://exist-db.org/xquery/transform";
 declare namespace  util="http://exist-db.org/xquery/util";
 
 
 declare variable $e_inv external;
 declare variable $e_urn external;
 declare variable $e_source external;
+declare variable $e_morphEncoding external;
 
 
 let $passage_xpaths := cts:getCitationXpaths($e_inv,$e_urn)
 
 let $textDoc := doc($e_source)
 return element words {
-    for $i in $textDoc//wd
+    for $i in $textDoc//*:wd
     return
       let $passage :=
             for $p in $passage_xpaths
-                let $name := replace($p,"^/(.*?)\[.*$","$1")
+                let $name := replace($p,"^/(.*?:)?(.*?)\[.*$","$2")
                 let $pred := replace($p,"^.*?\[(.*?)\].*$","$1")
                 let $path := replace($pred,"^@[^=]+=.\?.$","")
                 let $id := replace($pred,"^.*?@([^=]+)=.\?.+$","$1")
-                let $parent := if ($path) then $i/ancestor::*[name() = $name and util:eval($path)] else $i/ancestor::*[name() = $name]
+                let $parent := if ($path) then $i/ancestor::*[local-name() = $name and util:eval($path)] else $i/ancestor::*[local-name() = $name]
                 return 
                     if ($parent) then xs:string($parent/@*[name() = $id]) else $path
         let $word := $i/text()
-        let $position := count($i/preceding-sibling::wd[text() = $word]) + 1
-        let $clean := if ($i/@beta) then $i/@beta else if ($i/@ara) then $i/@ara else $word
+        let $position := count($i/preceding-sibling::*:wd[text() = $word]) + 1
+        let $clean := 
+            if ($e_morphEncoding = "beta") 
+            then 
+                let $xsl := doc('/db/xslt/alpheios-uni2betacode.xsl')
+                let $params := <parameters><param name="e_in" value="{$word}"/></parameters>
+                let $dummy := <dummy/>
+                let $temp := transform:transform($dummy, $xsl, $params)
+                return $temp
+            else if ($e_morphEncoding = "ara")
+            then
+                let $xsl := doc('/db/xslt/alpheios-uni2buck.xsl')
+                let $params := <parameters><param name="e_in" value="{$word}"/></parameters>
+                let $dummy := <dummy/>
+                let $temp := transform:transform($dummy, $xsl, $params)
+                return $temp
+            else $word
         return concat(
             concat($e_urn,":",string-join($passage,"."),":",$word,"[",$position,"]"),",",$word,",",$clean)
 }            
