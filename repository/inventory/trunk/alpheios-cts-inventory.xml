@@ -124,20 +124,177 @@
         <groupname
             xml:lang="eng">Arabic Vocabulary List</groupname>
         <work
-            projid="arabicLit:alk001"
+            projid="arabicLit:alk00a"
             xml:lang="eng">
             <title
-                xml:lang="eng">Quran</title>
+                xml:lang="eng">Alif Baa</title>
             <edition
-                projid="arabicLit:alpheios-text-ara1">
+                projid="arabicLit:alpheios-vocab-ara1">
                 <label
-                    xml:lang="eng">Alpheios Enhanced Quran</label>
+                    xml:lang="eng">Al-Kitaab Alif Baa</label>
                 <online
-                    docname="/db/repository/arabicLit/alk/alk001/alpheios-vocab-ara1.xml">
+                    docname="/db/repository/arabicLit/alk/alk00a/alpheios-vocab-ara1.xml">
                     <validate
-                        schema="documentschema.rng"/>                    
+                    schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Chapter"
+                            xpath="/tei:div[@n='?' and @type='chapter']"
+                            scope="/tei:TEI/tei:text/tei:body">                                                                                    
+                        </citation>
+                    </citationMapping>                    
                 </online>
             </edition>
         </work>
-    </textgroup>        
+        <work
+            projid="arabicLit:alk001"
+            xml:lang="eng">
+            <title
+                xml:lang="eng">Al-Kitaab Part 1</title>
+            <edition
+                projid="arabicLit:alpheios-vocab-ara1">
+                <label
+                    xml:lang="eng">Al-Kitaab Part 1</label>
+                <online
+                    docname="/db/repository/arabicLit/alk/alk001/alpheios-vocab-ara1.xml">
+                    <validate
+                    schema="documentschema.rng"/>
+                        <namespaceMapping
+                            abbreviation="tei"
+                            nsURI="http://www.tei-c.org/ns/1.0"/>
+                        <citationMapping>
+                            <citation
+                                label="Chapter"
+                                xpath="/tei:div[@n='?' and @type='chapter']"
+                                scope="/tei:TEI/tei:text/tei:body">                                                                                    
+                            </citation>
+                        </citationMapping>                    
+                </online>
+            </edition>
+        </work>
+        <work
+            projid="arabicLit:alk002"
+            xml:lang="eng">
+            <title
+                xml:lang="eng">Al-Kitaab Part 2</title>
+            <edition
+                projid="arabicLit:alpheios-vocab-ara1">
+                <label
+                    xml:lang="eng">Al-Kitaab Part 2</label>
+                <online
+                    docname="/db/repository/arabicLit/alk/alk002/alpheios-vocab-ara1.xml">
+                    <validate
+                        schema="documentschema.rng"/>
+                        <namespaceMapping
+                            abbreviation="tei"
+                            nsURI="http://www.tei-c.org/ns/1.0"/>
+                        <citationMapping>
+                            <citation
+                                label="Chapter"
+                                xpath="/tei:div[@n='?' and @type='chapter']"
+                                scope="/tei:TEI/tei:text/tei:body">                                                                                    
+                            </citation>
+                        </citationMapping>                        
+                </online>
+            </edition>
+        </work>
+        <work
+            projid="arabicLit:alk003"
+            xml:lang="eng">
+            <title
+                xml:lang="eng">Al-Kitaab Part 3</title>
+            <edition
+                projid="arabicLit:alpheios-vocab-ara1">
+                <label
+                    xml:lang="eng">Al-Kitaab Part 3</label>
+                <online
+                    docname="/db/repository/arabicLit/alk/alk003/alpheios-vocab-ara1.xml">
+                    <validate
+                    schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Chapter"
+                            xpath="/tei:div[@n='?' and @type='chapter']"
+                            scope="/tei:TEI/tei:text/tei:body">                                                                                    
+                        </citation>
+                    </citationMapping>                    
+                </online>
+            </edition>
+        </work>        
+    </textgroup>
+    <textgroup
+        projid="arabicLit:perseus201001">
+        <groupname
+            xml:lang="eng">Arabic Literature</groupname>
+        <work
+            projid="arabicLit:perseus0001">
+            <title
+                xml:lang="ara">سم الله الرحمن الرحيم</title>
+            <edition
+                projid="arabicLit:alpheios-text-ara1">
+                <label
+                    xml:lang="eng">Alpheios Enabled 1001 Nights</label>
+                <online
+                    docname="/db/repository/arabicLit/perseus201001/perseus0001/alpheios-text-ara1.xml">
+                    <validate
+                    schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Book"
+                            xpath="/tei:div1[@n='?']"
+                            scope="/tei:TEI/tei:text/tei:body">
+                            <citation
+                                label="Page"
+                                xpath="/tei:div2[@n='?']"
+                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
+                        </citation>
+                    </citationMapping>                    
+                </online>
+            </edition>
+        </work>
+    </textgroup>
+    <textgroup
+        projid="arabicLit:aljaz">
+        <groupname
+            xml:lang="eng">Al-Jazeera</groupname>
+        <work
+            projid="arabicLit:aljaz20100711">
+            <title
+                xml:lang="ara">الإعلام يرشح إسبانيا للفوز بالمونديال</title>
+            <edition
+                projid="arabicLit:alpheios-text-ara1">
+                <label
+                    xml:lang="eng">الإعلام يرشح إسبانيا للفوز بالمونديال</label>
+                <online
+                    docname="/db/repository/arabicLit/aljaz/aljaz20100711/alpheios-text-ara1.xml">
+                    <validate
+                        schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Article"
+                            xpath="/div1[@n='?']"
+                            scope="/TEI/text/body">
+                            <citation
+                                label="Line"
+                                xpath="/l[@n='?']"
+                                scope="/TEI/text/body/div1[@n='?']/"/>                                                                                
+                        </citation>
+                    </citationMapping>                    
+                </online>
+            </edition>
+        </work>
+    </textgroup>
+    
 </TextInventory>
