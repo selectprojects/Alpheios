@@ -485,7 +485,7 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
         return   
             <reply>
                 <TEI>
-                    {$doc//teiHeader},
+                    {$doc//*:teiHeader},
                     <text xml:lang="{if ($xmllang) then $xmllang else $lang}">
                     <body>
                         {$passage[position() < $count+ 1]}
