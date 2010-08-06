@@ -1,8 +1,13 @@
 div.l {
     font-family:"Lucida Grande",Verdana,Helvetica,Arial,sans-serif;
     direction: rtl;
+    text-align: right;
 }
 
 .linenum  {
     float:left;
+}
+
+.l.center {
+    text-align: center;
 }

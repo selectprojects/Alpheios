@@ -133,13 +133,14 @@
 </xsl:template>
 
 <xsl:template match="tei:div1|tei:div2|tei:div3|tei:div4|tei:div5">
-    <div class="@type">
+    <div class="{@type}">
         <xsl:apply-templates/>
     </div>
 </xsl:template>
     
 <xsl:template match="tei:l|tei:p">    
-        <div class="l">
+        <xsl:variable name="rend" select="@rend"/>
+        <div class="l  {$rend}">
             <xsl:if test="@n">
                 <div class="linenum"><xsl:value-of select="@n"/></div>
             </xsl:if>

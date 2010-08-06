@@ -41,7 +41,7 @@ let $e_urn :=  request:get-parameter("urn",())
 let $e_level := xs:int(request:get-parameter("level","1"))
 let $urns := cts:expandValidReffs("alpheios-cts-inventory",$e_urn,$e_level)
 let $doc := cts:getDoc($e_urn)
-let $header :=  element { QName("http://www.tei-c.org/ns/1.0","teiHeader")} { $doc//teiHeader/* }
+let $header :=  element { QName("http://www.tei-c.org/ns/1.0","teiHeader")} { $doc//*:teiHeader/* }
 let $toc :=
      <TEI>
         {$header}

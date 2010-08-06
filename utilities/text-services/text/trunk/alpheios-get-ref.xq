@@ -71,7 +71,7 @@ let $params :=
 let $uri := concat(request:get-url(),'?')
  let $text :=
     element TEI.2 {        
-         $reply//teiHeader,
+         $reply//*:teiHeader,
         element text {
             $reply//text/@xml:lang,            
             element body {
