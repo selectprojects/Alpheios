@@ -118,6 +118,6 @@ return
                    }
             }              
         </lemmas>
-    else ()
+    else <lemmas found="{not($e_reverse)}"/>    
     }
 </results>)

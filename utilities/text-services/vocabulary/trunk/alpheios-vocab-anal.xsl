@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0"
     xmlns:tei="http://www.tei-c.org/ns/1.0">
-    
+        <xsl:include href="funding.xsl"/>            
         <xsl:template match="/">
             <xsl:variable name="docCount"><xsl:value-of select="results/count[@type='docForms']"/></xsl:variable>
             <xsl:variable name="vocabCount"><xsl:value-of select="results/count[@type='vocabLemmas']"/></xsl:variable>
@@ -19,7 +19,7 @@
                     <script type="text/javascript" src="../script/alpheios-vocab.js"></script>
                 </head>
                 <body>
-                    <h1>Alpheios Learned Vocabulary Analysis Results</h1>
+                    <h1 class="apptitle">Learned Vocabulary Analysis Results</h1>
                     <div class="results">
                         <div class="result">
                             <div class="label">Target Text:</div>
@@ -44,11 +44,14 @@
                     <div class="detail">
                         <xsl:apply-templates select="results/lemmas"/>
                     </div>
-                </body>
+                    <div class="rights_info">Alpheios is free software: you can redistribute it and/or modify it under the terms of the <a href="http://www.gnu.org/licenses/">GNU General Public License</a> as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.</div>
+                    <xsl:copy-of select="$funding"/>
+                  </body>
             </html>
         </xsl:template>
     
         <xsl:template match="lemmas">
+            <xsl:if test="match">
             <table>
                 <tr><th>Form</th><th>Lemma</th><th>Matched Form</th><th>Matched Sense</th><th>Refs</th></tr>
                     <xsl:for-each select="match">
@@ -63,6 +66,7 @@
                         </tr>
                     </xsl:for-each>                
             </table>
+            </xsl:if>
         </xsl:template>
     
         <xsl:template match="tei:ptr[not(starts-with(@type,'paging'))]">
