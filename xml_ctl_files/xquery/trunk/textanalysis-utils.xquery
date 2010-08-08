@@ -229,13 +229,11 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                             return 
                                 <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}">{
                                     $urns                                            
-                                }</lemma>
-                    let $dd :=                           
-                        for $seq in (1 to count($all))
+                                }</lemma>                                            
+                    for $seq in (1 to count($all))
                         return $all[$seq][not(
                             $all[position() < $seq and 
-                                @lemma= $all[$seq]/@lemma and @form=$all[$seq]/@form and @sense=$all[$seq]/@sense] and forms:urn = $all[$seq]/forms:urn)]
-                    return $all                                
+                                @lemma= $all[$seq]/@lemma and @form=$all[$seq]/@form and @sense=$all[$seq]/@sense] and forms:urn = $all[$seq]/forms:urn)]                                                    
         else if ($docinfo/toparse)
             (: tokenize the user supplied text and pass it to the morphology service for the language :)
             then
