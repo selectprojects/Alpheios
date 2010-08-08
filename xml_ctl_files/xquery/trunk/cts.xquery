@@ -51,7 +51,7 @@ declare variable $cts:maxPassageNodes := 100;
     Parameters: 
         $a_urn: the CTS URN (e.g. urn:cts:greekLit:tlg012.tlg002.alpheios-text-grc1)
     Return value:
-        An element adhering to the following 
+        A) if $a_urn is a valid cts urn: an element adhering to the following 
         <ctsUrn>
             <namespace></namespace>
             <workUrn></workUrn>
@@ -72,72 +72,85 @@ declare variable $cts:maxPassageNodes := 100;
                 <alpheiosDoctype></alpheiosDocType>
             </fileInfo>
         <ctsUrn>        
+        B) Or if $a_urn is a text string as identified by the prefix 'alpheiosusertext:<lang>' then returns a <dummy><usertext lang="<lang>">Text String</usertext></dummy>
+        TODO this latter option is a bit of hack, should look at a better way to handle this but since most requests go through parseUrn, this was the easiest place for now
 :)
 declare function cts:parseUrn($a_urn as xs:string)
 {
-    let $components := tokenize($a_urn,":")
-    let $namespace := $components[3]
-    let $workId := $components[4]
-    let $workComponents := tokenize($workId,"\.")
-    (: TODO do we need to handle the possibility of a work without a text group? :)
-    let $textgroup := $workComponents[1]
-    let $work := $workComponents[2]
-    let $edition := 
-        if (count($workComponents) > 2)
-        then $workComponents[last()]
-        else xs:string("")
-    
-    let $passage := $components[5]
-    let $subref := $components[6]               
-    return
-        element ctsURN {
-            element urn { $a_urn },
-            (: urn without any passage specifics:)
-            element workUrn { concat("urn:cts:",$namespace,':',$textgroup,".",$work,".",$edition) },            
-            element namespace{ $namespace },
-            (: TODO is it possible for components of the work id to be in different namespaces?? :)
-            element textgroup {concat($namespace,':',$textgroup)},            
-            element work {concat($namespace,':',$work)},
-            element edition {concat($namespace,':',$edition)},
-            element passageParts {
-                for $r in tokenize($passage,"-")                
-                return 
-                    element rangePart {
-                        for $p in tokenize($r,"\.") 
-                            return element part { $p }
-                    }
-            },            
-            (if ($subref)
-            then 
-                let $string := substring-before($subref,"[")
-                let $pos := replace($subref,"^.*?\[(\d+)\]$","$1")
-                return element subRef { attribute position { $pos }, $string } 
-            else ()),            
-            element fileInfo {                      
-                if (starts-with($edition,'alpheios-'))
-                then            
-                    (: TODO look up the path in the TextInventory :)
-                    let $parts := tokenize($edition,'-')                    
-                    return
-                    (
-                        element basePath { 
-                            concat("/db/repository/", $namespace, "/", string-join($workComponents[position() != last()] ,"/"))
-                        },
-                        element fullPath {
-                            concat("/db/repository/", $namespace, "/", string-join($workComponents,"/"),".xml")
-                        },
-                        element alpheiosDocType { $parts[2] },
-                        for $i in $parts[position() > 2] return element alpheiosEditionId {$i}
-                    )   
-                else 
-                    if (not($edition))
+    if (matches($a_urn,'^alpheiosusertext:'))
+    then 
+            let $parts := tokenize($a_urn,':')
+            let $lang := $parts[2]
+            let $text := if (count($parts) > 3) then string-join($parts[position() > 2], ' ') else $parts[3]
+            return
+            <dummy>
+                <usertext lang="{$lang}">{$text}</usertext>
+            </dummy>
+    else 
+            let $components := tokenize($a_urn,":")
+            let $namespace := $components[3]
+            let $workId := $components[4]
+            let $workComponents := tokenize($workId,"\.")
+            (: TODO do we need to handle the possibility of a work without a text group? :)
+            let $textgroup := $workComponents[1]
+            let $work := $workComponents[2]
+            let $edition := 
+                if (count($workComponents) > 2)
+                then $workComponents[last()]
+                else xs:string("")
+            
+            let $passage := $components[5]
+            let $subref := $components[6]               
+            return
+                element ctsURN {
+                    element urn { $a_urn },
+                    (: urn without any passage specifics:)
+                    element workUrn { concat("urn:cts:",$namespace,':',$textgroup,".",$work,".",$edition) },            
+                    element namespace{ $namespace },
+                    (: TODO is it possible for components of the work id to be in different namespaces?? :)
+                    element textgroup {concat($namespace,':',$textgroup)},            
+                    element work {concat($namespace,':',$work)},
+                    element edition {concat($namespace,':',$edition)},
+                    element passageParts {
+                        for $r in tokenize($passage,"-")                
+                        return 
+                            element rangePart {
+                                for $p in tokenize($r,"\.") 
+                                    return element part { $p }
+                            }
+                    },            
+                    (if ($subref)
                     then 
-                        element basePath { 
-                            concat("/db/repository/", $namespace, "/", string-join($workComponents,"/"))
-                        }                      
-                    else ( (: TODO lookup from TextInventory :) )                     
+                        let $string := substring-before($subref,"[")
+                        let $pos := replace($subref,"^.*?\[(\d+)\]$","$1")
+                        return element subRef { attribute position { $pos }, $string } 
+                    else ()),            
+                    element fileInfo {                      
+                        if (starts-with($edition,'alpheios-'))
+                        then            
+                            (: TODO look up the path in the TextInventory :)
+                            let $parts := tokenize($edition,'-')                    
+                            return
+                            (
+                                element basePath { 
+                                    concat("/db/repository/", $namespace, "/", string-join($workComponents[position() != last()] ,"/"))
+                                },
+                                element fullPath {
+                                    concat("/db/repository/", $namespace, "/", string-join($workComponents,"/"),".xml")
+                                },
+                                element alpheiosDocType { $parts[2] },
+                                for $i in $parts[position() > 2] return element alpheiosEditionId {$i}
+                            )   
+                        else 
+                            if (not($edition))
+                            then 
+                                element basePath { 
+                                    concat("/db/repository/", $namespace, "/", string-join($workComponents,"/"))
+                                }                      
+                            else ( (: TODO lookup from TextInventory :) )                     
+                    }
             }
-        }
+          
 };
 
 (: function to retrieve a subreference from a document
@@ -250,7 +263,7 @@ declare function cts:getValidReff($a_inv as xs:string,$a_urn as xs:string,$a_lev
     Returns 
         a regex to match on
 :)
-declare function cts:getUrnMatchString($a_inv,$a_urn)
+declare function cts:getUrnMatchString($a_inv,$a_urn) as xs:string
 {    
     let $cts := cts:parseUrn($a_urn)
     let $doc := doc($cts/fileInfo/fullPath)
@@ -260,8 +273,8 @@ declare function cts:getUrnMatchString($a_inv,$a_urn)
     let $level := 
         if ($parts) then $parts else count($entry//ti:online//ti:citation)
     let $refs := cts:getValidReff($a_inv,$a_urn,$level)
-    let $urns := for $u in $refs//urn return concat('(',replace($u,"\.","\\."),'(:|\.))')
-    return string-join($urns,"|")    
+    let $urns := for $u in $refs//urn return concat('(',replace($u,"\.","\\."),'(:|\.))')    
+    return concat('^',string-join($urns,"|"))    
 };
 
 (:

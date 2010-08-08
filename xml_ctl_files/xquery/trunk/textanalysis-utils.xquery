@@ -42,8 +42,11 @@ declare variable $tan:MAX_LEMMAS := 10000;
     Parameters:
         $a_cts the ctsURN element for the document, as parsed by cts:parseUrn
     Return Value:
-        An Element containing one element named by document type (e.g. text, treebank, morph, align, etc.) for
+        A) An Element containing one element named by document type (e.g. text, treebank, morph, align, etc.) for
         each available document type for the edition
+        or 
+        B) if cts:parseUrn returned a dummy element because the urn was actually a text string, then it returns an
+             element named toparse which has the language in a lang attribute, and the string as the text of the element
 :)
 declare function tan:findDocs($a_cts)
 {                
@@ -56,6 +59,11 @@ declare function tan:findDocs($a_cts)
                         if (doc-available($docname))
                         then element  {$i} { $docname }                                          
                         else()
+            else if ($a_cts/usertext)
+                then element toparse {
+                    $a_cts/usertext/@lang,
+                    $a_cts/usertext/text()
+                }
             else ()                
         }            
 };
@@ -165,20 +173,23 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                     (for $p in $a_pofs return 
                       xs:string($tbDesc/tbd:table[@type eq "morphology"]/tbd:category[@id eq 'pos']/tbd:entry[tbd:long/text() = $p]/tbd:short)
                     ),"|"),")")
-                else "."                                                  
+                else ""                                                  
             let $lang := xs:string($doc/treebank/@*[local-name(.) = 'lang'])
             let $lemmas := 
-                if ($a_excludePofs)
-                then                    
-                    $doc/treebank/sentence[matches(@subdoc,$bookMatch) and matches(@id,$sentenceMatch)]/
-                        word[attribute::postag and not(matches(attribute::postag,$p_match)) and not(matches(attribute::postag,"^-"))]
-                else $doc/treebank/sentence[matches(@subdoc,$bookMatch) and matches(@id,$sentenceMatch)]/
-                        word[attribute::postag and matches(attribute::postag,$p_match) and not(matches(attribute::postag,"^-"))]
+                if ($p_match)
+                then 
+                    if ($a_excludePofs)
+                    then                    
+                        $doc/treebank/sentence[matches(@subdoc,$bookMatch) and matches(@id,$sentenceMatch)]/
+                            word[attribute::postag and not(matches(attribute::postag,$p_match)) and not(matches(attribute::postag,"^-"))]
+                    else $doc/treebank/sentence[matches(@subdoc,$bookMatch) and matches(@id,$sentenceMatch)]/
+                            word[attribute::postag and matches(attribute::postag,$p_match) and not(matches(attribute::postag,"^-"))]
+                else $doc/treebank/sentence[matches(@subdoc,$bookMatch) and matches(@id,$sentenceMatch)]/word
             for $i in $lemmas 
                 let $sense := replace($i/@lemma,"^(.*?)(\d+)$","$2")
                 let $lemma:= if (matches($i/@lemma,"\d+$")) then replace($i/@lemma,"^(.*?)(\d+)$","$1") else $i/@lemma
                 let $book := substring-after(substring-before($i/parent::sentence/@subdoc,":"),"book=")
-                let $position:= count($i/preceding-sibling::word[@form="$i/@form" and @lemma="$i/@lemma"]) + 1
+                let $position:= count($i/preceding-sibling::word[@form="$i/@form"]) + 1
                 return <lemma lang="{$lang}" form="{xs:string($i/@form)}" sense="{$sense}" lemma="{$lemma}">
                                 <forms:urn>{concat($cts/workUrn,":",$book,".",$i/parent::sentence/@id,":",$i/@form,"[",$position,"]")}</forms:urn>
                           </lemma>
@@ -193,41 +204,73 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                 let $p_match := 
                     if (count($a_pofs) > 0)
                     then concat('^',string-join($a_pofs,'|'),'$')
-                    else "."                 
+                    else ""                
                 let $u_match := cts:getUrnMatchString('alpheios-cts-inventory',$a_docid)
                 
-                let $lemmas := 
-                    if ($a_excludePofs)
-                    then $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$u_match)]/
-                        forms:words/forms:word/forms:entry/forms:dict[not(matches(forms:pofs/text(),$p_match))] 
-                      else $doc/forms:forms/forms:inflection[matches(forms:urn/text(),$u_match)]/
-                          forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs/text(),$p_match) 
-                          or matches(../forms:infl/forms:pofs/text(),$p_match)]                                
+                let $lemmas :=
+                    if ($p_match)
+                    then 
+                        if ($a_excludePofs)
+                        then $doc/forms:forms/forms:inflection[matches(forms:urn,xs:string($u_match))]/
+                            forms:words/forms:word/forms:entry/forms:dict[not(matches(forms:pofs,$p_match))] 
+                          else $doc/forms:forms/forms:inflection[matches(forms:urn,xs:string($u_match))]/
+                              forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs,$p_match) 
+                              or matches(../forms:infl/forms:pofs,$p_match)]
+                      else $doc/forms:forms/forms:inflection[matches(forms:urn,xs:string($u_match))]/
+                              forms:words/forms:word/forms:entry/forms:dict
                   let $all :=
                         for $i in $lemmas
                             let $hdwd := $i/forms:hdwd/text()
-                            let $sense := if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
-                            let $lemma:= if (matches($hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
+                            let $sense := if (matches($i/forms:hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
+                            let $lemma:= if (matches($i/forms:hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
                             let $form := $i/ancestor::forms:inflection/@form
-                            let $urns := $i/ancestor::forms:inflection/forms:urn[matches(text(),$u_match)]
+                            let $urns := $i/ancestor::forms:inflection/forms:urn[matches(.,$u_match)]
                             let $count := count($urns)
                             return 
                                 <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}">{
                                     $urns                                            
                                 }</lemma>
-                    return                           
+                    let $dd :=                           
                         for $seq in (1 to count($all))
                         return $all[$seq][not(
                             $all[position() < $seq and 
-                                @lemma= $all[$seq]/@lemma and @form=$all[$seq]/@form and @sense=$all[$seq]/@sense] and forms:urn = $all[$seq]/forms:urn)]                                             
-        else ()        
-                                
+                                @lemma= $all[$seq]/@lemma and @form=$all[$seq]/@form and @sense=$all[$seq]/@sense] and forms:urn = $all[$seq]/forms:urn)]
+                    return $all                                
+        else if ($docinfo/toparse)
+            (: tokenize the user supplied text and pass it to the morphology service for the language :)
+            then
+              let $parsed := tan:getMorph($docinfo/toparse)
+              let $lang := $docinfo/toparse/@lang
+              let $p_match := 
+                    if (count($a_pofs) > 0)
+                    then concat('^',string-join($a_pofs,'|'),'$')
+                    else ""          
+              let $entries :=                  
+                   if ($p_match)
+                   then 
+                       if ($a_excludePofs)
+                       then $parsed/word/entry[dict[not(matches(pofs,$p_match))] or infl[not(matches(pofs,$p_match))]] 
+                       else $parsed/word/entry[matches(dict/pofs,$p_match) or matches(infl/pofs,$p_match)]                              
+                   else $parsed/word/entry
+              for $i in $entries
+                      let $hdwd := $i/dict/hdwd/text()
+                      let $sense := if (matches($i/dict/hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
+                      let $lemma:= if (matches($i/dict/hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
+                      let $form := $i/../form
+                      let $position:= count($i/ancestor::word[preceding-sibling::word[form=$form]]) + 1                      
+                      return 
+                          <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="1" lemma="{$lemma}">
+                              <forms:urn>{concat($form/text(),'[',$position,']')}</forms:urn>
+                          </lemma>
+        else()                      
         let $total := count($words)
         let $returned := if ($total > $tan:MAX_LEMMAS) then $tan:MAX_LEMMAS else $total
         let $truncated  := for $i in $words[position() <= $tan:MAX_LEMMAS] return $i                     
         return
             <result count="{$returned}" total="{$total}" truncated="{$total - $returned}" 
-                treebank="{exists($docinfo/treebank)}">
+                treebank="{exists($docinfo/treebank)}" pmatch="{        if (count($a_pofs) > 0)
+                    then concat('^',string-join($a_pofs,'|'),'$')
+                    else ""                }" excludepofs="{$a_excludePofs}">
                 <words>{for $i in $truncated order by $i/@lemma, $i/@form return $i}</words>
             </result>
 };
@@ -332,10 +375,7 @@ declare function tan:change-element-ns-deep ( $a_nodes as node()* , $a_newns as 
          else $node
  } ;
 
-declare function tan:tokenizeWords( $a_str as xs:string) as node()* {
-    ()
-};
-
+(: compare a list of lemmatized words to a tei-compliant vocabulary list  returning the lemmas which matched :)
 declare function tan:matchLemmas( $a_words as node()*, $a_vocab as node()*) as node()*
 {
         for $i in $a_words
@@ -357,6 +397,7 @@ declare function tan:matchLemmas( $a_words as node()*, $a_vocab as node()*) as n
 };
 
 (: Alternate version of matchLemmas which returns the lemmas missed instead of found :)
+(: TODO need to add ability for language-specific plugin to process alternatives for each word if no matches found e.g. in arabic stripping vowels :)
 declare function tan:matchLemmas( $a_missed as xs:boolean, $a_words as node()*, $a_vocab as node()*) as node()*
 { 
             if ($a_missed)
@@ -375,6 +416,7 @@ declare function tan:matchLemmas( $a_missed as xs:boolean, $a_words as node()*, 
             else tan:matchLemmas( $a_words, $a_vocab)                                                         
 };
 
+(: this function is incomplete :)
 declare function tan:matchVocab( $a_vocab as node()*, $a_words as node()*) as node()*
 {
         for $i in $a_vocab
@@ -382,4 +424,35 @@ declare function tan:matchVocab( $a_vocab as node()*, $a_words as node()*) as no
                     $a_words[@lemma = $i/tei:form[@type="lemma"]/text()]
             return
                 $match                                        
+};
+
+(:
+    Function which tokenizes an element containing a text string (whose language should be identified in the @lang attribute of the element)
+    and if an alpheios-lexicon-compliant morphology service has been defined for the language, pass the words to the service and return the morphology
+    for the words in the string
+    TODO the following should be configurable:
+        - location of morphology service
+        - pre and post transforms on the morphology output
+:)
+declare function tan:getMorph($a_text)
+{
+      let $xsl := doc('/db/xslt/alpheios-tokenize.xsl')      
+      let $params := <parameters><param name="e_lang" value="{$a_text/@lang}"/></parameters>
+      let $wds := transform:transform($a_text, $xsl, $params)
+      let $morph := 
+          if ($a_text/@lang = 'ara')
+          then              
+              let $decode_xsl := doc('/db/xslt/uni2buck.xsl')              
+              let $svcurl := "http://alpheios.net/perl/aramorph?word="
+              let $encode_xsl := doc('/db/xslt/morph-buck2uni.xsl')
+              for $w in $wds//tei:wd
+                  let $buck_w:= transform:transform($w, $decode_xsl, ())
+                  let $url := concat($svcurl,encode-for-uri($buck_w))
+                  let $morph := httpclient:get(xs:anyURI($url),false(),())
+                  (: TODO: this is stripping the senses out before transforming to unicode
+                                 we need to isolate the sense in an attribute so it can be used for matching :)
+                  return transform:transform($morph, $encode_xsl, ())//word
+                                  
+          else()
+     return <words>{$morph}</words>
 };
