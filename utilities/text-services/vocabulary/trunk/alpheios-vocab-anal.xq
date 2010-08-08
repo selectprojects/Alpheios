@@ -32,7 +32,7 @@ import module namespace httpclient = "http://exist-db.org/xquery/httpclient";
 declare namespace forms = "http://alpheios.net/namespaces/forms";
 
 let $e_docUrn := request:get-parameter("docUrn", ())
-let $e_doc := request:get-parameter("doc",())
+let $e_doc := request:get-parameter("doc","")
 let $e_vocabUrn := request:get-parameter("vocabUrn", ())
 let $e_vocabDoc := request:get-parameter("vocabDoc", ())
 let $e_pofs := distinct-values(request:get-parameter("pofs",()))
@@ -40,20 +40,27 @@ let $e_excludePofs := xs:boolean(request:get-parameter("excludepofs","false"))
 let $e_format := request:get-parameter("format","html")
 let $e_details := request:get-parameter("details",())
 let $e_reverse := xs:boolean(request:get-parameter("missed","false"))
+let $e_lang := request:get-parameter("lang",xs:string('en'))
 
-
+(: tan:getWords returns ungrouped sequence of                          
+    <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemsma="{$lemma}"/>       
+:)
 let $sourceWords  :=
-    if (count($e_docUrn) ) then
-    for $u in $e_docUrn return tan:getWords($u,$e_excludePofs,$e_pofs)
-    (: returns ungrouped sequence of                          
-       <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}"/>       
-    :)
-    else if ($e_doc)
-    (: TODO tokenize and parse supplied text :)
-    then (:tan:tokenizeWords($e_doc):)()   
-    else ()
-
-let $all_words := $sourceWords//lemma
+    if ($e_doc != "")
+    then 
+        tan:getWords(concat('alpheiosusertext:',$e_lang,':',$e_doc),$e_excludePofs,$e_pofs)
+    else
+        let $all := for $u in $e_docUrn return tan:getWords($u,$e_excludePofs,$e_pofs)
+        return 
+        element result {
+            attribute treebank { if ($all[@treebank != 'false']) then true() else false() },
+            <words> { $all//lemma } </words>                
+        }                        
+    
+(: group the results of tan:getWords by form, lemma and sense to get a set of distinct form+lemma+sense :)
+let $group_xsl := doc('/db/xslt/alpheios-vocab-group-forms.xsl')
+let $grouped_words := transform:transform($sourceWords, $group_xsl, ())
+let $all_words := $grouped_words//lemma
 
 let $vocab_entries :=
     if (count($e_vocabUrn)>0)
@@ -69,16 +76,18 @@ let $vocab_entries :=
                     (: stored alpheios-enabled text :)
                     let $url := concat(replace(request:get-url(),'alpheios-vocab-anal.xq','alpheios-vocab.xq?'),"urn=",$v,"&amp;format=xml&amp;count=-1&amp;excludepofs=",$e_excludePofs,"&amp;pofs=",
                         string-join($e_pofs,"&amp;pofs="))
-                    return httpclient:get(xs:anyURI($url),false(),())//tei:entry                                    
+                    let $vocabDoc := httpclient:get(xs:anyURI($url),false(),())                         
+                    return $vocabDoc//tei:entry                                    
     else (: tei vocab list from Alpheios tools:) 
         util:parse($e_vocabDoc)
-
+    
 (: for now, only consider the lemmas .. TODO configurable to include forms and senses :)
 let $vocab_lemmas := $vocab_entries[tei:form[@type="lemma"]]    
    
 (: if treebanked text, then lemma count is precise; otherwise it's the total possible lemmas as identified by the morphology service :)
-let $doc_lemma_count := count($all_words//lemma)
-let $docType := if ($sourceWords/@treebank = "true") then "treebank" else if (count($e_docUrn) > 0) then "morphology" else "user"
+let $doc_form_count := count($all_words//lemma)
+let $doc_word_count := count(distinct-values($all_words//forms:urn))
+let $docType := if ($sourceWords/@treebank = 'true') then "treebank" else if (count($e_docUrn) > 0) then "morphology" else "user"
 let $vocabType := 
     if (matches($e_vocabUrn,"alpheios-vocab")) then "vocablist" 
     else if (count($e_vocabUrn)) then "morphology"
@@ -99,15 +108,18 @@ let $pi :=
 return
 ($pi,
 <results docType="{$docType}" vocabType="{$vocabType}">
-    <docUrns>
-        {for $u in $e_docUrn return if ($u) then <urn label="{cts:getExpandedTitle('alpheios-cts-inventory',$u)}">{$u}</urn> else ()}        
-    </docUrns>
+    <docUrns>{                
+                for $u in $e_docUrn return if ($u) then <urn label="{cts:getExpandedTitle('alpheios-cts-inventory',$u)}">{$u}</urn> else ()              
+    } </docUrns>    
+    <docText>{$e_doc}</docText>    
     <vocabUrns>
         {for $u in $e_vocabUrn return if ($u) then <urn label="{cts:getExpandedTitle('alpheios-cts-inventory',$u)}">{$u}</urn> else ()}
     </vocabUrns>
-    <count type="docForms">{$doc_lemma_count}</count>
-    <count type="vocabLemmas">{$vocab_lemma_count}</count> 
+    <count type="docForms">{$doc_form_count}</count>
+    <count type="vocabLemmas">{$vocab_lemma_count}</count>
+    <count type="docTotalWords">{$doc_word_count}</count>
     <count type="formLemmaFound">{count($results)}</count>
+    <vocab>{$vocab_lemmas}</vocab>
     { if ($e_details) then 
         <lemmas found="{not($e_reverse)}">
             { for $r in $results

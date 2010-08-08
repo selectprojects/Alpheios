@@ -4,12 +4,14 @@
         <xsl:include href="funding.xsl"/>            
         <xsl:template match="/">
             <xsl:variable name="docCount"><xsl:value-of select="results/count[@type='docForms']"/></xsl:variable>
+            <xsl:variable name="docWordCount"><xsl:value-of select="results/count[@type='docTotalWords']"/></xsl:variable>
             <xsl:variable name="vocabCount"><xsl:value-of select="results/count[@type='vocabLemmas']"/></xsl:variable>
             <xsl:variable name="formLemmaFoundCount"><xsl:value-of select="results/count[@type='formLemmaFound']"/></xsl:variable>
+            <xsl:variable name="possible"><xsl:if test="results/@docType !='treebank'"><xsl:text>possible </xsl:text></xsl:if></xsl:variable> 
             <xsl:variable name="analysis_string">
                 <xsl:choose>
-                        <xsl:when test="//lemmas/@found = 'true'">Coverage Of </xsl:when>
-                        <xsl:otherwise>Not Found In</xsl:otherwise>                
+                        <xsl:when test="//lemmas/@found = 'true'">Found</xsl:when>
+                        <xsl:otherwise>Not Found</xsl:otherwise>                
                 </xsl:choose>
             </xsl:variable>
             <html>
@@ -23,11 +25,16 @@
                     <div class="results">
                         <div class="result">
                             <div class="label">Target Text:</div>
-                            <ul>                                
-                                <xsl:for-each select="results/docUrns/urn">
-                                    <li><xsl:value-of select="@label"/></li>    
-                                </xsl:for-each>                                            
-                              </ul>                                                           
+                            <xsl:if test="results/docUrns">
+                                <ul>                                
+                                    <xsl:for-each select="results/docUrns/urn">
+                                        <li><xsl:value-of select="@label"/></li>    
+                                    </xsl:for-each>                                            
+                                </ul>                                            
+                            </xsl:if>
+                            <xsl:if test="results/docText">
+                                <xsl:value-of select="results/docText"/>
+                            </xsl:if>
                         </div>
                         <div class="result">
                             <div class="label">Vocabulary Source:</div>
@@ -37,9 +44,10 @@
                                     </xsl:for-each>                                                                            
                             </ul>
                         </div>                        
-                        <div class="result"><span class="label">Number of <xsl:if test="results/@docType !='treebank'">possible </xsl:if> words in target text:</span><span><xsl:value-of select="$docCount"/></span></div>
-                        <div class="result"><span class="label">Number of <xsl:if test="results/@vocabType='morphology'">possible </xsl:if> lemmas in vocabulary:</span><span><xsl:value-of select="$vocabCount"/></span></div>
-                        <div class="result"><span class="label">Vocabulary <xsl:value-of select="$analysis_string"/> Target Text:</span><span><xsl:value-of select="format-number($formLemmaFoundCount div $docCount,'##.##%')"/></span></div>
+                        <div class="result"><span class="label">Number of  words in target text</span><span><xsl:value-of select="$docWordCount"/></span></div>
+                        <div class="result"><span class="label">Number of <xsl:value-of select="$possible"/>distinct form+lemma+sense in target text:</span><span><xsl:value-of select="$docCount"/></span></div>
+                        <div class="result"><span class="label">Number of <xsl:value-of select="$possible"/>lemmas in vocabulary:</span><span><xsl:value-of select="$vocabCount"/></span></div>
+                        <div class="result"><span class="label">% <xsl:value-of select="$analysis_string"/> (of <xsl:value-of select="$possible"/>lemmas in target text):</span><span><xsl:value-of select="format-number($formLemmaFoundCount div $docCount,'##.##%')"/></span></div>
                     </div>
                     <div class="detail">
                         <xsl:apply-templates select="results/lemmas"/>
@@ -53,13 +61,14 @@
         <xsl:template match="lemmas">
             <xsl:if test="match">
             <table>
-                <tr><th>Form</th><th>Lemma</th><th>Matched Form</th><th>Matched Sense</th><th>Refs</th></tr>
+                <tr><th>Form</th><th>Lemma</th><th>Sense</th><th>Matched Form</th><th>Matched Sense</th><th>Refs</th></tr>
                     <xsl:for-each select="match">
                         <tr>
                             <td><xsl:value-of select="@form"/></td>
                             <td><xsl:value-of select="@lemma"/></td>
+                            <td><xsl:value-of select="@sense"/></td>
                             <td><xsl:value-of select="@matchForm"/></td>
-                            <td>NA</td><!-- not yet implemented-->
+                            <td>Not implemented</td><!-- not yet implemented-->
                             <td>
                                 <xsl:apply-templates select="."/>
                             </td>

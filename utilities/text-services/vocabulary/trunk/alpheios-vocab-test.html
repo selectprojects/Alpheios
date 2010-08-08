@@ -1,6 +1,7 @@
 <!DOCTYPE html SYSTEM "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-    <head><title>Alpheios Vocabulary Analysis</title>
+    <head><title>Alpheios Vocabulary Analysis</title>        
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
         <script type="text/javascript" src="alpheios-vocab-test.js"></script>
         <style type="text/css">
@@ -20,8 +21,9 @@
              <input type="hidden" name="excludepofs" value="1"/>
              <input type="hidden" name="pofs" value="punctuation"/>
             <table>
+                <tr><th colspan="3">Vocabulary Source</th></tr>
                 <tr>
-                    <td><label for="vocabUrnSelect">Vocabulary Source</label></td>    
+                    <td><label for="vocabUrnSelect">Select Urn</label></td>    
                     <td><select name="vocabUrn" id="vocabUrnSelect" class="inventory" multiple="multiple" size="5">
                         <option value="" selected>-</option>
                         <option value="urn:cts:arabicLit:alk.alk00a.alpheios-vocab-ara1:2">Al Kitaab Alif Baa Chapter 2</option>
@@ -70,27 +72,40 @@
                         <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.1-2.100">Quran Sura 2 (1-100)</option>
                         <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.101-2.200">Quran Sura 2 (101-200)</option>
                         <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.201-2.300">Quran Sura 2 (201-301)</option>                        
-                        <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1">Iliad Book1</option>
-                        <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1">Odyssey Book1</option>                                      
+                        <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1.1-1.100">Iliad Book1 (lines 1-100)</option>
+                        <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1.227-1.327">Odyssey Book1 (lines 1-100)</option>                                      
                     </select></td>
-                    <td><label>Or Enter Urn:<input name="vocabUrn" id="vocabUrnText" size="100"/></label></td>                    
                 </tr>
                 <tr>
-                    <td><label for="docUrnSelect">Target Text</label></td>
+                    <td><label>Or Enter Urn:</label></td>
+                    <td><input name="vocabUrn" id="vocabUrnText" size="100"/></td>                        
+                </tr>
+                <tr><td colspan="3"><hr/></td></tr>
+                <tr><th colspan="3">Target Text</th></tr>
+                <tr>
+                    <td><label for="docUrnSelect">Select Urn</label></td>
                     <td>
                         <select name="docUrn" id="docUrnSelect" class="inventory">
                             <option value="" selected>-</option>
-                            <option value="urn:cts:arabicLit:perseus201001.perseus0001.alpheios-text-ara1:1">1,001 Nights (Volume 1 Pages 2-5)</option>
+                            <option value="urn:cts:arabicLit:perseus201001.perseus0001.alpheios-text-ara1:2-5">1,001 Nights (Volume 1 Pages 2-5)</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:1">Quran Sura 1</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.1-2.100">Quran Sura 2 (1-100)</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.101-2.200">Quran Sura 2 (101-200)</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.201-2.300">Quran Sura 2 (201-301)</option>
                             <option value="urn=urn:cts:arabicLit:aljaz.aljaz20100711.alpheios-text-ara1:1">Al-Jazeera Article (الإعلام يرشح إسبانيا للفوز بالمونديال)</option>
-                            <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1">Iliad Book1</option>
-                            <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1">Odyssey Book1</option>                                                                     
+                            <option value="urn:cts:greekLit:tlg0012.tlg001.alpheios-text-grc1:1.1-1.100">Iliad Book1 (lines 1-100)</option>
+                            <option value="urn:cts:greekLit:tlg0012.tlg002.alpheios-text-grc1:1.227-1.327">Odyssey Book1 (lines 1-100)</option>                                                                     
                         </select>
                     </td>
-                    <td><label>Or Enter Urn:<input id="docUrnText" name="docUrn" size="100"></input></label><br/></td>
+                </tr>
+                    <tr>
+                    <td><label>Or Enter Urn</label></td>
+                    <td><input id="docUrnText" name="docUrn" size="100"></td>
+                </tr>
+                <tr>
+                    <td><label for="doc">Or Enter Text</label> 
+                        <select name="lang"><option value="ara">Arabic</option></select>                                                
+                    <td><textarea id="doc" name="doc" maxlength="500" rows="5" cols="100"></textarea></td>
                 </tr>
                 <tr>
                     <td>&nbsp;</td>
@@ -117,7 +132,7 @@
                     <tr>
                         <td><label for="urn">Vocabulary Source</label></td>
                         <td><select name="urn" id="urn">
-                            <option value="urn:cts:arabicLit:perseus201001.perseus0001.alpheios-text-ara1:1">1,001 Nights (Volume 1 Pages 2-5)</option>
+                            <option value="urn:cts:arabicLit:perseus201001.perseus0001.alpheios-text-ara1:2-5">1,001 Nights (Volume 1 Pages 2-5)</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:1">Quran Sura 1</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2">Quran Sura 2</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:3">Quran Sura 3</option>
