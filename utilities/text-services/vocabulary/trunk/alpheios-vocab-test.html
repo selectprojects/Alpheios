@@ -5,25 +5,57 @@
         <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
         <script type="text/javascript" src="alpheios-vocab-test.js"></script>
         <style type="text/css">
+            body {
+                font-family: Arial,sans-serif;
+            }
+            h1 {
+                font-size: 120%;
+            }
             td label { text-align: right; }
-            .funder {    
+            .funder,.rights {    
                 font-size: small;
                 text-align: left;
                 font-family: Arial,sans-serif;            
             }
+            h1 {
+                text-align: center;
+            }
+            th {
+                text-align: left;
+                font-size: larger;
+                font-weight: normal;
+            }
+            td hr {
+                height: 1px;
+                border-top: 1px dotted;
+            }
+            td.show {
+                padding-left: 1em;
+            }
+            td.submit {
+                text-align: right;
+            }
+            td.label {
+                text-align: right;
+            }
+            .footer {
+                margin-top: 1em;
+            }
         </style>
     </head>
     <body>
+        <div><img src="http://alpheios.net/alpheios-texts/img/alpheios.png" alt="Alpheios Logo"/></div>
         <div>
-            <h1>Learned Vocabulary Analyses</h1>
+            <hr/>
+            <h1>Vocabulary Comparison</h1>
             <form method="get" action="http://dev.alpheios.net:8810/exist/rest/db/xq/alpheios-vocab-anal.xq?">
              <input type="hidden" name="format" value="xml"/>
              <input type="hidden" name="excludepofs" value="1"/>
-             <input type="hidden" name="pofs" value="punctuation"/>
-            <table>
-                <tr><th colspan="3">Vocabulary Source</th></tr>
+             <input type="hidden" name="pofs" value="punctuation"/>                
+            <table>                
+                <tr><th colspan="3">Vocabulary Source:</th></tr>
                 <tr>
-                    <td><label for="vocabUrnSelect">Select Urn</label></td>    
+                    <td class="label"><label for="vocabUrnSelect">Select Urn:</label></td>    
                     <td><select name="vocabUrn" id="vocabUrnSelect" class="inventory" multiple="multiple" size="5">
                         <option value="" selected>-</option>
                         <option value="urn:cts:arabicLit:alk.alk00a.alpheios-vocab-ara1:2">Al Kitaab Alif Baa Chapter 2</option>
@@ -77,13 +109,13 @@
                     </select></td>
                 </tr>
                 <tr>
-                    <td><label>Or Enter Urn:</label></td>
+                    <td class="label"><label>Or Enter Urn:</label></td>
                     <td><input name="vocabUrn" id="vocabUrnText" size="100"/></td>                        
                 </tr>
                 <tr><td colspan="3"><hr/></td></tr>
-                <tr><th colspan="3">Target Text</th></tr>
+                <tr><th colspan="3">Target Text:</th></tr>
                 <tr>
-                    <td><label for="docUrnSelect">Select Urn</label></td>
+                    <td class="label"><label for="docUrnSelect">Select Urn:</label></td>
                     <td>
                         <select name="docUrn" id="docUrnSelect" class="inventory">
                             <option value="" selected>-</option>
@@ -99,29 +131,26 @@
                     </td>
                 </tr>
                     <tr>
-                    <td><label>Or Enter Urn</label></td>
+                    <td class="label"><label>Or Enter Urn:</label></td>
                     <td><input id="docUrnText" name="docUrn" size="100"></td>
                 </tr>
                 <tr>
-                    <td><label for="doc">Or Enter Text</label> 
+                    <td class="label"><label for="doc">Or Enter Text:</label><br/> 
                         <select name="lang"><option value="ara">Arabic</option></select>                                                
                     <td><textarea id="doc" name="doc" maxlength="500" rows="5" cols="100"></textarea></td>
                 </tr>
-                <tr>
-                    <td>&nbsp;</td>
-                    <td colspan="2"><label class="checkbox"><input type="checkbox" class="xmlFormat"></input>XML Output</label></td>
-                    
+                <tr><th colspan="3">Show:</th></tr>
+                <tr>                                        
+                    <td colspan="3" class="show""><label class="checkbox"><input type="checkbox" name="details"></input>Source Words Found in Vocabulary</label></td>
                 </tr>
-                <tr>
-                    <td>&nbsp;</td>                    
-                    <td><label class="checkbox"><input type="checkbox" name="details"></input>Show Words</label></td>
+                <tr>                                        
+                    <td colspan="3" class="show"><label class="checkbox"><input type="checkbox" name="missed"></input>Source Words NOT Found in Vocabulary</label></td>
+                </tr>                
+                <tr>                    
+                    <td colspan="3" class="show"><label class="checkbox"><input type="checkbox" class="xmlFormat"></input>XML Output</label></td>                    
                 </tr>
-                <tr>
-                    <td>&nbsp;</td>                    
-                    <td><label class="checkbox"><input type="checkbox" name="missed"></input>Reverse (Not Found)</label></td>
-                </tr>
-              </table>
-            <input type="submit" value="submit"/>
+                <tr><td colspan="3" class="submit"><input type="submit" value="submit"/></td></tr>
+              </table>            
             </form>            
         </div>
         <hr/>
@@ -130,7 +159,7 @@
             <form method="get" action="http://dev.alpheios.net:8810/exist/rest/db/xq/alpheios-vocab.xq?">
                 <table>
                     <tr>
-                        <td><label for="urn">Vocabulary Source</label></td>
+                        <td class="label"><label for="urn">Vocabulary Source:</label></td>
                         <td><select name="urn" id="urn">
                             <option value="urn:cts:arabicLit:perseus201001.perseus0001.alpheios-text-ara1:2-5">1,001 Nights (Volume 1 Pages 2-5)</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:1">Quran Sura 1</option>
@@ -142,7 +171,7 @@
                         </select></td>
                     </tr>
                     <tr>
-                        <td><label for="pofs">Part of Speech:</label></td>
+                        <td class="label"><label for="pofs">Part of Speech:</label></td>
                         <td><select id="pofs" name="pofs" multiple="multiple" size="2">
                             <option value="">(all)</option>
                             <option value="noun">noun</option>
@@ -155,15 +184,25 @@
                             <option value="punctuation">punctuation</option>
                         </select></td>
                     </tr>
-                    <tr>
-                        <td>&nbsp;</td>
-                        <td><label>Exclude selected parts of speech?<input type="checkbox" name="excludepofs"/></label></td>
+                    <tr>                    
+                        <td colspan="2"><input type="checkbox" name="excludepofs"/><label for="excludepofs">Exclude selected parts of speech</label></td>
                     </tr>
+                    <tr>
+                        <td colspan="2"><label class="checkbox"><input type="checkbox" class="xmlFormat" ></input>Show XML Output</label><br/></td>
+                    </tr>
+                    <tr><td colspan="2" class="submit"><input type="submit" value="submit"/></td></tr>                    
                 </table>                                                
-                <input type="hidden" name="format" value="xml"/>                
-                <label class="checkbox"><input type="checkbox" class="xmlFormat" ></input>XML Output</label><br/>
-                <input type="submit" value="submit"/>
+                <input type="hidden" name="format" value="xml"/>                                                
             </form>
         </div>        
+        <hr/>
+        <div class="footer">
+        <div class="funder">            
+            <span class="sponsor">Developed under the sponsorship of The Perseus Project, Tufts University.</span>
+            <span class="funder">The U.S. Department of Education provided funding for this project.</span>                                                    
+        </div>
+        <div class="rights">Alpheios is free software: you can redistribute it and/or modify it under the terms of the <a href="http://www.gnu.org/licenses/">GNU General Public License</a> as published by the Free Software Foundation, 
+        either version 3 of the License, or (at your option) any later version.</div>
+        </div>
     </body>
 </html>
