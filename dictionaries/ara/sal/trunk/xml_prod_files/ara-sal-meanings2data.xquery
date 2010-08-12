@@ -1,5 +1,5 @@
 (:
-  Copyright 2008-2010 Cantus Foundation
+  Copyright 2008-2010 Cantus Foundation, The Alpheios Project, Ltd.
   http://alpheios.net
 
   This file is part of Alpheios.
@@ -29,7 +29,7 @@ return
   then
     (: for each entry with an id :)
     for $entry at $i in $doc//entry
-    for $i in 1 to 5
+    for $i in 1 to 7
     let $key := saxon:evaluate(concat("$p1/lemma/@key", $i), $entry)
     (: let $key := util:eval(concat("$entry/lemma/@key", $i)) :)
     where $entry/@id and $key
@@ -43,7 +43,7 @@ return
     {
       (: for each entry with an id :)
       for $entry at $i in $doc//entry
-      for $i in 1 to 5
+      for $i in 1 to 7
       let $key := saxon:evaluate(concat("$p1/lemma/@key", $i), $entry)
       (: let $key := util:eval(concat("$entry/lemma/@key", $i)) :)
       where $entry/@id and $key

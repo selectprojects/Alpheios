@@ -2,7 +2,7 @@
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
 
 <!--
-  Copyright 2010 Cantus Foundation
+  Copyright 2010 Cantus Foundation, The Alpheios Project, Ltd.
   http://alpheios.net
  
   This file is part of Alpheios.
@@ -25,7 +25,7 @@
   <xsl:include href="ara-uni-util.xsl"/>
 
   <xsl:param name="e_in"/>
-  <xsl:param name="e_toDrop" select="'tanwin,hamza,harakat,shadda'"/>
+  <xsl:param name="e_toDrop" select="$s_araDropAll"/>
 
   <xsl:template match="/">
     <xsl:call-template name="ara-uni-strip">

@@ -3,7 +3,7 @@
                 xmlns:exsl="http://exslt.org/common"
                 version="1.0">
   <!--
-    Copyright 2009-2010 Cantus Foundation
+    Copyright 2009-2010 Cantus Foundation, The Alpheios Project, Ltd.
     http://alpheios.net
 
     This file is part of Alpheios.
@@ -58,10 +58,14 @@
       <drop name="harakat" in="&#x064E;&#x064F;&#x0650;&#x0670;&#x0671;" out=""
         >Drop harakat (FATHA, DAMMA, KASRA, SUPERSCRIPT ALEF, ALEF WASLA)</drop>
       <drop name="shadda" in="&#x0651;" out="">Drop SHADDA</drop>
+      <drop name="sukun" in="&#x0652;" out="">Drop SUKUN</drop>
+      <drop name="alef" in="&#x0627;" out="">Drop ALEF</drop>
     </drop-table>
   </xsl:variable>
   <xsl:variable name="s_araDiacritics"
     select="exsl:node-set($s_rawAraDiacritics)/drop-table"/>
+
+  <xsl:variable name="s_araDropAll">tanwin,hamza,harakat,shadda,sukun,alef</xsl:variable>
   
   <!--
     Translate Buckwalter transliteration to Unicode
