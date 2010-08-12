@@ -109,7 +109,8 @@ Alph.LanguageTool_Arabic.prototype.getLemmaId = function(a_lemmaKey)
             Alph.LanguageTool_Arabic.lookupLemma(a_lemmaKey,
                                                  null,
                                                  this.d_idsFile[i],
-                                                 this.d_stripper)[1];
+                                                 this.d_stripper,
+                                                 this.d_stripperList)[1];
         if (lemma_id)
             return Array(lemma_id, this.d_fullLexCode[i]);
     }
@@ -129,11 +130,12 @@ Alph.LanguageTool_Arabic.prototype.getLemmaId = function(a_lemmaKey)
  * @param {String} a_key key to look up or null
  * @param {Alph.Datafile} a_datafile datafile to search with key
  * @param a_stripper transform to remove diacritics, etc.
+ * @param a_stripperList list of preferred transforms
  * @returns {Array} (key, data)
  * @type String
  */
 Alph.LanguageTool_Arabic.lookupLemma =
-function(a_lemma, a_key, a_datafile, a_stripper)
+function(a_lemma, a_key, a_datafile, a_stripper, a_stripperList)
 {
     if (!a_datafile)
         return Array(null, null);
@@ -144,7 +146,7 @@ function(a_lemma, a_key, a_datafile, a_stripper)
     var key = (a_key ? a_key : lemma);
     var data = a_datafile.findData(key);
     var x = null;
-    var stripperList = this.d_stripperList;
+    var stripperList = a_stripperList;
     //var stripperList = ["tanwin", "hamza", "harakat", "shadda", "sukun", "alef"];
 
     // if not found, try various drops
@@ -157,12 +159,12 @@ function(a_lemma, a_key, a_datafile, a_stripper)
             if (!x)
                 x = (new DOMParser()).parseFromString("<dummy/>", "text/xml");
             var key2 = a_stripper.transformToDocument(x)
-                                 .documentElement.textContent;
-
+                                 .documentElement.textContent;            
+                                             
             // if not a new key, don't bother trying to find it
             if (key2 == key)
                 continue;
-
+            
             // if found, stop looking
             key = key2;
             data = a_datafile.findData(key);
