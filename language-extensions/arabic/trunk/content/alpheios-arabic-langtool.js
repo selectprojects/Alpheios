@@ -153,7 +153,7 @@ function(a_lemma, a_key, a_datafile, a_stripper)
         for (i in stripperList)
         {
             a_stripper.setParameter(null, "e_in", key);
-            a_stripper.setParameter(null, "e_toDrop", toDrop[i]);
+            a_stripper.setParameter(null, "e_toDrop", stripperList[i]);
             if (!x)
                 x = (new DOMParser()).parseFromString("<dummy/>", "text/xml");
             var key2 = a_stripper.transformToDocument(x)
