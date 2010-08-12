@@ -71,6 +71,8 @@ Alph.LanguageTool_Arabic.prototype.loadStripper = function()
     {
         this.d_stripper =
             Alph.BrowserUtils.getXsltProcessor('alpheios-ara-unistrip.xsl');
+        this.d_stripperList =
+            Alph.BrowserUtils.getPref('stripper.list',this.d_sourceLanguage).split(',');
     }
     catch (ex)
     {
@@ -142,12 +144,13 @@ function(a_lemma, a_key, a_datafile, a_stripper)
     var key = (a_key ? a_key : lemma);
     var data = a_datafile.findData(key);
     var x = null;
+    var stripperList = this.d_stripperList;
+    //var stripperList = ["tanwin", "hamza", "harakat", "shadda", "sukun", "alef"];
 
     // if not found, try various drops
     if (!data)
     {
-        var toDrop = ["tanwin", "hamza", "harakat", "shadda"];
-        for (i in toDrop)
+        for (i in stripperList)
         {
             a_stripper.setParameter(null, "e_in", key);
             a_stripper.setParameter(null, "e_toDrop", toDrop[i]);
