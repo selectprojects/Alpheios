@@ -6,9 +6,9 @@
 #alph-infl-table caption,   
 #alph-query-frame .answer,
 g text,
-*:lang(gre), 
-*:lang(grc),
-*.greek 
+#alph-window *:lang(gre), 
+#alph-window *:lang(grc),
+#alph-window *.greek 
 {
     font-family: "New Athena Unicode", Gentium, "Palatino Linotype","Lucida Grande","Arial Unicode MS", sans-serif;
 }
