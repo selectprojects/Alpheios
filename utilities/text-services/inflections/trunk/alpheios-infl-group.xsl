@@ -25,28 +25,28 @@
                 <xsl:otherwise>
                     <xsl:choose>
                         <xsl:when test="$e_pofs = 'verb'">
-                            <xsl:for-each-group select="current-group()" group-by="string(forms:voice)">
+                            <xsl:for-each-group select="//forms:infl" group-by="string(forms:voice)">
                                 <xsl:for-each-group select="current-group()" group-by="string(forms:mood)">
                                     <xsl:for-each-group select="current-group()" group-by="string(forms:tense)">
                                         <xsl:for-each-group select="current-group()" group-by="string(forms:pers)">                                            
                                                 <xsl:for-each-group select="current-group()" group-by="string(forms:num)">
+                                                    <xsl:element name="infl-ending-set">                                                        
+                                                        <xsl:for-each 
+                                                            select="current-group()//*[matches(local-name(),'^case|num|gend|voice|pers|tense|mood$')]">                                        
+                                                            <xsl:attribute name="{local-name(.)}"><xsl:value-of select="current()"/></xsl:attribute>                                                                                  
+                                                        </xsl:for-each>                
+                                                        <xsl:variable name="endings">
+                                                            <xsl:call-template name="group-endings"/>                                                                              
+                                                        </xsl:variable>                            
+                                                        <xsl:for-each select="$endings/infl-ending">
+                                                            <xsl:copy-of select="."></xsl:copy-of>
+                                                        </xsl:for-each>                            
+                                                        <xsl:element name="count"><xsl:value-of select="count($endings/infl-ending/refs/urn)"/></xsl:element>                                                                                  
+                                                    </xsl:element>                                
                                                 </xsl:for-each-group>
                                         </xsl:for-each-group>
                                     </xsl:for-each-group>                    
-                                </xsl:for-each-group>
-                                <xsl:element name="infl-ending-set">                               
-                                    <xsl:for-each 
-                                        select="current-group()//*[matches(local-name(),'^case|num|gend|voice|pers|tense|mood$')]">                                        
-                                        <xsl:attribute name="{local-name(.)}"><xsl:value-of select="current()"/></xsl:attribute>                                                                                  
-                                    </xsl:for-each>                
-                                    <xsl:variable name="endings">
-                                        <xsl:call-template name="group-endings"/>                                                                              
-                                    </xsl:variable>                            
-                                    <xsl:for-each select="$endings/infl-ending">                                        
-                                        <xsl:copy-of select="."/>
-                                    </xsl:for-each>                            
-                                    <xsl:element name="count"><xsl:value-of select="count($endings/infl-ending/refs/urn)"/></xsl:element>                                                               
-                                </xsl:element>                                
+                                </xsl:for-each-group>                               
                                </xsl:for-each-group>
                         </xsl:when>
                         <xsl:otherwise>
@@ -87,13 +87,13 @@
                             <xsl:for-each-group select="current-group()" group-by="string(forms:infl/forms:pers)">                                            
                                 <xsl:for-each-group select="current-group()" group-by="string(forms:infl/forms:num)">
                                     <xsl:element name="infl-ending-set">                               
-                                        <xsl:attribute name="count" select="count(distinct-values(current-group()/forms:infl/forms:urn))"/>
+                                        <xsl:attribute name="count" select="count(distinct-values(current-group()/forms:urn))"/>
                                         <xsl:for-each 
                                             select="current-group()//*[matches(local-name(),'^case|num|gend|voice|pers|tense|mood$')]">                                        
                                             <xsl:attribute name="{local-name(.)}"><xsl:value-of select="current()"/></xsl:attribute>                                            
                                         </xsl:for-each>
                                         <xsl:element name="refs">
-                                            <xsl:for-each select="distinct-values(current-group()/forms:infl/forms:urn)">
+                                            <xsl:for-each select="distinct-values(current-group()/forms:urn)">
                                                 <xsl:element name="urn"><xsl:value-of select="."/></xsl:element>
                                             </xsl:for-each>                
                                         </xsl:element>                                                                                    
