@@ -291,26 +291,29 @@ declare function tan:getInflections($a_docid as xs:string, $a_pofs as xs:string*
 {
     let $cts := cts:parseUrn($a_docid)
     let $docinfo := tan:findDocs($cts)
-    let $part := $cts/passageParts/rangePart[1]/part[1]    
+    let $part := $cts/passageParts/rangePart[1]/part[1]
+    let $u_match := cts:getUrnMatchString('alpheios-cts-inventory',$a_docid)
     let $forms := 
         if ($docinfo/morph)
         then 
             let $doc := doc($docinfo/morph)        
             let $refdoc := doc($docinfo/text)
             let $tbdoc := doc($docinfo/treebank)
-            (: TODO support ranges in the cts urn :)
-                    for $i in ($doc/forms:forms/forms:inflection[forms:words and  matches(forms:urn,$a_docid) and count(forms:urn) >= xs:int(2)])            
-                    return element inflection {
+            for $i in ($doc/forms:forms/forms:inflection[forms:words and  
+                                                                               (forms:words/forms:word/forms:entry/forms:dict/forms:pofs=$a_pofs or
+                                                                                forms:words/forms:word/forms:entry/forms:infl/pofs=$a_pofs) and
+                                                                                matches(forms:urn,$u_match)])            
+            return element inflection {
                         $doc/forms:forms/@xml:lang,
                         $i/@form,
                         <instances> {
-                            for $u in $i/*:urn[matches(.,$a_docid)]                      
+                            for $u in $i/*:urn[matches(text(),$u_match)]                      
                             return
                                 (: if we we can disambiguate the morphology using a treebank, do so :) 
                                 if (exists($docinfo/treebank) and exists($docinfo/text))
                                 then                      
-                                    let $passage := cts:getPassagePlus("alpheios-cts-inventory",$u)
-                                    let $aref := $passage/reply/subref/wd                                                                         
+                                    let $reply := cts:getPassagePlus("alpheios-cts-inventory",$u)
+                                    let $aref := $reply/subref/wd                                                                         
                                     let $tbref :=                                    
                                         if ($aref[1])
                                         then
