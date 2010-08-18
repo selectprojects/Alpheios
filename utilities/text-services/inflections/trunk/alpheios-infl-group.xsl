@@ -5,7 +5,7 @@
     <xsl:param name="e_sort" select="'ending'"/>
     <xsl:param name="e_pofs" select="noun"/>
     <xsl:template match="//forms">        
-        <inflections>
+        <inflections xml:lang="{@*[local-name() = lang]}">
             <xsl:choose>
                 <xsl:when test="$e_sort='ending'">
                     <xsl:for-each-group select="//instance" 
@@ -42,8 +42,8 @@
                                     <xsl:variable name="endings">
                                         <xsl:call-template name="group-endings"/>                                                                              
                                     </xsl:variable>                            
-                                    <xsl:for-each select="$endings/infl-ending">
-                                        <xsl:copy-of select="."></xsl:copy-of>
+                                    <xsl:for-each select="$endings/infl-ending">                                        
+                                        <xsl:copy-of select="."/>
                                     </xsl:for-each>                            
                                     <xsl:element name="count"><xsl:value-of select="count($endings/infl-ending/refs/urn)"/></xsl:element>                                                               
                                 </xsl:element>                                

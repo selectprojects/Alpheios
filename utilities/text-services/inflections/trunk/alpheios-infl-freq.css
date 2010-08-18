@@ -101,3 +101,12 @@ body {
     color: red;
     padding-left: 2em;
 }
+
+.emph {
+    font-style: italic;
+}
+
+.alpheios-hint {
+    clear: both;
+    text-align: center;
+}
