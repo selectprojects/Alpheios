@@ -215,7 +215,7 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                             forms:words/forms:word/forms:entry/forms:dict[not(matches(forms:pofs,$p_match))] 
                           else $doc/forms:forms/forms:inflection[matches(forms:urn,xs:string($u_match))]/
                               forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs,$p_match) 
-                              or matches(../forms:infl/forms:pofs,$p_match)]
+                              or matches(following-sibling::forms:infl/forms:pofs,$p_match)]
                       else $doc/forms:forms/forms:inflection[matches(forms:urn,xs:string($u_match))]/
                               forms:words/forms:word/forms:entry/forms:dict
                   let $all :=
@@ -224,7 +224,7 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                             let $sense := if (matches($i/forms:hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
                             let $lemma:= if (matches($i/forms:hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
                             let $form := $i/ancestor::forms:inflection/@form
-                            let $urns := $i/ancestor::forms:inflection/forms:urn[matches(.,$u_match)]
+                            let $urns := $i/parent::forms:entry/parent::forms:word/parent::forms:words/parent::forms:inflection/forms:urn[matches(text(),$u_match)]
                             let $count := count($urns)
                             return 
                                 <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}">{
