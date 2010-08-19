@@ -41,6 +41,21 @@
             .footer {
                 margin-top: 1em;
             }
+            .drop {
+                font-size: larger;
+                font-weight: bold;
+            }
+            *:lang(ara) {
+                font-family:"Lucida Grande",Verdana,Helvetica,Arial,sans-serif;
+            }
+            .dropkey {
+                display: none;
+            }
+            .dropkey.show {
+                display:block;
+                float: right;
+                border: 1px dotted black;
+            }
         </style>
     </head>
     <body>
@@ -141,12 +156,31 @@
                 </tr>
                 <tr>
                     <td class="label"><label>Remove/Replace  Before Comparison:</label></td>
-                    <td><label><input type="checkbox" name="toDrop" value="tanwin"></input>tanwin (&#x064B;&#x064C;&#x064D;&#x0640;)</label>
-                        <label><input type="checkbox" name="toDrop" value="hamza"></input>hamza (replace &#x0622;&#x0623;&#x0625; with &#x0627;)</label>
-                        <label><input type="checkbox" name="toDrop" value="harakat"></input>harakat (&#x064E;&#x064F;&#x0650;&#x0670;&#x0671;)</label>
-                        <label><input type="checkbox" name="toDrop" value="shadda"></input>shadda (&#x0651;)</label>
-                        <label><input type="checkbox" name="toDrop" value="sukun"></input>sukun (&#x0652;)</label>
-                        <label><input type="checkbox" name="toDrop" value="alef"></input>alef (&#x0627;)</label></td>                    
+                    <td><label><input type="checkbox" name="toDrop" value="tanwin"></input>tanwin</label>
+                        <label><input type="checkbox" name="toDrop" value="hamza"></input>hamza</label>
+                        <label><input type="checkbox" name="toDrop" value="harakat"></input>harakat</label>
+                        <label><input type="checkbox" name="toDrop" value="shadda"></input>shadda</label>
+                        <label><input type="checkbox" name="toDrop" value="sukun"></input>sukun</label>
+                        <label><input type="checkbox" name="toDrop" value="alef"></input>alef</label>
+                        <a id="showkeylink" href="#">(show/hide  key)</a>
+                    </td></tr>
+                    <tr><td colspan="2">
+                        <div class="dropkey">
+                        <table>
+                            <tr><td>tanwin</td><td>Drop nunation/tanwin &amp; tatweel (\u064B <span lang="ara" class="drop">&#x064B;</span> \u064C <span lang="ara" class="drop">&#x064C;</span> 
+                                \u064D <span lang="ara" class="drop">&#x064D;</span> \u0640 <span lang="ara" class="drop">&#x0640;</span>)</td></tr>
+                            <tr><td>hamza</td><td>Replace alef with madda above, alef with hamza above/below with alef (\u0622 <span lang="ara" class="drop">&#x0622;</span> 
+                                \u0623 <span lang="ara" class="drop">&#x0623;</span>  \u0625 <span lang="ara" class="drop">&#x0625;</span> 
+                                \u0627 with \u0627<span lang="ara" class="drop">&#x0627;</span>)</td></tr>
+                            <tr><td>harakat</td><td>Drop harakat - fatha, damma, kasra, superscript alef, alef wasla
+                                (\u064E <span lang="ara" class="drop">&#x064E;</span> \u064F <span lang="ara" class="drop">&#x064F;</span> 
+                                \u0650 <span lang="ara" class="drop">&#x0650;</span> \u0670 <span lang="ara" class="drop">&#x0670;</span> \u0671 <span lang="ara" class="drop">&#x0671;</span>)</td></tr>
+                            <tr><td>shadda</td><td>Drop shadda (\u0651 <span lang="ara" class="drop">&#x0651;</span>)</td></tr>
+                            <tr><td>sukun</td><td>Drop sukun (\u0652 <span lang="ara" class="drop">&#x0652;</span>)</td></tr>
+                            <tr><td>alef</td><td>Drop alef (\u0627 <span lang="ara" class="drop">&#x0627;</span>)</td></tr>                        
+                        </table>                
+                        </div>            
+                    </td>
                 </tr>
                 <tr>                         
                     <td>&nbsp;</td>
@@ -160,7 +194,7 @@
                     <td colspan="3" class="show"><label class="checkbox"><input type="checkbox" class="xmlFormat"></input>XML Output</label></td>                    
                 </tr>
                 <tr><td colspan="3" class="submit"><input type="submit" value="submit"/></td></tr>
-              </table>            
+            </table>
             </form>            
         </div>
         <hr/>
