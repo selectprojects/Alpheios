@@ -2,6 +2,7 @@ var reposUrl = "http://dev.alpheios.net:8800/exist/rest/db/xq";
 
 $(function() {
                 $("#showkeylink").click(showkey);
+                $("#vocabfmtlink").click(showvocabfmt);
                 $("form").submit(
                     function()
                     {
@@ -33,6 +34,12 @@ function showkey()
     $(".dropkey").toggleClass("show");        
     return false;
 }
+function showvocabfmt()
+{
+    $(".vocabfmt").toggleClass("show");        
+    return false;
+}
+
 function getInventory()
 {
     $.ajax({

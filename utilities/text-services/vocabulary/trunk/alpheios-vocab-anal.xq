@@ -65,8 +65,12 @@ let $grouped_words := transform:transform($sourceWords, $group_xsl, ())
 let $all_words := $grouped_words//lemma
 
 let $vocab_entries :=
-    if (count($e_vocabUrn)>0)
+    if ($e_vocabDoc != "")
     then
+        (: tei compliant vocab list :)
+        let $vocabDoc := util:parse($e_vocabDoc)
+        return $vocabDoc//tei:entry
+    else 
         for $v in $e_vocabUrn
             let $cts := cts:parseUrn($v)        
             return
@@ -80,8 +84,8 @@ let $vocab_entries :=
                         string-join($e_pofs,"&amp;pofs="))
                     let $vocabDoc := httpclient:get(xs:anyURI($url),false(),())                         
                     return $vocabDoc//tei:entry                                    
-    else (: tei vocab list from Alpheios tools:) 
-        util:parse($e_vocabDoc)
+     
+        
     
 (: for now, only consider the lemmas .. TODO configurable to include forms and senses :)
 let $vocab_lemmas := $vocab_entries[tei:form[@type="lemma"]]    
@@ -116,8 +120,10 @@ return
     } </docUrns>    
     <docText>{$e_doc}</docText>    
     <vocabUrns>
-        {for $u in $e_vocabUrn return if ($u) then <urn label="{cts:getExpandedTitle('alpheios-cts-inventory',$u)}">{$u}</urn> else ()}
-    </vocabUrns>
+        { if ($e_vocabDoc != "") then <urn>User Supplied Vocabulary</urn>
+          else for $u in $e_vocabUrn return if ($u) then <urn label="{cts:getExpandedTitle('alpheios-cts-inventory',$u)}">{$u}</urn> else ()
+        }        
+    </vocabUrns>    
     <count type="docForms">{$doc_form_count}</count>
     <count type="vocabLemmas">{$vocab_lemma_count}</count>
     <count type="docTotalWords">{$doc_word_count}</count>

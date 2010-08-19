@@ -48,14 +48,14 @@
             *:lang(ara) {
                 font-family:"Lucida Grande",Verdana,Helvetica,Arial,sans-serif;
             }
-            .dropkey {
+            .dropkey,.vocabfmt {
                 display: none;
             }
-            .dropkey.show {
+            .dropkey.show,.vocabfmt.show {
                 display:block;
                 float: right;
                 border: 1px dotted black;
-            }
+            }            
         </style>
     </head>
     <body>
@@ -63,7 +63,7 @@
         <div>
             <hr/>
             <h1>Vocabulary Comparison</h1>
-            <form method="get" action="http://dev.alpheios.net:8810/exist/rest/db/xq/alpheios-vocab-anal.xq?">
+            <form method="post" action="http://dev.alpheios.net:8810/exist/rest/db/xq/alpheios-vocab-anal.xq?">
              <input type="hidden" name="format" value="xml"/>
              <input type="hidden" name="excludepofs" value="1"/>
              <input type="hidden" name="pofs" value="punctuation"/>                
@@ -127,6 +127,34 @@
                     <td class="label"><label>Or Enter Urn:</label></td>
                     <td><input name="vocabUrn" id="vocabUrnText" size="100"/></td>                        
                 </tr>
+                <tr>
+                    <td class="label"><label for="doc">Or Enter TEI List document: (<a href="#" id="vocabfmtlink">?</a>)</label></td>                                                
+                        <td><textarea id="vocabDoc" name="vocabDoc" maxlength="500" rows="5" cols="100"></textarea></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <div class="vocabfmt">
+                            <p>Accepted vocabulary format is a valid xml document in the TEI 1.0 namespace (http://www.tei-c.org/ns/1.0) complying with the TEI dictionary schema 
+                                (<a href="http://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_dictionaries.xsd">http://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_dictionaries.xsd</a>)
+                                whose &lt;body&gt; element contains one or more &lt;entry&gt; elements for each vocabulary word. Each &lt;entry&gt; element should contain one &lt;form&gt; element for the lemma, as 
+                                identified by setting the @type attribute to 'lemma' and one &lt;form&gt; element for the form, identified by setting the @type attribute to 'inflection'.</p>
+                            <p>E.g.<br/>                                
+                                    &lt;TEI xmnls="http://www.tei-c.org/ns/1.0"&gt;<br/>
+                                        ...<br/>
+                                        &lt;text&gt;<br/>
+                                            &lt;body&gt;<br/>
+                                                &lt;entry xml:lang="ara"&gt;<br/>
+                                                    &lt;form type="lemma" xml:lang="ara"&gt;عَبَّد&lt;/form&gt;<br/>
+                                                    &lt;form type="inflection" xml:lang="ara"&gt;نَعْبُدُ&lt;/form&gt;<br/>                                                    
+                                                &lt;/entry&gt;<br/>
+                                            &lt;/body&gt;<br/>
+                                        &lt;/text&gt;<br/>
+                                    &lt;/TEI&gt;<br/>                                                                
+                            </p>
+                            <p>The XML downloads of the Alpheios Tools User Vocabulary Lists are compliant can be used by copying their contents and pasting them here.</p>                            
+                        </div>
+                    </td>                    
+                </tr>
                 <tr><td colspan="3"><hr/></td></tr>
                 <tr><th colspan="3">Target Text:</th></tr>
                 <tr>
@@ -179,7 +207,7 @@
                             <tr><td>sukun</td><td>Drop sukun (\u0652 <span lang="ara" class="drop">&#x0652;</span>)</td></tr>
                             <tr><td>alef</td><td>Drop alef (\u0627 <span lang="ara" class="drop">&#x0627;</span>)</td></tr>                        
                         </table>                
-                        </div>            
+                        </div>                        
                     </td>
                 </tr>
                 <tr>                         
