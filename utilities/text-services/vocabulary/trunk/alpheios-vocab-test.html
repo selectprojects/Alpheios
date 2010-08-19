@@ -138,7 +138,16 @@
                     <td class="label"><label for="doc">Or Enter Text:</label><br/> 
                         <select name="lang"><option value="ara">Arabic</option></select>                                                
                     <td><textarea id="doc" name="doc" maxlength="500" rows="5" cols="100"></textarea></td>
-                </tr>                
+                </tr>
+                <tr>
+                    <td class="label"><label>Remove/Replace  Before Comparison:</label></td>
+                    <td><label><input type="checkbox" name="toDrop" value="tanwin"></input>tanwin (&#x064B;&#x064C;&#x064D;&#x0640;)</label>
+                        <label><input type="checkbox" name="toDrop" value="hamza"></input>hamza (replace &#x0622;&#x0623;&#x0625; with &#x0627;)</label>
+                        <label><input type="checkbox" name="toDrop" value="harakat"></input>harakat (&#x064E;&#x064F;&#x0650;&#x0670;&#x0671;)</label>
+                        <label><input type="checkbox" name="toDrop" value="shadda"></input>shadda (&#x0651;)</label>
+                        <label><input type="checkbox" name="toDrop" value="sukun"></input>sukun (&#x0652;)</label>
+                        <label><input type="checkbox" name="toDrop" value="alef"></input>alef (&#x0627;)</label></td>                    
+                </tr>
                 <tr>                         
                     <td>&nbsp;</td>
                     <td colspan="2" class="show"><label class="checkbox"><input type="checkbox" name="missed"></input>Reverse Analysis (Words in Target Text Not Found in Vocabulary Source)</label></td>

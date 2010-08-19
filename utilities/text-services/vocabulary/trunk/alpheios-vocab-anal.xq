@@ -41,6 +41,8 @@ let $e_format := request:get-parameter("format","html")
 let $e_details := request:get-parameter("details",())
 let $e_reverse := xs:boolean(request:get-parameter("missed","false"))
 let $e_lang := request:get-parameter("lang",xs:string('en'))
+let $e_toDrop := string-join(request:get-parameter("toDrop",()),',')
+
 
 (: tan:getWords returns ungrouped sequence of                          
     <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemsma="{$lemma}"/>       
@@ -96,7 +98,8 @@ let $vocabType :=
 
 let $vocab_lemma_count := count($vocab_lemmas)
 
-let $results := tan:matchLemmas($e_reverse,$all_words//lemma, $vocab_lemmas)
+let $stripper := if ($e_lang = 'ara') then doc('/db/xslt/alpheios-ara-unistrip_v2.xsl') else ()  
+let $results := tan:matchLemmas($e_reverse,$all_words//lemma, $vocab_lemmas,$stripper,$e_toDrop)
 let $pi := 
     if ($e_format = 'html') 
     then 

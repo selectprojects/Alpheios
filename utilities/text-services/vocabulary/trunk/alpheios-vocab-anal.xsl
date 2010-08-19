@@ -65,7 +65,11 @@
                     <xsl:for-each select="match">
                         <tr>
                             <td><xsl:value-of select="@form"/></td>
-                            <td><xsl:value-of select="@lemma"/></td>
+                            <td><xsl:value-of select="@lemma"/>
+                                <xsl:if test="@matchWord != @lemma">
+                                    (Matched on <xsl:value-of select="@matchWord"/>)
+                                </xsl:if>
+                            </td>
                             <td><xsl:value-of select="@sense"/></td>
                             <td><xsl:value-of select="@matchForm"/></td>
                             <td>Not implemented</td><!-- not yet implemented-->
