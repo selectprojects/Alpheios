@@ -377,11 +377,28 @@ declare function tan:change-element-ns-deep ( $a_nodes as node()* , $a_newns as 
  } ;
 
 (: compare a list of lemmatized words to a tei-compliant vocabulary list  returning the lemmas which matched :)
-declare function tan:matchLemmas( $a_words as node()*, $a_vocab as node()*) as node()*
+declare function tan:matchLemmas( $a_words as node()*, $a_vocab as node()*,$a_stripper, $a_toDrop as xs:string*) as node()*
 {
         for $i in $a_words
+            let $word := 
+                if ($a_stripper and $a_toDrop)
+                then
+                    transform:transform(
+                        <dummy/>,
+                        $a_stripper,
+                        <parameters><param name="e_in" value="{$i/@lemma}"/><param name="e_toDrop" value="{$a_toDrop}"/></parameters>
+                   )
+               else $i/@lemma
             let $match :=
-                    $a_vocab/tei:form[@type="lemma" and text() = $i/@lemma]
+                if ($a_stripper and $a_toDrop)
+                then 
+                    $a_vocab/tei:form[@type="lemma" and 
+                        transform:transform(
+                            <dummy/>,
+                            $a_stripper,
+                            <parameters><param name="e_in" value="{text()}"/><param name="e_toDrop" value="{$a_toDrop}"/></parameters>
+                       ) = $word]
+                    else $a_vocab/tei:form[@type="lemma" and text() = $word]
             return 
                 if ($match)
                 then 
@@ -389,7 +406,8 @@ declare function tan:matchLemmas( $a_words as node()*, $a_vocab as node()*) as n
                      let $matchForm := $match/../tei:form[@type="inflection"]/text() = $i/@form
                      return                 
                           element lemma {
-                              $i/@*,                              
+                              $i/@*,
+                              attribute matchWord {$word},
                               attribute matchSense {$matchSense},
                               attribute matchForm {$matchForm},
                               $i/forms:urn
@@ -399,22 +417,40 @@ declare function tan:matchLemmas( $a_words as node()*, $a_vocab as node()*) as n
 
 (: Alternate version of matchLemmas which returns the lemmas missed instead of found :)
 (: TODO need to add ability for language-specific plugin to process alternatives for each word if no matches found e.g. in arabic stripping vowels :)
-declare function tan:matchLemmas( $a_missed as xs:boolean, $a_words as node()*, $a_vocab as node()*) as node()*
+declare function tan:matchLemmas( $a_missed as xs:boolean, $a_words as node()*, $a_vocab as node()*,$a_stripper, $a_toDrop as xs:string) as node()*
 { 
             if ($a_missed)
-            then 
+            then
                 for $i in $a_words
-                let $match :=
-                        $a_vocab/tei:form[@type="lemma" and text() = $i/@lemma]
-                return 
-                    if (not($match))
-                    then                                          
-                              element lemma {
-                                  $i/@*,                              
-                                  $i/forms:urn
-                              }
-                      else ()
-            else tan:matchLemmas( $a_words, $a_vocab)                                                         
+                    let $word := 
+                    if ($a_stripper and $a_toDrop)
+                    then
+                        transform:transform(
+                            <dummy/>,
+                            $a_stripper,
+                            <parameters><param name="e_in" value="{$i/@lemma}"/><param name="e_toDrop" value="{$a_toDrop}"/></parameters>
+                       )
+                   else $i/@lemma
+                   let $match :=
+                        if ($a_stripper and $a_toDrop)
+                        then 
+                            $a_vocab/tei:form[@type="lemma" and 
+                                transform:transform(
+                                    <dummy/>,
+                                    $a_stripper,
+                                    <parameters><param name="e_in" value="{text()}"/><param name="e_toDrop" value="{$a_toDrop}"/></parameters>
+                               ) = $word]
+                        else $a_vocab/tei:form[@type="lemma" and text() = $word]                        
+                    return 
+                        if (not($match))
+                        then                                          
+                                  element lemma {
+                                      $i/@*,
+                                      attribute matchWord {$word},
+                                      $i/forms:urn
+                                  }
+                          else ()
+            else tan:matchLemmas( $a_words, $a_vocab, $a_stripper, $a_toDrop)                                                         
 };
 
 (: this function is incomplete :)
