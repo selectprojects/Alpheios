@@ -52,7 +52,8 @@ let $sourceWords  :=
     then 
         tan:getWords(concat('alpheiosusertext:',$e_lang,':',$e_doc),$e_excludePofs,$e_pofs)
     else
-        let $all := for $u in $e_docUrn return tan:getWords($u,$e_excludePofs,$e_pofs)
+        let $all := for $u in $e_docUrn return
+            if ($u != "") then tan:getWords($u,$e_excludePofs,$e_pofs) else ()
         return 
         element result {
             attribute treebank { if ($all[@treebank != 'false']) then true() else false() },
@@ -71,7 +72,7 @@ let $vocab_entries :=
         let $vocabDoc := util:parse($e_vocabDoc)
         return $vocabDoc//tei:entry
     else 
-        for $v in $e_vocabUrn
+        for $v in $e_vocabUrn            
             let $cts := cts:parseUrn($v)        
             return
             (: stored vocabulary document? :)
@@ -127,15 +128,15 @@ return
     <count type="docForms">{$doc_form_count}</count>
     <count type="vocabLemmas">{$vocab_lemma_count}</count>
     <count type="docTotalWords">{$doc_word_count}</count>
-    <count type="formLemmaFound">{count($results)}</count>
-    <vocab>{$vocab_lemmas}</vocab>
+    <count type="formLemmaFound">{count($results)}</count>        
     { if ($e_details) then 
         <lemmas found="{not($e_reverse)}">
             { for $r in $results
                 return
                     element match {
                         $r/@*,
-                        for $u in $r/*:urn return element tei:ptr {attribute target { concat(replace(request:get-url(),'alpheios-vocab-anal.xq','alpheios-text.xq?'),"urn=", $u/text()) },$u/text()}
+                        for $u in $r/forms:urn
+                        return element tei:ptr {attribute target { concat(replace(request:get-url(),'alpheios-vocab-anal.xq','alpheios-text.xq?'),"urn=", $u/text()) },$u/text()}
                    }
             }              
         </lemmas>
