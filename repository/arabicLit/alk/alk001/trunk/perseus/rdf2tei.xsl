@@ -34,9 +34,17 @@
         </TEI>
     </xsl:template>    
     
+    <xsl:template match="prdf:section">
+        <xsl:variable name="type" select="translate(substring-before(@n, ' '),'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')"/>
+        <xsl:variable name="num" select="substring-after(@n, ' ')"/>
+        <div n="{$num}" type="{$type}">
+            <xsl:apply-templates select="prdf:entry"/>
+        </div>
+    </xsl:template>
+    
     <xsl:template match="prdf:entry">
         <xsl:variable name="id">
-            <xsl:value-of select="$docId"/>_<xsl:value-of select="parent::*/@n"/>_<xsl:value-of select="position()"/>
+            <xsl:value-of select="position()"/>
         </xsl:variable>
         <entry xml:lang="{$lang}" n="{$id}">
             <xsl:apply-templates/>

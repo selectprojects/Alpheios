@@ -1,0 +1,3366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:prdf="http://www.perseus.org/meta/perseus.rdfs#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:dcterms="http://purl.org/dc/terms/" xmlns:dctype="http://purl.org/dc/dcmitype/" xmlns:perseus="http://www.perseus.org/meta/perseus.rdfs#" xmlns:persq="http://www.perseus.org/meta/persq.rdfs#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_dictionaries.xsd">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Al-Kitaab Part 3</title>
+         </titleStmt>
+         <publicationStmt>
+            <date>2004</date>
+         </publicationStmt>
+         <sourceDesc>
+            <p>Kristen Brustad, Abbas Al-Tonsi and Mahmoud Al-Batal</p>
+         </sourceDesc>
+      </fileDesc>
+   </teiHeader>
+   <text xml:lang="ar">
+      <body>
+         <div xmlns:tufts="http://www.tufts.edu/" n="1" type="chapter">
+            <entry xml:lang="ar" n="1">
+		
+               <form type="inflection" xml:lang="ar">مُصْطَلَح</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُصْطَلَح</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="2">
+		
+               <form type="inflection" xml:lang="ar">طالَما</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">طالَما</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="3">
+		
+               <form type="inflection" xml:lang="ar">دَعْوَى</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">دَعْوَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="4">
+		
+               <form type="inflection" xml:lang="ar">شامِل</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شامِل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="5">
+		
+               <form type="inflection" xml:lang="ar">مَفْهُوم</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">مَفْهُوم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="6">
+		
+               <form type="inflection" xml:lang="ar">دُسْتُور</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">دُسْتُور</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="7">
+		
+               <form type="inflection" xml:lang="ar">شُذُوذ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شَذّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="8">
+		
+               <form type="inflection" xml:lang="ar">جُهْد</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">جُهْد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="9">
+		
+               <form type="inflection" xml:lang="ar">نُ ْبَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">نُخْبَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="10">
+		
+               <form type="inflection" xml:lang="ar">أل </form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ألخ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="11">
+		
+               <form type="inflection" xml:lang="ar">شِرِّير</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شِرِّير</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="12">
+		
+               <form type="inflection" xml:lang="ar">شَرّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شَرّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="13">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتِثْناء</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتِثْناء</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="14">
+		
+               <form type="inflection" xml:lang="ar">تَوَقُّعات</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَوَقُّع</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="15">
+		
+               <form type="inflection" xml:lang="ar">مُتَطَرِّف</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُتَطَرِّف</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="16">
+		
+               <form type="inflection" xml:lang="ar">مِلَفّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مِلَفّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="17">
+		
+               <form type="inflection" xml:lang="ar">إِطار</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">إِطار</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="18">
+		
+               <form type="inflection" xml:lang="ar">وَمِن</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مِن</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="19">
+		
+               <form type="inflection" xml:lang="ar">مُؤَشِّر</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُؤَشِّر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="20">
+		
+               <form type="inflection" xml:lang="ar">نُفُوذ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">نُفُوذ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="21">
+		
+               <form type="inflection" xml:lang="ar">بَرِيء</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بَرِيء</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="22">
+		
+               <form type="inflection" xml:lang="ar">المُفارِقَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُفارِق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="23">
+		
+               <form type="inflection" xml:lang="ar">يَنْبَغِي</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِنْبَغَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="24">
+		
+               <form type="inflection" xml:lang="ar">حَرِيص</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَرِيص</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="25">
+		
+               <form type="inflection" xml:lang="ar">صِنْف</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">صِنْف</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="26">
+		
+               <form type="inflection" xml:lang="ar">شَرْعِيَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شَرْعِيَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="27">
+		
+               <form type="inflection" xml:lang="ar">أَغْلَبِيَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَغْلَبِيَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="28">
+		
+               <form type="inflection" xml:lang="ar">البَشَر</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بَشَر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="29">
+		
+               <form type="inflection" xml:lang="ar">شَأْن</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شَأْن</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="30">
+		
+               <form type="inflection" xml:lang="ar">مَنْهَج</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَنْهَج</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="31">
+		
+               <form type="inflection" xml:lang="ar">عَقْل</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عَقْل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="32">
+		
+               <form type="inflection" xml:lang="ar">عَلَى</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عَلَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="33">
+		
+               <form type="inflection" xml:lang="ar">سَلْبِيّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">سَلْبِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="34">
+		
+               <form type="inflection" xml:lang="ar">مُفاوَضات</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُفاوَضَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="35">
+		
+               <form type="inflection" xml:lang="ar">مَوْضُوعِيّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَوْضُوعِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="36">
+		
+               <form type="inflection" xml:lang="ar">المَوْضُوعِيَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَوْضُوعِيَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="37">
+		
+               <form type="inflection" xml:lang="ar">كَثِيراً</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">كَثِير</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="38">
+		
+               <form type="inflection" xml:lang="ar">إِيجابِيّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">إِيجابِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="39">
+		
+               <form type="inflection" xml:lang="ar">ٱِحْتِمال</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِحْتِمال</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="40">
+		
+               <form type="inflection" xml:lang="ar">مَبْدَأ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَبْدَأ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="41">
+		
+               <form type="inflection" xml:lang="ar">عاقِل</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عاقِل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="42">
+		
+               <form type="inflection" xml:lang="ar">مَعْقُول</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَعْقُول</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="43">
+		
+               <form type="inflection" xml:lang="ar">قَمْع</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">قَمْع</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="44">
+		
+               <form type="inflection" xml:lang="ar">أَنْصار</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَنْصار</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="45">
+		
+               <form type="inflection" xml:lang="ar">تَوَتُّر</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَوَتُّر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="46">
+		
+               <form type="inflection" xml:lang="ar">لا</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">لا</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="47">
+		
+               <form type="inflection" xml:lang="ar">أَعْتَرِف</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِعْتَرَف</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="48">
+		
+               <form type="inflection" xml:lang="ar">تَبَنَّى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَبَنَّى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="49">
+		
+               <form type="inflection" xml:lang="ar">حَلَّلَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَلَّل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="50">
+		
+               <form type="inflection" xml:lang="ar">تَجَنَّبَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَجَنَّب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="51">
+		
+               <form type="inflection" xml:lang="ar">ٱِلْتَزَمَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِلْتَزَم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="52">
+		
+               <form type="inflection" xml:lang="ar">عَجِزَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عاجِز</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="53">
+		
+               <form type="inflection" xml:lang="ar">حَرِصَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حارِس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="54">
+		
+               <form type="inflection" xml:lang="ar">صَدَّقَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">صَدَّق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="55">
+		
+               <form type="inflection" xml:lang="ar">ٱِدَّعَى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِدَّعَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="56">
+		
+               <form type="inflection" xml:lang="ar">ٱِشْتَبَكَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِشْتَبَك</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="57">
+		
+               <form type="inflection" xml:lang="ar">ٱِرْتَكَبَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِرْتَكَب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="58">
+		
+               <form type="inflection" xml:lang="ar">أَلْحَقَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَلْحَق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="59">
+		
+               <form type="inflection" xml:lang="ar">تَعامَلَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَعامَل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="60">
+		
+               <form type="inflection" xml:lang="ar">أَنْكَرَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَنْكَر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="61">
+		
+               <form type="inflection" xml:lang="ar">ٱِنْتَ َبَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِنْتَخَب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="62">
+		
+               <form type="inflection" xml:lang="ar">بالَغَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بالَغ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="63">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتَثْنَى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتَثْنَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="64">
+		
+               <form type="inflection" xml:lang="ar">تَوَقَّعَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَوَقَّع</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="65">
+		
+               <form type="inflection" xml:lang="ar">شَرَحَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شَرَه</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="66">
+		
+               <form type="inflection" xml:lang="ar">ذَهَبَ</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">ذَهَب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="67">
+		
+               <form type="inflection" xml:lang="ar">شَمَلَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شَمال</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="68">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتَجْوَبَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتَجْوَب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="69">
+		
+               <form type="inflection" xml:lang="ar">أَ ْطَأَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَخْطَأ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="70">
+		
+               <form type="inflection" xml:lang="ar">أَشارَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَشار</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="71">
+		
+               <form type="inflection" xml:lang="ar">أَثْبَتَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَثْبَت</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="72">
+		
+               <form type="inflection" xml:lang="ar">أَعادَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَعاد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="73">
+		
+               <form type="inflection" xml:lang="ar">أَدْرَكَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَدْرَك</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="74">
+		
+               <form type="inflection" xml:lang="ar">ٱِعْتَمَدَ</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">ٱِعْتَمَد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="75">
+		
+               <form type="inflection" xml:lang="ar">عانَى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عانَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="76">
+		
+               <form type="inflection" xml:lang="ar">هَدَّدَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">هَدَّد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="77">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتَعْمَلَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتَعْمَل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="78">
+		
+               <form type="inflection" xml:lang="ar">تَطَوَّعَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَطَوَّع</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="79">
+		
+               <form type="inflection" xml:lang="ar">مِمّا</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مِمّا</form>
+	
+            </entry>
+         </div>
+         <div xmlns:tufts="http://www.tufts.edu/" n="2" type="chapter">
+            <entry xml:lang="ar" n="1">
+		
+               <form type="inflection" xml:lang="ar">مُطْلَق</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُطْلَق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="2">
+		
+               <form type="inflection" xml:lang="ar">تُهْمَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تُهْمَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="3">
+		
+               <form type="inflection" xml:lang="ar">حَيّ</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">حَيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="4">
+		
+               <form type="inflection" xml:lang="ar">قُوّات</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">قُوَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="5">
+		
+               <form type="inflection" xml:lang="ar">تِلْقائِيّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تِلْقائِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="6">
+		
+               <form type="inflection" xml:lang="ar">بِشَكْل</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شَكْل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="7">
+		
+               <form type="inflection" xml:lang="ar">جَسَد</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">جَسَد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="8">
+		
+               <form type="inflection" xml:lang="ar">قَهْوَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">قَهْوَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="9">
+		
+               <form type="inflection" xml:lang="ar">هَمّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">هَمّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="10">
+		
+               <form type="inflection" xml:lang="ar">ظَرْف</form>
+		
+               <sense n="3"/>
+               <form type="lemma" xml:lang="ar">ظَرْف</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="11">
+		
+               <form type="inflection" xml:lang="ar">جَرِيمَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">جَرِيمَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="12">
+		
+               <form type="inflection" xml:lang="ar">مُجْرِم</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُجْرِم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="13">
+		
+               <form type="inflection" xml:lang="ar">مَصِير</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَصِير</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="14">
+		
+               <form type="inflection" xml:lang="ar">مَلامِح</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَلامِح</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="15">
+		
+               <form type="inflection" xml:lang="ar">إِحْساس</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">إِحْساس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="16">
+		
+               <form type="inflection" xml:lang="ar">قُوَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">قُوَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="17">
+		
+               <form type="inflection" xml:lang="ar">إِلٰه</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">إِلٰه</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="18">
+		
+               <form type="inflection" xml:lang="ar">بَطَل</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بَطَل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="19">
+		
+               <form type="inflection" xml:lang="ar">بُطُولَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بُطُولَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="20">
+		
+               <form type="inflection" xml:lang="ar">مُؤَرِّ </form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُؤَرِّخ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="21">
+		
+               <form type="inflection" xml:lang="ar">حَتْمِيّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَتْمِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="22">
+		
+               <form type="inflection" xml:lang="ar">مَحْتُوم</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَحْتُوم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="23">
+		
+               <form type="inflection" xml:lang="ar">مُحَتَّم</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُحَتَّم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="24">
+		
+               <form type="inflection" xml:lang="ar">غَرِيزَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">غَرِيزَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="25">
+		
+               <form type="inflection" xml:lang="ar">عادِل</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">عادِل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="26">
+		
+               <form type="inflection" xml:lang="ar">أُسْطُورَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أُسْطُورَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="27">
+		
+               <form type="inflection" xml:lang="ar">حَيَوِيَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَيَوِيَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="28">
+		
+               <form type="inflection" xml:lang="ar">لَحْظَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">لَحْظَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="29">
+		
+               <form type="inflection" xml:lang="ar">قَلَق</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">قَلَق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="30">
+		
+               <form type="inflection" xml:lang="ar">مُناسَبَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُناسَبَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="31">
+		
+               <form type="inflection" xml:lang="ar">بِحُجَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حُجَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="32">
+		
+               <form type="inflection" xml:lang="ar">صَبْر</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">صَبْر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="33">
+		
+               <form type="inflection" xml:lang="ar">نَمَط</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">نَمَط</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="34">
+		
+               <form type="inflection" xml:lang="ar">فِرْعَوْن</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">فِرْعَوْن</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="35">
+		
+               <form type="inflection" xml:lang="ar">حُجَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حُجَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="36">
+		
+               <form type="inflection" xml:lang="ar">حِفْظ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حِفْظ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="37">
+		
+               <form type="inflection" xml:lang="ar">عِقاب</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عِقاب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="38">
+		
+               <form type="inflection" xml:lang="ar">مَحْض</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَحْض</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="39">
+		
+               <form type="inflection" xml:lang="ar">جِذْرِيّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">جِذْرِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="40">
+		
+               <form type="inflection" xml:lang="ar">واقِعِيّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">واقِعِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="41">
+		
+               <form type="inflection" xml:lang="ar">واقِع</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">واقِع</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="42">
+		
+               <form type="inflection" xml:lang="ar">دِيانَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">دِيانَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="43">
+		
+               <form type="inflection" xml:lang="ar">مَسْؤُول</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">مَسْؤُول</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="44">
+		
+               <form type="inflection" xml:lang="ar">أَمْن</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَمْن</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="45">
+		
+               <form type="inflection" xml:lang="ar">تَشْبِيه</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَشْبِيه</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="46">
+		
+               <form type="inflection" xml:lang="ar">ذَنْب</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ذَنْب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="47">
+		
+               <form type="inflection" xml:lang="ar">شِعار</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شِعار</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="48">
+		
+               <form type="inflection" xml:lang="ar">ٱِنْفَعَلَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِنْفَعَل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="49">
+		
+               <form type="inflection" xml:lang="ar">صَحَّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">سَحّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="50">
+		
+               <form type="inflection" xml:lang="ar">ٱِ ْتَفَى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِخْتَفَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="51">
+		
+               <form type="inflection" xml:lang="ar">ٱِكْتَفَى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِكْتَفَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="52">
+		
+               <form type="inflection" xml:lang="ar">سَلَّمَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">سَلَّم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="53">
+		
+               <form type="inflection" xml:lang="ar">تَحَكَّمَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَحَكَّم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="54">
+		
+               <form type="inflection" xml:lang="ar"> َلَقَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">خَلَق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="55">
+		
+               <form type="inflection" xml:lang="ar">لَعَنَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">لاعَن</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="56">
+		
+               <form type="inflection" xml:lang="ar">رَقَصَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">راقَص</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="57">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتَحَقَّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتَحَقّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="58">
+		
+               <form type="inflection" xml:lang="ar">شَوَّهَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شَوَّه</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="59">
+		
+               <form type="inflection" xml:lang="ar">أَجادَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَجاد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="60">
+		
+               <form type="inflection" xml:lang="ar">جَسَّدَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">جَسَّد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="61">
+		
+               <form type="inflection" xml:lang="ar">هَرَبَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">هَرَب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="62">
+		
+               <form type="inflection" xml:lang="ar">أَحَسَّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَحَصّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="63">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتَوْرَدَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتَوْرَد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="64">
+		
+               <form type="inflection" xml:lang="ar">أَدَّى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَدَّى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="65">
+		
+               <form type="inflection" xml:lang="ar">صَمَدَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">صَمَد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="66">
+		
+               <form type="inflection" xml:lang="ar"> َطَّطَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">خَطّاط</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="67">
+		
+               <form type="inflection" xml:lang="ar">دَفَعَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">دافَع</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="68">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتَجابَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتَجاب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="69">
+		
+               <form type="inflection" xml:lang="ar">ضَحَّى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ضَحَّى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="70">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتَعانَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتَعان</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="71">
+		
+               <form type="inflection" xml:lang="ar">هَزَّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">هَزّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="72">
+		
+               <form type="inflection" xml:lang="ar">قاوَمَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">قَوام</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="73">
+		
+               <form type="inflection" xml:lang="ar">ٱِفْتَرَضَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِفْتَرَض</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="74">
+		
+               <form type="inflection" xml:lang="ar">صَدَقَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">صَداق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="75">
+		
+               <form type="inflection" xml:lang="ar">ٱِنْتَصَرَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِنْتَصَر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="76">
+		
+               <form type="inflection" xml:lang="ar">قَلِقَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">قَلِق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="77">
+		
+               <form type="inflection" xml:lang="ar">أَلَّفَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَلَّف</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="78">
+		
+               <form type="inflection" xml:lang="ar">أَداَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَداة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="79">
+		
+               <form type="inflection" xml:lang="ar">مَأْساَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَأْساة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="80">
+		
+               <form type="inflection" xml:lang="ar">مَأْساوِيّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَأْسَوِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="81">
+		
+               <form type="inflection" xml:lang="ar">صادِق</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">صادِق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="82">
+		
+               <form type="inflection" xml:lang="ar">ظالِم</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ظالِم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="83">
+		
+               <form type="inflection" xml:lang="ar">ضَحِيَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ضَحِيَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="84">
+		
+               <form type="inflection" xml:lang="ar">مَهْما</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَهْما</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="85">
+		
+               <form type="inflection" xml:lang="ar">ضِمْنَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ضِمْنَ</form>
+	
+            </entry>
+         </div>
+         <div xmlns:tufts="http://www.tufts.edu/" n="3" type="chapter">
+            <entry xml:lang="ar" n="1">
+		
+               <form type="inflection" xml:lang="ar">وَسِيلَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">وَسِيلَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="2">
+		
+               <form type="inflection" xml:lang="ar">وَكالَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">وِكالَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="3">
+		
+               <form type="inflection" xml:lang="ar">رَدّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">رَضّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="4">
+		
+               <form type="inflection" xml:lang="ar">التَوازُن</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَوازُن</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="5">
+		
+               <form type="inflection" xml:lang="ar">قَوْسَيْنِ</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">قَوْس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="6">
+		
+               <form type="inflection" xml:lang="ar">إِذاعَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">إِذاعَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="7">
+		
+               <form type="inflection" xml:lang="ar">بِواسِطَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">واسِطَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="8">
+		
+               <form type="inflection" xml:lang="ar">رَقِيب</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">رَقِيب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="9">
+		
+               <form type="inflection" xml:lang="ar">رَقابَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">رَقابَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="10">
+		
+               <form type="inflection" xml:lang="ar">سِلْعَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">سِلْعَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="11">
+		
+               <form type="inflection" xml:lang="ar">شَكْوَى</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شَكْوَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="12">
+		
+               <form type="inflection" xml:lang="ar">مُؤامَرَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُؤامَرَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="13">
+		
+               <form type="inflection" xml:lang="ar">مُحْتَوَيات</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُحْتَوَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="14">
+		
+               <form type="inflection" xml:lang="ar">راعِي</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">راعِي</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="15">
+		
+               <form type="inflection" xml:lang="ar">مُعَدّات</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُعَدّات</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="16">
+		
+               <form type="inflection" xml:lang="ar">جِهاز</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">جِهاز</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="17">
+		
+               <form type="inflection" xml:lang="ar">وَ لا سِيَّما</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">سِيَّما</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="18">
+		
+               <form type="inflection" xml:lang="ar">دَلِيل</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">دَلِيل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="19">
+		
+               <form type="inflection" xml:lang="ar">مَجّاناً</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَجّان</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="20">
+		
+               <form type="inflection" xml:lang="ar">غابَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">غابَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="21">
+		
+               <form type="inflection" xml:lang="ar">مَزْبَلَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَزْبَلَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="22">
+		
+               <form type="inflection" xml:lang="ar">زُبالَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">زُبالَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="23">
+		
+               <form type="inflection" xml:lang="ar">الهَيْمَنَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">هَيْمَنَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="24">
+		
+               <form type="inflection" xml:lang="ar">مُ َيِّلَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُخَيِّلَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="25">
+		
+               <form type="inflection" xml:lang="ar">عُمُوماً</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عُمُوم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="26">
+		
+               <form type="inflection" xml:lang="ar">بِالمُقابِل</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُقابِل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="27">
+		
+               <form type="inflection" xml:lang="ar">فِهْرِس</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">فِهْرِس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="28">
+		
+               <form type="inflection" xml:lang="ar">اللامُبالاَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُبالاة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="29">
+		
+               <form type="inflection" xml:lang="ar">مُ ابَرات</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُخابَرات</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="30">
+		
+               <form type="inflection" xml:lang="ar">غَزْو</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">غَزْو</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="31">
+		
+               <form type="inflection" xml:lang="ar">قَتِيل</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">قَتِيل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="32">
+		
+               <form type="inflection" xml:lang="ar">غِطاء</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">غِطاء</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="33">
+		
+               <form type="inflection" xml:lang="ar">الإِعْلام</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">إِعْلام</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="34">
+		
+               <form type="inflection" xml:lang="ar">المَزِيد</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَزِيد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="35">
+		
+               <form type="inflection" xml:lang="ar">داع</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">داعِي</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="36">
+		
+               <form type="inflection" xml:lang="ar"> ُمْس</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">خُمْس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="37">
+		
+               <form type="inflection" xml:lang="ar">وَحَسْب</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَسْب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="38">
+		
+               <form type="inflection" xml:lang="ar">إِمْكانِيّات</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">إِمْكانِيَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="39">
+		
+               <form type="inflection" xml:lang="ar">مَطَبّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَطَبّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="40">
+		
+               <form type="inflection" xml:lang="ar">ضَغْط</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ضَغْط</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="41">
+		
+               <form type="inflection" xml:lang="ar">مُتَ َلِّف</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُتَخَلِّف</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="42">
+		
+               <form type="inflection" xml:lang="ar">ثَرْوَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ثَرْوَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="43">
+		
+               <form type="inflection" xml:lang="ar">حُجْرَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حُجْرَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="44">
+		
+               <form type="inflection" xml:lang="ar">حَجْم</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَجْم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="45">
+		
+               <form type="inflection" xml:lang="ar">عُلْبَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عُلْبَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="46">
+		
+               <form type="inflection" xml:lang="ar">ٱِبْتِسامَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِبْتِسامَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="47">
+		
+               <form type="inflection" xml:lang="ar">غَبِيّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">غَبِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="48">
+		
+               <form type="inflection" xml:lang="ar">غَباء</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">غَباء</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="49">
+		
+               <form type="inflection" xml:lang="ar">التَبَعِيَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَبَعِيَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="50">
+		
+               <form type="inflection" xml:lang="ar">بَدِيل</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بَدِيل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="51">
+		
+               <form type="inflection" xml:lang="ar"> َيْر</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">خَيْر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="52">
+		
+               <form type="inflection" xml:lang="ar">العُمُوم</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عُمُوم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="53">
+		
+               <form type="inflection" xml:lang="ar">طِيلَةَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">طِيلَةَ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="54">
+		
+               <form type="inflection" xml:lang="ar">فَتْرَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">فَتْرَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="55">
+		
+               <form type="inflection" xml:lang="ar">رَدَّ</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">رَدّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="56">
+		
+               <form type="inflection" xml:lang="ar">نَقَصَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ناقَص</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="57">
+		
+               <form type="inflection" xml:lang="ar">رَضِيَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">راضِي</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="58">
+		
+               <form type="inflection" xml:lang="ar">غارَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">غار</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="59">
+		
+               <form type="inflection" xml:lang="ar">تَوَرَّطَ </form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَوَرَّط</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="60">
+		
+               <form type="inflection" xml:lang="ar">بَثَّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بَثّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="61">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتَهْلَكَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتَهْلَك</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="62">
+		
+               <form type="inflection" xml:lang="ar">تَناقَضَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَناقَض</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="63">
+		
+               <form type="inflection" xml:lang="ar">تَعاوَنَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَعاوَن</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="64">
+		
+               <form type="inflection" xml:lang="ar">أَفْسَدَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَفْسَد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="65">
+		
+               <form type="inflection" xml:lang="ar">كَلَّفَ</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">كَلَّف</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="66">
+		
+               <form type="inflection" xml:lang="ar">أَوْجَدَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَوْجَد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="67">
+		
+               <form type="inflection" xml:lang="ar">فَسَّرَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">فَسَّر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="68">
+		
+               <form type="inflection" xml:lang="ar">سَقَطَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">سَقَط</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="69">
+		
+               <form type="inflection" xml:lang="ar">آتَى(نُلل)</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">آتَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="70">
+		
+               <form type="inflection" xml:lang="ar">مَنَحَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مانَح</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="71">
+		
+               <form type="inflection" xml:lang="ar">حَرَسَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَرَس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="72">
+		
+               <form type="inflection" xml:lang="ar">كَرِهَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">كَرِه</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="73">
+		
+               <form type="inflection" xml:lang="ar">أَهْمَلَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَهْمَل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="74">
+		
+               <form type="inflection" xml:lang="ar">ٱِمْتَلَكَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِمْتَلَك</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="75">
+		
+               <form type="inflection" xml:lang="ar">سادَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">صاد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="76">
+		
+               <form type="inflection" xml:lang="ar">مَنَعَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَنَع</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="77">
+		
+               <form type="inflection" xml:lang="ar">أَحَلَّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَحَلّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="78">
+		
+               <form type="inflection" xml:lang="ar">بَعْثَرَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بَعْثَر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="79">
+		
+               <form type="inflection" xml:lang="ar">أَرَى</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَراي</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="80">
+		
+               <form type="inflection" xml:lang="ar">ٱِبْتَسَمَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِبْتَسَم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="81">
+		
+               <form type="inflection" xml:lang="ar">مَحَلّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَحَلّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="82">
+		
+               <form type="inflection" xml:lang="ar">عايَنَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عايَن</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="83">
+		
+               <form type="inflection" xml:lang="ar">دَلِيل</form>
+		
+               <sense n="3"/>
+               <form type="lemma" xml:lang="ar">دَلِيل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="84">
+		
+               <form type="inflection" xml:lang="ar">عَبَثاً</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عَبَثاً</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="85">
+		
+               <form type="inflection" xml:lang="ar">قِيمَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">قِيمَة</form>
+	
+            </entry>
+         </div>
+         <div xmlns:tufts="http://www.tufts.edu/" n="4" type="chapter">
+            <entry xml:lang="ar" n="1">
+		
+               <form type="inflection" xml:lang="ar">كائِن</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">كائِن</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="2">
+		
+               <form type="inflection" xml:lang="ar">مُغامَرَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُغامَرَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="3">
+		
+               <form type="inflection" xml:lang="ar">نَقِيض</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">نَقِيض</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="4">
+		
+               <form type="inflection" xml:lang="ar">النَحْو</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">نَحْو</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="5">
+		
+               <form type="inflection" xml:lang="ar">جَذّاب</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">جَذّاب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="6">
+		
+               <form type="inflection" xml:lang="ar">وَحْش</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">وَحْش</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="7">
+		
+               <form type="inflection" xml:lang="ar">بَدَوِيّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بَدَوِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="8">
+		
+               <form type="inflection" xml:lang="ar">فَضْل</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">فَضْل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="9">
+		
+               <form type="inflection" xml:lang="ar">جَرِيء</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">جَرِيء</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="10">
+		
+               <form type="inflection" xml:lang="ar">كِلا</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">كِلا</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="11">
+		
+               <form type="inflection" xml:lang="ar">قَطِيعَة</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">قَطِيعَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="12">
+		
+               <form type="inflection" xml:lang="ar">مُعَيَّن</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُعَيَّن</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="13">
+		
+               <form type="inflection" xml:lang="ar">حَمِيم</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَمِيم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="14">
+		
+               <form type="inflection" xml:lang="ar">بُرُود</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بُرُود</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="15">
+		
+               <form type="inflection" xml:lang="ar">شَرْط</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شَرْط</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="16">
+		
+               <form type="inflection" xml:lang="ar">ضَمِير</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ضَمِير</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="17">
+		
+               <form type="inflection" xml:lang="ar">نُسْ َة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">نُسْخَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="18">
+		
+               <form type="inflection" xml:lang="ar"> َلّاق</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">خَلّاق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="19">
+		
+               <form type="inflection" xml:lang="ar">ناقِد</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ناقِد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="20">
+		
+               <form type="inflection" xml:lang="ar">فُضُول</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">فُضُول</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="21">
+		
+               <form type="inflection" xml:lang="ar">مَيِّت</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَيِّت</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="22">
+		
+               <form type="inflection" xml:lang="ar">ٱِنْحِطاط</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِنْحِطاط</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="23">
+		
+               <form type="inflection" xml:lang="ar">بادِيَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بادِيَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="24">
+		
+               <form type="inflection" xml:lang="ar">أَنِيق</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَنِيق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="25">
+		
+               <form type="inflection" xml:lang="ar">حَماسَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَماسَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="26">
+		
+               <form type="inflection" xml:lang="ar">مَلْحَمَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَلْحَمَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="27">
+		
+               <form type="inflection" xml:lang="ar">أُمْسِيَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أُمْسِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="28">
+		
+               <form type="inflection" xml:lang="ar">مَهْرَجان</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَهْرَجان</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="29">
+		
+               <form type="inflection" xml:lang="ar">مَجاز</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَجاز</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="30">
+		
+               <form type="inflection" xml:lang="ar">حَرِيق</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَرِيق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="31">
+		
+               <form type="inflection" xml:lang="ar">سَ ِيف</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">سَخِيف</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="32">
+		
+               <form type="inflection" xml:lang="ar">أُصُول</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَصْل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="33">
+		
+               <form type="inflection" xml:lang="ar">جُمْهُور</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">جُمْهُور</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="34">
+		
+               <form type="inflection" xml:lang="ar">ها</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ها</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="35">
+		
+               <form type="inflection" xml:lang="ar">رَفِيع</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">رَفِيع</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="36">
+		
+               <form type="inflection" xml:lang="ar">راق</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">راقِي</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="37">
+		
+               <form type="inflection" xml:lang="ar">عَقَبَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عَقَبَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="38">
+		
+               <form type="inflection" xml:lang="ar">إِنْسانِيَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">إِنْسانِيَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="39">
+		
+               <form type="inflection" xml:lang="ar">كامِن</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">كامِن</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="40">
+		
+               <form type="inflection" xml:lang="ar">مَرَح</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَراح</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="41">
+		
+               <form type="inflection" xml:lang="ar">قَوْم</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">قَوْم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="42">
+		
+               <form type="inflection" xml:lang="ar">سُلَّم</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">سُلَّم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="43">
+		
+               <form type="inflection" xml:lang="ar">الماشِيَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ماشِيَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="44">
+		
+               <form type="inflection" xml:lang="ar">حَظّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَظّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="45">
+		
+               <form type="inflection" xml:lang="ar">واف</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">وافِي</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="46">
+		
+               <form type="inflection" xml:lang="ar">الوَفاء لـ</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">وَفاء</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="47">
+		
+               <form type="inflection" xml:lang="ar">اِمْرُؤ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">اِمْرُؤ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="48">
+		
+               <form type="inflection" xml:lang="ar">مادَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مادَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="49">
+		
+               <form type="inflection" xml:lang="ar">مِقْياس</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مِقْياس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="50">
+		
+               <form type="inflection" xml:lang="ar">الحَداثَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَداثَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="51">
+		
+               <form type="inflection" xml:lang="ar">ساذِج</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ساذِج</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="52">
+		
+               <form type="inflection" xml:lang="ar">مُحايِد</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُحايِد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="53">
+		
+               <form type="inflection" xml:lang="ar">العَدَم</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عَدَم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="54">
+		
+               <form type="inflection" xml:lang="ar">بِالطَبْع</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">طَبْع</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="55">
+		
+               <form type="inflection" xml:lang="ar">أَلَم</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">أَلَم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="56">
+		
+               <form type="inflection" xml:lang="ar">وَرَق</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">وَرَق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="57">
+		
+               <form type="inflection" xml:lang="ar">قَصِيدَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">قَصِيدَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="58">
+		
+               <form type="inflection" xml:lang="ar">سُمّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">سامّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="59">
+		
+               <form type="inflection" xml:lang="ar">نِسَب</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">نِسْبَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="60">
+		
+               <form type="inflection" xml:lang="ar">ٱِمْتِياز</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">ٱِمْتِياز</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="61">
+		
+               <form type="inflection" xml:lang="ar">النَثْر</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">نَثْر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="62">
+		
+               <form type="inflection" xml:lang="ar">نَشْر</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">نَشْر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="63">
+		
+               <form type="inflection" xml:lang="ar">غَرَض</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">غَرَض</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="64">
+		
+               <form type="inflection" xml:lang="ar">نادِر</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">نادِر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="65">
+		
+               <form type="inflection" xml:lang="ar">بِالفِعْل</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">فِعْل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="66">
+		
+               <form type="inflection" xml:lang="ar">مُقْتَضَى</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">مُقْتَضَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="67">
+		
+               <form type="inflection" xml:lang="ar">أَمِين</form>
+		
+               <sense n="3"/>
+               <form type="lemma" xml:lang="ar">أَمِين</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="68">
+		
+               <form type="inflection" xml:lang="ar">صَمْت</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">صَمْت</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="69">
+		
+               <form type="inflection" xml:lang="ar">بِبَساطَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بَساطَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="70">
+		
+               <form type="inflection" xml:lang="ar">نَجْم</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">نَجْم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="71">
+		
+               <form type="inflection" xml:lang="ar">بَيان</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بَيان</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="72">
+		
+               <form type="inflection" xml:lang="ar"> َطْوَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">خَطْوَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="73">
+		
+               <form type="inflection" xml:lang="ar">مَلْمُوس</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَلْمُوس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="74">
+		
+               <form type="inflection" xml:lang="ar">ذَوْق</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ذَوْق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="75">
+		
+               <form type="inflection" xml:lang="ar">المَثَل</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ماثَل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="76">
+		
+               <form type="inflection" xml:lang="ar">تَوافَرَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَوافَر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="77">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتاءَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتاء</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="78">
+		
+               <form type="inflection" xml:lang="ar">تَعَلَّقَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَعَلَّق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="79">
+		
+               <form type="inflection" xml:lang="ar">فَسَدَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">فَساد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="80">
+		
+               <form type="inflection" xml:lang="ar"> َفِيَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">خافِي</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="81">
+		
+               <form type="inflection" xml:lang="ar">بِوُسْعهِ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">وُسْع</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="82">
+		
+               <form type="inflection" xml:lang="ar">تَعالَى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَعالَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="83">
+		
+               <form type="inflection" xml:lang="ar">تَحَمَّسَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَحَمَّس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="84">
+		
+               <form type="inflection" xml:lang="ar">تَسَمَّمَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَسَمَّم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="85">
+		
+               <form type="inflection" xml:lang="ar">تَنَفَّسَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَنَفَّس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="86">
+		
+               <form type="inflection" xml:lang="ar">حَسِبَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حاسِب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="87">
+		
+               <form type="inflection" xml:lang="ar">تَدَهْوَرَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَدَهْوَر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="88">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتَغْنَى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتَغْنَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="89">
+		
+               <form type="inflection" xml:lang="ar">غَرِقَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">غارِق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="90">
+		
+               <form type="inflection" xml:lang="ar">مَدَّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَدّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="91">
+		
+               <form type="inflection" xml:lang="ar"> َشِيَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">خاشِي</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="92">
+		
+               <form type="inflection" xml:lang="ar">كَرَّمَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">كَرّام</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="93">
+		
+               <form type="inflection" xml:lang="ar">تَجاهَلَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَجاهَل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="94">
+		
+               <form type="inflection" xml:lang="ar">وَرِثَ</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">وارِث</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="95">
+		
+               <form type="inflection" xml:lang="ar">حالَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حال</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="96">
+		
+               <form type="inflection" xml:lang="ar">ٱِنْصَرَفَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِنْصَرَف</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="97">
+		
+               <form type="inflection" xml:lang="ar">ٱِغْتَرَبَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِغْتَرَب</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="98">
+		
+               <form type="inflection" xml:lang="ar">عَمَّرَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عَمَّر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="99">
+		
+               <form type="inflection" xml:lang="ar">عَشِقَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عاشِق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="100">
+		
+               <form type="inflection" xml:lang="ar">شَ َّصَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شَخَّص</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="101">
+		
+               <form type="inflection" xml:lang="ar">حالَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حال</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="102">
+		
+               <form type="inflection" xml:lang="ar">ٱِنْحَسَرَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِنْحَصَر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="103">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتَعادَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتَعاد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="104">
+		
+               <form type="inflection" xml:lang="ar">تَراجَعَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَراجَع</form>
+	
+            </entry>
+         </div>
+         <div xmlns:tufts="http://www.tufts.edu/" n="5" type="chapter">
+            <entry xml:lang="ar" n="1">
+		
+               <form type="inflection" xml:lang="ar">فَرْع</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">فَرْع</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="2">
+		
+               <form type="inflection" xml:lang="ar">بِالصُدْفَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">صُدْفَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="3">
+		
+               <form type="inflection" xml:lang="ar">صُدْفَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">صُدْفَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="4">
+		
+               <form type="inflection" xml:lang="ar">مُصادَفَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُصادَفَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="5">
+		
+               <form type="inflection" xml:lang="ar">عُنْصُر</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عُنْصُر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="6">
+		
+               <form type="inflection" xml:lang="ar"> َلَل</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">خَلَل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="7">
+		
+               <form type="inflection" xml:lang="ar">التَنْمِيَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَنْمِيَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="8">
+		
+               <form type="inflection" xml:lang="ar">النُمُوّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">نُمُوّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="9">
+		
+               <form type="inflection" xml:lang="ar">نَكْبَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">نَكْبَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="10">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتِنْزاف</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتِنْزاف</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="11">
+		
+               <form type="inflection" xml:lang="ar">الكَهْرَباء</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">كَهْرَباء</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="12">
+		
+               <form type="inflection" xml:lang="ar">ٱِنْفِجار</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِنْفِجار</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="13">
+		
+               <form type="inflection" xml:lang="ar">فُرْن</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">فُرْن</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="14">
+		
+               <form type="inflection" xml:lang="ar">فَجْوَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">فَجْوَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="15">
+		
+               <form type="inflection" xml:lang="ar">الزُجاج</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">زُجاج</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="16">
+		
+               <form type="inflection" xml:lang="ar">ضَرَر</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ضَرَر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="17">
+		
+               <form type="inflection" xml:lang="ar">مَدْ ُول</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَدْخُول</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="18">
+		
+               <form type="inflection" xml:lang="ar">البِنْيَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بِنْيَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="19">
+		
+               <form type="inflection" xml:lang="ar">حَدِيد</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَدِيد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="20">
+		
+               <form type="inflection" xml:lang="ar">مِساحَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مِساحَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="21">
+		
+               <form type="inflection" xml:lang="ar">مُرَبِّيَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُرَبِّي</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="22">
+		
+               <form type="inflection" xml:lang="ar">وافِد</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">وافِد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="23">
+		
+               <form type="inflection" xml:lang="ar">شاذّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شَذّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="24">
+		
+               <form type="inflection" xml:lang="ar">نَفْط</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">نَفْط</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="25">
+		
+               <form type="inflection" xml:lang="ar">مُهَيَّأ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مُهَيَّأ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="26">
+		
+               <form type="inflection" xml:lang="ar">بِدائِيّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بِدائِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="27">
+		
+               <form type="inflection" xml:lang="ar">عَمَلِيَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عَمَلِيَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="28">
+		
+               <form type="inflection" xml:lang="ar">كَفاءَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">كَفاءَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="29">
+		
+               <form type="inflection" xml:lang="ar">كَمِّيَّة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">كَمِّيَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="30">
+		
+               <form type="inflection" xml:lang="ar">المَوادّ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مادَّة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="31">
+		
+               <form type="inflection" xml:lang="ar">نِسْبِيّاً</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">نِسْبِيّ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="32">
+		
+               <form type="inflection" xml:lang="ar">مُعاكِس</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">مُعاكِس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="33">
+		
+               <form type="inflection" xml:lang="ar">الشُعُور</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">شُعُور</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="34">
+		
+               <form type="inflection" xml:lang="ar">ناطِحات</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ناطِحَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="35">
+		
+               <form type="inflection" xml:lang="ar">ذات</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ذات</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="36">
+		
+               <form type="inflection" xml:lang="ar">مَوْرِد</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">مَوْرِد</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="37">
+		
+               <form type="inflection" xml:lang="ar">بُنْيَة</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بِنْيَة</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="38">
+		
+               <form type="inflection" xml:lang="ar">ثَمَّةَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ثَمَّةَ</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="39">
+		
+               <form type="inflection" xml:lang="ar">رافَقَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">رافَق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="40">
+		
+               <form type="inflection" xml:lang="ar">طَبَّقَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">طَبَّق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="41">
+		
+               <form type="inflection" xml:lang="ar">تُرَكِّز</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">رَكَّز</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="42">
+		
+               <form type="inflection" xml:lang="ar">ٱِتَّسَمَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِتَّسَم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="43">
+		
+               <form type="inflection" xml:lang="ar">تَضَرَّرَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَضَرَّر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="44">
+		
+               <form type="inflection" xml:lang="ar">ٱِنْدَمَجَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِنْدَمَج</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="45">
+		
+               <form type="inflection" xml:lang="ar">ٱِنْعَدَمَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِنْعَدَم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="46">
+		
+               <form type="inflection" xml:lang="ar">ٱِنْعَكَسَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِنْعَكَس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="47">
+		
+               <form type="inflection" xml:lang="ar">لاءَمَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">لاءَم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="48">
+		
+               <form type="inflection" xml:lang="ar">ٱِنْتَمَى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِنْتَمَى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="49">
+		
+               <form type="inflection" xml:lang="ar">حَطَّمَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">حَطَّم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="50">
+		
+               <form type="inflection" xml:lang="ar">دَمَّرَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">دَمَّر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="51">
+		
+               <form type="inflection" xml:lang="ar">ٱِقْتَسَمَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِقْتَسَم</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="52">
+		
+               <form type="inflection" xml:lang="ar">ساقَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ساق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="53">
+		
+               <form type="inflection" xml:lang="ar">تَمَتَّعَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَمَتَّع</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="54">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتَ ْرَجَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتَخْرَج</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="55">
+		
+               <form type="inflection" xml:lang="ar">فَجَّرَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">فَجَّر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="56">
+		
+               <form type="inflection" xml:lang="ar">واجَهَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">واجَه</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="57">
+		
+               <form type="inflection" xml:lang="ar">لَحِقَ</form>
+		
+               <sense n="2"/>
+               <form type="lemma" xml:lang="ar">لاحِق</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="58">
+		
+               <form type="inflection" xml:lang="ar">تَفاعَلَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">تَفاعَل</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="59">
+		
+               <form type="inflection" xml:lang="ar">ٱِسْتَثْمَرَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">ٱِسْتَثْمَر</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="60">
+		
+               <form type="inflection" xml:lang="ar">رَبَّى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">رَبَّى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="61">
+		
+               <form type="inflection" xml:lang="ar">عَكَسَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عاكَس</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="62">
+		
+               <form type="inflection" xml:lang="ar">لَبَّى(نُلل)</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">لَبَّى</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="63">
+		
+               <form type="inflection" xml:lang="ar">عَزَّزَ</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">عَزَّز</form>
+	
+            </entry>
+            <entry xml:lang="ar" n="64">
+		
+               <form type="inflection" xml:lang="ar">بِئْر</form>
+		
+               <sense n="1"/>
+               <form type="lemma" xml:lang="ar">بِئْر</form>
+	
+            </entry>
+         </div>
+      </body>
+   </text>
+</TEI>
