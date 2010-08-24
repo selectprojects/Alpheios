@@ -21,7 +21,7 @@
                     <script type="text/javascript" src="../script/alpheios-vocab.js"></script>
                 </head>
                 <body>
-                    <h1 class="apptitle">Learned Vocabulary Analysis Results</h1>
+                    <h1 class="apptitle">Vocabulary Comparison Results</h1>
                     <div class="results">
                         <div class="result">
                             <div class="label">Target Text:</div>

@@ -63,7 +63,7 @@
         <div>
             <hr/>
             <h1>Vocabulary Comparison</h1>
-            <form method="post" action="http://dev.alpheios.net:8810/exist/rest/db/xq/alpheios-vocab-anal.xq?">
+            <form method="post" action="http://repos.alpheios.net:8082/exist/rest/db/xq/alpheios-vocab-anal.xq?">
              <input type="hidden" name="format" value="xml"/>
              <input type="hidden" name="excludepofs" value="1"/>
              <input type="hidden" name="pofs" value="punctuation"/>                
@@ -162,7 +162,7 @@
                     <td>
                         <select name="docUrn" id="docUrnSelect" class="inventory">
                             <option value="" selected>-</option>
-                            <option value="urn:cts:arabicLit:perseus201001.perseus0001.alpheios-text-ara1:2-5">1,001 Nights (Volume 1 Pages 2-5)</option>
+                            <option value="urn:cts:arabicLit:perseus201001.perseus0001.alpheios-text-ara1:1.2-1.5">1,001 Nights (Volume 1 Pages 2-5)</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:1">Quran Sura 1</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.1-2.100">Quran Sura 2 (1-100)</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2.101-2.200">Quran Sura 2 (101-200)</option>
@@ -228,12 +228,12 @@
         <hr/>
         <div>
         <h1>Vocabulary Frequency Analyses</h1>
-            <form method="get" action="http://dev.alpheios.net:8810/exist/rest/db/xq/alpheios-vocab.xq?">
+            <form method="get" action="http://repos.alpheios.net:8082/exist/rest/db/xq/alpheios-vocab.xq?">
                 <table>
                     <tr>
                         <td class="label"><label for="urn">Vocabulary Source:</label></td>
                         <td><select name="urn" id="urn">
-                            <option value="urn:cts:arabicLit:perseus201001.perseus0001.alpheios-text-ara1:2-5">1,001 Nights (Volume 1 Pages 2-5)</option>
+                            <option value="urn:cts:arabicLit:perseus201001.perseus0001.alpheios-text-ara1:1.2-1.5">1,001 Nights (Volume 1 Pages 2-5)</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:1">Quran Sura 1</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:2">Quran Sura 2</option>
                             <option value="urn:cts:arabicLit:perseus200202.perseus0006.alpheios-text-ara1:3">Quran Sura 3</option>
