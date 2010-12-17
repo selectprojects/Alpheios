@@ -239,11 +239,98 @@
             <edition
                 projid="arabicLit:alpheios-text-ara1">
                 <label
-                    xml:lang="eng">Alpheios Enabled 1001 Nights</label>
+                    xml:lang="eng">Alpheios Enabled Arabian Nights, Vol. 1</label>
                 <online
                     docname="/db/repository/arabicLit/perseus201001/perseus0001/alpheios-text-ara1.xml">
                     <validate
                     schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Book"
+                            xpath="/tei:div1[@n='?']"
+                            scope="/tei:TEI/tei:text/tei:body">
+                            <citation
+                                label="Page"
+                                xpath="/tei:div2[@n='?']"
+                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
+                        </citation>
+                    </citationMapping>                    
+                </online>
+            </edition>
+        </work>
+        <work
+            projid="arabicLit:perseus0002">
+            <title
+                xml:lang="ara">بسم الله الرحمن الرحيم</title>
+            <edition
+                projid="arabicLit:alpheios-text-ara1">
+                <label
+                    xml:lang="eng">Alpheios Enabled Arabian Nights, Vol 2.</label>
+                <online
+                    docname="/db/repository/arabicLit/perseus201001/perseus0002/alpheios-text-ara1.xml">
+                    <validate
+                        schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Book"
+                            xpath="/tei:div1[@n='?']"
+                            scope="/tei:TEI/tei:text/tei:body">
+                            <citation
+                                label="Page"
+                                xpath="/tei:div2[@n='?']"
+                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
+                        </citation>
+                    </citationMapping>                    
+                </online>
+            </edition>
+        </work>
+        <work
+            projid="arabicLit:perseus0003">
+            <title
+                xml:lang="ara">بسم الله الرحمن الرحيم</title>
+            <edition
+                projid="arabicLit:alpheios-text-ara1">
+                <label
+                    xml:lang="eng">Alpheios Enabled Arabian Nights, Vol 3.</label>
+                <online
+                    docname="/db/repository/arabicLit/perseus201001/perseus0003/alpheios-text-ara1.xml">
+                    <validate
+                        schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Book"
+                            xpath="/tei:div1[@n='?']"
+                            scope="/tei:TEI/tei:text/tei:body">
+                            <citation
+                                label="Page"
+                                xpath="/tei:div2[@n='?']"
+                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
+                        </citation>
+                    </citationMapping>                    
+                </online>
+            </edition>
+        </work>
+        <work
+            projid="arabicLit:perseus0004">
+            <title
+                xml:lang="ara">بسم الله الرحمن الرحيم</title>
+            <edition
+                projid="arabicLit:alpheios-text-ara1">
+                <label
+                    xml:lang="eng">Alpheios Enabled Arabian Nights, Vol 4.</label>
+                <online
+                    docname="/db/repository/arabicLit/perseus201001/perseus0004/alpheios-text-ara1.xml">
+                    <validate
+                        schema="documentschema.rng"/>
                     <namespaceMapping
                         abbreviation="tei"
                         nsURI="http://www.tei-c.org/ns/1.0"/>
