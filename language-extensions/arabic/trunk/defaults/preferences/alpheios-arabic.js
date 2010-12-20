@@ -5,7 +5,7 @@ pref("extensions.alpheios.arabic.base_unit","word");
 pref("extensions.alpheios.arabic.methods.startup",'loadLexIds,loadStripper');
 pref("extensions.alpheios.arabic.methods.convert", 'unicodeToBuckwalter');
 pref("extensions.alpheios.arabic.methods.lexicon",'webservice');
-pref("extensions.alpheios.arabic.url.lexicon", 'http://alpheios.net/perl/aramorph?');
+pref("extensions.alpheios.arabic.url.lexicon", 'http://alpheios.net/perl/aramorph2?');
 pref("extensions.alpheios.arabic.url.lexicon.request", "word=<WORD>");
 pref("extensions.alpheios.arabic.url.lexicon.timeout",10000);
 pref("extensions.alpheios.arabic.grammar.hotlinks","");
