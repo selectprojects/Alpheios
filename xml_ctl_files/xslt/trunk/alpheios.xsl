@@ -775,6 +775,9 @@
 
   <xsl:template match="term">
     <span class="alph-term">
+      <xsl:if test="starts-with(./ancestor-or-self::*/@xml:lang, 'ara')">
+        <xsl:attribute name="dir">rtl</xsl:attribute>
+      </xsl:if>
       <xsl:if test="pref">
         <span class="alph-pref">
           <xsl:call-template name="convert-text">
