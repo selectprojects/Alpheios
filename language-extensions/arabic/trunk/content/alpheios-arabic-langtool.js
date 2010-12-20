@@ -42,6 +42,17 @@ Alph.LanguageTool_Arabic = function(a_lang, props)
  */
 Alph.LanguageTool_Arabic.prototype = new Alph.LanguageTool();
 
+
+/**
+ * Arabic-specific implementation of {@link Alph.LanguageTool#postTransform}.
+ * @param {Node} a_node the node containing the lookup results
+ */
+Alph.LanguageTool_Arabic.prototype.postTransform = function(a_node)
+{
+    var copyright = this.getString('popup.credits');
+    Alph.$('#alph-morph-credits',a_node).html(copyright);
+}
+
 /**
  * Arabic-specific implementation of {@link Alph.LanguageTool#observePrefChange}
  *
