@@ -80,9 +80,15 @@
           <!-- process all forms having no dialect -->
           <xsl:for-each select="infl[not(dial)]">
             <xsl:sort select="term/stem"/>
+            <xsl:sort select="term/pref"/>
+            <xsl:sort select="term/suff"/>
             <xsl:sort select="pofs/@order" data-type="number" order="descending"/>
             <xsl:variable name="preceding"
               select="preceding-sibling::infl[(term/stem=current()/term/stem) and
+                                              ((not(term/pref) and not(current()/term/pref)) or
+                                              (term/pref=current()/term/pref))and
+                                              ((not(term/suff) and not(current()/term/suff)) or
+                                               (term/suff=current()/term/suff)) and
                                               (pofs=current()/pofs) and
                                               ((not(comp) and not(current()/comp)) or
                                                (comp=current()/comp)) and
@@ -92,6 +98,10 @@
               <xsl:call-template name="inflection-set">
                 <xsl:with-param name="a_in"
                   select="../infl[(term/stem=current()/term/stem) and
+                                  ((not(term/pref) and not(current()/term/pref)) or
+                                  (term/pref=current()/term/pref))and
+                                  ((not(term/suff) and not(current()/term/suff)) or
+                                  (term/suff=current()/term/suff)) and
                                   (pofs=current()/pofs) and
                                   ((not(comp) and not(current()/comp)) or
                                   (comp=current()/comp)) and
@@ -108,10 +118,16 @@
           <!-- process all forms having dialect -->
           <xsl:for-each select="infl[dial]">
             <xsl:sort select="term/stem"/>
+            <xsl:sort select="term/pref"/>
+            <xsl:sort select="term/suff"/>
             <xsl:sort select="pofs/@order" data-type="number" order="descending"/>
             <xsl:sort select="dial"/>
             <xsl:variable name="preceding"
               select="preceding-sibling::infl[(term/stem=current()/term/stem) and
+                                              ((not(term/pref) and not(current()/term/pref)) or
+                                              (term/pref=current()/term/pref))and
+                                              ((not(term/suff) and not(current()/term/suff)) or
+                                              (term/suff=current()/term/suff)) and
                                               (pofs=current()/pofs) and
                                               (dial=current()/dial) and
                                               ((not(comp) and not(current()/comp)) or
@@ -123,6 +139,10 @@
               <xsl:call-template name="inflection-set">
                 <xsl:with-param name="a_in"
                   select="../infl[(term/stem=current()/term/stem) and
+                                  ((not(term/pref) and not(current()/term/pref)) or
+                                  (term/pref=current()/term/pref))and
+                                  ((not(term/suff) and not(current()/term/suff)) or
+                                  (term/suff=current()/term/suff)) and
                                   (pofs=current()/pofs) and
                                   (dial=current()/dial) and
                                   ((not(comp) and not(current()/comp)) or
@@ -470,6 +490,7 @@
           <xsl:with-param name="a_spanName">dial</xsl:with-param>
           <xsl:with-param name="a_spanContext" select="$a_in[1]/dial"/>
         </xsl:call-template>
+
         <!-- extra info for matching, not displayed -->
         <xsl:if test="$a_in[1]/derivtype">
           <span>
@@ -565,28 +586,31 @@
                 <xsl:with-param name="a_item" select="mood"/>
                 <xsl:with-param name="a_suffix" select="';'"/>
               </xsl:call-template>
-              <xsl:apply-templates select="voice"/>
+              <xsl:apply-templates select="voice"/>    
+              <xsl:apply-templates select="$a_in/xmpl"/>
             </div>
           </xsl:when>
           <!-- end verb inflection -->
 
           <!-- adverb inflection -->
           <xsl:when test="$a_in[1]/pofs = 'adverb'">
-            <xsl:if test="$comp and ($comp != 'positive')">
+            <xsl:if test="($comp and ($comp != 'positive')) or $a_in/xmpl">
               <div class="alph-infl">
                 <xsl:apply-templates select="comp"/>
+                <xsl:apply-templates select="$a_in/xmpl"/>                
               </div>
-            </xsl:if>
+            </xsl:if>            
           </xsl:when>
           <!-- end adverb inflection -->
-
+          
           <!-- miscellaneous others -->
           <xsl:otherwise>
             <div class="alph-infl">
               <xsl:apply-templates select="gend"/>
               <xsl:if test="$comp and ($comp != 'positive')">
                 <xsl:apply-templates select="comp"/>
-              </xsl:if>
+              </xsl:if>            
+              <xsl:apply-templates select="$a_in/xmpl"/>
             </div>
           </xsl:otherwise>
         </xsl:choose>
@@ -639,7 +663,8 @@
             <xsl:with-param
               name="a_in"
               select="$a_in[concat(tense, '|', voice) = $curKey]"/>
-          </xsl:call-template>
+          </xsl:call-template>         
+          <xsl:apply-templates select="$a_in/xmpl"/>
         </div>
       </xsl:if>
     </xsl:for-each>
@@ -689,7 +714,7 @@
           <xsl:apply-templates select="case"/>
         </xsl:if>
         <xsl:if test="comp and (comp != 'positive')">
-          <xsl:apply-templates select="comp"/>
+          <xsl:apply-templates select="comp"/>          
         </xsl:if>
       </xsl:if>
     </xsl:for-each>
@@ -741,7 +766,8 @@
             <xsl:with-param name="a_item" select="mood"/>
             <xsl:with-param name="a_suffix" select="';'"/>
           </xsl:call-template>
-          <xsl:apply-templates select="voice"/>
+          <xsl:apply-templates select="voice"/>    
+          <xsl:apply-templates select="$a_in/xmpl"/>
         </div>
       </xsl:if>
     </xsl:for-each>
@@ -749,6 +775,14 @@
 
   <xsl:template match="term">
     <span class="alph-term">
+      <xsl:if test="pref">
+        <span class="alph-pref">
+          <xsl:call-template name="convert-text">
+            <xsl:with-param name="a_item" select="pref"/>
+          </xsl:call-template>
+        </span>
+        <xsl:text>-</xsl:text>
+      </xsl:if>
       <xsl:call-template name="convert-text">
         <xsl:with-param name="a_item" select="stem"/>
         <!-- force final s to become medial not final sigma -->
@@ -963,7 +997,7 @@
     </xsl:for-each>
   </xsl:template>
 
-  <!-- convert text if necessary -->
+ <!-- convert text if necessary -->
   <xsl:template name="convert-text">
     <xsl:param name="a_item"/>
     <xsl:param name="a_partial" select="false()"/>
@@ -1112,5 +1146,11 @@
       </xsl:otherwise>
     </xsl:choose>
   </xsl:template>
-
+    
+  <xsl:template match="xmpl">
+      <xsl:call-template name="item-plus-text">
+        <xsl:with-param name="a_item" select="."/>
+      </xsl:call-template>
+  </xsl:template>
+    
 </xsl:stylesheet>
