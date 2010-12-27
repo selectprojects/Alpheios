@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Build file for loading TEI Text into eXist repository -->
+<project name="alpheios repository" default="build-all" basedir=".">
+    
+	<property file="build.properties"/>
+    <property name="svnant.lib.dir" value="/svnant-1.0.0"/>
+	<property name="src.dir" value="/work/lane/out"/>
+	<property name="xslt.lib.dir" value="/work/repository/trunk/load/xslt/lib"/>
+    <property name="lib.dir" value="/work/repository/trunk/libs"/>
+    <property name="build.dir" value="build"/>
+	<property name="temp.dir" value="tmp"/>
+	<property name="dist.dir" value="dist"/>
+	<property name="xquery.dir" value="xml_prod_files"/>
+	<property name="xslt.dir" value="/work/xml_ctl_files/xslt/trunk"/>
+    <property name="repository.db" value="eXist-1.4.0"/>
+    <property name="server.dir" value="${lib.dir}/${repository.db}"/>
+	<property name="perl" value="/perl/bin/perl"/>
+	<property name="scripts.dir" value="scripts"/>
+	<property name="xmldb.url" value="xmldb:exist://localhost:8080/exist/xmlrpc/db"/>
+	<property name="xmldb.user" value="admin"/>
+	<property name="xmldb.passwd" value="ar3thus@"/>
+	<property name="xmldb.collection.temp" value="loadtemp"/>
+	<property name="antcontrib.dir" value="c://ant-contrib"/>			
+	<property name="lexicon" value="lan"/>
+    <property name="lexicon.dir" value="/work/${lexicon}_xml_prod_files"/>
+
+    <property name="lang" value="ara"/>		
+    <property name="lang.dir" value="/work/${lang}_xml_prod_files"/>
+    <property name="encoding.transform.stylesheet" value="${lang.dir}/ara-trans2uni.xsl"/>
+	
+    <taskdef resource="net/sf/antcontrib/antlib.xml">
+    	<classpath>
+    		 <fileset dir="${antcontrib.dir}">
+    		    <include name="**/*.jar" />
+    		 </fileset>
+    	</classpath>
+	</taskdef>
+
+    <path id="project.classpath">
+        <fileset dir="${svnant.lib.dir}" includes="**/*.jar"/>
+    </path>
+    
+    <path id="classpath.core">
+        <fileset dir="${server.dir}/lib/core">
+            <include name="*.jar"/>
+        </fileset>
+        <pathelement path="${server.dir}/exist.jar"/>
+        <pathelement path="${server.dir}/exist-optional.jar"/>    	
+    </path>
+    
+    <path id="xalan.class.path">
+        <fileset dir="${xslt.lib.dir}" includes="**/*.jar"/>
+    </path>
+
+    <typedef resource="org/exist/ant/antlib.xml" uri="http://exist-db.org/ant">  
+        <classpath refid="classpath.core"/>  
+    </typedef>
+    
+    <taskdef resource="svntask.properties" classpathref="project.classpath"/>    
+	
+	<target name="build-all" depends="prepare,transform-encoding-all">
+	</target>
+	
+	<!-- prepare for the build -->
+	<target name="prepare" depends="clean" xmlns:xdb="http://exist-db.org/ant">
+		<!-- create the build directory -->
+		<mkdir dir="${build.dir}"/>
+		<mkdir dir="${temp.dir}"/>
+		<mkdir dir="${dist.dir}"/>
+	</target>
+
+	<!-- clean the local build directories and temp load collection -->
+	<target name="clean" xmlns:xdb="http://exist-db.org/ant">
+	    <delete dir="${build.dir}"/>
+		<delete dir="${temp.dir}"/>
+		<delete dir="${dist.dir}"/>
+	</target>
+	
+
+	<target name="transform-encoding-all" if="encoding.transform.stylesheet">
+		<foreach target="transform-encoding" param="inputFile">			
+			<path>
+			 <fileset dir="${src.dir}">
+			   <include name="**/*.xml"/>
+			 </fileset>
+			</path>			
+	    </foreach>
+	</target>
+
+	<target name="lex2index">		
+		 <propertyregex property="fileDir"
+		            override="true"
+		            input="${basedir}\${temp.dir}"
+		            regexp="\\"
+		            replace="/"
+		            global="true"/>
+	      <xdb:xquery  xmlns:xdb="http://exist-db.org/ant"                  
+	        uri="${xmldb.url}" 
+	        queryfile="${lexicon.dir}/${lang}-${lexicon}-meanings2data.xquery"
+	        destdir="${dist.dir}/${lang}-${lexicon}-index.xml">      
+	        <xdb:variable name="e_docname" value="file:///${fileDir}/${lang}-${lexicon}-meanings.xml"/>
+	      	<xdb:variable name="e_output" value="index"/>
+	      </xdb:xquery>
+	</target>
+	
+	   <target name="lex2ids">       
+	         <propertyregex property="fileDir"
+	                    override="true"
+	                    input="${basedir}\${temp.dir}"
+	                    regexp="\\"
+	                    replace="/"
+	                    global="true"/>
+	          <xdb:xquery  xmlns:xdb="http://exist-db.org/ant"                  
+	            uri="${xmldb.url}" 
+	            queryfile="${lexicon.dir}/${lang}-${lexicon}-meanings2data.xquery"
+	            destdir="${dist.dir}/${lang}-${lexicon}-ids.dat">      
+	            <xdb:variable name="e_docname" value="file:///${fileDir}/${lang}-${lexicon}-meanings.xml"/>
+	            <xdb:variable name="e_output" value="ids"/>
+	          </xdb:xquery>
+	    </target>
+	      	
+	<target name="addkeys">
+	    <xslt in="${temp.dir}/${lang}-${lexicon}-meanings-1.xml" 
+	    	  out="${temp.dir}/${lang}-${lexicon}-meanings.xml"           
+	    	  style="${lang.dir}/${lang}-addkeys.xsl" 
+	          classpathref="xalan.class.path"/>                
+
+	</target>
+	<target name="lex2meanings">
+	      <antcall target="store-temp">
+	            <param name="a_sourceDir" value="${build.dir}"/>
+	            <param name="a_sourceFile" value="*.xml"/>                     
+	      </antcall>		  
+		  <propertyregex property="collectionDir"
+		    override="true"
+		    input="${basedir}\${build.dir}"
+		    regexp="\\"
+		    replace="/"
+		    global="true"/>
+		 <propertyregex property="collection"
+		    override="true"
+		    input="${collectionDir}"
+		    regexp="^\w:"
+		    replace=""
+		    global="true"/>		        
+	      <xdb:xquery  xmlns:xdb="http://exist-db.org/ant"                  
+	            uri="${xmldb.url}" 
+	            queryfile="${lexicon.dir}/${lang}-${lexicon}-lex2meanings.xquery"
+	            destdir="${temp.dir}/${lang}-${lexicon}-meanings-1.xml">      
+	            <xdb:variable name="e_dir" value="${xmldb.collection.temp}"/>	            
+	        </xdb:xquery>
+
+	</target>
+	
+	<target name="transform-encoding">
+		<propertyregex property="outputFile"
+			override="true"
+			input="${inputFile}"
+			regexp="^(.*)[\\/]([^\\/]+.xml)$"
+			select="u\2"/>
+		 <xslt in="${inputFile}" 
+		               out="${build.dir}/${outputFile}"           
+		               style="${encoding.transform.stylesheet}" 
+		               classpathref="xalan.class.path"/>		        
+	</target>
+
+	<!-- store a file or fileset in the eXist temp load collection in the eXist repository -->
+    <target name="store-temp" xmlns:xdb="http://exist-db.org/ant">
+    	<xdb:remove xmlns:xdb="http://exist-db.org/ant"
+    	              user="${xmldb.user}" password="${xmldb.passwd}"   
+    	              uri="${xmldb.url}" collection="${xmldb.collection.temp}"/>
+	    <xdb:store 
+	            uri="${xmldb.url}${xmldb.collection.temp}"
+	            user="${xmldb.user}" password="${xmldb.passwd}"         
+	            createcollection="true">
+	            <fileset dir="${a_sourceDir}">
+	                <include name="${a_sourceFile}"/>
+	            </fileset>
+	        </xdb:store>
+	    </target>
+	    
+</project>
