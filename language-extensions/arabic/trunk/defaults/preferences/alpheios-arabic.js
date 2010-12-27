@@ -13,7 +13,7 @@ pref("extensions.alpheios.arabic.popuptrigger",'dblclick');
 pref("extensions.alpheios.arabic.features.alpheios-inflect",false);
 pref("extensions.alpheios.arabic.features.alpheios-grammar",false);
 pref("extensions.alpheios.arabic.panels.use.defaults",true);
-pref("extensions.alpheios.arabic.dictionaries.full","sal");
+pref("extensions.alpheios.arabic.dictionaries.full","lan,sal");
 pref("extensions.alpheios.arabic.dictionary.full.search.url",
      "http://repos.alpheios.net:8080/exist/rest/db/xq/lexi-get.xq?lx=<LEXICON>&lg=ara&out=html");
 pref("extensions.alpheios.arabic.dictionary.full.search.lemma_param","l");
