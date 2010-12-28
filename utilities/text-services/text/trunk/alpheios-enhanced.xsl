@@ -168,6 +168,10 @@
     </xsl:call-template>
 </xsl:template>
     
+    <xsl:template match="tei:hi[@rend='superscript']">
+        <span class="superscript"><xsl:apply-templates/></span>
+    </xsl:template>
+    
  <xsl:template name="separate_words">
      <xsl:param name="real_id"/>
      <xsl:param name="id_list"/>

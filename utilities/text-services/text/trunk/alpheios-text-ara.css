@@ -11,3 +11,7 @@ div.l {
 .l.center {
     text-align: center;
 }
+
+.superscript {
+    vertical-align: super;
+}
