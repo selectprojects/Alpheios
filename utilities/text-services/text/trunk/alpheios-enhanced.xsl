@@ -109,7 +109,7 @@
               <p class="cc_rights">
               <!--Creative Commons License-->
                 This work is licensed under a
-                <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/us/">Creative Commons Attribution-Noncommercial-Share Alike 3.0 United States License</a>.
+                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-Share Alike 3.0 United States License</a>.
                 <!--/Creative Commons License-->
             </p>
     </xsl:template>
