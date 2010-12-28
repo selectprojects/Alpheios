@@ -4,7 +4,11 @@
     <fileDesc>
         <titleStmt>
             <title>Selection from the Annals of Tabari</title>
-            <author>Ṭabarī</author></titleStmt>
+            <author>Ṭabarī</author>
+            <sponsor>Perseus Project, Tufts University</sponsor>
+            <principal>Gregory Crane</principal>
+            <funder n="org:USDeptEd">U.S Department of Education</funder>
+        </titleStmt>
         <publicationStmt>
             <publisher>Trustees of Tufts University</publisher>
             <pubPlace>Medford, MA</pubPlace>
@@ -32,7 +36,7 @@
                     <monogr>
                         <title>Selection from the Annals of Tabari</title>
                         <respStmt><resp>ed., with brief notes and a selected glossary, by </resp>
-                            <name>J. de Goeje</name>
+                            <name>M. J. de Goeje</name>
                         </respStmt>
                         <imprint>
                             <pubPlace>Leiden</pubPlace>
