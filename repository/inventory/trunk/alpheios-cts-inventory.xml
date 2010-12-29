@@ -562,5 +562,129 @@
             </edition>
         </work>
     </textgroup>
-    
+    <textgroup
+        projid="arabicLit:perseus201003">
+        <groupname
+            xml:lang="eng">Arabic Misc</groupname>
+        <work
+            projid="arabicLit:perseus0001">
+            <title
+                xml:lang="ara">بسم الله الرحمن الرحيم</title>
+            <edition
+                projid="arabicLit:alpheios-text-ara1">
+                <label
+                    xml:lang="fr">Voyages D'Ibn Batutah, Vol. 4</label>
+                <online
+                    docname="/db/repository/arabicLit/perseus201003/perseus0001/alpheios-text-ara1.xml">
+                    <validate
+                        schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Book"
+                            xpath="/tei:div1[@n='?']"
+                            scope="/tei:TEI/tei:text/tei:body">
+                            <citation
+                                label="Page"
+                                xpath="/tei:div2[@n='?']"
+                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
+                        </citation>
+                    </citationMapping>                    
+                </online>
+            </edition>
+        </work>
+        <work
+            projid="arabicLit:perseus0002">
+            <title
+                xml:lang="en">Selection From The Annals Of Tabari</title>
+            <edition
+                projid="arabicLit:alpheios-text-ara1">
+                <label
+                    xml:lang="en">Selection From the Annals Of Tabari</label>
+                <online
+                    docname="/db/repository/arabicLit/perseus201003/perseus0002/alpheios-text-ara1.xml">
+                    <validate
+                        schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Book"
+                            xpath="/tei:div1[@n='?']"
+                            scope="/tei:TEI/tei:text/tei:body">
+                            <citation
+                                label="Page"
+                                xpath="/tei:div2[@n='?']"
+                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
+                        </citation>
+                    </citationMapping>                    
+                </online>
+            </edition>
+        </work>
+        <work
+            projid="arabicLit:perseus0003">
+            <title
+                xml:lang="en">Selections from Arabic geographical literature</title>
+            <edition
+                projid="arabicLit:alpheios-text-ara1">
+                <label
+                    xml:lang="en">Selections from Arabic geographical literature</label>
+                <online
+                    docname="/db/repository/arabicLit/perseus201003/perseus0002/alpheios-text-ara1.xml">
+                    <validate
+                        schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Book"
+                            xpath="/tei:div1[@n='?']"
+                            scope="/tei:TEI/tei:text/tei:body">
+                            <citation
+                                label="Page"
+                                xpath="/tei:div2[@n='?']"
+                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
+                        </citation>
+                    </citationMapping>                    
+                </online>
+            </edition>
+        </work>
+        <work
+            projid="arabicLit:perseus0004">
+            <title
+                xml:lang="en">Arabic Reading Lessons</title>
+            <edition
+                projid="arabicLit:alpheios-text-ara1">
+                <label
+                    xml:lang="en">Arabic Reading Lessons</label>
+                <online
+                    docname="/db/repository/arabicLit/perseus201003/perseus0004/alpheios-text-ara1.xml">
+                    <validate
+                        schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Book"
+                            xpath="/tei:div1[@n='?']"
+                            scope="/tei:TEI/tei:text/tei:body">
+                            <citation
+                                label="Section"
+                                xpath="/tei:div2[@n='?']"
+                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                                                
+                            <citation
+                                label="Page"
+                                xpath="/tei:div3[@n='?']"
+                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/tei:div2[@n='?']"/>                                                    
+                        </citation>
+                    </citationMapping>                    
+                </online>
+            </edition>
+        </work>      
+    </textgroup>
 </TextInventory>
