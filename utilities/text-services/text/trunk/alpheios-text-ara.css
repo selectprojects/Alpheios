@@ -4,6 +4,10 @@ div.l {
     text-align: right;
 }
 
+div.l[lang='en'] {
+    direction: ltr;
+}
+
 .linenum  {
     float:left;
 }

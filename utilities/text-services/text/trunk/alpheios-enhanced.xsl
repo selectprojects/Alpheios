@@ -144,6 +144,9 @@
             <xsl:if test="@n">
                 <div class="linenum"><xsl:value-of select="@n"/></div>
             </xsl:if>
+            <xsl:if test="@xml:lang">
+                <xsl:attribute name="lang"><xsl:value-of select="@xml:lang"/></xsl:attribute>
+            </xsl:if>
             <xsl:apply-templates/>
         </div>
 </xsl:template>
