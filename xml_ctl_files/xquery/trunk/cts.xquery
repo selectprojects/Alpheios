@@ -37,6 +37,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare variable $cts:tocChunking :=
 ( 
     <tocCunk type="Book" size="1"/>,
+    <tocCunk type="Section" size="1"/>,
     <tocChunk type="Chapter" size="1"/>,
     <tocChunk type="Article" size="1"/>,    
     <tocChunk type="Line" size="100"/>,
@@ -275,6 +276,27 @@ declare function cts:getUrnMatchString($a_inv,$a_urn) as xs:string
     let $refs := cts:getValidReff($a_inv,$a_urn,$level)
     let $urns := for $u in $refs//urn return concat('(',replace($u,"\.","\\."),'(:|\.))')    
     return concat('^',string-join($urns,"|"))    
+};
+
+(:
+    CTS getMatchingUrns
+    Parameters:
+        $a_inv the inventory name
+        $a_urn the passage urn        
+    Returns 
+        a list of urns for matching
+:)
+declare function cts:getUrnMatches($a_inv,$a_urn)
+{    
+    let $cts := cts:parseUrn($a_urn)
+    let $doc := doc($cts/fileInfo/fullPath)
+    let $entry := cts:getCatalog($a_inv,$a_urn)
+    let $parts := count($cts/passageParts/rangePart[1]/part)
+    (: get the level from the range specified :)   
+    let $level := 
+        if ($parts) then $parts else count($entry//ti:online//ti:citation)
+    let $refs := cts:getValidReff($a_inv,$a_urn,$level)
+    for $u in $refs//urn return concat('(',replace($u,"\.","\\."),'(:|\.))')           
 };
 
 (:
