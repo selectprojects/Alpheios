@@ -685,6 +685,35 @@
                     </citationMapping>                    
                 </online>
             </edition>
-        </work>      
+        </work>
+        <work
+            projid="arabicLit:perseus0005">
+            <title
+                xml:lang="en">The Autobiography Of The Constantinopolitan Story-Teller</title>
+            <edition
+                projid="arabicLit:alpheios-text-ara1">
+                <label
+                    xml:lang="en">The Autobiography Of The Constantinopolitan Story-Teller</label>
+                <online
+                    docname="/db/repository/arabicLit/perseus201003/perseus0005/alpheios-text-ara1.xml">
+                    <validate
+                        schema="documentschema.rng"/>
+                    <namespaceMapping
+                        abbreviation="tei"
+                        nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation
+                            label="Section"
+                            xpath="/tei:div1[@n='?']"
+                            scope="/tei:TEI/tei:text/tei:body">                                                                                                
+                            <citation
+                                label="Page"
+                                xpath="/tei:div2[@n='?']"
+                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']"/>                                                    
+                        </citation>
+                    </citationMapping>                    
+                </online>
+            </edition>
+        </work>  
     </textgroup>
 </TextInventory>
