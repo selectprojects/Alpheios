@@ -32,7 +32,7 @@ return
       element idlist {
         let $keys :=
         (: for each entry with an id :)
-        for $entry at $i in $doc//entry[position() < 100]
+        for $entry at $i in $doc//entry
         for $i in 1 to 7
         (:let $key := saxon:evaluate(concat("$p1/lemma/@key", $i), $entry):)
         let $key := util:eval(concat("$entry/lemma/@key", $i)) 
