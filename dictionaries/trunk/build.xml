@@ -1,33 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Build file for loading TEI Text into eXist repository -->
-<project name="alpheios repository" default="build-all" basedir=".">
-    
-	<property file="build.properties"/>
-    <property name="svnant.lib.dir" value="/svnant-1.0.0"/>
-	<property name="src.dir" value="/work/lane/out"/>
-	<property name="xslt.lib.dir" value="/work/repository/trunk/load/xslt/lib"/>
-    <property name="lib.dir" value="/work/repository/trunk/libs"/>
-    <property name="build.dir" value="build"/>
+<project name="alpheios dictionary" default="build-all" basedir=".">    
+
+    <property name="svnant.lib.dir" value="/svnant-1.0.0"/>    	
+	<property name="build.dir" value="build"/>
 	<property name="temp.dir" value="tmp"/>
-	<property name="dist.dir" value="dist"/>
-	<property name="xquery.dir" value="xml_prod_files"/>
-	<property name="xslt.dir" value="/work/xml_ctl_files/xslt/trunk"/>
-    <property name="repository.db" value="eXist-1.4.0"/>
-    <property name="server.dir" value="${lib.dir}/${repository.db}"/>
-	<property name="perl" value="/perl/bin/perl"/>
-	<property name="scripts.dir" value="scripts"/>
-	<property name="xmldb.url" value="xmldb:exist://localhost:8080/exist/xmlrpc/db"/>
+	<property name="dist.dir" value="dist"/>	
+	<property name="xquery.dir" value="xml_prod_files"/>	
+	<property name="xslt.dir" value="xslt"/>
+	<property name="xslt.lib.dir" value="${xslt.dir}/lib"/>    
+	<property name="lib.dir" value="libs"/>
+	<property name="xmldb.url" value="xmldb:exist://dev.alpheios.net:8810/exist/xmlrpc/db"/>
 	<property name="xmldb.user" value="admin"/>
 	<property name="xmldb.passwd" value="ar3thus@"/>
+	<property name="repository.db" value="eXist-1.4.0"/>
+    <property name="server.dir" value="${lib.dir}/${repository.db}"/>
+	<property name="scripts.dir" value="scripts"/>
 	<property name="xmldb.collection.temp" value="loadtemp"/>
 	<property name="antcontrib.dir" value="c://ant-contrib"/>			
 	<property name="lexicon" value="lan"/>
-    <property name="lexicon.dir" value="/work/${lexicon}_xml_prod_files"/>
-
-    <property name="lang" value="ara"/>		
-    <property name="lang.dir" value="/work/${lang}_xml_prod_files"/>
-    <property name="encoding.transform.stylesheet" value="${lang.dir}/ara-trans2uni.xsl"/>
-	
+    <property name="lexicon.dir" value="${lang}/${lexicon}/trunk"/>
+	<property name="lexicon.xquery.dir" value="${lang}/${lexicon}/trunk"/>
+    <property name="lang.dir" value="${lang}/trunk/xml_prod_files"/>
+	<property name="encoding.transform.stylesheet" value="${lang.dir}/{$lang}-trans2uni.xsl"/>
+	<property name="data.dir" value="${lang}/${lexicon}/trunk/data"/>
+		
     <taskdef resource="net/sf/antcontrib/antlib.xml">
     	<classpath>
     		 <fileset dir="${antcontrib.dir}">
@@ -58,7 +55,8 @@
     
     <taskdef resource="svntask.properties" classpathref="project.classpath"/>    
 	
-	<target name="build-all" depends="prepare,transform-encoding-all">
+	<target name="build-all" 
+		depends="prepare,prepare-data,transform-encoding-all,lex2meanings,addkeys,lex2index,lex2ids">
 	</target>
 	
 	<!-- prepare for the build -->
@@ -66,7 +64,7 @@
 		<!-- create the build directory -->
 		<mkdir dir="${build.dir}"/>
 		<mkdir dir="${temp.dir}"/>
-		<mkdir dir="${dist.dir}"/>
+		<mkdir dir="${dist.dir}"/>		
 	</target>
 
 	<!-- clean the local build directories and temp load collection -->
@@ -80,7 +78,7 @@
 	<target name="transform-encoding-all" if="encoding.transform.stylesheet">
 		<foreach target="transform-encoding" param="inputFile">			
 			<path>
-			 <fileset dir="${src.dir}">
+			 <fileset dir="${data.dir}">
 			   <include name="**/*.xml"/>
 			 </fileset>
 			</path>			
@@ -178,5 +176,13 @@
 	            </fileset>
 	        </xdb:store>
 	    </target>
+	
+	<target name="prepare-data" if="src.file">
+	    <xslt in="${data.dir}/${src.file}" 	                    
+	    	  style="${lexicon.dir}/xml_prod_files/split.xsl" 
+	          classpathref="xalan.class.path">
+	    	<param name="basedir" value="${data.dir}"/>
+	    </xslt>
+	</target>
 	    
 </project>
