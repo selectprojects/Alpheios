@@ -22,7 +22,7 @@
     <property name="lexicon.dir" value="${lang}/${lexicon}/trunk"/>
 	<property name="lexicon.xquery.dir" value="${lang}/${lexicon}/trunk"/>
     <property name="lang.dir" value="${lang}/trunk/xml_prod_files"/>
-	<property name="encoding.transform.stylesheet" value="${lang.dir}/{$lang}-trans2uni.xsl"/>
+	<property name="encoding.transform.stylesheet" value="${lang.dir}/${lang}-trans2uni.xsl"/>
 	<property name="data.dir" value="${lang}/${lexicon}/trunk/data"/>
 		
     <taskdef resource="net/sf/antcontrib/antlib.xml">
