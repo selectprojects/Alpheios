@@ -178,7 +178,8 @@
 	    </target>
 	
 	<target name="prepare-data" if="src.file">
-	    <xslt in="${data.dir}/${src.file}" 	                    
+	    <xslt in="${data.dir}/${src.file}"
+	    	  destdir="${temp.dir}"
 	    	  style="${lexicon.dir}/xml_prod_files/split.xsl" 
 	          classpathref="xalan.class.path">
 	    	<param name="basedir" expression="${data.dir}"/>
