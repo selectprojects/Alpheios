@@ -181,7 +181,7 @@
 	    <xslt in="${data.dir}/${src.file}" 	                    
 	    	  style="${lexicon.dir}/xml_prod_files/split.xsl" 
 	          classpathref="xalan.class.path">
-	    	<param name="basedir" value="${data.dir}"/>
+	    	<param name="basedir" expression="${data.dir}"/>
 	    </xslt>
 	</target>
 	    
