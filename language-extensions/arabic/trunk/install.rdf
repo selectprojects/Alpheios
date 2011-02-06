@@ -10,16 +10,17 @@
 		<em:description></em:description>
 		<em:creator>Cantus Foundation</em:creator>
 		<em:id>arabic@alpheios.net</em:id>
+		<em:unpack>true</em:unpack>
 		
 		<em:targetApplication>
 			<!-- Firefox -->
 			<Description>
 				<em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
 				<em:minVersion>3.0</em:minVersion>
-				<em:maxVersion>3.6.*</em:maxVersion>				
+				<em:maxVersion>4.0.*</em:maxVersion>                
 			</Description>
 		</em:targetApplication>
-		
+				
 		<em:targetPlatform>WINNT</em:targetPlatform>
 		<em:targetPlatform>Linux</em:targetPlatform>
 		<em:targetPlatform>Darwin</em:targetPlatform>
