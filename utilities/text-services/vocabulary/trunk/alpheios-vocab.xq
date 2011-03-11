@@ -20,6 +20,7 @@
 
 declare namespace vocab = "http://alpheios.net/namespaces/vocab-freq";
 declare namespace tbd = "http://alpheios.net/namespaces/treebank-desc";
+declare namespace forms = "http://alpheios.net/namespaces/forms";
 import module namespace transform="http://exist-db.org/xquery/transform";
 
 (:
@@ -52,6 +53,7 @@ let $e_count := xs:int(request:get-parameter("count", xs:int("10")))
 let $e_pofs := distinct-values(request:get-parameter("pofs",()))
 let $e_excludePofs := xs:boolean(request:get-parameter("excludepofs","false"))
 let $e_format := request:get-parameter("format", "html")
+let $e_totals := request:get-parameter("totals", ())
  
 
 let $pofs_set := if ($e_pofs = "") then () else $e_pofs
@@ -65,6 +67,7 @@ let $note :=
 (: sort the lemma elements by frequency of the lemma, with the individual forms for each lemma
     grouped and sorted by frequency as well 
 :)
+
 let $xslGroup := doc('/db/xslt/alpheios-vocab-group.xsl')
 let $grouped := transform:transform($results, $xslGroup, ())/lemma
 let $sorted := for $l in $grouped order by xs:int($l/@count) descending return $l
@@ -81,7 +84,16 @@ let $pi :=
  
  let $total := count($sorted)
  let $display_count := if ($e_count >0) then $e_count else $total
- 
+
+return 
+if ($e_totals != "")
+then
+    element result {
+        $results/@*,
+        attribute tokens { count(distinct-values($results//forms:urn)) },
+        attribute lemmas { $total }
+    }
+else
 let $xml :=
 ($pi,
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
@@ -97,7 +109,7 @@ let $xml :=
                 </notesStmt> 
             </fileDesc>
          </teiHeader> 
-         <text pofs="{$pofs_set}" xml:lang="{$sorted[1]/@lang}" treebank="{$results/@treebank}">
+         <text pofs="{$pofs_set}" xml:lang="{$sorted[1]/@lang}" treebank="{$results/@treebank}" total_lemmas="{$total}">
          <body>         
   { 
    

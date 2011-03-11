@@ -89,7 +89,7 @@ let $vocab_entries :=
         
     
 (: for now, only consider the lemmas .. TODO configurable to include forms and senses :)
-let $vocab_lemmas := $vocab_entries[tei:form[@type="lemma"]]    
+let $vocab_lemmas := $vocab_entries[tei:form[@type="lemma"] ]
    
 (: if treebanked text, then lemma count is precise; otherwise it's the total possible lemmas as identified by the morphology service :)
 let $doc_form_count := count($all_words//lemma)
@@ -101,7 +101,7 @@ let $vocabType :=
         (:if ($vocab_doc//tei:text[@treebank = "true"]) then "treebank" else "morphology":)
     else ("user")        
 
-let $vocab_lemma_count := count($vocab_lemmas)
+let $vocab_lemma_count := count(distinct-values($vocab_lemmas/tei:form[@type="lemma"]))
 
 let $stripper := if ($e_lang = 'ara') then doc('/db/xslt/alpheios-ara-unistrip_v2.xsl') else ()  
 let $results := tan:matchLemmas($e_reverse,$all_words//lemma, $vocab_lemmas,$stripper,$e_toDrop)
