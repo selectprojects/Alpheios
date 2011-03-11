@@ -211,12 +211,12 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                     if ($p_match)
                     then 
                         if ($a_excludePofs)
-                        then $doc/forms:forms/forms:inflection[matches(forms:urn,xs:string($u_match))]/
+                        then $doc/forms:forms/forms:inflection[matches(forms:urn,$u_match)]/
                             forms:words/forms:word/forms:entry/forms:dict[not(matches(forms:pofs,$p_match))] 
-                          else $doc/forms:forms/forms:inflection[matches(forms:urn,xs:string($u_match))]/
+                          else $doc/forms:forms/forms:inflection[matches(forms:urn,$u_match)]/
                               forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs,$p_match) 
                               or matches(following-sibling::forms:infl/forms:pofs,$p_match)]
-                      else $doc/forms:forms/forms:inflection[matches(forms:urn,xs:string($u_match))]/
+                      else $doc/forms:forms/forms:inflection[matches(forms:urn,$u_match)]/
                               forms:words/forms:word/forms:entry/forms:dict
                   let $all :=
                         for $i in $lemmas
@@ -230,10 +230,13 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                                 <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}">{
                                     $urns                                            
                                 }</lemma>                                            
+                            (: need to dedupe morphology to add in infl elements for same hdwd entry -- see arabic فی :)
+                    (:  this is too slow  -- need to dedupe another way and verify that it is actually necessary  :)
                     for $seq in (1 to count($all))
                         return $all[$seq][not(
                             $all[position() < $seq and 
-                                @lemma= $all[$seq]/@lemma and @form=$all[$seq]/@form and @sense=$all[$seq]/@sense] and forms:urn = $all[$seq]/forms:urn)]                                                    
+                                @lemma= $all[$seq]/@lemma and @form=$all[$seq]/@form and @sense=$all[$seq]/@sense] and forms:urn = $all[$seq]/forms:urn)]
+                    
         else if ($docinfo/toparse)
             (: tokenize the user supplied text and pass it to the morphology service for the language :)
             then
@@ -489,7 +492,21 @@ declare function tan:getMorph($a_text)
                   (: TODO: this is stripping the senses out before transforming to unicode
                                  we need to isolate the sense in an attribute so it can be used for matching :)
                   return transform:transform($morph, $encode_xsl, ())//word
-                                  
+                
+          else if ($a_text/@lang = 'grc')
+          then              
+              let $decode_xsl := doc('/db/xslt/alpheios-uni2betacode.xsl')              
+              let $svcurl := "http://alpheios.net/perl/greek?word="
+              let $encode_xsl := doc('/db/xslt/morph-beta-uni.xsl')
+              for $w in $wds//tei:wd
+                let $params := <parameters><param name="e_in" value="{$w}"/></parameters>              
+                let $beta_w:= transform:transform($w, $decode_xsl,$params)
+                (:let $beta_w := $w:)
+                  let $url := concat($svcurl,encode-for-uri($beta_w))
+                  let $morph := httpclient:get(xs:anyURI($url),false(),())
+                  (: TODO: this is stripping the senses out before transforming to unicode
+                                 we need to isolate the sense in an attribute so it can be used for matching :)
+                  return transform:transform($morph, $encode_xsl, ())//word
           else()
      return <words>{$morph}</words>
 };
