@@ -19,16 +19,7 @@
 				<em:minVersion>3.0</em:minVersion>
 				<em:maxVersion>4.0.*</em:maxVersion>                
 			</Description>
-		</em:targetApplication>
-		
-		<em:targetApplication>
-			<!-- Fennec -->
-			<Description>
-				<em:id>{a23983c0-fd0e-11dc-95ff-0800200c9a66}</em:id>
-				<em:minVersion>1.1</em:minVersion>
-				<em:maxVersion>4.0.*</em:maxVersion>
-			</Description>
-		</em:targetApplication>
+		</em:targetApplication>				
 		
 		<em:iconURL>chrome://alpheios/skin/icons/alpheios_32.ico</em:iconURL>
 		<em:homepageURL>http://alpheios.net</em:homepageURL>
