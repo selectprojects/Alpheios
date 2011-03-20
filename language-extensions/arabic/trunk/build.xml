@@ -98,7 +98,7 @@
 	-->
 	<target name="dist" depends="clean,get-extras,inc-build-id,package">
 		
-		<!-- commit the install.rdf and version.properties
+		<!-- commit the version.properties
 		     into SVN to increment its SVN revision and 
 		     update the build id so that future builds get a
 		     new svn revision/build id combo. Also include
@@ -111,8 +111,7 @@
 		
 		<svn>
 			<commit message="post-build-auto-increment">
-			<fileset dir="${basedir}">
-					<include name="install.rdf"/>
+			<fileset dir="${basedir}">					
 					<include name="version.properties"/>
 					<include name="${dist.dir}/${package}"/>
 				</fileset>
@@ -139,7 +138,7 @@
 	</target>
 	
 	<!-- chrome creates the jar file containing the chrome files --> 
-    <target name="chrome" depends="get-build-id">
+    <target name="chrome" depends="check-amo-build,check-dev-build,get-build-id">
         <mkdir dir="${dist.dir}" />
     	<copy todir="${src.dir}/content/dictionaries">
     	   <fileset dir="${src.dir}/dicttmp">
@@ -184,7 +183,7 @@
         <replaceregexp file="${src.dir}/install.rdf">
             <regexp refid="version_match"/>
             <substitution                
-                expression="\1${release.id}.${svn.revision}.${buildDate}\2" />
+                expression="\1${dist.release.id}.${svn.revision}.${buildDate}\2" />
         </replaceregexp>
         <replaceregexp file="${src.dir}/install.rdf">
             <regexp refid="build_id_match"/>
@@ -192,10 +191,10 @@
         </replaceregexp>
         <svn>
 	        <commit message="pre-build-auto-increment" 
-	                file="${basedir}/install.rdf"/>
+	                file="${basedir}/version.properties"/>
 	    </svn>
         <svn>
-    	    <status path="${basedir}/install.rdf" 
+    	    <status path="${basedir}/version.properties" 
     	  	       revisionProperty="svn.revision" />
     	</svn>
     	<echo>Updating version properties to New SVN Revision: ${svn.revision}</echo>
@@ -211,13 +210,13 @@
     -->	
 	<target name="update-version">
 		<svn>
-		   <status path="${basedir}/install.rdf" revisionProperty="svn.revision" />
+		   <status path="${basedir}/version.properties" revisionProperty="svn.revision" />
 		</svn>
 		<echo>Updating version.properties with SVN Revision: ${svn.revision}</echo>
 		        
 		<propertyfile
 		   file="version.properties" comment="Build version info">
-		   <entry key="releaseId" type="string" value="${release.id}"/>
+		   <entry key="releaseId" type="string" value="${dist.release.id}"/>
 		   <entry key="buildDate" type="date" value="now" pattern="yyyyMMdd"/>
 		   <entry key="buildNum" type="int" operation="+" default="0" />
 		   <entry key="srcId" type="string" value="${svn.revision}" />
@@ -235,7 +234,7 @@
 		<replaceregexp file="${src.dir}/install.rdf">
 		    <regexp refid="version_match"/>
 		    <substitution 
-	             expression="\1${release.id}.${svn.revision}.${buildDate}\2" />
+	             expression="\1${dist.release.id}.${svn.revision}.${buildDate}\2" />
 		</replaceregexp>
 		<replaceregexp file="${src.dir}/install.rdf">
 			<regexp refid="build_id_match"/>
