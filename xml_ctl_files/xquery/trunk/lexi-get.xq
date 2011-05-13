@@ -145,10 +145,17 @@ let $xml-output :=
   <alph:output xmlns:alph="http://alpheios.net/namespaces/tei">{
     lxget:get-source($lexicon),
     for $entry in $entries
+    let $rootElem := $entry/parent::*[@type='root']
+    let $rootAtt :=  
+        if($rootElem)
+        then attribute root { if ($rootElem/@n) then $rootElem/@n  else xs:string($rootElem/head) }
+        else ()        
+        
     return
       element alph:entry
       {
         attribute lemma-id { $entry/@id },
+        $rootAtt,               
         $entry
       }
   }</alph:output>
