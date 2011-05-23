@@ -16,8 +16,78 @@ pref("extensions.alpheios.arabic.panels.use.defaults",true);
 pref("extensions.alpheios.arabic.dictionaries.full","sal,lan");
 pref("extensions.alpheios.arabic.dictionary.full.search.url",
      "http://repos1.alpheios.net/exist/rest/db/xq/lexi-get.xq?lx=<LEXICON>&lg=ara&out=html");
-pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url",
-	 "http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0015");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.A",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0015");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.b",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0016");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.t",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0017");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.v",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0018");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.j",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0019");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.H",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0020");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.x",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0021");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.d",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0022");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url._",
+	 "http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0023");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.r",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0024");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.z",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0025");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.s",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0026");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.$",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0027");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.S",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0028");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.D",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0029");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.T",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0030");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.Z",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0031");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.E",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0032");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.g",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0033");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.f",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0034");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.q",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0035");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.k",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0036");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.l",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0037");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.m",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0038");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.n",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0039");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.h",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0040");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.w",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0041");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.Y",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0042");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.q1",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0043");		
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.k1",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0044");		
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.l1",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0045");		
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.m1",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0046");		
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.n1",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0047");		
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.h1",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0048");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.w1",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0049");
+pref("extensions.alpheios.arabic.dictionary.full.lan.browse.url.Y1",
+	"http://www.perseus.tufts.edu/hopper/text?doc=Perseus%3atext%3a2002.02.0050");
 pref("extensions.alpheios.arabic.dictionary.full.lan.browse.convert_method", 'unicodeToBuckwalter');
 pref("extensions.alpheios.arabic.dictionary.full.lan.browse.root_param",":root=<ROOT>");
 pref("extensions.alpheios.arabic.dictionary.full.sal.browse.url",
