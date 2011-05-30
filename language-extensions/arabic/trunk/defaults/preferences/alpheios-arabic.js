@@ -7,7 +7,7 @@ pref("extensions.alpheios.arabic.methods.convert", 'unicodeToBuckwalter');
 pref("extensions.alpheios.arabic.methods.lexicon",'webservice');
 pref("extensions.alpheios.arabic.url.lexicon", 'http://alpheios.net/perl/aramorph2?');
 pref("extensions.alpheios.arabic.url.lexicon.request", "word=<WORD>");
-pref("extensions.alpheios.arabic.url.lexicon.timeout",10000);
+pref("extensions.alpheios.arabic.url.lexicon.timeout",15000);
 pref("extensions.alpheios.arabic.grammar.hotlinks","");
 pref("extensions.alpheios.arabic.popuptrigger",'dblclick');
 pref("extensions.alpheios.arabic.features.alpheios-inflect",false);
