@@ -86,15 +86,30 @@
                 <xsl:value-of select="//tei:titleStmt/tei:funder"/><xsl:text> provided support for entering this text.</xsl:text>
             </div>
         </xsl:if>
+        <xsl:if test="//tei:titlestmt/tei:funder">
+            <div class="perseus-funder">
+                <xsl:value-of select="//tei:titlestmt/tei:funder"/><xsl:text> provided support for entering this text.</xsl:text>
+            </div>
+        </xsl:if>
+        
     </xsl:template>
         
     <xsl:template name="publicationStatement">
         <xsl:if test="//tei:publicationStmt/tei:publisher/text() or //tei:publicationStmt/tei:pubPlace/text() or //tei:publicationStmt/tei:authority/text()">
-    	<div class="perseus-publication">XML for this text provided by
-    		<span class="publisher"><xsl:value-of select="//tei:publicationStmt/tei:publisher"/></span>
-    		<span class="pubPlace"><xsl:value-of select="//tei:publicationStmt/tei:pubPlace"/></span>
-    		<span class="authority"><xsl:value-of select="//tei:publicationStmt/tei:authority"/></span>
-    	</div>
+	    	<div class="perseus-publication">XML for this text provided by
+    			<span class="publisher"><xsl:value-of select="//tei:publicationStmt/tei:publisher"/></span>
+    			<span class="pubPlace"><xsl:value-of select="//tei:publicationStmt/tei:pubPlace"/></span>
+	    		<span class="authority"><xsl:value-of select="//tei:publicationStmt/tei:authority"/></span>
+    		</div>
+        </xsl:if>
+        <xsl:if test="//tei:publicationstmt/tei:publisher/text() or
+        	 //tei:publicationstmt/tei:pubplace/text() or 
+        	 //tei:publicationstmt/tei:authority/text()">
+	    	<div class="perseus-publication">XML for this text provided by
+    			<span class="publisher"><xsl:value-of select="//tei:publicationstmt/tei:publisher"/></span>
+    			<span class="pubPlace"><xsl:value-of select="//tei:publicationstmt/tei:pubPlace"/></span>
+	    		<span class="authority"><xsl:value-of select="//tei:publicationstmt/tei:authority"/></span>
+    		</div>
         </xsl:if>
     </xsl:template>
     
@@ -132,7 +147,7 @@
     <div class="milestone {@unit}" id="{$idstring}"/>
 </xsl:template>
 
-<xsl:template match="tei:div1|tei:div2|tei:div3|tei:div4|tei:div5">
+<xsl:template match="tei:body|tei:div1|tei:div2|tei:div3|tei:div4|tei:div5">
     <div class="{@type}">
         <xsl:apply-templates/>
     </div>
@@ -361,7 +376,7 @@
     <!-- taken from perseus'  tei2p4.xsl -->
     <xsl:template name="source-desc">
         <xsl:variable name="sourceText">
-            <xsl:for-each select="//tei:sourceDesc/descendant::*[name(.) != 'author']/text()">
+           <xsl:for-each select="//tei:sourceDesc/descendant::*[name(.) != 'author']/text()">
                 <xsl:variable name="normalized" select="normalize-space(.)" />
                 <xsl:value-of select="$normalized" />
                 <!-- Print a period after each text node, unless the current node
@@ -373,6 +388,19 @@
                     <xsl:text> </xsl:text>
                 </xsl:if>
             </xsl:for-each>
+            <xsl:for-each select="//tei:sourcedesc/descendant::*[name(.) != 'author']/text()">
+                <xsl:variable name="normalized" select="normalize-space(.)" />
+                <xsl:value-of select="$normalized" />
+                <!-- Print a period after each text node, unless the current node
+                    ends in a period -->
+                <xsl:if test="$normalized != '' and not(contains(substring($normalized, string-length($normalized)), '.'))">
+                    <xsl:text>.</xsl:text>
+                </xsl:if>
+                <xsl:if test="position() != last()">
+                    <xsl:text> </xsl:text>
+                </xsl:if>
+            </xsl:for-each>
+            
         </xsl:variable>
         <xsl:if test="string-length(normalize-space($sourceText)) &gt; 0">
             <span class="source-desc"><xsl:value-of select="$sourceText" /></span>

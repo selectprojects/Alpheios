@@ -16,7 +16,14 @@
             <xsl:value-of select="//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:author"/>
             <xsl:text>, </xsl:text>
         </xsl:if>
-        <xsl:variable name="title" select="//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title"></xsl:variable>
+        <xsl:if test="//tei:teiheader/tei:filedesc/tei:titlestmt/tei:author/text()">
+            <xsl:value-of select="//tei:teiheader/tei:filedesc/tei:titlestmt/tei:author"/>
+            <xsl:text>, </xsl:text>
+        </xsl:if>        
+        <xsl:variable name="title">
+        	<xsl:value-of  select="//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title"/>
+        	<xsl:value-of  select="//tei:teiheader/tei:filedesc/tei:titlestmt/tei:title"/>
+        </xsl:variable>
         <xsl:choose>
             <xsl:when test="contains($title,'.')">
                 <xsl:value-of select="substring-before($title,'.')"/>
@@ -45,7 +52,10 @@
                 <xsl:value-of select="local-name(.)"/>
             </xsl:variable>
             <span class="title">
-                <xsl:variable name="title" select="//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title"></xsl:variable>
+                <xsl:variable name="title">
+                	<xsl:value-of select="//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title"/>
+               		<xsl:value-of select="//tei:teiheader/tei:filedesc/tei:titlestmt/tei:title"/>
+                </xsl:variable>
                 <xsl:choose>
                     <xsl:when test="contains($title,'.')">
                         <xsl:value-of select="substring-before($title,'.')"/>
@@ -63,6 +73,12 @@
                     <img id="alph-citation-icon" src="../image/citation_static.gif" alt="Citation"/>
                 </a>
             </xsl:if>
+            <xsl:if test="//tei:teiheader/tei:filedesc/tei:titlestmt/tei:author/text()">
+                <a id="alph-citation-links" href="#citation" title="Citation">
+                    <img id="alph-citation-icon" src="../image/citation_static.gif" alt="Citation"/>
+                </a>
+            </xsl:if>
+            
         </h1>        
     </xsl:template>
 </xsl:stylesheet>

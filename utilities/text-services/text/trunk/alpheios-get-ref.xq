@@ -37,10 +37,13 @@ import module namespace tan="http://alpheios.net/namespaces/text-analysis"
 declare option exist:serialize "method=xhtml media-type=text/html";
 
 let $e_urn :=  request:get-parameter("urn",())
+let $e_repos :=  request:get-parameter("repos","repos1.alpheios.net")
+let $e_format :=  request:get-parameter("format","html")
 let $reply := cts:getPassagePlus("alpheios-cts-inventory",$e_urn)
 let $prevUrn := xs:string($reply/prevnext/prev)
 let $nextUrn := xs:string($reply/prevnext/next)
-let $nodes := $reply/TEI/text/body/*
+let $nodes := $reply/TEI/text/body 
+let $docid := $reply/TEI/@id 
 let $wd_id := if ($reply/subref/wd/@n) then ($reply/subref/wd/@n) else if ($reply/subref/wd/@id) then $reply/subref/wd/@id else "" 
 let $passage := $nodes
 let $parsed := cts:parseUrn($e_urn)
@@ -48,11 +51,11 @@ let $docinfo := tan:findDocs($parsed)
 (: TODO fixup doc urn  for treebank?:)
 let $treebankDUrl := 
     if ($docinfo/treebank)
-    then concat('version=1.0;http://repos.alpheios.net:8080/exist/rest/db/app/treebank-editsentence.xhtml?doc=',$parsed/workUrn,'&amp;id=SENTENCE&amp;w=WORD&amp;app=viewer')
+    then concat('version=1.0;http://', $e_repos, '/exist/rest/db/app/treebank-editsentence.xhtml?doc=',$docid,'&amp;id=SENTENCE&amp;w=WORD&amp;app=viewer')
     else ""     
 let $treebankMUrl :=
     if ($docinfo/treebank)
-    then concat('http://repos.alpheios.net:8080/exist/rest/xq/treebank-getmorph.xq?f=',$parsed/workUrn,'&amp;w=WORD')
+    then concat('http://', $e_repos, '/exist/rest/xq/treebank-getmorph.xq?f=',$docid,'&amp;w=WORD')
     else ""
 (: TODO performance improvements needed for vocab to reference entire book ... or else limit it to a range :) 
 (:let $vocabUrl := if ($docinfo/morph) then concat("http://dev.alpheios.net:8800/exist/rest/xq/alpheios-vocab.xq?&amp;start=1&amp;count=10&amp;pofs=POFS&amp;doc=",$parsed/workUrn) else "":)
@@ -70,8 +73,10 @@ let $params :=
      </parameters>
 let $uri := concat(request:get-url(),'?')
  let $text :=
-    element TEI.2 {        
+    element TEI.2 {   
+    	$reply//TEI/@id,     
          $reply//*:teiHeader,
+         $reply//*:teiheader,
         element text {
             $reply//text/@xml:lang,            
             element body {
@@ -92,6 +97,6 @@ let $uri := concat(request:get-url(),'?')
          }
     }
     let $xml := tan:change-element-ns-deep($text,"http://www.tei-c.org/ns/1.0","tei") 
-    let $html := transform:transform($xml, $xsl, $params)                                             
-    return $html
+    let $html := transform:transform($xml, $xsl, $params)                                                 
+    return if ($e_format = 'xml') then $xml else $html
     
