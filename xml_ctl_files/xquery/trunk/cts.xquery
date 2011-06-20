@@ -517,10 +517,13 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
         let $count := if ($countAll > $cts:maxPassageNodes) then $cts:maxPassageNodes else $countAll        
         let $name := xs:string(node-name($passage[1]))
         let $thisPath := xs:string($cites[position() = last()]/@xpath)
+        let $docid := if ($doc/TEI.2/@id) then $doc/TEI.2/@id 
+        			  else if ($doc/tei.2/@id) then $doc/tei.2/@id 
+        			  else ""
         return   
             <reply>
-                <TEI>
-                    {$doc//*:teiHeader},
+                <TEI id="{$docid}">
+                    {$doc//*:teiHeader,$doc//*:teiheader},
                     <text xml:lang="{if ($xmllang) then $xmllang else $lang}">
                     <body>
                         {$passage[position() < $count+ 1]}
