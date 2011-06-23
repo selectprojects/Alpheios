@@ -1,0 +1,6783 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tei.2 id="1999.01.0131">
+   <teiheader status="new" type="text">
+      <filedesc>
+         <titlestmt>
+            <title>Works and Days (Greek). Machine readable text</title>
+            <author>Hesiod</author>
+            <sponsor>Perseus Project, Tufts University</sponsor>
+            <principal>Gregory Crane</principal>
+            <respstmt>
+               <resp>Prepared under the supervision of</resp>
+               <name>Lisa Cerrato</name>
+               <name>William Merrill</name>
+               <name>Elli Mylonas</name>
+               <name>David Smith</name>
+            </respstmt>
+            <funder n="org:AnnCPB">The Annenberg CPB/Project</funder>
+         </titlestmt>
+         <extent>About 58Kb</extent>
+         <publicationstmt>
+            <publisher>Trustees of Tufts University</publisher>
+            <pubplace>Medford, MA</pubplace>
+            <authority>Perseus Project</authority>
+            <availability status="free">
+               <p>This text may be freely distributed, subject to the following
+    restrictions:</p>
+               <list>
+                  <item>You credit Perseus, as follows, whenever you use the document:
+	    <quote>Text provided by Perseus Digital Library, with funding from The Annenberg CPB/Project. Original version available for viewing and download at http://www.perseus.tufts.edu/hopper/.</quote>
+                  </item>
+                  <item>You leave this availability statement intact.</item>
+                  <item>You use it for non-commercial purposes only.</item>
+                  <item>You offer Perseus any modifications you make.</item>
+               </list>
+            </availability>
+            <note anchored="yes" place="unspecified">Text keyboarded in the Philippines.  Basic SGML tagging by Scott Ettinger.</note>
+         </notesstmt>
+         <sourcedesc default="NO">
+            <biblstruct default="NO">
+               <monogr>
+                  <author>Hesiod</author>
+                  <title>The Homeric Hymns and Homerica with an English Translation by Hugh G. Evelyn-White. Works and Days.</title>
+                  <imprint>
+                     <publisher>Cambridge, MA.,Harvard University Press; London, William Heinemann Ltd.</publisher>
+                     <date>1914</date>
+                  </imprint>
+               </monogr>
+            </biblstruct>
+         </sourcedesc>
+      </filedesc>
+      <encodingdesc>
+         <refsdecl doctype="TEI.2">
+            <state unit="card"/>
+         </refsdecl>
+      </encodingdesc>
+      <profiledesc>
+         <langusage default="NO">
+            <language id="greek">Greek</language>
+            <language id="en">English</language>
+         </langusage>
+      </profiledesc>
+      <revisiondesc>
+         <change>
+            <date>7/91</date>
+            <respstmt>
+               <name>Bill Merrill</name>
+               <resp>(n/a)</resp>
+            </respstmt>
+            <item>Check tagging.</item>
+         </change>
+         <change>
+            <date>8/91</date>
+            <respstmt>
+               <name>EM</name>
+               <resp>(n/a)</resp>
+            </respstmt>
+            <item>Revise DTDs and recheck texts.</item>
+         </change>
+         <change>
+            <date>10/91</date>
+            <respstmt>
+               <name>David Smith</name>
+               <resp>(n/a)</resp>
+            </respstmt>
+            <item>Fix typos from failed morphology.</item>
+         </change>
+      </revisiondesc>
+   </teiheader>
+   <text xml:lang="grc">
+      <body><div1 n="WD" type="Book" org="uniform" sample="complete"><milestone n="1" ed="p" unit="card"/>
+<l n="1"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715891-1">μοῦσαι</wd> 
+<wd tbrefs="1715891-2">Πιερίηθεν</wd> 
+<wd tbrefs="1715891-3">ἀοιδῇσιν</wd> 
+<wd tbrefs="1715891-4">κλείουσαι</wd></l>
+<l n="2">
+<wd tbrefs="1715891-5">δεῦτε</wd>, 
+<wd tbrefs="1715891-7">Δί᾽</wd> 
+<wd tbrefs="1715891-8">ἐννέπετε</wd>, 
+<wd tbrefs="1715891-10">σφέτερον</wd> 
+<wd tbrefs="1715891-11">πατέρ᾽</wd> 
+<wd tbrefs="1715891-12">ὑμνείουσαι</wd>:</l>
+<l n="3">
+<wd tbrefs="1715892-1">ὅντε</wd> 
+<wd tbrefs="1715892-2">διὰ</wd> 
+<wd tbrefs="1715892-3">βροτοὶ</wd> 
+<wd tbrefs="1715892-4">ἄνδρες</wd> 
+<wd tbrefs="1715892-5">ὁμῶς</wd> 
+<wd tbrefs="1715892-6">ἄφατοί</wd> 
+<wd tbrefs="1715892-7">τε</wd> 
+<wd tbrefs="1715892-8">φατοί</wd> 
+<wd tbrefs="1715892-9">τε</wd>,</l>
+<l n="4">
+<wd tbrefs="1715892-11">ῥητοί</wd> 
+<wd tbrefs="1715892-12">τ᾽</wd> 
+<wd tbrefs="1715892-13">ἄρρητοί</wd> 
+<wd tbrefs="1715892-14">τε</wd> 
+<wd tbrefs="1715892-15">Διὸς</wd> 
+<wd tbrefs="1715892-16">μεγάλοιο</wd> 
+<wd tbrefs="1715892-17">ἕκητι</wd>.</l>
+<l n="5">
+<wd tbrefs="1715893-1">ῥέα</wd> 
+<wd tbrefs="1715893-2">μὲν</wd> 
+<wd tbrefs="1715893-3">γὰρ</wd> 
+<wd tbrefs="1715893-4">βριάει</wd>, 
+<wd tbrefs="1715893-6">ῥέα</wd> 
+<wd tbrefs="1715893-7">δὲ</wd> 
+<wd tbrefs="1715893-8">βριάοντα</wd> 
+<wd tbrefs="1715893-9">χαλέπτει</wd>,</l>
+<l n="6">
+<wd tbrefs="1715893-11">ῥεῖα</wd> 
+<wd tbrefs="1715893-12">δ᾽</wd> 
+<wd tbrefs="1715893-13">ἀρίζηλον</wd> 
+<wd tbrefs="1715893-14">μινύθει</wd> 
+<wd tbrefs="1715893-15">καὶ</wd> 
+<wd tbrefs="1715893-16">ἄδηλον</wd> 
+<wd tbrefs="1715893-17">ἀέξει</wd>,</l>
+<l n="7">
+<wd tbrefs="1715893-19">ῥεῖα</wd> 
+<wd tbrefs="1715893-20">δέ</wd> 
+<wd tbrefs="1715893-21">τ᾽</wd> 
+<wd tbrefs="1715893-22">ἰθύνει</wd> 
+<wd tbrefs="1715893-23">σκολιὸν</wd> 
+<wd tbrefs="1715893-24">καὶ</wd> 
+<wd tbrefs="1715893-25">ἀγήνορα</wd> 
+<wd tbrefs="1715893-26">κάρφει</wd></l>
+<l n="8">
+<wd tbrefs="1715893-27">Ζεὺς</wd> 
+<wd tbrefs="1715893-28">ὑψιβρεμέτης</wd>, 
+<wd tbrefs="1715893-30">ὃς</wd> 
+<wd tbrefs="1715893-31">ὑπέρτατα</wd> 
+<wd tbrefs="1715893-32">δώματα</wd> 
+<wd tbrefs="1715893-33">ναίει</wd>.</l>
+<l n="9">
+<wd tbrefs="1715894-1">κλῦθι</wd> 
+<wd tbrefs="1715894-2">ἰδὼν</wd> 
+<wd tbrefs="1715894-3">ἀίων</wd> 
+<wd tbrefs="1715894-4">τε</wd>, 
+<wd tbrefs="1715894-6">δίκῃ</wd> 
+<wd tbrefs="1715894-7">δ᾽</wd> 
+<wd tbrefs="1715894-8">ἴθυνε</wd> 
+<wd tbrefs="1715894-9">θέμιστας</wd></l>
+<l n="10">
+<wd tbrefs="1715894-10">τύνη</wd>: 
+<wd tbrefs="1715895-1">ἐγὼ</wd> 
+<wd tbrefs="1715895-2">δέ</wd> 
+<wd tbrefs="1715895-3">κε</wd>, 
+<wd tbrefs="1715895-5">Πέρση</wd>, 
+<wd tbrefs="1715895-7">ἐτήτυμα</wd> 
+<wd tbrefs="1715895-8">μυθησαίμην</wd>.</l><milestone n="11" ed="p" unit="card"/>
+<l n="11"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715896-1">οὐκ</wd> 
+<wd tbrefs="1715896-2">ἄρα</wd> 
+<wd tbrefs="1715896-3">μοῦνον</wd> 
+<wd tbrefs="1715896-4">ἔην</wd> 
+<wd tbrefs="1715896-5">Ἐρίδων</wd> 
+<wd tbrefs="1715896-6">γένος</wd>, 
+<wd tbrefs="1715896-8">ἀλλ᾽</wd> 
+<wd tbrefs="1715896-9">ἐπὶ</wd> 
+<wd tbrefs="1715896-10">γαῖαν</wd></l>
+<l n="12">
+<wd tbrefs="1715896-11">εἰσὶ</wd> 
+<wd tbrefs="1715896-12">δύω</wd>: 
+<wd tbrefs="1715897-1">τὴν</wd> 
+<wd tbrefs="1715897-2">μέν</wd> 
+<wd tbrefs="1715897-3">κεν</wd> 
+<wd tbrefs="1715897-4">ἐπαινέσσειε</wd> 
+<wd tbrefs="1715897-5">νοήσας</wd>,</l>
+<l n="13">
+<wd tbrefs="1715897-7">ἣ</wd> 
+<wd tbrefs="1715897-8">δ᾽</wd> 
+<wd tbrefs="1715897-9">ἐπιμωμητή</wd>: 
+<wd tbrefs="1715898-1">διὰ</wd> 
+<wd tbrefs="1715898-2">δ᾽</wd> 
+<wd tbrefs="1715898-3">ἄνδιχα</wd> 
+<wd tbrefs="1715898-4">θυμὸν</wd> 
+<wd tbrefs="1715898-5">ἔχουσιν</wd>.</l>
+<l n="14">
+<wd tbrefs="1715899-1">ἣ</wd> 
+<wd tbrefs="1715899-2">μὲν</wd> 
+<wd tbrefs="1715899-3">γὰρ</wd> 
+<wd tbrefs="1715899-4">πόλεμόν</wd> 
+<wd tbrefs="1715899-5">τε</wd> 
+<wd tbrefs="1715899-6">κακὸν</wd> 
+<wd tbrefs="1715899-7">καὶ</wd> 
+<wd tbrefs="1715899-8">δῆριν</wd> 
+<wd tbrefs="1715899-9">ὀφέλλει</wd>,</l>
+<l n="15">
+<wd tbrefs="1715899-11">σχετλίη</wd>: 
+<wd tbrefs="1715900-1">οὔτις</wd> 
+<wd tbrefs="1715900-2">τήν</wd> 
+<wd tbrefs="1715900-3">γε</wd> 
+<wd tbrefs="1715900-4">φιλεῖ</wd> 
+<wd tbrefs="1715900-5">βροτός</wd>, 
+<wd tbrefs="1715900-7">ἀλλ᾽</wd> 
+<wd tbrefs="1715900-8">ὑπ᾽</wd> 
+<wd tbrefs="1715900-9">ἀνάγκης</wd></l>
+<l n="16">
+<wd tbrefs="1715900-10">ἀθανάτων</wd> 
+<wd tbrefs="1715900-11">βουλῇσιν</wd> 
+<wd tbrefs="1715900-12">Ἔριν</wd> 
+<wd tbrefs="1715900-13">τιμῶσι</wd> 
+<wd tbrefs="1715900-14">βαρεῖαν</wd>.</l>
+<l n="17">
+<wd tbrefs="1715901-1">τὴν</wd> 
+<wd tbrefs="1715901-2">δ᾽</wd> 
+<wd tbrefs="1715901-3">ἑτέρην</wd> 
+<wd tbrefs="1715901-4">προτέρην</wd> 
+<wd tbrefs="1715901-5">μὲν</wd> 
+<wd tbrefs="1715901-6">ἐγείνατο</wd> 
+<wd tbrefs="1715901-7">Νὺξ</wd> 
+<wd tbrefs="1715901-8">ἐρεβεννή</wd>,</l>
+<l n="18">
+<wd tbrefs="1715901-10">θῆκε</wd> 
+<wd tbrefs="1715901-11">δέ</wd> 
+<wd tbrefs="1715901-12">μιν</wd> 
+<wd tbrefs="1715901-13">Κρονίδης</wd> 
+<wd tbrefs="1715901-14">ὑψίζυγος</wd>, 
+<wd tbrefs="1715901-16">αἰθέρι</wd> 
+<wd tbrefs="1715901-17">ναίων</wd>,</l>
+<l n="19">
+<wd tbrefs="1715901-19">γαίης</wd> 
+<wd tbrefs="1715901-20">ἐν</wd> 
+<wd tbrefs="1715901-21">ῥίζῃσι</wd>, 
+<wd tbrefs="1715901-23">καὶ</wd> 
+<wd tbrefs="1715901-24">ἀνδράσι</wd> 
+<wd tbrefs="1715901-25">πολλὸν</wd> 
+<wd tbrefs="1715901-26">ἀμείνω</wd>:</l>
+<l n="20">
+<wd tbrefs="1715902-1">ἥτε</wd> 
+<wd tbrefs="1715902-2">καὶ</wd> 
+<wd tbrefs="1715902-3">ἀπάλαμόν</wd> 
+<wd tbrefs="1715902-4">περ</wd> 
+<wd tbrefs="1715902-5">ὁμῶς</wd> 
+<wd tbrefs="1715902-6">ἐπὶ</wd> 
+<wd tbrefs="1715902-7">ἔργον</wd> 
+<wd tbrefs="1715902-8">ἔγειρεν</wd>.</l>
+<l n="21">
+<wd tbrefs="1715903-1">εἰς</wd> 
+<wd tbrefs="1715903-2">ἕτερον</wd> 
+<wd tbrefs="1715903-3">γάρ</wd> 
+<wd tbrefs="1715903-4">τίς</wd> 
+<wd tbrefs="1715903-5">τε</wd> 
+<wd tbrefs="1715903-6">ἰδὼν</wd> 
+<wd tbrefs="1715903-7">ἔργοιο</wd> 
+<wd tbrefs="1715903-8">χατίζει</wd></l>
+<l n="22">
+<wd tbrefs="1715903-9">πλούσιον</wd>, 
+<wd tbrefs="1715903-11">ὃς</wd> 
+<wd tbrefs="1715903-12">σπεύδει</wd> 
+<wd tbrefs="1715903-13">μὲν</wd> 
+<wd tbrefs="1715903-14">ἀρώμεναι</wd> 
+<wd tbrefs="1715903-15">ἠδὲ</wd> 
+<wd tbrefs="1715903-16">φυτεύειν</wd></l>
+<l n="23">
+<wd tbrefs="1715903-17">οἶκόν</wd> 
+<wd tbrefs="1715903-18">τ᾽</wd> 
+<wd tbrefs="1715903-19">εὖ</wd> 
+<wd tbrefs="1715903-20">θέσθαι</wd>: 
+<wd tbrefs="1715904-1">ζηλοῖ</wd> 
+<wd tbrefs="1715904-2">δέ</wd> 
+<wd tbrefs="1715904-3">τε</wd> 
+<wd tbrefs="1715904-4">γείτονα</wd> 
+<wd tbrefs="1715904-5">γείτων</wd></l>
+<l n="24">
+<wd tbrefs="1715904-6">εἰς</wd> 
+<wd tbrefs="1715904-7">ἄφενος</wd> 
+<wd tbrefs="1715904-8">σπεύδοντ᾽</wd>: 
+<wd tbrefs="1715905-1">ἀγαθὴ</wd> 
+<wd tbrefs="1715905-2">δ᾽</wd> 
+<wd tbrefs="1715905-3">Ἔρις</wd> 
+<wd tbrefs="1715905-4">ἥδε</wd> 
+<wd tbrefs="1715905-5">βροτοῖσιν</wd>.</l>
+<l n="25">
+<wd tbrefs="1715906-1">καὶ</wd> 
+<wd tbrefs="1715906-2">κεραμεὺς</wd> 
+<wd tbrefs="1715906-3">κεραμεῖ</wd> 
+<wd tbrefs="1715906-4">κοτέει</wd> 
+<wd tbrefs="1715906-5">καὶ</wd> 
+<wd tbrefs="1715906-6">τέκτονι</wd> 
+<wd tbrefs="1715906-7">τέκτων</wd>,</l>
+<l n="26">
+<wd tbrefs="1715906-9">καὶ</wd> 
+<wd tbrefs="1715906-10">πτωχὸς</wd> 
+<wd tbrefs="1715906-11">πτωχῷ</wd> 
+<wd tbrefs="1715906-12">φθονέει</wd> 
+<wd tbrefs="1715906-13">καὶ</wd> 
+<wd tbrefs="1715906-14">ἀοιδὸς</wd> 
+<wd tbrefs="1715906-15">ἀοιδῷ</wd>.</l>
+<l n="27"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715907-1">ὦ</wd> 
+<wd tbrefs="1715907-2">Πέρση</wd>, 
+<wd tbrefs="1715907-4">σὺ</wd> 
+<wd tbrefs="1715907-5">δὲ</wd> 
+<wd tbrefs="1715907-6">ταῦτα</wd> 
+<wd tbrefs="1715907-7">τεῷ</wd> 
+<wd tbrefs="1715907-8">ἐνικάτθεο</wd> 
+<wd tbrefs="1715907-9">θυμῷ</wd>,</l>
+<l n="28">
+<wd tbrefs="1715907-11 1715907-12">μηδέ</wd> 
+<wd tbrefs="1715907-13">σ᾽</wd> 
+<wd tbrefs="1715907-14">Ἔρις</wd> 
+<wd tbrefs="1715907-15">κακόχαρτος</wd> 
+<wd tbrefs="1715907-16">ἀπ᾽</wd> 
+<wd tbrefs="1715907-17">ἔργου</wd> 
+<wd tbrefs="1715907-18">θυμὸν</wd> 
+<wd tbrefs="1715907-19">ἐρύκοι</wd></l>
+<l n="29">
+<wd tbrefs="1715907-20">νείκε᾽</wd> 
+<wd tbrefs="1715907-21">ὀπιπεύοντ᾽</wd> 
+<wd tbrefs="1715907-22">ἀγορῆς</wd> 
+<wd tbrefs="1715907-23">ἐπακουὸν</wd> 
+<wd tbrefs="1715907-24">ἐόντα</wd>.</l>
+<l n="30">
+<wd tbrefs="1715908-1">ὤρη</wd> 
+<wd tbrefs="1715908-2">γάρ</wd> 
+<wd tbrefs="1715908-3">τ᾽</wd> 
+<wd tbrefs="1715908-4">ὀλίγη</wd> 
+<wd tbrefs="1715908-5">πέλεται</wd> 
+<wd tbrefs="1715908-6">νεικέων</wd> 
+<wd tbrefs="1715908-7">τ᾽</wd> 
+<wd tbrefs="1715908-8">ἀγορέων</wd> 
+<wd tbrefs="1715908-9">τε</wd>,</l>
+<l n="31">
+<wd tbrefs="1715908-11">ᾧτινι</wd> 
+<wd tbrefs="1715908-12">μὴ</wd> 
+<wd tbrefs="1715908-13">βίος</wd> 
+<wd tbrefs="1715908-14">ἔνδον</wd> 
+<wd tbrefs="1715908-15">ἐπηετανὸς</wd> 
+<wd tbrefs="1715908-16">κατάκειται</wd></l>
+<l n="32">
+<wd tbrefs="1715908-17">ὡραῖος</wd>, 
+<wd tbrefs="1715908-19">τὸν</wd> 
+<wd tbrefs="1715908-20">γαῖα</wd> 
+<wd tbrefs="1715908-21">φέρει</wd>, 
+<wd tbrefs="1715908-23">Δημήτερος</wd> 
+<wd tbrefs="1715908-24">ἀκτήν</wd>.</l>
+<l n="33">
+<wd tbrefs="1715909-1">τοῦ</wd> 
+<wd tbrefs="1715909-2">κε</wd> 
+<wd tbrefs="1715909-3">κορεσσάμενος</wd> 
+<wd tbrefs="1715909-4">νείκεα</wd> 
+<wd tbrefs="1715909-5">καὶ</wd> 
+<wd tbrefs="1715909-6">δῆριν</wd> 
+<wd tbrefs="1715909-7">ὀφέλλοις</wd></l>
+<l n="34">
+<wd tbrefs="1715909-8">κτήμασ᾽</wd> 
+<wd tbrefs="1715909-9">ἐπ᾽</wd> 
+<wd tbrefs="1715909-10">ἀλλοτρίοις</wd>: 
+<wd tbrefs="1715910-1">σοὶ</wd> 
+<wd tbrefs="1715910-2">δ᾽</wd> 
+<wd tbrefs="1715910-3">οὐκέτι</wd> 
+<wd tbrefs="1715910-4">δεύτερον</wd> 
+<wd tbrefs="1715910-5">ἔσται</wd></l>
+<l n="35">
+<wd tbrefs="1715910-6">ὧδ᾽</wd> 
+<wd tbrefs="1715910-7">ἔρδειν</wd>: 
+<wd tbrefs="1715911-1">ἀλλ᾽</wd> 
+<wd tbrefs="1715911-2">αὖθι</wd> 
+<wd tbrefs="1715911-3">διακρινώμεθα</wd> 
+<wd tbrefs="1715911-4">νεῖκος</wd></l>
+<l n="36">
+<wd tbrefs="1715911-5">ἰθείῃσι</wd> 
+<wd tbrefs="1715911-6">δίκῃς</wd>, 
+<wd tbrefs="1715911-8">αἵ</wd> 
+<wd tbrefs="1715911-9">τ᾽</wd> 
+<wd tbrefs="1715911-10">ἐκ</wd> 
+<wd tbrefs="1715911-11">Διός</wd> 
+<wd tbrefs="1715911-12">εἰσιν</wd> 
+<wd tbrefs="1715911-13">ἄρισται</wd>.</l>
+<l n="37">
+<wd tbrefs="1715912-1">ἤδη</wd> 
+<wd tbrefs="1715912-2">μὲν</wd> 
+<wd tbrefs="1715912-3">γὰρ</wd> 
+<wd tbrefs="1715912-4">κλῆρον</wd> 
+<wd tbrefs="1715912-5">ἐδασσάμεθ᾽</wd>, 
+<wd tbrefs="1715912-7">ἀλλὰ</wd> 
+<wd tbrefs="1715912-8">τὰ</wd> 
+<wd tbrefs="1715912-9">πολλὰ</wd></l>
+<l n="38">
+<wd tbrefs="1715912-10">ἁρπάζων</wd> 
+<wd tbrefs="1715912-11">ἐφόρεις</wd> 
+<wd tbrefs="1715912-12">μέγα</wd> 
+<wd tbrefs="1715912-13">κυδαίνων</wd> 
+<wd tbrefs="1715912-14">βασιλῆας</wd></l>
+<l n="39">
+<wd tbrefs="1715912-15">δωροφάγους</wd>, 
+<wd tbrefs="1715912-17">οἳ</wd> 
+<wd tbrefs="1715912-18">τήνδε</wd> 
+<wd tbrefs="1715912-19">δίκην</wd> 
+<wd tbrefs="1715912-20">ἐθέλουσι</wd> 
+<wd tbrefs="1715912-21">δίκασσαι</wd>.</l>
+<l n="40">
+<wd tbrefs="1715913-1">νήπιοι</wd>, 
+<wd tbrefs="1715913-3 1715913-4">οὐδὲ</wd> 
+<wd tbrefs="1715913-5">ἴσασιν</wd> 
+<wd tbrefs="1715913-6">ὅσῳ</wd> 
+<wd tbrefs="1715913-7">πλέον</wd> 
+<wd tbrefs="1715913-8">ἥμισυ</wd> 
+<wd tbrefs="1715913-9">παντὸς</wd></l>
+<l n="41">
+<wd tbrefs="1715913-10 1715913-11">οὐδ᾽</wd> 
+<wd tbrefs="1715913-12">ὅσον</wd> 
+<wd tbrefs="1715913-13">ἐν</wd> 
+<wd tbrefs="1715913-14">μαλάχῃ</wd> 
+<wd tbrefs="1715913-15">τε</wd> 
+<wd tbrefs="1715913-16">καὶ</wd> 
+<wd tbrefs="1715913-17">ἀσφοδέλῳ</wd> 
+<wd tbrefs="1715913-18">μέγ᾽</wd> 
+<wd tbrefs="1715913-19">ὄνειαρ</wd>.</l><milestone n="42" ed="p" unit="card"/>
+<l n="42"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715914-1">κρύψαντες</wd> 
+<wd tbrefs="1715914-2">γὰρ</wd> 
+<wd tbrefs="1715914-3">ἔχουσι</wd> 
+<wd tbrefs="1715914-4">θεοὶ</wd> 
+<wd tbrefs="1715914-5">βίον</wd> 
+<wd tbrefs="1715914-6">ἀνθρώποισιν</wd>:</l>
+<l n="43">
+<wd tbrefs="1715915-1">ῥηιδίως</wd> 
+<wd tbrefs="1715915-2">γάρ</wd> 
+<wd tbrefs="1715915-3">κεν</wd> 
+<wd tbrefs="1715915-4">καὶ</wd> 
+<wd tbrefs="1715915-5">ἐπ᾽</wd> 
+<wd tbrefs="1715915-6">ἤματι</wd> 
+<wd tbrefs="1715915-7">ἐργάσσαιο</wd>,</l>
+<l n="44">
+<wd tbrefs="1715915-9">ὥστε</wd> 
+<wd tbrefs="1715915-10">σε</wd> 
+<wd tbrefs="1715915-11">κεἰς</wd> 
+<wd tbrefs="1715915-12">ἐνιαυτὸν</wd> 
+<wd tbrefs="1715915-13">ἔχειν</wd> 
+<wd tbrefs="1715915-14">καὶ</wd> 
+<wd tbrefs="1715915-15">ἀεργὸν</wd> 
+<wd tbrefs="1715915-16">ἐόντα</wd>:</l>
+<l n="45">
+<wd tbrefs="1715916-1">αἶψά</wd> 
+<wd tbrefs="1715916-2">κε</wd> 
+<wd tbrefs="1715916-3">πηδάλιον</wd> 
+<wd tbrefs="1715916-4">μὲν</wd> 
+<wd tbrefs="1715916-5">ὑπὲρ</wd> 
+<wd tbrefs="1715916-6">καπνοῦ</wd> 
+<wd tbrefs="1715916-7">καταθεῖο</wd>,</l>
+<l n="46">
+<wd tbrefs="1715916-9">ἔργα</wd> 
+<wd tbrefs="1715916-10">βοῶν</wd> 
+<wd tbrefs="1715916-11">δ᾽</wd> 
+<wd tbrefs="1715916-12">ἀπόλοιτο</wd> 
+<wd tbrefs="1715916-13">καὶ</wd> 
+<wd tbrefs="1715916-14">ἡμιόνων</wd> 
+<wd tbrefs="1715916-15">ταλαεργῶν</wd>.</l>
+<l n="47">
+<wd tbrefs="1715917-1">ἀλλὰ</wd> 
+<wd tbrefs="1715917-2">Ζεὺς</wd> 
+<wd tbrefs="1715917-3">ἔκρυψε</wd> 
+<wd tbrefs="1715917-4">χολωσάμενος</wd> 
+<wd tbrefs="1715917-5">φρεσὶν</wd> 
+<wd tbrefs="1715917-6">ᾗσιν</wd>,</l>
+<l n="48">
+<wd tbrefs="1715917-8">ὅττι</wd> 
+<wd tbrefs="1715917-9">μιν</wd> 
+<wd tbrefs="1715917-10">ἐξαπάτησε</wd> 
+<wd tbrefs="1715917-11">Προμηθεὺς</wd> 
+<wd tbrefs="1715917-12">ἀγκυλομήτης</wd>:</l>
+<l n="49">
+<wd tbrefs="1715918-1">τοὔνεκ᾽</wd> 
+<wd tbrefs="1715918-2">ἄρ᾽</wd> 
+<wd tbrefs="1715918-3">ἀνθρώποισιν</wd> 
+<wd tbrefs="1715918-4">ἐμήσατο</wd> 
+<wd tbrefs="1715918-5">κήδεα</wd> 
+<wd tbrefs="1715918-6">λυγρά</wd>.</l>
+<l n="50">
+<wd tbrefs="1715919-1">κρύψε</wd> 
+<wd tbrefs="1715919-2">δὲ</wd> 
+<wd tbrefs="1715919-3">πῦρ</wd>: 
+<wd tbrefs="1715920-1">τὸ</wd> 
+<wd tbrefs="1715920-2">μὲν</wd> 
+<wd tbrefs="1715920-3">αὖτις</wd> 
+<wd tbrefs="1715920-4">ἐὺς</wd> 
+<wd tbrefs="1715920-5">πάις</wd> 
+<wd tbrefs="1715920-6">Ἰαπετοῖο</wd></l>
+<l n="51">
+<wd tbrefs="1715920-7">ἔκλεψ᾽</wd> 
+<wd tbrefs="1715920-8">ἀνθρώποισι</wd> 
+<wd tbrefs="1715920-9">Διὸς</wd> 
+<wd tbrefs="1715920-10">πάρα</wd> 
+<wd tbrefs="1715920-11">μητιόεντος</wd></l>
+<l n="52">
+<wd tbrefs="1715920-12">ἐν</wd> 
+<wd tbrefs="1715920-13">κοῒλῳ</wd> 
+<wd tbrefs="1715920-14">νάρθηκι</wd> 
+<wd tbrefs="1715920-15">λαθὼν</wd> 
+<wd tbrefs="1715920-16">Δία</wd> 
+<wd tbrefs="1715920-17">τερπικέραυνον</wd>.</l>
+<l n="53">
+<wd tbrefs="1715921-1">τὸν</wd> 
+<wd tbrefs="1715921-2">δὲ</wd> 
+<wd tbrefs="1715921-3">χολωσάμενος</wd> 
+<wd tbrefs="1715921-4">προσέφη</wd> 
+<wd tbrefs="1715921-5">νεφεληγερέτα</wd> 
+<wd tbrefs="1715921-6">Ζευς</wd>:</l>
+<l n="54"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715922-1">Ἰαπετιονίδη</wd>, 
+<wd tbrefs="1715922-3">πάντων</wd> 
+<wd tbrefs="1715922-4">πέρι</wd> 
+<wd tbrefs="1715922-5">μήδεα</wd> 
+<wd tbrefs="1715922-6">εἰδώς</wd>,</l>
+<l n="55">
+<wd tbrefs="1715922-8">χαίρεις</wd> 
+<wd tbrefs="1715922-9">πῦρ</wd> 
+<wd tbrefs="1715922-10">κλέψας</wd> 
+<wd tbrefs="1715922-11">καὶ</wd> 
+<wd tbrefs="1715922-12">ἐμὰς</wd> 
+<wd tbrefs="1715922-13">φρένας</wd> 
+<wd tbrefs="1715922-14">ἠπεροπεύσας</wd>,</l>
+<l n="56">
+<wd tbrefs="1715922-16">σοί</wd> 
+<wd tbrefs="1715922-17">τ᾽</wd> 
+<wd tbrefs="1715922-18">αὐτῷ</wd> 
+<wd tbrefs="1715922-19">μέγα</wd> 
+<wd tbrefs="1715922-20">πῆμα</wd> 
+<wd tbrefs="1715922-21">καὶ</wd> 
+<wd tbrefs="1715922-22">ἀνδράσιν</wd> 
+<wd tbrefs="1715922-23">ἐσσομένοισιν</wd>.</l>
+<l n="57">
+<wd tbrefs="1715923-1">τοῖς</wd> 
+<wd tbrefs="1715923-2">δ᾽</wd> 
+<wd tbrefs="1715923-3">ἐγὼ</wd> 
+<wd tbrefs="1715923-4">ἀντὶ</wd> 
+<wd tbrefs="1715923-5">πυρὸς</wd> 
+<wd tbrefs="1715923-6">δώσω</wd> 
+<wd tbrefs="1715923-7">κακόν</wd>, 
+<wd tbrefs="1715923-9">ᾧ</wd> 
+<wd tbrefs="1715923-10">κεν</wd> 
+<wd tbrefs="1715923-11">ἅπαντες</wd></l>
+<l n="58">
+<wd tbrefs="1715923-12">τέρπωνται</wd> 
+<wd tbrefs="1715923-13">κατὰ</wd> 
+<wd tbrefs="1715923-14">θυμὸν</wd> 
+<wd tbrefs="1715923-15">ἑὸν</wd> 
+<wd tbrefs="1715923-16">κακὸν</wd> 
+<wd tbrefs="1715923-17">ἀμφαγαπῶντες</wd>.</l><milestone n="59" ed="p" unit="card"/>
+<l n="59"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715924-1">ὣς</wd> 
+<wd tbrefs="1715924-2">ἔφατ᾽</wd>: 
+<wd tbrefs="1715925-1">ἐκ</wd> 
+<wd tbrefs="1715925-2">δ᾽</wd> 
+<wd tbrefs="1715925-3">ἐγέλασσε</wd> 
+<wd tbrefs="1715925-4">πατὴρ</wd> 
+<wd tbrefs="1715925-5">ἀνδρῶν</wd> 
+<wd tbrefs="1715925-6">τε</wd> 
+<wd tbrefs="1715925-7">θεῶν</wd> 
+<wd tbrefs="1715925-8">τε</wd>.</l>
+<l n="60">
+<wd tbrefs="1715926-1">Ἥφαιστον</wd> 
+<wd tbrefs="1715926-2">δ᾽</wd> 
+<wd tbrefs="1715926-3">ἐκέλευσε</wd> 
+<wd tbrefs="1715926-4">περικλυτὸν</wd> 
+<wd tbrefs="1715926-5">ὅττι</wd> 
+<wd tbrefs="1715926-6">τάχιστα</wd></l>
+<l n="61">
+<wd tbrefs="1715926-7">γαῖαν</wd> 
+<wd tbrefs="1715926-8">ὕδει</wd> 
+<wd tbrefs="1715926-9">φύρειν</wd>, 
+<wd tbrefs="1715926-11">ἐν</wd> 
+<wd tbrefs="1715926-12">δ᾽</wd> 
+<wd tbrefs="1715926-13">ἀνθρώπου</wd> 
+<wd tbrefs="1715926-14">θέμεν</wd> 
+<wd tbrefs="1715926-15">αὐδὴν</wd></l>
+<l n="62">
+<wd tbrefs="1715926-16">καὶ</wd> 
+<wd tbrefs="1715926-17">σθένος</wd>, 
+<wd tbrefs="1715926-19">ἀθανάτῃς</wd> 
+<wd tbrefs="1715926-20">δὲ</wd> 
+<wd tbrefs="1715926-21">θεῇς</wd> 
+<wd tbrefs="1715926-22">εἰς</wd> 
+<wd tbrefs="1715926-23">ὦπα</wd> 
+<wd tbrefs="1715926-24">ἐίσκειν</wd></l>
+<l n="63">
+<wd tbrefs="1715926-25">παρθενικῆς</wd> 
+<wd tbrefs="1715926-26">καλὸν</wd> 
+<wd tbrefs="1715926-27">εἶδος</wd> 
+<wd tbrefs="1715926-28">ἐπήρατον</wd>: 
+<wd tbrefs="1715927-1">αὐτὰρ</wd> 
+<wd tbrefs="1715927-2">Ἀθήνην</wd></l>
+<l n="64">
+<wd tbrefs="1715927-3">ἔργα</wd> 
+<wd tbrefs="1715927-4">διδασκῆσαι</wd>, 
+<wd tbrefs="1715927-6">πολυδαίδαλον</wd> 
+<wd tbrefs="1715927-7">ἱστὸν</wd> 
+<wd tbrefs="1715927-8">ὑφαίνειν</wd>:</l>
+<l n="65">
+<wd tbrefs="1715928-1">καὶ</wd> 
+<wd tbrefs="1715928-2">χάριν</wd> 
+<wd tbrefs="1715928-3">ἀμφιχέαι</wd> 
+<wd tbrefs="1715928-4">κεφαλῇ</wd> 
+<wd tbrefs="1715928-5">χρυσέην</wd> 
+<wd tbrefs="1715928-6">Ἀφροδίτην</wd></l>
+<l n="66">
+<wd tbrefs="1715928-7">καὶ</wd> 
+<wd tbrefs="1715928-8">πόθον</wd> 
+<wd tbrefs="1715928-9">ἀργαλέον</wd> 
+<wd tbrefs="1715928-10">καὶ</wd> 
+<wd tbrefs="1715928-11">γυιοβόρους</wd> 
+<wd tbrefs="1715928-12">μελεδώνας</wd>:</l>
+<l n="67">
+<wd tbrefs="1715929-1">ἐν</wd> 
+<wd tbrefs="1715929-2">δὲ</wd> 
+<wd tbrefs="1715929-3">θέμεν</wd> 
+<wd tbrefs="1715929-4">κύνεόν</wd> 
+<wd tbrefs="1715929-5">τε</wd> 
+<wd tbrefs="1715929-6">νόον</wd> 
+<wd tbrefs="1715929-7">καὶ</wd> 
+<wd tbrefs="1715929-8">ἐπίκλοπον</wd> 
+<wd tbrefs="1715929-9">ἦθος</wd></l>
+<l n="68">
+<wd tbrefs="1715929-10">Ἑρμείην</wd> 
+<wd tbrefs="1715929-11">ἤνωγε</wd>, 
+<wd tbrefs="1715929-13">διάκτορον</wd> 
+<wd tbrefs="1715929-14">Ἀργεϊφόντην</wd>.</l>
+<l n="69"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715930-1">ὣς</wd> 
+<wd tbrefs="1715930-2">ἔφαθ᾽</wd>: 
+<wd tbrefs="1715931-1">οἳ</wd> 
+<wd tbrefs="1715931-2">δ᾽</wd> 
+<wd tbrefs="1715931-3">ἐπίθοντο</wd> 
+<wd tbrefs="1715931-4">Διὶ</wd> 
+<wd tbrefs="1715931-5">Κρονίωνι</wd> 
+<wd tbrefs="1715931-6">ἄνακτι</wd>.</l>
+<l n="70">
+<wd tbrefs="1715932-1">αὐτίκα</wd> 
+<wd tbrefs="1715932-2">δ᾽</wd> 
+<wd tbrefs="1715932-3">ἐκ</wd> 
+<wd tbrefs="1715932-4">γαίης</wd> 
+<wd tbrefs="1715932-5">πλάσσεν</wd> 
+<wd tbrefs="1715932-6">κλυτὸς</wd> 
+<wd tbrefs="1715932-7">Ἀμφιγυήεις</wd></l>
+<l n="71">
+<wd tbrefs="1715932-8">παρθένῳ</wd> 
+<wd tbrefs="1715932-9">αἰδοίῃ</wd> 
+<wd tbrefs="1715932-10">ἴκελον</wd> 
+<wd tbrefs="1715932-11">Κρονίδεω</wd> 
+<wd tbrefs="1715932-12">διὰ</wd> 
+<wd tbrefs="1715932-13">βουλάς</wd>:</l>
+<l n="72">
+<wd tbrefs="1715933-1">ζῶσε</wd> 
+<wd tbrefs="1715933-2">δὲ</wd> 
+<wd tbrefs="1715933-3">καὶ</wd> 
+<wd tbrefs="1715933-4">κόσμησε</wd> 
+<wd tbrefs="1715933-5">θεὰ</wd> 
+<wd tbrefs="1715933-6">γλαυκῶπις</wd> 
+<wd tbrefs="1715933-7">Ἀθήνη</wd>:</l>
+<l n="73">
+<wd tbrefs="1715934-1">ἀμφὶ</wd> 
+<wd tbrefs="1715934-2">δέ</wd> 
+<wd tbrefs="1715934-3">οἱ</wd> 
+<wd tbrefs="1715934-4">Χάριτές</wd> 
+<wd tbrefs="1715934-5">τε</wd> 
+<wd tbrefs="1715934-6">θεαὶ</wd> 
+<wd tbrefs="1715934-7">καὶ</wd> 
+<wd tbrefs="1715934-8">πότνια</wd> 
+<wd tbrefs="1715934-9">Πειθὼ</wd></l>
+<l n="74">
+<wd tbrefs="1715934-10">ὅρμους</wd> 
+<wd tbrefs="1715934-11">χρυσείους</wd> 
+<wd tbrefs="1715934-12">ἔθεσαν</wd> 
+<wd tbrefs="1715934-13">χροΐ</wd>: 
+<wd tbrefs="1715935-1">ἀμφὶ</wd> 
+<wd tbrefs="1715935-2">δὲ</wd> 
+<wd tbrefs="1715935-3">τήν</wd> 
+<wd tbrefs="1715935-4">γε</wd></l>
+<l n="75">
+<wd tbrefs="1715935-5">Ὧραι</wd> 
+<wd tbrefs="1715935-6">καλλίκομοι</wd> 
+<wd tbrefs="1715935-7">στέφον</wd> 
+<wd tbrefs="1715935-8">ἄνθεσιν</wd> 
+<wd tbrefs="1715935-9">εἰαρινοῖσιν</wd>:</l>
+<l n="76">[
+<wd tbrefs="1715936-1">πάντα</wd> 
+<wd tbrefs="1715936-2">δέ</wd> 
+<wd tbrefs="1715936-3">οἱ</wd> 
+<wd tbrefs="1715936-4">χροῒ</wd> 
+<wd tbrefs="1715936-5">κόσμον</wd> 
+<wd tbrefs="1715936-6">ἐφήρμοσε</wd> 
+<wd tbrefs="1715936-7">Παλλὰς</wd> 
+<wd tbrefs="1715936-8">Ἀθήνη</wd>.]</l>
+<l n="77">
+<wd tbrefs="1715937-2">ἐν</wd> 
+<wd tbrefs="1715937-3">δ᾽</wd> 
+<wd tbrefs="1715937-4">ἄρα</wd> 
+<wd tbrefs="1715937-5">οἱ</wd> 
+<wd tbrefs="1715937-6">στήθεσσι</wd> 
+<wd tbrefs="1715937-7">διάκτορος</wd> 
+<wd tbrefs="1715937-8">Ἀργεϊφόντης</wd></l>
+<l n="78">
+<wd tbrefs="1715937-9">ψεύδεά</wd> 
+<wd tbrefs="1715937-10">θ᾽</wd> 
+<wd tbrefs="1715937-11">αἱμυλίους</wd> 
+<wd tbrefs="1715937-12">τε</wd> 
+<wd tbrefs="1715937-13">λόγους</wd> 
+<wd tbrefs="1715937-14">καὶ</wd> 
+<wd tbrefs="1715937-15">ἐπίκλοπον</wd> 
+<wd tbrefs="1715937-16">ἦθος</wd></l>
+<l n="79">[
+<wd tbrefs="1715937-17">τεῦξε</wd> 
+<wd tbrefs="1715937-18">Διὸς</wd> 
+<wd tbrefs="1715937-19">βουλῇσι</wd> 
+<wd tbrefs="1715937-20">βαρυκτύπου</wd>: 
+<wd tbrefs="1715938-1">ἐν</wd> 
+<wd tbrefs="1715938-2">δ᾽</wd> 
+<wd tbrefs="1715938-3">ἄρα</wd> 
+<wd tbrefs="1715938-4">φωνὴν</wd>]</l>
+<l n="80">
+<wd tbrefs="1715938-5">θῆκε</wd> 
+<wd tbrefs="1715938-6">θεῶν</wd> 
+<wd tbrefs="1715938-7">κῆρυξ</wd>, 
+<wd tbrefs="1715938-9">ὀνόμηνε</wd> 
+<wd tbrefs="1715938-10">δὲ</wd> 
+<wd tbrefs="1715938-11">τήνδε</wd> 
+<wd tbrefs="1715938-12">γυναῖκα</wd></l>
+<l n="81">
+<wd tbrefs="1715938-13">Πανδώρην</wd>, 
+<wd tbrefs="1715938-15">ὅτι</wd> 
+<wd tbrefs="1715938-16">πάντες</wd> 
+<wd tbrefs="1715938-17">Ὀλύμπια</wd> 
+<wd tbrefs="1715938-18">δώματ᾽</wd> 
+<wd tbrefs="1715938-19">ἔχοντες</wd></l>
+<l n="82">
+<wd tbrefs="1715938-20">δῶρον</wd> 
+<wd tbrefs="1715938-21">ἐδώρησαν</wd>, 
+<wd tbrefs="1715938-23">πῆμ᾽</wd> 
+<wd tbrefs="1715938-24">ἀνδράσιν</wd> 
+<wd tbrefs="1715938-25">ἀλφηστῇσιν</wd>.</l><milestone n="83" ed="p" unit="card"/>
+<l n="83"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715939-1">αὐτὰρ</wd> 
+<wd tbrefs="1715939-2">ἐπεὶ</wd> 
+<wd tbrefs="1715939-3">δόλον</wd> 
+<wd tbrefs="1715939-4">αἰπὺν</wd> 
+<wd tbrefs="1715939-5">ἀμήχανον</wd> 
+<wd tbrefs="1715939-6">ἐξετέλεσσεν</wd>,</l>
+<l n="84">
+<wd tbrefs="1715939-8">εἰς</wd> 
+<wd tbrefs="1715939-9">Ἐπιμηθέα</wd> 
+<wd tbrefs="1715939-10">πέμπε</wd> 
+<wd tbrefs="1715939-11">πατὴρ</wd> 
+<wd tbrefs="1715939-12">κλυτὸν</wd> 
+<wd tbrefs="1715939-13">Ἀργεϊφόντην</wd></l>
+<l n="85">
+<wd tbrefs="1715939-14">δῶρον</wd> 
+<wd tbrefs="1715939-15">ἄγοντα</wd>, 
+<wd tbrefs="1715939-17">θεῶν</wd> 
+<wd tbrefs="1715939-18">ταχὺν</wd> 
+<wd tbrefs="1715939-19">ἄγγελον</wd>: 
+<wd tbrefs="1715940-1 1715940-2">οὐδ᾽</wd> 
+<wd tbrefs="1715940-3">Ἐπιμηθεὺς</wd></l>
+<l n="86">
+<wd tbrefs="1715940-4">ἐφράσαθ᾽</wd>, 
+<wd tbrefs="1715940-6">ὥς</wd> 
+<wd tbrefs="1715940-7">οἱ</wd> 
+<wd tbrefs="1715940-8">ἔειπε</wd> 
+<wd tbrefs="1715940-9">Προμηθεὺς</wd> 
+<wd tbrefs="1715940-10">μή</wd> 
+<wd tbrefs="1715940-11">ποτε</wd> 
+<wd tbrefs="1715940-12">δῶρον</wd></l>
+<l n="87">
+<wd tbrefs="1715940-13">δέξασθαι</wd> 
+<wd tbrefs="1715940-14">πὰρ</wd> 
+<wd tbrefs="1715940-15">Ζηνὸς</wd> 
+<wd tbrefs="1715940-16">Ὀλυμπίου</wd>, 
+<wd tbrefs="1715940-18">ἀλλ᾽</wd> 
+<wd tbrefs="1715940-19">ἀποπέμπειν</wd></l>
+<l n="88">
+<wd tbrefs="1715940-20">ἐξοπίσω</wd>, 
+<wd tbrefs="1715940-22">μή</wd> 
+<wd tbrefs="1715940-23">πού</wd> 
+<wd tbrefs="1715940-24">τι</wd> 
+<wd tbrefs="1715940-25">κακὸν</wd> 
+<wd tbrefs="1715940-26">θνητοῖσι</wd> 
+<wd tbrefs="1715940-27">γένηται</wd>.</l>
+<l n="89">
+<wd tbrefs="1715941-1">αὐτὰρ</wd> 
+<wd tbrefs="1715941-2">ὃ</wd> 
+<wd tbrefs="1715941-3">δεξάμενος</wd>, 
+<wd tbrefs="1715941-5">ὅτε</wd> 
+<wd tbrefs="1715941-6">δὴ</wd> 
+<wd tbrefs="1715941-7">κακὸν</wd> 
+<wd tbrefs="1715941-8">εἶχ᾽</wd>, 
+<wd tbrefs="1715941-10">ἐνόησεν</wd>.</l>
+<l n="90">
+<wd tbrefs="1715942-1">Πρὶν</wd> 
+<wd tbrefs="1715942-2">μὲν</wd> 
+<wd tbrefs="1715942-3">γὰρ</wd> 
+<wd tbrefs="1715942-4">ζώεσκον</wd> 
+<wd tbrefs="1715942-5">ἐπὶ</wd> 
+<wd tbrefs="1715942-6">χθονὶ</wd> 
+<wd tbrefs="1715942-7">φῦλ᾽</wd> 
+<wd tbrefs="1715942-8">ἀνθρώπων</wd></l>
+<l n="91">
+<wd tbrefs="1715942-9">νόσφιν</wd> 
+<wd tbrefs="1715942-10">ἄτερ</wd> 
+<wd tbrefs="1715942-11">τε</wd> 
+<wd tbrefs="1715942-12">κακῶν</wd> 
+<wd tbrefs="1715942-13">καὶ</wd> 
+<wd tbrefs="1715942-14">ἄτερ</wd> 
+<wd tbrefs="1715942-15">χαλεποῖο</wd> 
+<wd tbrefs="1715942-16">πόνοιο</wd></l>
+<l n="92">
+<wd tbrefs="1715942-17">νούσων</wd> 
+<wd tbrefs="1715942-18">τ᾽</wd> 
+<wd tbrefs="1715942-19">ἀργαλέων</wd>, 
+<wd tbrefs="1715942-21">αἵ</wd> 
+<wd tbrefs="1715942-22">τ᾽</wd> 
+<wd tbrefs="1715942-23">ἀνδράσι</wd> 
+<wd tbrefs="1715942-24">Κῆρας</wd> 
+<wd tbrefs="1715942-25">ἔδωκαν</wd>.</l>
+<l n="93">[
+<wd tbrefs="1715943-1">αἶψα</wd> 
+<wd tbrefs="1715943-2">γὰρ</wd> 
+<wd tbrefs="1715943-3">ἐν</wd> 
+<wd tbrefs="1715943-4">κακότητι</wd> 
+<wd tbrefs="1715943-5">βροτοὶ</wd> 
+<wd tbrefs="1715943-6">καταγηράσκουσιν</wd>.]</l>
+<l n="94">
+<wd tbrefs="1715944-2">ἀλλὰ</wd> 
+<wd tbrefs="1715944-3">γυνὴ</wd> 
+<wd tbrefs="1715944-4">χείρεσσι</wd> 
+<wd tbrefs="1715944-5">πίθου</wd> 
+<wd tbrefs="1715944-6">μέγα</wd> 
+<wd tbrefs="1715944-7">πῶμ᾽</wd> 
+<wd tbrefs="1715944-8">ἀφελοῦσα</wd></l>
+<l n="95">
+<wd tbrefs="1715944-9">ἐσκέδασ᾽</wd>: 
+<wd tbrefs="1715945-1">ἀνθρώποισι</wd> 
+<wd tbrefs="1715945-2">δ᾽</wd> 
+<wd tbrefs="1715945-3">ἐμήσατο</wd> 
+<wd tbrefs="1715945-4">κήδεα</wd> 
+<wd tbrefs="1715945-5">λυγρά</wd>.</l>
+<l n="96">
+<wd tbrefs="1715946-1">μούνη</wd> 
+<wd tbrefs="1715946-2">δ᾽</wd> 
+<wd tbrefs="1715946-3">αὐτόθι</wd> 
+<wd tbrefs="1715946-4">Ἐλπὶς</wd> 
+<wd tbrefs="1715946-5">ἐν</wd> 
+<wd tbrefs="1715946-6">ἀρρήκτοισι</wd> 
+<wd tbrefs="1715946-7">δόμοισιν</wd></l>
+<l n="97">
+<wd tbrefs="1715946-8">ἔνδον</wd> 
+<wd tbrefs="1715946-9">ἔμιμνε</wd> 
+<wd tbrefs="1715946-10">πίθου</wd> 
+<wd tbrefs="1715946-11">ὑπὸ</wd> 
+<wd tbrefs="1715946-12">χείλεσιν</wd>, 
+<wd tbrefs="1715946-14 1715946-15">οὐδὲ</wd> 
+<wd tbrefs="1715946-16">θύραζε</wd></l>
+<l n="98">
+<wd tbrefs="1715946-17">ἐξέπτη</wd>: 
+<wd tbrefs="1715947-1">πρόσθεν</wd> 
+<wd tbrefs="1715947-2">γὰρ</wd> 
+<wd tbrefs="1715947-3">ἐπέλλαβε</wd> 
+<wd tbrefs="1715947-4">πῶμα</wd> 
+<wd tbrefs="1715947-5">πίθοιο</wd></l>
+<l n="99">[
+<wd tbrefs="1715947-6">αἰγιόχου</wd> 
+<wd tbrefs="1715947-7">βουλῇσι</wd> 
+<wd tbrefs="1715947-8">Διὸς</wd> 
+<wd tbrefs="1715947-9">νεφεληγερέταο</wd>.]</l>
+<l n="100">
+<wd tbrefs="1715948-2">ἄλλα</wd> 
+<wd tbrefs="1715948-3">δὲ</wd> 
+<wd tbrefs="1715948-4">μυρία</wd> 
+<wd tbrefs="1715948-5">λυγρὰ</wd> 
+<wd tbrefs="1715948-6">κατ᾽</wd> 
+<wd tbrefs="1715948-7">ἀνθρώπους</wd> 
+<wd tbrefs="1715948-8">ἀλάληται</wd>:</l>
+<l n="101">
+<wd tbrefs="1715949-1">πλείη</wd> 
+<wd tbrefs="1715949-2">μὲν</wd> 
+<wd tbrefs="1715949-3">γὰρ</wd> 
+<wd tbrefs="1715949-4">γαῖα</wd> 
+<wd tbrefs="1715949-5">κακῶν</wd>, 
+<wd tbrefs="1715949-7">πλείη</wd> 
+<wd tbrefs="1715949-8">δὲ</wd> 
+<wd tbrefs="1715949-9">θάλασσα</wd>:</l>
+<l n="102">
+<wd tbrefs="1715950-1">νοῦσοι</wd> 
+<wd tbrefs="1715950-2">δ᾽</wd> 
+<wd tbrefs="1715950-3">ἀνθρώποισιν</wd> 
+<wd tbrefs="1715950-4">ἐφ᾽</wd> 
+<wd tbrefs="1715950-5">ἡμέρῃ</wd>, 
+<wd tbrefs="1715950-7">αἳ</wd> 
+<wd tbrefs="1715950-8">δ᾽</wd> 
+<wd tbrefs="1715950-9">ἐπὶ</wd> 
+<wd tbrefs="1715950-10">νυκτὶ</wd></l>
+<l n="103">
+<wd tbrefs="1715950-11">αὐτόματοι</wd> 
+<wd tbrefs="1715950-12">φοιτῶσι</wd> 
+<wd tbrefs="1715950-13">κακὰ</wd> 
+<wd tbrefs="1715950-14">θνητοῖσι</wd> 
+<wd tbrefs="1715950-15">φέρουσαι</wd></l>
+<l n="104">
+<wd tbrefs="1715950-16">σιγῇ</wd>, 
+<wd tbrefs="1715950-18">ἐπεὶ</wd> 
+<wd tbrefs="1715950-19">φωνὴν</wd> 
+<wd tbrefs="1715950-20">ἐξείλετο</wd> 
+<wd tbrefs="1715950-21">μητίετα</wd> 
+<wd tbrefs="1715950-22">Ζεύς</wd>.</l>
+<l n="105">
+<wd tbrefs="1715951-1">οὕτως</wd> 
+<wd tbrefs="1715951-2">οὔτι</wd> 
+<wd tbrefs="1715951-3">πη</wd> 
+<wd tbrefs="1715951-4">ἔστι</wd> 
+<wd tbrefs="1715951-5">Διὸς</wd> 
+<wd tbrefs="1715951-6">νόον</wd> 
+<wd tbrefs="1715951-7">ἐξαλέασθαι</wd>.</l>
+<l n="106"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715952-1">εἰ</wd> 
+<wd tbrefs="1715952-2">δ᾽</wd> 
+<wd tbrefs="1715952-3">ἐθέλεις</wd>, 
+<wd tbrefs="1715952-5">ἕτερόν</wd> 
+<wd tbrefs="1715952-6">τοι</wd> 
+<wd tbrefs="1715952-7">ἐγὼ</wd> 
+<wd tbrefs="1715952-8">λόγον</wd> 
+<wd tbrefs="1715952-9">ἐκκορυφώσω</wd></l>
+<l n="107">
+<wd tbrefs="1715952-10">εὖ</wd> 
+<wd tbrefs="1715952-11">καὶ</wd> 
+<wd tbrefs="1715952-12">ἐπισταμένως</wd>: 
+<wd tbrefs="1715953-1">σὺ</wd> 
+<wd tbrefs="1715953-2">δ᾽</wd> 
+<wd tbrefs="1715953-3">ἐνὶ</wd> 
+<wd tbrefs="1715953-4">φρεσὶ</wd> 
+<wd tbrefs="1715953-5">βάλλεο</wd> 
+<wd tbrefs="1715953-6">σῇσιν</wd>.</l>
+<l n="108">
+<wd tbrefs="1715954-1">ὡς</wd> 
+<wd tbrefs="1715954-2">ὁμόθεν</wd> 
+<wd tbrefs="1715954-3">γεγάασι</wd> 
+<wd tbrefs="1715954-4">θεοὶ</wd> 
+<wd tbrefs="1715954-5">θνητοί</wd> 
+<wd tbrefs="1715954-6">τ᾽</wd> 
+<wd tbrefs="1715954-7">ἄνθρωποι</wd>.</l><milestone n="109" ed="p" unit="card"/>
+<l n="109"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715955-1">χρύσεον</wd> 
+<wd tbrefs="1715955-2">μὲν</wd> 
+<wd tbrefs="1715955-3">πρώτιστα</wd> 
+<wd tbrefs="1715955-4">γένος</wd> 
+<wd tbrefs="1715955-5">μερόπων</wd> 
+<wd tbrefs="1715955-6">ἀνθρώπων</wd></l>
+<l n="110">
+<wd tbrefs="1715955-7">ἀθάνατοι</wd> 
+<wd tbrefs="1715955-8">ποίησαν</wd> 
+<wd tbrefs="1715955-9">Ὀλύμπια</wd> 
+<wd tbrefs="1715955-10">δώματ᾽</wd> 
+<wd tbrefs="1715955-11">ἔχοντες</wd>.</l>
+<l n="111">
+<wd tbrefs="1715956-1">οἳ</wd> 
+<wd tbrefs="1715956-2">μὲν</wd> 
+<wd tbrefs="1715956-3">ἐπὶ</wd> 
+<wd tbrefs="1715956-4">Κρόνου</wd> 
+<wd tbrefs="1715956-5">ἦσαν</wd>, 
+<wd tbrefs="1715956-7">ὅτ᾽</wd> 
+<wd tbrefs="1715956-8">οὐρανῷ</wd> 
+<wd tbrefs="1715956-9">ἐμβασίλευεν</wd>:</l>
+<l n="112">
+<wd tbrefs="1715957-1">ὥστε</wd> 
+<wd tbrefs="1715957-2">θεοὶ</wd> 
+<wd tbrefs="1715957-3">δ᾽</wd> 
+<wd tbrefs="1715957-4">ἔζωον</wd> 
+<wd tbrefs="1715957-5">ἀκηδέα</wd> 
+<wd tbrefs="1715957-6">θυμὸν</wd> 
+<wd tbrefs="1715957-7">ἔχοντες</wd></l>
+<l n="113">
+<wd tbrefs="1715957-8">νόσφιν</wd> 
+<wd tbrefs="1715957-9">ἄτερ</wd> 
+<wd tbrefs="1715957-10">τε</wd> 
+<wd tbrefs="1715957-11">πόνων</wd> 
+<wd tbrefs="1715957-12">καὶ</wd> 
+<wd tbrefs="1715957-13">ὀιζύος</wd>: 
+<wd tbrefs="1715958-1 1715958-2">οὐδέ</wd> 
+<wd tbrefs="1715958-3">τι</wd> 
+<wd tbrefs="1715958-4">δειλὸν</wd></l>
+<l n="114">
+<wd tbrefs="1715958-5">γῆρας</wd> 
+<wd tbrefs="1715958-6">ἐπῆν</wd>, 
+<wd tbrefs="1715958-8">αἰεὶ</wd> 
+<wd tbrefs="1715958-9">δὲ</wd> 
+<wd tbrefs="1715958-10">πόδας</wd> 
+<wd tbrefs="1715958-11">καὶ</wd> 
+<wd tbrefs="1715958-12">χεῖρας</wd> 
+<wd tbrefs="1715958-13">ὁμοῖοι</wd></l>
+<l n="115">
+<wd tbrefs="1715958-14">τέρποντ᾽</wd> 
+<wd tbrefs="1715958-15">ἐν</wd> 
+<wd tbrefs="1715958-16">θαλίῃσι</wd> 
+<wd tbrefs="1715958-17">κακῶν</wd> 
+<wd tbrefs="1715958-18">ἔκτοσθεν</wd> 
+<wd tbrefs="1715958-19">ἁπάντων</wd>:</l>
+<l n="116">
+<wd tbrefs="1715959-1">θνῇσκον</wd> 
+<wd tbrefs="1715959-2">δ᾽</wd> 
+<wd tbrefs="1715959-3">ὥσθ᾽</wd> 
+<wd tbrefs="1715959-4">ὕπνῳ</wd> 
+<wd tbrefs="1715959-5">δεδμημένοι</wd>: 
+<wd tbrefs="1715960-1">ἐσθλὰ</wd> 
+<wd tbrefs="1715960-2">δὲ</wd> 
+<wd tbrefs="1715960-3">πάντα</wd></l>
+<l n="117">
+<wd tbrefs="1715960-4">τοῖσιν</wd> 
+<wd tbrefs="1715960-5">ἔην</wd>: 
+<wd tbrefs="1715961-1">καρπὸν</wd> 
+<wd tbrefs="1715961-2">δ᾽</wd> 
+<wd tbrefs="1715961-3">ἔφερε</wd> 
+<wd tbrefs="1715961-4">ζείδωρος</wd> 
+<wd tbrefs="1715961-5">ἄρουρα</wd></l>
+<l n="118">
+<wd tbrefs="1715961-6">αὐτομάτη</wd> 
+<wd tbrefs="1715961-7">πολλόν</wd> 
+<wd tbrefs="1715961-8">τε</wd> 
+<wd tbrefs="1715961-9">καὶ</wd> 
+<wd tbrefs="1715961-10">ἄφθονον</wd>: 
+<wd tbrefs="1715962-1">οἳ</wd> 
+<wd tbrefs="1715962-2">δ᾽</wd> 
+<wd tbrefs="1715962-3">ἐθελημοὶ</wd></l>
+<l n="119">
+<wd tbrefs="1715962-4">ἥσυχοι</wd> 
+<wd tbrefs="1715962-5">ἔργ᾽</wd> 
+<wd tbrefs="1715962-6">ἐνέμοντο</wd> 
+<wd tbrefs="1715962-7">σὺν</wd> 
+<wd tbrefs="1715962-8">ἐσθλοῖσιν</wd> 
+<wd tbrefs="1715962-9">πολέεσσιν</wd>.</l>
+<l n="120">
+<wd tbrefs="1715963-1">ἀφνειοὶ</wd> 
+<wd tbrefs="1715963-2">μήλοισι</wd>, 
+<wd tbrefs="1715963-4">φίλοι</wd> 
+<wd tbrefs="1715963-5">μακάρεσσι</wd> 
+<wd tbrefs="1715963-6">θεοῖσιν</wd>.</l>
+<l n="121"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715964-1">αὐτὰρ</wd> 
+<wd tbrefs="1715964-2">ἐπεὶ</wd> 
+<wd tbrefs="1715964-3">δὴ</wd> 
+<wd tbrefs="1715964-4">τοῦτο</wd> 
+<wd tbrefs="1715964-5">γένος</wd> 
+<wd tbrefs="1715964-6">κατὰ</wd> 
+<wd tbrefs="1715964-7">γαῖ᾽</wd> 
+<wd tbrefs="1715964-8">ἐκάλυψε</wd>,—</l>
+<l n="122">
+<wd tbrefs="1715964-11">τοὶ</wd> 
+<wd tbrefs="1715964-12">μὲν</wd> 
+<wd tbrefs="1715964-13">δαίμονες</wd> 
+<wd tbrefs="1715964-14">ἁγνοὶ</wd> 
+<wd tbrefs="1715964-15">ἐπιχθόνιοι</wd> 
+<wd tbrefs="1715964-16">καλέονται</wd></l>
+<l n="123">
+<wd tbrefs="1715964-17">ἐσθλοί</wd>, 
+<wd tbrefs="1715964-19">ἀλεξίκακοι</wd>, 
+<wd tbrefs="1715964-21">φύλακες</wd> 
+<wd tbrefs="1715964-22">θνητῶν</wd> 
+<wd tbrefs="1715964-23">ἀνθρώπων</wd>,</l>
+<l n="124">[
+<wd tbrefs="1715964-25">οἵ</wd> 
+<wd tbrefs="1715964-26">ῥα</wd> 
+<wd tbrefs="1715964-27">φυλάσσουσίν</wd> 
+<wd tbrefs="1715964-28">τε</wd> 
+<wd tbrefs="1715964-29">δίκας</wd> 
+<wd tbrefs="1715964-30">καὶ</wd> 
+<wd tbrefs="1715964-31">σχέτλια</wd> 
+<wd tbrefs="1715964-32">ἔργα</wd></l>
+<l n="125">
+<wd tbrefs="1715964-33">ἠέρα</wd> 
+<wd tbrefs="1715964-34">ἑσσάμενοι</wd> 
+<wd tbrefs="1715964-35">πάντη</wd> 
+<wd tbrefs="1715964-36">φοιτῶντες</wd> 
+<wd tbrefs="1715964-37">ἐπ᾽</wd> 
+<wd tbrefs="1715964-38">αἶαν</wd>,]</l>
+<l n="126">
+<wd tbrefs="1715964-41">πλουτοδόται</wd>: 
+<wd tbrefs="1715965-1">καὶ</wd> 
+<wd tbrefs="1715965-2">τοῦτο</wd> 
+<wd tbrefs="1715965-3">γέρας</wd> 
+<wd tbrefs="1715965-4">βασιλήιον</wd> 
+<wd tbrefs="1715965-5">ἔσχον</wd>—,</l>
+<l n="127">
+<wd tbrefs="1715965-8">δεύτερον</wd> 
+<wd tbrefs="1715965-9">αὖτε</wd> 
+<wd tbrefs="1715965-10">γένος</wd> 
+<wd tbrefs="1715965-11">πολὺ</wd> 
+<wd tbrefs="1715965-12">χειρότερον</wd> 
+<wd tbrefs="1715965-13">μετόπισθεν</wd></l>
+<l n="128">
+<wd tbrefs="1715965-14">ἀργύρεον</wd> 
+<wd tbrefs="1715965-15">ποίησαν</wd> 
+<wd tbrefs="1715965-16">Ὀλύμπια</wd> 
+<wd tbrefs="1715965-17">δώματ᾽</wd> 
+<wd tbrefs="1715965-18">ἔχοντες</wd>,</l>
+<l n="129">
+<wd tbrefs="1715965-20">χρυσέῳ</wd> 
+<wd tbrefs="1715965-21 1715965-22 1715965-23 1715965-24 1715965-25 1715965-26">οὔτε</wd> 
+<wd tbrefs="1715965-21 1715965-22 1715965-23 1715965-24 1715965-25 1715965-26">φυὴν</wd> 
+<wd tbrefs="1715965-21 1715965-22 1715965-23 1715965-24 1715965-25 1715965-26">ἐναλίγκιον</wd> 
+<wd tbrefs="1715965-21 1715965-22 1715965-23 1715965-24 1715965-25 1715965-26">οὔτε</wd> 
+<wd tbrefs="1715965-27">νόημα</wd>.</l>
+<l n="130">
+<wd tbrefs="1715966-1">ἀλλ᾽</wd> 
+<wd tbrefs="1715966-2">ἑκατὸν</wd> 
+<wd tbrefs="1715966-3">μὲν</wd> 
+<wd tbrefs="1715966-4">παῖς</wd> 
+<wd tbrefs="1715966-5">ἔτεα</wd> 
+<wd tbrefs="1715966-6">παρὰ</wd> 
+<wd tbrefs="1715966-7">μητέρι</wd> 
+<wd tbrefs="1715966-8">κεδνῇ</wd></l>
+<l n="131">
+<wd tbrefs="1715966-9">ἐτρέφετ᾽</wd> 
+<wd tbrefs="1715966-10">ἀτάλλων</wd>, 
+<wd tbrefs="1715966-12">μέγα</wd> 
+<wd tbrefs="1715966-13">νήπιος</wd>, 
+<wd tbrefs="1715966-15">ᾧ</wd> 
+<wd tbrefs="1715966-16">ἐνὶ</wd> 
+<wd tbrefs="1715966-17">οἴκῳ</wd>.</l>
+<l n="132">
+<wd tbrefs="1715967-1">ἀλλ᾽</wd> 
+<wd tbrefs="1715967-2">ὅτ᾽</wd> 
+<wd tbrefs="1715967-3">ἄρ᾽</wd> 
+<wd tbrefs="1715967-4">ἡβήσαι</wd> 
+<wd tbrefs="1715967-5">τε</wd> 
+<wd tbrefs="1715967-6">καὶ</wd> 
+<wd tbrefs="1715967-7">ἥβης</wd> 
+<wd tbrefs="1715967-8">μέτρον</wd> 
+<wd tbrefs="1715967-9">ἵκοιτο</wd>,</l>
+<l n="133">
+<wd tbrefs="1715967-11">παυρίδιον</wd> 
+<wd tbrefs="1715967-12">ζώεσκον</wd> 
+<wd tbrefs="1715967-13">ἐπὶ</wd> 
+<wd tbrefs="1715967-14">χρόνον</wd>, 
+<wd tbrefs="1715967-16">ἄλγε᾽</wd> 
+<wd tbrefs="1715967-17">ἔχοντες</wd></l>
+<l n="134">
+<wd tbrefs="1715967-18">ἀφραδίῃς</wd>: 
+<wd tbrefs="1715968-1">ὕβριν</wd> 
+<wd tbrefs="1715968-2">γὰρ</wd> 
+<wd tbrefs="1715968-3">ἀτάσθαλον</wd> 
+<wd tbrefs="1715968-4">οὐκ</wd> 
+<wd tbrefs="1715968-5">ἐδύναντο</wd></l>
+<l n="135">
+<wd tbrefs="1715968-6">ἀλλήλων</wd> 
+<wd tbrefs="1715968-7">ἀπέχειν</wd>, 
+<wd tbrefs="1715968-9 1715968-10">οὐδ᾽</wd> 
+<wd tbrefs="1715968-11">ἀθανάτους</wd> 
+<wd tbrefs="1715968-12">θεραπεύειν</wd></l>
+<l n="136">
+<wd tbrefs="1715968-13">ἤθελον</wd> 
+<wd tbrefs="1715968-14 1715968-15">οὐδ᾽</wd> 
+<wd tbrefs="1715968-16">ἔρδειν</wd> 
+<wd tbrefs="1715968-17">μακάρων</wd> 
+<wd tbrefs="1715968-18">ἱεροῖς</wd> 
+<wd tbrefs="1715968-19">ἐπὶ</wd> 
+<wd tbrefs="1715968-20">βωμοῖς</wd>,</l>
+<l n="137">
+<wd tbrefs="1715968-22">ἣ</wd> 
+<wd tbrefs="1715968-23">θέμις</wd> 
+<wd tbrefs="1715968-24">ἀνθρώποις</wd> 
+<wd tbrefs="1715968-25">κατὰ</wd> 
+<wd tbrefs="1715968-26">ἤθεα</wd>. 
+<wd tbrefs="1715969-1">τοὺς</wd> 
+<wd tbrefs="1715969-2">μὲν</wd> 
+<wd tbrefs="1715969-3">ἔπειτα</wd></l>
+<l n="138">
+<wd tbrefs="1715969-4">Ζεὺς</wd> 
+<wd tbrefs="1715969-5">Κρονίδης</wd> 
+<wd tbrefs="1715969-6">ἔκρυψε</wd> 
+<wd tbrefs="1715969-7">χολούμενος</wd>, 
+<wd tbrefs="1715969-9">οὕνεκα</wd> 
+<wd tbrefs="1715969-10">τιμὰς</wd></l>
+<l n="139">
+<wd tbrefs="1715969-11">οὐκ</wd> 
+<wd tbrefs="1715969-12">ἔδιδον</wd> 
+<wd tbrefs="1715969-13">μακάρεσσι</wd> 
+<wd tbrefs="1715969-14">θεοῖς</wd>, 
+<wd tbrefs="1715969-16">οἳ</wd> 
+<wd tbrefs="1715969-17">Ὄλυμπον</wd> 
+<wd tbrefs="1715969-18">ἔχουσιν</wd>.</l><milestone n="140" ed="p" unit="card"/>
+<l n="140"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715970-1">αὐτὰρ</wd> 
+<wd tbrefs="1715970-2">ἐπεὶ</wd> 
+<wd tbrefs="1715970-3">καὶ</wd> 
+<wd tbrefs="1715970-4">τοῦτο</wd> 
+<wd tbrefs="1715970-5">γένος</wd> 
+<wd tbrefs="1715970-6">κατὰ</wd> 
+<wd tbrefs="1715970-7">γαῖ᾽</wd> 
+<wd tbrefs="1715970-8">ἐκάλυψε</wd>,—</l>
+<l n="141">
+<wd tbrefs="1715970-11">τοὶ</wd> 
+<wd tbrefs="1715970-12">μὲν</wd> 
+<wd tbrefs="1715970-13">ὑποχθόνιοι</wd> 
+<wd tbrefs="1715970-14">μάκαρες</wd> 
+<wd tbrefs="1715970-15">θνητοῖς</wd> 
+<wd tbrefs="1715970-16">καλέονται</wd>,</l>
+<l n="142">
+<wd tbrefs="1715970-18">δεύτεροι</wd>, 
+<wd tbrefs="1715970-20">ἀλλ᾽</wd> 
+<wd tbrefs="1715970-21">ἔμπης</wd> 
+<wd tbrefs="1715970-22">τιμὴ</wd> 
+<wd tbrefs="1715970-23">καὶ</wd> 
+<wd tbrefs="1715970-24">τοῖσιν</wd> 
+<wd tbrefs="1715970-25">ὀπηδεῖ</wd>—,</l>
+<l n="143">
+<wd tbrefs="1715970-28">Ζεὺς</wd> 
+<wd tbrefs="1715970-29">δὲ</wd> 
+<wd tbrefs="1715970-30">πατὴρ</wd> 
+<wd tbrefs="1715970-31">τρίτον</wd> 
+<wd tbrefs="1715970-32">ἄλλο</wd> 
+<wd tbrefs="1715970-33">γένος</wd> 
+<wd tbrefs="1715970-34">μερόπων</wd> 
+<wd tbrefs="1715970-35">ἀνθρώπων</wd></l>
+<l n="144">
+<wd tbrefs="1715970-36">χάλκειον</wd> 
+<wd tbrefs="1715970-37">ποίησ᾽</wd>, 
+<wd tbrefs="1715970-39">οὐκ</wd> 
+<wd tbrefs="1715970-40">ἀργυρέῳ</wd> 
+<wd tbrefs="1715970-41">οὐδὲν</wd> 
+<wd tbrefs="1715970-42">ὁμοῖον</wd>,</l>
+<l n="145">
+<wd tbrefs="1715970-44">ἐκ</wd> 
+<wd tbrefs="1715970-45">μελιᾶν</wd>, 
+<wd tbrefs="1715970-47">δεινόν</wd> 
+<wd tbrefs="1715970-48">τε</wd> 
+<wd tbrefs="1715970-49">καὶ</wd> 
+<wd tbrefs="1715970-50">ὄβριμον</wd>: 
+<wd tbrefs="1715971-1">οἷσιν</wd> 
+<wd tbrefs="1715971-2">Ἄρηος</wd></l>
+<l n="146">
+<wd tbrefs="1715971-3">ἔργ᾽</wd> 
+<wd tbrefs="1715971-4">ἔμελεν</wd> 
+<wd tbrefs="1715971-5">στονόεντα</wd> 
+<wd tbrefs="1715971-6">καὶ</wd> 
+<wd tbrefs="1715971-7">ὕβριες</wd>: 
+<wd tbrefs="1715972-1 1715972-2">οὐδέ</wd> 
+<wd tbrefs="1715972-3">τι</wd> 
+<wd tbrefs="1715972-4">σῖτον</wd></l>
+<l n="147">
+<wd tbrefs="1715972-5">ἤσθιον</wd>, 
+<wd tbrefs="1715972-7">ἀλλ᾽</wd> 
+<wd tbrefs="1715972-8">ἀδάμαντος</wd> 
+<wd tbrefs="1715972-9">ἔχον</wd> 
+<wd tbrefs="1715972-10">κρατερόφρονα</wd> 
+<wd tbrefs="1715972-11">θυμόν</wd>,</l>
+<l n="148">
+<wd tbrefs="1715972-13">ἄπλαστοι</wd>: 
+<wd tbrefs="1715973-1">μεγάλη</wd> 
+<wd tbrefs="1715973-2">δὲ</wd> 
+<wd tbrefs="1715973-3">βίη</wd> 
+<wd tbrefs="1715973-4">καὶ</wd> 
+<wd tbrefs="1715973-5">χεῖρες</wd> 
+<wd tbrefs="1715973-6">ἄαπτοι</wd></l>
+<l n="149">
+<wd tbrefs="1715973-7">ἐξ</wd> 
+<wd tbrefs="1715973-8">ὤμων</wd> 
+<wd tbrefs="1715973-9">ἐπέφυκον</wd> 
+<wd tbrefs="1715973-10">ἐπὶ</wd> 
+<wd tbrefs="1715973-11">στιβαροῖσι</wd> 
+<wd tbrefs="1715973-12">μέλεσσιν</wd>.</l>
+<l n="150">
+<wd tbrefs="1715974-1">ὧν</wd> 
+<wd tbrefs="1715974-2">δ᾽</wd> 
+<wd tbrefs="1715974-3">ἦν</wd> 
+<wd tbrefs="1715974-4">χάλκεα</wd> 
+<wd tbrefs="1715974-5">μὲν</wd> 
+<wd tbrefs="1715974-6">τεύχεα</wd>, 
+<wd tbrefs="1715974-8">χάλκεοι</wd> 
+<wd tbrefs="1715974-9">δέ</wd> 
+<wd tbrefs="1715974-10">τε</wd> 
+<wd tbrefs="1715974-11">οἶκοι</wd></l>
+<l n="151">
+<wd tbrefs="1715974-12">χαλκῷ</wd> 
+<wd tbrefs="1715974-13">δ᾽</wd> 
+<wd tbrefs="1715974-14">εἰργάζοντο</wd>: 
+<wd tbrefs="1715975-1">μέλας</wd> 
+<wd tbrefs="1715975-2">δ᾽</wd> 
+<wd tbrefs="1715975-3">οὐκ</wd> 
+<wd tbrefs="1715975-4">ἔσκε</wd> 
+<wd tbrefs="1715975-5">σίδηρος</wd>.</l>
+<l n="152">
+<wd tbrefs="1715976-1">καὶ</wd> 
+<wd tbrefs="1715976-2">τοὶ</wd> 
+<wd tbrefs="1715976-3">μὲν</wd> 
+<wd tbrefs="1715976-4">χείρεσσιν</wd> 
+<wd tbrefs="1715976-5">ὕπο</wd> 
+<wd tbrefs="1715976-6">σφετέρῃσι</wd> 
+<wd tbrefs="1715976-7">δαμέντες</wd></l>
+<l n="153">
+<wd tbrefs="1715976-8">βῆσαν</wd> 
+<wd tbrefs="1715976-9">ἐς</wd> 
+<wd tbrefs="1715976-10">εὐρώεντα</wd> 
+<wd tbrefs="1715976-11">δόμον</wd> 
+<wd tbrefs="1715976-12">κρυεροῦ</wd> 
+<wd tbrefs="1715976-13">Αίδαο</wd></l>
+<l n="154">
+<wd tbrefs="1715976-14">νώνυμνοι</wd>: 
+<wd tbrefs="1715977-1">θάνατος</wd> 
+<wd tbrefs="1715977-2">δὲ</wd> 
+<wd tbrefs="1715977-3">καὶ</wd> 
+<wd tbrefs="1715977-4">ἐκπάγλους</wd> 
+<wd tbrefs="1715977-5">περ</wd> 
+<wd tbrefs="1715977-6">ἐόντας</wd></l>
+<l n="155">
+<wd tbrefs="1715977-7">εἷλε</wd> 
+<wd tbrefs="1715977-8">μέλας</wd>, 
+<wd tbrefs="1715977-10">λαμπρὸν</wd> 
+<wd tbrefs="1715977-11">δ᾽</wd> 
+<wd tbrefs="1715977-12">ἔλιπον</wd> 
+<wd tbrefs="1715977-13">φάος</wd> 
+<wd tbrefs="1715977-14">ἠελίοιο</wd>.</l>
+<l n="156"><milestone ed="P" unit="para"/>
+<wd tbrefs="1715978-1">αὐτὰρ</wd> 
+<wd tbrefs="1715978-2">ἐπεὶ</wd> 
+<wd tbrefs="1715978-3">καὶ</wd> 
+<wd tbrefs="1715978-4">τοῦτο</wd> 
+<wd tbrefs="1715978-5">γένος</wd> 
+<wd tbrefs="1715978-6">κατὰ</wd> 
+<wd tbrefs="1715978-7">γαῖ᾽</wd> 
+<wd tbrefs="1715978-8">ἐκάλυψεν</wd>,</l>
+<l n="157">
+<wd tbrefs="1715978-10">αὖτις</wd> 
+<wd tbrefs="1715978-11">ἔτ᾽</wd> 
+<wd tbrefs="1715978-12">ἄλλο</wd> 
+<wd tbrefs="1715978-13">τέταρτον</wd> 
+<wd tbrefs="1715978-14">ἐπὶ</wd> 
+<wd tbrefs="1715978-15">χθονὶ</wd> 
+<wd tbrefs="1715978-16">πουλυβοτείρῃ</wd></l>
+<l n="158">
+<wd tbrefs="1715978-17">Ζεὺς</wd> 
+<wd tbrefs="1715978-18">Κρονίδης</wd> 
+<wd tbrefs="1715978-19">ποίησε</wd>, 
+<wd tbrefs="1715978-21">δικαιότερον</wd> 
+<wd tbrefs="1715978-22">καὶ</wd> 
+<wd tbrefs="1715978-23">ἄρειον</wd>,</l>
+<l n="159">
+<wd tbrefs="1715978-25">ἀνδρῶν</wd> 
+<wd tbrefs="1715978-26">ἡρώων</wd> 
+<wd tbrefs="1715978-27">θεῖον</wd> 
+<wd tbrefs="1715978-28">γένος</wd>, 
+<wd tbrefs="1715978-30">οἳ</wd> 
+<wd tbrefs="1715978-31">καλέονται</wd></l>
+<l n="160">
+<wd tbrefs="1715978-32">ἡμίθεοι</wd>, 
+<wd tbrefs="1715978-34">προτέρη</wd> 
+<wd tbrefs="1715978-35">γενεὴ</wd> 
+<wd tbrefs="1715978-36">κατ᾽</wd> 
+<wd tbrefs="1715978-37">ἀπείρονα</wd> 
+<wd tbrefs="1715978-38">γαῖαν</wd>.</l>
+<l n="161">
+<wd tbrefs="1715979-1">καὶ</wd> 
+<wd tbrefs="1715979-2">τοὺς</wd> 
+<wd tbrefs="1715979-3">μὲν</wd> 
+<wd tbrefs="1715979-4">πόλεμός</wd> 
+<wd tbrefs="1715979-5">τε</wd> 
+<wd tbrefs="1715979-6">κακὸς</wd> 
+<wd tbrefs="1715979-7">καὶ</wd> 
+<wd tbrefs="1715979-8">φύλοπις</wd> 
+<wd tbrefs="1715979-9">αἰνή</wd>,</l>
+<l n="162">
+<wd tbrefs="1715979-11">τοὺς</wd> 
+<wd tbrefs="1715979-12">μὲν</wd> 
+<wd tbrefs="1715979-13">ὑφ᾽</wd> 
+<wd tbrefs="1715979-14">ἑπταπύλῳ</wd> 
+<wd tbrefs="1715979-15">Θήβῃ</wd>, 
+<wd tbrefs="1715979-17">Καδμηίδι</wd> 
+<wd tbrefs="1715979-18">γαίῃ</wd>,</l>
+<l n="163">
+<wd tbrefs="1715979-20">ὤλεσε</wd> 
+<wd tbrefs="1715979-21">μαρναμένους</wd> 
+<wd tbrefs="1715979-22">μήλων</wd> 
+<wd tbrefs="1715979-23">ἕνεκ᾽</wd> 
+<wd tbrefs="1715979-24">Οἰδιπόδαο</wd>,</l>
+<l n="164">
+<wd tbrefs="1715979-26">τοὺς</wd> 
+<wd tbrefs="1715979-27">δὲ</wd> 
+<wd tbrefs="1715979-28">καὶ</wd> 
+<wd tbrefs="1715979-29">ἐν</wd> 
+<wd tbrefs="1715979-30">νήεσσιν</wd> 
+<wd tbrefs="1715979-31">ὑπὲρ</wd> 
+<wd tbrefs="1715979-32">μέγα</wd> 
+<wd tbrefs="1715979-33">λαῖτμα</wd> 
+<wd tbrefs="1715979-34">θαλάσσης</wd></l>
+<l n="165">
+<wd tbrefs="1715979-35">ἐς</wd> 
+<wd tbrefs="1715979-36">Τροίην</wd> 
+<wd tbrefs="1715979-37">ἀγαγὼν</wd> 
+<wd tbrefs="1715979-38">Ἑλένης</wd> 
+<wd tbrefs="1715979-39">ἕνεκ᾽</wd> 
+<wd tbrefs="1715979-40">ἠυκόμοιο</wd>.</l>
+<l n="166">
+<wd tbrefs="1715980-1">ἔνθ᾽</wd> 
+<wd tbrefs="1715980-2">ἤτοι</wd> 
+<wd tbrefs="1715980-3">τοὺς</wd> 
+<wd tbrefs="1715980-4">μὲν</wd> 
+<wd tbrefs="1715980-5">θανάτου</wd> 
+<wd tbrefs="1715980-6">τέλος</wd> 
+<wd tbrefs="1715980-7">ἀμφεκάλυψε</wd>,</l>
+<l n="167">
+<wd tbrefs="1715980-9">τοῖς</wd> 
+<wd tbrefs="1715980-10">δὲ</wd> 
+<wd tbrefs="1715980-11">δίχ᾽</wd> 
+<wd tbrefs="1715980-12">ἀνθρώπων</wd> 
+<wd tbrefs="1715980-13">βίοτον</wd> 
+<wd tbrefs="1715980-14">καὶ</wd> 
+<wd tbrefs="1715980-15">ἤθε᾽</wd> 
+<wd tbrefs="1715980-16">ὀπάσσας</wd></l>
+<l n="168">
+<wd tbrefs="1715980-17">Ζεὺς</wd> 
+<wd tbrefs="1715980-18">Κρονίδης</wd> 
+<wd tbrefs="1715980-19">κατένασσε</wd> 
+<wd tbrefs="1715980-20">πατὴρ</wd> 
+<wd tbrefs="1715980-21">ἐς</wd> 
+<wd tbrefs="1715980-22">πείρατα</wd> 
+<wd tbrefs="1715980-23">γαίης</wd>.</l>
+<l n="170">
+<wd tbrefs="1715981-1">καὶ</wd> 
+<wd tbrefs="1715981-2">τοὶ</wd> 
+<wd tbrefs="1715981-3">μὲν</wd> 
+<wd tbrefs="1715981-4">ναίουσιν</wd> 
+<wd tbrefs="1715981-5">ἀκηδέα</wd> 
+<wd tbrefs="1715981-6">θυμὸν</wd> 
+<wd tbrefs="1715981-7">ἔχοντες</wd></l>
+<l n="171">
+<wd tbrefs="1715981-8">ἐν</wd> 
+<wd tbrefs="1715981-9">μακάρων</wd> 
+<wd tbrefs="1715981-10">νήσοισι</wd> 
+<wd tbrefs="1715981-11">παρ᾽</wd> 
+<wd tbrefs="1715981-12">Ὠκεανὸν</wd> 
+<wd tbrefs="1715981-13">βαθυδίνην</wd>,</l>
+<l n="172">
+<wd tbrefs="1715981-15">ὄλβιοι</wd> 
+<wd tbrefs="1715981-16">ἥρωες</wd>, 
+<wd tbrefs="1715981-18">τοῖσιν</wd> 
+<wd tbrefs="1715981-19">μελιηδέα</wd> 
+<wd tbrefs="1715981-20">καρπὸν</wd></l>
+<l n="173">
+<wd tbrefs="1715981-21">τρὶς</wd> 
+<wd tbrefs="1715981-22">ἔτεος</wd> 
+<wd tbrefs="1715981-23">θάλλοντα</wd> 
+<wd tbrefs="1715981-24">φέρει</wd> 
+<wd tbrefs="1715981-25">ζείδωρος</wd> 
+<wd tbrefs="1715981-26">ἄρουρα</wd>.</l>
+<l n="169">
+<wd tbrefs="1715982-1">τηλοῦ</wd> 
+<wd tbrefs="1715982-2">ἀπ᾽</wd> 
+<wd tbrefs="1715982-3">ἀθανάτων</wd>: 
+<wd tbrefs="1715983-1">τοῖσιν</wd> 
+<wd tbrefs="1715983-2">Κρόνος</wd> 
+<wd tbrefs="1715983-3">ἐμβασιλεύει</wd>.</l>
+<l n="169a">
+<wd tbrefs="1715984-1">τοῦ</wd> 
+<wd tbrefs="1715984-2">γὰρ</wd> 
+<wd tbrefs="1715984-3 1715984-4 1715984-5">δεσμὸ</wd>]
+<wd tbrefs="1715984-3 1715984-4 1715984-5">ν</wd> 
+<wd tbrefs="1715984-3 1715984-4 1715984-5">ἔλυσε</wd> 
+<wd tbrefs="1715984-3 1715984-4 1715984-5">πα</wd>[
+<wd tbrefs="1715984-3 1715984-4 1715984-5">τὴρ</wd> 
+<wd tbrefs="1715984-6">ἀνδρῶν</wd> 
+<wd tbrefs="1715984-7">τε</wd> 
+<wd tbrefs="1715984-8">θεῶν</wd> 
+<wd tbrefs="1715984-9">τε</wd>.</l>
+<l n="169b">
+<wd tbrefs="1715985-1">τοῖσι</wd> 
+<wd tbrefs="1715985-2">δ᾽</wd> 
+<wd tbrefs="1715985-3">ὁμῶς</wd> 
+<wd tbrefs="1715985-4 1715985-5 1715985-6">ν</wd>]
+<wd tbrefs="1715985-4 1715985-5 1715985-6">εάτοις</wd> 
+<wd tbrefs="1715985-4 1715985-5 1715985-6">τιμὴ</wd> [
+<wd tbrefs="1715985-4 1715985-5 1715985-6">καὶ</wd> 
+<wd tbrefs="1715985-7">κῦδος</wd> 
+<wd tbrefs="1715985-8">ὀπηδεῖ</wd>.</l>
+<l n="169c">
+<wd tbrefs="1715986-1">Πέμπτον</wd> 
+<wd tbrefs="1715986-2">δ᾽</wd> 
+<wd tbrefs="1715986-3">αὖτις</wd> 
+<wd tbrefs="1715986-4">ἔτ᾽</wd> 
+<wd>ἄ</wd>]
+<wd>λλο</wd> 
+<wd>γένος</wd> 
+<wd>θῆκ᾽</wd> [
+<wd>εὐρύοπα</wd> 
+<wd>Ζεὺς</wd></l>
+<l n="169d">
+<wd>ἀνδρῶν</wd>, 
+<wd>οἳ</wd>] 
+<wd>γεγάασιν</wd> 
+<wd>ἐπὶ</wd> [
+<wd>χθονὶ</wd> 
+<wd>πουλυβοτείρῃ</wd>.]</l><milestone n="174" ed="p" unit="card"/>
+<l n="174"><milestone ed="P" unit="para"/>
+<wd>μηκέτ᾽</wd> 
+<wd>ἔπειτ᾽</wd> 
+<wd>ὤφελλον</wd> 
+<wd>ἐγὼ</wd> 
+<wd>πέμπτοισι</wd> 
+<wd>μετεῖναι</wd></l>
+<l n="175">
+<wd>ἀνδράσιν</wd>, 
+<wd>ἀλλ᾽</wd> 
+<wd>ἢ</wd> 
+<wd>πρόσθε</wd> 
+<wd>θανεῖν</wd> 
+<wd>ἢ</wd> 
+<wd>ἔπειτα</wd> 
+<wd>γενέσθαι</wd>.</l>
+<l n="176">
+<wd>νῦν</wd> 
+<wd>γὰρ</wd> 
+<wd>δὴ</wd> 
+<wd>γένος</wd> 
+<wd>ἐστὶ</wd> 
+<wd>σιδήρεον</wd>: 
+<wd>οὐδέ</wd> 
+<wd>ποτ᾽</wd> 
+<wd>ἦμαρ</wd></l>
+<l n="177">
+<wd>παύονται</wd> 
+<wd>καμάτου</wd> 
+<wd>καὶ</wd> 
+<wd>ὀιζύος</wd>, 
+<wd>οὐδέ</wd> 
+<wd>τι</wd> 
+<wd>νύκτωρ</wd></l>
+<l n="178">
+<wd>φθειρόμενοι</wd>. 
+<wd>χαλεπὰς</wd> 
+<wd>δὲ</wd> 
+<wd>θεοὶ</wd> 
+<wd>δώσουσι</wd> 
+<wd>μερίμνας</wd>:</l>
+<l n="179">
+<wd>ἀλλ᾽</wd> 
+<wd>ἔμπης</wd> 
+<wd>καὶ</wd> 
+<wd>τοῖσι</wd> 
+<wd>μεμείξεται</wd> 
+<wd>ἐσθλὰ</wd> 
+<wd>κακοῖσιν</wd>.</l>
+<l n="180">
+<wd>Ζεὺς</wd> 
+<wd>δ᾽</wd> 
+<wd>ὀλέσει</wd> 
+<wd>καὶ</wd> 
+<wd>τοῦτο</wd> 
+<wd>γένος</wd> 
+<wd>μερόπων</wd> 
+<wd>ἀνθρώπων</wd>,</l>
+<l n="181">
+<wd>εὖτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>γεινόμενοι</wd> 
+<wd>πολιοκρόταφοι</wd> 
+<wd>τελέθωσιν</wd>.</l>
+<l n="182">
+<wd>οὐδὲ</wd> 
+<wd>πατὴρ</wd> 
+<wd>παίδεσσιν</wd> 
+<wd>ὁμοίιος</wd> 
+<wd>οὐδέ</wd> 
+<wd>τι</wd> 
+<wd>παῖδες</wd>,</l>
+<l n="183">
+<wd>οὐδὲ</wd> 
+<wd>ξεῖνος</wd> 
+<wd>ξεινοδόκῳ</wd> 
+<wd>καὶ</wd> 
+<wd>ἑταῖρος</wd> 
+<wd>ἑταίρῳ</wd>,</l>
+<l n="184">
+<wd>οὐδὲ</wd> 
+<wd>κασίγνητος</wd> 
+<wd>φίλος</wd> 
+<wd>ἔσσεται</wd>, 
+<wd>ὡς</wd> 
+<wd>τὸ</wd> 
+<wd>πάρος</wd> 
+<wd>περ</wd>.</l>
+<l n="185">
+<wd>αἶψα</wd> 
+<wd>δὲ</wd> 
+<wd>γηράσκοντας</wd> 
+<wd>ἀτιμήσουσι</wd> 
+<wd>τοκῆας</wd>:</l>
+<l n="186">
+<wd>μέμψονται</wd> 
+<wd>δ᾽</wd> 
+<wd>ἄρα</wd> 
+<wd>τοὺς</wd> 
+<wd>χαλεποῖς</wd> 
+<wd>βάζοντες</wd> 
+<wd>ἔπεσσι</wd></l>
+<l n="187">
+<wd>σχέτλιοι</wd> 
+<wd>οὐδὲ</wd> 
+<wd>θεῶν</wd> 
+<wd>ὄπιν</wd> 
+<wd>εἰδότες</wd>: 
+<wd>οὐδέ</wd> 
+<wd>κεν</wd> 
+<wd>οἵ</wd> 
+<wd>γε</wd></l>
+<l n="188">
+<wd>γηράντεσσι</wd> 
+<wd>τοκεῦσιν</wd> 
+<wd>ἀπὸ</wd> 
+<wd>θρεπτήρια</wd> 
+<wd>δοῖεν</wd></l>
+<l n="189">
+<wd>χειροδίκαι</wd>: 
+<wd>ἕτερος</wd> 
+<wd>δ᾽</wd> 
+<wd>ἑτέρου</wd> 
+<wd>πόλιν</wd> 
+<wd>ἐξαλαπάξει</wd>.</l>
+<l n="190">
+<wd>οὐδέ</wd> 
+<wd>τις</wd> 
+<wd>εὐόρκου</wd> 
+<wd>χάρις</wd> 
+<wd>ἔσσεται</wd> 
+<wd>οὔτε</wd> 
+<wd>δικαίου</wd></l>
+<l n="191">
+<wd>οὔτ᾽</wd> 
+<wd>ἀγαθοῦ</wd>, 
+<wd>μᾶλλον</wd> 
+<wd>δὲ</wd> 
+<wd>κακῶν</wd> 
+<wd>ῥεκτῆρα</wd> 
+<wd>καὶ</wd> 
+<wd>ὕβριν</wd></l>
+<l n="192">
+<wd>ἀνέρες</wd> 
+<wd>αἰνήσουσι</wd>: 
+<wd>δίκη</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐν</wd> 
+<wd>χερσί</wd>, 
+<wd>καὶ</wd> 
+<wd>αἰδὼς</wd></l>
+<l n="193">
+<wd>οὐκ</wd> 
+<wd>ἔσται</wd>: 
+<wd>βλάψει</wd> 
+<wd>δ᾽</wd> 
+<wd>ὁ</wd> 
+<wd>κακὸς</wd> 
+<wd>τὸν</wd> 
+<wd>ἀρείονα</wd> 
+<wd>φῶτα</wd></l>
+<l n="194">
+<wd>μύθοισιν</wd> 
+<wd>σκολιοῖς</wd> 
+<wd>ἐνέπων</wd>, 
+<wd>ἐπὶ</wd> 
+<wd>δ᾽</wd> 
+<wd>ὅρκον</wd> 
+<wd>ὀμεῖται</wd>.</l>
+<l n="195">
+<wd>ζῆλος</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀνθρώποισιν</wd> 
+<wd>ὀιζυροῖσιν</wd> 
+<wd>ἅπασι</wd></l>
+<l n="196">
+<wd>δυσκέλαδος</wd> 
+<wd>κακόχαρτος</wd> 
+<wd>ὁμαρτήσει</wd>, 
+<wd>στυγερώπης</wd>.</l>
+<l n="197">
+<wd>καὶ</wd> 
+<wd>τότε</wd> 
+<wd>δὴ</wd> 
+<wd>πρὸς</wd> 
+<wd>Ὄλυμπον</wd> 
+<wd>ἀπὸ</wd> 
+<wd>χθονὸς</wd> 
+<wd>εὐρυοδείης</wd></l>
+<l n="198">
+<wd>λευκοῖσιν</wd> 
+<wd>φάρεσσι</wd> 
+<wd>καλυψαμένα</wd> 
+<wd>χρόα</wd> 
+<wd>καλὸν</wd></l>
+<l n="199">
+<wd>ἀθανάτων</wd> 
+<wd>μετὰ</wd> 
+<wd>φῦλον</wd> 
+<wd>ἴτον</wd> 
+<wd>προλιπόντ᾽</wd> 
+<wd>ἀνθρώπους</wd></l>
+<l n="200">
+<wd>Αἰδὼς</wd> 
+<wd>καὶ</wd> 
+<wd>Νέμεσις</wd>: 
+<wd>τὰ</wd> 
+<wd>δὲ</wd> 
+<wd>λείψεται</wd> 
+<wd>ἄλγεα</wd> 
+<wd>λυγρὰ</wd></l>
+<l n="201">
+<wd>θνητοῖς</wd> 
+<wd>ἀνθρώποισι</wd>: 
+<wd>κακοῦ</wd> 
+<wd>δ᾽</wd> 
+<wd>οὐκ</wd> 
+<wd>ἔσσεται</wd> 
+<wd>ἀλκή</wd>.</l><milestone n="202" ed="p" unit="card"/>
+<l n="202"><milestone ed="P" unit="para"/>
+<wd>νῦν</wd> 
+<wd>δ᾽</wd> 
+<wd>αἶνον</wd> 
+<wd>βασιλεῦσιν</wd> 
+<wd>ἐρέω</wd> 
+<wd>φρονέουσι</wd> 
+<wd>καὶ</wd> 
+<wd>αὐτοῖς</wd>:</l>
+<l n="203">
+<wd>ὧδ᾽</wd> 
+<wd>ἴρηξ</wd> 
+<wd>προσέειπεν</wd> 
+<wd>ἀηδόνα</wd> 
+<wd>ποικιλόδειρον</wd></l>
+<l n="204">
+<wd>ὕψι</wd> 
+<wd>μάλ᾽</wd> 
+<wd>ἐν</wd> 
+<wd>νεφέεσσι</wd> 
+<wd>φέρων</wd> 
+<wd>ὀνύχεσσι</wd> 
+<wd>μεμαρπώς</wd>:</l>
+<l n="205">
+<wd>ἣ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐλεόν</wd>, 
+<wd>γναμπτοῖσι</wd> 
+<wd>πεπαρμένη</wd> 
+<wd>ἀμφ᾽</wd> 
+<wd>ὀνύχεσσι</wd>,</l>
+<l n="206">
+<wd>μύρετο</wd>: 
+<wd>τὴν</wd> 
+<wd>ὅγ᾽</wd> 
+<wd>ἐπικρατέως</wd> 
+<wd>πρὸς</wd> 
+<wd>μῦθον</wd> 
+<wd>ἔειπεν</wd>:</l>
+<l n="207"><milestone ed="P" unit="para"/>
+<wd>δαιμονίη</wd>, 
+<wd>τί</wd> 
+<wd>λέληκας</wd>; 
+<wd>ἔχει</wd> 
+<wd>νύ</wd> 
+<wd>σε</wd> 
+<wd>πολλὸν</wd> 
+<wd>ἀρείων</wd>:</l>
+<l n="208">
+<wd>τῇ</wd> 
+<wd>δ᾽</wd> 
+<wd>εἶς</wd>, 
+<wd>ᾗ</wd> 
+<wd>σ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>ἐγώ</wd> 
+<wd>περ</wd> 
+<wd>ἄγω</wd> 
+<wd>καὶ</wd> 
+<wd>ἀοιδὸν</wd> 
+<wd>ἐοῦσαν</wd>:</l>
+<l n="209">
+<wd>δεῖπνον</wd> 
+<wd>δ᾽</wd>, 
+<wd>αἴ</wd> 
+<wd>κ᾽</wd> 
+<wd>ἐθέλω</wd>, 
+<wd>ποιήσομαι</wd> 
+<wd>ἠὲ</wd> 
+<wd>μεθήσω</wd>.</l>
+<l n="210">
+<wd>ἄφρων</wd> 
+<wd>δ᾽</wd>, 
+<wd>ὅς</wd> 
+<wd>κ᾽</wd> 
+<wd>ἐθέλῃ</wd> 
+<wd>πρὸς</wd> 
+<wd>κρείσσονας</wd> 
+<wd>ἀντιφερίζειν</wd>:</l>
+<l n="211">
+<wd>νίκης</wd> 
+<wd>τε</wd> 
+<wd>στέρεται</wd> 
+<wd>πρός</wd> 
+<wd>τ᾽</wd> 
+<wd>αἴσχεσιν</wd> 
+<wd>ἄλγεα</wd> 
+<wd>πάσχει</wd>.</l>
+<l n="212"><milestone ed="P" unit="para"/>
+<wd>ὣς</wd> 
+<wd>ἔφατ᾽</wd> 
+<wd>ὠκυπέτης</wd> 
+<wd>ἴρηξ</wd>, 
+<wd>τανυσίπτερος</wd> 
+<wd>ὄρνις</wd>.</l>
+<l n="213"><milestone ed="P" unit="para"/>
+<wd>ὦ</wd> 
+<wd>Πέρση</wd>, 
+<wd>σὺ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἄκουε</wd> 
+<wd>δίκης</wd>, 
+<wd>μηδ᾽</wd> 
+<wd>ὕβριν</wd> 
+<wd>ὄφελλε</wd>:</l>
+<l n="214">
+<wd>ὕβρις</wd> 
+<wd>γάρ</wd> 
+<wd>τε</wd> 
+<wd>κακὴ</wd> 
+<wd>δειλῷ</wd> 
+<wd>βροτῷ</wd>: 
+<wd>οὐδὲ</wd> 
+<wd>μὲν</wd> 
+<wd>ἐσθλὸς</wd></l>
+<l n="215">
+<wd>ῥηιδίως</wd> 
+<wd>φερέμεν</wd> 
+<wd>δύναται</wd>, 
+<wd>βαρύθει</wd> 
+<wd>δέ</wd> 
+<wd>θ᾽</wd> 
+<wd>ὑπ᾽</wd> 
+<wd>αὐτῆς</wd></l>
+<l n="216">
+<wd>ἐγκύρσας</wd> 
+<wd>ἄτῃσιν</wd>: 
+<wd>ὁδὸς</wd> 
+<wd>δ᾽</wd> 
+<wd>ἑτέρηφι</wd> 
+<wd>παρελθεῖν</wd></l>
+<l n="217">
+<wd>κρείσσων</wd> 
+<wd>ἐς</wd> 
+<wd>τὰ</wd> 
+<wd>δίκαια</wd>: 
+<wd>Δίκη</wd> 
+<wd>δ᾽</wd> 
+<wd>ὑπὲρ</wd> 
+<wd>Ὕβριος</wd> 
+<wd>ἴσχει</wd></l>
+<l n="218">
+<wd>ἐς</wd> 
+<wd>τέλος</wd> 
+<wd>ἐξελθοῦσα</wd>: 
+<wd>παθὼν</wd> 
+<wd>δέ</wd> 
+<wd>τε</wd> 
+<wd>νήπιος</wd> 
+<wd>ἔγνω</wd>.</l>
+<l n="219">
+<wd>αὐτίκα</wd> 
+<wd>γὰρ</wd> 
+<wd>τρέχει</wd> 
+<wd>Ὅρκος</wd> 
+<wd>ἅμα</wd> 
+<wd>σκολιῇσι</wd> 
+<wd>δίκῃσιν</wd>.</l>
+<l n="220">
+<wd>τῆς</wd> 
+<wd>δὲ</wd> 
+<wd>Δίκης</wd> 
+<wd>ῥόθος</wd> 
+<wd>ἑλκομένης</wd>, 
+<wd>ᾗ</wd> 
+<wd>κ᾽</wd> 
+<wd>ἄνδρες</wd> 
+<wd>ἄγωσι</wd></l>
+<l n="221">
+<wd>δωροφάγοι</wd>, 
+<wd>σκολιῇς</wd> 
+<wd>δὲ</wd> 
+<wd>δίκῃς</wd> 
+<wd>κρίνωσι</wd> 
+<wd>θέμιστας</wd>.</l>
+<l n="222">
+<wd>ἣ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἕπεται</wd> 
+<wd>κλαίουσα</wd> 
+<wd>πόλιν</wd> 
+<wd>καὶ</wd> 
+<wd>ἤθεα</wd> 
+<wd>λαῶν</wd>,</l>
+<l n="223">
+<wd>ἠέρα</wd> 
+<wd>ἑσσαμένη</wd>, 
+<wd>κακὸν</wd> 
+<wd>ἀνθρώποισι</wd> 
+<wd>φέρουσα</wd>,</l>
+<l n="224">
+<wd>οἵ</wd> 
+<wd>τε</wd> 
+<wd>μιν</wd> 
+<wd>ἐξελάσωσι</wd> 
+<wd>καὶ</wd> 
+<wd>οὐκ</wd> 
+<wd>ἰθεῖαν</wd> 
+<wd>ἔνειμαν</wd>.</l>
+<l n="225">
+<wd>Οἳ</wd> 
+<wd>δὲ</wd> 
+<wd>δίκας</wd> 
+<wd>ξείνοισι</wd> 
+<wd>καὶ</wd> 
+<wd>ἐνδήμοισι</wd> 
+<wd>διδοῦσιν</wd></l>
+<l n="226">
+<wd>ἰθείας</wd> 
+<wd>καὶ</wd> 
+<wd>μή</wd> 
+<wd>τι</wd> 
+<wd>παρεκβαίνουσι</wd> 
+<wd>δικαίου</wd>,</l>
+<l n="227">
+<wd>τοῖσι</wd> 
+<wd>τέθηλε</wd> 
+<wd>πόλις</wd>, 
+<wd>λαοὶ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀνθεῦσιν</wd> 
+<wd>ἐν</wd> 
+<wd>αὐτῇ</wd>:</l>
+<l n="228">
+<wd>εἰρήνη</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀνὰ</wd> 
+<wd>γῆν</wd> 
+<wd>κουροτρόφος</wd>, 
+<wd>οὐδέ</wd> 
+<wd>ποτ᾽</wd> 
+<wd>αὐτοῖς</wd></l>
+<l n="229">
+<wd>ἀργαλέον</wd> 
+<wd>πόλεμον</wd> 
+<wd>τεκμαίρεται</wd> 
+<wd>εὐρύοπα</wd> 
+<wd>Ζεύς</wd>:</l>
+<l n="230">
+<wd>οὐδέ</wd> 
+<wd>ποτ᾽</wd> 
+<wd>ἰθυδίκῃσι</wd> 
+<wd>μετ᾽</wd> 
+<wd>ἀνδράσι</wd> 
+<wd>λιμὸς</wd> 
+<wd>ὀπηδεῖ</wd></l>
+<l n="231">
+<wd>οὐδ᾽</wd> 
+<wd>ἄτη</wd>, 
+<wd>θαλίῃς</wd> 
+<wd>δὲ</wd> 
+<wd>μεμηλότα</wd> 
+<wd>ἔργα</wd> 
+<wd>νέμονται</wd>.</l>
+<l n="232">
+<wd>τοῖσι</wd> 
+<wd>φέρει</wd> 
+<wd>μὲν</wd> 
+<wd>γαῖα</wd> 
+<wd>πολὺν</wd> 
+<wd>βίον</wd>, 
+<wd>οὔρεσι</wd> 
+<wd>δὲ</wd> 
+<wd>δρῦς</wd></l>
+<l n="233">
+<wd>ἄκρη</wd> 
+<wd>μέν</wd> 
+<wd>τε</wd> 
+<wd>φέρει</wd> 
+<wd>βαλάνους</wd>, 
+<wd>μέσση</wd> 
+<wd>δὲ</wd> 
+<wd>μελίσσας</wd>:</l>
+<l n="234">
+<wd>εἰροπόκοι</wd> 
+<wd>δ᾽</wd> 
+<wd>ὄιες</wd> 
+<wd>μαλλοῖς</wd> 
+<wd>καταβεβρίθασιν</wd>:</l>
+<l n="235">
+<wd>τίκτουσιν</wd> 
+<wd>δὲ</wd> 
+<wd>γυναῖκες</wd> 
+<wd>ἐοικότα</wd> 
+<wd>τέκνα</wd> 
+<wd>γονεῦσιν</wd>:</l>
+<l n="236">
+<wd>θάλλουσιν</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀγαθοῖσι</wd> 
+<wd>διαμπερές</wd>: 
+<wd>οὐδ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>νηῶν</wd></l>
+<l n="237">
+<wd>νίσσονται</wd>, 
+<wd>καρπὸν</wd> 
+<wd>δὲ</wd> 
+<wd>φέρει</wd> 
+<wd>ζείδωρος</wd> 
+<wd>ἄρουρα</wd>.</l><milestone n="238" ed="p" unit="card"/>
+<l n="238"><milestone ed="P" unit="para"/>
+<wd>οἷς</wd> 
+<wd>δ᾽</wd> 
+<wd>ὕβρις</wd> 
+<wd>τε</wd> 
+<wd>μέμηλε</wd> 
+<wd>κακὴ</wd> 
+<wd>καὶ</wd> 
+<wd>σχέτλια</wd> 
+<wd>ἔργα</wd>,</l>
+<l n="239">
+<wd>τοῖς</wd> 
+<wd>δὲ</wd> 
+<wd>δίκην</wd> 
+<wd>Κρονίδης</wd> 
+<wd>τεκμαίρεται</wd> 
+<wd>εὐρύοπα</wd> 
+<wd>Ζεύς</wd>.</l>
+<l n="240">
+<wd>πολλάκι</wd> 
+<wd>καὶ</wd> 
+<wd>ξύμπασα</wd> 
+<wd>πόλις</wd> 
+<wd>κακοῦ</wd> 
+<wd>ἀνδρὸς</wd> 
+<wd>ἀπηύρα</wd>,</l>
+<l n="241">
+<wd>ὅς</wd> 
+<wd>κεν</wd> 
+<wd>ἀλιτραίνῃ</wd> 
+<wd>καὶ</wd> 
+<wd>ἀτάσθαλα</wd> 
+<wd>μηχανάαται</wd>.</l>
+<l n="242">
+<wd>τοῖσιν</wd> 
+<wd>δ᾽</wd> 
+<wd>οὐρανόθεν</wd> 
+<wd>μέγ᾽</wd> 
+<wd>ἐπήγαγε</wd> 
+<wd>πῆμα</wd> 
+<wd>Κρονίων</wd></l>
+<l n="243">
+<wd>λιμὸν</wd> 
+<wd>ὁμοῦ</wd> 
+<wd>καὶ</wd> 
+<wd>λοιμόν</wd>: 
+<wd>ἀποφθινύθουσι</wd> 
+<wd>δὲ</wd> 
+<wd>λαοί</wd>.</l>
+<l n="244">
+<wd>οὐδὲ</wd> 
+<wd>γυναῖκες</wd> 
+<wd>τίκτουσιν</wd>, 
+<wd>μινύθουσι</wd> 
+<wd>δὲ</wd> 
+<wd>οἶκοι</wd></l>
+<l n="245">
+<wd>Ζηνὸς</wd> 
+<wd>φραδμοσύνῃσιν</wd> 
+<wd>Ὀλυμπίου</wd>: 
+<wd>ἄλλοτε</wd> 
+<wd>δ᾽</wd> 
+<wd>αὖτε</wd></l>
+<l n="246">
+<wd>ἢ</wd> 
+<wd>τῶν</wd> 
+<wd>γε</wd> 
+<wd>στρατὸν</wd> 
+<wd>εὐρὺν</wd> 
+<wd>ἀπώλεσεν</wd> 
+<wd>ἢ</wd> 
+<wd>ὅ</wd> 
+<wd>γε</wd> 
+<wd>τεῖχος</wd></l>
+<l n="247">
+<wd>ἢ</wd> 
+<wd>νέας</wd> 
+<wd>ἐν</wd> 
+<wd>πόντῳ</wd> 
+<wd>Κρονίδης</wd> 
+<wd>ἀποαίνυται</wd> 
+<wd>αὐτῶν</wd>.</l>
+<l n="248"><milestone ed="P" unit="para"/>
+<wd>ὦ</wd> 
+<wd>βασιλῆς</wd>, 
+<wd>ὑμεῖς</wd> 
+<wd>δὲ</wd> 
+<wd>καταφράζεσθε</wd> 
+<wd>καὶ</wd> 
+<wd>αὐτοὶ</wd></l>
+<l n="249">
+<wd>τήνδε</wd> 
+<wd>δίκην</wd>: 
+<wd>ἐγγὺς</wd> 
+<wd>γὰρ</wd> 
+<wd>ἐν</wd> 
+<wd>ἀνθρώποισιν</wd> 
+<wd>ἐόντες</wd></l>
+<l n="250">
+<wd>ἀθάνατοι</wd> 
+<wd>φράζονται</wd>, 
+<wd>ὅσοι</wd> 
+<wd>σκολιῇσι</wd> 
+<wd>δίκῃσιν</wd></l>
+<l n="251">
+<wd>ἀλλήλους</wd> 
+<wd>τρίβουσι</wd> 
+<wd>θεῶν</wd> 
+<wd>ὄπιν</wd> 
+<wd>οὐκ</wd> 
+<wd>ἀλέγοντες</wd>.</l>
+<l n="252">
+<wd>τρὶς</wd> 
+<wd>γὰρ</wd> 
+<wd>μύριοί</wd> 
+<wd>εἰσιν</wd> 
+<wd>ἐπὶ</wd> 
+<wd>χθονὶ</wd> 
+<wd>πουλυβοτείρῃ</wd></l>
+<l n="253">
+<wd>ἀθάνατοι</wd> 
+<wd>Ζηνὸς</wd> 
+<wd>φύλακες</wd> 
+<wd>θνητῶν</wd> 
+<wd>ἀνθρώπων</wd>:</l>
+<l n="254">
+<wd>οἵ</wd> 
+<wd>ῥα</wd> 
+<wd>φυλάσσουσίν</wd> 
+<wd>τε</wd> 
+<wd>δίκας</wd> 
+<wd>καὶ</wd> 
+<wd>σχέτλια</wd> 
+<wd>ἔργα</wd></l>
+<l n="255">
+<wd>ἠέρα</wd> 
+<wd>ἑσσάμενοι</wd>, 
+<wd>πάντη</wd> 
+<wd>φοιτῶντες</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>αἶαν</wd>.</l>
+<l n="256">
+<wd>ἡ</wd> 
+<wd>δέ</wd> 
+<wd>τε</wd> 
+<wd>παρθένος</wd> 
+<wd>ἐστὶ</wd> 
+<wd>Δίκη</wd>, 
+<wd>Διὸς</wd> 
+<wd>ἐκγεγαυῖα</wd>,</l>
+<l n="257">
+<wd>κυδρή</wd> 
+<wd>τ᾽</wd> 
+<wd>αἰδοίη</wd> 
+<wd>τε</wd> 
+<wd>θεῶν</wd>, 
+<wd>οἳ</wd> 
+<wd>Ὄλυμπον</wd> 
+<wd>ἔχουσιν</wd>.</l>
+<l n="258">
+<wd>καί</wd> 
+<wd>ῥ᾽</wd> 
+<wd>ὁπότ᾽</wd> 
+<wd>ἄν</wd> 
+<wd>τίς</wd> 
+<wd>μιν</wd> 
+<wd>βλάπτῃ</wd> 
+<wd>σκολιῶς</wd> 
+<wd>ὀνοτάζων</wd>,</l>
+<l n="259">
+<wd>αὐτίκα</wd> 
+<wd>πὰρ</wd> 
+<wd>Διὶ</wd> 
+<wd>πατρὶ</wd> 
+<wd>καθεζομένη</wd> 
+<wd>Κρονίωνι</wd></l>
+<l n="260">
+<wd>γηρύετ᾽</wd> 
+<wd>ἀνθρώπων</wd> 
+<wd>ἄδικον</wd> 
+<wd>νόον</wd>, 
+<wd>ὄφρ᾽</wd> 
+<wd>ἀποτίσῃ</wd></l>
+<l n="261">
+<wd>δῆμος</wd> 
+<wd>ἀτασθαλίας</wd> 
+<wd>βασιλέων</wd>, 
+<wd>οἳ</wd> 
+<wd>λυγρὰ</wd> 
+<wd>νοεῦντες</wd></l>
+<l n="262">
+<wd>ἄλλῃ</wd> 
+<wd>παρκλίνωσι</wd> 
+<wd>δίκας</wd> 
+<wd>σκολιῶς</wd> 
+<wd>ἐνέποντες</wd>.</l>
+<l n="263">
+<wd>ταῦτα</wd> 
+<wd>φυλασσόμενοι</wd>, 
+<wd>βασιλῆς</wd>, 
+<wd>ἰθύνετε</wd> 
+<wd>†δίκας</wd></l>
+<l n="264">
+<wd>δωροφάγοι</wd>, 
+<wd>σκολιέων</wd> 
+<wd>δὲ</wd> 
+<wd>δικέων</wd> 
+<wd>ἐπὶ</wd> 
+<wd>πάγχυ</wd> 
+<wd>λάθεσθε</wd>.</l>
+<l n="265"><milestone ed="P" unit="para"/>
+<wd>οἷ</wd> 
+<wd>γ᾽</wd> 
+<wd>αὐτῷ</wd> 
+<wd>κακὰ</wd> 
+<wd>τεύχει</wd> 
+<wd>ἀνὴρ</wd> 
+<wd>ἄλλῳ</wd> 
+<wd>κακὰ</wd> 
+<wd>τεύχων</wd>,</l>
+<l n="266">
+<wd>ἡ</wd> 
+<wd>δὲ</wd> 
+<wd>κακὴ</wd> 
+<wd>βουλὴ</wd> 
+<wd>τῷ</wd> 
+<wd>βουλεύσαντι</wd> 
+<wd>κακίστη</wd>.</l>
+<l n="267"><milestone ed="P" unit="para"/>
+<wd>πάντα</wd> 
+<wd>ἰδὼν</wd> 
+<wd>Διὸς</wd> 
+<wd>ὀφθαλμὸς</wd> 
+<wd>καὶ</wd> 
+<wd>πάντα</wd> 
+<wd>νοήσας</wd></l>
+<l n="268">
+<wd>καί</wd> 
+<wd>νυ</wd> 
+<wd>τάδ᾽</wd>, 
+<wd>αἴ</wd> 
+<wd>κ᾽</wd> 
+<wd>ἐθέλῃσ᾽</wd>, 
+<wd>ἐπιδέρκεται</wd>, 
+<wd>οὐδέ</wd> 
+<wd>ἑ</wd> 
+<wd>λήθει</wd>,</l>
+<l n="269">
+<wd>οἵην</wd> 
+<wd>δὴ</wd> 
+<wd>καὶ</wd> 
+<wd>τήνδε</wd> 
+<wd>δίκην</wd> 
+<wd>πόλις</wd> 
+<wd>ἐντὸς</wd> 
+<wd>ἐέργει</wd>.</l>
+<l n="270">
+<wd>νῦν</wd> 
+<wd>δὴ</wd> 
+<wd>ἐγὼ</wd> 
+<wd>μήτ᾽</wd> 
+<wd>αὐτὸς</wd> 
+<wd>ἐν</wd> 
+<wd>ἀνθρώποισι</wd> 
+<wd>δίκαιος</wd></l>
+<l n="271">
+<wd>εἴην</wd> 
+<wd>μήτ᾽</wd> 
+<wd>ἐμὸς</wd> 
+<wd>υἱός</wd>: 
+<wd>ἐπεὶ</wd> 
+<wd>κακὸν</wd> 
+<wd>ἄνδρα</wd> 
+<wd>δίκαιον</wd></l>
+<l n="272">
+<wd>ἔμμεναι</wd>, 
+<wd>εἰ</wd> 
+<wd>μείζω</wd> 
+<wd>γε</wd> 
+<wd>δίκην</wd> 
+<wd>ἀδικώτερος</wd> 
+<wd>ἕξει</wd>:</l>
+<l n="273">
+<wd>ἀλλὰ</wd> 
+<wd>τά</wd> 
+<wd>γ᾽</wd> 
+<wd>οὔ</wd> 
+<wd>πω</wd> 
+<wd>ἔολπα</wd> 
+<wd>τελεῖν</wd> 
+<wd>Δία</wd> 
+<wd>μητιόεντα</wd>.</l><milestone n="274" ed="p" unit="card"/>
+<l n="274"><milestone ed="P" unit="para"/>
+<wd>ὦ</wd> 
+<wd>Πέρση</wd>, 
+<wd>σὺ</wd> 
+<wd>δὲ</wd> 
+<wd>ταῦτα</wd> 
+<wd>μετὰ</wd> 
+<wd>φρεσὶ</wd> 
+<wd>βάλλεο</wd> 
+<wd>σῇσι</wd>,</l>
+<l n="275">
+<wd>καὶ</wd> 
+<wd>νυ</wd> 
+<wd>δίκης</wd> 
+<wd>ἐπάκουε</wd>, 
+<wd>βίης</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐπιλήθεο</wd> 
+<wd>πάμπαν</wd>.</l>
+<l n="276">
+<wd>τόνδε</wd> 
+<wd>γὰρ</wd> 
+<wd>ἀνθρώποισι</wd> 
+<wd>νόμον</wd> 
+<wd>διέταξε</wd> 
+<wd>Κρονίων</wd></l>
+<l n="277">
+<wd>ἰχθύσι</wd> 
+<wd>μὲν</wd> 
+<wd>καὶ</wd> 
+<wd>θηρσὶ</wd> 
+<wd>καὶ</wd> 
+<wd>οἰωνοῖς</wd> 
+<wd>πετεηνοῖς</wd></l>
+<l n="278">
+<wd>ἐσθέμεν</wd> 
+<wd>ἀλλήλους</wd>, 
+<wd>ἐπεὶ</wd> 
+<wd>οὐ</wd> 
+<wd>δίκη</wd> 
+<wd>ἐστὶ</wd> 
+<wd>μετ᾽</wd> 
+<wd>αὐτοῖς</wd>:</l>
+<l n="279">
+<wd>ἀνθρώποισι</wd> 
+<wd>δ᾽</wd> 
+<wd>ἔδωκε</wd> 
+<wd>δίκην</wd>, 
+<wd>ἣ</wd> 
+<wd>πολλὸν</wd> 
+<wd>ἀρίστη</wd></l>
+<l n="280">
+<wd>γίγνεται</wd>: 
+<wd>εἰ</wd> 
+<wd>γάρ</wd> 
+<wd>τίς</wd> 
+<wd>κ᾽</wd> 
+<wd>ἐθέλῃ</wd> 
+<wd>τὰ</wd> 
+<wd>δίκαι᾽</wd> 
+<wd>ἀγορεῦσαι</wd></l>
+<l n="281">
+<wd>γιγνώσκων</wd>, 
+<wd>τῷ</wd> 
+<wd>μέν</wd> 
+<wd>τ᾽</wd> 
+<wd>ὄλβον</wd> 
+<wd>διδοῖ</wd> 
+<wd>εὐρύοπα</wd> 
+<wd>Ζεύς</wd>:</l>
+<l n="282">
+<wd>ὃς</wd> 
+<wd>δέ</wd> 
+<wd>κε</wd> 
+<wd>μαρτυρίῃσι</wd> 
+<wd>ἑκὼν</wd> 
+<wd>ἐπίορκον</wd> 
+<wd>ὀμόσσας</wd></l>
+<l n="283">
+<wd>ψεύσεται</wd>, 
+<wd>ἐν</wd> 
+<wd>δὲ</wd> 
+<wd>δίκην</wd> 
+<wd>βλάψας</wd> 
+<wd>νήκεστον</wd> 
+<wd>ἀασθῇ</wd>,</l>
+<l n="284">
+<wd>τοῦ</wd> 
+<wd>δέ</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀμαυροτέρη</wd> 
+<wd>γενεὴ</wd> 
+<wd>μετόπισθε</wd> 
+<wd>λέλειπται</wd>:</l>
+<l n="285">
+<wd>ἀνδρὸς</wd> 
+<wd>δ᾽</wd> 
+<wd>εὐόρκου</wd> 
+<wd>γενεὴ</wd> 
+<wd>μετόπισθεν</wd> 
+<wd>ἀμείνων</wd>.</l>
+<l n="286"><milestone ed="P" unit="para"/>
+<wd>σοὶ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐγὼ</wd> 
+<wd>ἐσθλὰ</wd> 
+<wd>νοέων</wd> 
+<wd>ἐρέω</wd>, 
+<wd>μέγα</wd> 
+<wd>νήπιε</wd> 
+<wd>Πέρση</wd>.</l>
+<l n="287">
+<wd>τὴν</wd> 
+<wd>μέν</wd> 
+<wd>τοι</wd> 
+<wd>κακότητα</wd> 
+<wd>καὶ</wd> 
+<wd>ἰλαδὸν</wd> 
+<wd>ἔστιν</wd> 
+<wd>ἑλέσθαι</wd></l>
+<l n="288">
+<wd>ῥηιδίως</wd>: 
+<wd>λείη</wd> 
+<wd>μὲν</wd> 
+<wd>ὁδός</wd>, 
+<wd>μάλα</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐγγύθι</wd> 
+<wd>ναίει</wd>:</l>
+<l n="289">
+<wd>τῆς</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀρετῆς</wd> 
+<wd>ἱδρῶτα</wd> 
+<wd>θεοὶ</wd> 
+<wd>προπάροιθεν</wd> 
+<wd>ἔθηκαν</wd></l>
+<l n="290">
+<wd>ἀθάνατοι</wd>: 
+<wd>μακρὸς</wd> 
+<wd>δὲ</wd> 
+<wd>καὶ</wd> 
+<wd>ὄρθιος</wd> 
+<wd>οἶμος</wd> 
+<wd>ἐς</wd> 
+<wd>αὐτὴν</wd></l>
+<l n="291">
+<wd>καὶ</wd> 
+<wd>τρηχὺς</wd> 
+<wd>τὸ</wd> 
+<wd>πρῶτον</wd>: 
+<wd>ἐπὴν</wd> 
+<wd>δ᾽</wd> 
+<wd>εἰς</wd> 
+<wd>ἄκρον</wd> 
+<wd>ἵκηται</wd>,</l>
+<l n="292">
+<wd>ῥηιδίη</wd> 
+<wd>δὴ</wd> 
+<wd>ἔπειτα</wd> 
+<wd>πέλει</wd>, 
+<wd>χαλεπή</wd> 
+<wd>περ</wd> 
+<wd>ἐοῦσα</wd>.</l>
+<l n="293"><milestone ed="P" unit="para"/>
+<wd>οὗτος</wd> 
+<wd>μὲν</wd> 
+<wd>πανάριστος</wd>, 
+<wd>ὃς</wd> 
+<wd>αὐτὸς</wd> 
+<wd>πάντα</wd> 
+<wd>νοήσῃ</wd></l>
+<l n="294">
+<wd>φρασσάμενος</wd>, 
+<wd>τά</wd> 
+<wd>κ᾽</wd> 
+<wd>ἔπειτα</wd> 
+<wd>καὶ</wd> 
+<wd>ἐς</wd> 
+<wd>τέλος</wd> 
+<wd>ᾖσιν</wd> 
+<wd>ἀμείνω</wd>:</l>
+<l n="295">
+<wd>ἐσθλὸς</wd> 
+<wd>δ᾽</wd> 
+<wd>αὖ</wd> 
+<wd>κἀκεῖνος</wd>, 
+<wd>ὃς</wd> 
+<wd>εὖ</wd> 
+<wd>εἰπόντι</wd> 
+<wd>πίθηται</wd>:</l>
+<l n="296">
+<wd>ὃς</wd> 
+<wd>δέ</wd> 
+<wd>κε</wd> 
+<wd>μήτ᾽</wd> 
+<wd>αὐτὸς</wd> 
+<wd>νοέῃ</wd> 
+<wd>μήτ᾽</wd> 
+<wd>ἄλλου</wd> 
+<wd>ἀκούων</wd></l>
+<l n="297">
+<wd>ἐν</wd> 
+<wd>θυμῷ</wd> 
+<wd>βάλληται</wd>, 
+<wd>ὃ</wd> 
+<wd>δ᾽</wd> 
+<wd>αὖτ᾽</wd> 
+<wd>ἀχρήιος</wd> 
+<wd>ἀνήρ</wd>.</l>
+<l n="298">
+<wd>ἀλλὰ</wd> 
+<wd>σύ</wd> 
+<wd>γ᾽</wd> 
+<wd>ἡμετέρης</wd> 
+<wd>μεμνημένος</wd> 
+<wd>αἰὲν</wd> 
+<wd>ἐφετμῆς</wd></l>
+<l n="299">
+<wd>ἐργάζευ</wd>, 
+<wd>Πέρση</wd>, 
+<wd>δῖον</wd> 
+<wd>γένος</wd>, 
+<wd>ὄφρα</wd> 
+<wd>σε</wd> 
+<wd>λιμὸς</wd></l>
+<l n="300">
+<wd>ἐχθαίρῃ</wd>, 
+<wd>φιλέῃ</wd> 
+<wd>δέ</wd> 
+<wd>σ᾽</wd> 
+<wd>ἐυστέφανος</wd> 
+<wd>Δημήτηρ</wd></l>
+<l n="301">
+<wd>αἰδοίη</wd>, 
+<wd>βιότου</wd> 
+<wd>δὲ</wd> 
+<wd>τεὴν</wd> 
+<wd>πιμπλῇσι</wd> 
+<wd>καλιήν</wd>:</l>
+<l n="302">
+<wd>λιμὸς</wd> 
+<wd>γάρ</wd> 
+<wd>τοι</wd> 
+<wd>πάμπαν</wd> 
+<wd>ἀεργῷ</wd> 
+<wd>σύμφορος</wd> 
+<wd>ἀνδρί</wd>.</l>
+<l n="303">
+<wd>τῷ</wd> 
+<wd>δὲ</wd> 
+<wd>θεοὶ</wd> 
+<wd>νεμεσῶσι</wd> 
+<wd>καὶ</wd> 
+<wd>ἀνέρες</wd>, 
+<wd>ὅς</wd> 
+<wd>κεν</wd> 
+<wd>ἀεργὸς</wd></l>
+<l n="304">
+<wd>ζώῃ</wd>, 
+<wd>κηφήνεσσι</wd> 
+<wd>κοθούροις</wd> 
+<wd>εἴκελος</wd> 
+<wd>ὀργήν</wd>,</l>
+<l n="305">
+<wd>οἵ</wd> 
+<wd>τε</wd> 
+<wd>μελισσάων</wd> 
+<wd>κάματον</wd> 
+<wd>τρύχουσιν</wd> 
+<wd>ἀεργοὶ</wd></l>
+<l n="306">
+<wd>ἔσθοντες</wd>: 
+<wd>σοὶ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἔργα</wd> 
+<wd>φίλ᾽</wd> 
+<wd>ἔστω</wd> 
+<wd>μέτρια</wd> 
+<wd>κοσμεῖν</wd>,</l>
+<l n="307">
+<wd>ὥς</wd> 
+<wd>κέ</wd> 
+<wd>τοι</wd> 
+<wd>ὡραίου</wd> 
+<wd>βιότου</wd> 
+<wd>πλήθωσι</wd> 
+<wd>καλιαί</wd>.</l>
+<l n="308">
+<wd>ἐξ</wd> 
+<wd>ἔργων</wd> 
+<wd>δ᾽</wd> 
+<wd>ἄνδρες</wd> 
+<wd>πολύμηλοί</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀφνειοί</wd> 
+<wd>τε</wd>:</l>
+<l n="309">
+<wd>καὶ</wd> 
+<wd>ἐργαζόμενοι</wd> 
+<wd>πολὺ</wd> 
+<wd>φίλτεροι</wd> 
+<wd>ἀθανάτοισιν</wd>.</l>
+<l n="311">
+<wd>ἔργον</wd> 
+<wd>δ᾽</wd> 
+<wd>οὐδὲν</wd> 
+<wd>ὄνειδος</wd>, 
+<wd>ἀεργίη</wd> 
+<wd>δέ</wd> 
+<wd>τ᾽</wd> 
+<wd>ὄνειδος</wd>.</l>
+<l n="312">
+<wd>εἰ</wd> 
+<wd>δέ</wd> 
+<wd>κε</wd> 
+<wd>ἐργάζῃ</wd>, 
+<wd>τάχα</wd> 
+<wd>σε</wd> 
+<wd>ζηλώσει</wd> 
+<wd>ἀεργὸς</wd></l>
+<l n="313">
+<wd>πλουτεῦντα</wd>: 
+<wd>πλούτῳ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀρετὴ</wd> 
+<wd>καὶ</wd> 
+<wd>κῦδος</wd> 
+<wd>ὀπηδεῖ</wd>.</l>
+<l n="314">
+<wd>δαίμονι</wd> 
+<wd>δ᾽</wd> 
+<wd>οἷος</wd> 
+<wd>ἔησθα</wd>, 
+<wd>τὸ</wd> 
+<wd>ἐργάζεσθαι</wd> 
+<wd>ἄμεινον</wd>,</l>
+<l n="315">
+<wd>εἴ</wd> 
+<wd>κεν</wd> 
+<wd>ἀπ᾽</wd> 
+<wd>ἀλλοτρίων</wd> 
+<wd>κτεάνων</wd> 
+<wd>ἀεσίφρονα</wd> 
+<wd>θυμὸν</wd></l>
+<l n="316">
+<wd>εἰς</wd> 
+<wd>ἔργον</wd> 
+<wd>τρέψας</wd> 
+<wd>μελετᾷς</wd> 
+<wd>βίου</wd>, 
+<wd>ὥς</wd> 
+<wd>σε</wd> 
+<wd>κελεύω</wd>.</l>
+<l n="317">
+<wd>αἰδὼς</wd> 
+<wd>δ᾽</wd> 
+<wd>οὐκ</wd> 
+<wd>ἀγαθὴ</wd> 
+<wd>κεχρημένον</wd> 
+<wd>ἄνδρα</wd> 
+<wd>κομίζει</wd>,</l>
+<l n="318">
+<wd>αἰδώς</wd>, 
+<wd>ἥ</wd> 
+<wd>τ᾽</wd> 
+<wd>ἄνδρας</wd> 
+<wd>μέγα</wd> 
+<wd>σίνεται</wd> 
+<wd>ἠδ᾽</wd> 
+<wd>ὀνίνησιν</wd>.</l>
+<l n="319">
+<wd>αἰδώς</wd> 
+<wd>τοι</wd> 
+<wd>πρὸς</wd> 
+<wd>ἀνολβίῃ</wd>, 
+<wd>θάρσος</wd> 
+<wd>δὲ</wd> 
+<wd>πρὸς</wd> 
+<wd>ὄλβῳ</wd>.</l><milestone n="320" ed="p" unit="card"/>
+<l n="320"><milestone ed="P" unit="para"/>
+<wd>χρήματα</wd> 
+<wd>δ᾽</wd> 
+<wd>οὐχ</wd> 
+<wd>ἁρπακτά</wd>, 
+<wd>θεόσδοτα</wd> 
+<wd>πολλὸν</wd> 
+<wd>ἀμείνω</wd>.</l>
+<l n="321">
+<wd>εἰ</wd> 
+<wd>γάρ</wd> 
+<wd>τις</wd> 
+<wd>καὶ</wd> 
+<wd>χερσὶ</wd> 
+<wd>βίῃ</wd> 
+<wd>μέγαν</wd> 
+<wd>ὄλβον</wd> 
+<wd>ἕληται</wd>,</l>
+<l n="322">
+<wd>ἢ</wd> 
+<wd>ὅ</wd> 
+<wd>γ᾽</wd> 
+<wd>ἀπὸ</wd> 
+<wd>γλώσσης</wd> 
+<wd>ληίσσεται</wd>, 
+<wd>οἷά</wd> 
+<wd>τε</wd> 
+<wd>πολλὰ</wd></l>
+<l n="323">
+<wd>γίγνεται</wd>, 
+<wd>εὖτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>δὴ</wd> 
+<wd>κέρδος</wd> 
+<wd>νόον</wd> 
+<wd>ἐξαπατήσῃ</wd></l>
+<l n="324">
+<wd>ἀνθρώπων</wd>, 
+<wd>αἰδῶ</wd> 
+<wd>δέ</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀναιδείη</wd> 
+<wd>κατοπάζῃ</wd>:</l>
+<l n="325">
+<wd>ῥεῖα</wd> 
+<wd>δέ</wd> 
+<wd>μιν</wd> 
+<wd>μαυροῦσι</wd> 
+<wd>θεοί</wd>, 
+<wd>μινύθουσι</wd> 
+<wd>δὲ</wd> 
+<wd>οἶκον</wd></l>
+<l n="326">
+<wd>ἀνέρι</wd> 
+<wd>τῷ</wd>, 
+<wd>παῦρον</wd> 
+<wd>δέ</wd> 
+<wd>τ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>χρόνον</wd> 
+<wd>ὄλβος</wd> 
+<wd>ὀπηδεῖ</wd>.</l>
+<l n="327">
+<wd>ἶσον</wd> 
+<wd>δ᾽</wd> 
+<wd>ὅς</wd> 
+<wd>θ᾽</wd> 
+<wd>ἱκέτην</wd> 
+<wd>ὅς</wd> 
+<wd>τε</wd> 
+<wd>ξεῖνον</wd> 
+<wd>κακὸν</wd> 
+<wd>ἔρξῃ</wd>,</l>
+<l n="328">
+<wd>ὅς</wd> 
+<wd>τε</wd> 
+<wd>κασιγνήτοιο</wd> 
+<wd>ἑοῦ</wd> 
+<wd>ἀνὰ</wd> 
+<wd>δέμνια</wd> 
+<wd>βαίνῃ</wd></l>
+<l n="329">
+<wd>κρυπταδίης</wd> 
+<wd>εὐνῆς</wd> 
+<wd>ἀλόχου</wd>, 
+<wd>παρακαίρια</wd> 
+<wd>ῥέζων</wd>,</l>
+<l n="330">
+<wd>ὅς</wd> 
+<wd>τέ</wd> 
+<wd>τευ</wd> 
+<wd>ἀφραδίῃς</wd> 
+<wd>ἀλιταίνεται</wd> 
+<wd>ὀρφανὰ</wd> 
+<wd>τέκνα</wd>,</l>
+<l n="331">
+<wd>ὅς</wd> 
+<wd>τε</wd> 
+<wd>γονῆα</wd> 
+<wd>γέροντα</wd> 
+<wd>κακῷ</wd> 
+<wd>ἐπὶ</wd> 
+<wd>γήραος</wd> 
+<wd>οὐδῷ</wd></l>
+<l n="332">
+<wd>νεικείῃ</wd> 
+<wd>χαλεποῖσι</wd> 
+<wd>καθαπτόμενος</wd> 
+<wd>ἐπέεσσιν</wd>:</l>
+<l n="333">
+<wd>τῷ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἦ</wd> 
+<wd>τοι</wd> 
+<wd>Ζεὺς</wd> 
+<wd>αὐτὸς</wd> 
+<wd>ἀγαίεται</wd>, 
+<wd>ἐς</wd> 
+<wd>δὲ</wd> 
+<wd>τελευτὴν</wd></l>
+<l n="334">
+<wd>ἔργων</wd> 
+<wd>ἀντ᾽</wd> 
+<wd>ἀδίκων</wd> 
+<wd>χαλεπὴν</wd> 
+<wd>ἐπέθηκεν</wd> 
+<wd>ἀμοιβήν</wd>.</l>
+<l n="335">
+<wd>ἀλλὰ</wd> 
+<wd>σὺ</wd> 
+<wd>τῶν</wd> 
+<wd>μὲν</wd> 
+<wd>πάμπαν</wd> 
+<wd>ἔεργ᾽</wd> 
+<wd>ἀεσίφρονα</wd> 
+<wd>θυμόν</wd>.</l>
+<l n="336">
+<wd>κὰδ</wd> 
+<wd>δύναμιν</wd> 
+<wd>δ᾽</wd> 
+<wd>ἔρδειν</wd> 
+<wd>ἱέρ᾽</wd> 
+<wd>ἀθανάτοισι</wd> 
+<wd>θεοῖσιν</wd></l>
+<l n="337">
+<wd>ἁγνῶς</wd> 
+<wd>καὶ</wd> 
+<wd>καθαρῶς</wd>, 
+<wd>ἐπὶ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀγλαὰ</wd> 
+<wd>μηρία</wd> 
+<wd>καίειν</wd>:</l>
+<l n="338">
+<wd>ἄλλοτε</wd> 
+<wd>δὲ</wd> 
+<wd>σπονδῇσι</wd> 
+<wd>θύεσσί</wd> 
+<wd>τε</wd> 
+<wd>ἱλάσκεσθαι</wd>,</l>
+<l n="339">
+<wd>ἠμὲν</wd> 
+<wd>ὅτ᾽</wd> 
+<wd>εὐνάζῃ</wd> 
+<wd>καὶ</wd> 
+<wd>ὅτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>φάος</wd> 
+<wd>ἱερὸν</wd> 
+<wd>ἔλθῃ</wd>,</l>
+<l n="340">
+<wd>ὥς</wd> 
+<wd>κέ</wd> 
+<wd>τοι</wd> 
+<wd>ἵλαον</wd> 
+<wd>κραδίην</wd> 
+<wd>καὶ</wd> 
+<wd>θυμὸν</wd> 
+<wd>ἔχωσιν</wd>,</l>
+<l n="341">
+<wd>ὄφρ᾽</wd> 
+<wd>ἄλλων</wd> 
+<wd>ὠνῇ</wd> 
+<wd>κλῆρον</wd>, 
+<wd>μὴ</wd> 
+<wd>τὸν</wd> 
+<wd>τεὸν</wd> 
+<wd>ἄλλος</wd>.</l>
+<l n="342"><milestone ed="P" unit="para"/>
+<wd>τὸν</wd> 
+<wd>φιλέοντ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>δαῖτα</wd> 
+<wd>καλεῖν</wd>, 
+<wd>τὸν</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐχθρὸν</wd> 
+<wd>ἐᾶσαι</wd>:</l>
+<l n="343">
+<wd>τὸν</wd> 
+<wd>δὲ</wd> 
+<wd>μάλιστα</wd> 
+<wd>καλεῖν</wd>, 
+<wd>ὅς</wd> 
+<wd>τις</wd> 
+<wd>σέθεν</wd> 
+<wd>ἐγγύθι</wd> 
+<wd>ναίει</wd>:</l>
+<l n="344">
+<wd>εἰ</wd> 
+<wd>γάρ</wd> 
+<wd>τοι</wd> 
+<wd>καὶ</wd> 
+<wd>χρῆμ᾽</wd> 
+<wd>ἐγχώριον</wd> 
+<wd>ἄλλο</wd> 
+<wd>γένηται</wd>,</l>
+<l n="345">
+<wd>γείτονες</wd> 
+<wd>ἄζωστοι</wd> 
+<wd>ἔκιον</wd>, 
+<wd>ζώσαντο</wd> 
+<wd>δὲ</wd> 
+<wd>πηοί</wd>.</l>
+<l n="346">
+<wd>πῆμα</wd> 
+<wd>κακὸς</wd> 
+<wd>γείτων</wd>, 
+<wd>ὅσσον</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀγαθὸς</wd> 
+<wd>μέγ᾽</wd> 
+<wd>ὄνειαρ</wd>.</l>
+<l n="347">
+<wd>ἔμμορέ</wd> 
+<wd>τοι</wd> 
+<wd>τιμῆς</wd>, 
+<wd>ὅς</wd> 
+<wd>τ᾽</wd> 
+<wd>ἔμμορε</wd> 
+<wd>γείτονος</wd> 
+<wd>ἐσθλοῦ</wd>.</l>
+<l n="348">
+<wd>οὐδ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>βοῦς</wd> 
+<wd>ἀπόλοιτ᾽</wd>, 
+<wd>εἰ</wd> 
+<wd>μὴ</wd> 
+<wd>γείτων</wd> 
+<wd>κακὸς</wd> 
+<wd>εἴη</wd>.</l>
+<l n="349">
+<wd>εὖ</wd> 
+<wd>μὲν</wd> 
+<wd>μετρεῖσθαι</wd> 
+<wd>παρὰ</wd> 
+<wd>γείτονος</wd>, 
+<wd>εὖ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀποδοῦναι</wd>,</l>
+<l n="350">
+<wd>αὐτῷ</wd> 
+<wd>τῷ</wd> 
+<wd>μέτρῳ</wd>, 
+<wd>καὶ</wd> 
+<wd>λώιον</wd>, 
+<wd>αἴ</wd> 
+<wd>κε</wd> 
+<wd>δύνηαι</wd>,</l>
+<l n="351">
+<wd>ὡς</wd> 
+<wd>ἂν</wd> 
+<wd>χρηίζων</wd> 
+<wd>καὶ</wd> 
+<wd>ἐς</wd> 
+<wd>ὕστερον</wd> 
+<wd>ἄρκιον</wd> 
+<wd>εὕρῃς</wd>.</l>
+<l n="352"><milestone ed="P" unit="para"/>
+<wd>μὴ</wd> 
+<wd>κακὰ</wd> 
+<wd>κερδαίνειν</wd>: 
+<wd>κακὰ</wd> 
+<wd>κέρδεα</wd> 
+<wd>ἶσ᾽</wd> 
+<wd>ἀάτῃσιν</wd>.</l>
+<l n="353">
+<wd>τὸν</wd> 
+<wd>φιλέοντα</wd> 
+<wd>φιλεῖν</wd>, 
+<wd>καὶ</wd> 
+<wd>τῷ</wd> 
+<wd>προσιόντι</wd> 
+<wd>προσεῖναι</wd>.</l>
+<l n="354">
+<wd>καὶ</wd> 
+<wd>δόμεν</wd>, 
+<wd>ὅς</wd> 
+<wd>κεν</wd> 
+<wd>δῷ</wd>, 
+<wd>καὶ</wd> 
+<wd>μὴ</wd> 
+<wd>δόμεν</wd>, 
+<wd>ὅς</wd> 
+<wd>κεν</wd> 
+<wd>μὴ</wd> 
+<wd>δῷ</wd>.</l>
+<l n="355">
+<wd>δώτῃ</wd> 
+<wd>μέν</wd> 
+<wd>τις</wd> 
+<wd>ἔδωκεν</wd>, 
+<wd>ἀδώτῃ</wd> 
+<wd>δ᾽</wd> 
+<wd>οὔτις</wd> 
+<wd>ἔδωκεν</wd>.</l>
+<l n="356">
+<wd>δὼς</wd> 
+<wd>ἀγαθή</wd>, 
+<wd>ἅρπαξ</wd> 
+<wd>δὲ</wd> 
+<wd>κακή</wd>, 
+<wd>θανάτοιο</wd> 
+<wd>δότειρα</wd>.</l>
+<l n="357">
+<wd>ὃς</wd> 
+<wd>μὲν</wd> 
+<wd>γάρ</wd> 
+<wd>κεν</wd> 
+<wd>ἀνὴρ</wd> 
+<wd>ἐθέλων</wd>, 
+<wd>ὅ</wd> 
+<wd>γε</wd>, 
+<wd>κεἰ</wd> 
+<wd>μέγα</wd> 
+<wd>δοίη</wd>,</l>
+<l n="358">
+<wd>χαίρει</wd> 
+<wd>τῷ</wd> 
+<wd>δώρῳ</wd> 
+<wd>καὶ</wd> 
+<wd>τέρπεται</wd> 
+<wd>ὃν</wd> 
+<wd>κατὰ</wd> 
+<wd>θυμόν</wd>:</l>
+<l n="359">
+<wd>ὃς</wd> 
+<wd>δέ</wd> 
+<wd>κεν</wd> 
+<wd>αὐτὸς</wd> 
+<wd>ἕληται</wd> 
+<wd>ἀναιδείηφι</wd> 
+<wd>πιθήσας</wd>,</l>
+<l n="360">
+<wd>καί</wd> 
+<wd>τε</wd> 
+<wd>σμικρὸν</wd> 
+<wd>ἐόν</wd>, 
+<wd>τό</wd> 
+<wd>γ᾽</wd> 
+<wd>ἐπάχνωσεν</wd> 
+<wd>φίλον</wd> 
+<wd>ἦτορ</wd>.</l>
+<l n="363">
+<wd>ὃς</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>ἐόντι</wd> 
+<wd>φέρει</wd>, 
+<wd>ὃ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀλέξεται</wd> 
+<wd>αἴθοπα</wd> 
+<wd>λιμόν</wd>:</l>
+<l n="361">
+<wd>εἰ</wd> 
+<wd>γάρ</wd> 
+<wd>κεν</wd> 
+<wd>καὶ</wd> 
+<wd>σμικρὸν</wd> 
+<wd>ἐπὶ</wd> 
+<wd>σμικρῷ</wd> 
+<wd>καταθεῖο</wd></l>
+<l n="362">
+<wd>καὶ</wd> 
+<wd>θαμὰ</wd> 
+<wd>τοῦτ᾽</wd> 
+<wd>ἔρδοις</wd>, 
+<wd>τάχα</wd> 
+<wd>κεν</wd> 
+<wd>μέγα</wd> 
+<wd>καὶ</wd> 
+<wd>τὸ</wd> 
+<wd>γένοιτο</wd>.</l>
+<l n="363">
+<wd>οὐδὲ</wd> 
+<wd>τό</wd> 
+<wd>γ᾽</wd> 
+<wd>ἐν</wd> 
+<wd>οἴκῳ</wd> 
+<wd>κατακείμενον</wd> 
+<wd>ἀνέρα</wd> 
+<wd>κήδει</wd>.</l>
+<l n="365">
+<wd>οἴκοι</wd> 
+<wd>βέλτερον</wd> 
+<wd>εἶναι</wd>, 
+<wd>ἐπεὶ</wd> 
+<wd>βλαβερὸν</wd> 
+<wd>τὸ</wd> 
+<wd>θύρηφιν</wd>.</l>
+<l n="366">
+<wd>ἐσθλὸν</wd> 
+<wd>μὲν</wd> 
+<wd>παρεόντος</wd> 
+<wd>ἑλέσθαι</wd>, 
+<wd>πῆμα</wd> 
+<wd>δὲ</wd> 
+<wd>θυμῷ</wd></l>
+<l n="367">
+<wd>χρηίζειν</wd> 
+<wd>ἀπεόντος</wd>, 
+<wd>ἅ</wd> 
+<wd>σε</wd> 
+<wd>φράζεσθαι</wd> 
+<wd>ἄνωγα</wd>.</l>
+<l n="368">
+<wd>ἀρχομένου</wd> 
+<wd>δὲ</wd> 
+<wd>πίθου</wd> 
+<wd>καὶ</wd> 
+<wd>λήγοντος</wd> 
+<wd>κορέσασθαι</wd>,</l>
+<l n="369">
+<wd>μεσσόθι</wd> 
+<wd>φείδεσθαι</wd>: 
+<wd>δειλὴ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐνὶ</wd> 
+<wd>πυθμένι</wd> 
+<wd>φειδώ</wd>.</l><milestone n="370" ed="p" unit="card"/>
+<l n="370"><milestone ed="P" unit="para"/>
+<wd>μισθὸς</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀνδρὶ</wd> 
+<wd>φίλῳ</wd> 
+<wd>εἰρημένος</wd> 
+<wd>ἄρκιος</wd> 
+<wd>ἔστω</wd>.</l>
+<l n="371">
+<wd>καί</wd> 
+<wd>τε</wd> 
+<wd>κασιγνήτῳ</wd> 
+<wd>γελάσας</wd> 
+<wd>ἐπὶ</wd> 
+<wd>μάρτυρα</wd> 
+<wd>θέσθαι</wd>.</l>
+<l n="372">
+<wd>πίστεις</wd> 
+<wd>γάρ</wd> 
+<wd>τοι</wd> 
+<wd>ὁμῶς</wd> 
+<wd>καὶ</wd> 
+<wd>ἀπιστίαι</wd> 
+<wd>ὤλεσαν</wd> 
+<wd>ἄνδρας</wd>.</l>
+<l n="373"><milestone ed="P" unit="para"/>
+<wd>μὴ</wd> 
+<wd>δὲ</wd> 
+<wd>γυνή</wd> 
+<wd>σε</wd> 
+<wd>νόον</wd> 
+<wd>πυγοστόλος</wd> 
+<wd>ἐξαπατάτω</wd></l>
+<l n="374">
+<wd>αἱμύλα</wd> 
+<wd>κωτίλλουσα</wd>, 
+<wd>τεὴν</wd> 
+<wd>διφῶσα</wd> 
+<wd>καλιήν</wd>.</l>
+<l n="375">
+<wd>ὃς</wd> 
+<wd>δὲ</wd> 
+<wd>γυναικὶ</wd> 
+<wd>πέποιθε</wd>, 
+<wd>πέποιθ᾽</wd> 
+<wd>ὅ</wd> 
+<wd>γε</wd> 
+<wd>φηλήτῃσιν</wd>.</l>
+<l n="376"><milestone ed="P" unit="para"/>
+<wd>μουνογενὴς</wd> 
+<wd>δὲ</wd> 
+<wd>πάις</wd> 
+<wd>εἴη</wd> 
+<wd>πατρώιον</wd> 
+<wd>οἶκον</wd></l>
+<l n="377">
+<wd>φερβέμεν</wd> 
+<wd>ὣς</wd> 
+<wd>γὰρ</wd> 
+<wd>πλοῦτος</wd> 
+<wd>ἀέξεται</wd> 
+<wd>ἐν</wd> 
+<wd>μεγάροισιν</wd>.</l>
+<l n="378">
+<wd>γηραιὸς</wd> 
+<wd>δὲ</wd> 
+<wd>θάνοις</wd> 
+<wd>ἕτερον</wd> 
+<wd>παῖδ᾽</wd> 
+<wd>ἐγκαταλείπων</wd>.</l>
+<l n="379">
+<wd>ῥεῖα</wd> 
+<wd>δέ</wd> 
+<wd>κεν</wd> 
+<wd>πλεόνεσσι</wd> 
+<wd>πόροι</wd> 
+<wd>Ζεὺς</wd> 
+<wd>ἄσπετον</wd> 
+<wd>ὄλβον</wd>.</l>
+<l n="380">
+<wd>πλείων</wd> 
+<wd>μὲν</wd> 
+<wd>πλεόνων</wd> 
+<wd>μελέτη</wd>, 
+<wd>μείζων</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐπιθήκη</wd>.</l>
+<l n="381"><milestone ed="P" unit="para"/>
+<wd>σοὶ</wd> 
+<wd>δ᾽</wd> 
+<wd>εἰ</wd> 
+<wd>πλούτου</wd> 
+<wd>θυμὸς</wd> 
+<wd>ἐέλδεται</wd> 
+<wd>ἐν</wd> 
+<wd>φρεσὶν</wd> 
+<wd>ᾗσιν</wd>,</l>
+<l n="382">
+<wd>ὧδ᾽</wd> 
+<wd>ἔρδειν</wd>, 
+<wd>καὶ</wd> 
+<wd>ἔργον</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>ἔργῳ</wd> 
+<wd>ἐργάζεσθαι</wd>.</l>
+<l n="383"><milestone ed="P" unit="para"/>
+<wd>πληιάδων</wd> 
+<wd>Ἀτλαγενέων</wd> 
+<wd>ἐπιτελλομενάων</wd></l>
+<l n="384">
+<wd>ἄρχεσθ᾽</wd> 
+<wd>ἀμήτου</wd>, 
+<wd>ἀρότοιο</wd> 
+<wd>δὲ</wd> 
+<wd>δυσομενάων</wd>.</l>
+<l n="385">
+<wd>αἳ</wd> 
+<wd>δή</wd> 
+<wd>τοι</wd> 
+<wd>νύκτας</wd> 
+<wd>τε</wd> 
+<wd>καὶ</wd> 
+<wd>ἤματα</wd> 
+<wd>τεσσαράκοντα</wd></l>
+<l n="386">
+<wd>κεκρύφαται</wd>, 
+<wd>αὖτις</wd> 
+<wd>δὲ</wd> 
+<wd>περιπλομένου</wd> 
+<wd>ἐνιαυτοῦ</wd></l>
+<l n="387">
+<wd>φαίνονται</wd> 
+<wd>τὰ</wd> 
+<wd>πρῶτα</wd> 
+<wd>χαρασσομένοιο</wd> 
+<wd>σιδήρου</wd>.</l>
+<l n="388">
+<wd>οὗτός</wd> 
+<wd>τοι</wd> 
+<wd>πεδίων</wd> 
+<wd>πέλεται</wd> 
+<wd>νόμος</wd>, 
+<wd>οἵ</wd> 
+<wd>τε</wd> 
+<wd>θαλάσσης</wd></l>
+<l n="389">
+<wd>ἐγγύθι</wd> 
+<wd>ναιετάουσ᾽</wd>, 
+<wd>οἵ</wd> 
+<wd>τ᾽</wd> 
+<wd>ἄγκεα</wd> 
+<wd>βησσήεντα</wd>,</l>
+<l n="390">
+<wd>πόντου</wd> 
+<wd>κυμαίνοντος</wd> 
+<wd>ἀπόπροθι</wd>, 
+<wd>πίονα</wd> 
+<wd>χῶρον</wd></l>
+<l n="391">
+<wd>ναίουσιν</wd>: 
+<wd>γυμνὸν</wd> 
+<wd>σπείρειν</wd>, 
+<wd>γυμνὸν</wd> 
+<wd>δὲ</wd> 
+<wd>βοωτεῖν</wd>,</l>
+<l n="392">
+<wd>γυμνὸν</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀμάειν</wd>, 
+<wd>εἴ</wd> 
+<wd>χ᾽</wd> 
+<wd>ὥρια</wd> 
+<wd>πάντ᾽</wd> 
+<wd>ἐθέλῃσθα</wd></l>
+<l n="393">
+<wd>ἔργα</wd> 
+<wd>κομίζεσθαι</wd> 
+<wd>Δημήτερος</wd>: 
+<wd>ὥς</wd> 
+<wd>τοι</wd> 
+<wd>ἕκαστα</wd></l>
+<l n="394">
+<wd>ὥρι᾽</wd> 
+<wd>ἀέξηται</wd>, 
+<wd>μή</wd> 
+<wd>πως</wd> 
+<wd>τὰ</wd> 
+<wd>μέταζε</wd> 
+<wd>χατίζων</wd></l>
+<l n="395">
+<wd>πτώσσῃς</wd> 
+<wd>ἀλλοτρίους</wd> 
+<wd>οἴκους</wd> 
+<wd>καὶ</wd> 
+<wd>μηδὲν</wd> 
+<wd>ἀνύσσῃς</wd>.</l>
+<l n="396">
+<wd>ὡς</wd> 
+<wd>καὶ</wd> 
+<wd>νῦν</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>ἔμ᾽</wd> 
+<wd>ἦλθες</wd>: 
+<wd>ἐγὼ</wd> 
+<wd>δέ</wd> 
+<wd>τοι</wd> 
+<wd>οὐκ</wd> 
+<wd>ἐπιδώσω</wd></l>
+<l n="397">
+<wd>οὐδ᾽</wd> 
+<wd>ἐπιμετρήσω</wd>: 
+<wd>ἐργάζευ</wd>, 
+<wd>νήπιε</wd> 
+<wd>Πέρση</wd>,</l>
+<l n="398">
+<wd>ἔργα</wd>, 
+<wd>τά</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀνθρώποισι</wd> 
+<wd>θεοὶ</wd> 
+<wd>διετεκμήραντο</wd>,</l>
+<l n="399">
+<wd>μή</wd> 
+<wd>ποτε</wd> 
+<wd>σὺν</wd> 
+<wd>παίδεσσι</wd> 
+<wd>γυναικί</wd> 
+<wd>τε</wd> 
+<wd>θυμὸν</wd> 
+<wd>ἀχεύων</wd></l>
+<l n="400">
+<wd>ζητεύῃς</wd> 
+<wd>βίοτον</wd> 
+<wd>κατὰ</wd> 
+<wd>γείτονας</wd>, 
+<wd>οἳ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀμελῶσιν</wd>.</l>
+<l n="401">
+<wd>δὶς</wd> 
+<wd>μὲν</wd> 
+<wd>γὰρ</wd> 
+<wd>καὶ</wd> 
+<wd>τρὶς</wd> 
+<wd>τάχα</wd> 
+<wd>τεύξεαι</wd>: 
+<wd>ἢν</wd> 
+<wd>δ᾽</wd> 
+<wd>ἔτι</wd> 
+<wd>λυπῇς</wd>,</l>
+<l n="402">
+<wd>χρῆμα</wd> 
+<wd>μὲν</wd> 
+<wd>οὐ</wd> 
+<wd>πρήξεις</wd>, 
+<wd>σὺ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐτώσια</wd> 
+<wd>πόλλ᾽</wd> 
+<wd>ἀγορεύσεις</wd>:</l>
+<l n="403">
+<wd>ἀχρεῖος</wd> 
+<wd>δ᾽</wd> 
+<wd>ἔσται</wd> 
+<wd>ἐπέων</wd> 
+<wd>νομός</wd>. 
+<wd>ἀλλά</wd> 
+<wd>σ᾽</wd> 
+<wd>ἄνωγα</wd></l>
+<l n="404">
+<wd>φράζεσθαι</wd> 
+<wd>χρειῶν</wd> 
+<wd>τε</wd> 
+<wd>λύσιν</wd> 
+<wd>λιμοῦ</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀλεωρήν</wd>.</l><milestone n="405" ed="p" unit="card"/>
+<l n="405"><milestone ed="P" unit="para"/>
+<wd>οἶκον</wd> 
+<wd>μὲν</wd> 
+<wd>πρώτιστα</wd> 
+<wd>γυναῖκά</wd> 
+<wd>τε</wd> 
+<wd>βοῦν</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀροτῆρα</wd>,</l>
+<l n="406">
+<wd>κτητήν</wd>, 
+<wd>οὐ</wd> 
+<wd>γαμετήν</wd>, 
+<wd>ἥτις</wd> 
+<wd>καὶ</wd> 
+<wd>βουσὶν</wd> 
+<wd>ἕποιτο</wd>,</l>
+<l n="407">
+<wd>χρήματα</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐν</wd> 
+<wd>οἴκῳ</wd> 
+<wd>πάντ᾽</wd> 
+<wd>ἄρμενα</wd> 
+<wd>ποιήσασθαι</wd>,</l>
+<l n="408">
+<wd>μὴ</wd> 
+<wd>σὺ</wd> 
+<wd>μὲν</wd> 
+<wd>αἰτῇς</wd> 
+<wd>ἄλλον</wd>, 
+<wd>ὃ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀρνῆται</wd>, 
+<wd>σὺ</wd> 
+<wd>δὲ</wd> 
+<wd>τητᾷ</wd>,</l>
+<l n="409">
+<wd>ἡ</wd> 
+<wd>δ᾽</wd> 
+<wd>ὥρη</wd> 
+<wd>παραμείβηται</wd>, 
+<wd>μινύθῃ</wd> 
+<wd>δὲ</wd> 
+<wd>τὸ</wd> 
+<wd>ἔργον</wd>.</l>
+<l n="410">
+<wd>μηδ᾽</wd> 
+<wd>ἀναβάλλεσθαι</wd> 
+<wd>ἔς</wd> 
+<wd>τ᾽</wd> 
+<wd>αὔριον</wd> 
+<wd>ἔς</wd> 
+<wd>τε</wd> 
+<wd>ἔνηφιν</wd>:</l>
+<l n="411">
+<wd>οὐ</wd> 
+<wd>γὰρ</wd> 
+<wd>ἐτωσιοεργὸς</wd> 
+<wd>ἀνὴρ</wd> 
+<wd>πίμπλησι</wd> 
+<wd>καλιὴν</wd></l>
+<l n="412">
+<wd>οὐδ᾽</wd> 
+<wd>ἀναβαλλόμενος</wd>: 
+<wd>μελέτη</wd> 
+<wd>δὲ</wd> 
+<wd>τὸ</wd> 
+<wd>ἔργον</wd> 
+<wd>ὀφέλλει</wd>:</l>
+<l n="413">
+<wd>αἰεὶ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀμβολιεργὸς</wd> 
+<wd>ἀνὴρ</wd> 
+<wd>ἄτῃσι</wd> 
+<wd>παλαίει</wd>.</l>
+<l n="414"><milestone ed="P" unit="para"/>
+<wd>ἦμος</wd> 
+<wd>δὴ</wd> 
+<wd>λήγει</wd> 
+<wd>μένος</wd> 
+<wd>ὀξέος</wd> 
+<wd>ἠελίοιο</wd></l>
+<l n="415">
+<wd>καύματος</wd> 
+<wd>ἰδαλίμου</wd>, 
+<wd>μετοπωρινὸν</wd> 
+<wd>ὀμβρήσαντος</wd></l>
+<l n="416">
+<wd>Ζηνὸς</wd> 
+<wd>ἐρισθενέος</wd>, 
+<wd>μετὰ</wd> 
+<wd>δὲ</wd> 
+<wd>τρέπεται</wd> 
+<wd>βρότεος</wd> 
+<wd>χρὼς</wd></l>
+<l n="417">
+<wd>πολλὸν</wd> 
+<wd>ἐλαφρότερος</wd>: 
+<wd>δὴ</wd> 
+<wd>γὰρ</wd> 
+<wd>τότε</wd> 
+<wd>Σείριος</wd> 
+<wd>ἀστὴρ</wd></l>
+<l n="418">
+<wd>βαιὸν</wd> 
+<wd>ὑπὲρ</wd> 
+<wd>κεφαλῆς</wd> 
+<wd>κηριτρεφέων</wd> 
+<wd>ἀνθρώπων</wd></l>
+<l n="419">
+<wd>ἔρχεται</wd> 
+<wd>ἠμάτιος</wd>, 
+<wd>πλεῖον</wd> 
+<wd>δέ</wd> 
+<wd>τε</wd> 
+<wd>νυκτὸς</wd> 
+<wd>ἐπαυρεῖ</wd>:</l>
+<l n="420">
+<wd>τῆμος</wd> 
+<wd>ἀδηκτοτάτη</wd> 
+<wd>πέλεται</wd> 
+<wd>τμηθεῖσα</wd> 
+<wd>σιδήρῳ</wd></l>
+<l n="421">
+<wd>ὕλη</wd>, 
+<wd>φύλλα</wd> 
+<wd>δ᾽</wd> 
+<wd>ἔραζε</wd> 
+<wd>χέει</wd>, 
+<wd>πτόρθοιό</wd> 
+<wd>τε</wd> 
+<wd>λήγει</wd>:</l>
+<l n="422">
+<wd>τῆμος</wd> 
+<wd>ἄρ᾽</wd> 
+<wd>ὑλοτομεῖν</wd> 
+<wd>μεμνημένος</wd> 
+<wd>ὥρια</wd> 
+<wd>ἔργα</wd>.</l>
+<l n="423">
+<wd>ὄλμον</wd> 
+<wd>μὲν</wd> 
+<wd>τριπόδην</wd> 
+<wd>τάμνειν</wd>, 
+<wd>ὕπερον</wd> 
+<wd>δὲ</wd> 
+<wd>τρίπηχυν</wd>,</l>
+<l n="424">
+<wd>ἄξονα</wd> 
+<wd>δ᾽</wd> 
+<wd>ἑπταπόδην</wd>: 
+<wd>μάλα</wd> 
+<wd>γάρ</wd> 
+<wd>νύ</wd> 
+<wd>τοι</wd> 
+<wd>ἄρμενον</wd> 
+<wd>οὕτω</wd>:</l>
+<l n="425">
+<wd>εἰ</wd> 
+<wd>δέ</wd> 
+<wd>κεν</wd> 
+<wd>ὀκταπόδην</wd>, 
+<wd>ἀπὸ</wd> 
+<wd>καὶ</wd> 
+<wd>σφῦράν</wd> 
+<wd>κε</wd> 
+<wd>τάμοιο</wd>.</l>
+<l n="426">
+<wd>τρισπίθαμον</wd> 
+<wd>δ᾽</wd> 
+<wd>ἄψιν</wd> 
+<wd>τάμνειν</wd> 
+<wd>δεκαδώρῳ</wd> 
+<wd>ἀμάξῃ</wd>.</l>
+<l n="427">
+<wd>πόλλ᾽</wd> 
+<wd>ἐπικαμπύλα</wd> 
+<wd>κᾶλα</wd>: 
+<wd>φέρειν</wd> 
+<wd>δὲ</wd> 
+<wd>γύην</wd>, 
+<wd>ὅτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>εὕρῃς</wd>,</l>
+<l n="428">
+<wd>ἐς</wd> 
+<wd>οἶκον</wd>, 
+<wd>κατ᾽</wd> 
+<wd>ὄρος</wd> 
+<wd>διζήμενος</wd> 
+<wd>ἢ</wd> 
+<wd>κατ᾽</wd> 
+<wd>ἄρουραν</wd>,</l>
+<l n="429">
+<wd>πρίνινον</wd>: 
+<wd>ὃς</wd> 
+<wd>γὰρ</wd> 
+<wd>βουσὶν</wd> 
+<wd>ἀροῦν</wd> 
+<wd>ὀχυρώτατός</wd> 
+<wd>ἐστιν</wd>,</l>
+<l n="430">
+<wd>εὖτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>Ἀθηναίης</wd> 
+<wd>δμῷος</wd> 
+<wd>ἐν</wd> 
+<wd>ἐλύματι</wd> 
+<wd>πήξας</wd></l>
+<l n="431">
+<wd>γόμφοισιν</wd> 
+<wd>πελάσας</wd> 
+<wd>προσαρήρεται</wd> 
+<wd>ἱστοβοῆι</wd>.</l>
+<l n="432">
+<wd>δοιὰ</wd> 
+<wd>δὲ</wd> 
+<wd>θέσθαι</wd> 
+<wd>ἄροτρα</wd>, 
+<wd>πονησάμενος</wd> 
+<wd>κατὰ</wd> 
+<wd>οἶκον</wd>,</l>
+<l n="433">
+<wd>αὐτόγυον</wd> 
+<wd>καὶ</wd> 
+<wd>πηκτόν</wd>, 
+<wd>ἐπεὶ</wd> 
+<wd>πολὺ</wd> 
+<wd>λώιον</wd> 
+<wd>οὕτω</wd>:</l>
+<l n="434">
+<wd>εἴ</wd> 
+<wd>χ᾽</wd> 
+<wd>ἕτερον</wd> 
+<wd>ἄξαις</wd>, 
+<wd>ἕτερόν</wd> 
+<wd>κ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>βουσὶ</wd> 
+<wd>βάλοιο</wd>.</l>
+<l n="435">
+<wd>δάφνης</wd> 
+<wd>δ᾽</wd> 
+<wd>ἢ</wd> 
+<wd>πτελέης</wd> 
+<wd>ἀκιώτατοι</wd> 
+<wd>ἱστοβοῆες</wd>,</l>
+<l n="436">
+<wd>δρυὸς</wd> 
+<wd>ἔλυμα</wd>, 
+<wd>γύης</wd> 
+<wd>πρίνου</wd>: 
+<wd>βόε</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐνναετήρω</wd></l>
+<l n="437">
+<wd>ἄρσενε</wd> 
+<wd>κεκτῆσθαι</wd>, 
+<wd>τῶν</wd> 
+<wd>γὰρ</wd> 
+<wd>σθένος</wd> 
+<wd>οὐκ</wd> 
+<wd>ἀλαπαδνόν</wd>,</l>
+<l n="438">
+<wd>ἥβης</wd> 
+<wd>μέτρον</wd> 
+<wd>ἔχοντε</wd>: 
+<wd>τὼ</wd> 
+<wd>ἐργάζεσθαι</wd> 
+<wd>ἀρίστω</wd>.</l>
+<l n="439">
+<wd>οὐκ</wd> 
+<wd>ἂν</wd> 
+<wd>τώ</wd> 
+<wd>γ᾽</wd> 
+<wd>ἐρίσαντε</wd> 
+<wd>ἐν</wd> 
+<wd>αὔλακι</wd> 
+<wd>κὰμ</wd> 
+<wd>μὲν</wd> 
+<wd>ἄροτρον</wd></l>
+<l n="440">
+<wd>ἄξειαν</wd>, 
+<wd>τὸ</wd> 
+<wd>δὲ</wd> 
+<wd>ἔργον</wd> 
+<wd>ἐτώσιον</wd> 
+<wd>αὖθι</wd> 
+<wd>λίποιεν</wd>.</l>
+<l n="441">
+<wd>τοῖς</wd> 
+<wd>δ᾽</wd> 
+<wd>ἅμα</wd> 
+<wd>τεσσαρακονταετὴς</wd> 
+<wd>αἰζηὸς</wd> 
+<wd>ἕποιτο</wd></l>
+<l n="442">
+<wd>ἄρτον</wd> 
+<wd>δειπνήσας</wd> 
+<wd>τετράτρυφον</wd>, 
+<wd>ὀκτάβλωμον</wd>,</l>
+<l n="443">
+<wd>ὃς</wd> 
+<wd>ἔργου</wd> 
+<wd>μελετῶν</wd> 
+<wd>ἰθεῖάν</wd> 
+<wd>κ᾽</wd> 
+<wd>αὔλακ᾽</wd> 
+<wd>ἐλαύνοι</wd>,</l>
+<l n="444">
+<wd>μηκέτι</wd> 
+<wd>παπταίνων</wd> 
+<wd>μεθ᾽</wd> 
+<wd>ὁμήλικας</wd>, 
+<wd>ἀλλ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>ἔργῳ</wd></l>
+<l n="445">
+<wd>θυμὸν</wd> 
+<wd>ἔχων</wd>: 
+<wd>τοῦ</wd> 
+<wd>δ᾽</wd> 
+<wd>οὔτι</wd> 
+<wd>νεώτερος</wd> 
+<wd>ἄλλος</wd> 
+<wd>ἀμείνων</wd></l>
+<l n="446">
+<wd>σπέρματα</wd> 
+<wd>δάσσασθαι</wd> 
+<wd>καὶ</wd> 
+<wd>ἐπισπορίην</wd> 
+<wd>ἀλέασθαι</wd>.</l>
+<l n="447">
+<wd>κουρότερος</wd> 
+<wd>γὰρ</wd> 
+<wd>ἀνὴρ</wd> 
+<wd>μεθ᾽</wd> 
+<wd>ὁμήλικας</wd> 
+<wd>ἐπτοίηται</wd>.</l><milestone n="448" ed="p" unit="card"/>
+<l n="448"><milestone ed="P" unit="para"/>
+<wd>φράζεσθαι</wd> 
+<wd>δ᾽</wd>, 
+<wd>εὖτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>γεράνου</wd> 
+<wd>φωνὴν</wd> 
+<wd>ἐπακούσῃς</wd></l>
+<l n="449">
+<wd>ὑψόθεν</wd> 
+<wd>ἐκ</wd> 
+<wd>νεφέων</wd> 
+<wd>ἐνιαύσια</wd> 
+<wd>κεκληγυίης</wd>:</l>
+<l n="450">
+<wd>ἥτ᾽</wd> 
+<wd>ἀρότοιό</wd> 
+<wd>τε</wd> 
+<wd>σῆμα</wd> 
+<wd>φέρει</wd> 
+<wd>καὶ</wd> 
+<wd>χείματος</wd> 
+<wd>ὥρην</wd></l>
+<l n="451">
+<wd>δεικνύει</wd> 
+<wd>ὀμβρηροῦ</wd>: 
+<wd>κραδίην</wd> 
+<wd>δ᾽</wd> 
+<wd>ἔδακ᾽</wd> 
+<wd>ἀνδρὸς</wd> 
+<wd>ἀβούτεω</wd>:</l>
+<l n="452">
+<wd>δὴ</wd> 
+<wd>τότε</wd> 
+<wd>χορτάζειν</wd> 
+<wd>ἕλικας</wd> 
+<wd>βόας</wd> 
+<wd>ἔνδον</wd> 
+<wd>ἐόντας</wd>:</l>
+<l n="453">
+<wd>ῥηίδιον</wd> 
+<wd>γὰρ</wd> 
+<wd>ἔπος</wd> 
+<wd>εἰπεῖν</wd>: 
+<wd>βόε</wd> 
+<wd>δὸς</wd> 
+<wd>καὶ</wd> 
+<wd>ἄμαξαν</wd>:</l>
+<l n="454">
+<wd>ῥηίδιον</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀπανήνασθαι</wd>: 
+<wd>πάρα</wd> 
+<wd>ἔργα</wd> 
+<wd>βόεσσιν</wd>.</l>
+<l n="455">
+<wd>φησὶ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀνὴρ</wd> 
+<wd>φρένας</wd> 
+<wd>ἀφνειὸς</wd> 
+<wd>πήξασθαι</wd> 
+<wd>ἄμαξαν</wd>,</l>
+<l n="456">
+<wd>νήπιος</wd>, 
+<wd>οὐδὲ</wd> 
+<wd>τὸ</wd> 
+<wd>οἶδ᾽</wd>: 
+<wd>ἑκατὸν</wd> 
+<wd>δέ</wd> 
+<wd>τε</wd> 
+<wd>δούρατ᾽</wd> 
+<wd>ἀμάξης</wd>,</l>
+<l n="457">
+<wd>τῶν</wd> 
+<wd>πρόσθεν</wd> 
+<wd>μελέτην</wd> 
+<wd>ἐχέμεν</wd> 
+<wd>οἰκήια</wd> 
+<wd>θέσθαι</wd>.</l>
+<l n="458"><milestone ed="P" unit="para"/>
+<wd>εὖτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>δὲ</wd> 
+<wd>πρώτιστ᾽</wd> 
+<wd>ἄροτος</wd> 
+<wd>θνητοῖσι</wd> 
+<wd>φανείῃ</wd>,</l>
+<l n="459">
+<wd>δὴ</wd> 
+<wd>τότ᾽</wd> 
+<wd>ἐφορμηθῆναι</wd> 
+<wd>ὁμῶς</wd> 
+<wd>δμῶές</wd> 
+<wd>τε</wd> 
+<wd>καὶ</wd> 
+<wd>αὐτὸς</wd></l>
+<l n="460">
+<wd>αὔην</wd> 
+<wd>καὶ</wd> 
+<wd>διερὴν</wd> 
+<wd>ἀρόων</wd> 
+<wd>ἀρότοιο</wd> 
+<wd>καθ᾽</wd> 
+<wd>ὥρην</wd>,</l>
+<l n="461">
+<wd>πρωὶ</wd> 
+<wd>μάλα</wd> 
+<wd>σπεύδων</wd>, 
+<wd>ἵνα</wd> 
+<wd>τοι</wd> 
+<wd>πλήθωσιν</wd> 
+<wd>ἄρουραι</wd>.</l>
+<l n="462">
+<wd>ἦρι</wd> 
+<wd>πολεῖν</wd>: 
+<wd>θέρεος</wd> 
+<wd>δὲ</wd> 
+<wd>νεωμένη</wd> 
+<wd>οὔ</wd> 
+<wd>σ᾽</wd> 
+<wd>ἀπατήσει</wd>.</l>
+<l n="463">
+<wd>νειὸν</wd> 
+<wd>δὲ</wd> 
+<wd>σπείρειν</wd> 
+<wd>ἔτι</wd> 
+<wd>κουφίζουσαν</wd> 
+<wd>ἄρουραν</wd>:</l>
+<l n="464">
+<wd>νειὸς</wd> 
+<wd>ἀλεξιάρη</wd> 
+<wd>παίδων</wd> 
+<wd>εὐκηλήτειρα</wd>.</l>
+<l n="465"><milestone ed="P" unit="para"/>
+<wd>εὔχεσθαι</wd> 
+<wd>δὲ</wd> 
+<wd>Διὶ</wd> 
+<wd>χθονίῳ</wd> 
+<wd>Δημήτερί</wd> 
+<wd>θ᾽</wd> 
+<wd>ἁγνῇ</wd>,</l>
+<l n="466">
+<wd>ἐκτελέα</wd> 
+<wd>βρίθειν</wd> 
+<wd>Δημήτερος</wd> 
+<wd>ἱερὸν</wd> 
+<wd>ἀκτήν</wd>,</l>
+<l n="467">
+<wd>ἀρχόμενος</wd> 
+<wd>τὰ</wd> 
+<wd>πρῶτ᾽</wd> 
+<wd>ἀρότου</wd>, 
+<wd>ὅτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>ἄκρον</wd> 
+<wd>ἐχέτλης</wd></l>
+<l n="468">
+<wd>χειρὶ</wd> 
+<wd>λαβὼν</wd> 
+<wd>ὅρπηκα</wd> 
+<wd>βοῶν</wd> 
+<wd>ἐπὶ</wd> 
+<wd>νῶτον</wd> 
+<wd>ἵκηαι</wd></l>
+<l n="469">
+<wd>ἔνδρυον</wd> 
+<wd>ἑλκόντων</wd> 
+<wd>μεσάβων</wd>. 
+<wd>ὁ</wd> 
+<wd>δὲ</wd> 
+<wd>τυτθὸς</wd> 
+<wd>ὄπισθε</wd></l>
+<l n="470">
+<wd>δμῷος</wd> 
+<wd>ἔχων</wd> 
+<wd>μακέλην</wd> 
+<wd>πόνον</wd> 
+<wd>ὀρνίθεσσι</wd> 
+<wd>τιθείη</wd></l>
+<l n="471">
+<wd>σπέρμα</wd> 
+<wd>κατακρύπτων</wd>: 
+<wd>ἐυθημοσύνη</wd> 
+<wd>γὰρ</wd> 
+<wd>ἀρίστη</wd></l>
+<l n="472">
+<wd>θνητοῖς</wd> 
+<wd>ἀνθρώποις</wd>, 
+<wd>κακοθημοσύνη</wd> 
+<wd>δὲ</wd> 
+<wd>κακίστη</wd>.</l>
+<l n="473">
+<wd>ὧδέ</wd> 
+<wd>κεν</wd> 
+<wd>ἀδροσύνῃ</wd> 
+<wd>στάχυες</wd> 
+<wd>νεύοιεν</wd> 
+<wd>ἔραζε</wd>,</l>
+<l n="474">
+<wd>εἰ</wd> 
+<wd>τέλος</wd> 
+<wd>αὐτὸς</wd> 
+<wd>ὄπισθεν</wd> 
+<wd>Ὀλύμπιος</wd> 
+<wd>ἐσθλὸν</wd> 
+<wd>ὀπάζοι</wd>,</l>
+<l n="475">
+<wd>ἐκ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀγγέων</wd> 
+<wd>ἐλάσειας</wd> 
+<wd>ἀράχνια</wd>: 
+<wd>καί</wd> 
+<wd>σε</wd> 
+<wd>ἔολπα</wd></l>
+<l n="476">
+<wd>γηθήσειν</wd> 
+<wd>βιότου</wd> 
+<wd>αἰρεύμενον</wd> 
+<wd>ἔνδον</wd> 
+<wd>ἐόντος</wd>.</l>
+<l n="477">
+<wd>εὐοχθέων</wd> 
+<wd>δ᾽</wd> 
+<wd>ἵξεαι</wd> 
+<wd>πολιὸν</wd> 
+<wd>ἔαρ</wd>, 
+<wd>οὐδὲ</wd> 
+<wd>πρὸς</wd> 
+<wd>ἄλλους</wd></l>
+<l n="478">
+<wd>αὐγάσεαι</wd>: 
+<wd>σέο</wd> 
+<wd>δ᾽</wd> 
+<wd>ἄλλος</wd> 
+<wd>ἀνὴρ</wd> 
+<wd>κεχρημένος</wd> 
+<wd>ἔσται</wd>.</l><milestone n="479" ed="p" unit="card"/>
+<l n="479"><milestone ed="P" unit="para"/>
+<wd>εἰ</wd> 
+<wd>δέ</wd> 
+<wd>κεν</wd> 
+<wd>ἠελίοιο</wd> 
+<wd>τροπῇς</wd> 
+<wd>ἀρόῳς</wd> 
+<wd>χθόνα</wd> 
+<wd>δῖαν</wd>,</l>
+<l n="480">
+<wd>ἥμενος</wd> 
+<wd>ἀμήσεις</wd> 
+<wd>ὀλίγον</wd> 
+<wd>περὶ</wd> 
+<wd>χειρὸς</wd> 
+<wd>ἐέργων</wd>,</l>
+<l n="481">
+<wd>ἀντία</wd> 
+<wd>δεσμεύων</wd> 
+<wd>κεκονιμένος</wd>, 
+<wd>οὐ</wd> 
+<wd>μάλα</wd> 
+<wd>χαίρων</wd>,</l>
+<l n="482">
+<wd>οἴσεις</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐν</wd> 
+<wd>φορμῷ</wd>: 
+<wd>παῦροι</wd> 
+<wd>δέ</wd> 
+<wd>σε</wd> 
+<wd>θηήσονται</wd>.</l>
+<l n="483">
+<wd>ἄλλοτε</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀλλοῖος</wd> 
+<wd>Ζηνὸς</wd> 
+<wd>νόος</wd> 
+<wd>αἰγιόχοιο</wd>,</l>
+<l n="484">
+<wd>ἀργαλέος</wd> 
+<wd>δ᾽</wd> 
+<wd>ἄνδρεσσι</wd> 
+<wd>καταθνητοῖσι</wd> 
+<wd>νοῆσαι</wd>.</l>
+<l n="485">
+<wd>εἰ</wd> 
+<wd>δέ</wd> 
+<wd>κεν</wd> 
+<wd>ὄψ᾽</wd> 
+<wd>ἀρόσῃς</wd>, 
+<wd>τόδε</wd> 
+<wd>κέν</wd> 
+<wd>τοι</wd> 
+<wd>φάρμακον</wd> 
+<wd>εἴη</wd>:</l>
+<l n="486">
+<wd>ἦμος</wd> 
+<wd>κόκκυξ</wd> 
+<wd>κοκκύζει</wd> 
+<wd>δρυὸς</wd> 
+<wd>ἐν</wd> 
+<wd>πετάλοισι</wd></l>
+<l n="487">
+<wd>τὸ</wd> 
+<wd>πρῶτον</wd>, 
+<wd>τέρπει</wd> 
+<wd>δὲ</wd> 
+<wd>βροτοὺς</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>ἀπείρονα</wd> 
+<wd>γαῖαν</wd>,</l>
+<l n="488">
+<wd>τῆμος</wd> 
+<wd>Ζεὺς</wd> 
+<wd>ὕοι</wd> 
+<wd>τρίτῳ</wd> 
+<wd>ἤματι</wd> 
+<wd>μηδ᾽</wd> 
+<wd>ἀπολήγοι</wd>,</l>
+<l n="489">
+<wd>μήτ᾽</wd> 
+<wd>ἄρ᾽</wd> 
+<wd>ὑπερβάλλων</wd> 
+<wd>βοὸς</wd> 
+<wd>ὁπλὴν</wd> 
+<wd>μήτ᾽</wd> 
+<wd>ἀπολείπων</wd>:</l>
+<l n="490">
+<wd>οὕτω</wd> 
+<wd>κ᾽</wd> 
+<wd>ὀψαρότης</wd> 
+<wd>πρῳηρότῃ</wd> 
+<wd>ἰσοφαρίζοι</wd>.</l>
+<l n="491">
+<wd>ἐν</wd> 
+<wd>θυμῷ</wd> 
+<wd>δ᾽</wd> 
+<wd>εὖ</wd> 
+<wd>πάντα</wd> 
+<wd>φυλάσσεο</wd>: 
+<wd>μηδέ</wd> 
+<wd>σε</wd> 
+<wd>λήθοι</wd></l>
+<l n="492">
+<wd>μήτ᾽</wd> 
+<wd>ἔαρ</wd> 
+<wd>γιγνόμενον</wd> 
+<wd>πολιὸν</wd> 
+<wd>μήθ᾽</wd> 
+<wd>ὥριος</wd> 
+<wd>ὄμβρος</wd>.</l>
+<l n="493"><milestone ed="P" unit="para"/>
+<wd>πὰρ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἴθι</wd> 
+<wd>χάλκειον</wd> 
+<wd>θῶκον</wd> 
+<wd>καὶ</wd> 
+<wd>ἐπαλέα</wd> 
+<wd>λέσχην</wd></l>
+<l n="494">
+<wd>ὥρῃ</wd> 
+<wd>χειμερίῃ</wd>, 
+<wd>ὁπότε</wd> 
+<wd>κρύος</wd> 
+<wd>ἀνέρα</wd> 
+<wd>ἔργων</wd></l>
+<l n="495">
+<wd>ἰσχάνει</wd>, 
+<wd>ἔνθα</wd> 
+<wd>κ᾽</wd> 
+<wd>ἄοκνος</wd> 
+<wd>ἀνὴρ</wd> 
+<wd>μέγα</wd> 
+<wd>οἶκον</wd> 
+<wd>ὀφέλλοι</wd>,</l>
+<l n="496">
+<wd>μή</wd> 
+<wd>σε</wd> 
+<wd>κακοῦ</wd> 
+<wd>χειμῶνος</wd> 
+<wd>ἀμηχανίη</wd> 
+<wd>καταμάρψῃ</wd></l>
+<l n="497">
+<wd>σὺν</wd> 
+<wd>πενίῃ</wd>, 
+<wd>λεπτῇ</wd> 
+<wd>δὲ</wd> 
+<wd>παχὺν</wd> 
+<wd>πόδα</wd> 
+<wd>χειρὶ</wd> 
+<wd>πιέζῃς</wd>.</l>
+<l n="498">
+<wd>πολλὰ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀεργὸς</wd> 
+<wd>ἀνήρ</wd>, 
+<wd>κενεὴν</wd> 
+<wd>ἐπὶ</wd> 
+<wd>ἐλπίδα</wd> 
+<wd>μίμνων</wd>,</l>
+<l n="499">
+<wd>χρηίζων</wd> 
+<wd>βιότοιο</wd>, 
+<wd>κακὰ</wd> 
+<wd>προσελέξατο</wd> 
+<wd>θυμῷ</wd>.</l>
+<l n="500">
+<wd>ἐλπὶς</wd> 
+<wd>δ᾽</wd> 
+<wd>οὐκ</wd> 
+<wd>ἀγαθὴ</wd> 
+<wd>κεχρημένον</wd> 
+<wd>ἄνδρα</wd> 
+<wd>κομίζει</wd>,</l>
+<l n="501">
+<wd>ἥμενον</wd> 
+<wd>ἐν</wd> 
+<wd>λέσχῃ</wd>, 
+<wd>τῷ</wd> 
+<wd>μὴ</wd> 
+<wd>βίος</wd> 
+<wd>ἄρκιος</wd> 
+<wd>εἴη</wd>.</l>
+<l n="502"><milestone ed="P" unit="para"/>
+<wd>δείκνυε</wd> 
+<wd>δὲ</wd> 
+<wd>δμώεσσι</wd> 
+<wd>θέρευς</wd> 
+<wd>ἔτι</wd> 
+<wd>μέσσου</wd> 
+<wd>ἐόντος</wd>:</l>
+<l n="503">
+<wd>οὐκ</wd> 
+<wd>αἰεὶ</wd> 
+<wd>θέρος</wd> 
+<wd>ἐσσεῖται</wd>, 
+<wd>ποιεῖσθε</wd> 
+<wd>καλιάς</wd>.</l><milestone n="504" ed="p" unit="card"/>
+<l n="504"><milestone ed="P" unit="para"/>
+<wd>μῆνα</wd> 
+<wd>δὲ</wd> 
+<wd>Ληναιῶνα</wd>, 
+<wd>κάκ᾽</wd> 
+<wd>ἤματα</wd>, 
+<wd>βουδόρα</wd> 
+<wd>πάντα</wd>,</l>
+<l n="505">
+<wd>τοῦτον</wd> 
+<wd>ἀλεύασθαι</wd>, 
+<wd>καὶ</wd> 
+<wd>πηγάδας</wd>, 
+<wd>αἵτ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>γαῖαν</wd></l>
+<l n="506">
+<wd>πνεύσαντος</wd> 
+<wd>Βορέαο</wd> 
+<wd>δυσηλεγέες</wd> 
+<wd>τελέθουσιν</wd>,</l>
+<l n="507">
+<wd>ὅστε</wd> 
+<wd>διὰ</wd> 
+<wd>Θρῄκης</wd> 
+<wd>ἱπποτρόφου</wd> 
+<wd>εὐρέι</wd> 
+<wd>πόντῳ</wd></l>
+<l n="508">
+<wd>ἐμπνεύσας</wd> 
+<wd>ὤρινε</wd>: 
+<wd>μέμυκε</wd> 
+<wd>δὲ</wd> 
+<wd>γαῖα</wd> 
+<wd>καὶ</wd> 
+<wd>ὕλη</wd>:</l>
+<l n="509">
+<wd>πολλὰς</wd> 
+<wd>δὲ</wd> 
+<wd>δρῦς</wd> 
+<wd>ὑψικόμους</wd> 
+<wd>ἐλάτας</wd> 
+<wd>τε</wd> 
+<wd>παχείας</wd></l>
+<l n="510">
+<wd>οὔρεος</wd> 
+<wd>ἐν</wd> 
+<wd>βήσσῃς</wd> 
+<wd>πιλνᾷ</wd> 
+<wd>χθονὶ</wd> 
+<wd>πουλυβοτείρῃ</wd></l>
+<l n="511">
+<wd>ἐμπίπτων</wd>, 
+<wd>καὶ</wd> 
+<wd>πᾶσα</wd> 
+<wd>βοᾷ</wd> 
+<wd>τότε</wd> 
+<wd>νήριτος</wd> 
+<wd>ὕλη</wd>.</l>
+<l n="512">
+<wd>θῆρες</wd> 
+<wd>δὲ</wd> 
+<wd>φρίσσουσ᾽</wd>, 
+<wd>οὐρὰς</wd> 
+<wd>δ᾽</wd> 
+<wd>ὑπὸ</wd> 
+<wd>μέζε᾽</wd> 
+<wd>ἔθεντο</wd>,</l>
+<l n="513">
+<wd>τῶν</wd> 
+<wd>καὶ</wd> 
+<wd>λάχνῃ</wd> 
+<wd>δέρμα</wd> 
+<wd>κατάσκιον</wd>: 
+<wd>ἀλλά</wd> 
+<wd>νυ</wd> 
+<wd>καὶ</wd> 
+<wd>τῶν</wd></l>
+<l n="514">
+<wd>ψυχρὸς</wd> 
+<wd>ἐὼν</wd> 
+<wd>διάησι</wd> 
+<wd>δασυστέρνων</wd> 
+<wd>περ</wd> 
+<wd>ἐόντων</wd>.</l>
+<l n="515">
+<wd>καί</wd> 
+<wd>τε</wd> 
+<wd>διὰ</wd> 
+<wd>ῥινοῦ</wd> 
+<wd>βοὸς</wd> 
+<wd>ἔρχεται</wd>, 
+<wd>οὐδέ</wd> 
+<wd>μιν</wd> 
+<wd>ἴσχει</wd>:</l>
+<l n="516">
+<wd>καί</wd> 
+<wd>τε</wd> 
+<wd>δι᾽</wd> 
+<wd>αἶγα</wd> 
+<wd>ἄησι</wd> 
+<wd>τανύτριχα</wd>: 
+<wd>πώεα</wd> 
+<wd>δ᾽</wd> 
+<wd>οὔ</wd> 
+<wd>τι</wd>,</l>
+<l n="517">
+<wd>οὕνεκ᾽</wd> 
+<wd>ἐπηεταναὶ</wd> 
+<wd>τρίχες</wd> 
+<wd>αὐτῶν</wd>, 
+<wd>οὐ</wd> 
+<wd>διάησιν</wd></l>
+<l n="518">
+<wd>ἲς</wd> 
+<wd>ἀνέμου</wd> 
+<wd>Βορέου</wd>: 
+<wd>τροχαλὸν</wd> 
+<wd>δὲ</wd> 
+<wd>γέροντα</wd> 
+<wd>τίθησιν</wd>.</l>
+<l n="519">
+<wd>καὶ</wd> 
+<wd>διὰ</wd> 
+<wd>παρθενικῆς</wd> 
+<wd>ἁπαλόχροος</wd> 
+<wd>οὐ</wd> 
+<wd>διάησιν</wd>,</l>
+<l n="520">
+<wd>ἥτε</wd> 
+<wd>δόμων</wd> 
+<wd>ἔντοσθε</wd> 
+<wd>φίλῃ</wd> 
+<wd>παρὰ</wd> 
+<wd>μητέρι</wd> 
+<wd>μίμνει</wd></l>
+<l n="521">
+<wd>οὔ</wd> 
+<wd>πω</wd> 
+<wd>ἔργα</wd> 
+<wd>ἰδυῖα</wd> 
+<wd>πολυχρύσου</wd> 
+<wd>Ἀφροδίτης</wd>:</l>
+<l n="522">
+<wd>εὖ</wd> 
+<wd>τε</wd> 
+<wd>λοεσσαμένη</wd> 
+<wd>τέρενα</wd> 
+<wd>χρόα</wd> 
+<wd>καὶ</wd> 
+<wd>λίπ᾽</wd> 
+<wd>ἐλαίῳ</wd></l>
+<l n="523">
+<wd>χρισαμένη</wd> 
+<wd>μυχίη</wd> 
+<wd>καταλέξεται</wd> 
+<wd>ἔνδοθι</wd> 
+<wd>οἴκου</wd></l>
+<l n="524">
+<wd>ἤματι</wd> 
+<wd>χειμερίῳ</wd>, 
+<wd>ὅτ᾽</wd> 
+<wd>ἀνόστεος</wd> 
+<wd>ὃν</wd> 
+<wd>πόδα</wd> 
+<wd>τένδει</wd></l>
+<l n="525">
+<wd>ἔν</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀπύρῳ</wd> 
+<wd>οἴκῳ</wd> 
+<wd>καὶ</wd> 
+<wd>ἤθεσι</wd> 
+<wd>λευγαλέοισιν</wd>.</l>
+<l n="526">
+<wd>οὐδέ</wd> 
+<wd>οἱ</wd> 
+<wd>ἠέλιος</wd> 
+<wd>δείκνυ</wd> 
+<wd>νομὸν</wd> 
+<wd>ὁρμηθῆναι</wd>:</l>
+<l n="527">
+<wd>ἀλλ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>κυανέων</wd> 
+<wd>ἀνδρῶν</wd> 
+<wd>δῆμόν</wd> 
+<wd>τε</wd> 
+<wd>πόλιν</wd> 
+<wd>τε</wd></l>
+<l n="528">
+<wd>στρωφᾶται</wd>, 
+<wd>βράδιον</wd> 
+<wd>δὲ</wd> 
+<wd>Πανελλήνεσσι</wd> 
+<wd>φαείνει</wd>.</l>
+<l n="529">
+<wd>καὶ</wd> 
+<wd>τότε</wd> 
+<wd>δὴ</wd> 
+<wd>κεραοὶ</wd> 
+<wd>καὶ</wd> 
+<wd>νήκεροι</wd> 
+<wd>ὑληκοῖται</wd></l>
+<l n="530">
+<wd>λυγρὸν</wd> 
+<wd>μυλιόωντες</wd> 
+<wd>ἀνὰ</wd> 
+<wd>δρία</wd> 
+<wd>βησσήεντα</wd></l>
+<l n="531">
+<wd>φεύγουσιν</wd>: 
+<wd>καὶ</wd> 
+<wd>πᾶσιν</wd> 
+<wd>ἐνὶ</wd> 
+<wd>φρεσὶ</wd> 
+<wd>τοῦτο</wd> 
+<wd>μέμηλεν</wd>,</l>
+<l n="532">
+<wd>ὡς</wd> 
+<wd>σκέπα</wd> 
+<wd>μαιόμενοι</wd> 
+<wd>πυκινοὺς</wd> 
+<wd>κευθμῶνας</wd> 
+<wd>ἔχωσι</wd></l>
+<l n="533">
+<wd>καὶ</wd> 
+<wd>γλάφυ</wd> 
+<wd>πετρῆεν</wd>: 
+<wd>τότε</wd> 
+<wd>δὴ</wd> 
+<wd>τρίποδι</wd> 
+<wd>βροτῷ</wd> 
+<wd>ἶσοι</wd>,</l>
+<l n="534">
+<wd>οὗ</wd> 
+<wd>τ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>νῶτα</wd> 
+<wd>ἔαγε</wd>, 
+<wd>κάρη</wd> 
+<wd>δ᾽</wd> 
+<wd>εἰς</wd> 
+<wd>οὖδας</wd> 
+<wd>ὁρᾶται</wd>,</l>
+<l n="535">
+<wd>τῷ</wd> 
+<wd>ἴκελοι</wd> 
+<wd>φοιτῶσιν</wd>, 
+<wd>ἀλευόμενοι</wd> 
+<wd>νίφα</wd> 
+<wd>λευκήν</wd>.</l><milestone n="536" ed="p" unit="card"/>
+<l n="536"><milestone ed="P" unit="para"/>
+<wd>καὶ</wd> 
+<wd>τότε</wd> 
+<wd>ἕσσασθαι</wd> 
+<wd>ἔρυμα</wd> 
+<wd>χροός</wd>, 
+<wd>ὥς</wd> 
+<wd>σε</wd> 
+<wd>κελεύω</wd>,</l>
+<l n="537">
+<wd>χλαῖνάν</wd> 
+<wd>τε</wd> 
+<wd>μαλακὴν</wd> 
+<wd>καὶ</wd> 
+<wd>τερμιόεντα</wd> 
+<wd>χιτῶνα</wd>:</l>
+<l n="538">
+<wd>στήμονι</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐν</wd> 
+<wd>παύρῳ</wd> 
+<wd>πολλὴν</wd> 
+<wd>κρόκα</wd> 
+<wd>μηρύσασθαι</wd>:</l>
+<l n="539">
+<wd>τὴν</wd> 
+<wd>περιέσσασθαι</wd>, 
+<wd>ἵνα</wd> 
+<wd>τοι</wd> 
+<wd>τρίχες</wd> 
+<wd>ἀτρεμέωσι</wd>,</l>
+<l n="540">
+<wd>μηδ᾽</wd> 
+<wd>ὀρθαὶ</wd> 
+<wd>φρίσσωσιν</wd> 
+<wd>ἀειρόμεναι</wd> 
+<wd>κατὰ</wd> 
+<wd>σῶμα</wd>.</l>
+<l n="541">
+<wd>ἀμφὶ</wd> 
+<wd>δὲ</wd> 
+<wd>ποσσὶ</wd> 
+<wd>πέδιλα</wd> 
+<wd>βοὸς</wd> 
+<wd>ἶφι</wd> 
+<wd>κταμένοιο</wd></l>
+<l n="542">
+<wd>ἄρμενα</wd> 
+<wd>δήσασθαι</wd>, 
+<wd>πίλοις</wd> 
+<wd>ἔντοσθε</wd> 
+<wd>πυκάσσας</wd>.</l>
+<l n="543">
+<wd>πρωτογόνων</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐρίφων</wd>, 
+<wd>ὁπότ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>κρύος</wd> 
+<wd>ὥριον</wd> 
+<wd>ἔλθῃ</wd>,</l>
+<l n="544">
+<wd>δέρματα</wd> 
+<wd>συρράπτειν</wd> 
+<wd>νεύρῳ</wd> 
+<wd>βοός</wd>, 
+<wd>ὄφρ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>νώτῳ</wd></l>
+<l n="545">
+<wd>ὑετοῦ</wd> 
+<wd>ἀμφιβάλῃ</wd> 
+<wd>ἀλέην</wd>: 
+<wd>κεφαλῆφι</wd> 
+<wd>δ᾽</wd> 
+<wd>ὕπερθεν</wd></l>
+<l n="546">
+<wd>πῖλον</wd> 
+<wd>ἔχειν</wd> 
+<wd>ἀσκητόν</wd>, 
+<wd>ἵν᾽</wd> 
+<wd>οὔατα</wd> 
+<wd>μὴ</wd> 
+<wd>καταδεύῃ</wd>:</l>
+<l n="547">
+<wd>ψυχρὴ</wd> 
+<wd>γάρ</wd> 
+<wd>τ᾽</wd> 
+<wd>ἠὼς</wd> 
+<wd>πέλεται</wd> 
+<wd>Βορέαο</wd> 
+<wd>πεσόντος</wd></l>
+<l n="548">
+<wd>ἠώιος</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>γαῖαν</wd> 
+<wd>ἀπ᾽</wd> 
+<wd>οὐρανοῦ</wd> 
+<wd>ἀστερόεντος</wd></l>
+<l n="549">
+<wd>ἀὴρ</wd> 
+<wd>πυροφόρος</wd> 
+<wd>τέταται</wd> 
+<wd>μακάρων</wd> 
+<wd>ἐπὶ</wd> 
+<wd>ἔργοις</wd>:</l>
+<l n="550">
+<wd>ὅστε</wd> 
+<wd>ἀρυσάμενος</wd> 
+<wd>ποταμῶν</wd> 
+<wd>ἄπο</wd> 
+<wd>αἰεναόντων</wd>,</l>
+<l n="551">
+<wd>ὑψοῦ</wd> 
+<wd>ὑπὲρ</wd> 
+<wd>γαίης</wd> 
+<wd>ἀρθεὶς</wd> 
+<wd>ἀνέμοιο</wd> 
+<wd>θυέλλῃ</wd></l>
+<l n="552">
+<wd>ἄλλοτε</wd> 
+<wd>μέν</wd> 
+<wd>θ᾽</wd> 
+<wd>ὕει</wd> 
+<wd>ποτὶ</wd> 
+<wd>ἕσπερον</wd>, 
+<wd>ἄλλοτ᾽</wd> 
+<wd>ἄησι</wd></l>
+<l n="553">
+<wd>πυκνὰ</wd> 
+<wd>Θρηικίου</wd> 
+<wd>Βορέου</wd> 
+<wd>νέφεα</wd> 
+<wd>κλονέοντος</wd>.</l>
+<l n="554">
+<wd>τὸν</wd> 
+<wd>φθάμενος</wd> 
+<wd>ἔργον</wd> 
+<wd>τελέσας</wd> 
+<wd>οἶκόνδε</wd> 
+<wd>νέεσθαι</wd>,</l>
+<l n="555">
+<wd>μή</wd> 
+<wd>ποτέ</wd> 
+<wd>σ᾽</wd> 
+<wd>οὐρανόθεν</wd> 
+<wd>σκοτόεν</wd> 
+<wd>νέφος</wd> 
+<wd>ἀμφικαλύψῃ</wd>,</l>
+<l n="556">
+<wd>χρῶτα</wd> 
+<wd>δὲ</wd> 
+<wd>μυδαλέον</wd> 
+<wd>θήῃ</wd> 
+<wd>κατά</wd> 
+<wd>θ᾽</wd> 
+<wd>εἵματα</wd> 
+<wd>δεύσῃ</wd>.</l>
+<l n="557">
+<wd>ἀλλ᾽</wd> 
+<wd>ὑπαλεύασθαι</wd>: 
+<wd>μεὶς</wd> 
+<wd>γὰρ</wd> 
+<wd>χαλεπώτατος</wd> 
+<wd>οὗτος</wd>,</l>
+<l n="558">
+<wd>χειμέριος</wd>, 
+<wd>χαλεπὸς</wd> 
+<wd>προβάτοις</wd>, 
+<wd>χαλεπὸς</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀνθρώποις</wd>.</l>
+<l n="559">
+<wd>τῆμος</wd> 
+<wd>τὤμισυ</wd> 
+<wd>βουσίν</wd>, 
+<wd>ἐπ᾽</wd> 
+<wd>ἀνέρι</wd> 
+<wd>δὲ</wd> 
+<wd>πλέον</wd> 
+<wd>εἴη</wd></l>
+<l n="560">
+<wd>ἁρμαλιῆς</wd>: 
+<wd>μακραὶ</wd> 
+<wd>γὰρ</wd> 
+<wd>ἐπίρροθοι</wd> 
+<wd>εὐφρόναι</wd> 
+<wd>εἰσίν</wd>.</l>
+<l n="561">
+<wd>ταῦτα</wd> 
+<wd>φυλασσόμενος</wd> 
+<wd>τετελεσμένον</wd> 
+<wd>εἰς</wd> 
+<wd>ἐνιαυτὸν</wd></l>
+<l n="562">
+<wd>ἰσοῦσθαι</wd> 
+<wd>νύκτας</wd> 
+<wd>τε</wd> 
+<wd>καὶ</wd> 
+<wd>ἤματα</wd>, 
+<wd>εἰσόκεν</wd> 
+<wd>αὖτις</wd></l>
+<l n="563">
+<wd>γῆ</wd> 
+<wd>πάντων</wd> 
+<wd>μήτηρ</wd> 
+<wd>καρπὸν</wd> 
+<wd>σύμμικτον</wd> 
+<wd>ἐνείκῃ</wd>.</l>
+<l n="564"><milestone ed="P" unit="para"/>
+<wd>εὖτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>δ᾽</wd> 
+<wd>ἑξήκοντα</wd> 
+<wd>μετὰ</wd> 
+<wd>τροπὰς</wd> 
+<wd>ἠελίοιο</wd></l>
+<l n="565">
+<wd>χειμέρι᾽</wd> 
+<wd>ἐκτελέσῃ</wd> 
+<wd>Ζεὺς</wd> 
+<wd>ἤματα</wd>, 
+<wd>δή</wd> 
+<wd>ῥα</wd> 
+<wd>τότ᾽</wd> 
+<wd>ἀστὴρ</wd></l>
+<l n="566">
+<wd>Ἀρκτοῦρος</wd> 
+<wd>προλιπὼν</wd> 
+<wd>ἱερὸν</wd> 
+<wd>ῥόον</wd> 
+<wd>Ὠκεανοῖο</wd></l>
+<l n="567">
+<wd>πρῶτον</wd> 
+<wd>παμφαίνων</wd> 
+<wd>ἐπιτέλλεται</wd> 
+<wd>ἀκροκνέφαιος</wd>.</l>
+<l n="568">
+<wd>τὸν</wd> 
+<wd>δὲ</wd> 
+<wd>μέτ᾽</wd> 
+<wd>ὀρθογόη</wd> 
+<wd>Πανδιονὶς</wd> 
+<wd>ὦρτο</wd> 
+<wd>χελιδὼν</wd></l>
+<l n="569">
+<wd>ἐς</wd> 
+<wd>φάος</wd> 
+<wd>ἀνθρώποις</wd>, 
+<wd>ἔαρος</wd> 
+<wd>νέον</wd> 
+<wd>ἱσταμένοιο</wd>.</l>
+<l n="570">
+<wd>τὴν</wd> 
+<wd>φθάμενος</wd> 
+<wd>οἴνας</wd> 
+<wd>περταμνέμεν</wd>: 
+<wd>ὣς</wd> 
+<wd>γὰρ</wd> 
+<wd>ἄμεινον</wd>.</l><milestone n="571" ed="p" unit="card"/>
+<l n="571"><milestone ed="P" unit="para"/>
+<wd>ἀλλ᾽</wd> 
+<wd>ὁπότ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>φερέοικος</wd> 
+<wd>ἀπὸ</wd> 
+<wd>χθονὸς</wd> 
+<wd>ἂμ</wd> 
+<wd>φυτὰ</wd> 
+<wd>βαίνῃ</wd></l>
+<l n="572">
+<wd>Πληιάδας</wd> 
+<wd>φεύγων</wd>, 
+<wd>τότε</wd> 
+<wd>δὴ</wd> 
+<wd>σκάφος</wd> 
+<wd>οὐκέτι</wd> 
+<wd>οἰνέων</wd>:</l>
+<l n="573">
+<wd>ἀλλ᾽</wd> 
+<wd>ἅρπας</wd> 
+<wd>τε</wd> 
+<wd>χαρασσέμεναι</wd> 
+<wd>καὶ</wd> 
+<wd>δμῶας</wd> 
+<wd>ἐγείρειν</wd>:</l>
+<l n="574">
+<wd>φεύγειν</wd> 
+<wd>δὲ</wd> 
+<wd>σκιεροὺς</wd> 
+<wd>θώκους</wd> 
+<wd>καὶ</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>ἠόα</wd> 
+<wd>κοῖτον</wd></l>
+<l n="575">
+<wd>ὥρῃ</wd> 
+<wd>ἐν</wd> 
+<wd>ἀμήτου</wd>, 
+<wd>ὅτε</wd> 
+<wd>τ᾽</wd> 
+<wd>ἠέλιος</wd> 
+<wd>χρόα</wd> 
+<wd>κάρφει</wd>.</l>
+<l n="576">
+<wd>τημοῦτος</wd> 
+<wd>σπεύδειν</wd> 
+<wd>καὶ</wd> 
+<wd>οἴκαδε</wd> 
+<wd>καρπὸν</wd> 
+<wd>ἀγινεῖν</wd></l>
+<l n="577">
+<wd>ὄρθρου</wd> 
+<wd>ἀνιστάμενος</wd>, 
+<wd>ἵνα</wd> 
+<wd>τοι</wd> 
+<wd>βίος</wd> 
+<wd>ἄρκιος</wd> 
+<wd>εἴη</wd>.</l>
+<l n="578">
+<wd>ἠὼς</wd> 
+<wd>γὰρ</wd> 
+<wd>ἔργοιο</wd> 
+<wd>τρίτην</wd> 
+<wd>ἀπομείρεται</wd> 
+<wd>αἶσαν</wd>,</l>
+<l n="579">
+<wd>ἠώς</wd> 
+<wd>τοι</wd> 
+<wd>προφέρει</wd> 
+<wd>μὲν</wd> 
+<wd>ὁδοῦ</wd>, 
+<wd>προφέρει</wd> 
+<wd>δὲ</wd> 
+<wd>καὶ</wd> 
+<wd>ἔργου</wd>,</l>
+<l n="580">
+<wd>ἠώς</wd>, 
+<wd>ἥτε</wd> 
+<wd>φανεῖσα</wd> 
+<wd>πολέας</wd> 
+<wd>ἐπέβησε</wd> 
+<wd>κελεύθου</wd></l>
+<l n="581">
+<wd>ἀνθρώπους</wd> 
+<wd>πολλοῖσί</wd> 
+<wd>τ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>ζυγὰ</wd> 
+<wd>βουσὶ</wd> 
+<wd>τίθησιν</wd>.</l>
+<l n="582"><milestone ed="P" unit="para"/>
+<wd>ἦμος</wd> 
+<wd>δὲ</wd> 
+<wd>σκόλυμός</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀνθεῖ</wd> 
+<wd>καὶ</wd> 
+<wd>ἠχέτα</wd> 
+<wd>τέττιξ</wd></l>
+<l n="583">
+<wd>δενδρέῳ</wd> 
+<wd>ἐφεζόμενος</wd> 
+<wd>λιγυρὴν</wd> 
+<wd>καταχεύετ᾽</wd> 
+<wd>ἀοιδὴν</wd></l>
+<l n="584">
+<wd>πυκνὸν</wd> 
+<wd>ὑπὸ</wd> 
+<wd>πτερύγων</wd>, 
+<wd>θέρεος</wd> 
+<wd>καματώδεος</wd> 
+<wd>ὥρῃ</wd>,</l>
+<l n="585">
+<wd>τῆμος</wd> 
+<wd>πιόταταί</wd> 
+<wd>τ᾽</wd> 
+<wd>αἶγες</wd> 
+<wd>καὶ</wd> 
+<wd>οἶνος</wd> 
+<wd>ἄριστος</wd>,</l>
+<l n="586">
+<wd>μαχλόταται</wd> 
+<wd>δὲ</wd> 
+<wd>γυναῖκες</wd>, 
+<wd>ἀφαυρότατοι</wd> 
+<wd>δέ</wd> 
+<wd>τοι</wd> 
+<wd>ἄνδρες</wd></l>
+<l n="587">
+<wd>εἰσίν</wd>, 
+<wd>ἐπεὶ</wd> 
+<wd>κεφαλὴν</wd> 
+<wd>καὶ</wd> 
+<wd>γούνατα</wd> 
+<wd>Σείριος</wd> 
+<wd>ἄζει</wd>,</l>
+<l n="588">
+<wd>αὐαλέος</wd> 
+<wd>δέ</wd> 
+<wd>τε</wd> 
+<wd>χρὼς</wd> 
+<wd>ὑπὸ</wd> 
+<wd>καύματος</wd>: 
+<wd>ἀλλὰ</wd> 
+<wd>τότ᾽</wd> 
+<wd>ἤδη</wd></l>
+<l n="589">
+<wd>εἴη</wd> 
+<wd>πετραίη</wd> 
+<wd>τε</wd> 
+<wd>σκιὴ</wd> 
+<wd>καὶ</wd> 
+<wd>βίβλινος</wd> 
+<wd>οἶνος</wd>,</l>
+<l n="590">
+<wd>μάζα</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀμολγαίη</wd> 
+<wd>γάλα</wd> 
+<wd>τ᾽</wd> 
+<wd>αἰγῶν</wd> 
+<wd>σβεννυμενάων</wd>,</l>
+<l n="591">
+<wd>καὶ</wd> 
+<wd>βοὸς</wd> 
+<wd>ὑλοφάγοιο</wd> 
+<wd>κρέας</wd> 
+<wd>μή</wd> 
+<wd>πω</wd> 
+<wd>τετοκυίης</wd></l>
+<l n="592">
+<wd>πρωτογόνων</wd> 
+<wd>τ᾽</wd> 
+<wd>ἐρίφων</wd>: 
+<wd>ἐπὶ</wd> 
+<wd>δ᾽</wd> 
+<wd>αἴθοπα</wd> 
+<wd>πινέμεν</wd> 
+<wd>οἶνον</wd>,</l>
+<l n="593">
+<wd>ἐν</wd> 
+<wd>σκιῇ</wd> 
+<wd>ἑζόμενον</wd>, 
+<wd>κεκορημένον</wd> 
+<wd>ἦτορ</wd> 
+<wd>ἐδωδῆς</wd>,</l>
+<l n="594">
+<wd>ἀντίον</wd> 
+<wd>ἀκραέος</wd> 
+<wd>Ζεφύρου</wd> 
+<wd>τρέψαντα</wd> 
+<wd>πρόσωπα</wd>,</l>
+<l n="595">
+<wd>κρήνης</wd> 
+<wd>τ᾽</wd> 
+<wd>αἰενάου</wd> 
+<wd>καὶ</wd> 
+<wd>ἀπορρύτου</wd>, 
+<wd>ἥτ᾽</wd> 
+<wd>ἀθόλωτος</wd>,</l>
+<l n="596">
+<wd>τρὶς</wd> 
+<wd>ὕδατος</wd> 
+<wd>προχέειν</wd>, 
+<wd>τὸ</wd> 
+<wd>δὲ</wd> 
+<wd>τέτρατον</wd> 
+<wd>ἱέμεν</wd> 
+<wd>οἴνου</wd>.</l>
+<l n="597"><milestone ed="P" unit="para"/>
+<wd>δμωσὶ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐποτρύνειν</wd> 
+<wd>Δημήτερος</wd> 
+<wd>ἱερὸν</wd> 
+<wd>ἀκτὴν</wd></l>
+<l n="598">
+<wd>δινέμεν</wd>, 
+<wd>εὖτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>πρῶτα</wd> 
+<wd>φανῇ</wd> 
+<wd>σθένος</wd> 
+<wd>Ὠαρίωνος</wd>,</l>
+<l n="599">
+<wd>χώρῳ</wd> 
+<wd>ἐν</wd> 
+<wd>εὐαέι</wd> 
+<wd>καὶ</wd> 
+<wd>ἐυτροχάλῳ</wd> 
+<wd>ἐν</wd> 
+<wd>ἀλωῇ</wd>.</l>
+<l n="600">
+<wd>μέτρῳ</wd> 
+<wd>δ᾽</wd> 
+<wd>εὖ</wd> 
+<wd>κομίσασθαι</wd> 
+<wd>ἐν</wd> 
+<wd>ἄγγεσιν</wd>: 
+<wd>αὐτὰρ</wd> 
+<wd>ἐπὴν</wd> 
+<wd>δὴ</wd></l>
+<l n="601">
+<wd>πάντα</wd> 
+<wd>βίον</wd> 
+<wd>κατάθηαι</wd> 
+<wd>ἐπάρμενον</wd> 
+<wd>ἔνδοθι</wd> 
+<wd>οἴκου</wd>,</l>
+<l n="602">
+<wd>θῆτά</wd> 
+<wd>τ᾽</wd> 
+<wd>ἄοικον</wd> 
+<wd>ποιεῖσθαι</wd> 
+<wd>καὶ</wd> 
+<wd>ἄτεκνον</wd> 
+<wd>ἔριθον</wd></l>
+<l n="603">
+<wd>δίζησθαι</wd> 
+<wd>κέλομαι</wd>: 
+<wd>χαλεπὴ</wd> 
+<wd>δ᾽</wd> 
+<wd>ὑπόπορτις</wd> 
+<wd>ἔριθος</wd>:</l>
+<l n="604">
+<wd>καὶ</wd> 
+<wd>κύνα</wd> 
+<wd>καρχαρόδοντα</wd> 
+<wd>κομεῖν</wd>, 
+<wd>μὴ</wd> 
+<wd>φείδεο</wd> 
+<wd>σίτου</wd>,</l>
+<l n="605">
+<wd>μή</wd> 
+<wd>ποτέ</wd> 
+<wd>σ᾽</wd> 
+<wd>ἡμερόκοιτος</wd> 
+<wd>ἀνὴρ</wd> 
+<wd>ἀπὸ</wd> 
+<wd>χρήμαθ᾽</wd> 
+<wd>ἕληται</wd>.</l>
+<l n="606">
+<wd>χόρτον</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐσκομίσαι</wd> 
+<wd>καὶ</wd> 
+<wd>συρφετόν</wd>, 
+<wd>ὄφρα</wd> 
+<wd>τοι</wd> 
+<wd>εἴη</wd></l>
+<l n="607">
+<wd>βουσὶ</wd> 
+<wd>καὶ</wd> 
+<wd>ἡμιόνοισιν</wd> 
+<wd>ἐπηετανόν</wd>. 
+<wd>αὐτὰρ</wd> 
+<wd>ἔπειτα</wd></l>
+<l n="608">
+<wd>δμῶας</wd> 
+<wd>ἀναψῦξαι</wd> 
+<wd>φίλα</wd> 
+<wd>γούνατα</wd> 
+<wd>καὶ</wd> 
+<wd>βόε</wd> 
+<wd>λῦσαι</wd>.</l><milestone n="609" ed="p" unit="card"/>
+<l n="609"><milestone ed="P" unit="para"/>
+<wd>εὖτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>δ᾽</wd> 
+<wd>Ὠαρίων</wd> 
+<wd>καὶ</wd> 
+<wd>Σείριος</wd> 
+<wd>ἐς</wd> 
+<wd>μέσον</wd> 
+<wd>ἔλθῃ</wd></l>
+<l n="610">
+<wd>οὐρανόν</wd>, 
+<wd>Ἀρκτοῦρον</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐσίδῃ</wd> 
+<wd>ῥοδοδάκτυλος</wd> 
+<wd>Ηώς</wd>,</l>
+<l n="611">
+<wd>ὦ</wd> 
+<wd>Πέρση</wd>, 
+<wd>τότε</wd> 
+<wd>πάντας</wd> 
+<wd>ἀποδρέπεν</wd> 
+<wd>οἴκαδε</wd> 
+<wd>βότρυς</wd>:</l>
+<l n="612">
+<wd>δεῖξαι</wd> 
+<wd>δ᾽</wd> 
+<wd>ἠελίῳ</wd> 
+<wd>δέκα</wd> 
+<wd>τ᾽</wd> 
+<wd>ἤματα</wd> 
+<wd>καὶ</wd> 
+<wd>δέκα</wd> 
+<wd>νύκτας</wd>,</l>
+<l n="613">
+<wd>πέντε</wd> 
+<wd>δὲ</wd> 
+<wd>συσκιάσαι</wd>, 
+<wd>ἕκτῳ</wd> 
+<wd>δ᾽</wd> 
+<wd>εἰς</wd> 
+<wd>ἄγγε᾽</wd> 
+<wd>ἀφύσσαι</wd></l>
+<l n="614">
+<wd>δῶρα</wd> 
+<wd>Διωνύσου</wd> 
+<wd>πολυγηθέος</wd>. 
+<wd>αὐτὰρ</wd> 
+<wd>ἐπὴν</wd> 
+<wd>δὴ</wd></l>
+<l n="615">
+<wd>Πληιάδες</wd> 
+<wd>θ᾽</wd> 
+<wd>Ὑάδες</wd> 
+<wd>τε</wd> 
+<wd>τό</wd> 
+<wd>τε</wd> 
+<wd>σθένος</wd> 
+<wd>Ὠαρίωνος</wd></l>
+<l n="616">
+<wd>δύνωσιν</wd>, 
+<wd>τότ᾽</wd> 
+<wd>ἔπειτ᾽</wd> 
+<wd>ἀρότου</wd> 
+<wd>μεμνημένος</wd> 
+<wd>εἶναι</wd></l>
+<l n="617">
+<wd>ὡραίου</wd>: 
+<wd>πλειὼν</wd> 
+<wd>δὲ</wd> 
+<wd>κατὰ</wd> 
+<wd>χθονὸς</wd> 
+<wd>ἄρμενος</wd> 
+<wd>εἶσιν</wd>.</l>
+<l n="618"><milestone ed="P" unit="para"/>
+<wd>εἰ</wd> 
+<wd>δέ</wd> 
+<wd>σε</wd> 
+<wd>ναυτιλίης</wd> 
+<wd>δυσπεμφέλου</wd> 
+<wd>ἵμερος</wd> 
+<wd>αἱρεῖ</wd>,</l>
+<l n="619">
+<wd>εὖτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>Πληιάδες</wd> 
+<wd>σθένος</wd> 
+<wd>ὄβριμον</wd> 
+<wd>Ὠαρίωνος</wd></l>
+<l n="620">
+<wd>φεύγουσαι</wd> 
+<wd>πίπτωσιν</wd> 
+<wd>ἐς</wd> 
+<wd>ἠεροειδέα</wd> 
+<wd>πόντον</wd>,</l>
+<l n="621">
+<wd>δὴ</wd> 
+<wd>τότε</wd> 
+<wd>παντοίων</wd> 
+<wd>ἀνέμων</wd> 
+<wd>θυίουσιν</wd> 
+<wd>ἀῆται</wd>:</l>
+<l n="622">
+<wd>καὶ</wd> 
+<wd>τότε</wd> 
+<wd>μηκέτι</wd> 
+<wd>νῆας</wd> 
+<wd>ἔχειν</wd> 
+<wd>ἐνὶ</wd> 
+<wd>οἴνοπι</wd> 
+<wd>πόντῳ</wd>,</l>
+<l n="623">
+<wd>γῆν</wd> 
+<wd>ἐργάζεσθαι</wd> 
+<wd>μεμνημένος</wd>, 
+<wd>ὥς</wd> 
+<wd>σε</wd> 
+<wd>κελεύω</wd>.</l>
+<l n="624">
+<wd>νῆα</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>ἠπείρου</wd> 
+<wd>ἐρύσαι</wd> 
+<wd>πυκάσαι</wd> 
+<wd>τε</wd> 
+<wd>λίθοισι</wd></l>
+<l n="625">
+<wd>πάντοθεν</wd>, 
+<wd>ὄφρ᾽</wd> 
+<wd>ἴσχωσ᾽</wd> 
+<wd>ἀνέμων</wd> 
+<wd>μένος</wd> 
+<wd>ὑγρὸν</wd> 
+<wd>ἀέντων</wd>,</l>
+<l n="626">
+<wd>χείμαρον</wd> 
+<wd>ἐξερύσας</wd>, 
+<wd>ἵνα</wd> 
+<wd>μὴ</wd> 
+<wd>πύθῃ</wd> 
+<wd>Διὸς</wd> 
+<wd>ὄμβρος</wd>.</l>
+<l n="627">
+<wd>ὅπλα</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐπάρμενα</wd> 
+<wd>πάντα</wd> 
+<wd>τεῷ</wd> 
+<wd>ἐγκάτθεο</wd> 
+<wd>οἴκῳ</wd></l>
+<l n="628">
+<wd>εὐκόσμως</wd> 
+<wd>στολίσας</wd> 
+<wd>νηὸς</wd> 
+<wd>πτερὰ</wd> 
+<wd>ποντοπόροιο</wd>:</l>
+<l n="629">
+<wd>πηδάλιον</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐυεργὲς</wd> 
+<wd>ὑπὲρ</wd> 
+<wd>καπνοῦ</wd> 
+<wd>κρεμάσασθαι</wd>.</l>
+<l n="630">
+<wd>αὐτὸς</wd> 
+<wd>δ᾽</wd> 
+<wd>ὡραῖον</wd> 
+<wd>μίμνειν</wd> 
+<wd>πλόον</wd>, 
+<wd>εἰσόκεν</wd> 
+<wd>ἔλθῃ</wd>:</l>
+<l n="631">
+<wd>καὶ</wd> 
+<wd>τότε</wd> 
+<wd>νῆα</wd> 
+<wd>θοὴν</wd> 
+<wd>ἅλαδ᾽</wd> 
+<wd>ἑλκέμεν</wd>, 
+<wd>ἐν</wd> 
+<wd>δέ</wd> 
+<wd>τε</wd> 
+<wd>φόρτον</wd></l>
+<l n="632">
+<wd>ἄρμενον</wd> 
+<wd>ἐντύνασθαι</wd>, 
+<wd>ἵν᾽</wd> 
+<wd>οἴκαδε</wd> 
+<wd>κέρδος</wd> 
+<wd>ἄρηαι</wd>,</l>
+<l n="633">
+<wd>ὥς</wd> 
+<wd>περ</wd> 
+<wd>ἐμός</wd> 
+<wd>τε</wd> 
+<wd>πατὴρ</wd> 
+<wd>καὶ</wd> 
+<wd>σός</wd>, 
+<wd>μέγα</wd> 
+<wd>νήπιε</wd> 
+<wd>Πέρσῃ</wd>,</l>
+<l n="634">
+<wd>πλωίζεσκ᾽</wd> 
+<wd>ἐν</wd> 
+<wd>νηυσί</wd>, 
+<wd>βίου</wd> 
+<wd>κεχρημένος</wd> 
+<wd>ἐσθλοῦ</wd>:</l>
+<l n="635">
+<wd>ὅς</wd> 
+<wd>ποτε</wd> 
+<wd>καὶ</wd> 
+<wd>τῇδ᾽</wd> 
+<wd>ἦλθε</wd>, 
+<wd>πολὺν</wd> 
+<wd>διὰ</wd> 
+<wd>πόντον</wd> 
+<wd>ἀνύσσας</wd>,</l>
+<l n="636">
+<wd>Κύμην</wd> 
+<wd>Αἰολίδα</wd> 
+<wd>προλιπών</wd>, 
+<wd>ἐν</wd> 
+<wd>νηὶ</wd> 
+<wd>μελαίνῃ</wd>:</l>
+<l n="637">
+<wd>οὐκ</wd> 
+<wd>ἄφενος</wd> 
+<wd>φεύγων</wd> 
+<wd>οὐδὲ</wd> 
+<wd>πλοῦτόν</wd> 
+<wd>τε</wd> 
+<wd>καὶ</wd> 
+<wd>ὄλβον</wd>,</l>
+<l n="638">
+<wd>ἀλλὰ</wd> 
+<wd>κακὴν</wd> 
+<wd>πενίην</wd>, 
+<wd>τὴν</wd> 
+<wd>Ζεὺς</wd> 
+<wd>ἄνδρεσσι</wd> 
+<wd>δίδωσιν</wd>:</l>
+<l n="639">
+<wd>νάσσατο</wd> 
+<wd>δ᾽</wd> 
+<wd>ἄγχ᾽</wd> 
+<wd>Ἑλικῶνος</wd> 
+<wd>ὀιζυρῇ</wd> 
+<wd>ἐνὶ</wd> 
+<wd>κώμῃ</wd>,</l>
+<l n="640">
+<wd>Ἄσκρῃ</wd>, 
+<wd>χεῖμα</wd> 
+<wd>κακῇ</wd>, 
+<wd>θέρει</wd> 
+<wd>ἀργαλέῃ</wd>, 
+<wd>οὐδέ</wd> 
+<wd>ποτ᾽</wd> 
+<wd>ἐσθλῇ</wd>.</l><milestone n="641" ed="p" unit="card"/>
+<l n="641"><milestone ed="P" unit="para"/>
+<wd>τύνη</wd> 
+<wd>δ᾽</wd>, 
+<wd>ὦ</wd> 
+<wd>Πέρση</wd>, 
+<wd>ἔργων</wd> 
+<wd>μεμνημένος</wd> 
+<wd>εἶναι</wd></l>
+<l n="642">
+<wd>ὡραίων</wd> 
+<wd>πάντων</wd>, 
+<wd>περὶ</wd> 
+<wd>ναυτιλίης</wd> 
+<wd>δὲ</wd> 
+<wd>μάλιστα</wd>.</l>
+<l n="643">
+<wd>νῆ᾽</wd> 
+<wd>ὀλίγην</wd> 
+<wd>αἰνεῖν</wd>, 
+<wd>μεγάλῃ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐνὶ</wd> 
+<wd>φορτία</wd> 
+<wd>θέσθαι</wd>.</l>
+<l n="644">
+<wd>μείζων</wd> 
+<wd>μὲν</wd> 
+<wd>φόρτος</wd>, 
+<wd>μεῖζον</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>κέρδεϊ</wd> 
+<wd>κέρδος</wd></l>
+<l n="645">
+<wd>ἔσσεται</wd>, 
+<wd>εἴ</wd> 
+<wd>κ᾽</wd> 
+<wd>ἄνεμοί</wd> 
+<wd>γε</wd> 
+<wd>κακὰς</wd> 
+<wd>ἀπέχωσιν</wd> 
+<wd>ἀήτας</wd>.</l>
+<l n="646"><milestone ed="P" unit="para"/>
+<wd>εὖτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>ἐμπορίην</wd> 
+<wd>τρέψας</wd> 
+<wd>ἀεσίφρονα</wd> 
+<wd>θυμὸν</wd></l>
+<l n="647">
+<wd>βούληαι</wd> 
+<wd>χρέα</wd> 
+<wd>τε</wd> 
+<wd>προφυγεῖν</wd> 
+<wd>καὶ</wd> 
+<wd>λιμὸν</wd> 
+<wd>ἀτερπέα</wd>,</l>
+<l n="648">
+<wd>δείξω</wd> 
+<wd>δή</wd> 
+<wd>τοι</wd> 
+<wd>μέτρα</wd> 
+<wd>πολυφλοίσβοιο</wd> 
+<wd>θαλάσσης</wd>,</l>
+<l n="649">
+<wd>οὔτε</wd> 
+<wd>τι</wd> 
+<wd>ναυτιλίης</wd> 
+<wd>σεσοφισμένος</wd> 
+<wd>οὔτε</wd> 
+<wd>τι</wd> 
+<wd>νηῶν</wd>.</l>
+<l n="650">
+<wd>οὐ</wd> 
+<wd>γάρ</wd> 
+<wd>πώ</wd> 
+<wd>ποτε</wd> 
+<wd>νηί</wd> 
+<wd>γ᾽</wd> 
+<wd>ἐπέπλων</wd> 
+<wd>εὐρέα</wd> 
+<wd>πόντον</wd>,</l>
+<l n="651">
+<wd>εἰ</wd> 
+<wd>μὴ</wd> 
+<wd>ἐς</wd> 
+<wd>Εὔβοιαν</wd> 
+<wd>ἐξ</wd> 
+<wd>Αὐλίδος</wd>, 
+<wd>ᾗ</wd> 
+<wd>ποτ᾽</wd> 
+<wd>Ἀχαιοὶ</wd></l>
+<l n="652">
+<wd>μείναντες</wd> 
+<wd>χειμῶνα</wd> 
+<wd>πολὺν</wd> 
+<wd>σὺν</wd> 
+<wd>λαὸν</wd> 
+<wd>ἄγειραν</wd></l>
+<l n="653">
+<wd>Ἑλλάδος</wd> 
+<wd>ἐξ</wd> 
+<wd>ἱερῆς</wd> 
+<wd>Τροίην</wd> 
+<wd>ἐς</wd> 
+<wd>καλλιγύναικα</wd>.</l>
+<l n="654">
+<wd>ἔνθα</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐγὼν</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>ἄεθλα</wd> 
+<wd>δαΐφρονος</wd> 
+<wd>Ἀμφιδάμαντος</wd></l>
+<l n="655">
+<wd>Χαλκίδα</wd> 
+<wd>τ᾽</wd> 
+<wd>εἲς</wd> 
+<wd>ἐπέρησα</wd>: 
+<wd>τὰ</wd> 
+<wd>δὲ</wd> 
+<wd>προπεφραδμένα</wd> 
+<wd>πολλὰ</wd></l>
+<l n="656">
+<wd>ἄεθλ᾽</wd> 
+<wd>ἔθεσαν</wd> 
+<wd>παῖδες</wd> 
+<wd>μεγαλήτορος</wd>: 
+<wd>ἔνθα</wd> 
+<wd>μέ</wd> 
+<wd>φημι</wd></l>
+<l n="657">
+<wd>ὕμνῳ</wd> 
+<wd>νικήσαντα</wd> 
+<wd>φέρειν</wd> 
+<wd>τρίποδ᾽</wd> 
+<wd>ὠτώεντα</wd>.</l>
+<l n="658">
+<wd>τὸν</wd> 
+<wd>μὲν</wd> 
+<wd>ἐγὼ</wd> 
+<wd>Μούσῃς</wd> 
+<wd>Ἑλικωνιάδεσσ᾽</wd> 
+<wd>ἀνέθηκα</wd>,</l>
+<l n="659">
+<wd>ἔνθα</wd> 
+<wd>με</wd> 
+<wd>τὸ</wd> 
+<wd>πρῶτον</wd> 
+<wd>λιγυρῆς</wd> 
+<wd>ἐπέβησαν</wd> 
+<wd>ἀοιδῆς</wd>.</l>
+<l n="660">
+<wd>τόσσον</wd> 
+<wd>τοι</wd> 
+<wd>νηῶν</wd> 
+<wd>γε</wd> 
+<wd>πεπείρημαι</wd> 
+<wd>πολυγόμφων</wd>:</l>
+<l n="661">
+<wd>ἀλλὰ</wd> 
+<wd>καὶ</wd> 
+<wd>ὣς</wd> 
+<wd>ἐρέω</wd> 
+<wd>Ζηνὸς</wd> 
+<wd>νόον</wd> 
+<wd>αἰγιόχοιο</wd>:</l>
+<l n="662">
+<wd>Μοῦσαι</wd> 
+<wd>γάρ</wd> 
+<wd>μ᾽</wd> 
+<wd>ἐδίδαξαν</wd> 
+<wd>ἀθέσφατον</wd> 
+<wd>ὕμνον</wd> 
+<wd>ἀείδειν</wd>.</l>
+<l n="663"><milestone ed="P" unit="para"/>
+<wd>ἤματα</wd> 
+<wd>πεντήκοντα</wd> 
+<wd>μετὰ</wd> 
+<wd>τροπὰς</wd> 
+<wd>ἠελίοιο</wd>,</l>
+<l n="664">
+<wd>ἐς</wd> 
+<wd>τέλος</wd> 
+<wd>ἐλθόντος</wd> 
+<wd>θέρεος</wd> 
+<wd>καματώδεος</wd> 
+<wd>ὥρης</wd>,</l>
+<l n="665">
+<wd>ὡραῖος</wd> 
+<wd>πέλεται</wd> 
+<wd>θνητοῖς</wd> 
+<wd>πλόος</wd>: 
+<wd>οὔτε</wd> 
+<wd>κε</wd> 
+<wd>νῆα</wd></l>
+<l n="666">
+<wd>καυάξαις</wd> 
+<wd>οὔτ᾽</wd> 
+<wd>ἄνδρας</wd> 
+<wd>ἀποφθείσειε</wd> 
+<wd>θάλασσα</wd>,</l>
+<l n="667">
+<wd>εἰ</wd> 
+<wd>δὴ</wd> 
+<wd>μὴ</wd> 
+<wd>πρόφρων</wd> 
+<wd>γε</wd> 
+<wd>Ποσειδάων</wd> 
+<wd>ἐνοσίχθων</wd></l>
+<l n="668">
+<wd>ἢ</wd> 
+<wd>Ζεὺς</wd> 
+<wd>ἀθανάτων</wd> 
+<wd>βασιλεὺς</wd> 
+<wd>ἐθέλῃσιν</wd> 
+<wd>ὀλέσσαι</wd>:</l>
+<l n="669">
+<wd>ἐν</wd> 
+<wd>τοῖς</wd> 
+<wd>γὰρ</wd> 
+<wd>τέλος</wd> 
+<wd>ἐστὶν</wd> 
+<wd>ὁμῶς</wd> 
+<wd>ἀγαθῶν</wd> 
+<wd>τε</wd> 
+<wd>κακῶν</wd> 
+<wd>τε</wd>.</l>
+<l n="670">
+<wd>τῆμος</wd> 
+<wd>δ᾽</wd> 
+<wd>εὐκρινέες</wd> 
+<wd>τ᾽</wd> 
+<wd>αὖραι</wd> 
+<wd>καὶ</wd> 
+<wd>πόντος</wd> 
+<wd>ἀπήμων</wd>:</l>
+<l n="671">
+<wd>εὔκηλος</wd> 
+<wd>τότε</wd> 
+<wd>νῆα</wd> 
+<wd>θοὴν</wd> 
+<wd>ἀνέμοισι</wd> 
+<wd>πιθήσας</wd></l>
+<l n="672">
+<wd>ἑλκέμεν</wd> 
+<wd>ἐς</wd> 
+<wd>πόντον</wd> 
+<wd>φόρτον</wd> 
+<wd>τ᾽</wd> 
+<wd>ἐς</wd> 
+<wd>πάντα</wd> 
+<wd>τίθεσθαι</wd>,</l>
+<l n="673">
+<wd>σπεύδειν</wd> 
+<wd>δ᾽</wd> 
+<wd>ὅττι</wd> 
+<wd>τάχιστα</wd> 
+<wd>πάλιν</wd> 
+<wd>οἶκόνδε</wd> 
+<wd>νέεσθαι</wd>:</l>
+<l n="674">
+<wd>μηδὲ</wd> 
+<wd>μένειν</wd> 
+<wd>οἶνόν</wd> 
+<wd>τε</wd> 
+<wd>νέον</wd> 
+<wd>καὶ</wd> 
+<wd>ὀπωρινὸν</wd> 
+<wd>ὄμβρον</wd></l>
+<l n="675">
+<wd>καὶ</wd> 
+<wd>χειμῶν᾽</wd> 
+<wd>ἐπιόντα</wd> 
+<wd>Νότοιό</wd> 
+<wd>τε</wd> 
+<wd>δεινὰς</wd> 
+<wd>ἀήτας</wd>,</l>
+<l n="676">
+<wd>ὅστ᾽</wd> 
+<wd>ὤρινε</wd> 
+<wd>θάλασσαν</wd> 
+<wd>ὁμαρτήσας</wd> 
+<wd>Διὸς</wd> 
+<wd>ὄμβρῳ</wd></l>
+<l n="677">
+<wd>πολλῷ</wd> 
+<wd>ὀπωρινῷ</wd>, 
+<wd>χαλεπὸν</wd> 
+<wd>δέ</wd> 
+<wd>τε</wd> 
+<wd>πόντον</wd> 
+<wd>ἔθηκεν</wd>.</l><milestone n="678" ed="p" unit="card"/>
+<l n="678"><milestone ed="P" unit="para"/>
+<wd>ἄλλος</wd> 
+<wd>δ᾽</wd> 
+<wd>εἰαρινὸς</wd> 
+<wd>πέλεται</wd> 
+<wd>πλόος</wd> 
+<wd>ἀνθρώποισιν</wd>:</l>
+<l n="679">
+<wd>ἦμος</wd> 
+<wd>δὴ</wd> 
+<wd>τὸ</wd> 
+<wd>πρῶτον</wd>, 
+<wd>ὅσον</wd> 
+<wd>τ᾽</wd> 
+<wd>ἐπιβᾶσα</wd> 
+<wd>κορώνη</wd></l>
+<l n="680">
+<wd>ἴχνος</wd> 
+<wd>ἐποίησεν</wd>, 
+<wd>τόσσον</wd> 
+<wd>πέταλ᾽</wd> 
+<wd>ἀνδρὶ</wd> 
+<wd>φανείῃ</wd></l>
+<l n="681">
+<wd>ἐν</wd> 
+<wd>κράδῃ</wd> 
+<wd>ἀκροτάτῃ</wd>, 
+<wd>τότε</wd> 
+<wd>δ᾽</wd> 
+<wd>ἄμβατός</wd> 
+<wd>ἐστι</wd> 
+<wd>θάλασσα</wd>:</l>
+<l n="682">
+<wd>εἰαρινὸς</wd> 
+<wd>δ᾽</wd> 
+<wd>οὗτος</wd> 
+<wd>πέλεται</wd> 
+<wd>πλόος</wd>. 
+<wd>οὔ</wd> 
+<wd>μιν</wd> 
+<wd>ἔγωγε</wd></l>
+<l n="683">
+<wd>αἴνημ᾽</wd>: 
+<wd>οὐ</wd> 
+<wd>γὰρ</wd> 
+<wd>ἐμῷ</wd> 
+<wd>θυμῷ</wd> 
+<wd>κεχαρισμένος</wd> 
+<wd>ἐστίν</wd>:</l>
+<l n="684">
+<wd>ἁρπακτός</wd>: 
+<wd>χαλεπῶς</wd> 
+<wd>κε</wd> 
+<wd>φύγοις</wd> 
+<wd>κακόν</wd>: 
+<wd>ἀλλά</wd> 
+<wd>νυ</wd> 
+<wd>καὶ</wd> 
+<wd>τὰ</wd></l>
+<l n="685">
+<wd>ἄνθρωποι</wd> 
+<wd>ῥέζουσιν</wd> 
+<wd>ἀιδρείῃσι</wd> 
+<wd>νόοιο</wd>:</l>
+<l n="686">
+<wd>χρήματα</wd> 
+<wd>γὰρ</wd> 
+<wd>ψυχὴ</wd> 
+<wd>πέλεται</wd> 
+<wd>δειλοῖσι</wd> 
+<wd>βροτοῖσιν</wd>.</l>
+<l n="687">
+<wd>δεινὸν</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐστὶ</wd> 
+<wd>θανεῖν</wd> 
+<wd>μετὰ</wd> 
+<wd>κύμασιν</wd>. 
+<wd>ἀλλά</wd> 
+<wd>σ᾽</wd> 
+<wd>ἄνωγα</wd></l>
+<l n="688">
+<wd>φράζεσθαι</wd> 
+<wd>τάδε</wd> 
+<wd>πάντα</wd> 
+<wd>μετὰ</wd> 
+<wd>φρεσίν</wd>, 
+<wd>ὡς</wd> 
+<wd>ἀγορεύω</wd>.</l>
+<l n="689">
+<wd>μηδ᾽</wd> 
+<wd>ἐν</wd> 
+<wd>νηυσὶν</wd> 
+<wd>ἅπαντα</wd> 
+<wd>βίον</wd> 
+<wd>κοΐλῃσι</wd> 
+<wd>τίθεσθαι</wd>:</l>
+<l n="690">
+<wd>ἀλλὰ</wd> 
+<wd>πλέω</wd> 
+<wd>λείπειν</wd>, 
+<wd>τὰ</wd> 
+<wd>δὲ</wd> 
+<wd>μείονα</wd> 
+<wd>φορτίζεσθαι</wd>.</l>
+<l n="691">
+<wd>δεινὸν</wd> 
+<wd>γὰρ</wd> 
+<wd>πόντου</wd> 
+<wd>μετὰ</wd> 
+<wd>κύμασι</wd> 
+<wd>πήματι</wd> 
+<wd>κύρσαι</wd>.</l>
+<l n="692">
+<wd>δεινὸν</wd> 
+<wd>δ᾽</wd>, 
+<wd>εἴ</wd> 
+<wd>κ᾽</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>ἄμαξαν</wd> 
+<wd>ὑπέρβιον</wd> 
+<wd>ἄχθος</wd> 
+<wd>ἀείρας</wd></l>
+<l n="693">
+<wd>ἄξονα</wd>. 
+<wd>καυάξαις</wd> 
+<wd>καὶ</wd> 
+<wd>φορτία</wd> 
+<wd>μαυρωθείη</wd>.</l>
+<l n="694">
+<wd>μέτρα</wd> 
+<wd>φυλάσσεσθαι</wd>: 
+<wd>καιρὸς</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>πᾶσιν</wd> 
+<wd>ἄριστος</wd>.</l>
+<l n="695"><milestone ed="P" unit="para"/>
+<wd>ὡραῖος</wd> 
+<wd>δὲ</wd> 
+<wd>γυναῖκα</wd> 
+<wd>τεὸν</wd> 
+<wd>ποτὶ</wd> 
+<wd>οἶκον</wd> 
+<wd>ἄγεσθαι</wd>,</l>
+<l n="696">
+<wd>μήτε</wd> 
+<wd>τριηκόντων</wd> 
+<wd>ἐτέων</wd> 
+<wd>μάλα</wd> 
+<wd>πόλλ᾽</wd> 
+<wd>ἀπολείπων</wd></l>
+<l n="697">
+<wd>μήτ᾽</wd> 
+<wd>ἐπιθεὶς</wd> 
+<wd>μάλα</wd> 
+<wd>πολλά</wd>: 
+<wd>γάμος</wd> 
+<wd>δέ</wd> 
+<wd>τοι</wd> 
+<wd>ὥριος</wd> 
+<wd>οὗτος</wd>:</l>
+<l n="698">
+<wd>ἡ</wd> 
+<wd>δὲ</wd> 
+<wd>γυνὴ</wd> 
+<wd>τέτορ᾽</wd> 
+<wd>ἡβώοι</wd>, 
+<wd>πέμπτῳ</wd> 
+<wd>δὲ</wd> 
+<wd>γαμοῖτο</wd>.</l>
+<l n="699">
+<wd>παρθενικὴν</wd> 
+<wd>δὲ</wd> 
+<wd>γαμεῖν</wd>, 
+<wd>ὥς</wd> 
+<wd>κ᾽</wd> 
+<wd>ἤθεα</wd> 
+<wd>κεδνὰ</wd> 
+<wd>διδάξῃς</wd>.</l>
+<l n="700">
+<wd>τὴν</wd> 
+<wd>δὲ</wd> 
+<wd>μάλιστα</wd> 
+<wd>γαμεῖν</wd>, 
+<wd>ἥ</wd> 
+<wd>τις</wd> 
+<wd>σέθεν</wd> 
+<wd>ἐγγύθι</wd> 
+<wd>ναίει</wd>,</l>
+<l n="701">
+<wd>πάντα</wd> 
+<wd>μάλ᾽</wd> 
+<wd>ἀμφιιδών</wd>, 
+<wd>μὴ</wd> 
+<wd>γείτοσι</wd> 
+<wd>χάρματα</wd> 
+<wd>γήμῃς</wd>.</l>
+<l n="702">
+<wd>οὐ</wd> 
+<wd>μὲν</wd> 
+<wd>γάρ</wd> 
+<wd>τι</wd> 
+<wd>γυναικὸς</wd> 
+<wd>ἀνὴρ</wd> 
+<wd>ληίζετ᾽</wd> 
+<wd>ἄμεινον</wd></l>
+<l n="703">
+<wd>τῆς</wd> 
+<wd>ἀγαθῆς</wd>, 
+<wd>τῆς</wd> 
+<wd>δ᾽</wd> 
+<wd>αὖτε</wd> 
+<wd>κακῆς</wd> 
+<wd>οὐ</wd> 
+<wd>ῥίγιον</wd> 
+<wd>ἄλλο</wd>,</l>
+<l n="704">
+<wd>δειπνολόχης</wd>: 
+<wd>ἥτ᾽</wd> 
+<wd>ἄνδρα</wd> 
+<wd>καὶ</wd> 
+<wd>ἴφθιμόν</wd> 
+<wd>περ</wd> 
+<wd>ἐόντα</wd></l>
+<l n="705">
+<wd>εὕει</wd> 
+<wd>ἄτερ</wd> 
+<wd>δαλοῖο</wd> 
+<wd>καὶ</wd> 
+<wd>ὠμῷ</wd> 
+<wd>γήραϊ</wd> 
+<wd>δῶκεν</wd>.</l><milestone n="706" ed="p" unit="card"/>
+<l n="706"><milestone ed="P" unit="para"/>
+<wd>εὖ</wd> 
+<wd>δ᾽</wd> 
+<wd>ὄπιν</wd> 
+<wd>ἀθανάτων</wd> 
+<wd>μακάρων</wd> 
+<wd>πεφυλαγμένος</wd> 
+<wd>εἶναι</wd>.</l>
+<l n="707">
+<wd>μηδὲ</wd> 
+<wd>κασιγνήτῳ</wd> 
+<wd>ἶσον</wd> 
+<wd>ποιεῖσθαι</wd> 
+<wd>ἑταῖρον</wd>:</l>
+<l n="708">
+<wd>εἰ</wd> 
+<wd>δέ</wd> 
+<wd>κε</wd> 
+<wd>ποιήσῃς</wd>, 
+<wd>μή</wd> 
+<wd>μιν</wd> 
+<wd>πρότερος</wd> 
+<wd>κακὸν</wd> 
+<wd>ἔρξῃς</wd>.</l>
+<l n="709">
+<wd>μηδὲ</wd> 
+<wd>ψεύδεσθαι</wd> 
+<wd>γλώσσης</wd> 
+<wd>χάριν</wd>: 
+<wd>εἰ</wd> 
+<wd>δὲ</wd> 
+<wd>σέ</wd> 
+<wd>γ᾽</wd> 
+<wd>ἄρχῃ</wd></l>
+<l n="710">
+<wd>ἤ</wd> 
+<wd>τι</wd> 
+<wd>ἔπος</wd> 
+<wd>εἰπὼν</wd> 
+<wd>ἀποθύμιον</wd> 
+<wd>ἠὲ</wd> 
+<wd>καὶ</wd> 
+<wd>ἔρξας</wd>,</l>
+<l n="711">
+<wd>δὶς</wd> 
+<wd>τόσα</wd> 
+<wd>τίνυσθαι</wd> 
+<wd>μεμνημένος</wd>: 
+<wd>εἰ</wd> 
+<wd>δὲ</wd> 
+<wd>σέ</wd> 
+<wd>γ᾽</wd> 
+<wd>αὖτις</wd></l>
+<l n="712">
+<wd>ἡγῆτ᾽</wd> 
+<wd>ἐς</wd> 
+<wd>φιλότητα</wd>, 
+<wd>δίκην</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐθέλῃσι</wd> 
+<wd>παρασχεῖν</wd>,</l>
+<l n="713">
+<wd>δέξασθαι</wd>: 
+<wd>δειλός</wd> 
+<wd>τοι</wd> 
+<wd>ἀνὴρ</wd> 
+<wd>φίλον</wd> 
+<wd>ἄλλοτε</wd> 
+<wd>ἄλλον</wd></l>
+<l n="714">
+<wd>ποιεῖται</wd>, 
+<wd>σὲ</wd> 
+<wd>δὲ</wd> 
+<wd>μή</wd> 
+<wd>τι</wd> 
+<wd>νόον</wd> 
+<wd>κατελεγχέτω</wd> 
+<wd>εἶδος</wd>.</l>
+<l n="715"><milestone ed="P" unit="para"/>
+<wd>μηδὲ</wd> 
+<wd>πολύξεινον</wd> 
+<wd>μηδ᾽</wd> 
+<wd>ἄξεινον</wd> 
+<wd>καλέεσθαι</wd>,</l>
+<l n="716">
+<wd>μηδὲ</wd> 
+<wd>κακῶν</wd> 
+<wd>ἕταρον</wd> 
+<wd>μηδ᾽</wd> 
+<wd>ἐσθλῶν</wd> 
+<wd>νεικεστῆρα</wd>.</l>
+<l n="717"><milestone ed="P" unit="para"/>
+<wd>μηδέ</wd> 
+<wd>ποτ᾽</wd> 
+<wd>οὐλομένην</wd> 
+<wd>πενίην</wd> 
+<wd>θυμοφθόρον</wd> 
+<wd>ἀνδρὶ</wd></l>
+<l n="718">
+<wd>τέτλαθ᾽</wd> 
+<wd>ὀνειδίζειν</wd>, 
+<wd>μακάρων</wd> 
+<wd>δόσιν</wd> 
+<wd>αἰὲν</wd> 
+<wd>ἐόντων</wd>.</l>
+<l n="719">
+<wd>γλώσσης</wd> 
+<wd>τοι</wd> 
+<wd>θησαυρὸς</wd> 
+<wd>ἐν</wd> 
+<wd>ἀνθρώποισιν</wd> 
+<wd>ἄριστος</wd></l>
+<l n="720">
+<wd>φειδωλῆς</wd>, 
+<wd>πλείστη</wd> 
+<wd>δὲ</wd> 
+<wd>χάρις</wd> 
+<wd>κατὰ</wd> 
+<wd>μέτρον</wd> 
+<wd>ἰούσης</wd>.</l>
+<l n="721">
+<wd>εἰ</wd> 
+<wd>δὲ</wd> 
+<wd>κακὸν</wd> 
+<wd>εἴποις</wd>, 
+<wd>τάχα</wd> 
+<wd>κ᾽</wd> 
+<wd>αὐτὸς</wd> 
+<wd>μεῖζον</wd> 
+<wd>ἀκούσαις</wd>.</l>
+<l n="722"><milestone ed="P" unit="para"/>
+<wd>μηδὲ</wd> 
+<wd>πολυξείνου</wd> 
+<wd>δαιτὸς</wd> 
+<wd>δυσπέμφελος</wd> 
+<wd>εἶναι</wd></l>
+<l n="723">
+<wd>ἐκ</wd> 
+<wd>κοινοῦ</wd>: 
+<wd>πλείστη</wd> 
+<wd>δὲ</wd> 
+<wd>χάρις</wd>, 
+<wd>δαπάνη</wd> 
+<wd>τ᾽</wd> 
+<wd>ὀλιγίστη</wd>.</l>
+<l n="724"><milestone ed="P" unit="para"/>
+<wd>μηδέ</wd> 
+<wd>ποτ᾽</wd> 
+<wd>ἐξ</wd> 
+<wd>ἠοῦς</wd> 
+<wd>Διὶ</wd> 
+<wd>λειβέμεν</wd> 
+<wd>αἴθοπα</wd> 
+<wd>οἶνον</wd></l>
+<l n="725">
+<wd>χερσὶν</wd> 
+<wd>ἀνίπτοισιν</wd> 
+<wd>μηδ᾽</wd> 
+<wd>ἄλλοις</wd> 
+<wd>ἀθανάτοισιν</wd>:</l>
+<l n="726">
+<wd>οὐ</wd> 
+<wd>γὰρ</wd> 
+<wd>τοί</wd> 
+<wd>γε</wd> 
+<wd>κλύουσιν</wd>, 
+<wd>ἀποπτύουσι</wd> 
+<wd>δέ</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀράς</wd>.</l>
+<l n="727"><milestone ed="P" unit="para"/>
+<wd>μηδ᾽</wd> 
+<wd>ἄντ᾽</wd> 
+<wd>ἠελίου</wd> 
+<wd>τετραμμένος</wd> 
+<wd>ὀρθὸς</wd> 
+<wd>ὀμιχεῖν</wd>:</l>
+<l n="728">
+<wd>αὐτὰρ</wd> 
+<wd>ἐπεί</wd> 
+<wd>κε</wd> 
+<wd>δύῃ</wd>, 
+<wd>μεμνημένος</wd>, 
+<wd>ἔς</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀνιόντα</wd>:</l>
+<l n="729">
+<wd>μήτ᾽</wd> 
+<wd>ἐν</wd> 
+<wd>ὁδῷ</wd> 
+<wd>μήτ᾽</wd> 
+<wd>ἐκτὸς</wd> 
+<wd>ὁδοῦ</wd> 
+<wd>προβάδην</wd> 
+<wd>οὐρήσῃς</wd></l>
+<l n="730">
+<wd>μηδ᾽</wd> 
+<wd>ἀπογυμνωθείς</wd>: 
+<wd>μακάρων</wd> 
+<wd>τοι</wd> 
+<wd>νύκτες</wd> 
+<wd>ἔασιν</wd>:</l>
+<l n="731">
+<wd>ἑζόμενος</wd> 
+<wd>δ᾽</wd> 
+<wd>ὅ</wd> 
+<wd>γε</wd> 
+<wd>θεῖος</wd> 
+<wd>ἀνήρ</wd>, 
+<wd>πεπνυμένα</wd> 
+<wd>εἰδώς</wd>,</l>
+<l n="732">
+<wd>ἢ</wd> 
+<wd>ὅ</wd> 
+<wd>γε</wd> 
+<wd>πρὸς</wd> 
+<wd>τοῖχον</wd> 
+<wd>πελάσας</wd> 
+<wd>ἐυερκέος</wd> 
+<wd>αὐλῆς</wd>.</l>
+<l n="733"><milestone ed="P" unit="para"/>
+<wd>μηδ᾽</wd> 
+<wd>αἰδοῖα</wd> 
+<wd>γονῇ</wd> 
+<wd>πεπαλαγμένος</wd> 
+<wd>ἔνδοθι</wd> 
+<wd>οἴκου</wd></l>
+<l n="734">
+<wd>ἱστίῃ</wd> 
+<wd>ἐμπελαδὸν</wd> 
+<wd>παραφαινέμεν</wd>, 
+<wd>ἀλλ᾽</wd> 
+<wd>ἀλέασθαι</wd>.</l>
+<l n="735">
+<wd>μηδ᾽</wd> 
+<wd>ἀπὸ</wd> 
+<wd>δυσφήμοιο</wd> 
+<wd>τάφου</wd> 
+<wd>ἀπονοστήσαντα</wd></l>
+<l n="736">
+<wd>σπερμαίνειν</wd> 
+<wd>γενεήν</wd>, 
+<wd>ἀλλ᾽</wd> 
+<wd>ἀθανάτων</wd> 
+<wd>ἀπὸ</wd> 
+<wd>δαιτός</wd>.</l><milestone n="737" ed="p" unit="card"/>
+<l n="737"><milestone ed="P" unit="para"/>
+<wd>μηδέ</wd> 
+<wd>ποτ᾽</wd> 
+<wd>αἰενάων</wd> 
+<wd>ποταμῶν</wd> 
+<wd>καλλίρροον</wd> 
+<wd>ὕδωρ</wd></l>
+<l n="738">
+<wd>ποσσὶ</wd> 
+<wd>περᾶν</wd>, 
+<wd>πρίν</wd> 
+<wd>γ᾽</wd> 
+<wd>εὔξῃ</wd> 
+<wd>ἰδὼν</wd> 
+<wd>ἐς</wd> 
+<wd>καλὰ</wd> 
+<wd>ῥέεθρα</wd>,</l>
+<l n="739">
+<wd>χεῖρας</wd> 
+<wd>νιψάμενος</wd> 
+<wd>πολυηράτῳ</wd> 
+<wd>ὕδατι</wd> 
+<wd>λευκῷ</wd>.</l>
+<l n="740">
+<wd>ὃς</wd> 
+<wd>ποταμὸν</wd> 
+<wd>διαβῇ</wd> 
+<wd>κακότητ᾽</wd> 
+<wd>ἰδὲ</wd> 
+<wd>χεῖρας</wd> 
+<wd>ἄνιπτος</wd>,</l>
+<l n="741">
+<wd>τῷ</wd> 
+<wd>δὲ</wd> 
+<wd>θεοὶ</wd> 
+<wd>νεμεσῶσι</wd> 
+<wd>καὶ</wd> 
+<wd>ἄλγεα</wd> 
+<wd>δῶκαν</wd> 
+<wd>ὀπίσσω</wd>.</l>
+<l n="742"><milestone ed="P" unit="para"/>
+<wd>μηδ᾽</wd> 
+<wd>ἀπὸ</wd> 
+<wd>πεντόζοιο</wd> 
+<wd>θεῶν</wd> 
+<wd>ἐν</wd> 
+<wd>δαιτὶ</wd> 
+<wd>θαλείῃ</wd></l>
+<l n="743">
+<wd>αὖον</wd> 
+<wd>ἀπὸ</wd> 
+<wd>χλωροῦ</wd> 
+<wd>τάμνειν</wd> 
+<wd>αἴθωνι</wd> 
+<wd>σιδήρῳ</wd>.</l>
+<l n="744"><milestone ed="P" unit="para"/>
+<wd>μηδέ</wd> 
+<wd>ποτ᾽</wd> 
+<wd>οἰνοχόην</wd> 
+<wd>τιθέμεν</wd> 
+<wd>κρητῆρος</wd> 
+<wd>ὕπερθε</wd></l>
+<l n="745">
+<wd>πινόντων</wd>: 
+<wd>ὀλοὴ</wd> 
+<wd>γὰρ</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>αὐτῷ</wd> 
+<wd>μοῖρα</wd> 
+<wd>τέτυκται</wd>.</l>
+<l n="746"><milestone ed="P" unit="para"/>
+<wd>μηδὲ</wd> 
+<wd>δόμον</wd> 
+<wd>ποιῶν</wd> 
+<wd>ἀνεπίξεστον</wd> 
+<wd>καταλείπειν</wd>,</l>
+<l n="747">
+<wd>μή</wd> 
+<wd>τοι</wd> 
+<wd>ἐφεζομένη</wd> 
+<wd>κρώξῃ</wd> 
+<wd>λακέρυζα</wd> 
+<wd>κορώνη</wd>.</l>
+<l n="748"><milestone ed="P" unit="para"/>
+<wd>μηδ᾽</wd> 
+<wd>ἀπὸ</wd> 
+<wd>χυτροπόδων</wd> 
+<wd>ἀνεπιρρέκτων</wd> 
+<wd>ἀνελόντα</wd></l>
+<l n="749">
+<wd>ἔσθειν</wd> 
+<wd>μηδὲ</wd> 
+<wd>λόεσθαι</wd>: 
+<wd>ἐπεὶ</wd> 
+<wd>καὶ</wd> 
+<wd>τοῖς</wd> 
+<wd>ἔνι</wd> 
+<wd>ποινή</wd>.</l>
+<l n="750"><milestone ed="P" unit="para"/>
+<wd>μηδ᾽</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>ἀκινήτοισι</wd> 
+<wd>καθιζέμεν</wd>, 
+<wd>οὐ</wd> 
+<wd>γὰρ</wd> 
+<wd>ἄμεινον</wd>,</l>
+<l n="751">
+<wd>παῖδα</wd> 
+<wd>δυωδεκαταῖον</wd>, 
+<wd>ὅτ᾽</wd> 
+<wd>ἀνέρ᾽</wd> 
+<wd>ἀνήνορα</wd> 
+<wd>ποιεῖ</wd>,</l>
+<l n="752">
+<wd>μηδὲ</wd> 
+<wd>δυωδεκάμηνον</wd>: 
+<wd>ἴσον</wd> 
+<wd>καὶ</wd> 
+<wd>τοῦτο</wd> 
+<wd>τέτυκται</wd>.</l>
+<l n="753">
+<wd>μηδὲ</wd> 
+<wd>γυναικείῳ</wd> 
+<wd>λουτρῷ</wd> 
+<wd>χρόα</wd> 
+<wd>φαιδρύνεσθαι</wd></l>
+<l n="754">
+<wd>ἀνέρα</wd>: 
+<wd>λευγαλέη</wd> 
+<wd>γὰρ</wd> 
+<wd>ἐπὶ</wd> 
+<wd>χρόνον</wd> 
+<wd>ἔστ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>καὶ</wd> 
+<wd>τῷ</wd></l>
+<l n="755">
+<wd>ποινή</wd>. 
+<wd>μηδ᾽</wd> 
+<wd>ἱεροῖσιν</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>αἰθομένοισι</wd> 
+<wd>κυρήσας</wd></l>
+<l n="756">
+<wd>μωμεύειν</wd> 
+<wd>ἀίδηλα</wd>: 
+<wd>θεός</wd> 
+<wd>νύ</wd> 
+<wd>τι</wd> 
+<wd>καὶ</wd> 
+<wd>τὰ</wd> 
+<wd>νεμεσσᾷ</wd>.</l>
+<l n="757">
+<wd>μηδέ</wd> 
+<wd>ποτ᾽</wd> 
+<wd>ἐν</wd> 
+<wd>προχοῇς</wd> 
+<wd>ποταμῶν</wd> 
+<wd>ἅλαδε</wd> 
+<wd>προρεόντων</wd></l>
+<l n="758">
+<wd>μηδ᾽</wd> 
+<wd>ἐπὶ</wd> 
+<wd>κρηνάων</wd> 
+<wd>οὐρεῖν</wd>, 
+<wd>μάλα</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐξαλέασθαι</wd>:</l>
+<l n="759">
+<wd>μηδ᾽</wd> 
+<wd>ἐναποψύχειν</wd>: 
+<wd>τὸ</wd> 
+<wd>γὰρ</wd> 
+<wd>οὔ</wd> 
+<wd>τοι</wd> 
+<wd>λώιόν</wd> 
+<wd>ἐστιν</wd>.</l>
+<l n="760"><milestone ed="P" unit="para"/>
+<wd>ὧδ᾽</wd> 
+<wd>ἔρδειν</wd>: 
+<wd>δεινὴν</wd> 
+<wd>δὲ</wd> 
+<wd>βροτῶν</wd> 
+<wd>ὑπαλεύεο</wd> 
+<wd>φήμην</wd>.</l>
+<l n="761">
+<wd>φήμη</wd> 
+<wd>γάρ</wd> 
+<wd>τε</wd> 
+<wd>κακὴ</wd> 
+<wd>πέλεται</wd>, 
+<wd>κούφη</wd> 
+<wd>μὲν</wd> 
+<wd>ἀεῖραι</wd></l>
+<l n="762">
+<wd>ῥεῖα</wd> 
+<wd>μάλ᾽</wd>, 
+<wd>ἀργαλέη</wd> 
+<wd>δὲ</wd> 
+<wd>φέρειν</wd>, 
+<wd>χαλεπὴ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀποθέσθαι</wd>.</l>
+<l n="763">
+<wd>φήμη</wd> 
+<wd>δ᾽</wd> 
+<wd>οὔτις</wd> 
+<wd>πάμπαν</wd> 
+<wd>ἀπόλλυται</wd>, 
+<wd>ἥν</wd> 
+<wd>τινα</wd> 
+<wd>πολλοὶ</wd></l>
+<l n="764">
+<wd>λαοὶ</wd> 
+<wd>φημίξωσι</wd>: 
+<wd>θεός</wd> 
+<wd>νύ</wd> 
+<wd>τίς</wd> 
+<wd>ἐστι</wd> 
+<wd>καὶ</wd> 
+<wd>αὐτή</wd>.</l><milestone n="765" ed="p" unit="card"/>
+<l n="765">
+<wd>Ἤματα</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐκ</wd> 
+<wd>Διόθεν</wd> 
+<wd>πεφυλαγμένος</wd> 
+<wd>εὖ</wd> 
+<wd>κατὰ</wd> 
+<wd>μοῖραν</wd></l>
+<l n="766">
+<wd>πεφραδέμεν</wd> 
+<wd>δμώεσσι</wd>: 
+<wd>τριηκάδα</wd> 
+<wd>μηνὸς</wd> 
+<wd>ἀρίστην</wd></l>
+<l n="767">
+<wd>ἔργα</wd> 
+<wd>τ᾽</wd> 
+<wd>ἐποπτεύειν</wd> 
+<wd>ἠδ᾽</wd> 
+<wd>ἁρμαλιὴν</wd> 
+<wd>δατέασθαι</wd>.</l>
+<l n="769"><milestone ed="P" unit="para"/>
+<wd>αἵδε</wd> 
+<wd>γὰρ</wd> 
+<wd>ἡμέραι</wd> 
+<wd>εἰσὶ</wd> 
+<wd>Διὸς</wd> 
+<wd>πάρα</wd> 
+<wd>μητιόεντος</wd>,</l>
+<l n="768">
+<wd>εὖτ᾽</wd> 
+<wd>ἂν</wd> 
+<wd>ἀληθείην</wd> 
+<wd>λαοὶ</wd> 
+<wd>κρίνοντες</wd> 
+<wd>ἄγωσιν</wd>.</l>
+<l n="770">
+<wd>Πρῶτον</wd> 
+<wd>ἔνη</wd> 
+<wd>τετράς</wd> 
+<wd>τε</wd> 
+<wd>καὶ</wd> 
+<wd>ἑβδόμη</wd> 
+<wd>ἱερὸν</wd> 
+<wd>ἦμαρ</wd>:</l>
+<l n="771">
+<wd>τῇ</wd> 
+<wd>γὰρ</wd> 
+<wd>Ἀπόλλωνα</wd> 
+<wd>χρυσάορα</wd> 
+<wd>γείνατο</wd> 
+<wd>Λητώ</wd>:</l>
+<l n="772">
+<wd>ὀγδοάτη</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐνάτη</wd> 
+<wd>τε</wd>, 
+<wd>δύω</wd> 
+<wd>γε</wd> 
+<wd>μὲν</wd> 
+<wd>ἤματα</wd> 
+<wd>μηνὸς</wd></l>
+<l n="773">
+<wd>ἔξοχ᾽</wd> 
+<wd>ἀεξομένοιο</wd> 
+<wd>βροτήσια</wd> 
+<wd>ἔργα</wd> 
+<wd>πένεσθαι</wd>:</l>
+<l n="774">
+<wd>ἑνδεκάτη</wd> 
+<wd>δὲ</wd> 
+<wd>δυωδεκάτη</wd> 
+<wd>τ᾽</wd>, 
+<wd>ἄμφω</wd> 
+<wd>γε</wd> 
+<wd>μὲν</wd> 
+<wd>ἐσθλαί</wd>,</l>
+<l n="775">
+<wd>ἠμὲν</wd> 
+<wd>ὄις</wd> 
+<wd>πείκειν</wd> 
+<wd>ἠδ᾽</wd> 
+<wd>εὔφρονα</wd> 
+<wd>καρπὸν</wd> 
+<wd>ἀμᾶσθαι</wd>:</l>
+<l n="776">
+<wd>ἡ</wd> 
+<wd>δὲ</wd> 
+<wd>δυωδεκάτη</wd> 
+<wd>τῆς</wd> 
+<wd>ἑνδεκάτης</wd> 
+<wd>μέγ᾽</wd> 
+<wd>ἀμείνων</wd>:</l>
+<l n="777">
+<wd>τῇ</wd> 
+<wd>γάρ</wd> 
+<wd>τοι</wd> 
+<wd>νῇ</wd> 
+<wd>νήματ᾽</wd> 
+<wd>ἀερσιπότητος</wd> 
+<wd>ἀράχνης</wd></l>
+<l n="778">
+<wd>ἤματος</wd> 
+<wd>ἐκ</wd> 
+<wd>πλείου</wd>, 
+<wd>ὅτε</wd> 
+<wd>ἴδρις</wd> 
+<wd>σωρὸν</wd> 
+<wd>ἀμᾶται</wd>:</l>
+<l n="779">
+<wd>τῇ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἱστὸν</wd> 
+<wd>στήσαιτο</wd> 
+<wd>γυνὴ</wd> 
+<wd>προβάλοιτό</wd> 
+<wd>τε</wd> 
+<wd>ἔργον</wd>.</l>
+<l n="780">
+<wd>Μηνὸς</wd> 
+<wd>δ᾽</wd> 
+<wd>ἱσταμένου</wd> 
+<wd>τρισκαιδεκάτην</wd> 
+<wd>ἀλέασθαι</wd></l>
+<l n="781">
+<wd>σπέρματος</wd> 
+<wd>ἄρξασθαι</wd>: 
+<wd>φυτὰ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐνθρέψασθαι</wd> 
+<wd>ἀρίστη</wd>.</l>
+<l n="782"><milestone ed="P" unit="para"/>
+<wd>ἕκτη</wd> 
+<wd>δ᾽</wd> 
+<wd>ἡ</wd> 
+<wd>μέσση</wd> 
+<wd>μάλ᾽</wd> 
+<wd>ἀσύμφορός</wd> 
+<wd>ἐστι</wd> 
+<wd>φυτοῖσιν</wd>,</l>
+<l n="783">
+<wd>ἀνδρογόνος</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀγαθή</wd>: 
+<wd>κούρῃ</wd> 
+<wd>δ᾽</wd> 
+<wd>οὐ</wd> 
+<wd>σύμφορός</wd> 
+<wd>ἐστιν</wd>,</l>
+<l n="784">
+<wd>οὔτε</wd> 
+<wd>γενέσθαι</wd> 
+<wd>πρῶτ᾽</wd> 
+<wd>οὔτ᾽</wd> 
+<wd>ἂρ</wd> 
+<wd>γάμου</wd> 
+<wd>ἀντιβολῆσαι</wd>.</l>
+<l n="785">
+<wd>οὐδὲ</wd> 
+<wd>μὲν</wd> 
+<wd>ἡ</wd> 
+<wd>πρώτη</wd> 
+<wd>ἕκτη</wd> 
+<wd>κούρῃ</wd> 
+<wd>γε</wd> 
+<wd>γενέσθαι</wd></l>
+<l n="786">
+<wd>ἄρμενος</wd>, 
+<wd>ἀλλ᾽</wd> 
+<wd>ἐρίφους</wd> 
+<wd>τάμνειν</wd> 
+<wd>καὶ</wd> 
+<wd>πώεα</wd> 
+<wd>μήλων</wd></l>
+<l n="787">
+<wd>σηκόν</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀμφιβαλεῖν</wd> 
+<wd>ποιμνήιον</wd> 
+<wd>ἤπιον</wd> 
+<wd>ἦμαρ</wd>:</l>
+<l n="788">
+<wd>ἐσθλὴ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀνδρογόνος</wd>: 
+<wd>φιλέοι</wd> 
+<wd>δ᾽</wd> 
+<wd>ὅ</wd> 
+<wd>γε</wd> 
+<wd>κέρτομα</wd> 
+<wd>βάζειν</wd></l>
+<l n="789">
+<wd>ψεύδεά</wd> 
+<wd>θ᾽</wd> 
+<wd>αἱμυλίους</wd> 
+<wd>τε</wd> 
+<wd>λόγους</wd> 
+<wd>κρυφίους</wd> 
+<wd>τ᾽</wd> 
+<wd>ὀαρισμούς</wd>.</l>
+<l n="790">
+<wd>μηνὸς</wd> 
+<wd>δ᾽</wd> 
+<wd>ὀγδοάτῃ</wd> 
+<wd>κάπρον</wd> 
+<wd>καὶ</wd> 
+<wd>βοῦν</wd> 
+<wd>ἐρίμυκον</wd></l>
+<l n="791">
+<wd>ταμνέμεν</wd>, 
+<wd>οὐρῆας</wd> 
+<wd>δὲ</wd> 
+<wd>δυωδεκάτῃ</wd> 
+<wd>ταλαεργούς</wd>.</l>
+<l n="792"><milestone ed="P" unit="para"/>
+<wd>εἰκάδι</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐν</wd> 
+<wd>μεγάλῃ</wd>, 
+<wd>πλέῳ</wd> 
+<wd>ἤματι</wd>, 
+<wd>ἵστορα</wd> 
+<wd>φῶτα</wd></l>
+<l n="793">
+<wd>γείνασθαι</wd>: 
+<wd>μάλα</wd> 
+<wd>γάρ</wd> 
+<wd>τε</wd> 
+<wd>νόον</wd> 
+<wd>πεπυκασμένος</wd> 
+<wd>ἐστίν</wd>.</l>
+<l n="794">
+<wd>ἐσθλὴ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀνδρογόνος</wd> 
+<wd>δεκάτη</wd>, 
+<wd>κούρῃ</wd> 
+<wd>δέ</wd> 
+<wd>τε</wd> 
+<wd>τετρὰς</wd></l>
+<l n="795">
+<wd>μέσση</wd>: 
+<wd>τῇ</wd> 
+<wd>δέ</wd> 
+<wd>τε</wd> 
+<wd>μῆλα</wd> 
+<wd>καὶ</wd> 
+<wd>εἰλίποδας</wd> 
+<wd>ἕλικας</wd> 
+<wd>βοῦς</wd></l>
+<l n="796">
+<wd>καὶ</wd> 
+<wd>κύνα</wd> 
+<wd>καρχαρόδοντα</wd> 
+<wd>καὶ</wd> 
+<wd>οὐρῆας</wd> 
+<wd>ταλαεργοὺς</wd></l>
+<l n="797">
+<wd>πρηΰνειν</wd> 
+<wd>ἐπὶ</wd> 
+<wd>χεῖρα</wd> 
+<wd>τιθείς</wd>. 
+<wd>πεφύλαξο</wd> 
+<wd>δὲ</wd> 
+<wd>θυμῷ</wd></l>
+<l n="798">
+<wd>τετράδ᾽</wd> 
+<wd>ἀλεύασθαι</wd> 
+<wd>φθίνοντός</wd> 
+<wd>θ᾽</wd> 
+<wd>ἱσταμένου</wd> 
+<wd>τε</wd></l>
+<l n="799">
+<wd>ἄλγε᾽</wd> 
+<wd>ἃ</wd> 
+<wd>θυμβορεῖ</wd> 
+<wd>μάλα</wd> 
+<wd>γὰρ</wd> 
+<wd>τετελεσμένον</wd> 
+<wd>ἦμαρ</wd>.</l><milestone n="800" ed="p" unit="card"/>
+<l n="800">
+<wd>Ἐν</wd> 
+<wd>δὲ</wd> 
+<wd>τετάρτῃ</wd> 
+<wd>μηνὸς</wd> 
+<wd>ἄγεσθαι</wd> 
+<wd>οἶκον</wd> 
+<wd>ἄκοιτιν</wd></l>
+<l n="801">
+<wd>οἰωνοὺς</wd> 
+<wd>κρίνας</wd>, 
+<wd>οἳ</wd> 
+<wd>ἐπ᾽</wd> 
+<wd>ἔργματι</wd> 
+<wd>τούτῳ</wd> 
+<wd>ἄριστοι</wd>.</l>
+<l n="802"><milestone ed="P" unit="para"/>
+<wd>πέμπτας</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐξαλέασθαι</wd>, 
+<wd>ἐπεὶ</wd> 
+<wd>χαλεπαί</wd> 
+<wd>τε</wd> 
+<wd>καὶ</wd> 
+<wd>αἰναί</wd>:</l>
+<l n="803">
+<wd>ἐν</wd> 
+<wd>πέμπτῃ</wd> 
+<wd>γάρ</wd> 
+<wd>φασιν</wd> 
+<wd>Ἐρινύας</wd> 
+<wd>ἀμφιπολεύειν</wd></l>
+<l n="804">
+<wd>Ὅρκον</wd> 
+<wd>γεινόμενον</wd>, 
+<wd>τὸν</wd> 
+<wd>Ἔρις</wd> 
+<wd>τέκε</wd> 
+<wd>πῆμ᾽</wd> 
+<wd>ἐπιόρκοις</wd>.</l>
+<l n="805">
+<wd>Μέσσῃ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἑβδομάτῃ</wd> 
+<wd>Δημήτερος</wd> 
+<wd>ἱερὸν</wd> 
+<wd>ἀκτὴν</wd></l>
+<l n="806">
+<wd>εὖ</wd> 
+<wd>μάλ᾽</wd> 
+<wd>ὀπιπεύοντα</wd> 
+<wd>ἐυτροχάλῳ</wd> 
+<wd>ἐν</wd> 
+<wd>ἀλωῇ</wd></l>
+<l n="807">
+<wd>βαλλέμεν</wd>, 
+<wd>ὑλοτόμον</wd> 
+<wd>τε</wd> 
+<wd>ταμεῖν</wd> 
+<wd>θαλαμήια</wd> 
+<wd>δοῦρα</wd></l>
+<l n="808">
+<wd>νήιά</wd> 
+<wd>τε</wd> 
+<wd>ξύλα</wd> 
+<wd>πολλά</wd>, 
+<wd>τά</wd> 
+<wd>τ᾽</wd> 
+<wd>ἄρμενα</wd> 
+<wd>νηυσὶ</wd> 
+<wd>πέλονται</wd>.</l>
+<l n="809">
+<wd>τετράδι</wd> 
+<wd>δ᾽</wd> 
+<wd>ἄρχεσθαι</wd> 
+<wd>νῆας</wd> 
+<wd>πήγνυσθαι</wd> 
+<wd>ἀραιάς</wd>.</l>
+<l n="810"><milestone ed="P" unit="para"/>
+<wd>εἰνὰς</wd> 
+<wd>δ᾽</wd> 
+<wd>ἡ</wd> 
+<wd>μέσση</wd> 
+<wd>ἐπὶ</wd> 
+<wd>δείελα</wd> 
+<wd>λώιον</wd> 
+<wd>ἦμαρ</wd>,</l>
+<l n="811">
+<wd>πρωτίστη</wd> 
+<wd>δ᾽</wd> 
+<wd>εἰνὰς</wd> 
+<wd>παναπήμων</wd> 
+<wd>ἀνθρώποισιν</wd>:</l>
+<l n="812">
+<wd>ἐσθλὴ</wd> 
+<wd>μὲν</wd> 
+<wd>γάρ</wd> 
+<wd>θ᾽</wd> 
+<wd>ἥ</wd> 
+<wd>γε</wd> 
+<wd>φυτευέμεν</wd> 
+<wd>ἠδὲ</wd> 
+<wd>γενέσθαι</wd></l>
+<l n="813">
+<wd>ἀνέρι</wd> 
+<wd>τ᾽</wd> 
+<wd>ἠδὲ</wd> 
+<wd>γυναικί</wd>: 
+<wd>καὶ</wd> 
+<wd>οὔποτε</wd> 
+<wd>πάγκακον</wd> 
+<wd>ἦμαρ</wd>.</l>
+<l n="814"><milestone ed="P" unit="para"/>
+<wd>παῦροι</wd> 
+<wd>δ᾽</wd> 
+<wd>αὖτε</wd> 
+<wd>ἴσασι</wd> 
+<wd>τρισεινάδα</wd> 
+<wd>μηνὸς</wd> 
+<wd>ἀρίστην</wd></l>
+<l n="815">
+<wd>ἄρξασθαί</wd> 
+<wd>τε</wd> 
+<wd>πίθου</wd> 
+<wd>καὶ</wd> 
+<wd>ἐπὶ</wd> 
+<wd>ζυγὸν</wd> 
+<wd>αὐχένι</wd> 
+<wd>θεῖναι</wd></l>
+<l n="816">
+<wd>βουσὶ</wd> 
+<wd>καὶ</wd> 
+<wd>ἡμιόνοισι</wd> 
+<wd>καὶ</wd> 
+<wd>ἵπποις</wd> 
+<wd>ὠκυπόδεσσι</wd>,</l>
+<l n="817">
+<wd>νῆα</wd> 
+<wd>πολυκλήιδα</wd> 
+<wd>θοὴν</wd> 
+<wd>εἰς</wd> 
+<wd>οἴνοπα</wd> 
+<wd>πόντον</wd></l>
+<l n="818">
+<wd>εἰρύμεναι</wd>: 
+<wd>παῦροι</wd> 
+<wd>δέ</wd> 
+<wd>τ᾽</wd> 
+<wd>ἀληθέα</wd> 
+<wd>κικλῄσκουσιν</wd>.</l>
+<l n="819"><milestone ed="P" unit="para"/>
+<wd>τετράδι</wd> 
+<wd>δ᾽</wd> 
+<wd>οἶγε</wd> 
+<wd>πίθον</wd>: 
+<wd>περὶ</wd> 
+<wd>πάντων</wd> 
+<wd>ἱερὸν</wd> 
+<wd>ἦμαρ</wd></l>
+<l n="820">
+<wd>μέσση</wd>: 
+<wd>παῦροι</wd> 
+<wd>δ᾽</wd> 
+<wd>αὖτε</wd> 
+<wd>μετ᾽</wd> 
+<wd>εἰκάδα</wd> 
+<wd>μηνὸς</wd> 
+<wd>ἀρίστην</wd></l>
+<l n="821">
+<wd>ἠοῦς</wd> 
+<wd>γιγνομένης</wd>: 
+<wd>ἐπὶ</wd> 
+<wd>δείελα</wd> 
+<wd>δ᾽</wd> 
+<wd>ἐστὶ</wd> 
+<wd>χερείων</wd>.</l>
+<l n="822"><milestone ed="P" unit="para"/>
+<wd>αἵδε</wd> 
+<wd>μὲν</wd> 
+<wd>ἡμέραι</wd> 
+<wd>εἰσιν</wd> 
+<wd>ἐπιχθονίοις</wd> 
+<wd>μέγ᾽</wd> 
+<wd>ὄνειαρ</wd>,</l>
+<l n="823">
+<wd>αἱ</wd> 
+<wd>δ᾽</wd> 
+<wd>ἄλλαι</wd> 
+<wd>μετάδουποι</wd>, 
+<wd>ἀκήριοι</wd>, 
+<wd>οὔ</wd> 
+<wd>τι</wd> 
+<wd>φέρουσαι</wd>.</l>
+<l n="824">
+<wd>ἄλλος</wd> 
+<wd>δ᾽</wd> 
+<wd>ἀλλοίην</wd> 
+<wd>αἰνεῖ</wd>, 
+<wd>παῦροι</wd> 
+<wd>δὲ</wd> 
+<wd>ἴσασιν</wd>.</l>
+<l n="825">
+<wd>ἄλλοτε</wd> 
+<wd>μητρυιὴ</wd> 
+<wd>πέλει</wd> 
+<wd>ἡμέρη</wd>, 
+<wd>ἄλλοτε</wd> 
+<wd>μήτηρ</wd>.</l>
+<l n="826">
+<wd>τάων</wd> 
+<wd>εὐδαίμων</wd> 
+<wd>τε</wd> 
+<wd>καὶ</wd> 
+<wd>ὄλβιος</wd>, 
+<wd>ὃς</wd> 
+<wd>τάδε</wd> 
+<wd>πάντα</wd></l>
+<l n="827">
+<wd>εἰδὼς</wd> 
+<wd>ἐργάζηται</wd> 
+<wd>ἀναίτιος</wd> 
+<wd>ἀθανάτοισιν</wd>,</l>
+<l n="828">
+<wd>ὄρνιθας</wd> 
+<wd>κρίνων</wd> 
+<wd>καὶ</wd> 
+<wd>ὑπερβασίας</wd> 
+<wd>ἀλεείνων</wd>.</l></div1></body>
+   </text>
+</tei.2>

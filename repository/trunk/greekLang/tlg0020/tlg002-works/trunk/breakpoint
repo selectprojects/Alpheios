@@ -1,0 +1,28 @@
+
+original text:
+
+            <l n="169b">τοῖσι δ᾽ ὁμῶς ν]εάτοις τιμὴ [καὶ κῦδος ὀπηδεῖ.</l>            <l n="169c">Πέμπτον δ᾽ αὖτις ἔτ᾽ ἄ]λλο γένος θῆκ᾽ [εὐρύοπα Ζεὺς</l>
+
+output file:
+
+     <l n="169c">
+<wd tbrefs="1715986-1">Πέμπτον</wd>
+<wd tbrefs="1715986-2">δ᾽</wd>
+<wd tbrefs="1715986-3">αὖτις</wd>
+<wd tbrefs="1715986-4">ἔτ᾽</wd>
+<wd>ἄ</wd>]
+<wd>λλο</wd>
+
+
+treebank file:
+
+ <sentence id="1715986" document_id="Perseus:text:1999.01.0131" subdoc="card=140" span="*pe/mpton0:.10">
+                <primary>millermo</primary>
+                <primary>megluthin</primary>
+                <secondary>tovahk</secondary>
+                <word id="1" cid="24473051" form="*pe/mpton" lemma="pe/mptos1" postag="a-s---na-" head="6" relation="ATR" />
+                <word id="2" cid="24473052" form="d&apos;" lemma="de/1" postag="g--------" head="0" relation="COORD" />
+                <word id="3" cid="24473053" form="au)=tis" lemma="au)=qis1" postag="d--------" head="7" relation="AuxY" />
+                <word id="4" cid="24473054" form="e)/t&apos;" lemma="e)/ti1" postag="d--------" head="5" relation="AuxZ" />
+                <word id="5" cid="24473055" form="a)/]llo" lemma="a)/llos1" postag="a-s---na-" head="6" relation="ATR" />
+
