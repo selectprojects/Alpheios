@@ -143,6 +143,7 @@
       <xsl:copy-of select="@lemma-id"/>
       <xsl:copy-of select="@lemma-key"/>
       <xsl:copy-of select="@root"/>
+      <xsl:copy-of select="@body-key"/>
       <xsl:apply-templates/>
     </div>
   </xsl:template>
