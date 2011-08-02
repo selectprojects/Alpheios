@@ -1,815 +1,550 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TextInventory
-    tiversion="3.0.rc1"
-    xmlns="http://chs.harvard.edu/xmlns/cts3/ti">
-    <collection
-        id="demo">
-        <title
-            xml:lang="eng"
-            xmlns="http://purl.org/dc/elements/1.1">Alpheios CTS Repository template</title>
-        <creator
-            xmlns="http://purl.org/dc/elements/1.1">The Alpheios Project, Ltd.</creator>
-        <coverage
-            xml:lang="eng"
-            xmlns="http://purl.org/dc/elements/1.1">TBD</coverage>
-        <description
-            xml:lang="eng"
-            xmlns="http://purl.org/dc/elements/1.1">Inventory of texts in the Alpheios text repository. </description>
-        <rights
-            xml:lang="eng"
-            xmlns="http://purl.org/dc/elements/1.1">TBD - Creative Commons License info</rights>
+<TextInventory xmlns="http://chs.harvard.edu/xmlns/cts3/ti" tiversion="3.0.rc1">
+    <collection id="demo">
+        <title xmlns="http://purl.org/dc/elements/1.1" xml:lang="eng">Alpheios CTS Repository template</title>
+        <creator xmlns="http://purl.org/dc/elements/1.1">The Alpheios Project, Ltd.</creator>
+        <coverage xmlns="http://purl.org/dc/elements/1.1" xml:lang="eng">TBD</coverage>
+        <description xmlns="http://purl.org/dc/elements/1.1" xml:lang="eng">Inventory of texts in the Alpheios text repository. </description>
+        <rights xmlns="http://purl.org/dc/elements/1.1" xml:lang="eng">TBD - Creative Commons License info</rights>
     </collection>
-    <textgroup
-        projid="greekLit:tlg0012">
-        <groupname
-            xml:lang="eng">Homeric Poems</groupname>
-        <work
-            projid="greekLit:tlg001"
-            xml:lang="eng">
-            <title
-                xml:lang="eng">Iliad</title>
-            <edition
-                projid="greekLit:alpheios-text-grc1">
-                <label
-                    xml:lang="eng">Alpheios Enhanced Iliad</label>
-                <online
-                    docname="/db/repository/greekLit/tlg0012/tlg001/alpheios-text-grc1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
+    <textgroup projid="greekLit:tlg0012">
+        <groupname xml:lang="eng">Homeric Poems</groupname>
+        <work projid="greekLit:tlg001" xml:lang="eng">
+            <title xml:lang="eng">Iliad</title>
+            <edition projid="greekLit:alpheios-text-grc1">
+                <label xml:lang="eng">Alpheios Enhanced Iliad</label>
+                <online docname="/db/repository/greekLit/tlg0012/tlg001/alpheios-text-grc1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
                     <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/div1[@n='?']"
-                            scope="/TEI.2/text/body">                          
-                            <citation
-                                label="Line"
-                                xpath="/l[@n='?']"
-                                scope="/TEI.2/text/body/div1[@n='?']"/>                        
+                        <citation label="Book" xpath="/div1[@n='?']" scope="/TEI.2/text/body">
+                            <citation label="Line" xpath="/l[@n='?']" scope="/TEI.2/text/body/div1[@n='?']"/>
                         </citation>
                     </citationMapping>
                 </online>
             </edition>
-        </work>        
-        <work
-            projid="greekLit:tlg002"
-            xml:lang="eng">
-            <title
-                xml:lang="eng">Odyssey</title>
-            <edition
-                projid="greekLit:alpheios-text-grc1">
-                <label
-                    xml:lang="eng">Alpheios Enhanced Odyssey</label>
-                <online
-                    docname="/db/repository/greekLit/tlg0012/tlg002/alpheios-text-grc1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
+        </work>
+        <work projid="greekLit:tlg002" xml:lang="eng">
+            <title xml:lang="eng">Odyssey</title>
+            <edition projid="greekLit:alpheios-text-grc1">
+                <label xml:lang="eng">Alpheios Enhanced Odyssey</label>
+                <online docname="/db/repository/greekLit/tlg0012/tlg002/alpheios-text-grc1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
                     <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/div1[@n='?']"
-                            scope="/TEI.2/text/body">                          
-                                <citation
-                                    label="Line"
-                                    xpath="/l[@n='?']"
-                                    scope="/TEI.2/text/body/div1[@n='?']/div2"/>                        
+                        <citation label="Book" xpath="/div1[@n='?']" scope="/TEI.2/text/body">
+                            <citation label="Line" xpath="/l[@n='?']" scope="/TEI.2/text/body/div1[@n='?']/div2"/>
                         </citation>
                     </citationMapping>
                 </online>
             </edition>
         </work>
     </textgroup>
-    <textgroup
-        projid="arabicLit:perseus200202">
-        <groupname
-            xml:lang="eng">Religious Texts</groupname>
-        <work
-            projid="arabicLit:perseus0006"
-            xml:lang="eng">
-            <title
-                xml:lang="eng">Quran</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="eng">Alpheios Enhanced Quran</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus200202/perseus0006/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
+    <textgroup projid="arabicLit:perseus200202">
+        <groupname xml:lang="eng">Religious Texts</groupname>
+        <work projid="arabicLit:perseus0006" xml:lang="eng">
+            <title xml:lang="eng">Quran</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="eng">Alpheios Enhanced Quran</label>
+                <online docname="/db/repository/arabicLit/perseus200202/perseus0006/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
                     <citationMapping>
-                        <citation
-                            label="Sura"
-                            xpath="/div1[@n='?']"
-                            scope="/TEI.2/text/body">
-                                <citation
-                                    label="Verse"
-                                    xpath="/l[@n='?']"
-                                    scope="/TEI.2/text/body/div1[@n='?']/p/"/>                                                    
+                        <citation label="Sura" xpath="/div1[@n='?']" scope="/TEI.2/text/body">
+                            <citation label="Verse" xpath="/l[@n='?']" scope="/TEI.2/text/body/div1[@n='?']/p/"/>
                         </citation>
                     </citationMapping>
                 </online>
             </edition>
         </work>
-      </textgroup>
-    <textgroup
-        projid="arabicLit:alk">
-        <groupname
-            xml:lang="eng">Arabic Vocabulary List</groupname>
-        <work
-            projid="arabicLit:alk00a"
-            xml:lang="eng">
-            <title
-                xml:lang="eng">Alif Baa</title>
-            <edition
-                projid="arabicLit:alpheios-vocab-ara1">
-                <label
-                    xml:lang="eng">Al-Kitaab Alif Baa</label>
-                <online
-                    docname="/db/repository/arabicLit/alk/alk00a/alpheios-vocab-ara1.xml">
-                    <validate
-                    schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Chapter"
-                            xpath="/tei:div[@n='?' and @type='chapter']"
-                            scope="/tei:TEI/tei:text/tei:body">                                                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-        <work
-            projid="arabicLit:alk001"
-            xml:lang="eng">
-            <title
-                xml:lang="eng">Al-Kitaab Part 1</title>
-            <edition
-                projid="arabicLit:alpheios-vocab-ara1">
-                <label
-                    xml:lang="eng">Al-Kitaab Part 1</label>
-                <online
-                    docname="/db/repository/arabicLit/alk/alk001/alpheios-vocab-ara1.xml">
-                    <validate
-                    schema="documentschema.rng"/>
-                        <namespaceMapping
-                            abbreviation="tei"
-                            nsURI="http://www.tei-c.org/ns/1.0"/>
-                        <citationMapping>
-                            <citation
-                                label="Chapter"
-                                xpath="/tei:div[@n='?' and @type='chapter']"
-                                scope="/tei:TEI/tei:text/tei:body">                                                                                    
-                            </citation>
-                        </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-        <work
-            projid="arabicLit:alk002"
-            xml:lang="eng">
-            <title
-                xml:lang="eng">Al-Kitaab Part 2</title>
-            <edition
-                projid="arabicLit:alpheios-vocab-ara1">
-                <label
-                    xml:lang="eng">Al-Kitaab Part 2</label>
-                <online
-                    docname="/db/repository/arabicLit/alk/alk002/alpheios-vocab-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                        <namespaceMapping
-                            abbreviation="tei"
-                            nsURI="http://www.tei-c.org/ns/1.0"/>
-                        <citationMapping>
-                            <citation
-                                label="Chapter"
-                                xpath="/tei:div[@n='?' and @type='chapter']"
-                                scope="/tei:TEI/tei:text/tei:body">                                                                                    
-                            </citation>
-                        </citationMapping>                        
-                </online>
-            </edition>
-        </work>
-        <work
-            projid="arabicLit:alk003"
-            xml:lang="eng">
-            <title
-                xml:lang="eng">Al-Kitaab Part 3</title>
-            <edition
-                projid="arabicLit:alpheios-vocab-ara1">
-                <label
-                    xml:lang="eng">Al-Kitaab Part 3</label>
-                <online
-                    docname="/db/repository/arabicLit/alk/alk003/alpheios-vocab-ara1.xml">
-                    <validate
-                    schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Chapter"
-                            xpath="/tei:div[@n='?' and @type='chapter']"
-                            scope="/tei:TEI/tei:text/tei:body">                                                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>        
     </textgroup>
-    <textgroup
-        projid="arabicLit:perseus201001">
-        <groupname
-            xml:lang="eng">Arabic Literature</groupname>
-        <work
-            projid="arabicLit:perseus0001">
-            <title
-                xml:lang="ara">سم الله الرحمن الرحيم</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="eng">Alpheios Enabled Arabian Nights, Vol. 1</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201001/perseus0001/alpheios-text-ara1.xml">
-                    <validate
-                    schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
+    <textgroup projid="arabicLit:alk">
+        <groupname xml:lang="eng">Arabic Vocabulary List</groupname>
+        <work projid="arabicLit:alk00a" xml:lang="eng">
+            <title xml:lang="eng">Alif Baa</title>
+            <edition projid="arabicLit:alpheios-vocab-ara1">
+                <label xml:lang="eng">Al-Kitaab Alif Baa</label>
+                <online docname="/db/repository/arabicLit/alk/alk00a/alpheios-vocab-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
                     <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
+                        <citation label="Chapter" xpath="/tei:div[@n='?' and @type='chapter']" scope="/tei:TEI/tei:text/tei:body"/>
+                    </citationMapping>
                 </online>
             </edition>
         </work>
-        <work
-            projid="arabicLit:perseus0002">
-            <title
-                xml:lang="ara">بسم الله الرحمن الرحيم</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="eng">Alpheios Enabled Arabian Nights, Vol 2.</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201001/perseus0002/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
+        <work projid="arabicLit:alk001" xml:lang="eng">
+            <title xml:lang="eng">Al-Kitaab Part 1</title>
+            <edition projid="arabicLit:alpheios-vocab-ara1">
+                <label xml:lang="eng">Al-Kitaab Part 1</label>
+                <online docname="/db/repository/arabicLit/alk/alk001/alpheios-vocab-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
                     <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
+                        <citation label="Chapter" xpath="/tei:div[@n='?' and @type='chapter']" scope="/tei:TEI/tei:text/tei:body"/>
+                    </citationMapping>
                 </online>
             </edition>
         </work>
-        <work
-            projid="arabicLit:perseus0003">
-            <title
-                xml:lang="ara">بسم الله الرحمن الرحيم</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="eng">Alpheios Enabled Arabian Nights, Vol 3.</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201001/perseus0003/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
+        <work projid="arabicLit:alk002" xml:lang="eng">
+            <title xml:lang="eng">Al-Kitaab Part 2</title>
+            <edition projid="arabicLit:alpheios-vocab-ara1">
+                <label xml:lang="eng">Al-Kitaab Part 2</label>
+                <online docname="/db/repository/arabicLit/alk/alk002/alpheios-vocab-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
                     <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
+                        <citation label="Chapter" xpath="/tei:div[@n='?' and @type='chapter']" scope="/tei:TEI/tei:text/tei:body"/>
+                    </citationMapping>
                 </online>
             </edition>
         </work>
-        <work
-            projid="arabicLit:perseus0004">
-            <title
-                xml:lang="ara">بسم الله الرحمن الرحيم</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="eng">Alpheios Enabled Arabian Nights, Vol 4.</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201001/perseus0004/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
+        <work projid="arabicLit:alk003" xml:lang="eng">
+            <title xml:lang="eng">Al-Kitaab Part 3</title>
+            <edition projid="arabicLit:alpheios-vocab-ara1">
+                <label xml:lang="eng">Al-Kitaab Part 3</label>
+                <online docname="/db/repository/arabicLit/alk/alk003/alpheios-vocab-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
                     <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
+                        <citation label="Chapter" xpath="/tei:div[@n='?' and @type='chapter']" scope="/tei:TEI/tei:text/tei:body"/>
+                    </citationMapping>
                 </online>
             </edition>
         </work>
     </textgroup>
-    <textgroup
-        projid="arabicLit:perseus201002">
-        <groupname
-            xml:lang="eng">Arabic Poetry</groupname>
-        <work
-            projid="arabicLit:perseus0001">
-            <title
-                xml:lang="ara">al-Alghani</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="eng">Book of Songs, Vol. 1</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201001/perseus0001/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
+    <textgroup projid="arabicLit:perseus201001">
+        <groupname xml:lang="eng">Arabic Literature</groupname>
+        <work projid="arabicLit:perseus0001">
+            <title xml:lang="ara">سم الله الرحمن الرحيم</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="eng">Alpheios Enabled Arabian Nights, Vol. 1</label>
+                <online docname="/db/repository/arabicLit/perseus201001/perseus0001/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
                     <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-        <work
-            projid="arabicLit:perseus0002">
-            <title
-                xml:lang="ara">al-Alghani</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="eng">Book of Songs, Vol. 2</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201001/perseus0002/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-        <work
-            projid="arabicLit:perseus0003">
-            <title
-                xml:lang="ara">al-Alghani</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="eng">Book of Songs, Vol. 3</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201001/perseus0003/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-        <work
-            projid="arabicLit:perseus0004">
-            <title
-                xml:lang="ara">al-Alghani</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="eng">Book of Songs, Vol. 4</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201001/perseus0004/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-        <work
-            projid="arabicLit:perseus0005">
-            <title
-                xml:lang="ara">al-Alghani</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="eng">Book of Songs, Vol. 5</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201001/perseus0005/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-        <work
-            projid="arabicLit:perseus0006">
-            <title
-                xml:lang="ara">al-Alghani</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="eng">Book of Songs, Vol. 6</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201001/perseus0006/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-    </textgroup>
-    <textgroup
-        projid="arabicLit:aljaz">
-        <groupname
-            xml:lang="eng">Al-Jazeera</groupname>
-        <work
-            projid="arabicLit:aljaz20100711">
-            <title
-                xml:lang="ara">الإعلام يرشح إسبانيا للفوز بالمونديال</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="eng">الإعلام يرشح إسبانيا للفوز بالمونديال</label>
-                <online
-                    docname="/db/repository/arabicLit/aljaz/aljaz20100711/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Article"
-                            xpath="/div1[@n='?']"
-                            scope="/TEI/text/body">
-                            <citation
-                                label="Line"
-                                xpath="/l[@n='?']"
-                                scope="/TEI/text/body/div1[@n='?']/"/>                                                                                
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-    </textgroup>
-    <textgroup
-        projid="arabicLit:perseus201003">
-        <groupname
-            xml:lang="eng">Arabic Misc</groupname>
-        <work
-            projid="arabicLit:perseus0001">
-            <title
-                xml:lang="ara">بسم الله الرحمن الرحيم</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="fr">Voyages D'Ibn Batutah, Vol. 4</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201003/perseus0001/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-        <work
-            projid="arabicLit:perseus0002">
-            <title
-                xml:lang="en">Selection From The Annals Of Tabari</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="en">Selection From the Annals Of Tabari</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201003/perseus0002/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-        <work
-            projid="arabicLit:perseus0003">
-            <title
-                xml:lang="en">Selections from Arabic geographical literature</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="en">Selections from Arabic geographical literature</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201003/perseus0002/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-        <work
-            projid="arabicLit:perseus0004">
-            <title
-                xml:lang="en">Arabic Reading Lessons</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="en">Arabic Reading Lessons</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201003/perseus0004/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">
-                            <citation
-                                label="Section"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>                                                                                
-                            <citation
-                                label="Page"
-                                xpath="/tei:div3[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/tei:div2[@n='?']"/>                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>
-        <work
-            projid="arabicLit:perseus0005">
-            <title
-                xml:lang="en">The Autobiography Of The Constantinopolitan Story-Teller</title>
-            <edition
-                projid="arabicLit:alpheios-text-ara1">
-                <label
-                    xml:lang="en">The Autobiography Of The Constantinopolitan Story-Teller</label>
-                <online
-                    docname="/db/repository/arabicLit/perseus201003/perseus0005/alpheios-text-ara1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Section"
-                            xpath="/tei:div1[@n='?']"
-                            scope="/tei:TEI/tei:text/tei:body">                                                                                                
-                            <citation
-                                label="Page"
-                                xpath="/tei:div2[@n='?']"
-                                scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']"/>                                                    
-                        </citation>
-                    </citationMapping>                    
-                </online>
-            </edition>
-        </work>  
-    </textgroup>
-    <textgroup
-        projid="greekLang:tlg0020">
-        <groupname
-            xml:lang="eng">Hesiod</groupname>
-         <work
-            projid="greekLang:tlg001"
-            xml:lang="eng">
-            <title
-                xml:lang="eng">Theogony</title>
-            <edition
-                projid="greekLang:alpheios-text-grc1">
-                <label
-                    xml:lang="eng">Alpheios Enhanced Theogony</label>
-                <online
-                    docname="/db/repository/greekLang/tlg0020/tlg001/alpheios-text-grc1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
-                    <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/div1[@n='?']"
-                            scope="/tei.2/text/body">                          
-                            <citation
-                                label="Line"
-                                xpath="/l[@n='?']"
-                                scope="/tei.2/text/body/div1[@n='?']"/>                        
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
                         </citation>
                     </citationMapping>
                 </online>
             </edition>
-        </work>       
-         <work
-            projid="greekLang:tlg002"
-            xml:lang="eng">
-            <title
-                xml:lang="eng">Works and Days</title>
-            <edition
-                projid="greekLang:alpheios-text-grc1">
-                <label
-                    xml:lang="eng">Alpheios Enhanced Works and Days</label>
-                <online
-                    docname="/db/repository/greekLang/tlg0020/tlg002/alpheios-text-grc1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
+        </work>
+        <work projid="arabicLit:perseus0002">
+            <title xml:lang="ara">بسم الله الرحمن الرحيم</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="eng">Alpheios Enabled Arabian Nights, Vol 2.</label>
+                <online docname="/db/repository/arabicLit/perseus201001/perseus0002/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
                     <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/div1[@n='?']"
-                            scope="/tei.2/text/body">                          
-                            <citation
-                                label="Line"
-                                xpath="/l[@n='?']"
-                                scope="/tei.2/text/body/div1[@n='?']"/>                        
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
                         </citation>
                     </citationMapping>
                 </online>
             </edition>
-        </work>                            
-        <work
-            projid="greekLang:tlg003"
-            xml:lang="eng">
-            <title
-                xml:lang="eng">Shield of Heracles</title>
-            <edition
-                projid="greekLang:alpheios-text-grc1">
-                <label
-                    xml:lang="eng">Alpheios Enhanced Shield of Heracles</label>
-                <online
-                    docname="/db/repository/greekLang/tlg0020/tlg003/alpheios-text-grc1.xml">
-                    <validate
-                        schema="documentschema.rng"/>
-                    <namespaceMapping
-                        abbreviation="tei"
-                        nsURI="http://www.tei-c.org/ns/1.0"/>
+        </work>
+        <work projid="arabicLit:perseus0003">
+            <title xml:lang="ara">بسم الله الرحمن الرحيم</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="eng">Alpheios Enabled Arabian Nights, Vol 3.</label>
+                <online docname="/db/repository/arabicLit/perseus201001/perseus0003/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
                     <citationMapping>
-                        <citation
-                            label="Book"
-                            xpath="/div1[@n='?']"
-                            scope="/tei.2/text/body">                          
-                            <citation
-                                label="Line"
-                                xpath="/l[@n='?']"
-                                scope="/tei.2/text/body/div1[@n='?']"/>                        
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
                         </citation>
                     </citationMapping>
                 </online>
             </edition>
-        </work>        
+        </work>
+        <work projid="arabicLit:perseus0004">
+            <title xml:lang="ara">بسم الله الرحمن الرحيم</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="eng">Alpheios Enabled Arabian Nights, Vol 4.</label>
+                <online docname="/db/repository/arabicLit/perseus201001/perseus0004/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+    </textgroup>
+    <textgroup projid="arabicLit:perseus201002">
+        <groupname xml:lang="eng">Arabic Poetry</groupname>
+        <work projid="arabicLit:perseus0001">
+            <title xml:lang="ara">al-Alghani</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="eng">Book of Songs, Vol. 1</label>
+                <online docname="/db/repository/arabicLit/perseus201001/perseus0001/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="arabicLit:perseus0002">
+            <title xml:lang="ara">al-Alghani</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="eng">Book of Songs, Vol. 2</label>
+                <online docname="/db/repository/arabicLit/perseus201001/perseus0002/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="arabicLit:perseus0003">
+            <title xml:lang="ara">al-Alghani</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="eng">Book of Songs, Vol. 3</label>
+                <online docname="/db/repository/arabicLit/perseus201001/perseus0003/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="arabicLit:perseus0004">
+            <title xml:lang="ara">al-Alghani</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="eng">Book of Songs, Vol. 4</label>
+                <online docname="/db/repository/arabicLit/perseus201001/perseus0004/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="arabicLit:perseus0005">
+            <title xml:lang="ara">al-Alghani</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="eng">Book of Songs, Vol. 5</label>
+                <online docname="/db/repository/arabicLit/perseus201001/perseus0005/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="arabicLit:perseus0006">
+            <title xml:lang="ara">al-Alghani</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="eng">Book of Songs, Vol. 6</label>
+                <online docname="/db/repository/arabicLit/perseus201001/perseus0006/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+    </textgroup>
+    <textgroup projid="arabicLit:aljaz">
+        <groupname xml:lang="eng">Al-Jazeera</groupname>
+        <work projid="arabicLit:aljaz20100711">
+            <title xml:lang="ara">الإعلام يرشح إسبانيا للفوز بالمونديال</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="eng">الإعلام يرشح إسبانيا للفوز بالمونديال</label>
+                <online docname="/db/repository/arabicLit/aljaz/aljaz20100711/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Article" xpath="/div1[@n='?']" scope="/TEI/text/body">
+                            <citation label="Line" xpath="/l[@n='?']" scope="/TEI/text/body/div1[@n='?']/"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+    </textgroup>
+    <textgroup projid="arabicLit:perseus201003">
+        <groupname xml:lang="eng">Arabic Misc</groupname>
+        <work projid="arabicLit:perseus0001">
+            <title xml:lang="ara">بسم الله الرحمن الرحيم</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="fr">Voyages D'Ibn Batutah, Vol. 4</label>
+                <online docname="/db/repository/arabicLit/perseus201003/perseus0001/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="arabicLit:perseus0002">
+            <title xml:lang="en">Selection From The Annals Of Tabari</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="en">Selection From the Annals Of Tabari</label>
+                <online docname="/db/repository/arabicLit/perseus201003/perseus0002/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="arabicLit:perseus0003">
+            <title xml:lang="en">Selections from Arabic geographical literature</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="en">Selections from Arabic geographical literature</label>
+                <online docname="/db/repository/arabicLit/perseus201003/perseus0002/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="arabicLit:perseus0004">
+            <title xml:lang="en">Arabic Reading Lessons</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="en">Arabic Reading Lessons</label>
+                <online docname="/db/repository/arabicLit/perseus201003/perseus0004/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Section" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                            <citation label="Page" xpath="/tei:div3[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/tei:div2[@n='?']"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="arabicLit:perseus0005">
+            <title xml:lang="en">The Autobiography Of The Constantinopolitan Story-Teller</title>
+            <edition projid="arabicLit:alpheios-text-ara1">
+                <label xml:lang="en">The Autobiography Of The Constantinopolitan Story-Teller</label>
+                <online docname="/db/repository/arabicLit/perseus201003/perseus0005/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Section" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+    </textgroup>
+    <textgroup projid="greekLang:tlg0011">
+        <groupname xml:lang="eng">Sophocles</groupname>
+        <work projid="greekLang:tlg003" xml:lang="eng">
+            <title xml:lang="eng">Ajax</title>
+            <edition projid="greekLang:alpheios-text-grc1">
+                <label xml:lang="eng">Alpheios Enhanced Ajax</label>
+                <online docname="/db/repository/greekLang/tlg0011/tlg003/alpheios-text-grc1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Line" xpath="//l[@n='?']" scope="/tei.2/text/body"/>                        
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>     
     </textgroup>
         
+    <textgroup projid="greekLang:tlg0020">
+        <groupname xml:lang="eng">Hesiod</groupname>
+        <work projid="greekLang:tlg001" xml:lang="eng">
+            <title xml:lang="eng">Theogony</title>
+            <edition projid="greekLang:alpheios-text-grc1">
+                <label xml:lang="eng">Alpheios Enhanced Theogony</label>
+                <online docname="/db/repository/greekLang/tlg0020/tlg001/alpheios-text-grc1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/div1[@n='?']" scope="/tei.2/text/body">
+                            <citation label="Line" xpath="/l[@n='?']" scope="/tei.2/text/body/div1[@n='?']"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="greekLang:tlg002" xml:lang="eng">
+            <title xml:lang="eng">Works and Days</title>
+            <edition projid="greekLang:alpheios-text-grc1">
+                <label xml:lang="eng">Alpheios Enhanced Works and Days</label>
+                <online docname="/db/repository/greekLang/tlg0020/tlg002/alpheios-text-grc1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/div1[@n='?']" scope="/tei.2/text/body">
+                            <citation label="Line" xpath="/l[@n='?']" scope="/tei.2/text/body/div1[@n='?']"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="greekLang:tlg003" xml:lang="eng">
+            <title xml:lang="eng">Shield of Heracles</title>
+            <edition projid="greekLang:alpheios-text-grc1">
+                <label xml:lang="eng">Alpheios Enhanced Shield of Heracles</label>
+                <online docname="/db/repository/greekLang/tlg0020/tlg003/alpheios-text-grc1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/div1[@n='?']" scope="/tei.2/text/body">
+                            <citation label="Line" xpath="/l[@n='?']" scope="/tei.2/text/body/div1[@n='?']"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+    </textgroup>
+    <textgroup projid="greekLang:tlg0085">
+        <groupname xml:lang="eng">Aeschylus</groupname>
+        <work projid="greekLang:tlg001" xml:lang="eng">
+            <title xml:lang="eng">Suppliant Women</title>
+            <edition projid="greekLang:alpheios-text-grc1">
+                <label xml:lang="eng">Alpheios Enhanced Suppliant Women</label>
+                <online docname="/db/repository/greekLang/tlg0085/tlg001/alpheios-text-grc1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Line" xpath="//l[@n='?']" scope="/tei.2/text/body"/>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="greekLang:tlg002" xml:lang="eng">
+            <title xml:lang="eng">Persians</title>
+            <edition projid="greekLang:alpheios-text-grc1">
+                <label xml:lang="eng">Alpheios Enhanced Persians</label>
+                <online docname="/db/repository/greekLang/tlg0085/tlg002/alpheios-text-grc1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Line" xpath="//l[@n='?']" scope="/tei.2/text/body"/>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="greekLang:tlg003" xml:lang="eng">
+            <title xml:lang="eng">Prometheus Bound</title>
+            <edition projid="greekLang:alpheios-text-grc1">
+                <label xml:lang="eng">Alpheios Enhanced Prometheus Bound</label>
+                <online docname="/db/repository/greekLang/tlg0085/tlg003/alpheios-text-grc1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Line" xpath="//l[@n='?']" scope="/tei.2/text/body"/>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>        
+        <work projid="greekLang:tlg004" xml:lang="eng">
+            <title xml:lang="eng">Seven Against Thebes</title>
+            <edition projid="greekLang:alpheios-text-grc1">
+                <label xml:lang="eng">Alpheios Enhanced Seven Against Thebes</label>
+                <online docname="/db/repository/greekLang/tlg0085/tlg004/alpheios-text-grc1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Line" xpath="//l[@n='?']" scope="/tei.2/text/body"/>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="greekLang:tlg005" xml:lang="eng">
+            <title xml:lang="eng">Agamemnon</title>
+            <edition projid="greekLang:alpheios-text-grc1">
+                <label xml:lang="eng">Alpheios Enhanced Agamemnon</label>
+                <online docname="/db/repository/greekLang/tlg0085/tlg005/alpheios-text-grc1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Line" xpath="//l[@n='?']" scope="/TEI.2/text/body"/>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+        <work projid="greekLang:tlg006" xml:lang="eng">
+            <title xml:lang="eng">Libation Bearers</title>
+            <edition projid="greekLang:alpheios-text-grc1">
+                <label xml:lang="eng">Alpheios Enhanced Libation Bearers</label>
+                <online docname="/db/repository/greekLang/tlg0085/tlg006/alpheios-text-grc1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Line" xpath="//l[@n='?']" scope="/tei.2/text/body"/>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+    </textgroup>
+    <textgroup projid="latinLang:phi0959">
+        <groupname xml:lang="eng">Ovid</groupname>
+        <work projid="latinLang:phi006" xml:lang="eng">
+            <title xml:lang="eng">Metamorphoses</title>
+            <edition projid="latinLang:alpheios-text-lat1">
+                <label xml:lang="eng">Alpheios Enhanced Metamorphoses Book 1 (Selections)</label>
+                <online docname="/db/repository/latinLang/phi0959/phi006/alpheios-text-lat1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/div1[@n='?']" scope="/tei.2/text/body">
+                            <citation label="Line" xpath="/l[@n='?']" scope="/tei.2/text/body/div1[@n='?']"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+    </textgroup>
+     <textgroup projid="latinLang:phi0448">
+        <groupname xml:lang="eng">Caesar</groupname>
+        <work projid="latinLang:phi001" xml:lang="eng">
+            <title xml:lang="eng">De bello Gallico</title>
+            <edition projid="latinLang:alpheios-text-lat1">
+                <label xml:lang="eng">Alpheios Enhanced De Bello Gallico (Selections)</label>
+                <online docname="/db/repository/latinLang/phi0959/phi006/alpheios-text-lat1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/div1[@n='?']" scope="/tei.2/text/body">
+                            <citation label="Chapter" xpath="/div2[@n='?']" scope="/tei.2/text/body/div1[@n='?']"/>
+                        </citation>
+                    </citationMapping>
+                </online>
+            </edition>
+        </work>
+    </textgroup>
 </TextInventory>

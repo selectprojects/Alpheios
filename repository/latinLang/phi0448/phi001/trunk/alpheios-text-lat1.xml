@@ -1,0 +1,1612 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tei.2 id="1999.02.0002">
+   <teiheader type="text" status="new">
+      <filedesc>
+         <titlestmt>
+            <title type="work" n="Gal.">De bello Gallico</title>
+            <title type="sub">Machine readable text</title>
+            <author n="Caes.">C. Julius Caesar</author>
+            <sponsor>Perseus Project, Tufts University</sponsor>
+            <principal>Gregory Crane</principal>
+            <respstmt>
+               <resp>Prepared under the supervision of</resp>
+               <name>Lisa Cerrato</name>
+               <name>William Merrill</name>
+               <name>Elli Mylonas</name>
+               <name>David Smith</name>
+            </respstmt>
+            <funder n="org:NEH">The National Endowment for the Humanities</funder>
+         </titlestmt>
+         <publicationstmt>
+            <publisher>Trustees of Tufts University</publisher>
+            <pubplace>Medford, MA</pubplace>
+            <authority>Perseus Project</authority>
+            <availability status="free">
+               <p>This text may be freely distributed, subject to the following
+    restrictions:</p>
+               <list>
+                  <item>You credit Perseus, as follows, whenever you use the document:
+	    <quote>Text provided by Perseus Digital Library, with funding from The National Endowment for the Humanities. Original version available for viewing and download at http://www.perseus.tufts.edu/hopper/.</quote>
+                  </item>
+                  <item>You leave this availability statement intact.</item>
+                  <item>You use it for non-commercial purposes only.</item>
+                  <item>You offer Perseus any modifications you make.</item>
+               </list>
+            </availability>
+         </publicationstmt>
+         <sourcedesc default="NO">
+            <biblstruct default="NO">
+               <monogr>
+                  <author>C. Julius Caesar</author>
+                  <title>C. Iuli Commentarii
+Rerum in Gallia Gestarum VII
+A. Hirti Commentarius VII</title>
+                  <editor role="editor">T. Rice Holmes</editor>
+                  <imprint>
+                     <pubplace>Oxonii</pubplace>
+                     <publisher>e Typographeo Clarendoniano</publisher>
+                     <date>1914</date>
+                  </imprint>
+               </monogr>
+               <series>
+                  <title>Scriptorum Classicorum Bibliotheca Oxoniensis</title>
+               </series>
+            </biblstruct>
+         </sourcedesc>
+      </filedesc>
+      <encodingdesc>
+         <refsdecl doctype="TEI.2">
+            <state delim="." unit="book"/>
+            <state unit="chapter"/>
+            <state unit="section"/>
+         </refsdecl>
+      </encodingdesc>
+      <profiledesc>
+         <langusage default="NO">
+            <language id="la">Latin</language>
+         </langusage>
+      </profiledesc>
+      <revisiondesc>
+         <change>
+            <date>4/3/96</date>
+            <respstmt>
+               <name>DAS</name>
+               <resp>ed.</resp>
+            </respstmt>
+            <item>
+$Log: caes.bg_lat.xml,v $
+Revision 1.3  2011-03-21 16:46:10  lcerrato
+Belgos changed to Belgas 2.4 according to source
+
+Revision 1.2  2010/07/20 17:44:05  lcerrato
+fixed numbering issue of chapters at end of book 1 (44 to end) checked against source
+
+Revision 1.1  2009/10/09 19:49:16  rsingh04
+more reorganizing of texts module by collection
+
+Revision 1.4  2009/09/17 15:12:00  lcerrato
+fixed typo
+
+Revision 1.3  2007/11/08 20:57:06  lcerrato
+fixed typos as follows:
+1.24.3 conterri / conferri
+1.24.4 concertissima / confertissima
+1.29.1 Hevetiorum / Helvetiorum
+1.40.3 poslulatis / postulatis
+1.40.3 epudiaturum / repudiaturum
+1.40.5 emoria / memoria
+1.47.5 cognogcerent / cognoscerent
+2.4.3 Illagnosque / magnosque
+2.4.6 teracissimosque / feracissimosque
+2.5.2 comnlunisque / communisque
+2.5.5 ullum / unum
+
+Revision 1.2  2005/08/01 15:54:42  packel
+removed stray item tags
+
+Revision 1.1  2005/07/25 14:30:34  packel
+Converted to XML
+
+Revision 1.20  2003/07/01 22:14:48  yorkc
+Updated texts to TEI P4 and Perseus P4 extensions; minor cleanup (esp. character encodings and typos.)
+
+Revision 1.19  2003/05/21 19:38:08  lcerrato
+changed 2.3.5  potuelint to potuerint
+
+Revision 1.18  2000/10/17 18:39:19  lcerrato
+took out comma in middle of word at 5.52
+
+Revision 1.17  2000/03/06 21:47:38  amahoney
+remove header so small toc will show books
+
+Revision 1.16  2000/03/06 16:04:54  textgod
+fixed numbering problem at 4.22 ff.
+
+Revision 1.15  2000/03/04 20:34:08  dasmith
+Added separate funder entity to TEI header.
+
+Revision 1.14  2000/02/25 23:01:19  textgod
+fixed multiple typos and regularized spacing and capitalization
+
+Revision 1.13 2000/02/25 17:36:10 textgod
+fixed multiple typos
+
+Revision 1.12 2000/02/22 21:32:33 textgod
+fixed multiple typos
+
+Revision 1.11 2000/02/22 21:00:54 textgod
+fixed multiple typos
+
+Revision 1.10 1999/11/19 19:47:19 lcerrato
+fixed multiple typos
+
+Revision 1.9 1999/10/14 21:17:09 lcerrato
+fixed typo at 1.18.5
+
+Revision 1.8 1999/08/04 19:04:15 textgod
+Removed TEXT N.
+
+Revision 1.7 1999/08/04 19:01:53 textgod
+Re-inserted Hirtius.
+
+Revision 1.6 1998/11/12 16:59:21 textgod
+Fixed scanning errors.
+
+Revision 1.5 1998/08/28 13:57:20 textgod
+Fixed typo.
+
+Revision 1.4 1997/12/19 20:47:28 textgod
+Moved book eight into separate Hirtius file.
+
+Revision 1.3 1997/10/17 17:57:40 textgod
+FIxed sections and typos. Changed abbreviation.
+
+Revision 1.2 1997/06/27 19:15:54 cjsu
+removed book 8 because it was not written by Caesar
+
+Revision 1.1 1997/06/25 18:40:31 cjsu
+passed SGML Parsing
+
+</item>
+         </change>
+      </revisiondesc>
+   </teiheader>
+   <text lang="lat">
+      <body>
+         <div1 type="Book" n="2" org="uniform" sample="complete">
+            <head>COMMENTARIUS SECUNDUS</head>
+           
+        
+<div2 type="chapter" n="1">
+<p>
+<wd tbrefs="1-1">Cum</wd>
+<wd tbrefs="1-2">esset</wd>
+<wd tbrefs="1-3">Caesar</wd>
+<wd tbrefs="1-4">in</wd>
+<wd tbrefs="1-5">citeriore</wd>
+<wd tbrefs="1-6">Gallia</wd>
+<wd tbrefs="1-7">in</wd>
+<wd tbrefs="1-8">hibernis</wd>
+<wd tbrefs="1-10">ita</wd>
+<wd tbrefs="1-11">uti</wd>
+<wd tbrefs="1-12">supra</wd>
+<wd tbrefs="1-13">demonstravimus</wd>
+<wd tbrefs="1-15">crebri</wd>
+<wd tbrefs="1-16">ad</wd>
+<wd tbrefs="1-17">eum</wd>
+<wd tbrefs="1-18">rumores</wd>
+<wd tbrefs="1-19">adferebantur</wd>
+<wd tbrefs="1-20">que</wd>
+<wd tbrefs="1-21">litteris</wd>
+<wd tbrefs="1-22">item</wd>
+<wd tbrefs="1-23">Labieni</wd>
+<wd tbrefs="1-24">certior</wd>
+<wd tbrefs="1-25">fiebat</wd>
+<wd tbrefs="1-26">omnes</wd>
+<wd tbrefs="1-27">Belgas</wd>
+<wd tbrefs="1-29">quam</wd>
+<wd tbrefs="1-30">tertiam</wd>
+<wd tbrefs="1-31">esse</wd>
+<wd tbrefs="1-32">Galliae</wd>
+<wd tbrefs="1-33">partem</wd>
+<wd tbrefs="1-34">dixeramus</wd>
+<wd tbrefs="1-36">contra</wd>
+<wd tbrefs="1-37">populum</wd>
+<wd tbrefs="1-38">Romanum</wd>
+<wd tbrefs="1-39">coniurare</wd>
+<wd tbrefs="1-40">que</wd>
+<wd tbrefs="1-41">obsides</wd>
+<wd tbrefs="1-42">inter</wd>
+<wd tbrefs="1-43">se</wd>
+<wd tbrefs="1-44">dare</wd>
+<wd tbrefs="2-1">Coniurandi</wd>
+<wd tbrefs="2-2">has</wd>
+<wd tbrefs="2-3">esse</wd>
+<wd tbrefs="2-4">causas</wd>
+<wd tbrefs="2-5">primum</wd>
+<wd tbrefs="2-6">quod</wd>
+<wd tbrefs="2-7">vererentur</wd>
+<wd tbrefs="2-8">ne</wd>
+<wd tbrefs="2-10">omni</wd>
+<wd tbrefs="2-11">pacata</wd>
+<wd tbrefs="2-12">Gallia</wd>
+<wd tbrefs="2-14">ad</wd>
+<wd tbrefs="2-15">eos</wd>
+<wd tbrefs="2-16">exercitus</wd>
+<wd tbrefs="2-17">noster</wd>
+<wd tbrefs="2-18">adduceretur</wd>
+<wd tbrefs="3-1">deinde</wd>
+<wd tbrefs="3-2">quod</wd>
+<wd tbrefs="3-3">ab</wd>
+<wd tbrefs="3-4">non</wd>
+<wd tbrefs="3-5">nullis</wd>
+<wd tbrefs="3-6">Gallis</wd>
+<wd tbrefs="3-7">sollicitarentur</wd>
+<wd tbrefs="3-9">partim</wd>
+<wd tbrefs="3-10">qui</wd>
+<wd tbrefs="3-12">ut</wd>
+<wd tbrefs="3-13">Germanos</wd>
+<wd tbrefs="3-14">diutius</wd>
+<wd tbrefs="3-15">in</wd>
+<wd tbrefs="3-16">Gallia</wd>
+<wd tbrefs="3-17">versari</wd>
+<wd tbrefs="3-18">noluerant</wd>
+<wd tbrefs="3-20">ita</wd>
+<wd tbrefs="3-21">populi</wd>
+<wd tbrefs="3-22">Romani</wd>
+<wd tbrefs="3-23">exercitum</wd>
+<wd tbrefs="3-24">hiemare</wd>
+<wd tbrefs="3-25">atque</wd>
+<wd tbrefs="3-26">inveterascere</wd>
+<wd tbrefs="3-27">in</wd>
+<wd tbrefs="3-28">Gallia</wd>
+<wd tbrefs="3-29">moleste</wd>
+<wd tbrefs="3-30">ferebant</wd>
+<wd tbrefs="3-32">partim</wd>
+<wd tbrefs="3-33">qui</wd>
+<wd tbrefs="3-34">mobilitate</wd>
+<wd tbrefs="3-35">et</wd>
+<wd tbrefs="3-36">levitate</wd>
+<wd tbrefs="3-37">animi</wd>
+<wd tbrefs="3-38">novis</wd>
+<wd tbrefs="3-39">imperiis</wd>
+<wd tbrefs="3-40">studebant</wd>
+<wd tbrefs="4-1">ab</wd>
+<wd tbrefs="4-2">non</wd>
+<wd tbrefs="4-3">nullis</wd>
+<wd tbrefs="4-4">etiam</wd>
+<wd tbrefs="4-5">quod</wd>
+<wd tbrefs="4-6">in</wd>
+<wd tbrefs="4-7">Gallia</wd>
+<wd tbrefs="4-8">a</wd>
+<wd tbrefs="4-9">potentioribus</wd>
+<wd tbrefs="4-10">atque</wd>
+<wd tbrefs="4-11">iis</wd>
+<wd tbrefs="4-12">qui</wd>
+<wd tbrefs="4-13">ad</wd>
+<wd tbrefs="4-14">conducendos</wd>
+<wd tbrefs="4-15">homines</wd>
+<wd tbrefs="4-16">facultates</wd>
+<wd tbrefs="4-17">habebant</wd>
+<wd tbrefs="4-18">vulgo</wd>
+<wd tbrefs="4-19">regna</wd>
+<wd tbrefs="4-20">occupabantur</wd>
+<wd tbrefs="5-1">qui</wd>
+<wd tbrefs="5-2">minus</wd>
+<wd tbrefs="5-3">facile</wd>
+<wd tbrefs="5-4">eam</wd>
+<wd tbrefs="5-5">rem</wd>
+<wd tbrefs="5-6">imperio</wd>
+<wd tbrefs="5-7">nostro</wd>
+<wd tbrefs="5-8">consequi</wd>
+<wd tbrefs="5-9">poterant</wd>
+</p>
+</div2>
+<div2 type="chapter" n="2">
+<p>
+<wd tbrefs="6-1">His</wd>
+<wd tbrefs="6-2">nuntiis</wd>
+<wd tbrefs="6-3">que</wd>
+<wd tbrefs="6-4">litteris</wd>
+<wd tbrefs="6-5">commotus</wd>
+<wd tbrefs="6-6">Caesar</wd>
+<wd tbrefs="6-7">duas</wd>
+<wd tbrefs="6-8">legiones</wd>
+<wd tbrefs="6-9">in</wd>
+<wd tbrefs="6-10">citeriore</wd>
+<wd tbrefs="6-11">Gallia</wd>
+<wd tbrefs="6-12">novas</wd>
+<wd tbrefs="6-13">conscripsit</wd>
+<wd tbrefs="6-14">et</wd>
+<wd tbrefs="6-15">inita</wd>
+<wd tbrefs="6-16">aestate</wd>
+<wd tbrefs="6-17">in</wd>
+<wd tbrefs="6-18">ulteriorem</wd>
+<wd tbrefs="6-19">Galliam</wd>
+<wd tbrefs="6-20">qui</wd>
+<wd tbrefs="6-21">deduceret</wd>
+<wd tbrefs="6-22">Q</wd>
+<wd tbrefs="6-23">Pedium</wd>
+<wd tbrefs="6-24">legatum</wd>
+<wd tbrefs="6-25">misit</wd>
+<wd tbrefs="7-1">Ipse</wd>
+<wd tbrefs="7-3">cum</wd>
+<wd tbrefs="7-4">primum</wd>
+<wd tbrefs="7-5">pabuli</wd>
+<wd tbrefs="7-6">copia</wd>
+<wd tbrefs="7-7">esse</wd>
+<wd tbrefs="7-8">inciperet</wd>
+<wd tbrefs="7-10">ad</wd>
+<wd tbrefs="7-11">exercitum</wd>
+<wd tbrefs="7-12">venit</wd>
+<wd tbrefs="8-1">Dat</wd>
+<wd tbrefs="8-2">negotium</wd>
+<wd tbrefs="8-3">Senonibus</wd>
+<wd tbrefs="8-4">que</wd>
+<wd tbrefs="8-5">reliquis</wd>
+<wd tbrefs="8-6">Gallis</wd>
+<wd tbrefs="8-7">qui</wd>
+<wd tbrefs="8-8">finitimi</wd>
+<wd tbrefs="8-9">Belgis</wd>
+<wd tbrefs="8-10">erant</wd>
+<wd tbrefs="8-11">uti</wd>
+<wd tbrefs="8-12">ea</wd>
+<wd tbrefs="8-13">quae</wd>
+<wd tbrefs="8-14">apud</wd>
+<wd tbrefs="8-15">eos</wd>
+<wd tbrefs="8-16">gerantur</wd>
+<wd tbrefs="8-17">cognoscant</wd>
+<wd tbrefs="8-18">que</wd>
+<wd tbrefs="8-19">se</wd>
+<wd tbrefs="8-20">de</wd>
+<wd tbrefs="8-21">his</wd>
+<wd tbrefs="8-22">rebus</wd>
+<wd tbrefs="8-23">certiorem</wd>
+<wd tbrefs="8-24">faciant</wd>
+<wd tbrefs="9-1">Hi</wd>
+<wd tbrefs="9-2">constanter</wd>
+<wd tbrefs="9-3">omnes</wd>
+<wd tbrefs="9-4">nuntiaverunt</wd>
+<wd tbrefs="9-5">manus</wd>
+<wd tbrefs="9-6">cogi</wd>
+<wd tbrefs="9-8">exercitum</wd>
+<wd tbrefs="9-9">in</wd>
+<wd tbrefs="9-10">unum</wd>
+<wd tbrefs="9-11">locum</wd>
+<wd tbrefs="9-12">conduci</wd>
+<wd tbrefs="10-1">Tum</wd>
+<wd tbrefs="10-2">vero</wd>
+<wd tbrefs="10-3">dubitandum</wd>
+<wd tbrefs="10-4">non</wd>
+<wd tbrefs="10-5">existimavit</wd>
+<wd tbrefs="10-6">quin</wd>
+<wd tbrefs="10-7">ad</wd>
+<wd tbrefs="10-8">eos</wd>
+<wd tbrefs="10-9">proficisceretur</wd>
+<wd tbrefs="11-1">Re</wd>
+<wd tbrefs="11-2">frumentaria</wd>
+<wd tbrefs="11-3">provisa</wd>
+<wd tbrefs="11-4">castra</wd>
+<wd tbrefs="11-5">movet</wd>
+<wd tbrefs="11-6">que</wd>
+<wd tbrefs="11-7">diebus</wd>
+<wd tbrefs="11-8">circiter</wd>
+<wd tbrefs="11-9">XV</wd>
+<wd tbrefs="11-10">ad</wd>
+<wd tbrefs="11-11">fines</wd>
+<wd tbrefs="11-12">Belgarum</wd>
+<wd tbrefs="11-13">pervenit</wd>
+</p>
+</div2>
+<div2 type="chapter" n="3">
+<p>
+<wd tbrefs="12-1">Eo</wd>
+<wd tbrefs="12-2">cum</wd>
+<wd tbrefs="12-3">de</wd>
+<wd tbrefs="12-4">improviso</wd>
+<wd tbrefs="12-5">que</wd>
+<wd tbrefs="12-6">celerius</wd>
+<wd tbrefs="12-7">omnium</wd>
+<wd tbrefs="12-8">opinione</wd>
+<wd tbrefs="12-9">venisset</wd>
+<wd tbrefs="12-11">Remi</wd>
+<wd tbrefs="12-13">qui</wd>
+<wd tbrefs="12-14">proximi</wd>
+<wd tbrefs="12-15">Galliae</wd>
+<wd tbrefs="12-16">ex</wd>
+<wd tbrefs="12-17">Belgis</wd>
+<wd tbrefs="12-18">sunt</wd>
+<wd tbrefs="12-20">ad</wd>
+<wd tbrefs="12-21">eum</wd>
+<wd tbrefs="12-22">legatos</wd>
+<wd tbrefs="12-23">Iccium</wd>
+<wd tbrefs="12-24">et</wd>
+<wd tbrefs="12-25">Andebrogium</wd>
+<wd tbrefs="12-27">primos</wd>
+<wd tbrefs="12-28">civitatis</wd>
+<wd tbrefs="12-30">miserunt</wd>
+<wd tbrefs="12-32">qui</wd>
+<wd tbrefs="12-33">dicerent</wd>
+<wd tbrefs="12-34">se</wd>
+<wd tbrefs="12-35">que</wd>
+<wd tbrefs="12-36">sua</wd>
+<wd tbrefs="12-37">omnia</wd>
+<wd tbrefs="12-38">in</wd>
+<wd tbrefs="12-39">fidem</wd>
+<wd tbrefs="12-40">atque</wd>
+<wd tbrefs="12-41">potestatem</wd>
+<wd tbrefs="12-42">populi</wd>
+<wd tbrefs="12-43">Romani</wd>
+<wd tbrefs="12-44">permittere</wd>
+<wd tbrefs="12-46">ne</wd>
+<wd tbrefs="12-47">que</wd>
+<wd tbrefs="12-48">se</wd>
+<wd tbrefs="12-49">cum</wd>
+<wd tbrefs="12-50">reliquis</wd>
+<wd tbrefs="12-51">Belgis</wd>
+<wd tbrefs="12-52">consensisse</wd>
+<wd tbrefs="12-53">ne</wd>
+<wd tbrefs="12-54">que</wd>
+<wd tbrefs="12-55">contra</wd>
+<wd tbrefs="12-56">populum</wd>
+<wd tbrefs="12-57">Romanum</wd>
+<wd tbrefs="12-58">coniurasse</wd>
+<wd tbrefs="12-60">que</wd>
+<wd tbrefs="12-61">paratos</wd>
+<wd tbrefs="12-62">esse</wd>
+<wd tbrefs="12-63">et</wd>
+<wd tbrefs="12-64">obsides</wd>
+<wd tbrefs="12-65">dare</wd>
+<wd tbrefs="12-66">et</wd>
+<wd tbrefs="12-67">imperata</wd>
+<wd tbrefs="12-68">facere</wd>
+<wd tbrefs="12-69">et</wd>
+<wd tbrefs="12-70">oppidis</wd>
+<wd tbrefs="12-71">recipere</wd>
+<wd tbrefs="12-72">et</wd>
+<wd tbrefs="12-73">frumento</wd>
+<wd tbrefs="12-74">que</wd>
+<wd tbrefs="12-75">ceteris</wd>
+<wd tbrefs="12-76">rebus</wd>
+<wd tbrefs="12-77">iuvare</wd>
+<wd tbrefs="13-1">reliquos</wd>
+<wd tbrefs="13-2">omnes</wd>
+<wd tbrefs="13-3">Belgas</wd>
+<wd tbrefs="13-4">in</wd>
+<wd tbrefs="13-5">armis</wd>
+<wd tbrefs="13-6">esse</wd>
+<wd tbrefs="13-8">que</wd>
+<wd tbrefs="13-9">Germanos</wd>
+<wd tbrefs="13-10">qui</wd>
+<wd tbrefs="13-11">cis</wd>
+<wd tbrefs="13-12">Rhenum</wd>
+<wd tbrefs="13-13">incolant</wd>
+<wd tbrefs="13-14">sese</wd>
+<wd tbrefs="13-15">cum</wd>
+<wd tbrefs="13-16">his</wd>
+<wd tbrefs="13-17">coniunxisse</wd>
+<wd tbrefs="13-19">que</wd>
+<wd tbrefs="13-20">tantum</wd>
+<wd tbrefs="13-21">esse</wd>
+<wd tbrefs="13-22">eorum</wd>
+<wd tbrefs="13-23">omnium</wd>
+<wd tbrefs="13-24">furorem</wd>
+<wd tbrefs="13-25">ut</wd>
+<wd tbrefs="13-26">ne</wd>
+<wd tbrefs="13-27">Suessiones</wd>
+<wd tbrefs="13-28">quidem</wd>
+<wd tbrefs="13-30">fratres</wd>
+<wd tbrefs="13-31">que</wd>
+<wd tbrefs="13-32">consanguineos</wd>
+<wd tbrefs="13-33">suos</wd>
+<wd tbrefs="13-35">qui</wd>
+<wd tbrefs="13-36">eodem</wd>
+<wd tbrefs="13-37">iure</wd>
+<wd tbrefs="13-38">et</wd>
+<wd tbrefs="13-39">isdem</wd>
+<wd tbrefs="13-40">legibus</wd>
+<wd tbrefs="13-41">utantur</wd>
+<wd tbrefs="13-43">unum</wd>
+<wd tbrefs="13-44">imperium</wd>
+<wd tbrefs="13-45">que</wd>
+<wd tbrefs="13-46">unum</wd>
+<wd tbrefs="13-47">magistratum</wd>
+<wd tbrefs="13-48">cum</wd>
+<wd tbrefs="13-49">ipsis</wd>
+<wd tbrefs="13-50">habeant</wd>
+<wd tbrefs="13-52">deterrere</wd>
+<wd tbrefs="13-53">potuerint</wd>
+<wd tbrefs="13-54">quin</wd>
+<wd tbrefs="13-55">cum</wd>
+<wd tbrefs="13-56">iis</wd>
+<wd tbrefs="13-57">consentirent</wd>
+</p>
+</div2>
+<div2 type="chapter" n="5">
+<p>
+<wd tbrefs="14-1">Caesar</wd>
+<wd tbrefs="14-2">Remos</wd>
+<wd tbrefs="14-3">cohortatus</wd>
+<wd tbrefs="14-4">que</wd>
+<wd tbrefs="14-5">liberaliter</wd>
+<wd tbrefs="14-6">oratione</wd>
+<wd tbrefs="14-7">prosecutus</wd>
+<wd tbrefs="14-8">omnem</wd>
+<wd tbrefs="14-9">senatum</wd>
+<wd tbrefs="14-10">ad</wd>
+<wd tbrefs="14-11">se</wd>
+<wd tbrefs="14-12">convenire</wd>
+<wd tbrefs="14-13">que</wd>
+<wd tbrefs="14-14">principum</wd>
+<wd tbrefs="14-15">liberos</wd>
+<wd tbrefs="14-16">obsides</wd>
+<wd tbrefs="14-17">ad</wd>
+<wd tbrefs="14-18">se</wd>
+<wd tbrefs="14-19">adduci</wd>
+<wd tbrefs="14-20">iussit</wd>
+<wd tbrefs="15-1">Quae</wd>
+<wd tbrefs="15-2">omnia</wd>
+<wd tbrefs="15-3">ab</wd>
+<wd tbrefs="15-4">his</wd>
+<wd tbrefs="15-5">diligenter</wd>
+<wd tbrefs="15-6">ad</wd>
+<wd tbrefs="15-7">diem</wd>
+<wd tbrefs="15-8">facta</wd>
+<wd tbrefs="15-9">sunt</wd>
+<wd tbrefs="16-1">Ipse</wd>
+<wd tbrefs="16-2">div2iciacum</wd>
+<wd tbrefs="16-3">Haeduum</wd>
+<wd tbrefs="16-4">magnopere</wd>
+<wd tbrefs="16-5">cohortatus</wd>
+<wd tbrefs="16-6">docet</wd>
+<wd tbrefs="16-7">quanto</wd>
+<wd tbrefs="16-8">opere</wd>
+<wd tbrefs="16-9">rei</wd>
+<wd tbrefs="16-10">publicae</wd>
+<wd tbrefs="16-11">que</wd>
+<wd tbrefs="16-12">comnlunis</wd>
+<wd tbrefs="16-13">salutis</wd>
+<wd tbrefs="16-14">intersit</wd>
+<wd tbrefs="16-15">manus</wd>
+<wd tbrefs="16-16">hostium</wd>
+<wd tbrefs="16-17">distineri</wd>
+<wd tbrefs="16-19">ne</wd>
+<wd tbrefs="16-20">cum</wd>
+<wd tbrefs="16-21">tanta</wd>
+<wd tbrefs="16-22">multitudine</wd>
+<wd tbrefs="16-23">uno</wd>
+<wd tbrefs="16-24">tempore</wd>
+<wd tbrefs="16-25">confligendum</wd>
+<wd tbrefs="16-26">sit</wd>
+<wd tbrefs="17-1">Id</wd>
+<wd tbrefs="17-2">fieri</wd>
+<wd tbrefs="17-3">posse</wd>
+<wd tbrefs="17-5">si</wd>
+<wd tbrefs="17-6">suas</wd>
+<wd tbrefs="17-7">copias</wd>
+<wd tbrefs="17-8">Haedui</wd>
+<wd tbrefs="17-9">in</wd>
+<wd tbrefs="17-10">fines</wd>
+<wd tbrefs="17-11">Bellovacorum</wd>
+<wd tbrefs="17-12">introduxerint</wd>
+<wd tbrefs="17-13">et</wd>
+<wd tbrefs="17-14">eorum</wd>
+<wd tbrefs="17-15">agros</wd>
+<wd tbrefs="17-16">populari</wd>
+<wd tbrefs="17-17">coeperint</wd>
+<wd tbrefs="18-1">His</wd>
+<wd tbrefs="18-2">datis</wd>
+<wd tbrefs="18-3">mandatis</wd>
+<wd tbrefs="18-4">eum</wd>
+<wd tbrefs="18-5">a</wd>
+<wd tbrefs="18-6">se</wd>
+<wd tbrefs="18-7">dimittit</wd>
+<wd tbrefs="19-1">Postquam</wd>
+<wd tbrefs="19-2">omnes</wd>
+<wd tbrefs="19-3">Belgarum</wd>
+<wd tbrefs="19-4">copias</wd>
+<wd tbrefs="19-5">in</wd>
+<wd tbrefs="19-6">unum</wd>
+<wd tbrefs="19-7">locum</wd>
+<wd tbrefs="19-8">coactas</wd>
+<wd tbrefs="19-9">ad</wd>
+<wd tbrefs="19-10">se</wd>
+<wd tbrefs="19-11">venire</wd>
+<wd tbrefs="19-12">vidit</wd>
+<wd tbrefs="19-13">que</wd>
+<wd tbrefs="19-14">ne</wd>
+<wd tbrefs="19-15">iam</wd>
+<wd tbrefs="19-16">longe</wd>
+<wd tbrefs="19-17">abesse</wd>
+<wd tbrefs="19-18">ab</wd>
+<wd tbrefs="19-19">iis</wd>
+<wd tbrefs="19-20">quos</wd>
+<wd tbrefs="19-21">miserat</wd>
+<wd tbrefs="19-22">exploratoribus</wd>
+<wd tbrefs="19-23">et</wd>
+<wd tbrefs="19-24">ab</wd>
+<wd tbrefs="19-25">Remis</wd>
+<wd tbrefs="19-26">cognovit</wd>
+<wd tbrefs="19-28">flumen</wd>
+<wd tbrefs="19-29">Axonam</wd>
+<wd tbrefs="19-31">quod</wd>
+<wd tbrefs="19-32">est</wd>
+<wd tbrefs="19-33">in</wd>
+<wd tbrefs="19-34">extremis</wd>
+<wd tbrefs="19-35">Remorum</wd>
+<wd tbrefs="19-36">finibus</wd>
+<wd tbrefs="19-38">exercitum</wd>
+<wd tbrefs="19-39">traducere</wd>
+<wd tbrefs="19-40">maturavit</wd>
+<wd tbrefs="19-41">atque</wd>
+<wd tbrefs="19-42">ibi</wd>
+<wd tbrefs="19-43">castra</wd>
+<wd tbrefs="19-44">posuit</wd>
+<wd tbrefs="20-1">Quae</wd>
+<wd tbrefs="20-2">res</wd>
+<wd tbrefs="20-3">et</wd>
+<wd tbrefs="20-4">latus</wd>
+<wd tbrefs="20-5">ullum</wd>
+<wd tbrefs="20-6">castrorum</wd>
+<wd tbrefs="20-7">ripis</wd>
+<wd tbrefs="20-8">fluminis</wd>
+<wd tbrefs="20-9">muniebat</wd>
+<wd tbrefs="20-10">et</wd>
+<wd tbrefs="20-11">post</wd>
+<wd tbrefs="20-12">eum</wd>
+<wd tbrefs="20-13">quae</wd>
+<wd tbrefs="20-14">erant</wd>
+<wd tbrefs="20-15">tuta</wd>
+<wd tbrefs="20-16">ab</wd>
+<wd tbrefs="20-17">hostibus</wd>
+<wd tbrefs="20-18">reddebat</wd>
+<wd tbrefs="20-19">et</wd>
+<wd tbrefs="20-20">commeatus</wd>
+<wd tbrefs="20-21">ab</wd>
+<wd tbrefs="20-22">Remis</wd>
+<wd tbrefs="20-23">que</wd>
+<wd tbrefs="20-24">reliquis</wd>
+<wd tbrefs="20-25">civitatibus</wd>
+<wd tbrefs="20-26">ut</wd>
+<wd tbrefs="20-27">sine</wd>
+<wd tbrefs="20-28">periculo</wd>
+<wd tbrefs="20-29">ad</wd>
+<wd tbrefs="20-30">eum</wd>
+<wd tbrefs="20-31">portari</wd>
+<wd tbrefs="20-32">possent</wd>
+<wd tbrefs="20-33">efficiebat</wd>
+<wd tbrefs="21-1">In</wd>
+<wd tbrefs="21-2">eo</wd>
+<wd tbrefs="21-3">flumine</wd>
+<wd tbrefs="21-4">pons</wd>
+<wd tbrefs="21-5">erat</wd>
+<wd tbrefs="22-1">Ibi</wd>
+<wd tbrefs="22-2">praesidium</wd>
+<wd tbrefs="22-3">ponit</wd>
+<wd tbrefs="22-4">et</wd>
+<wd tbrefs="22-5">in</wd>
+<wd tbrefs="22-6">altera</wd>
+<wd tbrefs="22-7">parte</wd>
+<wd tbrefs="22-8">fluminis</wd>
+<wd tbrefs="22-9">Q</wd>
+<wd tbrefs="22-10">Titurium</wd>
+<wd tbrefs="22-11">Sabinum</wd>
+<wd tbrefs="22-12">legatum</wd>
+<wd tbrefs="22-13">cum</wd>
+<wd tbrefs="22-14">sex</wd>
+<wd tbrefs="22-15">cohortibus</wd>
+<wd tbrefs="22-16">relinquit</wd>
+<wd tbrefs="23-1">castra</wd>
+<wd tbrefs="23-2">in</wd>
+<wd tbrefs="23-3">altitudinem</wd>
+<wd tbrefs="23-4">pedum</wd>
+<wd tbrefs="23-5">XII</wd>
+<wd tbrefs="23-6">vallo</wd>
+<wd tbrefs="23-7">que</wd>
+<wd tbrefs="23-8">fossa</wd>
+<wd tbrefs="23-9">duodeviginti</wd>
+<wd tbrefs="23-10">pedum</wd>
+<wd tbrefs="23-11">muniri</wd>
+<wd tbrefs="23-12">iubet</wd>
+</p>
+</div2>
+<div2 type="chapter" n="7">
+<p>
+<wd tbrefs="24-1">Eo</wd>
+<wd tbrefs="24-2">de</wd>
+<wd tbrefs="24-3">media</wd>
+<wd tbrefs="24-4">nocte</wd>
+<wd tbrefs="24-5">Caesar</wd>
+<wd tbrefs="24-6">isdem</wd>
+<wd tbrefs="24-7">ducibus</wd>
+<wd tbrefs="24-8">usus</wd>
+<wd tbrefs="24-9">qui</wd>
+<wd tbrefs="24-10">nuntii</wd>
+<wd tbrefs="24-11">ab</wd>
+<wd tbrefs="24-12">Iccio</wd>
+<wd tbrefs="24-13">venerant</wd>
+<wd tbrefs="24-15">Numidas</wd>
+<wd tbrefs="24-16">et</wd>
+<wd tbrefs="24-17">Cretas</wd>
+<wd tbrefs="24-18">sagittarios</wd>
+<wd tbrefs="24-19">et</wd>
+<wd tbrefs="24-20">funditores</wd>
+<wd tbrefs="24-21">Baleares</wd>
+<wd tbrefs="24-22">subsidio</wd>
+<wd tbrefs="24-23">oppidanis</wd>
+<wd tbrefs="24-24">mittit</wd>
+<wd tbrefs="25-1">quorum</wd>
+<wd tbrefs="25-2">adventu</wd>
+<wd tbrefs="25-3">et</wd>
+<wd tbrefs="25-4">Remis</wd>
+<wd tbrefs="25-5">cum</wd>
+<wd tbrefs="25-6">spe</wd>
+<wd tbrefs="25-7">defensionis</wd>
+<wd tbrefs="25-8">studium</wd>
+<wd tbrefs="25-9">propugnandi</wd>
+<wd tbrefs="25-10">accessit</wd>
+<wd tbrefs="25-11">et</wd>
+<wd tbrefs="25-12">hostibus</wd>
+<wd tbrefs="25-13">eadem</wd>
+<wd tbrefs="25-14">de</wd>
+<wd tbrefs="25-15">causa</wd>
+<wd tbrefs="25-16">spes</wd>
+<wd tbrefs="25-17">potiundi</wd>
+<wd tbrefs="25-18">oppidi</wd>
+<wd tbrefs="25-19">discessit</wd>
+<wd tbrefs="26-1">Itaque</wd>
+<wd tbrefs="26-2">paulisper</wd>
+<wd tbrefs="26-3">apud</wd>
+<wd tbrefs="26-4">oppidum</wd>
+<wd tbrefs="26-5">morati</wd>
+<wd tbrefs="26-6">que</wd>
+<wd tbrefs="26-7">agros</wd>
+<wd tbrefs="26-8">Remorum</wd>
+<wd tbrefs="26-9">depopulati</wd>
+<wd tbrefs="26-11">omnibus</wd>
+<wd tbrefs="26-12">vicis</wd>
+<wd tbrefs="26-13">que</wd>
+<wd tbrefs="26-14">aedificiis</wd>
+<wd tbrefs="26-15">quo</wd>
+<wd tbrefs="26-16">adire</wd>
+<wd tbrefs="26-17">potuerant</wd>
+<wd tbrefs="26-18">incensis</wd>
+<wd tbrefs="26-20">ad</wd>
+<wd tbrefs="26-21">castra</wd>
+<wd tbrefs="26-22">Caesaris</wd>
+<wd tbrefs="26-23">omnibus</wd>
+<wd tbrefs="26-24">copiis</wd>
+<wd tbrefs="26-25">contenderunt</wd>
+<wd tbrefs="26-26">et</wd>
+<wd tbrefs="26-27">a</wd>
+<wd tbrefs="26-28">milibus</wd>
+<wd tbrefs="26-29">passuum</wd>
+<wd tbrefs="26-30">minus</wd>
+<wd tbrefs="26-31">duobus</wd>
+<wd tbrefs="26-32">castra</wd>
+<wd tbrefs="26-33">posuerunt</wd>
+<wd tbrefs="27-1">quae</wd>
+<wd tbrefs="27-2">castra</wd>
+<wd tbrefs="27-4">ut</wd>
+<wd tbrefs="27-5">fumo</wd>
+<wd tbrefs="27-6">atque</wd>
+<wd tbrefs="27-7">ignibus</wd>
+<wd tbrefs="27-8">significabatur</wd>
+<wd tbrefs="27-10">amplius</wd>
+<wd tbrefs="27-11">milibus</wd>
+<wd tbrefs="27-12">passuum</wd>
+<wd tbrefs="27-13">VIII</wd>
+<wd tbrefs="27-14">latitudinem</wd>
+<wd tbrefs="27-15">patebant</wd>
+</p>
+</div2>
+<div2 type="chapter" n="9">
+<p>
+<wd tbrefs="28-1">Palus</wd>
+<wd tbrefs="28-2">erat</wd>
+<wd tbrefs="28-3">non</wd>
+<wd tbrefs="28-4">magna</wd>
+<wd tbrefs="28-5">inter</wd>
+<wd tbrefs="28-6">nostrum</wd>
+<wd tbrefs="28-7">atque</wd>
+<wd tbrefs="28-8">hostium</wd>
+<wd tbrefs="28-9">exercitum</wd>
+<wd tbrefs="29-1">Hanc</wd>
+<wd tbrefs="29-2">si</wd>
+<wd tbrefs="29-3">nostri</wd>
+<wd tbrefs="29-4">transirent</wd>
+<wd tbrefs="29-5">hostes</wd>
+<wd tbrefs="29-6">expectabant</wd>
+<wd tbrefs="30-1">nostri</wd>
+<wd tbrefs="30-2">autem</wd>
+<wd tbrefs="30-4">si</wd>
+<wd tbrefs="30-5">ab</wd>
+<wd tbrefs="30-6">illis</wd>
+<wd tbrefs="30-7">initium</wd>
+<wd tbrefs="30-8">transeundi</wd>
+<wd tbrefs="30-9">fieret</wd>
+<wd tbrefs="30-11">ut</wd>
+<wd tbrefs="30-12">impeditos</wd>
+<wd tbrefs="30-13">adgrederentur</wd>
+<wd tbrefs="30-14">parati</wd>
+<wd tbrefs="30-15">in</wd>
+<wd tbrefs="30-16">armis</wd>
+<wd tbrefs="30-17">erant</wd>
+<wd tbrefs="31-1">Interim</wd>
+<wd tbrefs="31-2">proelio</wd>
+<wd tbrefs="31-3">equestri</wd>
+<wd tbrefs="31-4">inter</wd>
+<wd tbrefs="31-5">duas</wd>
+<wd tbrefs="31-6">acies</wd>
+<wd tbrefs="31-7">contendebatur</wd>
+<wd tbrefs="32-1">Ubi</wd>
+<wd tbrefs="32-2">neutri</wd>
+<wd tbrefs="32-3">transeundi</wd>
+<wd tbrefs="32-4">initium</wd>
+<wd tbrefs="32-5">faciunt</wd>
+<wd tbrefs="32-7">secundiore</wd>
+<wd tbrefs="32-8">equitum</wd>
+<wd tbrefs="32-9">proelio</wd>
+<wd tbrefs="32-10">nostris</wd>
+<wd tbrefs="32-11">Caesar</wd>
+<wd tbrefs="32-12">suos</wd>
+<wd tbrefs="32-13">in</wd>
+<wd tbrefs="32-14">castra</wd>
+<wd tbrefs="32-15">reduxit</wd>
+<wd tbrefs="33-1">Hostes</wd>
+<wd tbrefs="33-2">protinus</wd>
+<wd tbrefs="33-3">ex</wd>
+<wd tbrefs="33-4">eo</wd>
+<wd tbrefs="33-5">loco</wd>
+<wd tbrefs="33-6">ad</wd>
+<wd tbrefs="33-7">flumen</wd>
+<wd tbrefs="33-8">Axonam</wd>
+<wd tbrefs="33-9">contenderunt</wd>
+<wd tbrefs="33-11">quod</wd>
+<wd tbrefs="33-12">esse</wd>
+<wd tbrefs="33-13">post</wd>
+<wd tbrefs="33-14">nostra</wd>
+<wd tbrefs="33-15">castra</wd>
+<wd tbrefs="33-16">demonstratum</wd>
+<wd tbrefs="33-17">est</wd>
+<wd tbrefs="34-1">Ibi</wd>
+<wd tbrefs="34-2">vadis</wd>
+<wd tbrefs="34-3">repertis</wd>
+<wd tbrefs="34-4">partem</wd>
+<wd tbrefs="34-5">suarum</wd>
+<wd tbrefs="34-6">copiarum</wd>
+<wd tbrefs="34-7">traducere</wd>
+<wd tbrefs="34-8">conati</wd>
+<wd tbrefs="34-9">sunt</wd>
+<wd tbrefs="34-10">eo</wd>
+<wd tbrefs="34-11">consilio</wd>
+<wd tbrefs="34-12">ut</wd>
+<wd tbrefs="34-14">si</wd>
+<wd tbrefs="34-15">possent</wd>
+<wd tbrefs="34-17">castellum</wd>
+<wd tbrefs="34-19">cui</wd>
+<wd tbrefs="34-20">praeerat</wd>
+<wd tbrefs="34-21">Q</wd>
+<wd tbrefs="34-23">Titurius</wd>
+<wd tbrefs="34-24">legatus</wd>
+<wd tbrefs="34-26">expugnarent</wd>
+<wd tbrefs="34-27">que</wd>
+<wd tbrefs="34-28">pontem</wd>
+<wd tbrefs="34-29">interscinderent</wd>
+<wd tbrefs="34-31">si</wd>
+<wd tbrefs="34-32">minus</wd>
+<wd tbrefs="34-33">potuissent</wd>
+<wd tbrefs="34-35">agros</wd>
+<wd tbrefs="34-36">Remorum</wd>
+<wd tbrefs="34-37">popularentur</wd>
+<wd tbrefs="34-39">qui</wd>
+<wd tbrefs="34-40">magno</wd>
+<wd tbrefs="34-41">nobis</wd>
+<wd tbrefs="34-42">usui</wd>
+<wd tbrefs="34-43">ad</wd>
+<wd tbrefs="34-44">bellum</wd>
+<wd tbrefs="34-45">gerendum</wd>
+<wd tbrefs="34-46">erant</wd>
+<wd tbrefs="34-48">que</wd>
+<wd tbrefs="34-49">commeatu</wd>
+<wd tbrefs="34-50">nostros</wd>
+<wd tbrefs="34-51">prohiberent</wd>
+</p>
+</div2>
+<div2 type="chapter" n="14">
+<p>
+<wd tbrefs="35-1">Caesar</wd>
+<wd tbrefs="35-2">honoris</wd>
+<wd tbrefs="35-3">div2iciaci</wd>
+<wd tbrefs="35-4">atque</wd>
+<wd tbrefs="35-5">Haeduorum</wd>
+<wd tbrefs="35-6">causa</wd>
+<wd tbrefs="35-7">sese</wd>
+<wd tbrefs="35-8">eos</wd>
+<wd tbrefs="35-9">in</wd>
+<wd tbrefs="35-10">fidem</wd>
+<wd tbrefs="35-11">recepturum</wd>
+<wd tbrefs="35-12">et</wd>
+<wd tbrefs="35-13">conservaturum</wd>
+<wd tbrefs="35-14">dixit</wd>
+<wd tbrefs="35-16">et</wd>
+<wd tbrefs="35-17">quod</wd>
+<wd tbrefs="35-18">erat</wd>
+<wd tbrefs="35-19">civitas</wd>
+<wd tbrefs="35-20">magna</wd>
+<wd tbrefs="35-21">inter</wd>
+<wd tbrefs="35-22">Belgas</wd>
+<wd tbrefs="35-23">auctoritate</wd>
+<wd tbrefs="35-24">atque</wd>
+<wd tbrefs="35-25">hominum</wd>
+<wd tbrefs="35-26">multitudine</wd>
+<wd tbrefs="35-27">praestabat</wd>
+<wd tbrefs="35-29">DC</wd>
+<wd tbrefs="35-30">obsides</wd>
+<wd tbrefs="35-31">poposcit</wd>
+<wd tbrefs="36-1">His</wd>
+<wd tbrefs="36-2">traditis</wd>
+<wd tbrefs="36-3">que</wd>
+<wd tbrefs="36-4">omnibus</wd>
+<wd tbrefs="36-5">armis</wd>
+<wd tbrefs="36-6">ex</wd>
+<wd tbrefs="36-7">oppido</wd>
+<wd tbrefs="36-8">conlatis</wd>
+<wd tbrefs="36-10">ab</wd>
+<wd tbrefs="36-11">eo</wd>
+<wd tbrefs="36-12">loco</wd>
+<wd tbrefs="36-13">in</wd>
+<wd tbrefs="36-14">fines</wd>
+<wd tbrefs="36-15">Ambianorum</wd>
+<wd tbrefs="36-16">pervenit</wd>
+<wd tbrefs="37-1">qui</wd>
+<wd tbrefs="37-2">se</wd>
+<wd tbrefs="37-3">que</wd>
+<wd tbrefs="37-4">sua</wd>
+<wd tbrefs="37-5">omnia</wd>
+<wd tbrefs="37-6">sine</wd>
+<wd tbrefs="37-7">mora</wd>
+<wd tbrefs="37-8">dediderunt</wd>
+<wd tbrefs="38-1">Eorum</wd>
+<wd tbrefs="38-2">fines</wd>
+<wd tbrefs="38-3">Nervii</wd>
+<wd tbrefs="38-4">attingebant</wd>
+<wd tbrefs="39-1">Quorum</wd>
+<wd tbrefs="39-2">de</wd>
+<wd tbrefs="39-3">natura</wd>
+<wd tbrefs="39-4">que</wd>
+<wd tbrefs="39-5">moribus</wd>
+<wd tbrefs="39-6">Caesar</wd>
+<wd tbrefs="39-7">cum</wd>
+<wd tbrefs="39-8">quaereret</wd>
+<wd tbrefs="39-10">sic</wd>
+<wd tbrefs="39-11">reperiebat</wd>
+<wd tbrefs="40-1">nullum</wd>
+<wd tbrefs="40-2">esse</wd>
+<wd tbrefs="40-3">aditum</wd>
+<wd tbrefs="40-4">ad</wd>
+<wd tbrefs="40-5">eos</wd>
+<wd tbrefs="40-6">mercatoribus</wd>
+<wd tbrefs="41-1">nihil</wd>
+<wd tbrefs="41-2">pati</wd>
+<wd tbrefs="41-3">vini</wd>
+<wd tbrefs="41-4">que</wd>
+<wd tbrefs="41-5">reliquarum</wd>
+<wd tbrefs="41-6">rerum</wd>
+<wd tbrefs="41-7">ad</wd>
+<wd tbrefs="41-8">luxuriam</wd>
+<wd tbrefs="41-9">pertinentium</wd>
+<wd tbrefs="41-10">inferri</wd>
+<wd tbrefs="41-12">quod</wd>
+<wd tbrefs="41-13">his</wd>
+<wd tbrefs="41-14">rebus</wd>
+<wd tbrefs="41-15">relanguescere</wd>
+<wd tbrefs="41-16">animos</wd>
+<wd tbrefs="41-17">eorum</wd>
+<wd tbrefs="41-18">et</wd>
+<wd tbrefs="41-19">remitti</wd>
+<wd tbrefs="41-20">virtutem</wd>
+<wd tbrefs="41-21">existimarent</wd>
+<wd tbrefs="42-1">esse</wd>
+<wd tbrefs="42-2">homines</wd>
+<wd tbrefs="42-3">feros</wd>
+<wd tbrefs="42-4">que</wd>
+<wd tbrefs="42-5">magnae</wd>
+<wd tbrefs="42-6">virtutis</wd>
+<wd tbrefs="43-1">increpitare</wd>
+<wd tbrefs="43-2">atque</wd>
+<wd tbrefs="43-3">incusare</wd>
+<wd tbrefs="43-4">reliquos</wd>
+<wd tbrefs="43-5">Belgas</wd>
+<wd tbrefs="43-7">qui</wd>
+<wd tbrefs="43-8">se</wd>
+<wd tbrefs="43-9">populo</wd>
+<wd tbrefs="43-10">Romano</wd>
+<wd tbrefs="43-11">dedidissent</wd>
+<wd tbrefs="43-12">que</wd>
+<wd tbrefs="43-13">patriam</wd>
+<wd tbrefs="43-14">virtutem</wd>
+<wd tbrefs="43-15">proiecissent</wd>
+<wd tbrefs="44-1">confirmare</wd>
+<wd tbrefs="44-2">sese</wd>
+<wd tbrefs="44-3">que</wd>
+<wd tbrefs="44-4">ne</wd>
+<wd tbrefs="44-5">legatos</wd>
+<wd tbrefs="44-6">missuros</wd>
+<wd tbrefs="44-7">que</wd>
+<wd tbrefs="44-8">ne</wd>
+<wd tbrefs="44-9">ullam</wd>
+<wd tbrefs="44-10">condicionem</wd>
+<wd tbrefs="44-11">pacis</wd>
+<wd tbrefs="44-12">accepturos</wd>
+</p>
+</div2>
+<div2 type="chapter" n="15">
+<p>
+<wd tbrefs="45-1">Cum</wd>
+<wd tbrefs="45-2">per</wd>
+<wd tbrefs="45-3">eorum</wd>
+<wd tbrefs="45-4">fines</wd>
+<wd tbrefs="45-5">triduum</wd>
+<wd tbrefs="45-6">iter</wd>
+<wd tbrefs="45-7">fecisset</wd>
+<wd tbrefs="45-9">inveniebat</wd>
+<wd tbrefs="45-10">ex</wd>
+<wd tbrefs="45-11">captivis</wd>
+<wd tbrefs="45-12">Sabim</wd>
+<wd tbrefs="45-13">flumen</wd>
+<wd tbrefs="45-14">a</wd>
+<wd tbrefs="45-15">castris</wd>
+<wd tbrefs="45-16">suis</wd>
+<wd tbrefs="45-17">non</wd>
+<wd tbrefs="45-18">amplius</wd>
+<wd tbrefs="45-19">milibus</wd>
+<wd tbrefs="45-20">passuum</wd>
+<wd tbrefs="45-21">X</wd>
+<wd tbrefs="45-22">abesse</wd>
+<wd tbrefs="46-1">trans</wd>
+<wd tbrefs="46-2">id</wd>
+<wd tbrefs="46-3">flumen</wd>
+<wd tbrefs="46-4">omnes</wd>
+<wd tbrefs="46-5">Nervios</wd>
+<wd tbrefs="46-6">consedisse</wd>
+<wd tbrefs="46-7">que</wd>
+<wd tbrefs="46-8">adventum</wd>
+<wd tbrefs="46-9">ibi</wd>
+<wd tbrefs="46-10">Romanorum</wd>
+<wd tbrefs="46-11">expectare</wd>
+<wd tbrefs="46-12">una</wd>
+<wd tbrefs="46-13">cum</wd>
+<wd tbrefs="46-14">Atrebatibus</wd>
+<wd tbrefs="46-15">et</wd>
+<wd tbrefs="46-16">Viromanduis</wd>
+<wd tbrefs="46-18">finitimis</wd>
+<wd tbrefs="46-19">suis</wd>
+<wd tbrefs="46-21">nam</wd>
+<wd tbrefs="46-22">his</wd>
+<wd tbrefs="46-23">utrisque</wd>
+<wd tbrefs="46-24">persuaserant</wd>
+<wd tbrefs="46-25">uti</wd>
+<wd tbrefs="46-26">eandem</wd>
+<wd tbrefs="46-27">belli</wd>
+<wd tbrefs="46-28">fortunam</wd>
+<wd tbrefs="46-29">experirentur</wd>
+<wd tbrefs="47-1">expectari</wd>
+<wd tbrefs="47-2">etiam</wd>
+<wd tbrefs="47-3">ab</wd>
+<wd tbrefs="47-4">iis</wd>
+<wd tbrefs="47-5">Atuatucorum</wd>
+<wd tbrefs="47-6">copias</wd>
+<wd tbrefs="47-7">atque</wd>
+<wd tbrefs="47-8">esse</wd>
+<wd tbrefs="47-9">in</wd>
+<wd tbrefs="47-10">itinere</wd>
+<wd tbrefs="48-1">mulieres</wd>
+<wd tbrefs="48-2">que</wd>
+<wd tbrefs="48-3">qui</wd>
+<wd tbrefs="48-4">per</wd>
+<wd tbrefs="48-5">aetatem</wd>
+<wd tbrefs="48-6">ad</wd>
+<wd tbrefs="48-7">pugnam</wd>
+<wd tbrefs="48-8">inutiles</wd>
+<wd tbrefs="48-9">viderentur</wd>
+<wd tbrefs="48-10">in</wd>
+<wd tbrefs="48-11">eum</wd>
+<wd tbrefs="48-12">locum</wd>
+<wd tbrefs="48-13">coniecisse</wd>
+<wd tbrefs="48-14">quo</wd>
+<wd tbrefs="48-15">propter</wd>
+<wd tbrefs="48-16">paludes</wd>
+<wd tbrefs="48-17">exercitui</wd>
+<wd tbrefs="48-18">aditus</wd>
+<wd tbrefs="48-19">non</wd>
+<wd tbrefs="48-20">esset</wd>
+</p>
+</div2>
+<div2 type="chapter" n="17">
+<p>
+<wd tbrefs="49-1">Loci</wd>
+<wd tbrefs="49-2">natura</wd>
+<wd tbrefs="49-3">erat</wd>
+<wd tbrefs="49-4">haec</wd>
+<wd tbrefs="49-6">quem</wd>
+<wd tbrefs="49-7">locum</wd>
+<wd tbrefs="49-8">nostri</wd>
+<wd tbrefs="49-9">castris</wd>
+<wd tbrefs="49-10">delegerant</wd>
+<wd tbrefs="50-1">Collis</wd>
+<wd tbrefs="50-2">ab</wd>
+<wd tbrefs="50-3">summo</wd>
+<wd tbrefs="50-4">aequaliter</wd>
+<wd tbrefs="50-5">declivis</wd>
+<wd tbrefs="50-6">ad</wd>
+<wd tbrefs="50-7">flumen</wd>
+<wd tbrefs="50-8">Sabim</wd>
+<wd tbrefs="50-10">quod</wd>
+<wd tbrefs="50-11">supra</wd>
+<wd tbrefs="50-12">nominavimus</wd>
+<wd tbrefs="50-14">vergebat</wd>
+<wd tbrefs="51-1">Ab</wd>
+<wd tbrefs="51-2">eo</wd>
+<wd tbrefs="51-3">flumine</wd>
+<wd tbrefs="51-4">pari</wd>
+<wd tbrefs="51-5">acclivitate</wd>
+<wd tbrefs="51-6">collis</wd>
+<wd tbrefs="51-7">nascebatur</wd>
+<wd tbrefs="51-8">adversus</wd>
+<wd tbrefs="51-9">huic</wd>
+<wd tbrefs="51-10">et</wd>
+<wd tbrefs="51-11">contrarius</wd>
+<wd tbrefs="51-13">passus</wd>
+<wd tbrefs="51-14">circiter</wd>
+<wd tbrefs="51-15">CC</wd>
+<wd tbrefs="51-16">infimus</wd>
+<wd tbrefs="51-17">apertus</wd>
+<wd tbrefs="51-19">ab</wd>
+<wd tbrefs="51-20">superiore</wd>
+<wd tbrefs="51-21">parte</wd>
+<wd tbrefs="51-22">silvestris</wd>
+<wd tbrefs="51-24">ut</wd>
+<wd tbrefs="51-25">non</wd>
+<wd tbrefs="51-26">facile</wd>
+<wd tbrefs="51-27">introrsus</wd>
+<wd tbrefs="51-28">perspici</wd>
+<wd tbrefs="51-29">posset</wd>
+<wd tbrefs="52-1">Intra</wd>
+<wd tbrefs="52-2">eas</wd>
+<wd tbrefs="52-3">silvas</wd>
+<wd tbrefs="52-4">hostes</wd>
+<wd tbrefs="52-5">in</wd>
+<wd tbrefs="52-6">occulto</wd>
+<wd tbrefs="52-7">sese</wd>
+<wd tbrefs="52-8">continebant</wd>
+<wd tbrefs="53-1">in</wd>
+<wd tbrefs="53-2">aperto</wd>
+<wd tbrefs="53-3">loco</wd>
+<wd tbrefs="53-4">secundum</wd>
+<wd tbrefs="53-5">flumen</wd>
+<wd tbrefs="53-6">paucae</wd>
+<wd tbrefs="53-7">stationes</wd>
+<wd tbrefs="53-8">equitum</wd>
+<wd tbrefs="53-9">videbantur</wd>
+<wd tbrefs="54-1">Fluminis</wd>
+<wd tbrefs="54-2">erat</wd>
+<wd tbrefs="54-3">altitudo</wd>
+<wd tbrefs="54-4">pedum</wd>
+<wd tbrefs="54-5">circiter</wd>
+<wd tbrefs="54-6">trium</wd>
+</p>
+</div2>
+<div2 type="chapter" n="18">
+<p>
+<wd tbrefs="55-1">Caesar</wd>
+<wd tbrefs="55-2">equitatu</wd>
+<wd tbrefs="55-3">praemisso</wd>
+<wd tbrefs="55-4">subsequebatur</wd>
+<wd tbrefs="55-5">omnibus</wd>
+<wd tbrefs="55-6">copiis</wd>
+<wd tbrefs="56-1">sed</wd>
+<wd tbrefs="56-2">ratio</wd>
+<wd tbrefs="56-3">que</wd>
+<wd tbrefs="56-4">ordo</wd>
+<wd tbrefs="56-5">agminis</wd>
+<wd tbrefs="56-6">aliter</wd>
+<wd tbrefs="56-7">se</wd>
+<wd tbrefs="56-8">habebat</wd>
+<wd tbrefs="56-9">ac</wd>
+<wd tbrefs="56-10">Belgae</wd>
+<wd tbrefs="56-11">ad</wd>
+<wd tbrefs="56-12">Nervios</wd>
+<wd tbrefs="56-13">detulerant</wd>
+<wd tbrefs="57-1">Nam</wd>
+<wd tbrefs="57-2">quod</wd>
+<wd tbrefs="57-3">hostibus</wd>
+<wd tbrefs="57-4">adpropinquabat</wd>
+<wd tbrefs="57-6">consuetudine</wd>
+<wd tbrefs="57-7">sua</wd>
+<wd tbrefs="57-8">Caesar</wd>
+<wd tbrefs="57-9">VI</wd>
+<wd tbrefs="57-10">legiones</wd>
+<wd tbrefs="57-11">expeditas</wd>
+<wd tbrefs="57-12">ducebat</wd>
+<wd tbrefs="58-1">post</wd>
+<wd tbrefs="58-2">eas</wd>
+<wd tbrefs="58-3">totius</wd>
+<wd tbrefs="58-4">exercitus</wd>
+<wd tbrefs="58-5">impedimenta</wd>
+<wd tbrefs="58-6">conlocarat</wd>
+<wd tbrefs="59-1">inde</wd>
+<wd tbrefs="59-2">duae</wd>
+<wd tbrefs="59-3">legiones</wd>
+<wd tbrefs="59-4">quae</wd>
+<wd tbrefs="59-5">proxime</wd>
+<wd tbrefs="59-6">conscriptae</wd>
+<wd tbrefs="59-7">erant</wd>
+<wd tbrefs="59-8">totum</wd>
+<wd tbrefs="59-9">agmen</wd>
+<wd tbrefs="59-10">claudebant</wd>
+<wd tbrefs="59-11">que</wd>
+<wd tbrefs="59-12">praesidio</wd>
+<wd tbrefs="59-13">impedimentis</wd>
+<wd tbrefs="59-14">erant</wd>
+<wd tbrefs="60-1">Equites</wd>
+<wd tbrefs="60-2">nostri</wd>
+<wd tbrefs="60-3">cum</wd>
+<wd tbrefs="60-4">funditoribus</wd>
+<wd tbrefs="60-5">que</wd>
+<wd tbrefs="60-6">sagittariis</wd>
+<wd tbrefs="60-7">flumen</wd>
+<wd tbrefs="60-8">transgressi</wd>
+<wd tbrefs="60-9">cum</wd>
+<wd tbrefs="60-10">hostium</wd>
+<wd tbrefs="60-11">equitatu</wd>
+<wd tbrefs="60-12">proelium</wd>
+<wd tbrefs="60-13">commiserunt</wd>
+<wd tbrefs="61-1">Cum</wd>
+<wd tbrefs="61-2">se</wd>
+<wd tbrefs="61-3">illi</wd>
+<wd tbrefs="61-4">identidem</wd>
+<wd tbrefs="61-5">in</wd>
+<wd tbrefs="61-6">silvis</wd>
+<wd tbrefs="61-7">ad</wd>
+<wd tbrefs="61-8">suos</wd>
+<wd tbrefs="61-9">reciperent</wd>
+<wd tbrefs="61-10">ac</wd>
+<wd tbrefs="61-11">rursus</wd>
+<wd tbrefs="61-12">ex</wd>
+<wd tbrefs="61-13">silva</wd>
+<wd tbrefs="61-14">in</wd>
+<wd tbrefs="61-15">nostros</wd>
+<wd tbrefs="61-16">impetum</wd>
+<wd tbrefs="61-17">facerent</wd>
+<wd tbrefs="61-19">que</wd>
+<wd tbrefs="61-20">ne</wd>
+<wd tbrefs="61-21">nostri</wd>
+<wd tbrefs="61-22">longius</wd>
+<wd tbrefs="61-23">quam</wd>
+<wd tbrefs="61-24">quem</wd>
+<wd tbrefs="61-25">ad</wd>
+<wd tbrefs="61-26">finem</wd>
+<wd tbrefs="61-27">porrecta</wd>
+<wd tbrefs="61-29">loca</wd>
+<wd tbrefs="61-30">aperta</wd>
+<wd tbrefs="61-31">pertinebant</wd>
+<wd tbrefs="61-32">cedentes</wd>
+<wd tbrefs="61-33">insequi</wd>
+<wd tbrefs="61-34">auderent</wd>
+<wd tbrefs="61-36">interim</wd>
+<wd tbrefs="61-37">legiones</wd>
+<wd tbrefs="61-38">VI</wd>
+<wd tbrefs="61-39">quae</wd>
+<wd tbrefs="61-40">primae</wd>
+<wd tbrefs="61-41">venerant</wd>
+<wd tbrefs="61-43">opere</wd>
+<wd tbrefs="61-44">dimenso</wd>
+<wd tbrefs="61-46">castra</wd>
+<wd tbrefs="61-47">munire</wd>
+<wd tbrefs="61-48">coeperunt</wd>
+<wd tbrefs="62-1">Ubi</wd>
+<wd tbrefs="62-2">prima</wd>
+<wd tbrefs="62-3">impedimenta</wd>
+<wd tbrefs="62-4">nostri</wd>
+<wd tbrefs="62-5">exercitus</wd>
+<wd tbrefs="62-6">ab</wd>
+<wd tbrefs="62-7">iis</wd>
+<wd tbrefs="62-8">qui</wd>
+<wd tbrefs="62-9">in</wd>
+<wd tbrefs="62-10">silvis</wd>
+<wd tbrefs="62-11">abditi</wd>
+<wd tbrefs="62-12">latebant</wd>
+<wd tbrefs="62-13">visa</wd>
+<wd tbrefs="62-14">sunt</wd>
+<wd tbrefs="62-16">quod</wd>
+<wd tbrefs="62-17">tempus</wd>
+<wd tbrefs="62-18">inter</wd>
+<wd tbrefs="62-19">eos</wd>
+<wd tbrefs="62-20">committendi</wd>
+<wd tbrefs="62-21">proelii</wd>
+<wd tbrefs="62-22">convenerat</wd>
+<wd tbrefs="62-24">ut</wd>
+<wd tbrefs="62-25">intra</wd>
+<wd tbrefs="62-26">silvas</wd>
+<wd tbrefs="62-27">aciem</wd>
+<wd tbrefs="62-28">que</wd>
+<wd tbrefs="62-29">ordines</wd>
+<wd tbrefs="62-30">constituerant</wd>
+<wd tbrefs="62-31">atque</wd>
+<wd tbrefs="62-32">ipsi</wd>
+<wd tbrefs="62-33">sese</wd>
+<wd tbrefs="62-34">confirmaverant</wd>
+<wd tbrefs="62-36">subito</wd>
+<wd tbrefs="62-37">omnibus</wd>
+<wd tbrefs="62-38">copiis</wd>
+<wd tbrefs="62-39">provolaverunt</wd>
+<wd tbrefs="62-40">que</wd>
+<wd tbrefs="62-41">impetum</wd>
+<wd tbrefs="62-42">in</wd>
+<wd tbrefs="62-43">nostros</wd>
+<wd tbrefs="62-44">equites</wd>
+<wd tbrefs="62-45">fecerunt</wd>
+<wd tbrefs="63-1">His</wd>
+<wd tbrefs="63-2">facile</wd>
+<wd tbrefs="63-3">pulsis</wd>
+<wd tbrefs="63-4">ac</wd>
+<wd tbrefs="63-5">proturbatis</wd>
+<wd tbrefs="63-7">incredibili</wd>
+<wd tbrefs="63-8">celeritate</wd>
+<wd tbrefs="63-9">ad</wd>
+<wd tbrefs="63-10">flumen</wd>
+<wd tbrefs="63-11">decucurrerunt</wd>
+<wd tbrefs="63-13">ut</wd>
+<wd tbrefs="63-14">paene</wd>
+<wd tbrefs="63-15">uno</wd>
+<wd tbrefs="63-16">tempore</wd>
+<wd tbrefs="63-17">et</wd>
+<wd tbrefs="63-18">ad</wd>
+<wd tbrefs="63-19">silvas</wd>
+<wd tbrefs="63-20">et</wd>
+<wd tbrefs="63-21">in</wd>
+<wd tbrefs="63-22">flumine</wd>
+<wd tbrefs="63-23">et</wd>
+<wd tbrefs="63-24">iam</wd>
+<wd tbrefs="63-25">in</wd>
+<wd tbrefs="63-26">manibus</wd>
+<wd tbrefs="63-27">nostris</wd>
+<wd tbrefs="63-28">hostes</wd>
+<wd tbrefs="63-29">viderentur</wd>
+<wd tbrefs="64-1">Eadem</wd>
+<wd tbrefs="64-2">autem</wd>
+<wd tbrefs="64-3">celeritate</wd>
+<wd tbrefs="64-4">adverso</wd>
+<wd tbrefs="64-5">colle</wd>
+<wd tbrefs="64-6">ad</wd>
+<wd tbrefs="64-7">nostra</wd>
+<wd tbrefs="64-8">castra</wd>
+<wd tbrefs="64-9">atque</wd>
+<wd tbrefs="64-10">eos</wd>
+<wd tbrefs="64-11">qui</wd>
+<wd tbrefs="64-12">in</wd>
+<wd tbrefs="64-13">opere</wd>
+<wd tbrefs="64-14">occupati</wd>
+<wd tbrefs="64-15">erant</wd>
+<wd tbrefs="64-16">contenderunt</wd>
+</p>
+</div2>
+<div2 type="chapter" n="32">
+<p>
+<wd tbrefs="65-1">Sub</wd>
+<wd tbrefs="65-2">vesperum</wd>
+<wd tbrefs="65-3">Caesar</wd>
+<wd tbrefs="65-4">portas</wd>
+<wd tbrefs="65-5">claudi</wd>
+<wd tbrefs="65-6">que</wd>
+<wd tbrefs="65-7">milites</wd>
+<wd tbrefs="65-8">ex</wd>
+<wd tbrefs="65-9">oppido</wd>
+<wd tbrefs="65-10">exire</wd>
+<wd tbrefs="65-11">iussit</wd>
+<wd tbrefs="65-13">ne</wd>
+<wd tbrefs="65-14">quam</wd>
+<wd tbrefs="65-15">noctu</wd>
+<wd tbrefs="65-16">oppidani</wd>
+<wd tbrefs="65-17">a</wd>
+<wd tbrefs="65-18">militibus</wd>
+<wd tbrefs="65-19">iniuriam</wd>
+<wd tbrefs="65-20">acciperent</wd>
+<wd tbrefs="66-1">Illi</wd>
+<wd tbrefs="66-2">ante</wd>
+<wd tbrefs="66-3">inito</wd>
+<wd tbrefs="66-5">ut</wd>
+<wd tbrefs="66-6">intellectum</wd>
+<wd tbrefs="66-7">est</wd>
+<wd tbrefs="66-9">consilio</wd>
+<wd tbrefs="66-11">quod</wd>
+<wd tbrefs="66-12">deditione</wd>
+<wd tbrefs="66-13">facta</wd>
+<wd tbrefs="66-14">nostros</wd>
+<wd tbrefs="66-15">praesidia</wd>
+<wd tbrefs="66-16">deducturos</wd>
+<wd tbrefs="66-17">aut</wd>
+<wd tbrefs="66-18">denique</wd>
+<wd tbrefs="66-19">indiligentius</wd>
+<wd tbrefs="66-20">servaturos</wd>
+<wd tbrefs="66-21">crediderant</wd>
+<wd tbrefs="66-23">partim</wd>
+<wd tbrefs="66-24">cum</wd>
+<wd tbrefs="66-25">iis</wd>
+<wd tbrefs="66-26">quae</wd>
+<wd tbrefs="66-27">retinuerant</wd>
+<wd tbrefs="66-28">et</wd>
+<wd tbrefs="66-29">celaverant</wd>
+<wd tbrefs="66-30">armis</wd>
+<wd tbrefs="66-32">partim</wd>
+<wd tbrefs="66-33">scutis</wd>
+<wd tbrefs="66-34">ex</wd>
+<wd tbrefs="66-35">cortice</wd>
+<wd tbrefs="66-36">factis</wd>
+<wd tbrefs="66-37">aut</wd>
+<wd tbrefs="66-38">viminibus</wd>
+<wd tbrefs="66-39">intextis</wd>
+<wd tbrefs="66-41">quae</wd>
+<wd tbrefs="66-42">subito</wd>
+<wd tbrefs="66-44">ut</wd>
+<wd tbrefs="66-45">temporis</wd>
+<wd tbrefs="66-46">exiguitas</wd>
+<wd tbrefs="66-47">postulabat</wd>
+<wd tbrefs="66-49">pellibus</wd>
+<wd tbrefs="66-50">induxerant</wd>
+<wd tbrefs="66-52">tertia</wd>
+<wd tbrefs="66-53">vigilia</wd>
+<wd tbrefs="66-55">qua</wd>
+<wd tbrefs="66-56">minime</wd>
+<wd tbrefs="66-57">arduus</wd>
+<wd tbrefs="66-58">ad</wd>
+<wd tbrefs="66-59">nostras</wd>
+<wd tbrefs="66-60">munitiones</wd>
+<wd tbrefs="66-61">ascensus</wd>
+<wd tbrefs="66-62">videbatur</wd>
+<wd tbrefs="66-64">omnibus</wd>
+<wd tbrefs="66-65">copiis</wd>
+<wd tbrefs="66-66">repente</wd>
+<wd tbrefs="66-67">ex</wd>
+<wd tbrefs="66-68">oppido</wd>
+<wd tbrefs="66-69">eruptionem</wd>
+<wd tbrefs="66-70">fecerunt</wd>
+<wd tbrefs="67-1">Celeriter</wd>
+<wd tbrefs="67-3">ut</wd>
+<wd tbrefs="67-4">ante</wd>
+<wd tbrefs="67-5">Caesar</wd>
+<wd tbrefs="67-6">imperaverat</wd>
+<wd tbrefs="67-8">ignibus</wd>
+<wd tbrefs="67-9">significatione</wd>
+<wd tbrefs="67-10">facta</wd>
+<wd tbrefs="67-12">ex</wd>
+<wd tbrefs="67-13">proximis</wd>
+<wd tbrefs="67-14">castellis</wd>
+<wd tbrefs="67-15">eo</wd>
+<wd tbrefs="67-16">concursum</wd>
+<wd tbrefs="67-17">est</wd>
+<wd tbrefs="67-19">que</wd>
+<wd tbrefs="67-20">pugnatum</wd>
+<wd tbrefs="67-21">ab</wd>
+<wd tbrefs="67-22">hostibus</wd>
+<wd tbrefs="67-23">ita</wd>
+<wd tbrefs="67-24">acriter</wd>
+<wd tbrefs="67-25">est</wd>
+<wd tbrefs="67-26">ut</wd>
+<wd tbrefs="67-27">a</wd>
+<wd tbrefs="67-28">viris</wd>
+<wd tbrefs="67-29">fortibus</wd>
+<wd tbrefs="67-30">in</wd>
+<wd tbrefs="67-31">extrema</wd>
+<wd tbrefs="67-32">spe</wd>
+<wd tbrefs="67-33">salutis</wd>
+<wd tbrefs="67-34">iniquo</wd>
+<wd tbrefs="67-35">loco</wd>
+<wd tbrefs="67-36">contra</wd>
+<wd tbrefs="67-37">eos</wd>
+<wd tbrefs="67-38">qui</wd>
+<wd tbrefs="67-39">ex</wd>
+<wd tbrefs="67-40">vallo</wd>
+<wd tbrefs="67-41">que</wd>
+<wd tbrefs="67-42">turribus</wd>
+<wd tbrefs="67-43">tela</wd>
+<wd tbrefs="67-44">iacerent</wd>
+<wd tbrefs="67-45">pugnari</wd>
+<wd tbrefs="67-46">debuit</wd>
+<wd tbrefs="67-48">cum</wd>
+<wd tbrefs="67-49">in</wd>
+<wd tbrefs="67-50">una</wd>
+<wd tbrefs="67-51">virtute</wd>
+<wd tbrefs="67-52">omnis</wd>
+<wd tbrefs="67-53">spes</wd>
+<wd tbrefs="67-54">consisteret</wd>
+<wd tbrefs="68-1">Occisis</wd>
+<wd tbrefs="68-2">ad</wd>
+<wd tbrefs="68-3">hominum</wd>
+<wd tbrefs="68-4">milibus</wd>
+<wd tbrefs="68-5">IIII</wd>
+<wd tbrefs="68-6">reliqui</wd>
+<wd tbrefs="68-7">in</wd>
+<wd tbrefs="68-8">oppidum</wd>
+<wd tbrefs="68-9">reiecti</wd>
+<wd tbrefs="68-10">sunt</wd>
+<wd tbrefs="69-1">Postridie</wd>
+<wd tbrefs="69-2">eius</wd>
+<wd tbrefs="69-3">diei</wd>
+<wd tbrefs="69-4">refractis</wd>
+<wd tbrefs="69-5">portis</wd>
+<wd tbrefs="69-7">cum</wd>
+<wd tbrefs="69-8">iam</wd>
+<wd tbrefs="69-9">defenderet</wd>
+<wd tbrefs="69-10">nemo</wd>
+<wd tbrefs="69-12">atque</wd>
+<wd tbrefs="69-13">intromissis</wd>
+<wd tbrefs="69-14">militibus</wd>
+<wd tbrefs="69-15">nostris</wd>
+<wd tbrefs="69-17">sectionem</wd>
+<wd tbrefs="69-18">eius</wd>
+<wd tbrefs="69-19">oppidi</wd>
+<wd tbrefs="69-20">universa</wd>
+<wd tbrefs="69-21">Caesar</wd>
+<wd tbrefs="69-22">vendidit</wd>
+<wd tbrefs="70-1">Ab</wd>
+<wd tbrefs="70-2">iis</wd>
+<wd tbrefs="70-3">qui</wd>
+<wd tbrefs="70-4">emerant</wd>
+<wd tbrefs="70-5">capitum</wd>
+<wd tbrefs="70-6">numerus</wd>
+<wd tbrefs="70-7">ad</wd>
+<wd tbrefs="70-8">eum</wd>
+<wd tbrefs="70-9">relatus</wd>
+<wd tbrefs="70-10">est</wd>
+<wd tbrefs="70-11">milium</wd>
+</p>
+</div2>
+<div2 type="chapter" n="33">
+<p>
+<wd tbrefs="71-1">Eodem</wd>
+<wd tbrefs="71-2">tempore</wd>
+<wd tbrefs="71-3">a</wd>
+<wd tbrefs="71-4">P</wd>
+<wd tbrefs="71-6">Crasso</wd>
+<wd tbrefs="71-8">quem</wd>
+<wd tbrefs="71-9">cum</wd>
+<wd tbrefs="71-10">legione</wd>
+<wd tbrefs="71-11">una</wd>
+<wd tbrefs="71-12">miserat</wd>
+<wd tbrefs="71-13">ad</wd>
+<wd tbrefs="71-14">Venetos</wd>
+<wd tbrefs="71-16">Venellos</wd>
+<wd tbrefs="71-18">Osismos</wd>
+<wd tbrefs="71-20">Coriosolitas</wd>
+<wd tbrefs="71-22">Esuvios</wd>
+<wd tbrefs="71-24">Aulercos</wd>
+<wd tbrefs="71-26">Redones</wd>
+<wd tbrefs="71-28">quae</wd>
+<wd tbrefs="71-29">sunt</wd>
+<wd tbrefs="71-30">maritimae</wd>
+<wd tbrefs="71-31">civitates</wd>
+<wd tbrefs="71-32">que</wd>
+<wd tbrefs="71-33">Oceanum</wd>
+<wd tbrefs="71-34">attingunt</wd>
+<wd tbrefs="71-36">certior</wd>
+<wd tbrefs="71-37">factus</wd>
+<wd tbrefs="71-38">est</wd>
+<wd tbrefs="71-39">omnes</wd>
+<wd tbrefs="71-40">eas</wd>
+<wd tbrefs="71-41">civitates</wd>
+<wd tbrefs="71-42">in</wd>
+<wd tbrefs="71-43">dicionem</wd>
+<wd tbrefs="71-44">que</wd>
+<wd tbrefs="71-45">potestatem</wd>
+<wd tbrefs="71-46">populi</wd>
+<wd tbrefs="71-47">Romani</wd>
+<wd tbrefs="71-48">esse</wd>
+<wd tbrefs="71-49">redactas</wd>
+             </p>
+</div2>
+         </div1>
+      </body>
+   </text>
+</tei.2>
