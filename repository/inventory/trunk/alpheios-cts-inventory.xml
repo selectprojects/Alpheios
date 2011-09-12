@@ -636,5 +636,61 @@
                 </online>
             </edition>
         </work>
+	</textgroup>
+	<textgroup projid="greekLang:tlg0086">
+		 <work projid="greekLang:tlg034">
+            <title xml:lang="ara">سم الله الرحمن الرحيم</title>
+            <edition projid="greekLang:alpheios-text-ara1">
+                <label xml:lang="eng">Ars Poetica - ‘Ayyād (1967) - A</label>
+                <online docname="/db/repository/greekLang/tlg0086/tlg0034/alpheios-text-ara1.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>                    	                        
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>                    
+                    </citationMapping>
+                </online>
+            </edition>
+	
+			<edition projid="greekLang:alpheios-text-ara2">
+			    <label xml:lang="eng">Ars Poetica - Badawī (1953)</label>
+                
+                <online docname="/db/repository/greekLang/tlg0086/tlg0034/alpheios-text-ara2.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>        
+                    </citationMapping>
+                </online>
+            </edition>
+			<edition projid="greekLang:alpheios-text-ara3">
+			    <label xml:lang="eng">Ars Poetica - Mar_1887-A</label>
+                <online docname="/db/repository/greekLang/tlg0086/tlg0034/alpheios-text-ara3.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>        
+                    </citationMapping>
+                </online>
+            </edition>
+				<edition projid="greekLang:alpheios-text-ara4">
+                <label xml:lang="eng">Ars Poetica - Tkatsch (1928)</label>
+                <online docname="/db/repository/greekLang/tlg0086/tlg0034/alpheios-text-ara4.xml">
+                    <validate schema="documentschema.rng"/>
+                    <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+                    <citationMapping>
+                        <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+                            <citation label="Page" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+                        </citation>        
+                    </citationMapping>
+                </online>
+            </edition>
+			
+        </work>
     </textgroup>
 </TextInventory>
