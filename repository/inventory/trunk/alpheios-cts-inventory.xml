@@ -690,7 +690,19 @@
                     </citationMapping>
                 </online>
             </edition>
-			
+		     <edition projid="greekLang:alpheios-text-lat1">
+		         <label xml:lang="eng">AVERROIS CORDUBENSIS COMMENTARIVM MEDIVM IN ARISTOTELIS POETRIAM</label>
+		         <online docname="/db/repository/greekLang/tlg0086/tlg0034/alpheios-text-lat1.xml">
+		             <validate schema="documentschema.rng"/>
+		             <namespaceMapping abbreviation="tei" nsURI="http://www.tei-c.org/ns/1.0"/>
+		             <citationMapping>
+		                 <citation label="Book" xpath="/tei:div1[@n='?']" scope="/tei:TEI/tei:text/tei:body">
+		                     <citation label="Chapter" xpath="/tei:div2[@n='?']" scope="/tei:TEI/tei:text/tei:body/tei:div1[@n='?']/"/>
+		                 </citation>        
+		             </citationMapping>
+		         </online>
+		     </edition>
+		     
         </work>
     </textgroup>
 </TextInventory>
