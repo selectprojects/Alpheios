@@ -145,7 +145,7 @@ let $xml-output :=
   <alph:output xmlns:alph="http://alpheios.net/namespaces/tei">{
     lxget:get-source($lexicon),
     for $entry in $entries
-    let $bodyKey := $entry/ancestor::body/*[1]/@n
+    let $bodyKey := root($entry)//body/div1[1]/@n
     let $rootElem := $entry/parent::*[@type='root']
     let $rootAtt :=  
         if($rootElem)

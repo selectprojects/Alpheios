@@ -36,7 +36,7 @@ declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 declare variable $cts:tocChunking :=
 ( 
-    <tocCunk type="Book" size="1"/>,
+    <tocCunk type="Book" size="1"/>,    
     <tocCunk type="Section" size="1"/>,
     <tocChunk type="Chapter" size="1"/>,
     <tocChunk type="Article" size="1"/>,    
@@ -106,7 +106,8 @@ declare function cts:parseUrn($a_urn as xs:string)
                 element ctsURN {
                     element urn { $a_urn },
                     (: urn without any passage specifics:)
-                    element workUrn { concat("urn:cts:",$namespace,':',$textgroup,".",$work,".",$edition) },            
+                    element workUrn { concat("urn:cts:",$namespace,':',$textgroup,".",$work,".",$edition) },
+                    element workNoEdUrn { concat("urn:cts:",$namespace,':',$textgroup,".",$work) },                                            
                     element namespace{ $namespace },
                     (: TODO is it possible for components of the work id to be in different namespaces?? :)
                     element textgroup {concat($namespace,':',$textgroup)},            
@@ -357,7 +358,8 @@ declare function cts:expandValidReffs($a_inv as xs:string,$a_urn as xs:string,$a
                             <item>
                                 {concat($tocName," ",$startPart,$endPart)}                                                         
                                 <tei:ptr target="{$href}" xmlns:tei="http://www.tei-c.org/ns/1.0" rend="{$ptrType}"/>                          
-                              {if (not($focus) and contains($a_urn,$u)) then cts:expandValidReffs($a_inv,$u,$a_level + 1)  else ()}
+                              {if (not($focus) and contains($a_urn,$u) and ($entry//ti:online//ti:citation)[position() = $a_level+1]) 
+                               then cts:expandValidReffs($a_inv,$u,$a_level + 1)  else ()}
                             </item>
                 }</list>                        
                                        
@@ -446,11 +448,11 @@ declare function cts:findNextPrev($a_dir as xs:string,
         if ($next) 
         then
             let $end := if (count($next) > $a_count) then $a_count else count($next)
-            let $passagePrefix := string-join($a_passageParts[position() != last()],".") 
-            let $rangeStart := concat($passagePrefix,".",xs:string($next[1]/@*[name() = $id]))
+            let $passagePrefix := if (count($a_passageParts) > 1) then concat(string-join($a_passageParts[position() != last()],"."),'.') else "" 
+            let $rangeStart := concat($passagePrefix,xs:string($next[1]/@*[name() = $id]))
             let $rangeEnd := 
                 if ($end > xs:int("1")) 
-                then concat("-",$passagePrefix,".",xs:string($next[position() = $end]/@*[name() = $id]))
+                then concat("-",$passagePrefix,xs:string($next[position() = $end]/@*[name() = $id]))
                 else ""
             return concat($a_urn,":",$rangeStart,$rangeEnd)
         (:TODO recurse up the path to find the next node of this kind in the next parent node :)
@@ -461,7 +463,7 @@ declare function cts:findNextPrev($a_dir as xs:string,
     CTS getPassagePlus request, returns the requested passage plus previous/next references
     Parameters:
         $a_inv the inventory name
-        $a_urn the passage urn
+        $a_urn the passage urn 
     Return Value:
         <reply>
             <TEI>
@@ -474,7 +476,29 @@ declare function cts:findNextPrev($a_dir as xs:string,
         </prevnext>
 :)
 declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
-{
+{    
+    cts:getPassagePlus($a_inv,$a_urn,false())
+};
+
+(:
+    CTS getPassagePlus request, returns the requested passage plus previous/next references
+    Parameters:
+        $a_inv the inventory name
+        $a_urn the passage urn
+        $a_withSiblings - alpheios extension to get sibling unciteable elements for passages (for display - e.g. speaker)
+    Return Value:
+        <reply>
+            <TEI>
+               [ passage elements ]
+            </TEI>
+        </reply>
+        <prevnext>
+            <prev>[previous urn]</prev>
+            <next>[next urn]</next>
+        </prevnext>
+:)
+declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_withSiblings as xs:boolean*)
+{    
     let $cts := cts:parseUrn($a_urn)    
     return                   
         let $doc := doc($cts/fileInfo/fullPath)
@@ -514,19 +538,28 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
         let $lang := $passage[1]/ancestor::*[@lang][1]/@lang
         let $countAll := count($passage)
         (: enforce limit on # of nodes returned to avoid crashing the server or browser :)
-        let $count := if ($countAll > $cts:maxPassageNodes) then $cts:maxPassageNodes else $countAll        
+        let $count := if ($countAll > $cts:maxPassageNodes) then $cts:maxPassageNodes else $countAll
+        (:let $count := $countAll:)        
         let $name := xs:string(node-name($passage[1]))
         let $thisPath := xs:string($cites[position() = last()]/@xpath)
         let $docid := if ($doc/TEI.2/@id) then $doc/TEI.2/@id 
         			  else if ($doc/tei.2/@id) then $doc/tei.2/@id 
         			  else ""
+        let $passageAll := 
+            if ($a_withSiblings) then  
+                for $item in $passage[position() < $count+ 1]
+                return
+               ($item/preceding-sibling::*[1][local-name(.) != local-name($item)],
+                        $item,
+                        $item/following-sibling::*[1][local-name(.) != local-name($item)])
+            else $passage[position() < $count+ 1]
         return   
-            <reply>
+            <reply xpath="{string($xpath)}">
                 <TEI id="{$docid}">
                     {$doc//*:teiHeader,$doc//*:teiheader},
                     <text xml:lang="{if ($xmllang) then $xmllang else $lang}">
-                    <body>
-                        {$passage[position() < $count+ 1]}
+                    <body>                    	
+                        {cts:passageWithParents($passageAll,1,('body','TEI.2','TEI','tei.2','tei'))}
                      </body>
                   </text>
                 </TEI>
@@ -648,3 +681,43 @@ declare function cts:getExpandedTitle($a_inv as xs:string,$a_urn as xs:string) a
     return string-join(($entry//ti:edition/ti:label,$parts), " ")
 };
 
+declare function cts:getCitableText($a_inv as xs:string, $a_urn as xs:string) as node()
+{
+
+	let $textUrn := cts:parseUrn($a_urn)
+	let $refs := cts:getValidReff($a_inv,$textUrn/workUrn)
+	let $first := $refs//urn[1]
+	let $last := $refs//urn[last()]    
+    let $firstCts := cts:parseUrn($first)
+    let $lastCts := cts:parseUrn($last)
+    let $urn := 
+    	concat($firstCts/workUrn,':',
+    	string-join($firstCts/passageParts/rangePart/part, '.'),'-',
+    	string-join($lastCts/passageParts/rangePart/part,'.'))
+	return cts:getPassagePlus($a_inv,$urn)	    	 
+};
+
+declare function cts:passageWithParents($a_passage as node()*, $a_pos as xs:int, $a_stop) as node()*
+{	    
+	let $ancestor := $a_passage[1]/ancestor::*[position() = $a_pos]
+	return
+	if ($ancestor)	
+	then
+	   let $in_stop := 
+	       for $elem in tokenize($a_stop,',')
+	       return
+	       if (local-name($ancestor) = $elem)
+	       then true() else ()
+        return if ($in_stop) 
+        then
+            $a_passage
+        else 
+      		element {name($ancestor)} {
+      			$ancestor/@*,
+      			cts:passageWithParents($a_passage,$a_pos+1, $a_stop)
+      		}
+		 
+	else
+		$a_passage
+		  			        
+};
