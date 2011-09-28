@@ -32,6 +32,7 @@ module namespace cts = "http://alpheios.net/namespaces/cts";
 declare namespace ti = "http://chs.harvard.edu/xmlns/cts3/ti";
 declare namespace  util="http://exist-db.org/xquery/util";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
+
  
 
 declare variable $cts:tocChunking :=
@@ -40,8 +41,8 @@ declare variable $cts:tocChunking :=
     <tocCunk type="Section" size="1"/>,
     <tocChunk type="Chapter" size="1"/>,
     <tocChunk type="Article" size="1"/>,    
-    <tocChunk type="Line" size="100"/>,
-    <tocChunk type="Verse" size="100"/>,
+    <tocChunk type="Line" size="30"/>,
+    <tocChunk type="Verse" size="30"/>,
     <tocChunk type="Page" size="1"/>
 );
 
@@ -534,8 +535,7 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_w
             else if ($passage and $cts/subRef and not ($subref_orig))
             then cts:findSubRef($passage,$cts/subRef)
             else ()                     
-        let $xmllang := $passage[1]/ancestor::*[@xml:lang][1]/@xml:lang
-        let $lang := $passage[1]/ancestor::*[@lang][1]/@lang
+        let $lang := cts:getLang($passage[1])
         let $countAll := count($passage)
         (: enforce limit on # of nodes returned to avoid crashing the server or browser :)
         let $count := if ($countAll > $cts:maxPassageNodes) then $cts:maxPassageNodes else $countAll
@@ -557,7 +557,7 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_w
             <reply xpath="{string($xpath)}">
                 <TEI id="{$docid}">
                     {$doc//*:teiHeader,$doc//*:teiheader},
-                    <text xml:lang="{if ($xmllang) then $xmllang else $lang}">
+                    <text xml:lang="{$lang}">
                     <body>                    	
                         {cts:passageWithParents($passageAll,1,('body','TEI.2','TEI','tei.2','tei'))}
                      </body>
@@ -720,4 +720,11 @@ declare function cts:passageWithParents($a_passage as node()*, $a_pos as xs:int,
 	else
 		$a_passage
 		  			        
+};
+
+declare function cts:getLang($a_node as node()) as xs:string*
+{
+    let $lang := $a_node/@*[local-name(.) = 'lang']
+    return if ($lang) then $lang else cts:getLang($a_node/..)
+       
 };
