@@ -39,12 +39,12 @@ declare option exist:serialize "method=xhtml media-type=text/html";
 let $e_urn :=  request:get-parameter("urn",())
 let $e_repos :=  request:get-parameter("repos","repos1.alpheios.net")
 let $e_format :=  request:get-parameter("format","html")
-let $reply := cts:getPassagePlus("alpheios-cts-inventory",$e_urn)
+let $reply := cts:getPassagePlus("alpheios-cts-inventory",$e_urn,true())
 let $prevUrn := xs:string($reply/prevnext/prev)
 let $nextUrn := xs:string($reply/prevnext/next)
 let $nodes := $reply/TEI/text/body 
 let $docid := $reply/TEI/@id 
-let $wd_id := if ($reply/subref/wd/@n) then ($reply/subref/wd/@n) else if ($reply/subref/wd/@id) then $reply/subref/wd/@id else "" 
+let $wd_id := if ($reply/subref/*[local-name(.) = 'wd']/@n) then ($reply/subref/*[local-name(.) = 'wd']/@n) else if ($reply/subref/*[local-name(.) = 'wd']/@id) then $reply/subref/*[local-name(.) = 'wd']/@id else "" 
 let $passage := $nodes
 let $parsed := cts:parseUrn($e_urn)
 let $docinfo := tan:findDocs($parsed)
@@ -69,7 +69,7 @@ let $params :=
          <param name="alpheiosTreebankDiagramUrl" value="{$treebankDUrl}"/>
         <param name="alpheiosVocabUrl" value="{$vocabUrl}"/>
         <param name="cssFile" value ="http://alpheios.net/alpheios-texts/css/alpheios-text.css"/>
-        <param name="highlightWord" value="{ $wd_id }"/>
+        <param name="highlightWord" value="{ xs:string($wd_id) }"/>
      </parameters>
 let $uri := concat(request:get-url(),'?')
  let $text :=

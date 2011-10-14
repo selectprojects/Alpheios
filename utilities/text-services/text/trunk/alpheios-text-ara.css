@@ -19,3 +19,8 @@ div.l[lang='en'] {
 .superscript {
     vertical-align: super;
 }
+
+.alpheios-highlighted-word {
+    background-color: yellow;
+    }
+}
