@@ -1,0 +1,3603 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aligned-text>
+   <language xml:lang="ara" lnum="L1"/>
+   <language xml:lang="en" lnum="L2"/>
+   <sentence id="1" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>انا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>متكلمون</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>الآن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>في</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>صناعة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>الشعراء</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>وأنواعها،ومخيرون</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>أي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>قوة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>لكل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>واحد</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>منها،وعلي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>أي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>سبيل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>ينبغي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>أن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>تتقوم</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>الأسمار،</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>ان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>كانت</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>الفواسيس</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>مزمعةبأن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>يجري</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>أمرهامجري</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>الجودة؛</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>Let</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>us</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>here</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>deal</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>with</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>Poetry</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>its</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>essence</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>its</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>several</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>species</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>with</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>characteristic</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>function</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>each</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>species</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>way</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>which</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>plots</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>must</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>be</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>constructed</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>if</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>poem</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>is</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="35">
+            <align:text>to</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="36">
+            <align:text>be</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="37">
+            <align:text>a</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="38">
+            <align:text>success</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="39">
+            <align:text>;</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+   <sentence id="2" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>وايضا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>منكم</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>كم</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>جزءهي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>وأيماهي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>أجزاؤها؛وكذلك</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>نتكلم</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>من</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>أجل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>كم</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>التي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>هي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>موجودة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>التي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>هي،</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>لها</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>بعينها</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>و</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>]</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>نتكلم</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>و</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>[</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>نحن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>متكلمون</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>في</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>هذا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>كلة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>من</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>حيث</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>نبتدئ</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>أولا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>من</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>الأشياء</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>الأوائل</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>also</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>with</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>number</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>character</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>constituent</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>parts</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>a</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>poem</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>similarly</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>with</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>all</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>other</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>matters</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>proper</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>to</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>this</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>same</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>inquiry</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>;</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>let</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>us</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>as</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>nature</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>directs</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="35">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="36">
+            <align:text>begin</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="37">
+            <align:text>first</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="38">
+            <align:text>with</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="39">
+            <align:text>first</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="40">
+            <align:text>principles</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="41">
+            <align:text>.</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+   <sentence id="3" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>فكل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>شعر،وكل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>نشيد</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>شعري</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>ينحي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>به</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>:</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>اما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>مديحا،واما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>هجاء</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>واما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>ديثرمبوالشعري،ونحو</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>أكثرأوليطيقس،وكل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>ما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>كان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>داخلافي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>التشبيه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>ومحاكاة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>صناعة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>الملاهي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>من</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>الزمر</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>والعود</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>Epic</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>poetry</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>then</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>poetry</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>tragic</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>drama</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>moreover</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>comedy</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>dithyrambic</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>poetry</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>most</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>flute</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>-</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>playing</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>harp</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>-</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>playing</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>these</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>speaking</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="35">
+            <align:text>generally</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="36">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="37">
+            <align:text>may</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="38">
+            <align:text>all</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="39">
+            <align:text>be</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="40">
+            <align:text>said</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="41">
+            <align:text>to</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="42">
+            <align:text>be</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="43">
+            <align:text>"</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="44">
+            <align:text>representations</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="45">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="46">
+            <align:text>life</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="47">
+            <align:text>."</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+   <sentence id="4" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>وغيرها</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>وأصنافها</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>ثلاثة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>:</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>وذلك</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>اما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>أن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>يكون</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>يشبه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>بأشياء</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>أخروالحكاية</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>بها،واماأن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>تكون</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>علي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>عكسهذا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>:</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>وهو</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>أن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>تكون</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>أشياء</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>أخر</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>تشبه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>وتحاكي،وأما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>أن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>تجري</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>علي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>أحوال</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>مختلفةلا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>علي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>جهه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>واحدة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>بعينها</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>But</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>they</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>differ</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>one</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>from</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>another</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>three</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>ways</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>:</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>either</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>using</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>means</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>generically</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>different</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>or</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>representing</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>different</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>objects</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>or</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>representing</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>objects</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>not</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>same</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>way</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>but</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>a</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="35">
+            <align:text>different</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="36">
+            <align:text>manner</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="37">
+            <align:text>.</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+   <sentence id="5" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>وكماأن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>الناس</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>قديشبهون</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>بألوان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>وأشكال</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>كثير</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>أو</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>يحاكون</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>ذلكمن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>حيث</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>أن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>بعضهم</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>يشبه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>بالصناعات</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>ويحاكيها،وبعضهم</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>بالعادات،وقوم</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>أخر</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>منهم</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>بالأصوات</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>:</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>كذلك</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>الصناعات</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>التي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>وضعنا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>]</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>و</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>[</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>:</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>جميعها</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>تأتي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>بالتشبيهه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>والحكاية</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>باللحن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>والقول</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="35">
+            <align:text>والنظم،</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="36">
+            <align:text>وذلك</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="37">
+            <align:text>يكون</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="38">
+            <align:text>:</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="39">
+            <align:text>اما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="40">
+            <align:text>علي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="41">
+            <align:text>الانفراد</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="42">
+            <align:text>،واما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="43">
+            <align:text>علي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="44">
+            <align:text>جهه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="45">
+            <align:text>الاختلاط</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="46">
+            <align:text>مثال</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="47">
+            <align:text>ذلك</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>For</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>just</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>as</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>by</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>use</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>both</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>color</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>form</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>people</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>represent</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>many</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>objects</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>making</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>likenesses</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>them</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>-</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>some</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>having</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>a</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>knowledge</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>art</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>some</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>working</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>empirically</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>-</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>just</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="35">
+            <align:text>as</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="36">
+            <align:text>others</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="37">
+            <align:text>use</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="38">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="39">
+            <align:text>human</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="40">
+            <align:text>voice</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="41">
+            <align:text>;</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="42">
+            <align:text>so</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="43">
+            <align:text>is</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="44">
+            <align:text>it</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="45">
+            <align:text>also</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="46">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="47">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="48">
+            <align:text>arts</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="49">
+            <align:text>which</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="50">
+            <align:text>we</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="51">
+            <align:text>have</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="52">
+            <align:text>mentioned</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="53">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="54">
+            <align:text>they</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="55">
+            <align:text>all</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="56">
+            <align:text>make</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="57">
+            <align:text>their</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="58">
+            <align:text>representations</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="59">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="60">
+            <align:text>rhythm</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="61">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="62">
+            <align:text>language</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="63">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="64">
+            <align:text>tune</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="65">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="66">
+            <align:text>using</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="67">
+            <align:text>these</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="68">
+            <align:text>means</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="69">
+            <align:text>either</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="70">
+            <align:text>separately</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="71">
+            <align:text>or</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="72">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="73">
+            <align:text>combination</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="74">
+            <align:text>.</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+   <sentence id="6" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>أوليطيقي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>وصناعة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>العيدان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>فأنهما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>يستعملان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>اللحن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>و</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>تأليف</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>فقط،وان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>كان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>توجدصناعات</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>أخرهي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>في</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>قوتها</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>مثل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>هاتين</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>For</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>tune</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>rhythm</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>alone</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>are</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>employed</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>flute</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>-</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>playing</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>harp</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>-</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>playing</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>any</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>other</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>arts</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>which</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>have</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>a</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>similar</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>function</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>as</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>for</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>example</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>pipe</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>-</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>playing</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="35">
+            <align:text>.</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+   <sentence id="7" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>مثال</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>ذلك</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>صناعة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>الصفر</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>تستعمل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>اللحن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>الواحد</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>بعينة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>من</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>غير</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>تأليف،</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>وصناعة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>أداة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>الرقص</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>أيضا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>،وذلك</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>أن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>هاتين</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>باللحون</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>المتشكلة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>تشبه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>بالعادات</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>وبالانفعالات</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>أيضا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>وبالأعمال</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>أيضا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>وتحاكيها</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>Rhythm</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>alone</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>without</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>tune</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>is</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>employed</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>by</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>dancers</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>their</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>representations</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>for</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>by</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>means</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>rhythmical</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>gestures</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>they</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>represent</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>both</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>character</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>experiences</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>actions</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>.</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+   <sentence id="8" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>اما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>بعضها</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>فبالكلام</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>المنثور</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>الساذج</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>اكثر،أو</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>بالأوزان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>:</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>وتحاكي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>ب</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>هي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>هذة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>:</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>اما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>وهي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>مخلطة،</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>وأما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>بأن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>تستعمل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>جنسا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>واحدا،</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>وبالأوزان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>التي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>هي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>بلا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>تسمية</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>But</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>art</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>which</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>employs</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>words</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>either</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>bare</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>prose</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>or</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>metres</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>either</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>one</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>kind</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>metre</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>or</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>combining</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>several</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>happens</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>up</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>to</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>present</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>day</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>to</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="35">
+            <align:text>have</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="36">
+            <align:text>no</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="37">
+            <align:text>name</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="38">
+            <align:text>.</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+   <sentence id="9" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>وذلك</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>انه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>ليس</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>لنا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>ان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>نسمي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>بماذا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>تشارك</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>حكايات</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>وتشبهات</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>شاعر</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>وفرن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>وكسانرخس</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>والأقاويل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>المنسوبة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>الي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>سقراط</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>ولا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>أيضا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>ان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>جعل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>الانسان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>تشبيهه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>وحكايته</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>بالأوزان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>الثلاثية،</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>اوهو</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>هذه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>التي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>تقال</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>لها</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>ألغاز</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>For</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>we</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>can</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>find</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>no</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>common</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>term</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>to</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>apply</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>to</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>mimes</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>Sophron</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>Xenarchus</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>to</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>Socratic</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>dialogues</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>:</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>nor</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>again</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>supposing</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>a</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>poet</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>were</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>to</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>make</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>his</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>representation</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>iambics</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="35">
+            <align:text>or</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="36">
+            <align:text>elegiacs</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="37">
+            <align:text>or</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="38">
+            <align:text>any</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="39">
+            <align:text>other</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="40">
+            <align:text>such</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="41">
+            <align:text>metre</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="42">
+            <align:text>-</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="43">
+            <align:text>except</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="44">
+            <align:text>that</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="45">
+            <align:text>people</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="46">
+            <align:text>attach</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="47">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="48">
+            <align:text>word</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="49">
+            <align:text>poet</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="50">
+            <align:text>[</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="51">
+            <align:text>maker</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="52">
+            <align:text>]</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="53">
+            <align:text>to</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="54">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="55">
+            <align:text>name</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="56">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="57">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="58">
+            <align:text>metre</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="59">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="60">
+            <align:text>speak</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="61">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="62">
+            <align:text>elegiac</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="63">
+            <align:text>poets</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="64">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="65">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="66">
+            <align:text>others</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="67">
+            <align:text>as</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="68">
+            <align:text>epic</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="69">
+            <align:text>poets</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="70">
+            <align:text>.</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+   <sentence id="10" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>وليس</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>كالتي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>يعملون</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>الشعر</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>التي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>هي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>بالحكايه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>والتشبيهه،</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>لكن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>التي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>يلقبونها</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>المشتركة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>في</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>اوزانها</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>Thus</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>they</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>do</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>not</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>call</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>them</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>poets</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>virtue</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>their</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>representation</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>but</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>apply</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>name</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>indiscriminately</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>virtue</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>metre</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>.</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+   <sentence id="11" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>ان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>عملواشيئامن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>أمور</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>الطب</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>او</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>أمور</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>الطبيعة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>بالأوزان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>فهكذا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>قد</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>جرت</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>عادتهم</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>بالتلقيب</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>For</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>if</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>people</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>publish</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>medical</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>or</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>scientific</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>treatises</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>metre</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>custom</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>is</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>to</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>call</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>them</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>poets</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>.</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+   <sentence id="12" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>وذلك</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>أنه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>لا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>شئ</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>يشتركان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>فيه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>أميروس</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>وانفادقلس</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>ما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>خلا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>الوزن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>ولذلك</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>اما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>ذاك</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>فينبغي</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>أن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>نلقبة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>شاعرا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>وأما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>هذا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>فالمتكلم</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>في</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>الطبيعات</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>أكثر</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>من</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>الشاعر</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>But</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>Homer</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>Empedocles</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>have</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>nothing</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>in</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>common</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>except</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>metre</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>so</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>that</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>it</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>would</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>be</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>proper</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>to</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>call</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>one</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>a</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>poet</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>and</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>other</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>not</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>a</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>poet</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>but</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>a</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>scientist</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>.</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+   <sentence id="13" docid="urn:cts:tlg0086.tlg034.alpheios-text-ara2">
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L1">
+         <align:w n="1">
+            <align:text>أن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>كان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>الانسان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>يعمل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>الحكاية</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>والتشبية</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>عندما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>يخلط</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>جميع</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>الأوزان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>كما</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>كان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>يعمل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>خاريمن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>فأنه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>كان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>يشبه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>قانطورس</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>برقص</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>الدستبند</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>من</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>جميع</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>الأوزان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>فقد</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>يجب</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>ان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>نلقبة</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>شاعرا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>فمن</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>قبل</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>هذه</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>كان</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>حدد</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>هذا</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="35">
+            <align:text>الضرب</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+      <align:wds xmlns:align="http://alpheios.net/namespaces/aligned-text" lnum="L2">
+         <align:w n="1">
+            <align:text>Similarly</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="2">
+            <align:text>if</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="3">
+            <align:text>a</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="4">
+            <align:text>man</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="5">
+            <align:text>makes</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="6">
+            <align:text>his</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="7">
+            <align:text>representation</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="8">
+            <align:text>by</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="9">
+            <align:text>combining</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="10">
+            <align:text>all</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="11">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="12">
+            <align:text>metres</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="13">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="14">
+            <align:text>as</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="15">
+            <align:text>Chaeremon</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="16">
+            <align:text>did</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="17">
+            <align:text>when</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="18">
+            <align:text>he</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="19">
+            <align:text>wrote</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="20">
+            <align:text>his</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="21">
+            <align:text>rhapsody</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="22">
+            <align:text>The</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="23">
+            <align:text>Centaur</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="24">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="25">
+            <align:text>a</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="26">
+            <align:text>medley</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="27">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="28">
+            <align:text>all</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="29">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="30">
+            <align:text>metres</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="31">
+            <align:text>,</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="32">
+            <align:text>he</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="33">
+            <align:text>too</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="34">
+            <align:text>should</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="35">
+            <align:text>be</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="36">
+            <align:text>given</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="37">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="38">
+            <align:text>name</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="39">
+            <align:text>of</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="40">
+            <align:text>poet</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="41">
+            <align:text>.</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="42">
+            <align:text>On</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="43">
+            <align:text>this</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="44">
+            <align:text>point</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="45">
+            <align:text>the</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="46">
+            <align:text>distinctions</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="47">
+            <align:text>thus</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="48">
+            <align:text>made</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="49">
+            <align:text>may</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="50">
+            <align:text>suffice</align:text>
+            <align:refs/>
+         </align:w>
+         <align:w n="51">
+            <align:text>.</align:text>
+            <align:refs/>
+         </align:w>
+      </align:wds>
+   </sentence>
+</aligned-text>
