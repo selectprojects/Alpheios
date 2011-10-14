@@ -167,8 +167,10 @@ declare function cts:parseUrn($a_urn as xs:string)
           </reply>        
 :)
 declare function cts:findSubRef($a_passage,$a_subref)
-{           
-    $a_passage//wd[text() = $a_subref][$a_subref/@position][1]                
+{         
+    if ($a_passage//wd) then
+        $a_passage//wd[text() = string($a_subref)][$a_subref/@position][1] 
+    else $a_passage//tei:wd[text() = string($a_subref)][$a_subref/@position][1]
 };
 
 (:
@@ -263,7 +265,7 @@ declare function cts:getValidReff($a_inv as xs:string,$a_urn as xs:string,$a_lev
     Parameters:
         $a_inv the inventory name
         $a_urn the passage urn        
-    Returns 
+    Returns     
         a regex to match on
 :)
 declare function cts:getUrnMatchString($a_inv,$a_urn) as xs:string
@@ -271,12 +273,12 @@ declare function cts:getUrnMatchString($a_inv,$a_urn) as xs:string
     let $cts := cts:parseUrn($a_urn)
     let $doc := doc($cts/fileInfo/fullPath)
     let $entry := cts:getCatalog($a_inv,$a_urn)
-    let $parts := count($cts/passageParts/rangePart[1]/part)
+    let $parts := count(($cts/passageParts/rangePart[1])/part)
     (: get the level from the range specified :)   
     let $level := 
         if ($parts) then $parts else count($entry//ti:online//ti:citation)
     let $refs := cts:getValidReff($a_inv,$a_urn,$level)
-    let $urns := for $u in $refs//urn return concat('(',replace($u,"\.","\\."),'(:|\.))')    
+    let $urns := for $u in $refs//urn return concat('(',replace($u,"\.","\\."),'(:|\.|-))')    
     return concat('^',string-join($urns,"|"))    
 };
 
@@ -534,16 +536,17 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_w
             if ($subref_orig) then $subref_orig
             else if ($passage and $cts/subRef and not ($subref_orig))
             then cts:findSubRef($passage,$cts/subRef)
-            else ()                     
-        let $lang := cts:getLang($passage[1])
+            else ()                             
         let $countAll := count($passage)
+        let $lang := if ($passage) then cts:getLang($passage[1]) else ""
         (: enforce limit on # of nodes returned to avoid crashing the server or browser :)
         let $count := if ($countAll > $cts:maxPassageNodes) then $cts:maxPassageNodes else $countAll
         (:let $count := $countAll:)        
         let $name := xs:string(node-name($passage[1]))
         let $thisPath := xs:string($cites[position() = last()]/@xpath)
         let $docid := if ($doc/TEI.2/@id) then $doc/TEI.2/@id 
-        			  else if ($doc/tei.2/@id) then $doc/tei.2/@id 
+        			  else if ($doc/tei.2/@id) then $doc/tei.2/@id
+        			  else if ($doc/TEI/@id) then $doc/TEI/@id
         			  else ""
         let $passageAll := 
             if ($a_withSiblings) then  
@@ -589,8 +592,8 @@ declare function cts:replaceBindVariables($a_startParts,$a_endParts,$a_path) as 
         if (count($a_startParts) > xs:int(0))
         then
             if (count($a_endParts) > xs:int(0)) then
-                let $startRange := if ($a_startParts[1]/text()) then concat(" >= ",$a_startParts[1]) else ""
-                let $endRange := if ($a_endParts[1]/text()) then concat(" <= ", $a_endParts[1]) else ""
+                let $startRange := if ($a_startParts[1]/text()) then concat(' >= ',$a_startParts[1]) else ""
+                let $endRange := if ($a_endParts[1]/text()) then concat(' <= ', $a_endParts[1] ) else ""
                 let $path := replace($a_path,"^(.*?)(@[\w\d\._:\s])=[""']\?[""'](.*)$",concat("$1","$2",$startRange," and ", "$2", $endRange, "$3"))                
                 return cts:replaceBindVariables($a_startParts[position() > 1],$a_endParts[position() >1],$path)
             else          
@@ -728,3 +731,4 @@ declare function cts:getLang($a_node as node()) as xs:string*
     return if ($lang) then $lang else cts:getLang($a_node/..)
        
 };
+

@@ -19,28 +19,65 @@
  :)
 import module namespace cts="http://alpheios.net/namespaces/cts" 
             at "cts.xquery";
+import module namespace tan  = "http://alpheios.net/namespaces/text-analysis"   
+            at "textanalysis-utils.xquery";
 
 let $e_query := request:get-parameter("request",())
 let $e_urn :=  request:get-parameter("urn",())
 let $e_level := xs:int(request:get-parameter("level","1"))
-let $inv := "alpheios-cts-inventory"
+let $inv := request:get-parameter("inv","alpheios-cts-inventory")
+let $CTSNS := "http://chs.harvard.edu/xmlns/cts3"
+
+let $reply :=
+    if ($e_query = 'GetValidReff')
+    then cts:getValidReff($inv,$e_urn,$e_level)
+    else if ($e_query = 'ExpandValidReffs')
+    then cts:expandValidReffs($inv,$e_urn,$e_level)
+    else if ($e_query = 'GetCapabilities')
+    then cts:getCapabilities($inv)
+    else if ($e_query = 'GetExpandedTitle')
+    then cts:getExpandedTitle($inv,$e_urn)
+    else if ($e_query = 'GetPassagePlus')
+    then cts:getPassagePlus($inv,$e_urn)
+    else if ($e_query = 'GetCitableText')
+    then cts:getCitableText($inv,$e_urn)
+    else(<reply></reply>)
 
 return
-if ($e_query = 'GetValidReff')
-then cts:getValidReff($inv,$e_urn,$e_level)
-else if ($e_query = 'ExpandValidReffs')
-then cts:expandValidReffs($inv,$e_urn,$e_level)
-else if ($e_query = 'GetCapabilities')
-then cts:getCapabilities($inv)
-else if ($e_query = 'GetExpandedTitle')
-then cts:getExpandedTitle($inv,$e_urn)
-else if ($e_query = 'GetPassagePlus')
-then cts:getPassagePlus($inv,$e_urn)
-else if ($e_query = 'GetCitableText')
-then cts:getCitableText($inv,$e_urn)
-else(<reply></reply>)
-
-
+    element {QName($CTSNS, $e_query)} {
+        element {QName($CTSNS,"request")} {
+            element {QName($CTSNS,"requestName")} {
+                $e_query
+            },
+            element {QName($CTSNS,"requestUrn") } {
+                $e_urn
+            },
+            element {QName($CTSNS,"psg") } {
+            },
+            element {QName($CTSNS,"workurn") } {
+            },
+            element {QName($CTSNS,"groupname") } {
+            },
+            element {QName($CTSNS,"reply") } {
+                (: hack to get validating response for cts:GetPassagePlus without fixing all the code
+                    which currently relies on the invalid response  - needs to move in to the cts.xquery
+                    library 
+                :)
+                if ($e_query = 'GetPassagePlus')
+                then
+                    (element {QName($CTSNS,"passage") } {
+                        element {QName("http://www.tei-c.org/ns/1.0","TEI")} {
+                            tan:change-element-ns-deep ( $reply//TEI/*, "http://www.tei-c.org/ns/1.0" , '')
+                        }
+                    },
+                    tan:change-element-ns-deep ( $reply//prevnext,$CTSNS, ""),
+                    $reply//subref)
+                else 
+                    $reply/*
+                    
+            }
+        }
+    }
 
 
 
