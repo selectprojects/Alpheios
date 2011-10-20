@@ -22,6 +22,8 @@ declare namespace vocab = "http://alpheios.net/namespaces/vocab-freq";
 declare namespace tbd = "http://alpheios.net/namespaces/treebank-desc";
 declare namespace forms = "http://alpheios.net/namespaces/forms";
 import module namespace transform="http://exist-db.org/xquery/transform";
+import module namespace cts="http://alpheios.net/namespaces/cts" 
+            at "cts.xquery";
 
 (:
   Query to retrieve a frequency-ranked vocabulary list for a given treebank document
@@ -44,6 +46,7 @@ import module namespace transform="http://exist-db.org/xquery/transform";
 import module namespace request="http://exist-db.org/xquery/request";
 import module namespace tan="http://alpheios.net/namespaces/text-analysis"
               at "textanalysis-utils.xquery";
+declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare option exist:serialize "method=xml media-type=text/xml";
 
 
@@ -54,23 +57,6 @@ let $e_pofs := distinct-values(request:get-parameter("pofs",()))
 let $e_excludePofs := xs:boolean(request:get-parameter("excludepofs","false"))
 let $e_format := request:get-parameter("format", "html")
 let $e_totals := request:get-parameter("totals", ())
- 
-
-let $pofs_set := if ($e_pofs = "") then () else $e_pofs
-let $results  := tan:getWords($e_doc,$e_excludePofs,$pofs_set)
-let $all_words := $results/*:words
-let $note := 
-    if ($results/@truncated > 0) 
-    then concat("Results truncated: only the first ",$results/@count," of ", 
-        if ($results/@treebank) then "" else  "possible ", $results/@total, " lemmas analyzed")
-    else ""
-(: sort the lemma elements by frequency of the lemma, with the individual forms for each lemma
-    grouped and sorted by frequency as well 
-:)
-
-let $xslGroup := doc('/db/xslt/alpheios-vocab-group.xsl')
-let $grouped := transform:transform($results, $xslGroup, ())/lemma
-let $sorted := for $l in $grouped order by xs:int($l/@count) descending return $l
 let $xsl := doc('/db/xslt/alpheios-vocab.xsl')
 let $pi := 
     if ($e_format = 'xml' or $e_format = "") 
@@ -78,101 +64,185 @@ let $pi :=
          ()    
      (: default to html :)
     else 
+    
         processing-instruction xml-stylesheet {
              attribute xml { 'type="text/xsl" href="../xslt/alpheios-vocab.xsl"'}
         }
- 
- let $total := count($sorted)
- let $display_count := if ($e_count >0) then $e_count else $total
-
-return 
-if ($e_totals != "")
-then
-    element result {
-        $results/@*,
-        attribute tokens { count(distinct-values($results//forms:urn)) },
-        attribute lemmas { $total }
-    }
-else
-let $xml :=
-($pi,
-<TEI xmlns="http://www.tei-c.org/ns/1.0"
+let $pofs_set := if ($e_pofs = "") then () else $e_pofs
+let $uri := concat(request:get-uri(),'?')
+let $qs := replace(request:get-query-string(),'&amp;start=\d+','')
+let $vocab :=
+    if (matches($e_doc,"alpheios-vocab"))
+    then
+        let $cts := cts:parseUrn($e_doc)
+        let $grouped :=
+            (: if a passage wasn't supplied, get the whole text :)
+            if ($cts/passageParts/rangePart) then 
+                cts:getPassagePlus("alpheios-cts-inventory",$e_doc)//tei:entry  
+            else 
+                cts:getCitableText("alpheios-cts-inventory",$e_doc)//tei:entry  
+        let $total := count($grouped)
+        let $display_count := if ($e_count >0) then $e_count else $total
+        return
+        ($pi,
+          <TEI xmlns="http://www.tei-c.org/ns/1.0"
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
           xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_dictionaries.xsd">
-        <teiHeader>
-            <fileDesc>
-                <titleStmt><title></title></titleStmt>
-                <publicationStmt><date></date></publicationStmt>
-                <sourceDesc><p>Alpheios</p></sourceDesc>
-                <notesStmt>
-                     <note>{$note}</note>                     
-                </notesStmt> 
-            </fileDesc>
-         </teiHeader> 
-         <text pofs="{$pofs_set}" xml:lang="{$sorted[1]/@lang}" treebank="{$results/@treebank}" total_lemmas="{$total}">
-         <body>         
-  { 
-   
-    let $start_less_count := $e_start - $display_count 
-    let $start_for_last := $total -$display_count+1
-    let $start_for_next := $e_start+$display_count
-    let $uri := concat(request:get-url(),'?')
-    let $qs := replace(request:get-query-string(),'&amp;start=\d+','')
-    let $first :=
-      if ($e_start > 1)
-          then
-                element ptr {
-                   attribute type { 'paging:first' },
-                   attribute target { concat($uri, $qs,"&amp;start=1")}
-               }                             
-            else ()
-       let $prev :=
-           if ($start_less_count > $display_count)
-           then
-               element ptr {
-                   attribute type { 'paging:prev' },
-                   attribute target { concat($uri,$qs,"&amp;start=",$start_less_count)}
-               }               
-          else ()       
-       let $last := 
-           if (($start_for_next) <= $total)
-           then
-                element ptr {
-                   attribute type { 'paging:last' },
-                   attribute target { concat($uri,$qs,"&amp;start=",$start_for_last)}
-               }                              
-           else ()
-       let $next := 
-           if ($start_for_next < $start_for_last)
-           then                
-               element ptr {
-                   attribute type { 'paging:next' },
-                   attribute target { concat($uri,$qs,"&amp;start=",$start_for_next)}
-               }               
+                <teiHeader>
+                    <fileDesc>
+                        <titleStmt><title></title></titleStmt>
+                        <publicationStmt><date></date></publicationStmt>
+                        <sourceDesc><p>Alpheios</p></sourceDesc>
+                        </fileDesc>
+                 </teiHeader> 
+                 <text pofs="{$pofs_set}" xml:lang="{$grouped[1]/@lang}" treebank="false" total_lemmas="{$total}">
+                 <body>         
+                    { 
+                     
+                      let $start_less_count := $e_start - $display_count 
+                      let $start_for_last := $total -$display_count+1
+                      let $start_for_next := $e_start+$display_count
 
-           else ()
-     return ($first,$prev,$next,$last)
-  }
-  {  
-  for $k in ($sorted[position() >= $e_start and position() < ($e_start+$display_count)])  
-        return( 
-        <entry lang="{xs:string($k/@lang)}">
-           <form type="lemma" lang="{xs:string($k/@lang)}" count="{$k/@count}">{xs:string($k/@lemma)}</form>
-           { for $j in $k/*:form 
-              order by xs:int($j/@count) descending
-             return 
-                 <form type="inflection"  lang="{xs:string($k/@lang)}" count="{$j/@count}">{xs:string($j/@form)}
-                     { for $u in $j/*:urn 
-                       return element ptr {attribute target { concat(replace(request:get-url(),'alpheios-vocab.xq','alpheios-text.xq?'),"urn=", $u/text()) },$u/text()}
-                     }
-                 </form> 
-            }
-        </entry>
-        )
-      
-    }         
-         </body>
-      </text>
- </TEI>)
-
-return $xml
+                      let $first :=
+                        if ($e_start > 1)
+                            then
+                                  element ptr {
+                                     attribute type { 'paging:first' },
+                                     attribute target { concat($uri, $qs,"&amp;start=1")}
+                                 }                             
+                              else ()
+                         let $prev :=
+                             if ($start_less_count > $display_count)
+                             then
+                                 element ptr {
+                                     attribute type { 'paging:prev' },
+                                     attribute target { concat($uri,$qs,"&amp;start=",$start_less_count)}
+                                 }               
+                            else ()       
+                         let $last := 
+                             if (($start_for_next) <= $total)
+                             then
+                                  element ptr {
+                                     attribute type { 'paging:last' },
+                                     attribute target { concat($uri,$qs,"&amp;start=",$start_for_last)}
+                                 }                              
+                             else ()
+                         let $next := 
+                             if ($start_for_next < $start_for_last)
+                             then                
+                                 element ptr {
+                                     attribute type { 'paging:next' },
+                                     attribute target { concat($uri,$qs,"&amp;start=",$start_for_next)}
+                                 }               
+                  
+                             else ()
+                       return ($first,$prev,$next,$last)
+                    }
+                    { for $k in ($grouped[position() >= $e_start and position() < ($e_start+$display_count)])  
+                          return $k
+                    }
+                           </body>
+                        </text>
+                   </TEI>)
+     else
+        let $results  := tan:getWords($e_doc,$e_excludePofs,$pofs_set)
+        let $all_words := $results/*:words
+        let $note := 
+            if ($results/@truncated > 0) 
+            then concat("Results truncated: only the first ",$results/@count," of ", 
+                if ($results/@treebank) then "" else  "possible ", $results/@total, " lemmas analyzed")
+            else ""
+        (: sort the lemma elements by frequency of the lemma, with the individual forms for each lemma
+            grouped and sorted by frequency as well 
+        :)
+        
+        let $xslGroup := doc('/db/xslt/alpheios-vocab-group.xsl')
+        let $grouped := transform:transform($results, $xslGroup, ())/lemma   
+        let $total := count($grouped)
+        let $display_count := if ($e_count >0) then $e_count else $total
+        return 
+            if ($e_totals != "")
+            then
+                element result {
+                    $results/@*,
+                    attribute tokens { count(distinct-values($results//forms:urn)) },
+                    attribute lemmas { $total }
+                }
+            else
+                ($pi,
+                <TEI xmlns="http://www.tei-c.org/ns/1.0"
+                          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                          xsi:schemaLocation="http://www.tei-c.org/ns/1.0 http://www.tei-c.org/release/xml/tei/custom/schema/xsd/tei_dictionaries.xsd">
+                        <teiHeader>
+                            <fileDesc>
+                                <titleStmt><title></title></titleStmt>
+                                <publicationStmt><date></date></publicationStmt>
+                                <sourceDesc><p>Alpheios</p></sourceDesc>
+                                <notesStmt>
+                                     <note>{$note}</note>                     
+                                </notesStmt> 
+                            </fileDesc>
+                         </teiHeader> 
+                         <text pofs="{$pofs_set}" xml:lang="{$grouped[1]/@lang}" treebank="{$results/@treebank}" total_lemmas="{$total}">
+                         <body>         
+                  { 
+                   
+                    let $start_less_count := $e_start - $display_count 
+                    let $start_for_last := $total -$display_count+1
+                    let $start_for_next := $e_start+$display_count
+                    let $uri := concat(request:get-uri(),'?')
+                    let $qs := replace(request:get-query-string(),'&amp;start=\d+','')
+                    let $first :=
+                      if ($e_start > 1)
+                          then
+                                element ptr {
+                                   attribute type { 'paging:first' },
+                                   attribute target { concat($uri, $qs,"&amp;start=1")}
+                               }                             
+                            else ()
+                       let $prev :=
+                           if ($start_less_count > $display_count)
+                           then
+                               element ptr {
+                                   attribute type { 'paging:prev' },
+                                   attribute target { concat($uri,$qs,"&amp;start=",$start_less_count)}
+                               }               
+                          else ()       
+                       let $last := 
+                           if (($start_for_next) <= $total)
+                           then
+                                element ptr {
+                                   attribute type { 'paging:last' },
+                                   attribute target { concat($uri,$qs,"&amp;start=",$start_for_last)}
+                               }                              
+                           else ()
+                       let $next := 
+                           if ($start_for_next < $start_for_last)
+                           then                
+                               element ptr {
+                                   attribute type { 'paging:next' },
+                                   attribute target { concat($uri,$qs,"&amp;start=",$start_for_next)}
+                               }               
+                
+                           else ()
+                     return ($first,$prev,$next,$last)
+                  }
+                  { for $k in ($grouped[position() >= $e_start and position() < ($e_start+$display_count)])  
+                        return
+                        <entry lang="{xs:string($k/@lang)}">
+                           <form type="lemma" lang="{xs:string($k/@lang)}" count="{$k/@count}">{xs:string($k/@lemma)}</form>
+                           { for $j in $k/*:form 
+                              order by xs:int($j/@count) descending
+                             return 
+                                 <form type="inflection"  lang="{xs:string($k/@lang)}" count="{$j/@count}">{xs:string($j/@form)}
+                                     { for $u in $j/*:urn 
+                                       return element ptr {attribute target { concat(replace(request:get-url(),'alpheios-vocab.xq','alpheios-text.xq?'),"urn=", $u/text()) },$u/text()}
+                                     }
+                                 </form> 
+                            }
+                        </entry>
+                   }
+                         </body>
+                      </text>
+                 </TEI>)
+return $vocab

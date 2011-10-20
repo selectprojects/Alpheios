@@ -14,6 +14,12 @@
                         <xsl:otherwise>Not Found</xsl:otherwise>                
                 </xsl:choose>
             </xsl:variable>
+            <xsl:variable name="pofs">
+                <xsl:apply-templates select="results/pofs"/>
+            </xsl:variable>
+            <xsl:variable name="excludepofs">
+                <xsl:apply-templates select="results/excludepofs"/>
+            </xsl:variable>
             <html>
                 <head>
                     <link rel="stylesheet" type="text/css" href="../css/alpheios-vocab-anal.css"/>  
@@ -28,7 +34,9 @@
                             <xsl:if test="results/docUrns">
                                 <ul>                                
                                     <xsl:for-each select="results/docUrns/urn">
-                                        <li><xsl:value-of select="@label"/></li>    
+                                        
+                                        <li><a href="{concat('alpheios-vocab.xq?urn=',.,$pofs,$excludepofs)}">
+                                            <xsl:value-of select="@label"/></a></li>    
                                     </xsl:for-each>                                            
                                 </ul>                                            
                             </xsl:if>
@@ -40,7 +48,8 @@
                             <div class="label">Vocabulary Source:</div>
                             <ul>                                                         
                                     <xsl:for-each select="results/vocabUrns/urn">
-                                        <li><xsl:value-of select="@label"/></li>    
+                                        <li><a href="{concat('alpheios-vocab.xq?urn=',.,$pofs,$excludepofs)}">
+                                            <xsl:value-of select="@label"/></a></li>    
                                     </xsl:for-each>                                                                            
                             </ul>
                         </div>                        
@@ -80,6 +89,10 @@
                     </xsl:for-each>                
             </table>
             </xsl:if>
+        </xsl:template>
+    
+        <xsl:template match="pofs|excludepofs">
+            <xsl:value-of select="concat('&amp;',local-name(.),'=',.)"/>
         </xsl:template>
     
         <xsl:template match="tei:ptr[not(starts-with(@type,'paging'))]">

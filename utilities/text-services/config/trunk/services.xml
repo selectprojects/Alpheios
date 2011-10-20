@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<services>
+    <morphology>
+        <service xml:lang='lat'>http://alpheios.net/perl/latin?word=WORD</service>
+        <service xml:lang='grc'>http://alpheios.net/perl/greek?word=WORD</service>
+        <service xml:lang='ara'>http://alpheios.net/perl/aramorph2?word=WORD</service>
+    </morphology>
+</services>

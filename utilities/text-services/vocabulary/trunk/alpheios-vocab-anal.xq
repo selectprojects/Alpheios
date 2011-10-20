@@ -56,7 +56,7 @@ let $sourceWords  :=
             if ($u != "") then tan:getWords($u,$e_excludePofs,$e_pofs) else ()
         return 
         element result {
-            attribute treebank { if ($all[@treebank != 'false']) then true() else false() },
+            attribute treebank { if ($all/result[@treebank = 'false']) then false() else true() },
             <words> { $all//lemma } </words>                
         }                        
     
@@ -75,12 +75,6 @@ let $vocab_entries :=
         for $v in $e_vocabUrn            
             let $cts := cts:parseUrn($v)        
             return
-            (: stored vocabulary document? :)
-                if (matches($v,"alpheios-vocab"))
-                then
-                    cts:getPassagePlus("alpheios-cts-inventory",$v)//tei:entry                    
-                else 
-                    (: stored alpheios-enabled text :)
                     let $url := concat(replace(request:get-url(),'alpheios-vocab-anal.xq','alpheios-vocab.xq?'),"urn=",$v,"&amp;format=xml&amp;count=-1&amp;excludepofs=",$e_excludePofs,"&amp;pofs=",
                         string-join($e_pofs,"&amp;pofs="))
                     let $vocabDoc := httpclient:get(xs:anyURI($url),false(),())                         
@@ -97,8 +91,9 @@ let $doc_word_count := count(distinct-values($all_words//forms:urn))
 let $docType := if ($sourceWords/@treebank = 'true') then "treebank" else if (count($e_docUrn) > 0) then "morphology" else "user"
 let $vocabType := 
     if (matches($e_vocabUrn,"alpheios-vocab")) then "vocablist" 
+    (: can't just set this to treebank here because more than one source urn might have been supplied ? :)
+    (:else if ($vocab_doc//tei:text[@treebank = "true"]) then "treebank" :)
     else if (count($e_vocabUrn)) then "morphology"
-        (:if ($vocab_doc//tei:text[@treebank = "true"]) then "treebank" else "morphology":)
     else ("user")        
 
 let $vocab_lemma_count := count(distinct-values($vocab_lemmas/tei:form[@type="lemma"]))
@@ -128,7 +123,9 @@ return
     <count type="docForms">{$doc_form_count}</count>
     <count type="vocabLemmas">{$vocab_lemma_count}</count>
     <count type="docTotalWords">{$doc_word_count}</count>
-    <count type="formLemmaFound">{count($results)}</count>        
+    <count type="formLemmaFound">{count($results)}</count>
+    { for $p in $e_pofs return <pofs>{$p}</pofs> }
+    <excludepofs>{$e_excludePofs}</excludepofs>
     { if ($e_details) then 
         <lemmas found="{not($e_reverse)}">
             { for $r in $results
@@ -136,7 +133,11 @@ return
                     element match {
                         $r/@*,
                         for $u in $r/forms:urn
-                        return element tei:ptr {attribute target { concat(replace(request:get-url(),'alpheios-vocab-anal.xq','alpheios-text.xq?'),"urn=", $u/text()) },$u/text()}
+                            let $url := if ( $docType = 'treebank' )
+                                        (: treeank positions are broken because they're still based on tb ids and not cite scheme :)
+                                        then replace($u,'\[\d+\]$','')
+                                        else $u
+                        return element tei:ptr {attribute target { concat('alpheios-text.xq?',"urn=", $url) },$url}
                    }
             }              
         </lemmas>

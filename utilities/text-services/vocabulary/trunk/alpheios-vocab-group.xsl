@@ -5,11 +5,13 @@
     <xsl:template match="//words">        
         <words>
             <xsl:for-each-group select="lemma" group-adjacent="@lemma">
+                <xsl:sort select="count(current-group()//forms:urn)" data-type="number" order="descending"/>
                 <lemma>
                         <xsl:attribute name="lemma" select="current-grouping-key()"/>
                     <xsl:attribute name="count" select="count(current-group()//forms:urn)"/>
                     <xsl:copy-of select="current-group()/@lang"/>
                     <xsl:for-each-group select="current-group()" group-adjacent="@form">
+                        <xsl:sort select="count(current-group()/forms:urn)" data-type="number" order="descending"/>
                         <form>
                             <xsl:attribute name="count" select="count(current-group()//forms:urn)"/>
                             <xsl:attribute name="form" select="current-grouping-key()"/>

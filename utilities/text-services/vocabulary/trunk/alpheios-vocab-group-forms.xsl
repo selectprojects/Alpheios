@@ -15,10 +15,8 @@
                                 <xsl:attribute name="lemma" select="$lemma"/>
                                 <xsl:attribute name="form" select="$form"/>
                                 <xsl:attribute name="sense" select="current-grouping-key()"/>
-                               <xsl:copy-of select="current-group()/@lang"/>
-                                <xsl:for-each select="current-group()">                                    
-                                    <xsl:copy-of select="forms:urn"/>                            
-                                </xsl:for-each>
+                                <xsl:copy-of select="current-group()[1]/@lang"/>
+                                <xsl:copy-of select="current-group()/forms:urn"/>                             
                             </lemma>                                        
                         </xsl:for-each-group>                                
                     </xsl:for-each-group>        
