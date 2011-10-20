@@ -678,9 +678,12 @@ declare function cts:getExpandedTitle($a_inv as xs:string,$a_urn as xs:string) a
 {
     let $entry := cts:getCatalog($a_inv,$a_urn)
     let $cts := cts:parseUrn($a_urn)
-    let $parts := 
+    let $start := 
         for $seq in (1 to count($cts/passageParts/rangePart[1]/part))
-         return concat(($entry//ti:online//ti:citation)[position() = $seq]/@label, " ", $cts/passageParts/rangePart[1]/part[$seq])    
+         return concat(($entry//ti:online//ti:citation)[position() = $seq]/@label, " ", $cts/passageParts/rangePart[1]/part[$seq])   
+    let $end :=  for $seq in (1 to count($cts/passageParts/rangePart[last()]/part))
+         return concat(($entry//ti:online//ti:citation)[position() = $seq]/@label, " ", $cts/passageParts/rangePart[last()]/part[$seq]) 
+    let $parts := if ($end != '') then concat(string-join($start,' '), ' - ',string-join($end,' ')) else $start
     return string-join(($entry//ti:edition/ti:label,$parts), " ")
 };
 
@@ -725,10 +728,34 @@ declare function cts:passageWithParents($a_passage as node()*, $a_pos as xs:int,
 		  			        
 };
 
-declare function cts:getLang($a_node as node()) as xs:string*
+declare function cts:getLang($a_node as node()*) as xs:string*
 {
     let $lang := $a_node/@*[local-name(.) = 'lang']
-    return if ($lang) then $lang else cts:getLang($a_node/..)
-       
+    return 
+        if ($lang) 
+        then $lang 
+        else if ($a_node and $a_node/..) 
+        then cts:getLang($a_node/..)
+        else ""
 };
 
+(:
+    Build up a CTS urn for a given node
+:)
+declare function cts:getUrnForNode($a_cts as node(), $a_node as node(),$a_topParent as xs:string, $a_build as xs:string*) as xs:string
+{
+    (: TODO get the correct xpath element and attribute to use from the parsed urn :)
+	if (local-name($a_node) = $a_topParent)
+	then 
+	   let $path := reverse($a_build)		
+       return concat($a_cts/workUrn,':',string-join($path,'.'))
+	else if ($a_node/@n)
+	then 
+          let $new_build := 
+                if ($a_build) 
+                then ($a_build,xs:string($a_node/@n)) 
+                else xs:string($a_node/@n)
+	      return cts:getUrnForNode($a_cts,$a_node/parent::*,$a_topParent,$new_build)
+	else			
+		cts:getUrnForNode($a_cts,$a_node/parent::*,$a_topParent,$a_build)
+};

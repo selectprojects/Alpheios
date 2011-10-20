@@ -26,6 +26,11 @@ module namespace tan  = "http://alpheios.net/namespaces/text-analysis";
 declare namespace forms = "http://alpheios.net/namespaces/forms";
 declare namespace tbd = "http://alpheios.net/namespaces/treebank-desc";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
+declare namespace oac="http://www.openannotation.org/ns/";
+declare namespace cnt="http://www.w3.org/2008/content#";
+declare namespace treebank="http://nlp.perseus.tufts.edu/syntax/treebank/1.5";
+
 import module namespace tbu="http://alpheios.net/namespaces/treebank-util"
               at "treebank-util.xquery";              
 import module namespace tbm="http://alpheios.net/namespaces/treebank-morph" 
@@ -135,145 +140,168 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
 {
     let $cts := cts:parseUrn($a_docid)
     let $docinfo := tan:findDocs($cts)
-        
-    let $words :=                   
-        (: create a set of lemma elements for each distinct lemma identified by the word elements in the document, 
-        sorted by lemma, then within each lemma by form 
-        :)          
-        if ($docinfo/treebank)
-        then         
-            let $doc := doc($docinfo/treebank)            
-            let $tbFormat := tbu:get-format-name($doc,'aldt')
-            let $tbDesc := tbu:get-format-description($tbFormat, "/db/xq/config")
-            (: TODO this should be removed when treebank data uses cts urns --- incorrect when crossing book boundaries :)
-            let $bookMatch : =
-                if ($cts/passageParts/rangePart[1]) then   
-                    let $bookStart:= $cts/passageParts/rangePart[1]/part[1]
-                    let $bookEnd := if ($cts/passageParts/rangePart[2]) then concat("|",$cts/passageParts/rangePart[2]/part[1]) else ""
-                    return concat("^\w+=(",$bookStart,$bookEnd,"):|$")
-                else ".*"
-            let $sentenceMatch :=
-                if ($cts/passageParts/rangePart[1]/part[2]) 
-                then   
-                    let $lines := 
-                        if (exists($cts/passageParts/rangePart[2]/part[1]) and exists($cts/passageParts/rangePart[2]/part[2])
-                            and $cts/passageParts/rangePart[1]/part[1] = $cts/passageParts/rangePart[2]/part[1] )
-                        then
-                            for $n in (xs:int($cts/passageParts/rangePart[2]/part[1])to xs:int($cts/passageParts/rangePart[2]/part[2]))
-                            return xs:string($n)
-                        else if ($cts/passageParts/rangePart[1]/part[2]) 
-                        then $cts/passageParts/rangePart[1]/part[2]
-                        else ".*"
-                    return concat("^(",string-join($lines,"|"),")$")                
-                else ".*"
-                
-            let $p_match :=
-                if (count($a_pofs) > 0)  
-                then concat("^(",string-join(
-                    (for $p in $a_pofs return 
-                      xs:string($tbDesc/tbd:table[@type eq "morphology"]/tbd:category[@id eq 'pos']/tbd:entry[tbd:long/text() = $p]/tbd:short)
-                    ),"|"),")")
-                else ""                                                  
-            let $lang := xs:string($doc/treebank/@*[local-name(.) = 'lang'])
-            let $lemmas := 
-                if ($p_match)
-                then 
-                    if ($a_excludePofs)
-                    then                    
-                        $doc/treebank/sentence[matches(@subdoc,$bookMatch) and matches(@id,$sentenceMatch)]/
-                            word[attribute::postag and not(matches(attribute::postag,$p_match)) and not(matches(attribute::postag,"^-"))]
-                    else $doc/treebank/sentence[matches(@subdoc,$bookMatch) and matches(@id,$sentenceMatch)]/
-                            word[attribute::postag and matches(attribute::postag,$p_match) and not(matches(attribute::postag,"^-"))]
-                else $doc/treebank/sentence[matches(@subdoc,$bookMatch) and matches(@id,$sentenceMatch)]/word
-            for $i in $lemmas 
-                let $sense := replace($i/@lemma,"^(.*?)(\d+)$","$2")
-                let $lemma:= if (matches($i/@lemma,"\d+$")) then replace($i/@lemma,"^(.*?)(\d+)$","$1") else $i/@lemma
-                let $book := substring-after(substring-before($i/parent::sentence/@subdoc,":"),"book=")
-                let $position:= count($i/preceding-sibling::word[@form="$i/@form"]) + 1
-                return <lemma lang="{$lang}" form="{xs:string($i/@form)}" sense="{$sense}" lemma="{$lemma}">
-                                <forms:urn>{concat($cts/workUrn,":",$book,".",$i/parent::sentence/@id,":",$i/@form,"[",$position,"]")}</forms:urn>
-                          </lemma>
-        else if ($docinfo/morph)
-            (:
-                just take all lemma possibilities found for each form for now, but   
-                TODO eventually need to add some intelligence to figure out which of multiple morphological possibilities is most likely 
-            :)
-            then
-                let $doc := doc($docinfo/morph)
-                let $lang := xs:string($doc/forms:forms/@*[local-name(.) = 'lang'])
-                let $p_match := 
-                    if (count($a_pofs) > 0)
-                    then concat('^',string-join($a_pofs,'|'),'$')
-                    else ""                
-                let $u_match := cts:getUrnMatchString('alpheios-cts-inventory',$a_docid)
-                
-                let $lemmas :=
-                    if ($p_match)
-                    then 
-                        if ($a_excludePofs)
-                        then $doc/forms:forms/forms:inflection[matches(forms:urn,$u_match)]/
-                            forms:words/forms:word/forms:entry/forms:dict[not(matches(forms:pofs,$p_match))] 
-                          else $doc/forms:forms/forms:inflection[matches(forms:urn,$u_match)]/
-                              forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs,$p_match) 
-                              or matches(following-sibling::forms:infl/forms:pofs,$p_match)]
-                      else $doc/forms:forms/forms:inflection[matches(forms:urn,$u_match)]/
-                              forms:words/forms:word/forms:entry/forms:dict
-                  let $all :=
-                        for $i in $lemmas
-                            let $hdwd := $i/forms:hdwd/text()
-                            let $sense := if (matches($i/forms:hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
-                            let $lemma:= if (matches($i/forms:hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
-                            let $form := $i/ancestor::forms:inflection/@form
-                            let $urns := $i/parent::forms:entry/parent::forms:word/parent::forms:words/parent::forms:inflection/forms:urn[matches(text(),$u_match)]
-                            let $count := count($urns)
-                            return 
-                                <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}">{
-                                    $urns                                            
-                                }</lemma>                                            
-                            (: need to dedupe morphology to add in infl elements for same hdwd entry -- see arabic فی :)
-                    (:  this is too slow  -- need to dedupe another way and verify that it is actually necessary  :)
-                    for $seq in (1 to count($all))
-                        return $all[$seq][not(
-                            $all[position() < $seq and 
-                                @lemma= $all[$seq]/@lemma and @form=$all[$seq]/@form and @sense=$all[$seq]/@sense] and forms:urn = $all[$seq]/forms:urn)]
+    let $collName := '/db/repository/vocabulary'
+   
+    (: are we pulling words for one or more citations or the entire document :) 
+    let $passage := if ($cts/passageParts/rangePart) then true() else false()
+    
+    (: cached directory name chops urn:cts and replaces : with _ and [] with # :)
+    let $cacheDir := 
+        replace(
+          replace(
+                replace($a_docid,'urn:cts:',''),
+                ':',
+                '_'),
+          '[\[\]]','#')
+    let $cacheFileName := concat(
+        if ($a_excludePofs) then 'not_' else 'all_',
+        string-join($a_pofs,'_'),
+        '.vb.xml')
+    let $cachePath := concat($collName, '/', $cacheDir,'/',$cacheFileName)
+    return
+        if (xmldb:collection-available(concat($collName,'/',$cacheDir)) and doc-available($cachePath)) 
+        then doc($cachePath)
+        else 
+           let $words :=                   
+                (: create a set of lemma elements for each distinct lemma identified by the word elements in the document, 
+                sorted by lemma, then within each lemma by form 
+                :)          
+                if ($docinfo/treebank)
+                then         
+                    let $doc := doc($docinfo/treebank)            
+                    let $tbFormat := tbu:get-format-name($doc,'aldt')
+                    let $tbDesc := tbu:get-format-description($tbFormat, "/db/xq/config")
+                    let $p_match :=
+                      if (count($a_pofs) > 0)  
+                        then concat("^(",string-join(
+                            (for $p in $a_pofs return 
+                              xs:string($tbDesc/tbd:table[@type eq "morphology"]/tbd:category[@id eq 'pos']/tbd:entry[tbd:long/text() = $p]/tbd:short)
+                            ),"|"),")")
+                        else ""                                                  
+                    let $lang := xs:string($doc/treebank/@*[local-name(.) = 'lang'])
+                    let $tbRefs := (# exist:timer #) { tan:getTreebankRefs($cts,false()) } 
                     
-        else if ($docinfo/toparse)
-            (: tokenize the user supplied text and pass it to the morphology service for the language :)
-            then
-              let $parsed := tan:getMorph($docinfo/toparse)
-              let $lang := $docinfo/toparse/@lang
-              let $p_match := 
-                    if (count($a_pofs) > 0)
-                    then concat('^',string-join($a_pofs,'|'),'$')
-                    else ""          
-              let $entries :=                  
-                   if ($p_match)
-                   then 
-                       if ($a_excludePofs)
-                       then $parsed/word/entry[dict[not(matches(pofs,$p_match))] or infl[not(matches(pofs,$p_match))]] 
-                       else $parsed/word/entry[matches(dict/pofs,$p_match) or matches(infl/pofs,$p_match)]                              
-                   else $parsed/word/entry
-              for $i in $entries
-                      let $hdwd := $i/dict/hdwd/text()
-                      let $sense := if (matches($i/dict/hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
-                      let $lemma:= if (matches($i/dict/hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
-                      let $form := $i/../form
-                      let $position:= count($i/ancestor::word[preceding-sibling::word[form=$form]]) + 1                      
-                      return 
-                          <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="1" lemma="{$lemma}">
-                              <forms:urn>{concat($form/text(),'[',$position,']')}</forms:urn>
-                          </lemma>
-        else()                      
-        let $total := count($words)
-        let $returned := if ($total > $tan:MAX_LEMMAS) then $tan:MAX_LEMMAS else $total
-        let $truncated  := for $i in $words[position() <= $tan:MAX_LEMMAS] return $i                     
-        return
-            <result count="{$returned}" total="{$total}" truncated="{$total - $returned}" 
-                treebank="{exists($docinfo/treebank)}" pmatch="{        if (count($a_pofs) > 0)
-                    then concat('^',string-join($a_pofs,'|'),'$')
-                    else ""                }" excludepofs="{$a_excludePofs}">
-                <words>{for $i in $truncated order by $i/@lemma, $i/@form return $i}</words>
-            </result>
+                    for $ref in $tbRefs
+                        let $s := substring-before($ref/text(),'-')
+                        let $w := substring-after($ref/text(),'-')
+                        let $word := $doc/treebank/sentence[@id=$s]/word[@id = $w]
+                        return
+                            if (
+                                (: matching on list of POFS to exclude :)
+                                ($p_match and $a_excludePofs and $word/@postag and 
+                                            not(matches($word/@postag,$p_match)) and not(matches($word/@postag,"^-")))
+                                or 
+                                (: matching on list of POFS to include :)
+                                ($p_match and not($a_excludePofs) and matches($word/@postag,$p_match))
+                                or
+                                (: matching on all POFS :)
+                                (not($p_match)))
+                            then
+                                let $sense := replace($word/@lemma,"^(.*?)(\d+)$","$2")
+                                let $form := xs:string($word/@form)
+                                let $lemma:= 
+                                    if (matches($word/@lemma,"\d+$")) 
+                                    then replace($word/@lemma,"^(.*?)(\d+)$","$1") 
+                                    else $word/@lemma
+                                    (:TODO this calculation of position takes too long and is incorrect -- we need it in the context of the citation not
+                                      the sentence  - use ref for now to make sure we get unique urns:)
+                                    (:let $position:= count($word/preceding-sibling::word[@form="$word/@form"]) + 1:)
+                                    let $position := xs:int($s) + xs:int($w)
+                                        
+                                    return 
+                                        <lemma lang="{$lang}" form="{$form}" sense="{$sense}" lemma="{$lemma}">
+                                            <forms:urn>{concat($ref/@urn,':',$form, '[',$position,']')}</forms:urn>
+                                        </lemma>
+                            else ()
+                          
+                else if ($docinfo/morph)
+                    (:
+                        just take all lemma possibilities found for each form for now, but   
+                        TODO eventually need to add some intelligence to figure out which of multiple morphological possibilities is most likely 
+                    :)
+                    then
+                        let $doc := doc($docinfo/morph)
+                        let $lang := xs:string($doc/forms:forms/@*[local-name(.) = 'lang'])
+                        let $p_match := 
+                            if (count($a_pofs) > 0)
+                            then concat('^',string-join($a_pofs,'|'),'$')
+                            else ""                
+                        let $u_match := cts:getUrnMatchString('alpheios-cts-inventory',$a_docid)
+                        
+                        let $lemmas :=
+                            if ($p_match)
+                            then 
+                                if ($a_excludePofs)
+                                then $doc/forms:forms/forms:inflection[forms:urn[matches(.,$u_match)]]/
+                                    forms:words/forms:word/forms:entry/forms:dict[not(matches(forms:pofs,$p_match))] 
+                                  else $doc/forms:forms/forms:inflection[forms:urn[matches(.,$u_match)]]/
+                                      forms:words/forms:word/forms:entry/forms:dict[matches(forms:pofs,$p_match) 
+                                      or matches(following-sibling::forms:infl/forms:pofs,$p_match)]
+                              else $doc/forms:forms/forms:inflection[forms:urn[matches(.,$u_match)]]/
+                                      forms:words/forms:word/forms:entry/forms:dict
+                          let $all :=
+                                for $i in $lemmas
+                                    let $hdwd := $i/forms:hdwd/text()
+                                    let $sense := if (matches($i/forms:hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
+                                    let $lemma:= if (matches($i/forms:hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
+                                    let $form := $i/ancestor::forms:inflection/@form
+                                    let $urns := $i/parent::forms:entry/parent::forms:word/parent::forms:words/parent::forms:inflection/forms:urn[matches(text(),$u_match)]
+                                    let $count := count($urns)
+                                    return 
+                                        <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="{$count}" lemma="{$lemma}">{
+                                            $urns                                            
+                                        }</lemma>                                            
+                          (: need to dedupe morphology to add in infl elements for same hdwd entry -- see arabic فی :)
+                          (: note transformation uses XSLT 2.0 group-by function :)
+                          let $xsl := doc('/db/xslt/alpheios-vocab-group-lemmas.xsl')      
+                          return transform:transform(<lemmas>{$all}</lemmas>, $xsl, ())/*
+                else if ($docinfo/toparse)
+                    (: tokenize the user supplied text and pass it to the morphology service for the language :)
+                    then
+                      let $parsed := tan:getMorph($docinfo/toparse)
+                      let $lang := $docinfo/toparse/@lang
+                      let $p_match := 
+                            if (count($a_pofs) > 0)
+                            then concat('^',string-join($a_pofs,'|'),'$')
+                            else ""          
+                      let $entries :=                  
+                           if ($p_match)
+                           then 
+                               if ($a_excludePofs)
+                               then $parsed/word/entry[dict[not(matches(pofs,$p_match))] or infl[not(matches(pofs,$p_match))]] 
+                               else $parsed/word/entry[matches(dict/pofs,$p_match) or matches(infl/pofs,$p_match)]                              
+                           else $parsed/word/entry
+                      for $i in $entries
+                              let $hdwd := $i/dict/hdwd/text()
+                              let $sense := if (matches($i/dict/hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$2") else ""
+                              let $lemma:= if (matches($i/dict/hdwd,"\d+$")) then replace($hdwd,"^(.*?)(\d+)$","$1") else $hdwd                        
+                              let $form := $i/../form
+                              let $position:= count($i/ancestor::word/preceding-sibling::word[form=$form]) + 1                      
+                              return 
+                                  <lemma sense="{$sense}" lang="{$lang}" form="{$form}" count="1" lemma="{$lemma}">
+                                      <forms:urn>{concat($form/text(),'[',$position,']')}</forms:urn>
+                                  </lemma>
+                else()                      
+                let $total := count($words)
+                let $returned := if ($total > $tan:MAX_LEMMAS) then $tan:MAX_LEMMAS else $total
+                let $truncated  := for $i in $words[position() <= $tan:MAX_LEMMAS] return $i               
+                let $result: = 
+                    <result count="{$returned}" total="{$total}" truncated="{$total - $returned}" 
+                        treebank="{exists($docinfo/treebank)}" pmatch="{        if (count($a_pofs) > 0)
+                            then concat('^',string-join($a_pofs,'|'),'$')
+                            else ""                }" excludepofs="{$a_excludePofs}">
+                        <words>{for $i in $truncated order by $i/@lemma, $i/@form return $i}</words>
+                    </result>
+                let $stored := if (not($docinfo/toparse)) 
+                               then
+                                    let $do_store := 
+                                        if (xmldb:collection-available(concat($collName, '/', $cacheDir))) then true() else
+                                            xmldb:create-collection($collName, $cacheDir)
+                                    return 
+                                        if ($do_store) then xmldb:store(concat($collName,'/',$cacheDir), 
+                                                                        $cacheFileName, $result) else ()
+                               else ()
+                return $result
 };
 
 (:
@@ -479,34 +507,113 @@ declare function tan:getMorph($a_text)
       let $xsl := doc('/db/xslt/alpheios-tokenize.xsl')      
       let $params := <parameters><param name="e_lang" value="{$a_text/@lang}"/></parameters>
       let $wds := transform:transform($a_text, $xsl, $params)
+      let $svcurl := tan:getMorphService($a_text/@lang)
       let $morph := 
-          if ($a_text/@lang = 'ara')
-          then              
-              let $decode_xsl := doc('/db/xslt/uni2buck.xsl')              
-              let $svcurl := "http://alpheios.net/perl/aramorph?word="
-              let $encode_xsl := doc('/db/xslt/morph-buck2uni.xsl')
-              for $w in $wds//tei:wd
-                  let $buck_w:= transform:transform($w, $decode_xsl, ())
-                  let $url := concat($svcurl,encode-for-uri($buck_w))
-                  let $morph := httpclient:get(xs:anyURI($url),false(),())
-                  (: TODO: this is stripping the senses out before transforming to unicode
-                                 we need to isolate the sense in an attribute so it can be used for matching :)
-                  return transform:transform($morph, $encode_xsl, ())//word
-                
-          else if ($a_text/@lang = 'grc')
-          then              
-              let $decode_xsl := doc('/db/xslt/alpheios-uni2betacode.xsl')              
-              let $svcurl := "http://alpheios.net/perl/greek?word="
-              let $encode_xsl := doc('/db/xslt/morph-beta-uni.xsl')
-              for $w in $wds//tei:wd
-                let $params := <parameters><param name="e_in" value="{$w}"/></parameters>              
-                let $beta_w:= transform:transform($w, $decode_xsl,$params)
-                (:let $beta_w := $w:)
-                  let $url := concat($svcurl,encode-for-uri($beta_w))
-                  let $morph := httpclient:get(xs:anyURI($url),false(),())
-                  (: TODO: this is stripping the senses out before transforming to unicode
-                                 we need to isolate the sense in an attribute so it can be used for matching :)
-                  return transform:transform($morph, $encode_xsl, ())//word
-          else()
+          if ($svcurl) then
+                if ($a_text/@lang = 'ara')
+                then              
+                    let $decode_xsl := doc('/db/xslt/uni2buck.xsl')              
+                    let $encode_xsl := doc('/db/xslt/morph-buck2uni.xsl')
+                    for $w in $wds//tei:wd
+                        let $buck_w:= transform:transform($w, $decode_xsl, ())
+                        let $url := replace($svcurl,'WORD',encode-for-uri($buck_w))
+                        let $morph := httpclient:get(xs:anyURI($url),false(),())
+                        (: TODO: this is stripping the senses out before transforming to unicode
+                                       we need to isolate the sense in an attribute so it can be used for matching :)
+                        return transform:transform($morph, $encode_xsl, ())//word
+                      
+                else if ($a_text/@lang = 'grc')
+                then              
+                    let $decode_xsl := doc('/db/xslt/alpheios-uni2betacode.xsl')              
+                    let $encode_xsl := doc('/db/xslt/morph-beta-uni.xsl')
+                    for $w in $wds//tei:wd
+                      let $params := <parameters><param name="e_in" value="{$w}"/></parameters>              
+                      let $beta_w:= transform:transform($w, $decode_xsl,$params)
+                      (:let $beta_w := $w:)
+                        let $url := replace($svcurl,'WORD',encode-for-uri($beta_w))
+                        let $morph := httpclient:get(xs:anyURI($url),false(),())
+                        (: TODO: this is stripping the senses out before transforming to unicode
+                                       we need to isolate the sense in an attribute so it can be used for matching :)
+                        return transform:transform($morph, $encode_xsl, ())//word
+                else if ($a_text/@lang = 'lat')
+                then              
+                    for $w in $wds//tei:wd
+                        let $url := replace($svcurl,'WORD',encode-for-uri($w))
+                        let $morph := httpclient:get(xs:anyURI($url),false(),())
+                        return $morph//word
+                else()
+            else()
      return <words>{$morph}</words>
 };
+
+declare function tan:get_OACTreebank($a_nodes as node()*) as node()*
+{
+	let $targets := $a_nodes//oac:Annotation[oac:hasBody]
+	for $target in $targets
+		return
+			(: to do -- support body refs as well as inline :)
+			for $body in $target/oac:hasBody
+				let $uri := $body/@rdf:resource
+				for $s in $target/oac:Body[@rdf:about=$uri]/cnt:rest//treebank:sentence
+				(: drop the namespaces :)
+				return tan:change-element-ns-deep($s,"","")
+};
+
+declare function tan:get_OACMorph($a_nodes as node()*) as node()*
+{
+	let $targets := $a_nodes//oac:Annotation[oac:hasBody]
+	let $morph_all := 
+		for $target in $targets
+		    let $urn := xs:string($target/oac:hasTarget/rdf:Description/@rdf:about)
+		    let $cts := cts:parseUrn($urn)
+		    let $form := xs:string($cts/subRef)
+		    return
+				<forms:inflection>
+					<forms:urn>{$urn}</forms:urn>
+					<forms:word>
+					<forms:form>{$form}</forms:form>
+					{
+				 		for $body in $target/oac:hasBody
+						  let $uri := $body/@rdf:resource
+						  (: to do -- support body refs as well as inline :)
+							for $entry in $target/oac:Body[@rdf:about=$uri]/cnt:rest/entry
+								return tan:change-element-ns-deep($entry,"http://alpheios.net/namespaces/forms","forms")
+					}
+					</forms:word>
+				</forms:inflection>
+	return <forms:forms>{$morph_all}</forms:forms>
+			
+};
+
+declare function tan:getTreebankRefs($a_cts as node(), $a_sentencesOnly as xs:boolean) as node()* 
+{
+    let $nodes := 
+        if ($a_cts/passageParts/rangePart)
+        then
+            cts:getPassagePlus("alpheios-cts-inventory",xs:string($a_cts/urn))
+        else
+            cts:getCitableText("alpheios-cts-inventory",xs:string($a_cts/urn))
+    for $node in ($nodes//text//wd,$nodes//tei:text//tei:wd)		
+        let $urn := cts:getUrnForNode($a_cts,$node,'body',"") 
+        let $refs := ($node/@tbref,$node/@tbrefs)
+        let $tokenized := for $r in $refs return tokenize($r, ' ')
+        (: return words or sentences per request :)
+        let $allrefs := 
+            if ($a_sentencesOnly)
+            then
+                distinct-values(for $r in $tokenized order by $r return substring-before($r,"-"))
+            else 
+                distinct-values(for $r in $tokenized order by $r return $r)
+        for $ref in $allrefs return <ref urn="{$urn}">{$ref}</ref>
+        
+           
+};
+
+declare function tan:getMorphService($a_lang as xs:string) as xs:string*
+{
+    let $config := doc('/db/xq/config/services.xml')
+    return $config/services/morphology/service[@xml:lang=$a_lang]
+};
+
+
+
