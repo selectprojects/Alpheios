@@ -38,8 +38,8 @@ import module namespace tbm="http://alpheios.net/namespaces/treebank-morph"
 import module namespace cts="http://alpheios.net/namespaces/cts" 
             at "cts.xquery";
 
-declare variable $tan:MAX_FORMS := 10000;
-declare variable $tan:MAX_LEMMAS := 10000;
+declare variable $tan:MAX_FORMS := 500000;
+declare variable $tan:MAX_LEMMAS := 500000;
 
 (:
     Function which identifies the paths of the various Alpheios document types available for a specific
@@ -179,41 +179,17 @@ declare function tan:getWords($a_docid as xs:string, $a_excludePofs as xs:boolea
                             ),"|"),")")
                         else ""                                                  
                     let $lang := xs:string($doc/treebank/@*[local-name(.) = 'lang'])
-                    let $tbRefs := (# exist:timer #) { tan:getTreebankRefs($cts,false()) } 
-                    
-                    for $ref in $tbRefs
-                        let $s := substring-before($ref/text(),'-')
-                        let $w := substring-after($ref/text(),'-')
-                        let $word := $doc/treebank/sentence[@id=$s]/word[@id = $w]
-                        return
-                            if (
-                                (: matching on list of POFS to exclude :)
-                                ($p_match and $a_excludePofs and $word/@postag and 
-                                            not(matches($word/@postag,$p_match)) and not(matches($word/@postag,"^-")))
-                                or 
-                                (: matching on list of POFS to include :)
-                                ($p_match and not($a_excludePofs) and matches($word/@postag,$p_match))
-                                or
-                                (: matching on all POFS :)
-                                (not($p_match)))
-                            then
-                                let $sense := replace($word/@lemma,"^(.*?)(\d+)$","$2")
-                                let $form := xs:string($word/@form)
-                                let $lemma:= 
-                                    if (matches($word/@lemma,"\d+$")) 
-                                    then replace($word/@lemma,"^(.*?)(\d+)$","$1") 
-                                    else $word/@lemma
-                                    (:TODO this calculation of position takes too long and is incorrect -- we need it in the context of the citation not
-                                      the sentence  - use ref for now to make sure we get unique urns:)
-                                    (:let $position:= count($word/preceding-sibling::word[@form="$word/@form"]) + 1:)
-                                    let $position := xs:int($s) + xs:int($w)
-                                        
-                                    return 
-                                        <lemma lang="{$lang}" form="{$form}" sense="{$sense}" lemma="{$lemma}">
-                                            <forms:urn>{concat($ref/@urn,':',$form, '[',$position,']')}</forms:urn>
-                                        </lemma>
-                            else ()
-                          
+                    let $tbRefs := tan:getTreebankRefs($cts,false()) 
+                    let $xsl := doc('/db/xslt/treebank-to-lemma.xsl')
+                    let $params :=
+                                <parameters>
+                                    <param name="e_lang" value="{$lang}"/>
+                                    <param name="e_refs" value="{$tbRefs}"/>
+                                    <param name="e_pmatch" value="{$p_match}"/>
+                                    <param name="e_excludePofs" value="{if ($a_excludePofs) then '1' else '0'}"/>
+                                </parameters>
+                    return 
+                       transform:transform($doc, $xsl, $params)//lemma
                 else if ($docinfo/morph)
                     (:
                         just take all lemma possibilities found for each form for now, but   
@@ -585,28 +561,42 @@ declare function tan:get_OACMorph($a_nodes as node()*) as node()*
 			
 };
 
-declare function tan:getTreebankRefs($a_cts as node(), $a_sentencesOnly as xs:boolean) as node()* 
+declare function tan:getTreebankRefs($a_cts as node(), $a_sentencesOnly as xs:boolean) as xs:string* 
 {
-    let $nodes := 
-        if ($a_cts/passageParts/rangePart)
-        then
-            cts:getPassagePlus("alpheios-cts-inventory",xs:string($a_cts/urn))
+    let $collName := '/db/repository/refs'
+    let $cacheFile :=
+          replace(
+            replace(
+                replace($a_cts/urn,'urn:cts:',''),
+                ':',
+                '_'),
+                 '[\[\]]','#')
+    return
+        if (doc-available(concat($collName,'/',$cacheFile, '.xml')))
+        then 
+            concat($collName, '/',$cacheFile, '.xml')
         else
-            cts:getCitableText("alpheios-cts-inventory",xs:string($a_cts/urn))
-    for $node in ($nodes//text//wd,$nodes//tei:text//tei:wd)		
-        let $urn := cts:getUrnForNode($a_cts,$node,'body',"") 
-        let $refs := ($node/@tbref,$node/@tbrefs)
-        let $tokenized := for $r in $refs return tokenize($r, ' ')
-        (: return words or sentences per request :)
-        let $allrefs := 
-            if ($a_sentencesOnly)
-            then
-                distinct-values(for $r in $tokenized order by $r return substring-before($r,"-"))
-            else 
-                distinct-values(for $r in $tokenized order by $r return $r)
-        for $ref in $allrefs return <ref urn="{$urn}">{$ref}</ref>
-        
-           
+            let $nodes := 
+                if ($a_cts/passageParts/rangePart)
+                then
+                    cts:getPassagePlus("alpheios-cts-inventory",xs:string($a_cts/urn))
+                else
+                    cts:getCitableText("alpheios-cts-inventory",xs:string($a_cts/urn))
+            let $index :=
+                for $node in ($nodes//text//wd,$nodes//tei:text//tei:wd)		
+                    let $urn := cts:getUrnForNode($a_cts,$node,'body',"") 
+                    let $refs := ($node/@tbref,$node/@tbrefs)
+                    let $tokenized := for $r in $refs return tokenize($r, ' ')
+                    (: return words or sentences per request :)
+                    let $allrefs := 
+                        if ($a_sentencesOnly)
+                        then
+                            distinct-values(for $r in $tokenized order by $r return substring-before($r,"-"))
+                        else 
+                            distinct-values(for $r in $tokenized order by $r return $r)
+                    for $ref in $allrefs return <ref urn="{$urn}">{$ref}</ref>
+            let $stored :=   xmldb:store($collName,concat($cacheFile, '.xml'), <refs>{$index}</refs>)
+            return concat($collName, '/',$cacheFile, '.xml')
 };
 
 declare function tan:getMorphService($a_lang as xs:string) as xs:string*

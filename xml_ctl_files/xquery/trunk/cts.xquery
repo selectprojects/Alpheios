@@ -234,6 +234,7 @@ declare function cts:getValidReff($a_inv,$a_urn)
 :)
 declare function cts:getValidReff($a_inv as xs:string,$a_urn as xs:string,$a_level as xs:int)
 {    
+        (: this is way too slow when request is all urns in a document at all levels  - e.g urn:cts:greekLit:tlg0012.tlg001 :)
         let $cts := cts:parseUrn($a_urn)
         let $doc := doc($cts/fileInfo/fullPath)
         let $entry := cts:getCatalog($a_inv,$a_urn)                
@@ -540,8 +541,8 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_w
         let $countAll := count($passage)
         let $lang := if ($passage) then cts:getLang($passage[1]) else ""
         (: enforce limit on # of nodes returned to avoid crashing the server or browser :)
-        let $count := if ($countAll > $cts:maxPassageNodes) then $cts:maxPassageNodes else $countAll
-        (:let $count := $countAll:)        
+        (:let $count := if ($countAll > $cts:maxPassageNodes) then $cts:maxPassageNodes else $countAll:)
+        let $count := $countAll        
         let $name := xs:string(node-name($passage[1]))
         let $thisPath := xs:string($cites[position() = last()]/@xpath)
         let $docid := if ($doc/TEI.2/@id) then $doc/TEI.2/@id 
@@ -562,7 +563,7 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_w
                     {$doc//*:teiHeader,$doc//*:teiheader},
                     <text xml:lang="{$lang}">
                     <body>                    	
-                        {cts:passageWithParents($passageAll,1,('body','TEI.2','TEI','tei.2','tei'))}
+                        {for $p in $passageAll return cts:passageWithParents($p,1,('body','TEI.2','TEI','tei.2','tei'))}
                      </body>
                   </text>
                 </TEI>
@@ -690,7 +691,8 @@ declare function cts:getExpandedTitle($a_inv as xs:string,$a_urn as xs:string) a
 declare function cts:getCitableText($a_inv as xs:string, $a_urn as xs:string) as node()
 {
 
-	let $textUrn := cts:parseUrn($a_urn)
+	let $cts := cts:parseUrn($a_urn)
+	(:
 	let $refs := cts:getValidReff($a_inv,$textUrn/workUrn)
 	let $first := $refs//urn[1]
 	let $last := $refs//urn[last()]    
@@ -700,7 +702,12 @@ declare function cts:getCitableText($a_inv as xs:string, $a_urn as xs:string) as
     	concat($firstCts/workUrn,':',
     	string-join($firstCts/passageParts/rangePart/part, '.'),'-',
     	string-join($lastCts/passageParts/rangePart/part,'.'))
-	return cts:getPassagePlus($a_inv,$urn)	    	 
+	return cts:getPassagePlus($a_inv,$urn)	 
+	:)
+	return 
+	<reply>
+	   {doc($cts/fileInfo/fullPath)}
+	</reply>
 };
 
 declare function cts:passageWithParents($a_passage as node()*, $a_pos as xs:int, $a_stop) as node()*
