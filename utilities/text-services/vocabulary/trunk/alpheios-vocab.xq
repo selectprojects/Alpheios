@@ -145,7 +145,7 @@ let $vocab :=
                         </text>
                    </TEI>)
      else
-        let $results  := tan:getWords($e_doc,$e_excludePofs,$pofs_set)
+        let $results  := (# exist:timer #) {  tan:getWords($e_doc,$e_excludePofs,$pofs_set) }
         let $all_words := $results/*:words
         let $note := 
             if ($results/@truncated > 0) 
@@ -157,7 +157,7 @@ let $vocab :=
         :)
         
         let $xslGroup := doc('/db/xslt/alpheios-vocab-group.xsl')
-        let $grouped := transform:transform($results, $xslGroup, ())/lemma   
+        let $grouped := (# exist:timer #) { transform:transform($results, $xslGroup, ())/lemma  }
         let $total := count($grouped)
         let $display_count := if ($e_count >0) then $e_count else $total
         return 

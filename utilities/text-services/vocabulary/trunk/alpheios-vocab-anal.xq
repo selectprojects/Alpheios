@@ -133,10 +133,7 @@ return
                     element match {
                         $r/@*,
                         for $u in $r/forms:urn
-                            let $url := if ( $docType = 'treebank' )
-                                        (: treeank positions are broken because they're still based on tb ids and not cite scheme :)
-                                        then replace($u,'\[\d+\]$','')
-                                        else $u
+                            let $url := $u
                         return element tei:ptr {attribute target { concat('alpheios-text.xq?',"urn=", $url) },$url}
                    }
             }              
