@@ -34,8 +34,10 @@ let $passage_xpaths := cts:getCitationXpaths($e_inv,$e_urn)
 
 let $textDoc := doc($e_source)
 return element words {
+	attribute source {$e_source},
+	$passage_xpaths,	
     for $i in $textDoc//*:wd
-    return
+    return      
       let $passage :=
             for $p in $passage_xpaths
                 let $name := replace($p,"^/(.*?:)?(.*?)\[.*$","$2")

@@ -19,13 +19,7 @@
  :)
 
 import module namespace almt="http://alpheios.net/namespaces/alignment-match"
-              at "file:///c:/work/xml_ctl_files/xquery/trunk/alignment-match.xquery";
-
-(:import module namespace cts="http://alpheios.net/namespaces/cts"
-              at "file:///c:/work/xml_ctl_files/xquery/trunk/cts.xquery";:)
-
-(:import module namespace tan="http://alpheios.net/namespaces/text-analysis"
-              at "file:///c:/work/xml_ctl_files/xquery/trunk/textanalysis-utils.xquery";:)
+              at "alignment-match.xquery";
 
 (:
   Fix word elements in text
@@ -48,10 +42,16 @@ declare variable $e_source external;
 declare variable $e_lang external;
 declare variable $e_treebank external;
 declare variable $e_align external;
+declare variable $e_bookNum as xs:int external;
+declare variable $e_cardNum as xs:int external;
+declare variable $e_tbIndex external;
+declare variable $e_includePunc external;
 
 
 
-declare variable $s_nontext := "^[“”—&quot;‘’,.:;&#x0387;&#x00B7;'?!\[\]()\-]+$";
+
+declare variable $s_nontext := 
+    if ($e_includePunc = 'true') then "^[“”—&quot;‘’&#x0387;&#x00B7;'?!\[\]()\-]+$" else "^[“”—&quot;‘’,.:;&#x0387;&#x00B7;'?!\[\]()\-]+$";
 
 (:
   Process a set of nodes
@@ -77,10 +77,13 @@ declare function local:process-nodes(
   for $node in $a_nodes
   return
   typeswitch ($node)
-    (: if wd, replace with corresponding fixed word :)
-    case $word as element(wd)
+    (: if wd, replace with corresponding fixed word, if it exists :)
+    case $word as element(wd) 
     return
-      $a_fixedWords[@id = $word/@id]/*:wd
+      if ($a_fixedWords[@id = $word/@id]/*:wd) 
+        then $a_fixedWords[@id = $word/@id]/*:wd
+        else $node
+      
 
     (:
       if element, copy and process all child nodes
@@ -119,55 +122,60 @@ declare function local:fix-words(
   $a_treebank as xs:boolean) as element(wrap)*
 {
   (: nothing to do if no text words left :)
-  if (count($a_textWords) eq 0) then () else
-
-  (: if no matches left, copy text words :)
-  if (count($a_matches) eq 0) then $a_textWords else
-  if ($a_matches/oops) then $a_textWords else 
-
-  (: create words for this match :)
-  let $match := $a_matches[1]
-  let $newWords :=
-    (: if 1-to-1 match :)
-    if ($match/@type eq "1-to-1")
-    then
-      for $i in (1 to $match/@l1)
-      return
-        local:fix-word($a_textWords[$i],
-                       $a_dataWords[$i]/@n,
-                       $a_dataWords[$i]/@nrefs,
-                       $a_treebank)
-
-    (: if mismatch :)
-    else if ($match/@type eq "mismatch")
-    then
-      let $n :=
-        string-join(
-          for $j in (1 to $match/@l2)
-          return $a_dataWords[$j]/@n,
-          ' ')
-      let $nrefs :=
-        string-join(
-          for $j in (1 to $match/@l2)
-          return $a_dataWords[$j]/@nrefs,
-          ' ')
-      for $i in (1 to $a_matches[1]/@l1)
-      return
-        local:fix-word($a_textWords[$i], $n, $nrefs, $a_treebank)
-
-    (: if skip :)
+  if (count($a_textWords) eq 0) 
+  then () 
+  else
+    (: if no matches left, copy text words :)
+    if (count($a_matches) eq 0) 
+    then $a_textWords 
     else
-      subsequence($a_textWords, 1, if ($match/@l1) then $match/@l1 else 0)
+        if ($a_matches/oops) 
+        then $a_textWords 
+        else 
 
-  return
-  (
-    $newWords,
-    local:fix-words(
-      subsequence($a_textWords, if ($match/@l1) then $match/@l1 + 1 else 1),
-      subsequence($a_dataWords, if ($match/@l2) then $match/@l2 + 1 else 1),
-      subsequence($a_matches, 2),
-      $a_treebank)
-  )
+        (: create words for this match :)
+        let $match := $a_matches[1]
+        let $newWords :=
+          (: if 1-to-1 match :)
+          if ($match/@type eq "1-to-1")
+          then
+            for $i in (1 to $match/@l1)
+            return
+              local:fix-word($a_textWords[$i],
+                             $a_dataWords[$i]/@n,
+                             $a_dataWords[$i]/@nrefs,
+                             $a_treebank)
+
+            (: if mismatch :)
+            else if ($match/@type eq "mismatch")
+                then
+                    let $n :=
+                        string-join(
+                          for $j in (1 to $match/@l2)
+                          return $a_dataWords[$j]/@n,
+                          ' ')
+                    let $nrefs :=
+                      string-join(
+                        for $j in (1 to $match/@l2)
+                        return $a_dataWords[$j]/@nrefs,
+                        ' ')
+                    for $i in (1 to $a_matches[1]/@l1)
+                    return
+                        local:fix-word($a_textWords[$i], $n, $nrefs, $a_treebank)
+
+                (: if skip :)
+                else
+                  subsequence($a_textWords, 1, if ($match/@l1) then $match/@l1 else 0)
+
+        return
+        (
+          $newWords,
+          local:fix-words(
+            subsequence($a_textWords, if ($match/@l1) then $match/@l1 + 1 else 1),
+            subsequence($a_dataWords, if ($match/@l2) then $match/@l2 + 1 else 1),
+            subsequence($a_matches, 2),
+            $a_treebank)
+        )
 };
 
 (:
@@ -233,16 +241,29 @@ let $textDoc := doc($e_source)
 return 
 if (doc-available($alignDoc) or doc-available($tbDoc))
 then
-    let $textWords :=
-        for $word in $textDoc//wd
+    (: speakers aren't treebanked so ignore words inside speaker tags :)
+    
+    let $textWords :=         
+        for $word in
+            if ($e_tbIndex and $e_bookNum and $e_cardNum) then 
+                $textDoc//*[starts-with(local-name(.),'div') and @type='Book' and @n=xs:string($e_bookNum)]/l[preceding-sibling::milestone[position() = 1 and @unit="card" and @n=xs:string($e_cardNum)]]/wd[not(parent::speaker)]
+            else 
+                $textDoc//wd[not(parent::speaker)]
         return
-          element wrap
+          element wrap 
           {
             $word/@id,
-            element wd { $word/text() }
+            element wd {
+                if ($word/@nrefs or $word/@tbrefs)
+                then ($word/@nrefs,$word/@tbrefs)
+                else $word/@*,
+                $word/text() 
+            }
           }
-
+          
+      
     (: get words from aligned text, ignoring non-text :)
+    
     let $alignLnum := 
         if (doc-available($alignDoc)) 
         then doc($alignDoc)//*:language[@xml:lang = $e_lang]/@lnum 
@@ -262,45 +283,74 @@ then
        else ()
    
     (: get words from treebank, ignoring non-text :)
+    
     let $tbWords :=
       if (doc-available($tbDoc))
       then
+        if (doc-available($e_tbIndex)) then            
+            let $index := doc($e_tbIndex)//entry[@bookNum = $e_bookNum and @cardNum = $e_cardNum]
+            let $minTb := xs:int($index)
+            let $maxTb := xs:int($index/following-sibling::entry[1])   
+        for $word in doc($tbDoc)//sentence[@id > $minTb and @id <= $maxTb]/word
+            where not(matches($word/@form, $s_nontext))
+            return
+            element wd
+            {
+                (: if sentence is valid :)
+                if (exists($word/../@id))
+                then
+                (: build name from sentence# and word# :)
+                    attribute n
+                    {
+                      concat($word/../@id, "-", $word/@id)
+                    }
+                else (),
+                  data($word/@form)
+            }
+      else
         for $word in doc($tbDoc)//word
-        where not(matches($word/@form, $s_nontext))
-        return
-        element wd
-        {
-            (: if sentence is valid :)
-            if (exists($word/../@id))
-            then
-            (: build name from sentence# and word# :)
-                attribute n
-                {
-                  concat($word/../@id, "-", $word/@id)
-                }
-            else (),
-              data($word/@form)
-        }
+            where not(matches($word/@form, $s_nontext))
+            return
+            element wd
+            {
+                (: if sentence is valid :)
+                if (exists($word/../@id))
+                then
+                (: build name from sentence# and word# :)
+                    attribute n
+                    {
+                      concat($word/../@id, "-", $word/@id)
+                    }
+                else (),
+                  data($word/@form)
+            }
       else ()
-
+    
+        
     (: create fixed words to replace original :)
-    let $fix1 :=
+    let $fix1 := 
        local:fix-words($textWords,
                       $alignWords,
                       almt:match(data($textWords/wd), data($alignWords), true()),
-                      false())                              
-    let $fix2 :=
-      if (doc-available($tbDoc))
+                      false())
+    
+    let $fix2 := 
+    
+      if (doc-available($tbDoc))      
       then
-        local:fix-words($fix1,
+        local:fix-words(if ($fix1) then $fix1 else $textWords,
                         $tbWords,
                         almt:match(data($textWords/wd), data($tbWords), true()),
                         true())                                        
       else $fix1
-
-    return
+    
+    return        
         (: create copy of original text with fixed words :)
         local:process-nodes($textDoc/node(), $fix2)
+
+         
         
         
-else $textDoc
+        
+        
+else $textDoc 
