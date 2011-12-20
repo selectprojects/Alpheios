@@ -142,8 +142,11 @@
         </xsl:variable>
         <div class="milestone {@unit}" id="{$idstring}"><xsl:value-of select="@n"/></div>
     </xsl:template>
-    <xsl:template match="tei:body|tei:div1|tei:div2|tei:div3|tei:div4|tei:div5|tei:sp|tei:div">
+    <xsl:template match="tei:body|tei:div0|tei:div1|tei:div2|tei:div3|tei:div4|tei:div5|tei:sp|tei:div">
         <div class="{@type}">
+            <xsl:if test="@type and @n">
+                <span class="citelabel"><span class="citetype"><xsl:value-of select="@type"/></span><xsl:value-of select="@n"/></span>
+            </xsl:if>
             <xsl:apply-templates/>
         </div>
     </xsl:template>

@@ -71,7 +71,7 @@ let $params :=
         <param name="cssFile" value ="http://alpheios.net/alpheios-texts/css/alpheios-text.css"/>
         <param name="highlightWord" value="{ xs:string($wd_id) }"/>
      </parameters>
-let $uri := concat(request:get-url(),'?')
+let $uri := concat(request:get-uri(),'?')
  let $text :=
     element TEI.2 {   
     	$reply//TEI/@id,     
