@@ -51,6 +51,17 @@ Alph.LanguageTool_Arabic.prototype.postTransform = function(a_node)
 {
     var copyright = this.getString('popup.credits');
     Alph.$('#alph-morph-credits',a_node).html(copyright);
+    var morphflags = Alph.$('.alph-morphflags',a_node);
+    if (morphflags.length > 0 && 
+        Alph.BrowserUtils.getPref('showmorphflags',this.d_sourceLanguage)) 
+    {
+	morphflags.each(
+            function() {
+                var ctx = Alph.$(this).attr('context');
+                Alph.$(this).html(ctx);
+            }
+        );
+    }
 }
 
 /**
@@ -214,3 +225,4 @@ function(a_lemma, a_key, a_datafile, a_stripper, a_stripperList)
     // nothing found
     return Array(lemma, null);
 }
+

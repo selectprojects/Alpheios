@@ -98,3 +98,4 @@ pref("extensions.alpheios.arabic.dictionary.full.search.lemma_param","l");
 pref("extensions.alpheios.arabic.dictionary.full.search.id_param","n");
 pref("extensions.alpheios.arabic.dictionary.full.search.multiple",true);
 pref("extensions.alpheios.arabic.stripper.list","tanwin,hamza,harakat,shadda,sukun,alef");
+pref("extensions.alpheios.arabic.showmorphflags",false);
