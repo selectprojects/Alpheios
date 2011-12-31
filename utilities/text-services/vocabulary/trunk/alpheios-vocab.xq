@@ -57,6 +57,9 @@ let $e_pofs := distinct-values(request:get-parameter("pofs",()))
 let $e_excludePofs := xs:boolean(request:get-parameter("excludepofs","false"))
 let $e_format := request:get-parameter("format", "html")
 let $e_totals := request:get-parameter("totals", ())
+let $e_showLinks := xs:boolean(request:get-parameter("links","true"))
+let $config := doc('/db/xq/config/services.xml')
+let $proxyurl := $config/services/proxy/service
 let $xsl := doc('/db/xslt/alpheios-vocab.xsl')
 let $pi := 
     if ($e_format = 'xml' or $e_format = "") 
@@ -69,7 +72,7 @@ let $pi :=
              attribute xml { 'type="text/xsl" href="../xslt/alpheios-vocab.xsl"'}
         }
 let $pofs_set := if ($e_pofs = "") then () else $e_pofs
-let $uri := concat(request:get-uri(),'?')
+let $uri := concat($proxyurl,request:get-uri(),'?')
 let $qs := replace(request:get-query-string(),'&amp;start=\d+','')
 let $vocab :=
     if (matches($e_doc,"alpheios-vocab"))
@@ -190,7 +193,6 @@ let $vocab :=
                     let $start_less_count := $e_start - $display_count 
                     let $start_for_last := $total -$display_count+1
                     let $start_for_next := $e_start+$display_count
-                    let $uri := concat(request:get-uri(),'?')
                     let $qs := replace(request:get-query-string(),'&amp;start=\d+','')
                     let $first :=
                       if ($e_start > 1)
@@ -235,8 +237,10 @@ let $vocab :=
                               order by xs:int($j/@count) descending
                              return 
                                  <form type="inflection"  lang="{xs:string($k/@lang)}" count="{$j/@count}">{xs:string($j/@form)}
-                                     { for $u in $j/*:urn 
-                                       return element ptr {attribute target { concat(replace(request:get-url(),'alpheios-vocab.xq','alpheios-text.xq?'),"urn=", $u/text()) },$u/text()}
+                                     { if ($e_showLinks) then 
+                                           for $u in $j/*:urn 
+                                           return element ptr {attribute target { concat(replace($uri,'alpheios-vocab.xq','alpheios-text.xq'),"urn=", $u/text()) },$u/text()}
+                                       else ()
                                      }
                                  </form> 
                             }
