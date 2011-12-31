@@ -5,4 +5,10 @@
         <service xml:lang='grc'>http://alpheios.net/perl/greek?word=WORD</service>
         <service xml:lang='ara'>http://alpheios.net/perl/aramorph2?word=WORD</service>
     </morphology>
+    <vocabulary>
+        <service>http://services.perseus.tufts.edu/exist/rest/db/xq/alpheios-vocab.xq?links=false&amp;start=1&amp;count=10&amp;pofs=POFS&amp;urn=URN</service>
+    </vocabulary>
+    <proxy>
+        <service>http://repos1.alpheios.net</service>
+    </proxy>
 </services>
