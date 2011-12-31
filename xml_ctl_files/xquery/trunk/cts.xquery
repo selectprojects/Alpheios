@@ -43,6 +43,7 @@ declare variable $cts:tocChunking :=
     <tocChunk type="Article" size="1"/>,    
     <tocChunk type="Line" size="30"/>,
     <tocChunk type="Verse" size="30"/>,
+    <tocChunk type="Fragment" size="1"/>,
     <tocChunk type="Page" size="1"/>
 );
 
@@ -749,20 +750,32 @@ declare function cts:getLang($a_node as node()*) as xs:string*
 (:
     Build up a CTS urn for a given node
 :)
-declare function cts:getUrnForNode($a_cts as node(), $a_node as node(),$a_topParent as xs:string, $a_build as xs:string*) as xs:string
+declare function cts:getUrnForNode($a_inv as xs:string, $a_cts as node(), $a_node as node(),$a_topParent as xs:string, $a_build as xs:string*) as xs:string
 {
     (: TODO get the correct xpath element and attribute to use from the parsed urn :)
 	if (local-name($a_node) = $a_topParent)
 	then 
 	   let $path := reverse($a_build)		
        return concat($a_cts/workUrn,':',string-join($path,'.'))
-	else if ($a_node/@n)
+	else if (cts:isCitationNode($a_inv,$a_cts/workUrn,$a_node))
 	then 
           let $new_build := 
                 if ($a_build) 
                 then ($a_build,xs:string($a_node/@n)) 
                 else xs:string($a_node/@n)
-	      return cts:getUrnForNode($a_cts,$a_node/parent::*,$a_topParent,$new_build)
+	      return cts:getUrnForNode($a_inv, $a_cts,$a_node/parent::*,$a_topParent,$new_build)
 	else			
-		cts:getUrnForNode($a_cts,$a_node/parent::*,$a_topParent,$a_build)
+		cts:getUrnForNode($a_inv,$a_cts,$a_node/parent::*,$a_topParent,$a_build)
+};
+
+declare function cts:isCitationNode($a_inv as xs:string, $a_urn as xs:string, $a_node as node()) as xs:boolean {
+
+    let $entry := cts:getCatalog($a_inv,$a_urn)
+    let $matched :=
+        for $i in $entry//ti:online//ti:citation
+            let $path := replace($i/@xpath,"='\?'",'')
+            return if (local-name($a_node) = replace(substring-before($path,'['),'^[/]*/+','')) 
+                then util:eval(concat("$a_node/parent::*",$path)) 
+                else ()
+    return count($matched) > 0
 };
