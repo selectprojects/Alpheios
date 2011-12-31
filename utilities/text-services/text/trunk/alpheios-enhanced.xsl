@@ -150,6 +150,9 @@
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+    <xsl:template match="tei:head">
+        <div class="head"><xsl:apply-templates/></div>
+    </xsl:template>
     <xsl:template match="tei:speaker">
         <div class="speaker">
             <xsl:apply-templates/>

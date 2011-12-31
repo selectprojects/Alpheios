@@ -48,6 +48,8 @@ let $wd_id := if ($reply/subref/*[local-name(.) = 'wd']/@n) then ($reply/subref/
 let $passage := $nodes
 let $parsed := cts:parseUrn($e_urn)
 let $docinfo := tan:findDocs($parsed)
+let $config := doc('/db/xq/config/services.xml')
+let $vocabsvc := $config/services/vocabulary/service[1]
 (: TODO fixup doc urn  for treebank?:)
 let $treebankDUrl := 
     if ($docinfo/treebank)
@@ -58,8 +60,7 @@ let $treebankMUrl :=
     then concat('http://', $e_repos, '/exist/rest/xq/treebank-getmorph.xq?f=',$docid,'&amp;w=WORD')
     else ""
 (: TODO performance improvements needed for vocab to reference entire book ... or else limit it to a range :) 
-(:let $vocabUrl := if ($docinfo/morph) then concat("http://dev.alpheios.net:8800/exist/rest/xq/alpheios-vocab.xq?&amp;start=1&amp;count=10&amp;pofs=POFS&amp;doc=",$parsed/workUrn) else "":)
-let $vocabUrl := ""
+let $vocabUrl := if ($vocabsvc and $docinfo/treebank) then replace($vocabsvc,'URN',encode-for-uri($parsed/workUrn)) else ""
 let $xsl := doc('/db/xslt/alpheios-enhanced.xsl')
 let $params := 
     <parameters>     
