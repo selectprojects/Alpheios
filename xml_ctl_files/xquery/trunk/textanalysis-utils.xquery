@@ -584,7 +584,7 @@ declare function tan:getTreebankRefs($a_cts as node(), $a_sentencesOnly as xs:bo
                     cts:getCitableText("alpheios-cts-inventory",xs:string($a_cts/urn))
             let $index :=
                 for $node in ($nodes//text//wd,$nodes//tei:text//tei:wd)		
-                    let $urn := cts:getUrnForNode($a_cts,$node,'body',"") 
+                    let $urn := cts:getUrnForNode("alpheios-cts-inventory",$a_cts,$node,'body',"") 
                     let $refs := ($node/@tbref,$node/@tbrefs)
                     let $tokenized := for $r in $refs return tokenize($r, ' ')
                     (: return words or sentences per request :)
