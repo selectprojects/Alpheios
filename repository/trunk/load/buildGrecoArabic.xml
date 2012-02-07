@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Build file for loading TEI Text into eXist repository -->
+<project name="alpheios transform" default="transform-all" basedir=".">
+    
+
+    <property name="antcontrib.dir" value="/usr/share/java"/>
+    <property name="src.dir" value="/home/balmas/workspace/grecoarabic2/Arabic/Tagged"/>    
+    <property name="out.dir" value="/home/balmas/workspace/grecoarabic2/Arabic/Alpheios"/>
+    <property name="xslt.dir" value="xslt"/>
+    <property name="lib.dir" value="xslt/lib"/>
+
+    
+    <path id="xalan.class.path">
+        <fileset dir="${lib.dir}/saxon" includes="**/saxon9.jar"/>
+    </path>
+    
+    <taskdef resource="net/sf/antcontrib/antlib.xml">
+        <classpath>
+            <fileset dir="${antcontrib.dir}">
+                <include name="**/*.jar" />
+            </fileset>
+        </classpath>
+    </taskdef>
+        
+    <target name="transform-file">
+        <echo message="${file.path}"/>
+        <propertyregex property="fileName"
+               input="${file.path}"
+               regexp="\/([^\/]+)\.xml$"
+               select="\1"
+        />
+             
+        <xslt in="${file.path}" 
+            out="${out.dir}/${fileName}.xml"           
+            style="${xslt.dir}/milestones_to_divs.xsl" classpathref="xalan.class.path">            
+        </xslt>
+        
+    </target>
+    
+    
+    <target name="transform-all">
+        <mkdir dir="${out.dir}"/>
+        <foreach target="transform-file" param="file.path">
+            <path>
+                <fileset id="fs" dir="${src.dir}" includes="**/*.xml"/>
+            </path>            
+        </foreach>        
+    </target>
+         
+</project>    
