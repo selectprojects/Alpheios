@@ -23,7 +23,7 @@
  */
  function alpheiosTocReady() 
  {     
-     $('.tochead .tocitem a').click(
+     $('.tocitem a').click(
          function(a_e)
          {    
              a_e.stopPropagation();

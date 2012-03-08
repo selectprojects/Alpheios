@@ -37,13 +37,14 @@ import module namespace tan="http://alpheios.net/namespaces/text-analysis"
 declare option exist:serialize "method=xhtml media-type=text/html";
 
 let $e_urn :=  request:get-parameter("urn",())
-let $title := cts:getEditionTitle("alpheios-cts-inventory",$e_urn)
+let $e_inv :=  request:get-parameter("inv","alpheios-cts-inventory")
+let $title := cts:getEditionTitle($e_inv,$e_urn)
 return
 <html>
     <title>{$title}</title>
     <frameset cols="25%,75%">
-        <frame id="alpheios-toc-frame" src="{concat("alpheios-get-toc.xq?urn=",$e_urn)}"/>
-        <frame id="alpheios-text-frame" src="{concat("alpheios-get-ref.xq?urn=",$e_urn)}"/>
+        <frame id="alpheios-toc-frame" src="{concat("alpheios-get-toc.xq?urn=",$e_urn,"&amp;inv=",$e_inv)}"/>
+        <frame id="alpheios-text-frame" src="{concat("alpheios-get-ref.xq?urn=",$e_urn,"&amp;inv=",$e_inv)}"/>
     </frameset>        
 </html>
 

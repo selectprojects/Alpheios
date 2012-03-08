@@ -38,8 +38,9 @@ import module namespace tan="http://alpheios.net/namespaces/text-analysis"
 declare option exist:serialize "method=xhtml media-type=text/html";
 
 let $e_urn :=  request:get-parameter("urn",())
+let $e_inv := request:get-parameter("inv","alpheios-cts-inventory")
 let $e_level := xs:int(request:get-parameter("level","1"))
-let $urns := cts:expandValidReffs("alpheios-cts-inventory",$e_urn,$e_level)
+let $urns := cts:expandValidReffs($e_inv,$e_urn,$e_level)
 let $doc := cts:getDoc($e_urn)
 let $header :=  element { QName("http://www.tei-c.org/ns/1.0","teiHeader")} { $doc//*:teiHeader/* }
 let $toc :=

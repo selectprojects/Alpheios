@@ -37,9 +37,10 @@ import module namespace tan="http://alpheios.net/namespaces/text-analysis"
 declare option exist:serialize "method=xhtml media-type=text/html";
 
 let $e_urn :=  request:get-parameter("urn",())
+let $e_inv := request:get-parameter("inv","alpheios-cts-inventory")
 let $e_repos :=  request:get-parameter("repos","repos1.alpheios.net")
 let $e_format :=  request:get-parameter("format","html")
-let $reply := cts:getPassagePlus("alpheios-cts-inventory",$e_urn,true())
+let $reply := cts:getPassagePlus($e_inv,$e_urn,true())
 let $prevUrn := xs:string($reply/prevnext/prev)
 let $nextUrn := xs:string($reply/prevnext/next)
 let $nodes := $reply/TEI/text/body 
@@ -84,13 +85,13 @@ let $uri := concat(request:get-uri(),'?')
                 if ($prevUrn) then 
                     element ptr {
                        attribute type { 'paging:prev' },
-                       attribute target { concat($uri,"&amp;urn=",$prevUrn)}
+                       attribute target { concat($uri,"&amp;urn=",$prevUrn,"&amp;inv=",$e_inv)}
                    }               
                 else (),
                 if ($nextUrn) then 
                     element ptr {
                        attribute type { 'paging:next' },
-                       attribute target { concat($uri,"&amp;urn=",$nextUrn)}
+                       attribute target { concat($uri,"&amp;urn=",$nextUrn,"&amp;inv=",$e_inv)}
                    }               
                 else (),
                 $passage
