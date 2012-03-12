@@ -41,6 +41,7 @@ let $e_inv := request:get-parameter("inv","alpheios-cts-inventory")
 let $e_repos :=  request:get-parameter("repos","repos1.alpheios.net")
 let $e_format :=  request:get-parameter("format","html")
 let $reply := cts:getPassagePlus($e_inv,$e_urn,true())
+let $under_copyright := cts:isUnderCopyright($e_inv,$e_urn)
 let $prevUrn := xs:string($reply/prevnext/prev)
 let $nextUrn := xs:string($reply/prevnext/next)
 let $nodes := $reply/TEI/text/body 
@@ -99,6 +100,7 @@ let $uri := concat(request:get-uri(),'?')
          }
     }
     let $xml := tan:change-element-ns-deep($text,"http://www.tei-c.org/ns/1.0","tei") 
-    let $html := transform:transform($xml, $xsl, $params)                                                 
-    return if ($e_format = 'xml') then $xml else $html
+    let $html := transform:transform($xml, $xsl, $params)  
+    (: DON'T ALLOW XML DOWNLOAD OF COPYRIGHT TEXTS :)
+    return if ($e_format = 'xml' and not($under_copyright)) then $xml else $html
     
