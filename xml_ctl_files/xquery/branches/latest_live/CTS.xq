@@ -27,7 +27,8 @@ let $e_urn :=  request:get-parameter("urn",())
 let $e_level := xs:int(request:get-parameter("level","1"))
 let $inv := request:get-parameter("inv","alpheios-cts-inventory")
 let $CTSNS := "http://chs.harvard.edu/xmlns/cts3"
-let $under_copyright := cts:isUnderCopyright($inv,$e_urn)
+let $under_copyright := $e_urn and cts:isUnderCopyright($inv,$e_urn)
+
 
 let $reply :=
     if ($under_copyright) 

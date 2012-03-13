@@ -743,3 +743,11 @@ declare function cts:isUnderCopyright($a_inv,$a_urn) as xs:boolean {
     let $collection := $inventory//ti:collection[@id = $memberof and matches(dc:rights,'under copyright','i')]
     return if ($collection) then true() else false()
 };
+
+declare function cts:getRights($a_inv,$a_urn) as xs:string {
+    let $entry := cts:getCatalog($a_inv,$a_urn)
+    let $memberof := $entry/ti:memberof/@collection
+    let $inventory := cts:getCapabilities($a_inv)
+    (: TODO need a better way of identifying copyright than match on specific string here :)
+    return $inventory//ti:collection[@id = $memberof]/dc:rights
+};
