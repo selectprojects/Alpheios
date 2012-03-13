@@ -32,13 +32,15 @@ module namespace cts = "http://alpheios.net/namespaces/cts";
 declare namespace ti = "http://chs.harvard.edu/xmlns/cts3/ti";
 declare namespace  util="http://exist-db.org/xquery/util";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
+declare namespace dc="http://purl.org/dc/elements/1.1";
 
  
 
 declare variable $cts:tocChunking :=
 ( 
-    <tocCunk type="Book" size="1"/>,    
-    <tocCunk type="Section" size="1"/>,
+    <tocChunk type="Book" size="1"/>,
+    <tocChunk type="Volume" size="1"/>,    
+    <tocChunk type="Section" size="1"/>,
     <tocChunk type="Chapter" size="1"/>,
     <tocChunk type="Article" size="1"/>,    
     <tocChunk type="Line" size="30"/>,
@@ -49,6 +51,10 @@ declare variable $cts:tocChunking :=
 
 declare variable $cts:maxPassageNodes := 100;
 
+(: for backwards compatibility default to alpheios inventory :)
+declare function cts:parseUrn($a_urn as xs:string) {
+    cts:parseUrn('alpheios-cts-inventory',$a_urn)
+};
 (: 
     function to parse a CTS Urn down to its individual parts
     Parameters: 
@@ -78,7 +84,7 @@ declare variable $cts:maxPassageNodes := 100;
         B) Or if $a_urn is a text string as identified by the prefix 'alpheiosusertext:<lang>' then returns a <dummy><usertext lang="<lang>">Text String</usertext></dummy>
         TODO this latter option is a bit of hack, should look at a better way to handle this but since most requests go through parseUrn, this was the easiest place for now
 :)
-declare function cts:parseUrn($a_urn as xs:string)
+declare function cts:parseUrn($a_inv as xs:string, $a_urn as xs:string)
 {
     if (matches($a_urn,'^alpheiosusertext:'))
     then 
@@ -90,6 +96,7 @@ declare function cts:parseUrn($a_urn as xs:string)
                 <usertext lang="{$lang}">{$text}</usertext>
             </dummy>
     else 
+            let $cat := cts:getCapabilities($a_inv)
             let $components := tokenize($a_urn,":")
             let $namespace := $components[3]
             let $workId := $components[4]
@@ -151,7 +158,16 @@ declare function cts:parseUrn($a_urn as xs:string)
                                 element basePath { 
                                     concat("/db/repository/", $namespace, "/", string-join($workComponents,"/"))
                                 }                      
-                            else ( (: TODO lookup from TextInventory :) )                     
+                            else if ($cat) then
+                                let $fullPath :=
+                                    $cat//ti:textgroup[@projid=concat($namespace,':',$textgroup)]
+                                        /ti:work[@projid=concat($namespace,':',$work)]
+                                        /ti:*[@projid=concat($namespace,':',$edition)]
+                                        /ti:online/@docname
+                                    return element fullPath {
+                                       xs:string($fullPath)
+                                    }
+                            else()
                     }
             }
           
@@ -197,9 +213,14 @@ declare function cts:getPassage($a_inv as xs:string,$a_urn as xs:string)
 :)
 declare function cts:getCapabilities($a_inv)
 {    
-    let $inv := doc(concat("/db/repository/inventory/",$a_inv,".xml"))
+    let $defaultPath := concat("/db/repository/inventory/",$a_inv,".xml")
+    let $sosolPath := concat("/db/repository/sosol/",$a_inv, '/sosol-inventory-',$a_inv,".xml")
+    let $inv := 
+        if (doc-available($defaultPath)) then doc($defaultPath)
+        else if (doc-available($sosolPath)) then doc($sosolPath)
+        else ()
     return 
-        <reply>{$inv}</reply>
+        $inv
 };
 
 (:
@@ -212,7 +233,7 @@ declare function cts:getCapabilities($a_inv)
 :)
 declare function cts:getValidReff($a_inv,$a_urn)
 {    
-    let $cts := cts:parseUrn($a_urn)
+    let $cts := cts:parseUrn($a_inv,$a_urn)
     let $doc := doc($cts/fileInfo/fullPath)
     let $entry := cts:getCatalog($a_inv,$a_urn)
     let $parts := count($cts/passageParts/rangePart[1]/part)
@@ -236,7 +257,7 @@ declare function cts:getValidReff($a_inv,$a_urn)
 declare function cts:getValidReff($a_inv as xs:string,$a_urn as xs:string,$a_level as xs:int)
 {    
         (: this is way too slow when request is all urns in a document at all levels  - e.g urn:cts:greekLit:tlg0012.tlg001 :)
-        let $cts := cts:parseUrn($a_urn)
+        let $cts := cts:parseUrn($a_inv,$a_urn)
         let $doc := doc($cts/fileInfo/fullPath)
         let $entry := cts:getCatalog($a_inv,$a_urn)                
         let $cites := for $i in ($entry//ti:online//ti:citation)[position() <= $a_level] return $i
@@ -256,8 +277,8 @@ declare function cts:getValidReff($a_inv as xs:string,$a_urn as xs:string,$a_lev
         let $urns := cts:getUrns($startParts,$endParts,$cites,$doc,concat($cts/workUrn,":"))
         return 
         <reply>
-            <reff>            
-                    { for $u in $urns return <urn>{$u}</urn> }
+            <reff xmlns="http://chs.harvard.edu/xmlns/cts3">            
+                    { for $u in $urns return <urn xmlns="http://chs.harvard.edu/xmlns/cts3">{$u}</urn> }
             </reff>
         </reply>
 };
@@ -272,7 +293,7 @@ declare function cts:getValidReff($a_inv as xs:string,$a_urn as xs:string,$a_lev
 :)
 declare function cts:getUrnMatchString($a_inv,$a_urn) as xs:string
 {    
-    let $cts := cts:parseUrn($a_urn)
+    let $cts := cts:parseUrn($a_inv,$a_urn)
     let $doc := doc($cts/fileInfo/fullPath)
     let $entry := cts:getCatalog($a_inv,$a_urn)
     let $parts := count(($cts/passageParts/rangePart[1])/part)
@@ -294,7 +315,7 @@ declare function cts:getUrnMatchString($a_inv,$a_urn) as xs:string
 :)
 declare function cts:getUrnMatches($a_inv,$a_urn)
 {    
-    let $cts := cts:parseUrn($a_urn)
+    let $cts := cts:parseUrn($a_inv,$a_urn)
     let $doc := doc($cts/fileInfo/fullPath)
     let $entry := cts:getCatalog($a_inv,$a_urn)
     let $parts := count($cts/passageParts/rangePart[1]/part)
@@ -319,7 +340,7 @@ declare function cts:expandValidReffs($a_inv as xs:string,$a_urn as xs:string,$a
 {
     (: TODO address situation where lines are missing ? e.g. line 9.458 Iliad :)
     let $entry := cts:getCatalog($a_inv,$a_urn)    
-    let $workUrn := if ($a_level = xs:int("1")) then cts:parseUrn($a_urn)/workUrn else $a_urn
+    let $workUrn := if ($a_level = xs:int("1")) then cts:parseUrn($a_inv,$a_urn)/workUrn else $a_urn
     let $urns := cts:getValidReff($a_inv,$workUrn,$a_level)
     let $numLevels := count($entry//ti:online//ti:citation)
     let $numUrns := count($urns//urn) 
@@ -339,8 +360,8 @@ declare function cts:expandValidReffs($a_inv as xs:string,$a_urn as xs:string,$a
                             then 
                                 if ($urns//urn[($i + $chunkSize - 1)]) then $urns//urn[($i + $chunkSize - 1)] else $urns//urn[last()]
                             else()
-                        let $parsed :=  cts:parseUrn($u)
-                        let $endParsed := if ($last) then cts:parseUrn($last) else ()
+                        let $parsed :=  cts:parseUrn($a_inv,$u)
+                        let $endParsed := if ($last) then cts:parseUrn($a_inv,$last) else ()
                         let $startPart := $parsed/passageParts/rangePart[1]/part[last()]
                         let $endPart := if ($endParsed) then concat("-",$endParsed/passageParts/rangePart[1]/part[last()]) else ""
                         let $urn := 
@@ -482,7 +503,7 @@ declare function cts:findNextPrev($a_dir as xs:string,
 :)
 declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
 {    
-    cts:getPassagePlus($a_inv,$a_urn,false())
+    cts:getPassagePlus($a_inv,$a_urn,false(),())
 };
 
 (:
@@ -502,9 +523,9 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
             <next>[next urn]</next>
         </prevnext>
 :)
-declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_withSiblings as xs:boolean*)
+declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_withSiblings as xs:boolean*,$a_replaceWith as node()*)
 {    
-    let $cts := cts:parseUrn($a_urn)    
+    let $cts := cts:parseUrn($a_inv,$a_urn)    
     return                   
         let $doc := doc($cts/fileInfo/fullPath)
         let $level := count($cts/passageParts/rangePart[1]/part)
@@ -564,7 +585,22 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_w
                     {$doc//*:teiHeader,$doc//*:teiheader},
                     <text xml:lang="{$lang}">
                     <body>                    	
-                        {for $p in $passageAll return cts:passageWithParents($p,1,('body','TEI.2','TEI','tei.2','tei'))}
+                        {   let $replaced := 
+                                if ($a_replaceWith) 
+                                then 
+                                    for $p at $a_i in $passageAll
+                                        (: TODO validate against original xpath :)
+                                        let $name := local-name($p)
+                                        let $n := $p/@n
+                                        return update replace $p with $a_replaceWith//*[local-name(.) = $name and @n = $n]
+                                else ()
+                            return 
+                                if ($a_replaceWith) 
+                                then
+                                    $doc//*:body/*
+                                else
+                                    for $p in $passageAll return cts:passageWithParents($p,1,('body','TEI.2','TEI','tei.2','tei'))
+                        }
                      </body>
                   </text>
                 </TEI>
@@ -619,8 +655,8 @@ declare function cts:replaceBindVariables($a_startParts,$a_endParts,$a_path) as 
 :)
 declare function cts:getCatalog($a_inv as xs:string,$a_urn as xs:string) as node()*
 {
-    let $inv := doc(concat("/db/repository/inventory/",$a_inv,".xml"))
-    let $cts := cts:parseUrn($a_urn)
+    let $inv := cts:getCapabilities($a_inv)
+    let $cts := cts:parseUrn($a_inv,$a_urn)
     return $inv//ti:textgroup[@projid=$cts/textgroup]/ti:work[@projid=$cts/work]/ti:*[@projid=$cts/edition]        
 };
 
@@ -645,12 +681,13 @@ declare function cts:getCitationXpaths($a_inv as xs:string,$a_urn as xs:string)
     Get the document for the supplied urn
     Parameters
         $a_urn the urn
+        $a_inv the inventory
     Return Value
         the document
 :)
-declare function cts:getDoc($a_urn as xs:string)
+declare function cts:getDoc($a_urn as xs:string,$a_inv as xs:string)
 {
-    let $cts := cts:parseUrn($a_urn)
+    let $cts := cts:parseUrn("alpheios-cts-inventory",$a_urn)
     return doc($cts/fileInfo/fullPath)
 };
 
@@ -679,7 +716,7 @@ declare function cts:getEditionTitle($a_inv as xs:string,$a_urn as xs:string)
 declare function cts:getExpandedTitle($a_inv as xs:string,$a_urn as xs:string) as xs:string
 {
     let $entry := cts:getCatalog($a_inv,$a_urn)
-    let $cts := cts:parseUrn($a_urn)
+    let $cts := cts:parseUrn($a_inv,$a_urn)
     let $start := 
         for $seq in (1 to count($cts/passageParts/rangePart[1]/part))
          return concat(($entry//ti:online//ti:citation)[position() = $seq]/@label, " ", $cts/passageParts/rangePart[1]/part[$seq])   
@@ -692,7 +729,7 @@ declare function cts:getExpandedTitle($a_inv as xs:string,$a_urn as xs:string) a
 declare function cts:getCitableText($a_inv as xs:string, $a_urn as xs:string) as node()
 {
 
-	let $cts := cts:parseUrn($a_urn)
+	let $cts := cts:parseUrn($a_inv,$a_urn)
 	(:
 	let $refs := cts:getValidReff($a_inv,$textUrn/workUrn)
 	let $first := $refs//urn[1]
@@ -778,4 +815,66 @@ declare function cts:isCitationNode($a_inv as xs:string, $a_urn as xs:string, $a
                 then util:eval(concat("$a_node/parent::*",$path)) 
                 else ()
     return count($matched) > 0
+};
+
+declare function cts:putCitableText($a_urn as xs:string, $a_uuid as xs:string, $a_inv as node()) as node() {
+    let $collName := '/db/repository/sosol'
+    let $cacheDir := $a_uuid
+    let $invFilename := concat('sosol-inventory-',$a_uuid,'.xml')
+    let $textFilename := concat('sosol-text-',$a_uuid,'.xml')
+    let $inv := $a_inv
+    let $cts := cts:parseUrn('junk',$a_urn)
+    let $tg := $inv//ti:textgroup[@projid=$cts/textgroup and ti:work[@projid=$cts/work]]
+    let $work := $tg/ti:work[@projid=$cts/work]
+    let $edition := $work/ti:*[@projid=$cts/edition]
+    let $newinv := 
+        <ti:TextInventory>
+            {$inv//collection,
+             <ti:textgroup>
+                {$tg/@*, 
+                 $tg/node()[local-name() != 'work'],
+                <ti:work>
+                    {$work/@*,
+                     $work/node()[local-name() != 'edition' and local-name() != 'translation'],
+                    <ti:edition> 
+                        {   $edition/@projid,
+                            $edition/ti:label,
+                            for $o in $edition/ti:online return
+                             <ti:online>{
+                                attribute docname { concat($collName,'/',$cacheDir,'/',$textFilename) },
+                                $o/@*[local-name() != 'docname'],
+                                $o/node()
+                             }
+                             </ti:online>
+                        }
+                    </ti:edition>
+                    }
+                </ti:work>
+                }
+             </ti:textgroup>
+             }
+         </ti:TextInventory>
+    let $do_store := 
+        if (xmldb:collection-available(concat($collName, '/', $cacheDir))) then true() else
+            xmldb:create-collection($collName, $cacheDir)
+    let $inv_stored := xmldb:store(concat($collName,'/',$cacheDir),$invFilename, $newinv)
+    (:let $text_stored := xmldb:store(concat($collName,'/',$cacheDir),$textFilename, $a_text):)
+    return if ($inv_stored) then <stored>{concat($collName,'/',$cacheDir,'/',$textFilename)}</stored> else <error/>
+};
+
+declare function cts:isUnderCopyright($a_inv,$a_urn) as xs:boolean {
+    let $entry := cts:getCatalog($a_inv,$a_urn)
+    let $memberof := $entry/ti:memberof/@collection
+    let $inventory := cts:getCapabilities($a_inv)
+    (: TODO need a better way of identifying copyright than match on specific string here :)
+    let $collection := $inventory//ti:collection[@id = $memberof and matches(dc:rights,'under copyright','i')]
+    return if ($collection) then true() else false()
+};
+
+declare function cts:getRights($a_inv,$a_urn) as xs:string {
+    let $entry := cts:getCatalog($a_inv,$a_urn)
+    let $memberof := $entry/ti:memberof/@collection
+    let $inventory := cts:getCapabilities($a_inv)
+    (: TODO need a better way of identifying copyright than match on specific string here :)
+    return $inventory//ti:collection[@id = $memberof]/dc:rights
 };

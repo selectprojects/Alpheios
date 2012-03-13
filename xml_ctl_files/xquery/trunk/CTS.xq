@@ -25,11 +25,17 @@ import module namespace tan  = "http://alpheios.net/namespaces/text-analysis"
 let $e_query := request:get-parameter("request",())
 let $e_urn :=  request:get-parameter("urn",())
 let $e_level := xs:int(request:get-parameter("level","1"))
+let $e_uuid := request:get-parameter("xuuid",())
+let $e_xinv := request:get-data() 
 let $inv := request:get-parameter("inv","alpheios-cts-inventory")
 let $CTSNS := "http://chs.harvard.edu/xmlns/cts3"
+let $under_copyright := $e_urn and cts:isUnderCopyright($inv,$e_urn)
 
 let $reply :=
-    if ($e_query = 'GetValidReff')
+    if ($under_copyright) 
+    then
+        <reply><error>Copyright Restricted</error></reply>
+    else if ($e_query = 'GetValidReff')
     then cts:getValidReff($inv,$e_urn,$e_level)
     else if ($e_query = 'ExpandValidReffs')
     then cts:expandValidReffs($inv,$e_urn,$e_level)
@@ -41,9 +47,22 @@ let $reply :=
     then cts:getPassagePlus($inv,$e_urn)
     else if ($e_query = 'GetCitableText')
     then cts:getCitableText($inv,$e_urn)
-    else(<reply></reply>)
+    else if ($e_query = 'PutCitableText')
+    then cts:putCitableText($e_urn,$e_uuid,$e_xinv)
+    else if ($e_query = 'PutPassage')
+    then cts:getPassagePlus($inv,$e_urn,false(),$e_xinv/node())
+    else if ($e_query = 'PARSEURN')
+    then cts:parseUrn($inv,$e_urn)
+    else(<reply><error code="1">INVALID REQUEST. Unsupported request.</error></reply>)
 
 return
+    if ($reply/error)
+    then
+        element {QName($CTSNS, 'CTSError')} {
+            <message>{$reply/error/text()}</message>,
+            <code>{$reply/error/@code}</code>
+        } 
+    else 
     element {QName($CTSNS, $e_query)} {
         element {QName($CTSNS,"request")} {
             element {QName($CTSNS,"requestName")} {
@@ -57,8 +76,9 @@ return
             element {QName($CTSNS,"workurn") } {
             },
             element {QName($CTSNS,"groupname") } {
-            },
-            element {QName($CTSNS,"reply") } {
+            }
+        },
+        element {QName($CTSNS,"reply") } {
                 (: hack to get validating response for cts:GetPassagePlus without fixing all the code
                     which currently relies on the invalid response  - needs to move in to the cts.xquery
                     library 
@@ -72,11 +92,17 @@ return
                     },
                     tan:change-element-ns-deep ( $reply//prevnext,$CTSNS, ""),
                     $reply//subref)
+                else if ($e_query = 'PutPassage')
+                then
+                 (element {QName($CTSNS,"passage") } {
+                        element {QName("http://www.tei-c.org/ns/1.0","TEI")} {
+                            tan:change-element-ns-deep ( $reply//TEI/*, "http://www.tei-c.org/ns/1.0" , '')
+                        }
+                    })
                 else 
-                    $reply/*
+                    $reply/node()
                     
             }
-        }
     }
 
 
