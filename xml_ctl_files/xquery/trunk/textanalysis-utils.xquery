@@ -595,7 +595,7 @@ declare function tan:getTreebankRefs($a_cts as node(), $a_sentencesOnly as xs:bo
                         else 
                             distinct-values(for $r in $tokenized order by $r return $r)
                     for $ref in $allrefs return <ref urn="{$urn}">{$ref}</ref>
-            let $stored :=   xmldb:store($collName,concat($cacheFile, '.xml'), <refs>{$index}</refs>)
+			let $stored := xmldb:store($collName,concat($cacheFile, '.xml'), <refs>{$index}</refs>)
             return concat($collName, '/',$cacheFile, '.xml')
 };
 
@@ -604,6 +604,7 @@ declare function tan:getMorphService($a_lang as xs:string) as xs:string*
     let $config := doc('/db/xq/config/services.xml')
     return $config/services/morphology/service[@xml:lang=$a_lang]
 };
+
 
 
 

@@ -343,7 +343,7 @@ declare function cts:expandValidReffs($a_inv as xs:string,$a_urn as xs:string,$a
     let $workUrn := if ($a_level = xs:int("1")) then cts:parseUrn($a_inv,$a_urn)/workUrn else $a_urn
     let $urns := cts:getValidReff($a_inv,$workUrn,$a_level)
     let $numLevels := count($entry//ti:online//ti:citation)
-    let $numUrns := count($urns//urn) 
+    let $numUrns := count($urns//*:urn) 
     let $tocName := ($entry//ti:online//ti:citation)[position() = $a_level]/@label
     let $chunkSize := xs:int($cts:tocChunking[@type=$tocName]/@size) 
     return
@@ -353,12 +353,12 @@ declare function cts:expandValidReffs($a_inv as xs:string,$a_urn as xs:string,$a
                     if (($i + $chunkSize - 1) mod $chunkSize != xs:int("0")) 
                     then ()
                     else 
-                        let $u := $urns//urn[$i] 
+                        let $u := $urns//*:urn[$i] 
                         let $focus := $u eq $a_urn
                         let $last := 
                             if ($chunkSize > xs:int("1") )
                             then 
-                                if ($urns//urn[($i + $chunkSize - 1)]) then $urns//urn[($i + $chunkSize - 1)] else $urns//urn[last()]
+                                if ($urns//*:urn[($i + $chunkSize - 1)]) then $urns//*:urn[($i + $chunkSize - 1)] else $urns//*:urn[last()]
                             else()
                         let $parsed :=  cts:parseUrn($a_inv,$u)
                         let $endParsed := if ($last) then cts:parseUrn($a_inv,$last) else ()
@@ -376,9 +376,9 @@ declare function cts:expandValidReffs($a_inv as xs:string,$a_urn as xs:string,$a
                         let $href := 
                             if ($a_level = $numLevels) 
                             then
-                                concat("alpheios-get-ref.xq?urn=",$urn)
+                                concat("alpheios-get-ref.xq?inv=",$a_inv,"&amp;urn=",$urn)
                             else
-                                 concat("alpheios-get-toc.xq?urn=",$urn,"&amp;level=",$a_level+1)                        
+                                 concat("alpheios-get-toc.xq?inv=",$a_inv,"&amp;urn=",$urn,"&amp;level=",$a_level+1)                        
                         let $ptrType := if ($a_level = $numLevels) then 'text' else 'toc'                                
                         return                
                             <item>
@@ -585,8 +585,12 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_w
                     {$doc//*:teiHeader,$doc//*:teiheader},
                     <text xml:lang="{$lang}">
                     <body>                    	
-                        {   let $replaced := 
-                                if ($a_replaceWith) 
+                        {   (:TODO need to add better security on this .. it's a hack 
+                              for now which makes sure we're working with a text from a 
+                              sosol inventory before replacing
+                            :) 
+                        	let $replaced := 
+                                if ($a_replaceWith and starts-with($a_inv,'sosol-inventory-')) 
                                 then 
                                     for $p at $a_i in $passageAll
                                         (: TODO validate against original xpath :)
@@ -687,7 +691,7 @@ declare function cts:getCitationXpaths($a_inv as xs:string,$a_urn as xs:string)
 :)
 declare function cts:getDoc($a_urn as xs:string,$a_inv as xs:string)
 {
-    let $cts := cts:parseUrn("alpheios-cts-inventory",$a_urn)
+    let $cts := cts:parseUrn($a_inv,$a_urn)
     return doc($cts/fileInfo/fullPath)
 };
 

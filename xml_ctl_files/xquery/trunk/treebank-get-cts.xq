@@ -53,80 +53,10 @@ declare function local:getPath($a_node as node(),$a_stop as xs:string, $a_build 
 let $e_urn := request:get-parameter("urn", ())
 let $cts := cts:parseUrn($e_urn)
 let $as_feed := request:get-parameter("feed", ())
-let $nodes := 
-    if ($cts/passageParts/rangePart) then cts:getPassagePlus("alpheios-cts-inventory",$e_urn) else cts:getCitableText("alpheios-cts-inventory",$e_urn)
 let $request_uri := request:get-url()
 let $base_uri := substring-before($request_uri,"treebank-get-cts")
 let $docinfo := tan:findDocs($cts)
 let $tbDoc := $docinfo/treebank
-return 
-    if ($tbDoc) 
-    then
-        let $index_items :=
-        	for $node in $nodes/TEI/text/body//*[wd]	
-        		let $parents := reverse(local:getPath($node,'body',""))
-        		let $docid := $nodes/TEI/@id		
-        		let $urn := concat($cts/workNoEdUrn,':',string-join($parents,'.'))
-        		let $refs :=
-        		  (: if a subref was requested, return individual word refs otherwise just the sentences :)
-        		  if ($cts/subRef) 
-        		      then ($node/wd/@tbref,$node/wd/@tbrefs)
-        		      else distinct-values( 
-        		          for $r in ($node/wd/@tbref,$node/wd/@tbrefs) return substring-before($r,"-"))        		                         	
-    	       for $ref in distinct-values(tokenize($refs,' ')) order by $ref return
-    				<entry urn="{$urn}" tbdoc="{$docid}" tbref="{$ref}"/>								
-        return 
-            if ($as_feed) 
-                then
-          		    <feed xmlns="http://www.w3.org/2005/Atom">
-            			<link href="{$base_uri}"/>
-            			<title>{concat("Treebank Feed for ",$e_urn)}</title>
-            			{
-               			  for $entry in $index_items
-               			   return 
-               			    <entry xmlns="http://www.w3.org/2005/Atom">
-               			        <id>{$entry/@urn}</id>
-               			        <title>{$entry/@urn}</title>
-               			        <link href="{concat($base_uri,'treebank-get.xq?f=',$entry/@tbdoc,"&amp;n=",$entry/@tbref)}"/>
-               			    </entry>
-               			    
-               			    
-          	  		     }
-          		    </feed>		
-          	else
-          	     let $tb := doc($tbDoc)
-          	     return
-          	         element treebank {
-          	             $tb/treebank/@*,          	             
-          	             $tb/treebank/*[local-name(.) != 'sentence'],
-          	             for $id in distinct-values($index_items/@tbref)          	                 
-          	                 let $sentence-id :=
-                                if (contains($id, "-")) then substring-before($id, "-") else $id
-                             let $word-id :=
-                                if (contains($id, "-")) then substring-after($id, "-") else ()
-                                let $sentence := $tb//sentence[@id = $sentence-id]
-                                return
-                                if ($sentence)
-                                then
-                                  if ($word-id)
-                                  then
-                                    let $word := $sentence/word[@id = $word-id]
-                                    return
-                                    if ($word)
-                                    then
-                                      $word
-                                    else
-                                      element error
-                                      {
-                                        concat("Word number ", $id, " not found")
-                                      }
-                                  else
-                                    $sentence           
-                              else
-                                element error
-                                    {
-                                      concat("Sentence number ", $sentence-id, " not found")
-                                    }
-          	         }          	               	     
-    else
-        <error>No Treebank Available for {$e_urn}</error>
+let $tbRefs := tan:getTreebankRefs($cts,false()) 
+
+return doc($tbRefs)     	               	     

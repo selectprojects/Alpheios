@@ -25,6 +25,22 @@
 module namespace tbu = "http://alpheios.net/namespaces/treebank-util";
 declare namespace tbd = "http://alpheios.net/namespaces/treebank-desc";
 
+(: Function to get a query for a postag component :)
+declare function tbu:get-format-query(
+    $a_node as node(),
+    $a_category as xs:string,
+    $a_value as xs:string,
+    $a_defaultTb as xs:string,
+    $a_configDir as xs:string
+) as xs:boolean
+{
+    let $docTb := root($a_node)//*:treebank/@format
+    let $tb := if ($docTb) then $docTb else $a_defaultTb
+    let $desc := tbu:get-format-description($tb,$a_configDir)
+    let $tbEntry := $desc//tbd:table[@type='morphology']/tbd:category[@id=$a_category]/tbd:entry[tbd:short=$a_value or tbd:long=$a_value]
+    return 
+        if ($a_node[substring(@postag,$tbEntry/parent::tbd:category/@n,1) = $tbEntry/tbd:short]) then true() else false()
+};
 (:
   Function to get format name
 
