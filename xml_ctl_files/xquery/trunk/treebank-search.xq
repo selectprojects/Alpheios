@@ -101,7 +101,7 @@ let $filtered :=
     then    
         $results//word[@relation=$e_relation]
     else    
-        $results//word[1]
+        ()
     
 return
     <results> {

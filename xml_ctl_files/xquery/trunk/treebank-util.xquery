@@ -81,6 +81,30 @@ declare function tbu:get-format-description(
 };
 
 (:
+  Function to get format metadata
+
+  Parameters:
+    $a_tb           treebank format
+    $a_configDir    directory containing configuration files
+
+  Return value:
+    metadata items from format description file or empty if not found
+ :)
+declare function tbu:get-format-metadata(
+  $a_tb as xs:string?,
+  $a_configDir as xs:string) as element(tbd:desc)?
+{
+  let $doc :=
+    doc(concat($a_configDir, "/treebank-desc-", lower-case($a_tb), ".xml"))
+  return
+    element desc
+    {
+      $doc//*:meta
+    }
+};
+
+
+(:
   Function to convert morphology postag to full name
 
   Parameters:
