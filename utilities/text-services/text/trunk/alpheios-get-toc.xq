@@ -41,7 +41,8 @@ let $e_urn :=  request:get-parameter("urn",())
 let $e_inv := request:get-parameter("inv","alpheios-cts-inventory")
 let $e_level := xs:int(request:get-parameter("level","1"))
 let $urns := cts:expandValidReffs($e_inv,$e_urn,$e_level)
-let $doc := cts:getDoc($e_urn)
+let $doc := cts:getDoc($e_urn,$e_inv)
+let $e_format := request:get-parameter("format","html")
 let $header :=  element { QName("http://www.tei-c.org/ns/1.0","teiHeader")} { $doc//*:teiHeader/* }
 let $toc :=
      <TEI>
@@ -56,5 +57,5 @@ let $toc :=
     </TEI>
 let $xml := tan:change-element-ns-deep($toc,"http://www.tei-c.org/ns/1.0","tei") 
 let $xsl := doc('/db/xslt/alpheios-enhanced-toc.xsl')
-let $html := transform:transform($xml, $xsl, ())                                             
+let $html := if ($e_format eq 'html') then transform:transform($xml, $xsl, ())  else $xml                                           
 return $html

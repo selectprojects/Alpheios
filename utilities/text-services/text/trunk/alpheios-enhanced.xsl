@@ -30,6 +30,7 @@
     <xsl:param name="alpheiosVocabUrl"/>
     <xsl:param name="cssFile" select="'http://alpheios.net/alpheios-texts/css/alpheios-text.css'"/>
     <xsl:param name="highlightWord"/>
+    <xsl:param name="rightsText"/>
     <xsl:template match="/">
         <html xml:lang="{//tei:text/@xml:lang}">
             <head>
@@ -120,10 +121,17 @@
     </xsl:template>
     <xsl:template name="rights_cc">
         <p class="cc_rights">
-              <!--Creative Commons License-->
-                This work is licensed under a
-                <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-Share Alike 3.0 United States License</a>.
-                <!--/Creative Commons License-->
+            <xsl:choose>
+                <xsl:when test="$rightsText">
+                    <xsl:copy-of select="$rightsText"/>
+                </xsl:when>
+                <xsl:otherwise>
+                    <!--Creative Commons License-->
+                    This work is licensed under a
+                    <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/us/">Creative Commons Attribution-Share Alike 3.0 United States License</a>.
+                    <!--/Creative Commons License-->
+                </xsl:otherwise>
+            </xsl:choose>
         </p>
     </xsl:template>
     <xsl:template name="bodyHook">

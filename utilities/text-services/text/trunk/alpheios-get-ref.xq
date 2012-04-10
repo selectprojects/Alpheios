@@ -40,7 +40,7 @@ let $e_urn :=  request:get-parameter("urn",())
 let $e_inv := request:get-parameter("inv","alpheios-cts-inventory")
 let $e_repos :=  request:get-parameter("repos","repos1.alpheios.net")
 let $e_format :=  request:get-parameter("format","html")
-let $reply := cts:getPassagePlus($e_inv,$e_urn,true())
+let $reply := cts:getPassagePlus($e_inv,$e_urn,true(),())
 let $under_copyright := cts:isUnderCopyright($e_inv,$e_urn)
 let $prevUrn := xs:string($reply/prevnext/prev)
 let $nextUrn := xs:string($reply/prevnext/next)
@@ -52,6 +52,7 @@ let $parsed := cts:parseUrn($e_urn)
 let $docinfo := tan:findDocs($parsed)
 let $config := doc('/db/xq/config/services.xml')
 let $vocabsvc := $config/services/vocabulary/service[1]
+let $rights := if ($under_copyright) then cts:getRights($e_inv,$e_urn) else ""
 (: TODO fixup doc urn  for treebank?:)
 let $treebankDUrl := 
     if ($docinfo/treebank)
@@ -73,6 +74,7 @@ let $params :=
         <param name="alpheiosVocabUrl" value="{$vocabUrl}"/>
         <param name="cssFile" value ="http://alpheios.net/alpheios-texts/css/alpheios-text.css"/>
         <param name="highlightWord" value="{ xs:string($wd_id) }"/>
+        <param name="rightsText" value="{$rights}"/>
      </parameters>
 let $uri := concat(request:get-uri(),'?')
  let $text :=
