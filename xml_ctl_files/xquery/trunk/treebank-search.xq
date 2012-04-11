@@ -49,6 +49,7 @@ let $e_lemma := request:get-parameter("lemma", ())
 let $e_morph := request:get-parameter("morph", ())
 let $e_pos := request:get-parameter("pos", ())
 let $e_relation := request:get-parameter("relation", ())
+let $max := xs:int(request:get-parameter("count", "100"))
 
 let $results :=
     if ($e_urn)
@@ -58,29 +59,33 @@ let $results :=
         let $docinfo := tan:findDocs($cts)
         let $tbDoc := doc($docinfo/treebank)
         let $tbRefs := doc(tan:getTreebankRefs($cts,false())) 
-        return element treebank {
-          	  $tbDoc/treebank/@*,          	             
-          	  $tbDoc/treebank/*[local-name(.) != 'sentence'],
-          	  for $ref in $tbRefs//ref          	                 
-          	     let $sentence-id :=
-                    if (contains($ref, "-")) then substring-before($ref, "-") else $ref
-                    let $word-id :=
-                        if (contains($ref, "-")) then substring-after($ref, "-") else ()
-                        let $sentence := $tbDoc//sentence[@id = $sentence-id]
-                        return
-                            if ($sentence)
-                            then
-                                <sentence> {
-                                    $sentence/@*,
-                                    if ($word-id)
-                                    then
-                                        $sentence/word[@id = $word-id]
-                                    else 
-                                        $sentence/*
-                                }</sentence>
-                              else
-                                ()
-                }
+        return 
+        	if ($cts/passageParts/rangePart)
+        	then
+        	  element treebank {
+	          	  $tbDoc/treebank/@*,          	             
+	          	  $tbDoc/treebank/*[local-name(.) != 'sentence'],
+	          	  for $ref in $tbRefs//ref          	                 
+	          	     let $sentence-id :=
+	                    if (contains($ref, "-")) then substring-before($ref, "-") else $ref
+	                    let $word-id :=
+	                        if (contains($ref, "-")) then substring-after($ref, "-") else ()
+	                        let $sentence := $tbDoc//sentence[@id = $sentence-id]
+	                        return
+	                            if ($sentence)
+	                            then
+	                                <sentence> {
+	                                    $sentence/@*,
+	                                    if ($word-id)
+	                                    then
+	                                        $sentence/word[@id = $word-id]
+	                                    else 
+	                                        $sentence/*
+	                                }</sentence>
+	                              else
+	                                ()
+	                }
+	        else $tbDoc/treebank
     else
         collection("/db/repository/treebank")
 
@@ -96,7 +101,8 @@ let $filtered :=
         $results//word[@postag=$e_morph]
     else if ($e_pos)
     then 
-        $results//word[tbu:get-format-query(.,'pos',$e_pos,'aldt','/db/xq/config')]
+    	for $w in $results//word
+    	return if (tbu:get-format-query($w,'pos',$e_pos,'aldt','/db/xq/config')) then $w else ()
     else if ($e_relation)
     then    
         $results//word[@relation=$e_relation]
@@ -110,7 +116,7 @@ return
         attribute pos {$e_pos},
         attribute morph {$e_morph},
         attribute relation {$e_relation},
-        for $item in ($filtered)
+        for $item in ($filtered[position() < $max])
             let $tbdoc := root($item)/*:treebank
             let $sentence := $item/parent::*:sentence
             return element {name($tbdoc)} {

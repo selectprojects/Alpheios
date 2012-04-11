@@ -34,12 +34,12 @@ declare function tbu:get-format-query(
     $a_configDir as xs:string
 ) as xs:boolean
 {
-    let $docTb := root($a_node)//*:treebank/@format
+    let $docTb := root($a_node)//treebank/@format
     let $tb := if ($docTb) then $docTb else $a_defaultTb
     let $desc := tbu:get-format-description($tb,$a_configDir)
     let $tbEntry := $desc//tbd:table[@type='morphology']/tbd:category[@id=$a_category]/tbd:entry[tbd:short=$a_value or tbd:long=$a_value]
     return 
-        if ($a_node[substring(@postag,$tbEntry/parent::tbd:category/@n,1) = $tbEntry/tbd:short]) then true() else false()
+        if ($tbEntry and ($a_node[substring(@postag,$tbEntry/parent::tbd:category/@n,1) = $tbEntry/tbd:short])) then true() else false()
 };
 (:
   Function to get format name
