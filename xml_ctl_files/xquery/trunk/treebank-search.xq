@@ -51,6 +51,8 @@ let $e_pos := request:get-parameter("pos", ())
 let $e_relation := request:get-parameter("relation", ())
 let $max := xs:int(request:get-parameter("count", "100"))
 
+
+
 let $results :=
     if ($e_urn)
     then
@@ -58,33 +60,17 @@ let $results :=
         let $cts := cts:parseUrn($e_urn)
         let $docinfo := tan:findDocs($cts)
         let $tbDoc := doc($docinfo/treebank)
-        let $tbRefs := doc(tan:getTreebankRefs($cts,false())) 
+        (:TODO this does not support subrefs:)
+        let $tbRefs := doc(tan:getTreebankRefs($cts,false()))//ref
         return 
         	if ($cts/passageParts/rangePart)
         	then
         	  element treebank {
 	          	  $tbDoc/treebank/@*,          	             
 	          	  $tbDoc/treebank/*[local-name(.) != 'sentence'],
-	          	  for $ref in $tbRefs//ref          	                 
-	          	     let $sentence-id :=
-	                    if (contains($ref, "-")) then substring-before($ref, "-") else $ref
-	                    let $word-id :=
-	                        if (contains($ref, "-")) then substring-after($ref, "-") else ()
-	                        let $sentence := $tbDoc//sentence[@id = $sentence-id]
-	                        return
-	                            if ($sentence)
-	                            then
-	                                <sentence> {
-	                                    $sentence/@*,
-	                                    if ($word-id)
-	                                    then
-	                                        $sentence/word[@id = $word-id]
-	                                    else 
-	                                        $sentence/*
-	                                }</sentence>
-	                              else
-	                                ()
-	                }
+	          	  for $sentence-id in distinct-values(for $ref in $tbRefs return substring-before($ref,'-'))      
+	          	    return $tbDoc//sentence[@id = $sentence-id]  
+	              }
 	        else $tbDoc/treebank
     else
         collection("/db/repository/treebank")
@@ -107,9 +93,11 @@ let $filtered :=
     then    
         $results//word[@relation=$e_relation]
     else    
-        ()
+        $results
     
 return
+	if ($e_form or $e_lemma or $e_pos or $e_morph or $e_relation)
+	then
     <results> {
         attribute form { $e_form },
         attribute lemma { $e_lemma },
@@ -128,3 +116,6 @@ return
                 }
             }
       } </results>
+      else
+      (: if just a urn was requested, return the treebank document as a whole :)
+	  $filtered
