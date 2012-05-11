@@ -29,6 +29,7 @@
 :)
 
 import module namespace request="http://exist-db.org/xquery/request";
+import module namespace util="http://exist-db.org/xquery/util";
 import module namespace transform="http://exist-db.org/xquery/transform";
 import module namespace cts="http://alpheios.net/namespaces/cts" 
             at "cts.xquery";
@@ -40,6 +41,7 @@ let $e_urn :=  request:get-parameter("urn",())
 let $e_inv := request:get-parameter("inv","alpheios-cts-inventory")
 let $e_repos :=  request:get-parameter("repos","repos1.alpheios.net")
 let $e_format :=  request:get-parameter("format","html")
+let $e_audioFormat := request:get-parameter("af","mp3")
 let $reply := cts:getPassagePlus($e_inv,$e_urn,true(),())
 let $under_copyright := cts:isUnderCopyright($e_inv,$e_urn)
 let $prevUrn := xs:string($reply/prevnext/prev)
@@ -51,6 +53,8 @@ let $passage := $nodes
 let $parsed := cts:parseUrn($e_urn)
 let $docinfo := tan:findDocs($parsed)
 let $config := doc('/db/xq/config/services.xml')
+let $audio_path := concat('/repository/audio/',replace(substring-after($e_urn,'urn:cts:'),':','/'),'.',$e_audioFormat)
+let $audio_available := util:binary-doc-available($audio_path)     
 let $vocabsvc := $config/services/vocabulary/service[1]
 let $rights := if ($under_copyright) then cts:getRights($e_inv,$e_urn) else ""
 (: TODO fixup doc urn  for treebank?:)
@@ -97,6 +101,12 @@ let $uri := concat(request:get-uri(),'?')
                        attribute target { concat($uri,"&amp;urn=",$nextUrn,"&amp;inv=",$e_inv)}
                    }               
                 else (),
+                if ($audio_available) then
+                    element link {
+                        attribute type { 'audio' },
+                        attribute href { $audio_path }
+                    }
+                else (),   
                 $passage
             }
          }

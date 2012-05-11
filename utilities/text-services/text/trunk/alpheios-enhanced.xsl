@@ -481,5 +481,16 @@
             <img src="{concat($alpheiosSiteBaseUrl,'/img/', $type_text, '.gif')}"/>
         </a>
     </xsl:template>
+    
+    <xsl:template match="tei:link[@type='audio']">
+       <div id="audio_embed">
+           <a href="{concat('..',@href)}"></a>
+           <embed type="application/x-shockwave-flash" 
+               wmode="transparent" 
+               src="http://www.google.com/reader/ui/3523697345-audio-player.swf?audioUrl={concat('..',@href)}" 
+               height="27" width="320"></embed> 
+       </div>
+    </xsl:template>
+    
     <xsl:template match="*"/>
 </xsl:stylesheet>
