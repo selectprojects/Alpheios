@@ -122,6 +122,7 @@ declare function cts:parseUrn($a_inv as xs:string, $a_urn as xs:string)
                     element textgroup {concat($namespace,':',$textgroup)},            
                     element work {concat($namespace,':',$work)},
                     element edition {concat($namespace,':',$edition)},
+                    element passage {$passage},
                     element passageParts {
                         for $r in tokenize($passage,"-")                
                         return 
