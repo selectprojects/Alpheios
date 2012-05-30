@@ -427,18 +427,46 @@
         </xsl:if>
     </xsl:template>
     <xsl:template name="javascriptHook">
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
         <xsl:if test="$alpheiosPedagogicalText='true'">
-            <script type="text/javascript" src="{concat($alpheiosSiteBaseUrl, '/site_menus/js/jquery-1.2.6.min.js')}"/>
             <script type="text/javascript" src="{concat($alpheiosSiteBaseUrl,'/site_menus/js/hoverIntent.js')}"/>
             <script type="text/javascript" src="{concat($alpheiosSiteBaseUrl,'/site_menus/js/superfish.js')}"/>
             <script type="text/javascript" src="{concat($alpheiosSiteBaseUrl,'/js/alpheios-text.js')}"/>
-            <script type="text/javascript">
+        </xsl:if>        
+            <xsl:choose>
+                <xsl:when test="//tei:link[@type='audio']">
+                    <xsl:variable name="audio_url" select="concat('..',//tei:link[@type='audio']/@href)"></xsl:variable>
+                    <link type="text/css" href="../css/jplayer.blue.monday.css" rel="stylesheet" />
+                    <link type="text/css" href="../css/alpheios-text-audio.css" rel="stylesheet" />
+                    <link type="text/css" href="../css/alpheios-text-audio.js"/>
+                    <script type="text/javascript" src="../script/jquery.jplayer.min.js"></script>
+                    <script type="text/javascript" src="../script/alpheios-audio.js"></script>
+                    <script type="text/javascript">
                 // document ready function
                 $(function(){
                     alpheios_ready()
+                    $("#jquery_jplayer_1").jPlayer({
+                        ready: function () {
+                        $(this).jPlayer("setMedia", {
+                            mp3: "<xsl:value-of select="$audio_url"/>"
+                            });
+                        },
+                        solution: 'html, flash',
+                        swfPath: "../script",
+                        supplied: "mp3"
+                    });
                 });
             </script>
-        </xsl:if>
+                </xsl:when>
+                <xsl:otherwise>
+                    <script type="text/javascript">
+                        // document ready function
+                        $(function(){
+                            alpheios_ready()
+                        });
+                    </script>
+               </xsl:otherwise>
+            </xsl:choose>
     </xsl:template>
     
     <!-- taken from perseus'  tei2p4.xsl -->
@@ -483,13 +511,41 @@
     </xsl:template>
     
     <xsl:template match="tei:link[@type='audio']">
-       <div id="audio_embed">
-           <a href="{concat('..',@href)}"></a>
-           <embed type="application/x-shockwave-flash" 
-               wmode="transparent" 
-               src="http://www.google.com/reader/ui/3523697345-audio-player.swf?audioUrl={concat('..',@href)}" 
-               height="27" width="320"></embed> 
-       </div>
+        <div id="jquery_jplayer_1" class="jp-jplayer"></div>
+        <div id="jp_container_1" class="jp-audio">
+            <div class="jp-type-single">
+                <div class="jp-gui jp-interface">
+                    <ul class="jp-controls">
+                        <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+                        <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+                        <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+                        <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                        <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+                        <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+                    </ul>
+                    <div class="jp-progress">
+                        <div class="jp-seek-bar">
+                            <div class="jp-play-bar"></div>
+                        </div>
+                    </div>
+                    <div class="jp-volume-bar">
+                        <div class="jp-volume-bar-value"></div>
+                    </div>
+                    <div class="jp-time-holder">
+                        <div class="jp-current-time"></div>
+                        <div class="jp-duration"></div>
+                        <ul class="jp-toggles">
+                            <li><a href="javascript:;" class="jp-repeat" tabindex="1" title="repeat">repeat</a></li>
+                            <li><a href="javascript:;" class="jp-repeat-off" tabindex="1" title="repeat off">repeat off</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="jp-no-solution">
+                    <span>Update Required</span>
+                    To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+                </div>
+            </div>
+        </div>
     </xsl:template>
     
     <xsl:template match="*"/>

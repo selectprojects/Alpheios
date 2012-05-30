@@ -1,0 +1,23 @@
+/** put styles on the div around the audio player here**/
+#audio_embed {
+    
+}
+
+/** put styles on the line here */
+.l {
+    
+}
+
+/** put styles on the word here */
+.alpheios-aligned-word {
+    
+    
+}
+
+div.jp-audio,
+div.jp-video {
+  /* Edit the font-size to counteract inherited font sizing.
+   * Eg. 1.25em = 1 / 0.8em
+   */
+  font-size:1.25em;
+}

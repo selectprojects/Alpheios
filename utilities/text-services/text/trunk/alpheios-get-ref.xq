@@ -53,8 +53,15 @@ let $passage := $nodes
 let $parsed := cts:parseUrn($e_urn)
 let $docinfo := tan:findDocs($parsed)
 let $config := doc('/db/xq/config/services.xml')
-let $audio_path := concat('/repository/audio/',replace(substring-after($e_urn,'urn:cts:'),':','/'),'.',$e_audioFormat)
-let $audio_available := util:binary-doc-available($audio_path)     
+let $audio_path := concat('/repository/audio/',
+    replace(
+        replace(
+            concat(substring-after($parsed/workUrn,'urn:cts:'),':',$parsed/passage),
+            ':','/'
+        ),
+        '\[\]',''
+    ),'.',$e_audioFormat)
+let $audio_available := util:binary-doc-available($audio_path)
 let $vocabsvc := $config/services/vocabulary/service[1]
 let $rights := if ($under_copyright) then cts:getRights($e_inv,$e_urn) else ""
 (: TODO fixup doc urn  for treebank?:)
