@@ -53,7 +53,7 @@ let $passage := $nodes
 let $parsed := cts:parseUrn($e_urn)
 let $docinfo := tan:findDocs($parsed)
 let $config := doc('/db/xq/config/services.xml')
-let $audio_path := concat('/repository/audio/',
+let $audio_path := concat('/audio/',
     replace(
         replace(
             concat(substring-after($parsed/workUrn,'urn:cts:'),':',$parsed/passage),
