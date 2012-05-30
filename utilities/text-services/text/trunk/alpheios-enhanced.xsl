@@ -438,7 +438,6 @@
                     <xsl:variable name="audio_url" select="concat('..',//tei:link[@type='audio']/@href)"></xsl:variable>
                     <link type="text/css" href="../css/jplayer.blue.monday.css" rel="stylesheet" />
                     <link type="text/css" href="../css/alpheios-text-audio.css" rel="stylesheet" />
-                    <link type="text/css" href="../css/alpheios-text-audio.js"/>
                     <script type="text/javascript" src="../script/jquery.jplayer.min.js"></script>
                     <script type="text/javascript" src="../script/alpheios-audio.js"></script>
                     <script type="text/javascript">
