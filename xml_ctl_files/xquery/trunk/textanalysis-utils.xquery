@@ -30,6 +30,7 @@ declare namespace rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#";
 declare namespace oac="http://www.openannotation.org/ns/";
 declare namespace cnt="http://www.w3.org/2008/content#";
 declare namespace treebank="http://nlp.perseus.tufts.edu/syntax/treebank/1.5";
+declare namespace align = "http://alpheios.net/namespaces/aligned-text";
 
 import module namespace tbu="http://alpheios.net/namespaces/treebank-util"
               at "treebank-util.xquery";              
@@ -533,6 +534,17 @@ declare function tan:get_OACTreebank($a_nodes as node()*) as node()*
 				for $s in $target/oac:Body[@rdf:about=$uri]/cnt:rest//treebank:sentence
 				(: drop the namespaces :)
 				return tan:change-element-ns-deep($s,"","")
+};
+
+declare function tan:get_OACAlignment($a_nodes as node()*) as node()*
+{
+	let $targets := $a_nodes//oac:Annotation[oac:hasBody]
+	for $target in $targets
+		return
+			(: to do -- support body refs as well as inline :)
+			for $body in $target/oac:hasBody
+				let $uri := $body/@rdf:resource
+				return $target/oac:Body[@rdf:about=$uri]/cnt:rest/align:sentence
 };
 
 declare function tan:get_OACMorph($a_nodes as node()*) as node()*
