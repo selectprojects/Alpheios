@@ -44,6 +44,7 @@
  :)
 
 import module namespace request="http://exist-db.org/xquery/request";
+import module namespace response="http://exist-db.org/xquery/response";
 import module namespace transform="http://exist-db.org/xquery/transform";  
 import module namespace util="http://exist-db.org/xquery/util";
 import module namespace lxget="http://alpheios.net/namespaces/lexi-get"
@@ -161,6 +162,7 @@ let $xml-output :=
         $entry
       }
   }</alph:output>
+let $h := response:set-header("Access-Control-Allow-Origin","*")
 
 return
   (: if HTML output :)

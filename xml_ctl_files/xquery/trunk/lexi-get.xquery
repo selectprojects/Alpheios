@@ -128,24 +128,34 @@ declare function lxget:get-entry-by-lemma(
         then
           $dict-entries
         else
-          (:
-            find entries in index
-            Note: Lemma attribute in index corresponds to
-            entryFree/@key or entry/@key in lexicon.
-            Key attribute in index is normalized lemma, likely with
-            diacritics removed and other transformations performed.
-            There may be multiple entries matching the key if
-            the transformations map multiple lemmas into one key.
-           :)
-          let $index-ids :=
-            if ($a_index)
-            then
-              distinct-values($a_index//entry[@key eq $uni-lemma]/@id)
-            else ()
-
-          (: get dictionary entries :)
-          return
-            $a_lexicon//(entryFree|entry)[@id = $index-ids]
+        	  (:
+	            find entries in index
+	            Note: Lemma attribute in index corresponds to
+	            entryFree/@key or entry/@key in lexicon.
+	            Key attribute in index is normalized lemma, likely with
+	            diacritics removed and other transformations performed.
+	            There may be multiple entries matching the key if
+	            the transformations map multiple lemmas into one key.
+	           :)
+	          let $index-ids :=
+	            if ($a_index)
+	            then
+	              distinct-values($a_index//entry[@key eq $uni-lemma]/@id)
+	            else ()
+	
+	          (: get dictionary entries :)
+	          return
+	          	if (exists($index-ids)) then
+	            	$a_lexicon//(entryFree|entry)[@id = $index-ids]
+	          	else 
+					(: one last try with original lemma and a sense appended :)
+					(: this hack to try to get lookups which don't know about the :)
+					(: special flag in the Alpheios local index to work - e.g. see ἔρρω :)
+	        		if (not(matches($a_lemma,"^.*\d+$")))
+	        		then 
+	        			$a_lexicon//(entryFree|entry)[@key eq concat($a_lemma,'1')]
+	        		else ()
+	        	
 };
 
 (:
