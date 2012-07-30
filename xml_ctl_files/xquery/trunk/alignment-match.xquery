@@ -173,10 +173,18 @@ declare function almt:do-match(
       if ($a_ignore)
       then
         if (lower-case($a_w1[$a_o1 + $i]) = lower-case($a_w2[$a_o2 + $i]))
-        then false() else true()
+        then false() 
+        (: ignore differences in terminal punctuation :)
+        else if (matches($a_w1[$a_o1 + $i],'^:|·|\.$') and matches($a_w2[$a_o2 + $i],'^:|·|\.$') )
+        then false()
+        else true()
       else
         if ($a_w1[$a_o1 + $i] = $a_w2[$a_o2 + $i])
-      then false() else true()
+      then false() 
+       (: ignore differences in terminal punctuation :)
+      else if (matches($a_w1[$a_o1 + $i],'^:|·|\.$') and matches($a_w2[$a_o2 + $i],'^:|·|\.$') )
+      then false()
+      else true()
     where $differ
     return $i
   )[1]

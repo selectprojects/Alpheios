@@ -139,6 +139,7 @@ declare function local:match(
         ($a_mtoff + $tinc) < $a_matches[1]/@l2
       else false()
     return
+    
       (: element match { ($ainc, $tinc, $morema, $moremt) } :)
       local:match(
         if ($a_aoff + $ainc >= $a_alens[1])
@@ -205,7 +206,7 @@ let $twords :=
   for $word in subsequence($tdoc//*:sentence, $sen1)/*:word
   return lower-case(normalize-space($word/@form))
 let $matches :=
-  almt:match($awords, $twords)
+  almt:match($awords, $twords, true())
 
 return
   element comment
