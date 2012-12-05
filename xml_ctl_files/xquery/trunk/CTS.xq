@@ -19,9 +19,13 @@
  :)
 import module namespace cts="http://alpheios.net/namespaces/cts" 
             at "cts.xquery";
+import module namespace response="http://exist-db.org/xquery/response";
+
 import module namespace tan  = "http://alpheios.net/namespaces/text-analysis"   
             at "textanalysis-utils.xquery";
+declare option exist:serialize "method=xml media-type=text/xml omit-xml-declaration=no";
 
+let $h := response:set-header("Access-Control-Allow-Origin","*")
 let $e_query := request:get-parameter("request",())
 let $e_urn :=  request:get-parameter("urn",())
 let $e_level := xs:int(request:get-parameter("level","1"))
@@ -45,12 +49,10 @@ let $reply :=
     then cts:getExpandedTitle($inv,$e_urn)
     else if ($e_query = 'GetPassagePlus')
     then cts:getPassagePlus($inv,$e_urn)
+    else if ($e_query = 'GetPassage')
+    then cts:getPassagePlus($inv,$e_urn)
     else if ($e_query = 'GetCitableText')
     then cts:getCitableText($inv,$e_urn)
-    else if ($e_query = 'PutCitableText')
-    then cts:putCitableText($e_urn,$e_uuid,$e_xinv)
-    else if ($e_query = 'PutPassage')
-    then cts:getPassagePlus($inv,$e_urn,false(),$e_xinv/node())
     else if ($e_query = 'PARSEURN')
     then cts:parseUrn($inv,$e_urn)
     else(<reply><error code="1">INVALID REQUEST. Unsupported request.</error></reply>)
@@ -83,7 +85,7 @@ return
                     which currently relies on the invalid response  - needs to move in to the cts.xquery
                     library 
                 :)
-                if ($e_query = 'GetPassagePlus')
+                if ($e_query = 'GetPassagePlus' or $e_query = 'GetPassage')
                 then
                     (element {QName($CTSNS,"passage") } {
                         element {QName("http://www.tei-c.org/ns/1.0","TEI")} {
@@ -92,13 +94,6 @@ return
                     },
                     tan:change-element-ns-deep ( $reply//prevnext,$CTSNS, ""),
                     $reply//subref)
-                else if ($e_query = 'PutPassage')
-                then
-                 (element {QName($CTSNS,"passage") } {
-                        element {QName("http://www.tei-c.org/ns/1.0","TEI")} {
-                            tan:change-element-ns-deep ( $reply//TEI/*, "http://www.tei-c.org/ns/1.0" , '')
-                        }
-                    })
                 else 
                     $reply/node()
                     

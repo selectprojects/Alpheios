@@ -96,9 +96,9 @@ declare function cts-x:createCitableText($a_urn as xs:string, $a_uuid as xs:stri
    	Return Value:
    		<deleted/>   
 :)
-declare function cts-x:deleteCitableText($a_urn as xs:string, $a_uuid as xs:string, $a_inv as node()) as node() {
-	(: NOT YET IMPLEMENTED:)
-	<error code="101"/>
+declare function cts-x:deleteCitableText($a_urn as xs:string, $a_uuid as xs:string) as node() {
+    let $inv_removed := xmldb:remove(cts-utils:getWriteableInventoryCollectionPath($a_uuid))
+    return if($inv_removed) then <reply/> else <error code="104"/>
 };
 
 

@@ -29,6 +29,8 @@
 :)
 
 module namespace cts = "http://alpheios.net/namespaces/cts";
+import module namespace cts-utils="http://alpheios.net/namespaces/cts-utils" 
+            at "cts-utils.xquery";
 declare namespace ti = "http://chs.harvard.edu/xmlns/cts3/ti";
 declare namespace  util="http://exist-db.org/xquery/util";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
@@ -39,6 +41,7 @@ declare namespace dc="http://purl.org/dc/elements/1.1";
 declare variable $cts:tocChunking :=
 ( 
     <tocChunk type="Book" size="1"/>,
+    <tocChunk type="Column" size="1"/>,
     <tocChunk type="Volume" size="1"/>,    
     <tocChunk type="Section" size="1"/>,
     <tocChunk type="Chapter" size="1"/>,
@@ -215,10 +218,10 @@ declare function cts:getPassage($a_inv as xs:string,$a_urn as xs:string)
 declare function cts:getCapabilities($a_inv)
 {    
     let $defaultPath := concat("/db/repository/inventory/",$a_inv,".xml")
-    let $sosolPath := concat("/db/repository/sosol/",$a_inv, '/sosol-inventory-',$a_inv,".xml")
+    let $altPath := cts-utils:getWriteableInventoryPath($a_inv)
     let $inv := 
         if (doc-available($defaultPath)) then doc($defaultPath)
-        else if (doc-available($sosolPath)) then doc($sosolPath)
+        else if (doc-available($altPath)) then doc($altPath)
         else ()
     return 
         $inv
@@ -504,7 +507,7 @@ declare function cts:findNextPrev($a_dir as xs:string,
 :)
 declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
 {    
-    cts:getPassagePlus($a_inv,$a_urn,false(),())
+    cts:getPassagePlus($a_inv,$a_urn,false())
 };
 
 (:
@@ -524,7 +527,7 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string)
             <next>[next urn]</next>
         </prevnext>
 :)
-declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_withSiblings as xs:boolean*,$a_replaceWith as node()*)
+declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_withSiblings as xs:boolean*)
 {    
     let $cts := cts:parseUrn($a_inv,$a_urn)    
     return                   
@@ -586,25 +589,8 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_w
                     {$doc//*:teiHeader,$doc//*:teiheader},
                     <text xml:lang="{$lang}">
                     <body>                    	
-                        {   (:TODO need to add better security on this .. it's a hack 
-                              for now which makes sure we're working with a text from a 
-                              sosol inventory before replacing
-                            :) 
-                        	let $replaced := 
-                                if ($a_replaceWith and starts-with($a_inv,'sosol-inventory-')) 
-                                then 
-                                    for $p at $a_i in $passageAll
-                                        (: TODO validate against original xpath :)
-                                        let $name := local-name($p)
-                                        let $n := $p/@n
-                                        return update replace $p with $a_replaceWith//*[local-name(.) = $name and @n = $n]
-                                else ()
-                            return 
-                                if ($a_replaceWith) 
-                                then
-                                    $doc//*:body/*
-                                else
-                                    for $p in $passageAll return cts:passageWithParents($p,1,('body','TEI.2','TEI','tei.2','tei'))
+                        {   
+							for $p in $passageAll return cts:passageWithParents($p,1,('body','TEI.2','TEI','tei.2','tei'))
                         }
                      </body>
                   </text>
@@ -820,51 +806,6 @@ declare function cts:isCitationNode($a_inv as xs:string, $a_urn as xs:string, $a
                 then util:eval(concat("$a_node/parent::*",$path)) 
                 else ()
     return count($matched) > 0
-};
-
-declare function cts:putCitableText($a_urn as xs:string, $a_uuid as xs:string, $a_inv as node()) as node() {
-    let $collName := '/db/repository/sosol'
-    let $cacheDir := $a_uuid
-    let $invFilename := concat('sosol-inventory-',$a_uuid,'.xml')
-    let $textFilename := concat('sosol-text-',$a_uuid,'.xml')
-    let $inv := $a_inv
-    let $cts := cts:parseUrn('junk',$a_urn)
-    let $tg := $inv//ti:textgroup[@projid=$cts/textgroup and ti:work[@projid=$cts/work]]
-    let $work := $tg/ti:work[@projid=$cts/work]
-    let $edition := $work/ti:*[@projid=$cts/edition]
-    let $newinv := 
-        <ti:TextInventory>
-            {$inv//collection,
-             <ti:textgroup>
-                {$tg/@*, 
-                 $tg/node()[local-name() != 'work'],
-                <ti:work>
-                    {$work/@*,
-                     $work/node()[local-name() != 'edition' and local-name() != 'translation'],
-                    <ti:edition> 
-                        {   $edition/@projid,
-                            $edition/ti:label,
-                            for $o in $edition/ti:online return
-                             <ti:online>{
-                                attribute docname { concat($collName,'/',$cacheDir,'/',$textFilename) },
-                                $o/@*[local-name() != 'docname'],
-                                $o/node()
-                             }
-                             </ti:online>
-                        }
-                    </ti:edition>
-                    }
-                </ti:work>
-                }
-             </ti:textgroup>
-             }
-         </ti:TextInventory>
-    let $do_store := 
-        if (xmldb:collection-available(concat($collName, '/', $cacheDir))) then true() else
-            xmldb:create-collection($collName, $cacheDir)
-    let $inv_stored := xmldb:store(concat($collName,'/',$cacheDir),$invFilename, $newinv)
-    (:let $text_stored := xmldb:store(concat($collName,'/',$cacheDir),$textFilename, $a_text):)
-    return if ($inv_stored) then <stored>{concat($collName,'/',$cacheDir,'/',$textFilename)}</stored> else <error/>
 };
 
 declare function cts:isUnderCopyright($a_inv,$a_urn) as xs:boolean {

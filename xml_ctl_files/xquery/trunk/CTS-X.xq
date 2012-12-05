@@ -41,7 +41,7 @@ let $reply :=
 		if ($e_query = 'CreateCitableText')
 	    then cts-x:createCitableText($e_urn,$e_uuid,$e_data)
 	    else if ($e_query = 'DeleteCitableText')
-	    then <reply><error code="101">NOT YET IMPLEMENTED</error></reply>
+	    then cts-x:deleteCitableText($e_urn,$e_uuid)
 	    else if ($e_query = 'UpdatePassage')
 	    then cts-x:updatePassage($inv,$e_urn,<update>{$e_data}</update>)
 	    else if ($e_query = 'PARSEURN')
