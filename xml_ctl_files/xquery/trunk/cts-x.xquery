@@ -27,10 +27,13 @@ import module namespace cts-utils="http://alpheios.net/namespaces/cts-utils"
             at "cts-utils.xquery";
 import module namespace cts="http://alpheios.net/namespaces/cts" 
             at "cts.xquery";
+import module namespace tan  = "http://alpheios.net/namespaces/text-analysis"   
+            at "textanalysis-utils.xquery";
 declare namespace ti = "http://chs.harvard.edu/xmlns/cts3/ti";
 declare namespace  util="http://exist-db.org/xquery/util";
 declare namespace tei="http://www.tei-c.org/ns/1.0";
 declare namespace dc="http://purl.org/dc/elements/1.1";
+
 
 
 (:
@@ -176,4 +179,31 @@ declare function cts-x:updatePassage($a_inv as xs:string,$a_urn as xs:string,$a_
 							<new_psg>{$replaceWith}</new_psg>,
 							<new_node1>{$a_replaceWith/*[1]}</new_node1>
 						}</error></reply>
+};
+
+(: Get the list of online editions in the specified inventory
+    Parameters
+        $a_inv as the inventory document
+    Return value:
+        a sequence of urns
+:)
+declare function cts-x:getAllOnline($a_inv as xs:string) as node() {
+    let $inv := cts:getCapabilities($a_inv)
+    return
+    <reply> {
+        for $tg in $inv//ti:textgroup
+            let $tgns := substring-before($tg/@projid,':')
+            return
+                for $work in $tg/ti:work
+                    let $wkns := substring-before($work/@projid,':')
+                    let $wkpart := if ($wkns != $tgns) then $work/@projid else substring-after($work/@projid,':')
+                    return
+                        for $online in $work/ti:edition[ti:online]
+                            let $verns := substring-before($online/@projid,':')
+                            let $verpart := if ($verns != $wkns) then $online/@projid else (substring-after($online/@projid,':'))
+                            let $urn := concat ('urn:cts:',$tg/@projid,'.',$wkpart,'.',$verpart)
+                            let $parsed := cts:parseUrn($a_inv,$urn)
+                            let $docinfo := tan:findDocs($parsed)
+                            return <urn work="{$parsed/workNoEdUrn}" treebank="{$docinfo/treebank}">{$urn}</urn> 
+    } </reply>
 };

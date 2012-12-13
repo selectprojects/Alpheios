@@ -46,6 +46,8 @@ let $reply :=
 	    then cts-x:updatePassage($inv,$e_urn,<update>{$e_data}</update>)
 	    else if ($e_query = 'PARSEURN')
 	    then cts:parseUrn($inv,$e_urn)
+	    else if ($e_query = 'LISTURN')
+	    then cts-x:getAllOnline($inv)
 	    else(<reply><error code="1">INVALID REQUEST. Unsupported request.</error></reply>)
 
 return
