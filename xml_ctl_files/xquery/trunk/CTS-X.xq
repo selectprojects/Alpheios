@@ -48,6 +48,8 @@ let $reply :=
 	    then cts:parseUrn($inv,$e_urn)
 	    else if ($e_query = 'LISTURN')
 	    then cts-x:getAllOnline($inv)
+	     else if ($e_query = 'GETCATALOG')
+	    then cts:getCatalog($inv,$e_urn)
 	    else(<reply><error code="1">INVALID REQUEST. Unsupported request.</error></reply>)
 
 return

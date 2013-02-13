@@ -1,4 +1,4 @@
-(:
+                                                                                                                                                                                                                                                                                                                                                                     (:
   Copyright 2010 Cantus Foundation
   http://alpheios.net
 
@@ -49,7 +49,8 @@ declare variable $cts:tocChunking :=
     <tocChunk type="Line" size="30"/>,
     <tocChunk type="Verse" size="30"/>,
     <tocChunk type="Fragment" size="1"/>,
-    <tocChunk type="Page" size="1"/>
+    <tocChunk type="Page" size="1"/>,
+    <tocChunk type="Entry" size="1"/>
 );
 
 declare variable $cts:maxPassageNodes := 100;
@@ -119,6 +120,11 @@ declare function cts:parseUrn($a_inv as xs:string, $a_urn as xs:string)
                     element urn { $a_urn },
                     (: urn without any passage specifics:)
                     element workUrn { concat("urn:cts:",$namespace,':',$textgroup,".",$work,".",$edition) },
+                    element workLang {
+                        if ($cat) then $cat//ti:textgroup[@projid=concat($namespace,':',$textgroup)]
+                                        /ti:work[@projid=concat($namespace,':',$work)]/@xml:lang
+                                   else ()
+                    },
                     element workNoEdUrn { concat("urn:cts:",$namespace,':',$textgroup,".",$work) },                                            
                     element namespace{ $namespace },
                     (: TODO is it possible for components of the work id to be in different namespaces?? :)
@@ -783,14 +789,16 @@ declare function cts:getUrnForNode($a_inv as xs:string, $a_cts as node(), $a_nod
     (: TODO get the correct xpath element and attribute to use from the parsed urn :)
 	if (local-name($a_node) = $a_topParent)
 	then 
-	   let $path := reverse($a_build)		
-       return concat($a_cts/workUrn,':',string-join($path,'.'))
+	   let $path := reverse($a_build)	
+	   let $cleaned := for $p in $path return if ($p) then $p else ()
+       return concat($a_cts/workUrn,':',string-join($cleaned,'.'))
 	else if (cts:isCitationNode($a_inv,$a_cts/workUrn,$a_node))
 	then 
-          let $new_build := 
-                if ($a_build) 
+          let $new_build := if ($a_node/@n) then
+                if (count($a_build) > 0) 
                 then ($a_build,xs:string($a_node/@n)) 
                 else xs:string($a_node/@n)
+            else $a_build
 	      return cts:getUrnForNode($a_inv, $a_cts,$a_node/parent::*,$a_topParent,$new_build)
 	else			
 		cts:getUrnForNode($a_inv,$a_cts,$a_node/parent::*,$a_topParent,$a_build)
@@ -802,6 +810,7 @@ declare function cts:isCitationNode($a_inv as xs:string, $a_urn as xs:string, $a
     let $matched :=
         for $i in $entry//ti:online//ti:citation
             let $path := replace($i/@xpath,"='\?'",'')
+            (: todo this doesn't work for namespaces because it doesn't take prefixes in the xpath into account :)
             return if (local-name($a_node) = replace(substring-before($path,'['),'^[/]*/+','')) 
                 then util:eval(concat("$a_node/parent::*",$path)) 
                 else ()
