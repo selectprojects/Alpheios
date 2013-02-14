@@ -629,7 +629,7 @@ declare function cts:replaceBindVariables($a_startParts,$a_endParts,$a_path) as 
             if (count($a_endParts) > xs:int(0)) then
                 let $startRange := if ($a_startParts[1]/text()) then concat(' >= ',$a_startParts[1]) else ""
                 let $endRange := if ($a_endParts[1]/text()) then concat(' <= ', $a_endParts[1] ) else ""
-                let $path := replace($a_path,"^(.*?)(@[\w\d\._:\s])=[""']\?[""'](.*)$",concat("$1","$2",$startRange," and ", "$2", $endRange, "$3"))                
+                let $path := replace($a_path,"^(.*?)(@[\w\d\._:\s]+)=[""']\?[""'](.*)$",concat("$1","$2",$startRange," and ", "$2", $endRange, "$3"))                
                 return cts:replaceBindVariables($a_startParts[position() > 1],$a_endParts[position() >1],$path)
             else          
                 let $path := 
@@ -637,7 +637,7 @@ declare function cts:replaceBindVariables($a_startParts,$a_endParts,$a_path) as 
                     then 
                         replace($a_path,"^(.*?)\?(.*)$",concat("$1",xs:string($a_startParts[1]),"$2"))
                     else 
-                        replace($a_path,"^(.*?)(@[\w\d\._:\s])=[""']\?[""'](.*)$",concat("$1","$2","$3"))
+                        replace($a_path,"^(.*?)(@[\w\d\._:\s]+)=[""']\?[""'](.*)$",concat("$1","$2","$3"))
                 return cts:replaceBindVariables($a_startParts[position() > 1],(),$path)
         else $a_path            
 };
