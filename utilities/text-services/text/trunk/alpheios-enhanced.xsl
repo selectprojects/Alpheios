@@ -158,6 +158,9 @@
             <xsl:apply-templates/>
         </div>
     </xsl:template>
+    <xsl:template match="tei:ab">
+        <xsl:apply-templates/>
+    </xsl:template>
     <xsl:template match="tei:head">
         <div class="head"><xsl:apply-templates/></div>
     </xsl:template>
@@ -166,7 +169,7 @@
             <xsl:apply-templates/>
         </div>
     </xsl:template>
-    <xsl:template match="tei:l|tei:p">
+    <xsl:template match="tei:l|tei:p|tei:seg">
         <xsl:variable name="rend" select="@rend"/>
         <div class="l  {$rend}">
             <xsl:if test="@n">
