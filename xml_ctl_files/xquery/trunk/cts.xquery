@@ -355,7 +355,7 @@ declare function cts:expandValidReffs($a_inv as xs:string,$a_urn as xs:string,$a
     let $numLevels := count($entry//ti:online//ti:citation)
     let $numUrns := count($urns//*:urn) 
     let $tocName := ($entry//ti:online//ti:citation)[position() = $a_level]/@label
-    let $chunkSize := xs:int($cts:tocChunking[@type=$tocName]/@size) 
+    let $chunkSize := cts:getTocSize($tocName) 
     return
                 <list> {
                 for $i in (xs:int("1") to $numUrns)
@@ -541,7 +541,7 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_w
         let $level := count($cts/passageParts/rangePart[1]/part)
         let $entry := cts:getCatalog($a_inv,$a_urn)
         let $tocName := ($entry//ti:online//ti:citation)[position() = $level]/@label
-        let $chunkSize := xs:int($cts:tocChunking[@type=$tocName]/@size)
+        let $chunkSize := cts:getTocSize($tocName)
         
         
         let $cites := for $i in $entry//ti:online//ti:citation return $i        
@@ -832,4 +832,9 @@ declare function cts:getRights($a_inv,$a_urn) as xs:string {
     let $inventory := cts:getCapabilities($a_inv)
     (: TODO need a better way of identifying copyright than match on specific string here :)
     return $inventory//ti:collection[@id = $memberof]/dc:rights
+};
+
+(: get the default number of toc segments to return for a given toc type :)
+declare function cts:getTocSize($a_type) as xs:int {
+    if ($cts:tocChunking[@type=$a_type]) then xs:int($cts:tocChunking[@type=$a_type]/@size) else 1 
 };
