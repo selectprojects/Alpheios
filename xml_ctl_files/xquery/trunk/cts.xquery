@@ -209,9 +209,65 @@ declare function cts:findSubRef($a_passage,$a_subref)
         getPassage reply
 :)
 declare function cts:getPassage($a_inv as xs:string,$a_urn as xs:string)
-{
-    (: TODO :)
-    ()
+{    
+    let $cts := cts:parseUrn($a_inv,$a_urn)    
+    return                   
+        let $doc := doc($cts/fileInfo/fullPath)
+        let $level := count($cts/passageParts/rangePart[1]/part)
+        let $entry := cts:getCatalog($a_inv,$a_urn)
+        let $tocName := ($entry//ti:online//ti:citation)[position() = $level]/@label
+        let $chunkSize := cts:getTocSize($tocName)
+        
+        let $cites := for $i in $entry//ti:online//ti:citation return $i        
+        let $xpath := cts:replaceBindVariables(
+            $cts/passageParts/rangePart[1]/part,
+            $cts/passageParts/rangePart[2]/part,
+            concat($cites[$level]/@scope, $cites[$level]/@xpath))
+        let $passage_orig := 
+            (: return error if we can't determine the chunk size :)
+           if (not($chunkSize)) then (<l rend="error">Invalid Request</l>)
+           else util:eval(concat("$doc",$xpath))
+        let $subref_orig := 
+            if ($cts/subRef)
+            then
+                cts:findSubRef($passage_orig,$cts/subRef)
+            else ()                
+        let $passage := if ($passage_orig and (not($cts/subRef) or ($cts/subRef and $subref_orig) )) 
+            then $passage_orig
+        else            
+            let $parent_match := concat("^",$cts/passageParts/rangePart[1]/part[2],"-")
+            let $passage_alt  := $doc//div1[@n = $cts/passageParts/rangePart[1]/part[1]]//wd[matches(@tbrefs,$parent_match) or matches(@tbref,$parent_match)][1]/..
+            return if ($passage_alt) then $passage_alt else $passage_orig
+        (: try again to get the subref :)
+        let $subref :=
+            if ($subref_orig) then $subref_orig
+            else if ($passage and $cts/subRef and not ($subref_orig))
+            then cts:findSubRef($passage,$cts/subRef)
+            else ()                             
+        let $countAll := count($passage)
+        let $lang := if ($passage) then cts:getLang($passage[1]) else ""
+        (: enforce limit on # of nodes returned to avoid crashing the server or browser :)
+        (:let $count := if ($countAll > $cts:maxPassageNodes) then $cts:maxPassageNodes else $countAll:)
+        let $count := $countAll
+        let $docid := if ($doc/TEI.2/@id) then $doc/TEI.2/@id 
+                      else if ($doc/tei.2/@id) then $doc/tei.2/@id
+                      else if ($doc/TEI/@id) then $doc/TEI/@id
+                      else ""
+        let $passageAll := $passage[position() < $count+ 1]
+        return   
+            <reply xpath="{string($xpath)}">
+                <TEI id="{$docid}">
+                    {$doc//*:teiHeader,$doc//*:teiheader},
+                    <text xml:lang="{$lang}">
+                    <body>                      
+                        {   
+                            for $p in $passageAll return cts:passageWithParents($p,1,('body','TEI.2','TEI','tei.2','tei'))
+                        }
+                     </body>
+                  </text>
+                </TEI>
+                <subref>{$subref}</subref>
+            </reply>
 };
 
 (:
