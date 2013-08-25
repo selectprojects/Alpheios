@@ -1,0 +1,1341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scenario-array>
+<scenario>
+          <field name="name">
+            <String xml:space="preserve">ALIGN TEI XHTML</String>
+          </field>
+          <field name="baseURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="footerURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="fOPMethod">
+            <String xml:space="preserve">pdf</String>
+          </field>
+          <field name="fOProcessorName">
+            <String xml:space="preserve">Built-in (Apache FOP)</String>
+          </field>
+          <field name="headerURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="inputXSLURL">
+            <String xml:space="preserve">file:/C:/work/odyssey/tei_mods/teip4/stylesheet/xhtml/tei.xsl</String>
+          </field>
+          <field name="inputXMLURL">
+            <String xml:space="preserve">${currentFileURL}</String>
+          </field>
+          <field name="defaultScenario">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="isFOPPerforming">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="type">
+            <String xml:space="preserve">XSL</String>
+          </field>
+          <field name="saveAs">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="openInBrowser">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="outputFile">
+            <File xml:space="preserve">odyseey.html</File>
+          </field>
+          <field name="openOtherLocationInBrowser">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="locationToOpenInBrowserURL">
+            <null></null>
+          </field>
+          <field name="openInEditor">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInHTMLPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInXMLPane">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="showInSVGPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="useXSLTInput">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="xsltParams">
+            <list>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">alpheiosHasAlignment</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">alpheiosHasTreebank</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">alpheiosPedagogicalText</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">autoHead</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">bottomNavigationPanel</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">cssFile</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">tei.css</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">doclang</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">en</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">feedbackURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">footnoteBackLink</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">generateParagraphIDs</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">homeLabel</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">homeURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">homeWords</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">htmlTitlePrefix</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">Alpheios:</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">institution</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberBodyHeadings</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberHeadings</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">outputDir</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">${cfd}/xhtml/align</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">outputMethod</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">html</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">outputName</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">odyssey</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">parentURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">parentWords</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">refDocFooterText</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">searchURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">showTitleAuthor</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">splitLevel</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">1</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">STDOUT</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">tocDepth</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">3</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">topNavigationPanel</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">useHeaderFrontMatter</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">useIDs</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">verbose</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+            </list>
+          </field>
+          <field name="cascadingStylesheets">
+            <String-array></String-array>
+          </field>
+          <field name="xslTransformer">
+            <String xml:space="preserve">Saxon6.5.5</String>
+          </field>
+          <field name="extensionURLs">
+            <String-array></String-array>
+          </field>
+</scenario>
+     <scenario>
+          <field name="name">
+            <String xml:space="preserve">PED TEI XHTML</String>
+          </field>
+          <field name="baseURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="footerURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="fOPMethod">
+            <String xml:space="preserve">pdf</String>
+          </field>
+          <field name="fOProcessorName">
+            <String xml:space="preserve">Built-in (Apache FOP)</String>
+          </field>
+          <field name="headerURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="inputXSLURL">
+            <String xml:space="preserve">file:/C:/work/odyssey/tei_mods/teip4/stylesheet/xhtml/tei.xsl</String>
+          </field>
+          <field name="inputXMLURL">
+            <String xml:space="preserve">${currentFileURL}</String>
+          </field>
+          <field name="defaultScenario">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="isFOPPerforming">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="type">
+            <String xml:space="preserve">XSL</String>
+          </field>
+          <field name="saveAs">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="openInBrowser">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="outputFile">
+            <File xml:space="preserve">odyseey.html</File>
+          </field>
+          <field name="openOtherLocationInBrowser">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="locationToOpenInBrowserURL">
+            <null></null>
+          </field>
+          <field name="openInEditor">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInHTMLPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInXMLPane">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="showInSVGPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="useXSLTInput">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="xsltParams">
+            <list>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">alpheiosSiteBaseUrl</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">chrome://alpheios-greek/content/interlinear</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">alpheiosTreebankDiagramUrl</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">http://dev.alpheios.net:8800/exist/rest/xq/treebank-getsvg.xq?f=1999.01.0135&amp;s=SENTENCE&amp;w=WORD</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">alpheiosTreebankUrl</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">http://dev.alpheios.net:8800/exist/rest/xq/treebank-getmorph.xq?f=1999.01.0135&amp;w=WORD</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">autoHead</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">bottomNavigationPanel</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">cssFile</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">tei.css</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">doclang</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">greek</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">feedbackURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">footnoteBackLink</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">generateParagraphIDs</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">homeLabel</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">homeURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">homeWords</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">htmlTitlePrefix</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">Alpheios:</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">institution</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberBodyHeadings</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberHeadings</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">outputDir</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">${cfd}/xhtml</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">outputMethod</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">html</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">outputName</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">odyssey</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">parentURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">parentWords</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">refDocFooterText</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">searchURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">showTitleAuthor</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">splitLevel</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">1</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">STDOUT</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">tocDepth</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">3</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">useHeaderFrontMatter</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">useIDs</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">verbose</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+            </list>
+          </field>
+          <field name="cascadingStylesheets">
+            <String-array></String-array>
+          </field>
+          <field name="xslTransformer">
+            <String xml:space="preserve">Saxon6.5.5</String>
+          </field>
+          <field name="extensionURLs">
+            <String-array></String-array>
+          </field>
+        </scenario>
+        <scenario>
+          <field name="name">
+            <String xml:space="preserve">Sample1.tb</String>
+          </field>
+          <field name="baseURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="footerURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="fOPMethod">
+            <String xml:space="preserve">pdf</String>
+          </field>
+          <field name="fOProcessorName">
+            <String xml:space="preserve">Built-in (Apache FOP)</String>
+          </field>
+          <field name="headerURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="inputXSLURL">
+            <String xml:space="preserve">file:/C:/work/basic-reader/skin/aldt2svg.xsl</String>
+          </field>
+          <field name="inputXMLURL">
+            <String xml:space="preserve">${currentFileURL}</String>
+          </field>
+          <field name="defaultScenario">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="isFOPPerforming">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="type">
+            <String xml:space="preserve">XSL</String>
+          </field>
+          <field name="saveAs">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="openInBrowser">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="outputFile">
+            <File xml:space="preserve">test.svg</File>
+          </field>
+          <field name="openOtherLocationInBrowser">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="locationToOpenInBrowserURL">
+            <null></null>
+          </field>
+          <field name="openInEditor">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInHTMLPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInXMLPane">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="showInSVGPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="useXSLTInput">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="xsltParams">
+            <list></list>
+          </field>
+          <field name="cascadingStylesheets">
+            <String-array></String-array>
+          </field>
+          <field name="xslTransformer">
+            <String xml:space="preserve">Saxon6.5.5</String>
+          </field>
+          <field name="extensionURLs">
+            <String-array></String-array>
+          </field>
+        </scenario>
+        <scenario>
+          <field name="name">
+            <String xml:space="preserve">TEI HTML modified</String>
+          </field>
+          <field name="baseURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="footerURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="fOPMethod">
+            <String xml:space="preserve">pdf</String>
+          </field>
+          <field name="fOProcessorName">
+            <String xml:space="preserve">Built-in (Apache FOP)</String>
+          </field>
+          <field name="headerURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="inputXSLURL">
+            <String xml:space="preserve">file:/C:/work/smyth/tei_mods/teip4/stylesheet/html/tei.xsl</String>
+          </field>
+          <field name="inputXMLURL">
+            <String xml:space="preserve">${currentFileURL}</String>
+          </field>
+          <field name="defaultScenario">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="isFOPPerforming">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="type">
+            <String xml:space="preserve">XSL</String>
+          </field>
+          <field name="saveAs">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="openInBrowser">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="outputFile">
+            <File xml:space="preserve">${cfd}/${cfn}.html</File>
+          </field>
+          <field name="openOtherLocationInBrowser">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="locationToOpenInBrowserURL">
+            <null></null>
+          </field>
+          <field name="openInEditor">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInHTMLPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInXMLPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInSVGPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="useXSLTInput">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="xsltParams">
+            <list>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">bottomNavigationPanel</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">cellAlign</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">left</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">cssFile</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">tei.css</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">feedbackURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">homeLabel</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">homeURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">homeWords</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">ID</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">institution</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberBackHeadings</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberBackTables</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberBodyHeadings</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberFigures</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberFrontTables</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberHeadings</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberTables</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">outputDir</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">${cfd}\grammar</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">outputEncoding</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">utf-8</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">outputName</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">${cfn}</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">pagebreakStyle</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">active</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">parentURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">parentWords</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">refDocFooterText</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">refDocFooterURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">searchURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">showTitleAuthor</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">splitLevel</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">1</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">STDOUT</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">teixslHome</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">useHeaderFrontMatter</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">verbose</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">virtualPages</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">xhtml</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+            </list>
+          </field>
+          <field name="cascadingStylesheets">
+            <String-array></String-array>
+          </field>
+          <field name="xslTransformer">
+            <String xml:space="preserve">Xalan</String>
+          </field>
+          <field name="extensionURLs">
+            <String-array></String-array>
+          </field>
+        </scenario>
+        <scenario>
+          <field name="name">
+            <String xml:space="preserve">alph-infl-noun</String>
+          </field>
+          <field name="baseURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="footerURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="fOPMethod">
+            <String xml:space="preserve">pdf</String>
+          </field>
+          <field name="fOProcessorName">
+            <String xml:space="preserve">Built-in (Apache FOP)</String>
+          </field>
+          <field name="headerURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="inputXSLURL">
+            <String xml:space="preserve">file:/C:/Program%20Files/Oxygen%20XML%20Editor%209/samples/ooxml/importToExcel.xsl</String>
+          </field>
+          <field name="inputXMLURL">
+            <String xml:space="preserve">${currentFileURL}</String>
+          </field>
+          <field name="defaultScenario">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="isFOPPerforming">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="type">
+            <String xml:space="preserve">XSL</String>
+          </field>
+          <field name="saveAs">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="openInBrowser">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="outputFile">
+            <File xml:space="preserve">C:/work/infls/noun-import.xml</File>
+          </field>
+          <field name="openOtherLocationInBrowser">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="locationToOpenInBrowserURL">
+            <null></null>
+          </field>
+          <field name="openInEditor">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInHTMLPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInXMLPane">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="showInSVGPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="useXSLTInput">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="xsltParams">
+            <list></list>
+          </field>
+          <field name="cascadingStylesheets">
+            <String-array></String-array>
+          </field>
+          <field name="xslTransformer">
+            <String xml:space="preserve">Saxon-B</String>
+          </field>
+          <field name="extensionURLs">
+            <String-array></String-array>
+          </field>
+        </scenario>
+        <scenario>
+          <field name="name">
+            <String xml:space="preserve">smyth_eng_u</String>
+          </field>
+          <field name="baseURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="footerURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="fOPMethod">
+            <String xml:space="preserve">pdf</String>
+          </field>
+          <field name="fOProcessorName">
+            <String xml:space="preserve">Built-in (Apache FOP)</String>
+          </field>
+          <field name="headerURL">
+            <String xml:space="preserve"></String>
+          </field>
+          <field name="inputXSLURL">
+            <String xml:space="preserve">file:/C:/work/tei/tei-xsl-5.9/p4/xhtml/tei.xsl</String>
+          </field>
+          <field name="inputXMLURL">
+            <String xml:space="preserve">${currentFileURL}</String>
+          </field>
+          <field name="defaultScenario">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="isFOPPerforming">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="type">
+            <String xml:space="preserve">XSL</String>
+          </field>
+          <field name="saveAs">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="openInBrowser">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="outputFile">
+            <File xml:space="preserve">smyth_eng_u_h.html</File>
+          </field>
+          <field name="openOtherLocationInBrowser">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="locationToOpenInBrowserURL">
+            <null></null>
+          </field>
+          <field name="openInEditor">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInHTMLPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="showInXMLPane">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="showInSVGPane">
+            <Boolean xml:space="preserve">false</Boolean>
+          </field>
+          <field name="useXSLTInput">
+            <Boolean xml:space="preserve">true</Boolean>
+          </field>
+          <field name="xsltParams">
+            <list>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">feedbackURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">homeLabel</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">homeURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">homeWords</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">institution</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberBodyHeadings</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">numberHeadings</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">false</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">refDocFooterText</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">refDocFooterURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">searchURL</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">showTitleAuthor</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">true</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">splitLevel</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve">1</String>
+                </field>
+              </transformationParameter>
+              <transformationParameter>
+                <field name="name">
+                  <String xml:space="preserve">teixslHome</String>
+                </field>
+                <field name="value">
+                  <String xml:space="preserve"></String>
+                </field>
+              </transformationParameter>
+            </list>
+          </field>
+          <field name="cascadingStylesheets">
+            <String-array></String-array>
+          </field>
+          <field name="xslTransformer">
+            <String xml:space="preserve">Saxon6.5.5</String>
+          </field>
+          <field name="extensionURLs">
+            <String-array></String-array>
+          </field>
+        </scenario>
+</scenario-array>
