@@ -2,106 +2,106 @@
 <RDF:RDF xmlns:NS1="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="rdf:#$qo2ch3"
+  <RDF:Description RDF:about="rdf:#$KUA5V3"
+                   NS1:version="1.0beta2.3539.20100606">
+    <NS1:targetApplication RDF:resource="rdf:#$NUA5V3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$oUA5V3"
+                   NS1:version="1.0beta2.3541.20100606">
+    <NS1:targetApplication RDF:resource="rdf:#$rUA5V3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$CUA5V3"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    NS1:minVersion="3.0"
-                   NS1:maxVersion="22.*"
-                   NS1:updateLink="http://alpheios.net/xpi-install/alpheios-basic-latest.xpi"
-                   NS1:updateHash="sha1:5D0B93075A3F9FD48F2E0453497EB77DDA4443B0" />
-  <RDF:Description RDF:about="rdf:#$Mo2ch3"
-                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-                   NS1:minVersion="3.0"
-                   NS1:maxVersion="3.6.*"
-                   NS1:updateLink="http://alpheios.net/xpi-install/alpheios-spanish-latest.xpi"
-                   NS1:updateHash="sha1:F600AB7A6022DE84714FB776355EADFB70F3BF74" />
+                   NS1:maxVersion="*"
+                   NS1:updateLink="http://alpheios.net/xpi-install/alpheios-chinese-latest.xpi"
+                   NS1:updateHash="sha1:49EACFC6EEF0ED2A3CF0611824E3DD1EA62311E6" />
+  <RDF:Description RDF:about="rdf:#$fVA5V3"
+                   NS1:version="0.1.2453.20100121">
+    <NS1:targetApplication RDF:resource="rdf:#$iVA5V3"/>
+  </RDF:Description>
   <RDF:Description RDF:about="urn:mozilla:extension:{7dd2b42f-3db8-4833-88c4-5a9e3788017b}"
                    NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBADdV0nGO8dFQl46hackmQklN5fpcn2OrNPuvIcAFvgdruro12sz64xuhA9MDdeDYI8VcYVsvisYxBAJfbv2Q5zAwtKi60iAdxVYzJK3aJYeTcJw2UMEZu8cGNtrIVyHCGmg2CJFeyXiAdYa0P4LMyVstNglWfR3BgdskP1+TI1iP">
-    <NS1:updates RDF:resource="rdf:#$bo2ch3"/>
+    <NS1:updates RDF:resource="rdf:#$JUA5V3"/>
   </RDF:Description>
-  <RDF:Description RDF:about="urn:mozilla:extension:{0f1d7e06-6ce8-40b0-83f0-9783ee65ab9b}"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBADjy+pLs6hxjMp/IDiIO6yN6Nn9NkD8RwDU8xb+8fo6A8EMU5enjVhHEaMNAPCblR5bodrwnFsYhVSsZSqwLhWto39IU9f/GZ0PT66cOILprFTvd89C2chkYKnTqXjfhw2eSluHfNOOvcj+Q1UuLNY8gGmB5912VtXZN7PbNcg1p">
-    <NS1:updates RDF:resource="rdf:#$Rn2ch3"/>
-  </RDF:Description>
-  <RDF:Seq RDF:about="rdf:#$0o2ch3">
-    <RDF:li RDF:resource="rdf:#$1o2ch3"/>
-  </RDF:Seq>
-  <RDF:Seq RDF:about="rdf:#$mo2ch3">
-    <RDF:li RDF:resource="rdf:#$no2ch3"/>
-  </RDF:Seq>
-  <RDF:Description RDF:about="urn:mozilla:extension:{52bca4ba-fd12-445c-937f-6db5d9c7c522}"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAEEqqbuXGQYlYIvFPsP0uPzj3C19gXFcodcdGAIzRwFlx9y6W303ARevP+rjCNsIbR3bqcOlj+mYcBvOGBvC1xnp6ddQuNm95twv6np4vKtBVlPBDSMgvVFz8pctc5Q3bEqM2+8eWSB2xHxjiP96fzFqSMtgZgc+G2lJCaKpyoP5">
-    <NS1:updates RDF:resource="rdf:#$0o2ch3"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="urn:mozilla:extension:{4816253c-3208-49d8-9557-0745a5508299}"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBALSNW9aj0USzeS3kLveDd3sUkwzvAD2PeGjKoGiWTA6/yYoGCNu0Mjn8xN17HqbV7HVFPkdgOf8GGvaNV8xBFoJ8MGShTRRh942fKf93whFdzp2K6mu5M1E9WjZLF1CRe86fpT/VWtP8hEEDoVhQL0iSo2Drd25rotRK52Uf104u">
-    <NS1:updates RDF:resource="rdf:#$mo2ch3"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$4o2ch3"
-                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-                   NS1:minVersion="3.0"
-                   NS1:maxVersion="3.6.*"
-                   NS1:updateLink="http://alpheios.net/xpi-install/alpheios-chinese-latest.xpi"
-                   NS1:updateHash="sha1:EAC306A447A792150CB83AAD24401BB4DA787B1C" />
-  <RDF:Seq RDF:about="rdf:#$xo2ch3">
-    <RDF:li RDF:resource="rdf:#$yo2ch3"/>
-  </RDF:Seq>
-  <RDF:Seq RDF:about="rdf:#$Rn2ch3">
-    <RDF:li RDF:resource="rdf:#$Sn2ch3"/>
-  </RDF:Seq>
-  <RDF:Description RDF:about="rdf:#$1o2ch3"
-                   NS1:version="0.4.3458.20100522">
-    <NS1:targetApplication RDF:resource="rdf:#$4o2ch3"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$Bo2ch3"
+  <RDF:Description RDF:about="rdf:#$7VA5V3"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    NS1:minVersion="3.0"
                    NS1:maxVersion="3.6.*"
                    NS1:updateLink="http://alpheios.net/xpi-install/alpheios-arabic-latest.xpi"
                    NS1:updateHash="sha1:C19794B931C6DCC70B8E2F2EE09D59D35A418263" />
-  <RDF:Description RDF:about="rdf:#$fo2ch3"
-                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-                   NS1:minVersion="3.0"
-                   NS1:maxVersion="3.6.*"
-                   NS1:updateLink="http://alpheios.net/xpi-install/alpheios-latin-latest.xpi"
-                   NS1:updateHash="sha1:C1E757A4EDD2F010EF1FE7E9C89A1FC5F2AA3C4A" />
-  <RDF:Description RDF:about="rdf:#$no2ch3"
-                   NS1:version="1.0beta2.4231.20130301">
-    <NS1:targetApplication RDF:resource="rdf:#$qo2ch3"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$yo2ch3"
-                   NS1:version="1.0alpha1.3958.20101229">
-    <NS1:targetApplication RDF:resource="rdf:#$Bo2ch3"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="urn:mozilla:extension:arabic@alpheios.net"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAH4KsPH12jtmvXkMkhwRepKXwNyVMVKsJbuSMzCI8s1eDaPOHRVgDR+BzxfQ20fUeVn9jlIMjUYH4ufqVCxbrP4GQ3CLotzTIEqyUiYTkBf4NPVsxotP7rDoUDvo7u5XZQPDUyM0EUla8/iscSpNw3zvlVodpbhBD6yBwx6sk9zc">
-    <NS1:updates RDF:resource="rdf:#$xo2ch3"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$co2ch3"
-                   NS1:version="1.0beta2.3539.20100606">
-    <NS1:targetApplication RDF:resource="rdf:#$fo2ch3"/>
-  </RDF:Description>
-  <RDF:Seq RDF:about="rdf:#$bo2ch3">
-    <RDF:li RDF:resource="rdf:#$co2ch3"/>
-  </RDF:Seq>
-  <RDF:Description RDF:about="rdf:#$Sn2ch3"
-                   NS1:version="1.0beta2.3541.20100606">
-    <NS1:targetApplication RDF:resource="rdf:#$Vn2ch3"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="rdf:#$Jo2ch3"
-                   NS1:version="0.1.2453.20100121">
-    <NS1:targetApplication RDF:resource="rdf:#$Mo2ch3"/>
-  </RDF:Description>
-  <RDF:Description RDF:about="urn:mozilla:extension:spanish@alpheios.net"
-                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAGwzRJFz4sjwvXxwOBaF+qxvLnwfTuYs3d8ygw+bspF1qVsQNypMzOJxcqJseygSzftcCbQ6tTLX4OuYI91ZV0KMGCMYPcwuFk2Hzlupsii+zgXFroMTgjtpa1sugO0k6GBJ2OISd0IRSLPp7cbV6U90mi9xXFzId7SfSFecZxq5">
-    <NS1:updates RDF:resource="rdf:#$Io2ch3"/>
-  </RDF:Description>
-  <RDF:Seq RDF:about="rdf:#$Io2ch3">
-    <RDF:li RDF:resource="rdf:#$Jo2ch3"/>
-  </RDF:Seq>
-  <RDF:Description RDF:about="rdf:#$Vn2ch3"
+  <RDF:Description RDF:about="rdf:#$rUA5V3"
                    NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    NS1:minVersion="3.0"
                    NS1:maxVersion="3.6.*"
                    NS1:updateLink="http://alpheios.net/xpi-install/alpheios-greek-latest.xpi"
                    NS1:updateHash="sha1:5BA1AD3673C8D586E81EABBA23EC9772E840AD2D" />
+  <RDF:Description RDF:about="urn:mozilla:extension:spanish@alpheios.net"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAGwzRJFz4sjwvXxwOBaF+qxvLnwfTuYs3d8ygw+bspF1qVsQNypMzOJxcqJseygSzftcCbQ6tTLX4OuYI91ZV0KMGCMYPcwuFk2Hzlupsii+zgXFroMTgjtpa1sugO0k6GBJ2OISd0IRSLPp7cbV6U90mi9xXFzId7SfSFecZxq5">
+    <NS1:updates RDF:resource="rdf:#$eVA5V3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:extension:arabic@alpheios.net"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAH4KsPH12jtmvXkMkhwRepKXwNyVMVKsJbuSMzCI8s1eDaPOHRVgDR+BzxfQ20fUeVn9jlIMjUYH4ufqVCxbrP4GQ3CLotzTIEqyUiYTkBf4NPVsxotP7rDoUDvo7u5XZQPDUyM0EUla8/iscSpNw3zvlVodpbhBD6yBwx6sk9zc">
+    <NS1:updates RDF:resource="rdf:#$3VA5V3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$iVA5V3"
+                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   NS1:minVersion="3.0"
+                   NS1:maxVersion="3.6.*"
+                   NS1:updateLink="http://alpheios.net/xpi-install/alpheios-spanish-latest.xpi"
+                   NS1:updateHash="sha1:F600AB7A6022DE84714FB776355EADFB70F3BF74" />
+  <RDF:Description RDF:about="rdf:#$NUA5V3"
+                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   NS1:minVersion="3.0"
+                   NS1:maxVersion="3.6.*"
+                   NS1:updateLink="http://alpheios.net/xpi-install/alpheios-latin-latest.xpi"
+                   NS1:updateHash="sha1:C1E757A4EDD2F010EF1FE7E9C89A1FC5F2AA3C4A" />
+  <RDF:Seq RDF:about="rdf:#$UUA5V3">
+    <RDF:li RDF:resource="rdf:#$VUA5V3"/>
+  </RDF:Seq>
+  <RDF:Seq RDF:about="rdf:#$3VA5V3">
+    <RDF:li RDF:resource="rdf:#$4VA5V3"/>
+  </RDF:Seq>
+  <RDF:Seq RDF:about="rdf:#$JUA5V3">
+    <RDF:li RDF:resource="rdf:#$KUA5V3"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="urn:mozilla:extension:{4816253c-3208-49d8-9557-0745a5508299}"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBALSNW9aj0USzeS3kLveDd3sUkwzvAD2PeGjKoGiWTA6/yYoGCNu0Mjn8xN17HqbV7HVFPkdgOf8GGvaNV8xBFoJ8MGShTRRh942fKf93whFdzp2K6mu5M1E9WjZLF1CRe86fpT/VWtP8hEEDoVhQL0iSo2Drd25rotRK52Uf104u">
+    <NS1:updates RDF:resource="rdf:#$UUA5V3"/>
+  </RDF:Description>
+  <RDF:Seq RDF:about="rdf:#$eVA5V3">
+    <RDF:li RDF:resource="rdf:#$fVA5V3"/>
+  </RDF:Seq>
+  <RDF:Seq RDF:about="rdf:#$yUA5V3">
+    <RDF:li RDF:resource="rdf:#$zUA5V3"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="rdf:#$VUA5V3"
+                   NS1:version="1.0beta2.4231.20130301">
+    <NS1:targetApplication RDF:resource="rdf:#$YUA5V3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$zUA5V3"
+                   NS1:version="0.4.4247.20131027">
+    <NS1:targetApplication RDF:resource="rdf:#$CUA5V3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="urn:mozilla:extension:{52bca4ba-fd12-445c-937f-6db5d9c7c522}"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBADPgcR5RsotwsP9dV4DWjfzoZotQoxvDnct2ipeuCJumZe1sUSUCSWN4RneB0GV5tNYpGKEvk096rXUn6PXA1gMMCui57/4HUtTbz7jU2AosMilMJQgTZByFNliRIKvpGzIeYfQ+8GTvd38hg5kfUT2Fhn4Dhs5AGMh3PsF4I6T5">
+    <NS1:updates RDF:resource="rdf:#$yUA5V3"/>
+  </RDF:Description>
+  <RDF:Seq RDF:about="rdf:#$nUA5V3">
+    <RDF:li RDF:resource="rdf:#$oUA5V3"/>
+  </RDF:Seq>
+  <RDF:Description RDF:about="rdf:#$4VA5V3"
+                   NS1:version="1.0alpha1.3958.20101229">
+    <NS1:targetApplication RDF:resource="rdf:#$7VA5V3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$YUA5V3"
+                   NS1:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   NS1:minVersion="3.0"
+                   NS1:maxVersion="22.*"
+                   NS1:updateLink="http://alpheios.net/xpi-install/alpheios-basic-latest.xpi"
+                   NS1:updateHash="sha1:5D0B93075A3F9FD48F2E0453497EB77DDA4443B0" />
+  <RDF:Description RDF:about="urn:mozilla:extension:{0f1d7e06-6ce8-40b0-83f0-9783ee65ab9b}"
+                   NS1:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBADjy+pLs6hxjMp/IDiIO6yN6Nn9NkD8RwDU8xb+8fo6A8EMU5enjVhHEaMNAPCblR5bodrwnFsYhVSsZSqwLhWto39IU9f/GZ0PT66cOILprFTvd89C2chkYKnTqXjfhw2eSluHfNOOvcj+Q1UuLNY8gGmB5912VtXZN7PbNcg1p">
+    <NS1:updates RDF:resource="rdf:#$nUA5V3"/>
+  </RDF:Description>
 </RDF:RDF>
