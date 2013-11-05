@@ -62,7 +62,7 @@ let $corrections :=
 let $correctedLemmas := $corrections/entry/lemma/text()
 
 (: for each entry in file :)
-for $entry in fn:subsequence(doc($docName)//entry, 2)
+for $entry in doc($docName)//entry
 let $lemma := data($entry/@key)
 let $sense := $entry/sense
 let $meaning :=
@@ -76,6 +76,19 @@ let $meaning :=
       if (fn:ends-with($s, ";"))
       then fn:substring($s, 1, fn:string-length($s) - 1)
       else $s
+
+(: filter out entries to be ignored :)
+let $ignore :=
+  for $start in
+  (
+    "No entry", "no entry", "' ",       "(",
+    "&lt;",     "See ",     "÷G",       "?",
+    "From the neuter of",   "Definition not found",
+    "No definition found",  "no definition found"
+  )
+  return fn:starts-with($entry/@key, $start)
+
+where fn:not($ignore = fn:true())
 
 (: put out entry :)
 return
