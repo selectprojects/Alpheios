@@ -67,6 +67,9 @@ declare function cts:parseUrn($a_urn as xs:string) {
         A) if $a_urn is a valid cts urn: an element adhering to the following 
         <ctsUrn>
             <namespace></namespace>
+            <groupname></groupname>
+            <title></title>
+            <label></label>
             <workUrn></workUrn>
             <textgroup></textgroup>            
             <work></work>
@@ -128,6 +131,22 @@ declare function cts:parseUrn($a_inv as xs:string, $a_urn as xs:string)
                     element workNoEdUrn { concat("urn:cts:",$namespace,':',$textgroup,".",$work) },                                            
                     element namespace{ $namespace },
                     (: TODO is it possible for components of the work id to be in different namespaces?? :)
+                    for $gn in $cat//ti:textgroup[@projid=concat($namespace,':',$textgroup)]/ti:groupname return
+                        element groupname { 
+                            attribute xml:lang { $gn/@xml:lang},
+                            xs:string($gn)
+                        },
+                    for $ti in $cat//ti:textgroup[@projid=concat($namespace,':',$textgroup)]/ti:work[@projid=concat($namespace,':',$work)]/ti:title return
+                        element title { 
+                            attribute xml:lang { $ti/@xml:lang},
+                            xs:string($ti)
+                        },
+                    for $lab in $cat//ti:textgroup[@projid=concat($namespace,':',$textgroup)]
+                        /ti:work[@projid=concat($namespace,':',$work)]/ti:*[@projid=concat($namespace,':',$edition)]/ti:label return
+                        element label { 
+                            attribute xml:lang { $lab/@xml:lang},
+                            xs:string($lab)
+                        },
                     element textgroup {concat($namespace,':',$textgroup)},            
                     element work {concat($namespace,':',$work)},
                     element edition {concat($namespace,':',$edition)},
@@ -648,7 +667,7 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_w
         return   
             <reply xpath="{string($xpath)}">
                 <TEI id="{$docid}">
-                    {$doc//*:teiHeader,$doc//*:teiheader},
+                    {$doc//*:teiHeader,$doc//*:teiheader}
                     <text xml:lang="{$lang}">
                     <body>                    	
                         {   
@@ -683,8 +702,20 @@ declare function cts:replaceBindVariables($a_startParts,$a_endParts,$a_path) as 
         if (count($a_startParts) > xs:int(0))
         then
             if (count($a_endParts) > xs:int(0)) then
-                let $startRange := if ($a_startParts[1]/text()) then concat(' >= ',$a_startParts[1]) else ""
-                let $endRange := if ($a_endParts[1]/text()) then concat(' <= ', $a_endParts[1] ) else ""
+                let $startRange := 
+                    if ($a_startParts[1]/text()) then
+                        if (matches($a_startParts[1], '^\d+$')) then
+                            concat(' >= ', $a_startParts[1])
+                        else 
+                            concat(' >= "',xs:string($a_startParts[1]), '"') 
+                    else ""
+                let $endRange :=
+                    if ($a_endParts[1]/text()) then
+                        if (matches($a_endParts[1], '^\d+$')) then
+                            concat(' <= ', $a_endParts[1])
+                        else
+                            concat(' <= "', xs:string($a_endParts[1]), '"' ) 
+                    else ""
                 let $path := replace($a_path,"^(.*?)(@[\w\d\._:\s]+)=[""']\?[""'](.*)$",concat("$1","$2",$startRange," and ", "$2", $endRange, "$3"))                
                 return cts:replaceBindVariables($a_startParts[position() > 1],$a_endParts[position() >1],$path)
             else          
@@ -878,7 +909,7 @@ declare function cts:isUnderCopyright($a_inv,$a_urn) as xs:boolean {
     let $memberof := $entry/ti:memberof/@collection
     let $inventory := cts:getCapabilities($a_inv)
     (: TODO need a better way of identifying copyright than match on specific string here :)
-    let $collection := $inventory//ti:collection[@id = $memberof and matches(dc:rights,'under copyright','i')]
+    let $collection := $inventory//ti:collection[@id = $memberof and matches(*:rights,'under copyright','i')]
     return if ($collection) then true() else false()
 };
 

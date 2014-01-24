@@ -36,10 +36,7 @@ let $CTSNS := "http://chs.harvard.edu/xmlns/cts3"
 let $under_copyright := $e_urn and cts:isUnderCopyright($inv,$e_urn)
 
 let $reply :=
-    if ($under_copyright) 
-    then
-        <reply><error>Copyright Restricted</error></reply>
-    else if ($e_query = 'GetValidReff')
+  if ($e_query = 'GetValidReff')
     then cts:getValidReff($inv,$e_urn,$e_level)
     else if ($e_query = 'ExpandValidReffs')
     then cts:expandValidReffs($inv,$e_urn,$e_level)
@@ -52,10 +49,17 @@ let $reply :=
     else if ($e_query = 'GetPassage')
     then cts:getPassagePlus($inv,$e_urn)
     else if ($e_query = 'GetCitableText')
-    then cts:getCitableText($inv,$e_urn)
+      then 
+        if ($under_copyright) 
+        then
+            <reply><error>Copyright Restricted</error></reply>
+        else 
+            cts:getCitableText($inv,$e_urn)
     else if ($e_query = 'PARSEURN')
     then cts:parseUrn($inv,$e_urn)
     else(<reply><error code="1">INVALID REQUEST. Unsupported request.</error></reply>)
+
+let $parsed := if ($e_urn) then cts:parseUrn($inv,$e_urn) else ()
 
 return
     if ($reply/error)
@@ -74,10 +78,25 @@ return
                 $e_urn
             },
             element {QName($CTSNS,"psg") } {
+                xs:string($parsed/passage)
             },
             element {QName($CTSNS,"workurn") } {
+                xs:string($parsed/workUrn)
             },
-            element {QName($CTSNS,"groupname") } {
+            for $gn in $parsed/groupname return
+                element {QName($CTSNS,"groupname") } {
+                    attribute xml:lang { $gn/@xml:lang },
+                    xs:string($gn)
+                },
+            for $ti in $parsed/title return
+                element {QName($CTSNS,"title") } {
+                    attribute xml:lang { $ti/@xml:lang },
+                    xs:string($ti)
+            },
+            for $la in $parsed/label return
+                element {QName($CTSNS,"label") } {
+                    attribute xml:lang { $la/@xml:lang },
+                    xs:string($la)
             }
         },
         element {QName($CTSNS,"reply") } {
