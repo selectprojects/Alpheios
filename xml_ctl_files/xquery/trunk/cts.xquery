@@ -280,7 +280,7 @@ declare function cts:getPassage($a_inv as xs:string,$a_urn as xs:string)
                     <text xml:lang="{$lang}">
                     <body>                      
                         {   
-                            for $p in $passageAll return cts:passageWithParents($p,1,('body','TEI.2','TEI','tei.2','tei'))
+                            for $p in $passageAll return cts:passageWithParents($p,1,('body','TEI.2','TEI','tei.2','tei'),())
                         }
                      </body>
                   </text>
@@ -671,7 +671,7 @@ declare function cts:getPassagePlus($a_inv as xs:string,$a_urn as xs:string,$a_w
                     <text xml:lang="{$lang}">
                     <body>                    	
                         {   
-							for $p in $passageAll return cts:passageWithParents($p,1,('body','TEI.2','TEI','tei.2','tei'))
+							for $p in $passageAll return cts:passageWithParents($p,1,('body','TEI.2','TEI','tei.2','tei'),())
                         }
                      </body>
                   </text>
@@ -832,29 +832,42 @@ declare function cts:getCitableText($a_inv as xs:string, $a_urn as xs:string) as
 	</reply>
 };
 
-declare function cts:passageWithParents($a_passage as node()*, $a_pos as xs:int, $a_stop) as node()*
+declare function cts:passageWithParents($a_passage as node()*, $a_pos as xs:int, $a_stop,$a_rebuild) as node()*
 {	    
-	let $ancestor := $a_passage[1]/ancestor::*[position() = $a_pos]
+	let $ancestor := $a_passage[1]/ancestor::*[$a_pos]
 	return
 	if ($ancestor)	
 	then
 	   let $in_stop := 
 	       for $elem in tokenize($a_stop,',')
 	       return
-	       if (local-name($ancestor) = $elem)
-	       then true() else ()
-        return if ($in_stop) 
+    	       if (local-name($ancestor) = $elem)
+    	       then true() else ()
+       return 
+        if ($in_stop) 
         then
-            $a_passage
+            cts:rebuildPassage(($a_passage,$a_rebuild))
         else 
-      		element {name($ancestor)} {
-      			$ancestor/@*,
-      			cts:passageWithParents($a_passage,$a_pos+1, $a_stop)
-      		}
-		 
+            let $a_rebuild := ($a_rebuild,
+      		    element {name($ancestor)} {
+      			   $ancestor/@*
+      			})
+      	    return cts:passageWithParents($a_passage,$a_pos+1,$a_stop,$a_rebuild)
 	else
 		$a_passage
 		  			        
+};
+
+declare function cts:rebuildPassage($a_list as node()*) as node() 
+{
+    element { name($a_list[last()])} {
+        $a_list[last()]/@*,
+        $a_list[last()]/*,
+        if (count($a_list) > 1)
+        then cts:rebuildPassage($a_list[position() < last()])
+        else ()
+    }
+        
 };
 
 declare function cts:getLang($a_node as node()*) as xs:string*
