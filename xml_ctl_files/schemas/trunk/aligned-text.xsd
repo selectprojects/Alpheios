@@ -23,7 +23,11 @@
   Schema describing text alignment
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:xml="http://www.w3.org/XML/1998/namespace">
+           xmlns:xml="http://www.w3.org/XML/1998/namespace"
+            attributeFormDefault="unqualified"
+            xmlns:align="http://alpheios.net/namespaces/aligned-text"
+           targetNamespace="http://alpheios.net/namespaces/aligned-text"
+   elementFormDefault="qualified">
 
   <xs:import namespace="http://www.w3.org/XML/1998/namespace"
              schemaLocation="xml-1998.xsd"/>
@@ -46,9 +50,9 @@
       <xs:sequence>
         <xs:choice maxOccurs="unbounded">
           <xs:element name="comment" type="xs:anyType"/>
-          <xs:element name="language" type="LanguageType"/>
+          <xs:element name="language" type="align:LanguageType"/>
         </xs:choice>
-        <xs:element name="sentence" type="SentenceType" maxOccurs="unbounded"/>
+        <xs:element name="sentence" type="align:SentenceType" maxOccurs="unbounded"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -63,7 +67,7 @@
           @xml:lang = the actual language
       </xs:documentation>
     </xs:annotation>
-    <xs:attribute name="lnum" type="LanguageNumberType" use="required"/>
+    <xs:attribute name="lnum" type="align:LanguageNumberType" use="required"/>
     <xs:attribute ref="xml:lang" use="required"/>
   </xs:complexType>
 
@@ -80,7 +84,7 @@
     </xs:annotation>
     <xs:choice maxOccurs="unbounded">
       <xs:element name="comment" type="xs:anyType"/>
-      <xs:element name="wds" type="WordSetType"/>
+      <xs:element name="wds" type="align:WordSetType"/>
     </xs:choice>
     <xs:attribute name="document_id" type="xs:string" use="required"/>
     <xs:attribute name="id" type="xs:positiveInteger"/>
@@ -99,9 +103,9 @@
     </xs:annotation>
     <xs:choice maxOccurs="unbounded">
       <xs:element name="comment" type="xs:anyType"/>
-      <xs:element name="w" type="WordType"/>
+      <xs:element name="w" type="align:WordType"/>
     </xs:choice>
-    <xs:attribute name="lnum" use="required" type="LanguageNumberType"/>
+    <xs:attribute name="lnum" use="required" type="align:LanguageNumberType"/>
   </xs:complexType>
 
   <!-- Single word -->
@@ -119,10 +123,10 @@
       <xs:element name="text" type="xs:string"/>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="comment" type="xs:anyType"/>
-        <xs:element name="refs" type="RefType"/>
+        <xs:element name="refs" type="align:RefType"/>
       </xs:choice>
     </xs:sequence>
-    <xs:attribute name="n" use="required" type="WordIdType"/>
+    <xs:attribute name="n" use="required" type="align:WordIdType"/>
   </xs:complexType>
 
   <!-- List of word references -->
@@ -138,8 +142,8 @@
         this element.
       </xs:documentation>
     </xs:annotation>
-    <xs:attribute name="lnum" type="LanguageNumberType"/>
-    <xs:attribute name="nrefs" type="WordListType" use="required"/>
+    <xs:attribute name="lnum" type="align:LanguageNumberType"/>
+    <xs:attribute name="nrefs" type="align:WordListType" use="required"/>
   </xs:complexType>
 
   <!-- Language number attribute -->
