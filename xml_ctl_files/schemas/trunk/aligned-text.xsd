@@ -65,10 +65,12 @@
           @lnum = the logical language function
             ('L1'=original language, 'L2'=translated language)
           @xml:lang = the actual language
+          @dir = optional text direction (rtl or ltr)
       </xs:documentation>
     </xs:annotation>
     <xs:attribute name="lnum" type="align:LanguageNumberType" use="required"/>
     <xs:attribute ref="xml:lang" use="required"/>
+    <xs:attribute name="dir" type="align:LanguageDirType" use="optional"/>
   </xs:complexType>
 
   <!-- Sentence -->
@@ -155,6 +157,20 @@
     </xs:annotation>
     <xs:restriction base="xs:string">
       <xs:pattern value="L[1-9][0-9]*"/>
+    </xs:restriction>
+  </xs:simpleType>
+  
+  
+  <!-- Language direction attribute -->
+  <xs:simpleType name="LanguageDirType">
+    <xs:annotation>
+      <xs:documentation>
+        Type of language direction attribute: rtl or ltr
+      </xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:pattern value="rtl"></xs:pattern>
+      <xs:pattern value="ltr"></xs:pattern>
     </xs:restriction>
   </xs:simpleType>
 
