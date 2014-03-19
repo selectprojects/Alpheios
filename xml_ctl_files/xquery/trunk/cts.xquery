@@ -862,7 +862,7 @@ declare function cts:rebuildPassage($a_list as node()*) as node()
 {
     element { name($a_list[last()])} {
         $a_list[last()]/@*,
-        $a_list[last()]/*,
+        $a_list[last()]/node(),
         if (count($a_list) > 1)
         then cts:rebuildPassage($a_list[position() < last()])
         else ()
