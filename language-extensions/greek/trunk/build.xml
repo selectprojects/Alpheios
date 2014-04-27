@@ -11,13 +11,11 @@
               value="/Program Files/Apache Group/Apache2/htdocs/alpheios" />
 	<property name="release.id" value="1.0beta2" />
 	<property name="svnant.lib.dir" value="/svnant-1.0.0"/>
-        <property name="antcontrib.dir" value="/usr/share/java"/>
 	<property name="extras" value="grammar,grammar_index,morpheus_bin,morpheus_stemlib,lsj,aut,ml,as,dod,inflect"/>
 	
 	
 	<path id="project.classpath">
 	        <fileset dir="${svnant.lib.dir}" includes="**/*.jar"/>
-		<fileset dir="${antcontrib.dir}" includes="**/*.jar"/>
 	</path>
 
 	<taskdef resource="net/sf/antcontrib/antlib.xml" classpathref="project.classpath"/>
