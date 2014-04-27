@@ -17,8 +17,8 @@ pref("extensions.alpheios.greek.features.alpheios-grammar",true);
 pref("extensions.alpheios.greek.features.alpheios-inflect",true);
 pref("extensions.alpheios.greek.context_handler","grammarContext");
 pref("extensions.alpheios.greek.panels.use.defaults",true);
-pref("extensions.alpheios.greek.dictionaries.short","as,dod,aut,ml,lsj");
-pref("extensions.alpheios.greek.dictionaries.full","as,dod,aut,lsj,ml");
+pref("extensions.alpheios.greek.dictionaries.short","dod,as,ml,aut,lsj");
+pref("extensions.alpheios.greek.dictionaries.full","as,lsj,aut,ml");
 pref("extensions.alpheios.greek.dictionaries.full.default","as");
 pref("extensions.alpheios.greek.dictionary.full.search.url",
      "http://repos1.alpheios.net/exist/rest/db/xq/lexi-get.xq?lx=<LEXICON>&lg=grc&out=html");
