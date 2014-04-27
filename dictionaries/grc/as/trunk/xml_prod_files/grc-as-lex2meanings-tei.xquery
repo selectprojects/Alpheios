@@ -37,6 +37,8 @@ declare namespace tei = "http://www.crosswire.org/2008/TEIOSIS/namespace";
 declare variable $f_lang := "grc";
 declare variable $f_code := "as";
 
+declare variable $includeStrongsNumbers := fn:true();
+
 (: wrap everything in <entrylist> :)
 element entrylist
 {
@@ -67,6 +69,7 @@ let $correctedLemmas := $corrections/entry/lemma/text()
 for $entry at $i in doc($docName)//tei:entry
 let $keyParts := fn:tokenize($entry/@n, "\|")
 let $lemma := $keyParts[1]
+let $strongsNumber := $keyParts[2]
 let $sense := $entry/tei:sense
 let $meaning :=
   if ($lemma = $correctedLemmas)
@@ -101,7 +104,15 @@ return
     element lemma { $lemma },
     if (count($meaning) > 0)
     then
-      element meaning { string-join($meaning, "; ") }
+      element meaning
+      {
+        fn:concat(
+          fn:string-join($meaning, "; "),
+          if ($includeStrongsNumbers and fn:exists($strongsNumber))
+          then fn:concat(" [", $strongsNumber, "]")
+          else ""
+        )
+      }
     else ()
   },
 
